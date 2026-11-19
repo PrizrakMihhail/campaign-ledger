@@ -11,11 +11,13 @@ function warbands() {
   const rec = Ledger.record(CampaignStore.data, a.id);
   const warlord = Ledger.warlord(a);
   const points = Ledger.points(a);
+  const lorePoints = Ledger.lorePoints(a);
   const cap = CampaignStore.data.campaign.pointsLimit;
   const selector = section('Campaign warbands', CampaignStore.data.armies.map(item => warbandRow(item, 'select-warband', item.id === a.id)).join(''));
   const summary = `<section class="panel stack"><div class="split">${tile('shield', a.color)}<div class="row-main"><h2>${escape(a.name)}</h2><p class="meta">${escape(a.faction)}</p></div>${a.archived ? badge('Archived', 'retired') : ''}</div>
     <div class="facts meta"><span><strong class="${points > cap ? 'negative' : ''}">${fmt(points)} / ${fmt(cap)}</strong> roster pts</span><span><strong>${rec.Victory}–${rec.Defeat}–${rec.Draw}</strong> W–L–D</span>${warlord ? `<span>Warlord · <strong>${escape(Ledger.unitName(warlord))}</strong></span>` : ''}</div>
     <progress class="progress" max="${cap}" value="${Math.min(points, cap)}" aria-label="Roster points reference"></progress>
+    ${lorePoints ? `<p class="meta">Includes ${fmt(lorePoints)} battle pts from Arcane Tome.</p>` : ''}
     ${a.notes ? `<p class="copy muted">${escape(a.notes)}</p>` : ''}<div class="actions">${button('Edit warband', 'edit-warband')}${button(a.archived ? 'Restore warband' : 'Archive warband', 'archive-warband', { type: 'link' })}</div></section>`;
   const units = a.units.length ? `<div class="cards">${Ledger.sortedUnits(a.units, warlord?.id).map(unit => unitCard(a, unit)).join('')}</div>` : empty('No units on the roster', 'Add a unit to track its points, Path, and Renown.');
   const transactions = Ledger.transactions(CampaignStore.data, a);
@@ -49,7 +51,7 @@ function warbandForm(existing) {
     if (existing) Object.assign(existing, values);
     else {
       const id = Ledger.id();
-      CampaignStore.data.armies.push({ id, ...values, archived: false, units: [], quests: [], ledger: [] });
+      CampaignStore.data.armies.push({ id, ...values, archived: false, units: [], lores: [], quests: [], ledger: [] });
       CampaignStore.data.activeArmyId = id;
     }
     return ['Warband saved.', 'warbands'];

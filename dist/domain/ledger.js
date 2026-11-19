@@ -58,6 +58,20 @@ const Ledger = (() => {
 
   const destinySpent = anvil => anvil.choices.reduce((total, choice) => total + choice.cost, 0);
 
+  const loreKinds = ['spell', 'prayer', 'manifestation'];
+
+  function normalizeLore(lore) {
+    return {
+      kind: choice(lore.kind, loreKinds, 'spell'),
+      name: str(lore.name) || 'Unnamed lore',
+      points: Math.max(0, integer(lore.points)),
+      entries: records(lore.entries, entry => ({
+        name: str(entry.name) || 'Unnamed entry',
+        timing: str(entry.timing), value: str(entry.value), effect: str(entry.effect),
+      })),
+    };
+  }
+
   function normalizeUnit(unit) {
     const anvil = normalizeAnvil(unit.anvil);
     return {
@@ -88,6 +102,7 @@ const Ledger = (() => {
       name: str(a.name) || 'Unnamed warband', faction: str(a.faction), warlord: str(a.warlord), warlordId: a.warlordId == null ? null : str(a.warlordId),
       notes: str(a.notes), color: validColor(a.color), archived: a.archived === true,
       units: records(a.units, normalizeUnit),
+      lores: records(a.lores, normalizeLore),
       quests: records(a.quests, q => ({
         title: str(q.title) || 'Unnamed quest', goal: str(q.goal), status: choice(q.status, questStatuses, 'Active'),
         reward: str(q.reward), notes: str(q.notes), target: Math.max(0, integer(q.target)), progress: Math.max(0, integer(q.progress)),
@@ -214,7 +229,8 @@ const Ledger = (() => {
     const baseSize = unit.size ?? catalogueSize;
     return baseSize === null ? null : baseSize * unitMultiplier(unit);
   };
-  const points = army => army.units.reduce((sum, unit) => sum + (unit.status === 'Retired' ? 0 : unitPoints(unit)), 0);
+  const lorePoints = army => (army.lores ?? []).reduce((sum, lore) => sum + lore.points, 0);
+  const points = army => army.units.reduce((sum, unit) => sum + (unit.status === 'Retired' ? 0 : unitPoints(unit)), lorePoints(army));
   const participants = battle => [battle.armyId, battle.opponentArmyId].filter(Boolean);
   const signed = value => value > 0 ? `+${value.toLocaleString()}` : value.toLocaleString();
 
@@ -258,5 +274,5 @@ const Ledger = (() => {
   }
 
   return { packs, resultOptions, unitStatuses, questStatuses, unitTypes, unitType, unitName, warlord, sortedUnits, profileStats, weaponFields, normalizeProfileEdits, profileDefaults, profileAbilityEdits, profileChanges, validColor, integer, id, date, dateOrder,
-    blank, normalize, normalizeAnvil, destinySpent, sample, unitPoints, unitSize, points, participants, signed, balance, transactions, unitHistory, battleRenown, record, resultFor };
+    blank, normalize, normalizeAnvil, destinySpent, sample, unitPoints, unitSize, loreKinds, lorePoints, points, participants, signed, balance, transactions, unitHistory, battleRenown, record, resultFor };
 })();

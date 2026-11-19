@@ -4,6 +4,7 @@ const main = document.querySelector('#main');
 const importFile = document.querySelector('#import-file');
 const pages = {
   overview: ['Overview', 'overview', overview], warbands: ['Warbands', 'shield', warbands], battles: ['Battles', 'swords', battles],
+  'arcane-tome': ['Arcane Tome', 'star', arcaneTome],
   quests: ['Quests', 'flag', quests], chronicle: ['Chronicle', 'book', chronicle], settings: ['Settings', 'settings', settings],
 };
 
@@ -47,6 +48,7 @@ function selectWarband(id, page) {
 }
 
 const actions = {
+  ...arcaneTomeActions,
   start: startCampaign,
   export: exportBackup,
   'export-datacards': exportDatacards,
@@ -168,7 +170,7 @@ main.addEventListener('input', event => {
 document.addEventListener('change', event => {
   const input = event.target;
   if (input.closest('#battle-filters') && input.name !== 'query') updateFilters(event);
-  if (input.name === 'quest-warband') selectWarband(input.value);
+  if (input.name === 'quest-warband' || input.name === 'arcane-warband') selectWarband(input.value);
   if (input.name === 'pack' && input.form) {
     const resource = input.form.elements.resource;
     if (!resource.value.trim() || [...Ledger.packs.values()].includes(resource.value)) resource.value = Ledger.packs.get(input.value) || Ledger.packs.get('Custom');

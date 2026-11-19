@@ -137,6 +137,9 @@ h3 { font-size: 1.19rem; line-height: 1.25; }
 .filter-row .field { flex: 1 1 150px; }
 .filter-row .field:first-child { flex-basis: 235px; }
 .roster-layout { grid-template-columns: minmax(190px, .65fr) minmax(0, 2fr); }
+.arcane-summary > .meta { margin-top: 12px; }
+.arcane-lore .split { flex-wrap: wrap; }
+.arcane-lore .copy { margin-top: 4px; }
 .facts { display: flex; gap: 8px 18px; flex-wrap: wrap; }
 .facts strong { color: var(--ink); }
 .divider { border: 0; border-top: 1px solid var(--line); margin: 16px 0; }
@@ -228,12 +231,16 @@ body:has(dialog[open]) { overflow: hidden; }
   .shell { display: block; }
   .sidebar { height: auto; position: static; padding: 10px 14px 8px; border-right: 0; border-bottom: 1px solid var(--line); }
   .brand { padding: 5px 4px 13px; }
-  #nav { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  #nav { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); }
   .nav-link { gap: 5px; padding: 7px 5px; justify-content: center; font-size: .8rem; }
   .sidebar-bottom { display: none; }
   .topbar { min-height: 58px; }
   .content { padding-top: 16px; }
   .hero { min-height: 235px; }
+}
+
+@media (max-width: 700px) {
+  #nav { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 }
 
 @media (max-width: 580px) {

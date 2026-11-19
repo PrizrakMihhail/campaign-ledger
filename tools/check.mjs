@@ -44,11 +44,66 @@ function boot({ page = 'overview', saved = new Map() } = {}) {
 }
 
 const app = boot();
-for (const page of ['overview', 'warbands', 'battles', 'quests', 'chronicle', 'settings']) {
+for (const page of ['overview', 'warbands', 'battles', 'arcane-tome', 'quests', 'chronicle', 'settings']) {
   app.context.location.hash = `#${page}`;
   app.events.get('hashchange')();
   assert.ok(app.elements.get('#main').innerHTML.includes('<h1>'), `Page did not render: ${page}`);
 }
+const tomeSave = new Map();
+const tome = boot({ page: 'arcane-tome', saved: tomeSave });
+assert.equal(tome.run('Ledger.lorePoints(activeArmy())'), 0);
+assert.match(tome.elements.get('#main').innerHTML, /Spell Lore[\s\S]*Prayer Lore[\s\S]*Manifestation Lore/);
+tome.run(`
+  const firstArmy = activeArmy();
+  const firstArmyBasePoints = Ledger.points(firstArmy);
+  actions['new-lore']('spell');
+`);
+assert.match(tome.elements.get('#dialog').innerHTML, /Battle point cost[\s\S]*value="0"/);
+assert.throws(() => tome.run("dialogEditor()({ name: 'Ember Lore', points: '-1' })"), /valid whole number/);
+tome.run(`
+  dialogEditor()({ name: 'Ember Lore', points: '40' });
+  const spellLore = firstArmy.lores[0];
+  actions['new-lore-entry'](spellLore.id);
+  dialogEditor()({ name: 'Watchfire', value: '6', timing: 'Hero Phase', effect: '<effect>' });
+  actions['new-lore']('prayer');
+  dialogEditor()({ name: 'Ashen Rites', points: '' });
+  actions['new-lore-entry'](firstArmy.lores[1].id);
+  dialogEditor()({ name: 'Ashen Prayer', value: '4', timing: '', effect: '' });
+  actions['new-lore']('manifestation');
+  dialogEditor()({ name: 'Flames of Ember', points: '20' });
+  actions['new-lore-entry'](firstArmy.lores[2].id);
+  dialogEditor()({ name: 'Ember Spirit', value: '7', timing: '', effect: '' });
+  commit('Lore added.');
+`);
+assert.equal(tome.run('Ledger.points(firstArmy) - firstArmyBasePoints'), 60);
+assert.match(tome.run('warbands()'), /Includes 60 battle pts from Arcane Tome/);
+assert.match(tome.elements.get('#main').innerHTML, /Watchfire[\s\S]*Casting value[\s\S]*&lt;effect&gt;/);
+assert.match(tome.elements.get('#main').innerHTML, /Add prayer[\s\S]*Ashen Prayer[\s\S]*Chanting value[\s\S]*Add manifestation[\s\S]*Ember Spirit[\s\S]*Summoning value/);
+const reloadedTome = boot({ page: 'arcane-tome', saved: tomeSave });
+assert.equal(reloadedTome.run('Ledger.lorePoints(activeArmy())'), 60);
+assert.match(reloadedTome.elements.get('#main').innerHTML, /Watchfire/);
+tome.run('selectWarband(CampaignStore.data.armies[1].id)');
+assert.doesNotMatch(tome.elements.get('#main').innerHTML, /Ember Lore|Watchfire/);
+tome.run(`
+  selectWarband(firstArmy.id);
+  const entryRef = JSON.stringify([spellLore.id, spellLore.entries[0].id]);
+  actions['edit-lore-entry'](entryRef);
+  dialogEditor()({ name: 'Watchfire', value: '7', timing: 'Hero Phase', effect: '' });
+`);
+assert.equal(tome.run('spellLore.entries[0].value'), '7');
+tome.run(`
+  actions['remove-lore-entry'](entryRef);
+  dialogEditor()();
+  actions['edit-lore'](spellLore.id);
+  dialogEditor()({ name: 'Ember Lore', points: '30' });
+`);
+assert.equal(tome.run('Ledger.points(firstArmy) - firstArmyBasePoints'), 50);
+assert.equal(tome.run('spellLore.entries.length'), 0);
+tome.run(`
+  actions['remove-lore'](spellLore.id);
+  dialogEditor()();
+`);
+assert.equal(tome.run('Ledger.points(firstArmy) - firstArmyBasePoints'), 20);
 assert.ok(app.run('CampaignStore.data.armies.length > 0'));
 assert.match(app.run('warbands()'), /Export datacards/);
 const normalCards = app.run('warbandDatacards(CampaignStore.data.campaign, activeArmy(), CampaignStore.data.battles)');
@@ -168,4 +223,4 @@ assert.equal(migrated.run('CampaignStore.save()'), false);
 assert.equal(migrated.run('CampaignStore.conflict'), true);
 assert.equal(JSON.parse(saved.get(key)).sample, false);
 
-console.log('Passed script startup, six screens, dropdowns, Anvil heroes, datacards, reinforcement, and storage checks.');
+console.log('Passed script startup, seven screens, Arcane Tome, dropdowns, Anvil heroes, datacards, reinforcement, and storage checks.');

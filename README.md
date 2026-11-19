@@ -11,6 +11,7 @@ The app is a static site. Open `dist/index.html` in a browser to run a local cop
 | Anvil hero choices and Destiny Points | `dist/features/anvil-hero.js` |
 | Unit characteristics, weapons, and ability editor | `dist/features/unit-profile-editor.js` |
 | Battles, filters, and Renown awards | `dist/features/battles.js` |
+| Arcane Tome lores and their entries | `dist/features/arcane-tome.js` |
 | Overview, quests, chronicle, and settings | `dist/features/campaign.js` |
 | Datacard preview, standalone HTML, or print layout | `dist/features/datacards.js` |
 | Profile library and search | `dist/features/profile-library.js` |
@@ -34,6 +35,6 @@ The data tools use `pdfplumber` and `lxml`. Keep source downloads outside `dist/
 
 ## Verify and publish
 
-Run `node tools/check.mjs` from the project root. It checks script and asset paths, all six routes, datacard exports, legacy backups, and storage conflicts. Review the diff before deploying, especially when changing catalogue sources or browser storage.
+Run `node tools/check.mjs` from the project root. It checks script and asset paths, all seven routes, datacard exports, legacy backups, and storage conflicts. Review the diff before deploying, especially when changing catalogue sources or browser storage.
 
 Use the existing Sites project in `.openai/hosting.json` to publish `dist/`. Browser storage is scoped to the site address. Use a JSON backup to move records between a local copy and the hosted site.
