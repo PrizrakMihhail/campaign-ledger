@@ -64,31 +64,45 @@ tome.run(`
   dialogEditor()({ name: 'Ember Lore', points: '40' });
   const spellLore = firstArmy.lores[0];
   actions['new-lore-entry'](spellLore.id);
-  dialogEditor()({ name: 'Watchfire', value: '6', timing: 'Hero Phase', effect: '<effect>' });
+`);
+const entryForm = tome.elements.get('#dialog').innerHTML;
+assert.match(entryForm, /class="field"><label for="field-name">Name<\/label>[\s\S]*class="field"><label for="field-value">Casting value<\/label>/);
+assert.match(entryForm, /Declare<\/label><textarea[\s\S]*Effect<\/label><textarea/);
+assert.doesNotMatch(entryForm, /field-timing/);
+tome.run(`
+  dialogEditor()({ name: 'Watchfire', value: '6', declare: '<target>', effect: '<effect>' });
   actions['new-lore']('prayer');
   dialogEditor()({ name: 'Ashen Rites', points: '' });
   actions['new-lore-entry'](firstArmy.lores[1].id);
-  dialogEditor()({ name: 'Ashen Prayer', value: '4', timing: '', effect: '' });
+  dialogEditor()({ name: 'Ashen Prayer', value: '4', declare: '', effect: '' });
   actions['new-lore']('manifestation');
   dialogEditor()({ name: 'Flames of Ember', points: '20' });
   actions['new-lore-entry'](firstArmy.lores[2].id);
-  dialogEditor()({ name: 'Ember Spirit', value: '7', timing: '', effect: '' });
+  dialogEditor()({ name: 'Ember Spirit', value: '7', declare: '', effect: '' });
   commit('Lore added.');
 `);
 assert.equal(tome.run('Ledger.points(firstArmy) - firstArmyBasePoints'), 60);
 assert.match(tome.run('warbands()'), /Includes 60 battle pts from Arcane Tome/);
-assert.match(tome.elements.get('#main').innerHTML, /Watchfire[\s\S]*Casting value[\s\S]*&lt;effect&gt;/);
+assert.match(tome.elements.get('#main').innerHTML, /Watchfire[\s\S]*Casting value[\s\S]*Declare<\/strong> &lt;target&gt;[\s\S]*Effect<\/strong> &lt;effect&gt;/);
 assert.match(tome.elements.get('#main').innerHTML, /Add prayer[\s\S]*Ashen Prayer[\s\S]*Chanting value[\s\S]*Add manifestation[\s\S]*Ember Spirit[\s\S]*Summoning value/);
 const reloadedTome = boot({ page: 'arcane-tome', saved: tomeSave });
 assert.equal(reloadedTome.run('Ledger.lorePoints(activeArmy())'), 60);
 assert.match(reloadedTome.elements.get('#main').innerHTML, /Watchfire/);
+assert.equal(reloadedTome.run('activeArmy().lores[0].entries[0].declare'), '<target>');
+assert.equal(reloadedTome.run(`
+  const olderTome = JSON.parse(JSON.stringify(CampaignStore.data));
+  const olderEntry = olderTome.armies[0].lores[0].entries[0];
+  delete olderEntry.declare;
+  olderEntry.timing = 'Your Hero Phase';
+  Ledger.normalize(olderTome).armies[0].lores[0].entries[0].declare;
+`), 'Your Hero Phase');
 tome.run('selectWarband(CampaignStore.data.armies[1].id)');
 assert.doesNotMatch(tome.elements.get('#main').innerHTML, /Ember Lore|Watchfire/);
 tome.run(`
   selectWarband(firstArmy.id);
   const entryRef = JSON.stringify([spellLore.id, spellLore.entries[0].id]);
   actions['edit-lore-entry'](entryRef);
-  dialogEditor()({ name: 'Watchfire', value: '7', timing: 'Hero Phase', effect: '' });
+  dialogEditor()({ name: 'Watchfire', value: '7', declare: 'Pick a target.', effect: '' });
 `);
 assert.equal(tome.run('spellLore.entries[0].value'), '7');
 tome.run(`

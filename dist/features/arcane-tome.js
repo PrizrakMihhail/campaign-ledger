@@ -31,9 +31,10 @@ function loreCard(lore) {
   const entries = lore.entries.map(entry => {
     const ref = JSON.stringify([lore.id, entry.id]);
     return `<div class="list-item"><div class="split"><div class="row-main"><h4 class="row-title">${escape(entry.name)}</h4>
-      ${span(labels.value, entry.value)}${span('Timing', entry.timing)}</div>
+      ${span(labels.value, entry.value)}</div>
       ${button('Edit', 'edit-lore-entry', { id: ref, title: `Edit ${entry.name}` })}</div>
-      ${entry.effect ? `<p class="copy">${escape(entry.effect)}</p>` : ''}</div>`;
+      ${entry.declare ? `<p class="copy"><strong>Declare</strong> ${escape(entry.declare)}</p>` : ''}
+      ${entry.effect ? `<p class="copy"><strong>Effect</strong> ${escape(entry.effect)}</p>` : ''}</div>`;
   }).join('');
   return `<article class="card arcane-lore"><div class="split"><h3 class="row-title">${escape(lore.name)}</h3>
     ${badge(`${fmt(lore.points)} battle pts`, 'lore-cost')}</div>
@@ -61,13 +62,13 @@ function loreForm(a, kind, lore) {
 
 function loreEntryForm(lore, entry) {
   const labels = loreLabels[lore.kind];
-  const fields = field('Name', 'name', entry?.name, { full: true, required: true }) +
-    field(labels.value, 'value', entry?.value) + field('Timing', 'timing', entry?.timing) +
-    area('Rules and effect', 'effect', entry?.effect, 5);
+  const fields = field('Name', 'name', entry?.name, { required: true }) +
+    field(labels.value, 'value', entry?.value) +
+    area('Declare', 'declare', entry?.declare) + area('Effect', 'effect', entry?.effect, 5);
   formDialog(`${entry ? 'Edit' : 'Add'} ${labels.entry}`, fields, values => {
     const details = {
       name: required(values.name, 'Name'), value: values.value.trim(),
-      timing: values.timing.trim(), effect: values.effect.trim(),
+      declare: values.declare.trim(), effect: values.effect.trim(),
     };
     if (entry) Object.assign(entry, details);
     else lore.entries.push({ id: Ledger.id(), ...details });

@@ -67,7 +67,7 @@ const Ledger = (() => {
       points: Math.max(0, integer(lore.points)),
       entries: records(lore.entries, entry => ({
         name: str(entry.name) || 'Unnamed entry',
-        timing: str(entry.timing), value: str(entry.value), effect: str(entry.effect),
+        declare: str(entry.declare ?? entry.timing), value: str(entry.value), effect: str(entry.effect),
       })),
     };
   }
