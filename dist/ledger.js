@@ -11,7 +11,7 @@ const Ledger = (() => {
   const resultOptions = ['Victory', 'Defeat', 'Draw', 'Other'];
   const unitStatuses = ['Active', 'Scarred', 'Retired'];
   const questStatuses = ['Active', 'Completed', 'Abandoned'];
-  const categories = ['Hero', 'Infantry', 'Cavalry', 'Artillery', 'Monster', 'Construct', 'Other'];
+  const categories = ['Hero', 'Infantry', 'Cavalry', 'Artillery', 'Monster', 'Beast', 'Construct', 'Other'];
   const validColor = value => /^#[a-f\d]{6}$/i.test(value) ? value : '#bd8e58';
   const str = value => typeof value === 'string' ? value : '';
   const integer = (value, fallback = 0) => Number.isSafeInteger(Number(value)) ? Number(value) : fallback;
@@ -53,7 +53,7 @@ const Ledger = (() => {
       notes: str(a.notes), color: validColor(a.color), archived: a.archived === true,
       units: records(a.units, u => ({
         name: str(u.name) || 'Unnamed unit', warscroll: str(u.warscroll), type: str(u.type) || 'Other',
-        points: Math.max(0, integer(u.points)), renown: integer(u.renown), rank: str(u.rank), path: str(u.path),
+        points: Math.max(0, integer(u.points)), size: Math.max(0, integer(u.size)) || null, renown: integer(u.renown), rank: str(u.rank), path: str(u.path),
         status: choice(u.status, unitStatuses, 'Active'), enhancements: str(u.enhancements), scars: str(u.scars), notes: str(u.notes),
       })),
       quests: records(a.quests, q => ({
