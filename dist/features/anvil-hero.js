@@ -1,5 +1,14 @@
 'use strict';
 
+const anvilStages = ['Archetype', 'Origin', 'Flaw', 'Battle Mount', 'Battle Mount Upgrades', 'Other Upgrades'];
+
+function anvilStageField(key, stage = '') {
+  const options = [['', 'Choose a stage', true], ...anvilStages];
+  const selected = anvilStages.find(option => option.toLowerCase() === stage.toLowerCase()) ?? stage;
+  if (selected && !anvilStages.includes(selected)) options.push([selected, `${selected} (saved)`, true]);
+  return select('Stage', key, options, selected);
+}
+
 function anvilFields(anvil) {
   return `<section class="full anvil-editor" aria-labelledby="anvil-heading">
     <h3 id="anvil-heading">Anvil of Apotheosis</h3>
@@ -31,7 +40,7 @@ function mountAnvilEditor(form, saved) {
   function row(choice = {}) {
     const id = `anvil-choice-${++nextChoice}`;
     list.insertAdjacentHTML('beforeend', `<fieldset class="profile-row"><legend>Anvil choice</legend><div class="profile-fields">
-      ${field('Stage', `${id}-stage`, choice.stage, { placeholder: 'Origin, flaw, mount, upgrade…' })}
+      ${anvilStageField(`${id}-stage`, choice.stage)}
       ${field('Choice name', `${id}-name`, choice.name, { required: true })}
       ${field('Destiny Point cost', `${id}-cost`, choice.cost ?? '', { type: 'number' })}
       ${area('Notes', `${id}-notes`, choice.notes, 2)}
@@ -41,7 +50,7 @@ function mountAnvilEditor(form, saved) {
 
   function read() {
     const choices = Array.from(list.children, entry => {
-      const [stage, name, cost, notes] = Array.from(entry.querySelectorAll('input, textarea'), field => field.value);
+      const [stage, name, cost, notes] = Array.from(entry.querySelectorAll('select, input, textarea'), field => field.value);
       return { stage, name, cost: Ledger.integer(cost), notes };
     });
     return {
@@ -67,7 +76,7 @@ function mountAnvilEditor(form, saved) {
     refresh();
     addChoice.focus();
   });
-  addChoice.addEventListener('click', () => row().querySelector('input').focus());
+  addChoice.addEventListener('click', () => row().querySelector('select').focus());
   refresh();
   return () => Ledger.normalizeAnvil(read());
 }

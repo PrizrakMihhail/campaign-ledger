@@ -39,8 +39,8 @@ function field(label, key, value = '', { type = 'text', placeholder = '', requir
 
 function select(label, key, options, value) {
   const items = options.map(option => {
-    const [id, name] = Array.isArray(option) ? option : [option, option];
-    return `<option value="${escape(id)}"${id === value ? ' selected' : ''}>${escape(name)}</option>`;
+    const [id, name, disabled] = Array.isArray(option) ? option : [option, option];
+    return `<option value="${escape(id)}"${id === value ? ' selected' : ''}${disabled ? ' disabled' : ''}>${escape(name)}</option>`;
   }).join('');
   return `<div class="field"><label for="field-${key}">${escape(label)}</label><select id="field-${key}" name="${key}">${items}</select></div>`;
 }

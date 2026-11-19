@@ -106,6 +106,12 @@ assert.match(app.run('warbands()'), /Add Anvil hero/);
 const newAnvilFields = app.run('anvilFields()');
 assert.match(newAnvilFields, /name="anvil-limit" value=""/);
 assert.match(newAnvilFields, /id="anvil-choices"><\/div>/);
+const stageLabels = ['Archetype', 'Origin', 'Flaw', 'Battle Mount', 'Battle Mount Upgrades', 'Other Upgrades'];
+const stageField = app.run(`anvilStageField('anvil-choice-1-stage')`);
+assert.deepEqual([...stageField.matchAll(/<option value="([^"]+)"(?: selected)?>/g)].map(match => match[1]), stageLabels);
+assert.match(stageField, /<option value="" selected disabled>Choose a stage<\/option>/);
+assert.match(app.run(`anvilStageField('anvil-choice-1-stage', 'battle mount')`), /<option value="Battle Mount" selected>/);
+assert.match(app.run(`anvilStageField('anvil-choice-1-stage','Legacy & stage')`), /<option value="Legacy &amp; stage" selected disabled>/);
 app.run(`checkedUnit.type = 'Hero';
   checkedUnit.anvil = Ledger.normalizeAnvil({ limit: 20, rules: 'Campaign variant', choices: [
     { stage: 'Origin', name: 'Stone-born', cost: 4, notes: 'Original origin' },
