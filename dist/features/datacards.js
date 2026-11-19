@@ -101,7 +101,7 @@ const datacardStyles = `
 `;
 
 function warbandCardList(warband, battles, { units = warband.units, printControls = false } = {}) {
-  const cards = units.map(unit => {
+  const cards = Ledger.sortedUnits(units).map(unit => {
     const entry = unitCatalogueEntry(warband, unit);
     return datacard(unitProfile(warband, unit, entry), unit, unitRenown(warband, unit, battles), entry, printControls);
   }).join('\n');

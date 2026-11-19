@@ -55,6 +55,11 @@ const normalCards = app.run('warbandDatacards(CampaignStore.data.campaign, activ
 assert.equal((normalCards.match(/<article class="datacard"/g) || []).length, app.run('activeArmy().units.length'));
 assert.match(normalCards, /Print or save PDF/);
 assert.match(normalCards, /@media print/);
+assert.match(app.run('warbands()'), /Dagna Emberhand[\s\S]*Flintguard[\s\S]*The Oathkeepers/);
+assert.match(normalCards, /Dagna Emberhand[\s\S]*Flintguard[\s\S]*The Oathkeepers/);
+assert.deepEqual(JSON.parse(app.run(`JSON.stringify(Ledger.sortedUnits([
+  {name:'Alpha',type:'Cavalry'}, {name:'Zora',type:'Hero'}, {name:'beta',type:'Hero'}, {name:'Amber',type:'Infantry'}
+]).map(unit=>unit.name))`)), ['beta', 'Zora', 'Amber', 'Alpha']);
 
 app.run(`activeArmy().faction = 'Khazalite Holds';
   const checkedUnit = activeArmy().units[0];
