@@ -70,6 +70,9 @@ assert.match(customCards, /Test Path upgrade/);
 assert.match(customCards, /&lt;example&gt;/);
 assert.doesNotMatch(customCards, /<example>/);
 assert.equal(app.run('unitCatalogueEntry(activeArmy(), checkedUnit).name'), 'Auric Runemaster');
+assert.deepEqual(JSON.parse(app.run('JSON.stringify(Ledger.unitTypes)')), ['Hero', 'Infantry', 'Cavalry', 'War Machine', 'Monster', 'Terrain', 'Other']);
+assert.equal(app.run('BattleCatalogueData.entries.every(entry => Ledger.unitTypes.includes(entry.category))'), true);
+assert.equal(app.run(`BattleCatalogue.find('Khazalite Holds', 'Oathkeeper Cannon').category`), 'War Machine');
 assert.match(app.run('profileEditorFields(true)'), /Add Path upgrade/);
 assert.match(app.run(`warscrollPicker('Custom <hero>')`), /value="Custom &lt;hero&gt;"[\s\S]*role="combobox"/);
 assert.equal(app.run(`warscrollChoices(BattleCatalogue.list('Khazalite Holds'), 'rune master')[0].name`), 'Auric Runemaster');
@@ -77,6 +80,8 @@ assert.equal(app.run(`warscrollChoices(BattleCatalogue.list('Khazalite Holds'), 
 assert.equal(app.run(`warscrollChoices(BattleCatalogue.list('Khazalite Holds'), ' My custom hero ').at(-1).name`), 'My custom hero');
 app.run('viewWarbandDatacards(activeArmy(), checkedUnit)');
 assert.match(app.elements.get('#dialog').innerHTML, /Test Path upgrade/);
+app.run(`checkedUnit.type = 'Terrain'; viewWarbandDatacards(activeArmy(), checkedUnit);`);
+assert.match(app.elements.get('#dialog').innerHTML, /class="dc-label">Terrain<\/p>/);
 
 app.run(`
   checkedUnit.points = 120;
@@ -101,12 +106,16 @@ legacy.version = 1;
 legacy.campaign.name = 'Migration example';
 delete legacy.armies[0].units[0].profileEdits;
 delete legacy.armies[0].units[0].reinforced;
+legacy.armies[0].units[0].type = 'Artillery';
+legacy.armies[0].units[1].type = 'Beast';
+legacy.armies[0].units[2].type = 'Construct';
 const key = 'ptg_campaign_ledger_v2';
 const saved = new Map([['ptg_campaign_ledger_v1', JSON.stringify(legacy)]]);
 const migrated = boot({ saved });
 assert.equal(migrated.run('CampaignStore.data.campaign.name'), legacy.campaign.name);
 assert.equal(JSON.parse(saved.get(key)).version, 2);
 assert.equal(migrated.run('activeArmy().units[0].reinforced'), false);
+assert.deepEqual(JSON.parse(migrated.run('JSON.stringify(activeArmy().units.map(unit => unit.type))')), ['War Machine', 'Other', 'Other']);
 
 const external = JSON.parse(saved.get(key));
 external.campaign.name = 'Edited in another tab';

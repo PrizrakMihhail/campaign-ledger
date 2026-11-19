@@ -54,7 +54,6 @@ function warbandForm(existing) {
 function unitForm(a, existing) {
   const u = existing || {};
   const history = existing ? Ledger.battleRenown(CampaignStore.data, a.id, u.id) : 0;
-  const categories = [...new Set([...Ledger.categories, u.type || 'Infantry'])];
   const remove = existing ? button('Remove unit', 'remove-unit', { id: u.id, type: 'danger' }) : '';
   const entry = existing && unitCatalogueEntry(a, existing);
   const initialProfile = existing ? referenceUnitProfile(a, u, entry) : undefined;
@@ -62,7 +61,7 @@ function unitForm(a, existing) {
   formDialog(existing ? `Edit ${u.name}` : `Add unit to ${a.name}`,
     warscrollPicker(u.warscroll) + field('Unit name', 'name', u.name, { required: true }) +
     `<div class="full" id="unit-catalogue-values" hidden><div class="actions"><p class="meta" id="unit-catalogue-summary"></p><button type="button" class="button secondary" id="apply-unit-catalogue">Apply listed values</button></div></div>` +
-    select('Category', 'type', categories, u.type || 'Infantry') + field('Base points', 'points', u.points ?? 0, { type: 'number', min: 0 }) +
+    select('Unit type', 'type', Ledger.unitTypes, existing ? Ledger.unitType(u.type) : 'Infantry') + field('Base points', 'points', u.points ?? 0, { type: 'number', min: 0 }) +
     field('Base model count', 'size', u.size ?? entry?.size ?? '', { type: 'number', min: 1 }) + field('Base Renown', 'renown', u.renown ?? 0, { type: 'number', min: 0 }) +
     `<div class="full reinforcement"><label><input type="checkbox" name="reinforced" value="on"${u.reinforced ? ' checked' : ''}> Reinforced</label><p class="meta" id="unit-totals" aria-live="polite"></p></div>` +
     select('Status', 'status', Ledger.unitStatuses, u.status || 'Active') + field('Rank', 'rank', u.rank) + field('Path', 'path', u.path) +
@@ -71,7 +70,7 @@ function unitForm(a, existing) {
     const reinforced = v.reinforced === 'on';
     const size = v.size === '' ? null : whole(v.size, 'Base model count', 1);
     if (reinforced && size === null) throw new Error('Enter the base model count for a reinforced unit.');
-    const values = { type, status, rank, path, enhancements, scars, notes, name: required(v.name, 'Unit name'), warscroll: v.warscroll.trim(), points: whole(v.points, 'Base points', 0),
+    const values = { type: Ledger.unitType(type), status, rank, path, enhancements, scars, notes, name: required(v.name, 'Unit name'), warscroll: v.warscroll.trim(), points: whole(v.points, 'Base points', 0),
       size, reinforced, renown: whole(v.renown, 'Base Renown', 0), profileEdits: profileEditor.changes() };
     if (existing) Object.assign(existing, values);
     else a.units.push({ id: Ledger.id(), ...values });
@@ -104,7 +103,7 @@ function unitForm(a, existing) {
     if (!record) return;
     fields.warscroll.value = record.name;
     suggestUnitName(record.name);
-    fields.type.value = record.category;
+    fields.type.value = Ledger.unitType(record.category);
     fields.points.value = record.points;
     fields.size.value = record.size;
   };

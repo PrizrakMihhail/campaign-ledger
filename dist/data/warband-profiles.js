@@ -64,7 +64,7 @@ const WarbandProfiles = (() => {
       abilities: ['Magma Blast'],
     },
     {
-      name: 'Magmic Battleforge', category: 'Faction Terrain', page: 7,
+      name: 'Magmic Battleforge', category: 'Terrain', page: 7,
       move: '—', health: '8', save: '3+', control: '—', keywords: ['Faction Terrain', ...faction],
       abilities: ['Cover', 'Impassable', 'Obscuring', 'Molten Blessing', 'Spending the Forge'],
     },

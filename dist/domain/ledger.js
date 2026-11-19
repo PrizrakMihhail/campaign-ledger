@@ -11,11 +11,13 @@ const Ledger = (() => {
   const resultOptions = ['Victory', 'Defeat', 'Draw', 'Other'];
   const unitStatuses = ['Active', 'Scarred', 'Retired'];
   const questStatuses = ['Active', 'Completed', 'Abandoned'];
-  const categories = ['Hero', 'Infantry', 'Cavalry', 'Artillery', 'Monster', 'Beast', 'Construct', 'Other'];
+  const unitTypes = Object.freeze(['Hero', 'Infantry', 'Cavalry', 'War Machine', 'Monster', 'Terrain', 'Other']);
+  const unitTypeNames = new Map([...unitTypes.map(type => [type.toLowerCase(), type]), ['artillery', 'War Machine'], ['faction terrain', 'Terrain']]);
   const profileStats = Object.freeze({ move: 'Move', health: 'Health', save: 'Save', control: 'Control', ward: 'Ward' });
   const weaponFields = ranged => [...(ranged ? ['Range'] : []), 'Attacks', 'Hit', 'Wound', 'Rend', 'Damage', 'Weapon traits'];
   const validColor = value => /^#[a-f\d]{6}$/i.test(value) ? value : '#bd8e58';
   const str = value => typeof value === 'string' ? value : '';
+  const unitType = value => unitTypeNames.get(str(value).trim().toLowerCase()) ?? 'Other';
   const integer = (value, fallback = 0) => Number.isSafeInteger(Number(value)) ? Number(value) : fallback;
   const id = () => globalThis.crypto?.randomUUID?.() || `${Date.now().toString(36)}-${Math.random().toString(36).slice(2)}`;
   const date = () => {
@@ -54,7 +56,7 @@ const Ledger = (() => {
       name: str(a.name) || 'Unnamed warband', faction: str(a.faction), warlord: str(a.warlord),
       notes: str(a.notes), color: validColor(a.color), archived: a.archived === true,
       units: records(a.units, u => ({
-        name: str(u.name) || 'Unnamed unit', warscroll: str(u.warscroll), type: str(u.type) || 'Other',
+        name: str(u.name) || 'Unnamed unit', warscroll: str(u.warscroll), type: unitType(u.type),
         points: Math.max(0, integer(u.points)), size: Math.max(0, integer(u.size)) || null, renown: integer(u.renown), rank: str(u.rank), path: str(u.path),
         reinforced: u.reinforced === true,
         status: choice(u.status, unitStatuses, 'Active'), enhancements: str(u.enhancements), scars: str(u.scars), notes: str(u.notes),
@@ -222,6 +224,6 @@ const Ledger = (() => {
     return battle.result;
   }
 
-  return { packs, resultOptions, unitStatuses, questStatuses, categories, profileStats, weaponFields, normalizeProfileEdits, profileDefaults, profileAbilityEdits, profileChanges, validColor, integer, id, date, dateOrder,
+  return { packs, resultOptions, unitStatuses, questStatuses, unitTypes, unitType, profileStats, weaponFields, normalizeProfileEdits, profileDefaults, profileAbilityEdits, profileChanges, validColor, integer, id, date, dateOrder,
     blank, normalize, sample, unitPoints, unitSize, points, participants, signed, balance, transactions, unitHistory, battleRenown, record, resultFor };
 })();

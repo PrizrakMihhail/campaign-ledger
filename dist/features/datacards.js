@@ -43,7 +43,7 @@ function profileContent(profile, printControls) {
 
 function datacard(profile, unit, renown, entry, printControls = false) {
   const name = unit?.name || entry?.name || profile.name;
-  const category = profile?.category || entry?.category || unit.type;
+  const category = unit ? Ledger.unitType(unit.type) : profile?.category || entry?.category;
   const points = unit ? Ledger.unitPoints(unit) : entry?.points;
   const size = unit ? Ledger.unitSize(unit, entry?.size) : entry?.size;
   const metrics = cardFacts([['Points', points === undefined ? '' : fmt(points)], ['Models', size ? fmt(size) : ''], ['Renown', unit ? fmt(renown) : '']]);
