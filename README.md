@@ -7,7 +7,8 @@ The app is a static site. Open `dist/index.html` in a browser to run a local cop
 | Change | Files |
 | --- | --- |
 | Warbands, units, resource adjustments | `dist/features/warbands.js` |
-| Warscroll search and custom names | `dist/ui/warscroll-picker.js` |
+| Searchable warscrolls and factions | `dist/ui/text-picker.js` |
+| Anvil hero choices and Destiny Points | `dist/features/anvil-hero.js` |
 | Unit characteristics, weapons, and ability editor | `dist/features/unit-profile-editor.js` |
 | Battles, filters, and Renown awards | `dist/features/battles.js` |
 | Overview, quests, chronicle, and settings | `dist/features/campaign.js` |

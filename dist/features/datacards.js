@@ -55,6 +55,7 @@ function datacard(profile, unit, renown, entry, printControls = false) {
     ${printControls ? printChoice('Print card', name) : ''}
     ${metrics ? `<dl class="dc-metrics">${metrics}</dl>` : ''}
     ${profileContent(profile, printControls)}
+    ${anvilCard(unit?.anvil)}
     ${metainfo ? `<dl class="dc-details">${metainfo}</dl>` : ''}${details}
     ${entry ? `<p class="dc-source">Battle Profiles · ${escape(BattleCatalogue.edition)} · p. ${entry.page}</p>` : ''}</article>`;
 }
@@ -84,6 +85,9 @@ const datacardStyles = `
   .dc-details { display: flex; flex-wrap: wrap; gap: 8px 15px; padding-top: 10px; font-size: .9rem; }
   .dc-detail { border-top: 1px solid #c6d0c5; padding-top: 7px; margin-top: 9px; }
   .dc-detail p { white-space: pre-wrap; margin-top: 3px; line-height: 1.36; font-size: .88rem; }
+  .dc-anvil ul { padding: 0; margin: 8px 0 0; list-style: none; }
+  .dc-anvil li { padding: 6px 0; border-top: 1px solid #c6d0c5; overflow-wrap: anywhere; }
+  .dc-anvil li > span { margin-inline-start: 6px; color: #3d5a50; font-size: .8rem; }
   .dc-ability { --phase-ink: #39574a; border: 1px solid #c6d0c5; border-inline-start: 3px solid var(--phase-ink); border-radius: 4px; padding: 8px 10px; margin-top: 10px; }
   .dc-ability[data-phase="shooting"], .dc-ability[data-phase="movement"] { --phase-ink: #285a76; }
   .dc-ability[data-phase="charge"], .dc-ability[data-phase="combat"] { --phase-ink: #813d31; }

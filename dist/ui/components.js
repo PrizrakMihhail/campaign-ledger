@@ -49,10 +49,6 @@ function area(label, key, value, rows = 3, required = false) {
   return `<div class="field full"><label for="field-${key}">${escape(label)}</label><textarea id="field-${key}" name="${key}" rows="${rows}"${required ? ' required' : ''}>${escape(value)}</textarea></div>`;
 }
 
-function datalist(id, values) {
-  return `<datalist id="${id}">${values.map(value => `<option value="${escape(value)}"></option>`).join('')}</datalist>`;
-}
-
 const modelCount = size => `${fmt(size)} ${size === 1 ? 'model' : 'models'}`;
 
 function required(value, label) {

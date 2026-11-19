@@ -1,19 +1,19 @@
 'use strict';
 
-function warscrollPicker(value) {
-  return `<div class="field full">
-    <label for="field-warscroll">Warscroll</label>
-    <div class="warscroll-picker">
-      <input id="field-warscroll" name="warscroll" type="text" value="${escape(value)}" maxlength="160"
-        placeholder="Search or enter a custom warscroll" autocomplete="off" role="combobox"
-        aria-autocomplete="list" aria-expanded="false" aria-controls="warscroll-options">
-      <button type="button" class="warscroll-toggle" tabindex="-1" aria-label="Show warscrolls" aria-controls="warscroll-options"></button>
-      <ul id="warscroll-options" class="warscroll-options" role="listbox" aria-label="Warscroll choices" hidden></ul>
+function textPicker(label, key, value, { full = false, required = false } = {}) {
+  return `<div class="field${full ? ' full' : ''}">
+    <label for="field-${key}">${escape(label)}</label>
+    <div class="text-picker">
+      <input id="field-${key}" name="${key}" type="text" value="${escape(value)}" maxlength="160"${required ? ' required' : ''}
+        placeholder="Search or enter a custom ${key}" autocomplete="off" role="combobox"
+        aria-autocomplete="list" aria-expanded="false" aria-controls="${key}-options">
+      <button type="button" class="picker-toggle" tabindex="-1" aria-label="Show ${key} choices" aria-controls="${key}-options"></button>
+      <ul id="${key}-options" class="text-picker-menu" role="listbox" aria-label="${escape(label)} choices" hidden></ul>
     </div>
   </div>`;
 }
 
-function warscrollChoices(entries, query) {
+function textPickerChoices(entries, query) {
   const text = query.trim();
   const words = text.toLowerCase().split(/\s+/).filter(Boolean);
   const matches = entries.filter(entry => [entry.name, ...(entry.aliases || [])].some(name => words.every(word => name.toLowerCase().includes(word))));
@@ -21,29 +21,29 @@ function warscrollChoices(entries, query) {
   return [...matches, { name: text, custom: true }];
 }
 
-function mountWarscrollPicker(form, entries) {
-  const input = form.elements.warscroll;
-  const list = form.querySelector('#warscroll-options');
-  const toggle = form.querySelector('.warscroll-toggle');
+function mountTextPicker(form, key, entries) {
+  const input = form.elements[key];
+  const list = form.querySelector(`#${key}-options`);
+  const toggle = input.nextElementSibling;
   let options = [];
   let active = -1;
 
   function setOpen(open) {
     list.hidden = !open;
     input.setAttribute('aria-expanded', String(open));
-    toggle.setAttribute('aria-label', open ? 'Hide warscrolls' : 'Show warscrolls');
+    toggle.setAttribute('aria-label', `${open ? 'Hide' : 'Show'} ${key} choices`);
     if (!open) input.removeAttribute('aria-activedescendant');
   }
 
   function show(query = '') {
-    options = warscrollChoices(entries, query);
+    options = textPickerChoices(entries, query);
     active = -1;
     input.removeAttribute('aria-activedescendant');
     list.innerHTML = options.map((entry, index) => {
-      const detail = entry.custom ? 'Use as a custom warscroll' : [fmt(entry.points) + ' pts', modelCount(entry.size), entry.kind].filter(Boolean).join(' · ');
-      return `<li id="warscroll-option-${index}" role="option" aria-selected="false" data-option-index="${index}">
-        <strong>${escape(entry.name)}</strong><span class="meta">${escape(detail)}</span></li>`;
-    }).join('') || '<li class="warscroll-empty" role="presentation">Type a custom warscroll name.</li>';
+      const detail = entry.custom ? `Use as a custom ${key}` : entry.detail;
+      return `<li id="${key}-option-${index}" role="option" aria-selected="false" data-option-index="${index}">
+        <strong>${escape(entry.name)}</strong>${detail ? `<span class="meta">${escape(detail)}</span>` : ''}</li>`;
+    }).join('') || `<li class="text-picker-empty" role="presentation">Type a custom ${key} name.</li>`;
     list.scrollTop = 0;
     setOpen(true);
   }

@@ -37,6 +37,32 @@ const Ledger = (() => {
     });
   };
 
+  function normalizeAnvil(value) {
+    if (!value || typeof value !== 'object' || Array.isArray(value)) return null;
+    const limit = value.limit == null || value.limit === '' ? null : integer(value.limit, null);
+    const choices = Array.isArray(value.choices) ? value.choices : [];
+    return {
+      rules: str(value.rules).trim(),
+      limit: limit >= 0 ? limit : null,
+      choices: choices.filter(row => str(row?.name).trim()).map(row => ({
+        stage: str(row.stage).trim(), name: row.name.trim(), cost: integer(row.cost), notes: str(row.notes).trim(),
+      })),
+    };
+  }
+
+  const destinySpent = anvil => anvil.choices.reduce((total, choice) => total + choice.cost, 0);
+
+  function normalizeUnit(unit) {
+    const anvil = normalizeAnvil(unit.anvil);
+    return {
+      name: str(unit.name) || 'Unnamed unit', warscroll: str(unit.warscroll), type: anvil ? 'Hero' : unitType(unit.type),
+      points: Math.max(0, integer(unit.points)), size: Math.max(0, integer(unit.size)) || null, renown: integer(unit.renown),
+      rank: str(unit.rank), path: str(unit.path), reinforced: unit.reinforced === true,
+      status: choice(unit.status, unitStatuses, 'Active'), enhancements: str(unit.enhancements), scars: str(unit.scars), notes: str(unit.notes),
+      profileEdits: normalizeProfileEdits(unit.profileEdits), anvil,
+    };
+  }
+
   function blank() {
     return {
       version: 2, sample: false, activeArmyId: '',
@@ -55,13 +81,7 @@ const Ledger = (() => {
     const armies = records(value.armies, a => ({
       name: str(a.name) || 'Unnamed warband', faction: str(a.faction), warlord: str(a.warlord),
       notes: str(a.notes), color: validColor(a.color), archived: a.archived === true,
-      units: records(a.units, u => ({
-        name: str(u.name) || 'Unnamed unit', warscroll: str(u.warscroll), type: unitType(u.type),
-        points: Math.max(0, integer(u.points)), size: Math.max(0, integer(u.size)) || null, renown: integer(u.renown), rank: str(u.rank), path: str(u.path),
-        reinforced: u.reinforced === true,
-        status: choice(u.status, unitStatuses, 'Active'), enhancements: str(u.enhancements), scars: str(u.scars), notes: str(u.notes),
-        profileEdits: normalizeProfileEdits(u.profileEdits),
-      })),
+      units: records(a.units, normalizeUnit),
       quests: records(a.quests, q => ({
         title: str(q.title) || 'Unnamed quest', goal: str(q.goal), status: choice(q.status, questStatuses, 'Active'),
         reward: str(q.reward), notes: str(q.notes), target: Math.max(0, integer(q.target)), progress: Math.max(0, integer(q.progress)),
@@ -225,5 +245,5 @@ const Ledger = (() => {
   }
 
   return { packs, resultOptions, unitStatuses, questStatuses, unitTypes, unitType, profileStats, weaponFields, normalizeProfileEdits, profileDefaults, profileAbilityEdits, profileChanges, validColor, integer, id, date, dateOrder,
-    blank, normalize, sample, unitPoints, unitSize, points, participants, signed, balance, transactions, unitHistory, battleRenown, record, resultFor };
+    blank, normalize, normalizeAnvil, destinySpent, sample, unitPoints, unitSize, points, participants, signed, balance, transactions, unitHistory, battleRenown, record, resultFor };
 })();

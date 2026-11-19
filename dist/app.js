@@ -80,6 +80,7 @@ const actions = {
   'go-warband': id => selectWarband(id, 'warbands'),
   'quest-warband': id => selectWarband(id, 'quests'),
   'new-unit': () => unitForm(activeArmy()),
+  'new-anvil-hero': () => unitForm(activeArmy(), undefined, { anvilHero: true }),
   'edit-unit': id => unitForm(activeArmy(), activeArmy().units.find(u => u.id === id)),
   'unit-history': id => unitHistory(activeArmy(), activeArmy().units.find(u => u.id === id)),
   'remove-unit': id => {

@@ -74,10 +74,11 @@ assert.deepEqual(JSON.parse(app.run('JSON.stringify(Ledger.unitTypes)')), ['Hero
 assert.equal(app.run('BattleCatalogueData.entries.every(entry => Ledger.unitTypes.includes(entry.category))'), true);
 assert.equal(app.run(`BattleCatalogue.find('Khazalite Holds', 'Oathkeeper Cannon').category`), 'War Machine');
 assert.match(app.run('profileEditorFields(true)'), /Add Path upgrade/);
-assert.match(app.run(`warscrollPicker('Custom <hero>')`), /value="Custom &lt;hero&gt;"[\s\S]*role="combobox"/);
-assert.equal(app.run(`warscrollChoices(BattleCatalogue.list('Khazalite Holds'), 'rune master')[0].name`), 'Auric Runemaster');
-assert.equal(app.run(`warscrollChoices(BattleCatalogue.list('Khazalite Holds'), 'Auric Runemaster').some(choice => choice.custom)`), false);
-assert.equal(app.run(`warscrollChoices(BattleCatalogue.list('Khazalite Holds'), ' My custom hero ').at(-1).name`), 'My custom hero');
+assert.match(app.run(`textPicker('Warscroll','warscroll','Custom <hero>')`), /value="Custom &lt;hero&gt;"[\s\S]*role="combobox"/);
+assert.match(app.run(`textPicker('Faction','faction','',{required:true})`), /name="faction"[\s\S]*required[\s\S]*id="faction-options"/);
+assert.equal(app.run(`textPickerChoices(BattleCatalogue.list('Khazalite Holds'), 'rune master')[0].name`), 'Auric Runemaster');
+assert.equal(app.run(`textPickerChoices(BattleCatalogue.list('Khazalite Holds'), 'Auric Runemaster').some(choice => choice.custom)`), false);
+assert.equal(app.run(`textPickerChoices([{name:'Khazalite Holds'}], ' My custom faction ').at(-1).name`), 'My custom faction');
 app.run('viewWarbandDatacards(activeArmy(), checkedUnit)');
 assert.match(app.elements.get('#dialog').innerHTML, /Test Path upgrade/);
 app.run(`checkedUnit.type = 'Terrain'; viewWarbandDatacards(activeArmy(), checkedUnit);`);
@@ -100,6 +101,22 @@ assert.deepEqual(JSON.parse(app.run(`JSON.stringify(Ledger.normalize(CampaignSto
 app.run('checkedUnit.reinforced = false');
 assert.equal(app.run('Ledger.points(activeArmy()) - baseRosterPoints'), 0);
 assert.equal(app.run('Ledger.unitSize(checkedUnit)'), 5);
+
+assert.match(app.run('warbands()'), /Add Anvil hero/);
+const newAnvilFields = app.run('anvilFields()');
+assert.match(newAnvilFields, /name="anvil-limit" value=""/);
+assert.match(newAnvilFields, /id="anvil-choices"><\/div>/);
+app.run(`checkedUnit.type = 'Hero';
+  checkedUnit.anvil = Ledger.normalizeAnvil({ limit: 20, rules: 'Campaign variant', choices: [
+    { stage: 'Origin', name: 'Stone-born', cost: 4, notes: 'Original origin' },
+    { stage: 'Flaw', name: 'Oathbound', cost: -2 },
+  ] });`);
+assert.equal(app.run('Ledger.destinySpent(checkedUnit.anvil)'), 2);
+assert.equal(app.run('Ledger.unitPoints(checkedUnit)'), 120);
+assert.match(app.run('anvilSummary(checkedUnit.anvil)'), /2 \/ 20 Destiny Points spent · 18 remaining/);
+assert.match(app.run('warbandDatacards(CampaignStore.data.campaign, activeArmy(), CampaignStore.data.battles)'), /Anvil of Apotheosis[\s\S]*Stone-born[\s\S]*Oathbound/);
+assert.equal(app.run('JSON.stringify(Ledger.normalize(CampaignStore.data).armies[0].units[0].anvil)'), app.run('JSON.stringify(checkedUnit.anvil)'));
+assert.equal(app.run('Ledger.normalizeAnvil({ limit: "" }).limit'), null);
 
 const legacy = JSON.parse(app.run('JSON.stringify(Ledger.sample())'));
 legacy.version = 1;
@@ -127,4 +144,4 @@ assert.equal(migrated.run('CampaignStore.save()'), false);
 assert.equal(migrated.run('CampaignStore.conflict'), true);
 assert.equal(JSON.parse(saved.get(key)).sample, false);
 
-console.log('Passed script startup, asset paths, six screens, datacard export, reinforcement, backup migration, and cross-tab storage checks.');
+console.log('Passed script startup, six screens, dropdowns, Anvil heroes, datacards, reinforcement, and storage checks.');
