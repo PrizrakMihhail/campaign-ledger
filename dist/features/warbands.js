@@ -28,8 +28,8 @@ function unitCard(a, unit) {
   const renown = unitRenown(a, unit, CampaignStore.data.battles);
   const entry = unitCatalogueEntry(a, unit);
   const profile = unitProfile(a, unit, entry);
-  const size = unit.size ?? entry?.size;
-  return `<article class="card"><div class="split"><h3>${escape(unit.name)}</h3>${badge(unit.status)}</div><p class="meta">${escape(unit.warscroll || unit.type)} · ${fmt(unit.points)} pts</p>
+  const size = Ledger.unitSize(unit, entry?.size);
+  return `<article class="card"><div class="split"><h3>${escape(unit.name)}</h3><div class="actions">${unit.reinforced ? badge('Reinforced') : ''}${badge(unit.status)}</div></div><p class="meta">${escape(unit.warscroll || unit.type)} · ${fmt(Ledger.unitPoints(unit))} pts</p>
     <p class="facts meta">${size ? `<span><strong>${fmt(size)}</strong> ${size === 1 ? 'model' : 'models'}</span>` : ''}<span><strong>${fmt(renown)}</strong> Renown</span>${unit.rank ? `<span>${escape(unit.rank)}</span>` : ''}${unit.path ? `<span>${escape(unit.path)}</span>` : ''}</p>
     ${span('Enhancements', unit.enhancements)}${span('Scars', unit.scars)}${unit.notes ? `<p class="meta copy">${escape(unit.notes)}</p>` : ''}
     ${profile ? `<p class="meta">${Object.entries(Ledger.profileStats).filter(([key]) => profile[key]).map(([key, label]) => `${escape(profile[key])} ${label}`).join(' · ')}</p>` : ''}
@@ -64,13 +64,17 @@ function unitForm(a, existing) {
   formDialog(existing ? `Edit ${u.name}` : `Add unit to ${a.name}`,
     field('Warscroll', 'warscroll', u.warscroll, { list: 'roster-profiles', placeholder: 'Choose a profile or enter a name' }) + profileOptions + field('Unit name', 'name', u.name, { required: true }) +
     `<div class="full" id="unit-catalogue-values" hidden><div class="actions"><p class="meta" id="unit-catalogue-summary"></p><button type="button" class="button secondary" id="apply-unit-catalogue">Apply listed values</button></div></div>` +
-    select('Category', 'type', categories, u.type || 'Infantry') + field('Points', 'points', u.points ?? 0, { type: 'number', min: 0 }) +
-    field('Unit size (models)', 'size', u.size ?? entry?.size ?? '', { type: 'number', min: 1 }) + field('Base Renown', 'renown', u.renown ?? 0, { type: 'number', min: 0 }) +
+    select('Category', 'type', categories, u.type || 'Infantry') + field('Base points', 'points', u.points ?? 0, { type: 'number', min: 0 }) +
+    field('Base model count', 'size', u.size ?? entry?.size ?? '', { type: 'number', min: 1 }) + field('Base Renown', 'renown', u.renown ?? 0, { type: 'number', min: 0 }) +
+    `<div class="full reinforcement"><label><input type="checkbox" name="reinforced" value="on"${u.reinforced ? ' checked' : ''}> Reinforced</label><p class="meta" id="unit-totals" aria-live="polite"></p></div>` +
     select('Status', 'status', Ledger.unitStatuses, u.status || 'Active') + field('Rank', 'rank', u.rank) + field('Path', 'path', u.path) +
     profileEditorFields(!initialProfile) + area('Enhancement notes', 'enhancements', u.enhancements) + area('Scars and injuries', 'scars', u.scars) + area('Unit notes', 'notes', u.notes), v => {
     const { type, status, rank, path, enhancements, scars, notes } = v;
-    const values = { type, status, rank, path, enhancements, scars, notes, name: required(v.name, 'Unit name'), warscroll: v.warscroll.trim(), points: whole(v.points, 'Points', 0),
-      size: v.size === '' ? null : whole(v.size, 'Unit size', 1), renown: whole(v.renown, 'Base Renown', 0), profileEdits: profileEditor.changes() };
+    const reinforced = v.reinforced === 'on';
+    const size = v.size === '' ? null : whole(v.size, 'Base model count', 1);
+    if (reinforced && size === null) throw new Error('Enter the base model count for a reinforced unit.');
+    const values = { type, status, rank, path, enhancements, scars, notes, name: required(v.name, 'Unit name'), warscroll: v.warscroll.trim(), points: whole(v.points, 'Base points', 0),
+      size, reinforced, renown: whole(v.renown, 'Base Renown', 0), profileEdits: profileEditor.changes() };
     if (existing) Object.assign(existing, values);
     else a.units.push({ id: Ledger.id(), ...values });
     return ['Unit saved.', 'warbands'];
@@ -78,6 +82,17 @@ function unitForm(a, existing) {
   const form = dialog.querySelector('#editor-form');
   const fields = form.elements;
   profileEditor = attachProfileEditor(form, initialProfile, u.profileEdits);
+  const total = form.querySelector('#unit-totals');
+  const refreshTotals = () => {
+    const reinforced = fields.reinforced.checked;
+    const draft = { reinforced, points: Math.max(0, Ledger.integer(fields.points.value)), size: Ledger.integer(fields.size.value) || null };
+    const size = Ledger.unitSize(draft);
+    fields.size.required = reinforced;
+    total.textContent = [`Total ${fmt(Ledger.unitPoints(draft))} pts`, size > 0 ? modelCount(size) : reinforced ? 'Enter the base model count' : ''].filter(Boolean).join(' · ');
+  };
+  fields.reinforced.addEventListener('change', refreshTotals);
+  fields.points.addEventListener('input', refreshTotals);
+  fields.size.addEventListener('input', refreshTotals);
   let suggestedName = '';
   const selected = () => unitCatalogueEntry(a, { warscroll: fields.warscroll.value, name: fields.name.value });
   const apply = record => {
@@ -97,6 +112,7 @@ function unitForm(a, existing) {
     profileEditor.rebase(referenceUnitProfile(a, current, record));
     form.querySelector('#unit-catalogue-values').hidden = !record;
     form.querySelector('#unit-catalogue-summary').textContent = record ? `${fmt(record.points)} listed points · ${modelCount(record.size)}${record.kind ? ` · ${record.kind}` : ''}` : '';
+    refreshTotals();
   };
   fields.warscroll.addEventListener('change', () => {
     if (!existing) apply(selected());

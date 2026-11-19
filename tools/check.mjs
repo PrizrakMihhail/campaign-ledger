@@ -74,15 +74,35 @@ assert.match(app.run('profileEditorFields(true)'), /Add Path upgrade/);
 app.run('viewWarbandDatacards(activeArmy(), checkedUnit)');
 assert.match(app.elements.get('#dialog').innerHTML, /Test Path upgrade/);
 
+app.run(`
+  checkedUnit.points = 120;
+  checkedUnit.size = 5;
+  const baseRosterPoints = Ledger.points(activeArmy());
+  checkedUnit.reinforced = true;
+`);
+assert.equal(app.run('Ledger.unitPoints(checkedUnit)'), 240);
+assert.equal(app.run('Ledger.unitSize(checkedUnit)'), 10);
+assert.equal(app.run('Ledger.points(activeArmy()) - baseRosterPoints'), 120);
+assert.match(app.run('unitCard(activeArmy(), checkedUnit)'), /Reinforced[\s\S]*240 pts[\s\S]*10<\/strong> models/);
+const reinforcedCards = app.run('warbandDatacards(CampaignStore.data.campaign, activeArmy(), CampaignStore.data.battles)');
+assert.match(reinforcedCards, /Reinforced[\s\S]*Points<\/dt><dd>240<\/dd>[\s\S]*Models<\/dt><dd>10<\/dd>/);
+assert.deepEqual(JSON.parse(app.run(`JSON.stringify(Ledger.normalize(CampaignStore.data).armies[0].units[0])`)),
+  JSON.parse(app.run('JSON.stringify(checkedUnit)')));
+app.run('checkedUnit.reinforced = false');
+assert.equal(app.run('Ledger.points(activeArmy()) - baseRosterPoints'), 0);
+assert.equal(app.run('Ledger.unitSize(checkedUnit)'), 5);
+
 const legacy = JSON.parse(app.run('JSON.stringify(Ledger.sample())'));
 legacy.version = 1;
 legacy.campaign.name = 'Migration example';
 delete legacy.armies[0].units[0].profileEdits;
+delete legacy.armies[0].units[0].reinforced;
 const key = 'ptg_campaign_ledger_v2';
 const saved = new Map([['ptg_campaign_ledger_v1', JSON.stringify(legacy)]]);
 const migrated = boot({ saved });
 assert.equal(migrated.run('CampaignStore.data.campaign.name'), legacy.campaign.name);
 assert.equal(JSON.parse(saved.get(key)).version, 2);
+assert.equal(migrated.run('activeArmy().units[0].reinforced'), false);
 
 const external = JSON.parse(saved.get(key));
 external.campaign.name = 'Edited in another tab';
@@ -94,4 +114,4 @@ assert.equal(migrated.run('CampaignStore.save()'), false);
 assert.equal(migrated.run('CampaignStore.conflict'), true);
 assert.equal(JSON.parse(saved.get(key)).sample, false);
 
-console.log('Passed script startup, asset paths, six screens, datacard export, backup migration, and cross-tab storage checks.');
+console.log('Passed script startup, asset paths, six screens, datacard export, reinforcement, backup migration, and cross-tab storage checks.');

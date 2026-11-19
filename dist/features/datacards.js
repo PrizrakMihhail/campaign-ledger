@@ -44,14 +44,14 @@ function profileContent(profile, printControls) {
 function datacard(profile, unit, renown, entry, printControls = false) {
   const name = unit?.name || entry?.name || profile.name;
   const category = profile?.category || entry?.category || unit.type;
-  const points = unit?.points ?? entry?.points;
-  const size = unit?.size ?? entry?.size;
+  const points = unit ? Ledger.unitPoints(unit) : entry?.points;
+  const size = unit ? Ledger.unitSize(unit, entry?.size) : entry?.size;
   const metrics = cardFacts([['Points', points === undefined ? '' : fmt(points)], ['Models', size ? fmt(size) : ''], ['Renown', unit ? fmt(renown) : '']]);
   const metainfo = unit ? cardFacts([['Warscroll', unit.warscroll || (profile?.name !== name ? profile?.name : '')], ['Rank', unit.rank], ['Path', unit.path]]) : '';
   const details = unit ? [['Enhancements and abilities', unit.enhancements], ['Scars and injuries', unit.scars], ['Unit notes', unit.notes]]
     .filter(([, value]) => value?.trim()).map(([label, value]) => `<section class="dc-detail"><h3>${label}</h3><p>${escape(value)}</p></section>`).join('') : '';
   return `<article class="datacard"${unit?.status === 'Retired' ? ' data-retired' : ''}>
-    <header class="dc-title"><div><p class="dc-label">${[category, entry?.kind].filter(Boolean).map(escape).join(' · ')}</p><h2>${escape(name)}</h2></div>${unit ? `<span class="dc-status">${escape(unit.status)}</span>` : ''}</header>
+    <header class="dc-title"><div><p class="dc-label">${[category, entry?.kind, unit?.reinforced ? 'Reinforced' : ''].filter(Boolean).map(escape).join(' · ')}</p><h2>${escape(name)}</h2></div>${unit ? `<span class="dc-status">${escape(unit.status)}</span>` : ''}</header>
     ${printControls ? printChoice('Print card', name) : ''}
     ${metrics ? `<dl class="dc-metrics">${metrics}</dl>` : ''}
     ${profileContent(profile, printControls)}

@@ -56,6 +56,7 @@ const Ledger = (() => {
       units: records(a.units, u => ({
         name: str(u.name) || 'Unnamed unit', warscroll: str(u.warscroll), type: str(u.type) || 'Other',
         points: Math.max(0, integer(u.points)), size: Math.max(0, integer(u.size)) || null, renown: integer(u.renown), rank: str(u.rank), path: str(u.path),
+        reinforced: u.reinforced === true,
         status: choice(u.status, unitStatuses, 'Active'), enhancements: str(u.enhancements), scars: str(u.scars), notes: str(u.notes),
         profileEdits: normalizeProfileEdits(u.profileEdits),
       })),
@@ -172,7 +173,13 @@ const Ledger = (() => {
     });
   }
 
-  const points = army => army.units.reduce((sum, unit) => sum + (unit.status === 'Retired' ? 0 : unit.points), 0);
+  const unitMultiplier = unit => unit.reinforced === true ? 2 : 1;
+  const unitPoints = unit => unit.points * unitMultiplier(unit);
+  const unitSize = (unit, catalogueSize = null) => {
+    const baseSize = unit.size ?? catalogueSize;
+    return baseSize === null ? null : baseSize * unitMultiplier(unit);
+  };
+  const points = army => army.units.reduce((sum, unit) => sum + (unit.status === 'Retired' ? 0 : unitPoints(unit)), 0);
   const participants = battle => [battle.armyId, battle.opponentArmyId].filter(Boolean);
   const signed = value => value > 0 ? `+${value.toLocaleString()}` : value.toLocaleString();
 
@@ -216,5 +223,5 @@ const Ledger = (() => {
   }
 
   return { packs, resultOptions, unitStatuses, questStatuses, categories, profileStats, weaponFields, normalizeProfileEdits, profileDefaults, profileAbilityEdits, profileChanges, validColor, integer, id, date, dateOrder,
-    blank, normalize, sample, points, participants, signed, balance, transactions, unitHistory, battleRenown, record, resultFor };
+    blank, normalize, sample, unitPoints, unitSize, points, participants, signed, balance, transactions, unitHistory, battleRenown, record, resultFor };
 })();
