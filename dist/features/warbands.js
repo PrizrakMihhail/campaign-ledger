@@ -60,32 +60,33 @@ function unitForm(a, existing, { anvilHero = false } = {}) {
   const entry = existing && unitCatalogueEntry(a, existing);
   const initialProfile = existing ? referenceUnitProfile(a, u, entry) : undefined;
   let profileEditor;
-  let readAnvil;
+  let anvilEditor;
   const title = existing ? `Edit ${u.name}` : usesAnvil ? 'Add Anvil of Apotheosis hero' : `Add unit to ${a.name}`;
   const typeField = usesAnvil ? '<input type="hidden" name="type" value="Hero">' : select('Unit type', 'type', Ledger.unitTypes, existing ? Ledger.unitType(u.type) : 'Infantry');
+  const warscrollField = usesAnvil ? anvilWarscrollField(u.warscroll) : textPicker('Warscroll', 'warscroll', u.warscroll, { full: true });
+  const pointsLabel = usesAnvil ? 'Battle point cost' : 'Base points';
   formDialog(title,
-    textPicker('Warscroll', 'warscroll', u.warscroll, { full: true }) + field('Unit name', 'name', u.name, { required: true }) +
+    warscrollField + field('Unit name', 'name', u.name, { required: true }) +
     `<div class="full" id="unit-catalogue-values" hidden><div class="actions"><p class="meta" id="unit-catalogue-summary"></p><button type="button" class="button secondary" id="apply-unit-catalogue">Apply listed values</button></div></div>` +
-    typeField + field('Base points', 'points', u.points ?? 0, { type: 'number', min: 0 }) +
+    typeField + field(pointsLabel, 'points', u.points ?? 0, { type: 'number', min: 0 }) +
     field('Base model count', 'size', u.size ?? entry?.size ?? '', { type: 'number', min: 1 }) + field('Base Renown', 'renown', u.renown ?? 0, { type: 'number', min: 0 }) +
     `<div class="full reinforcement"><label><input type="checkbox" name="reinforced" value="on"${u.reinforced ? ' checked' : ''}> Reinforced</label><p class="meta" id="unit-totals" aria-live="polite"></p></div>` +
     select('Status', 'status', Ledger.unitStatuses, u.status || 'Active') + field('Rank', 'rank', u.rank) + field('Path', 'path', u.path) +
-    (usesAnvil ? anvilFields(u.anvil) : '') + profileEditorFields(!initialProfile) + area('Enhancement notes', 'enhancements', u.enhancements) + area('Scars and injuries', 'scars', u.scars) + area('Unit notes', 'notes', u.notes), v => {
+    (usesAnvil ? anvilFields(u.anvil) : '') + profileEditorFields(!initialProfile) + area('Enhancement notes', 'enhancements', u.enhancements) + area('Scars and injuries', 'scars', u.scars) + area('Unit notes', 'notes', u.notes), (v, form) => {
     const { type, status, rank, path, enhancements, scars, notes } = v;
     const reinforced = v.reinforced === 'on';
     const size = v.size === '' ? null : whole(v.size, 'Base model count', 1);
     if (reinforced && size === null) throw new Error('Enter the base model count for a reinforced unit.');
-    const values = { type: usesAnvil ? 'Hero' : Ledger.unitType(type), status, rank, path, enhancements, scars, notes, name: required(v.name, 'Unit name'), warscroll: v.warscroll.trim(), points: whole(v.points, 'Base points', 0),
-      size, reinforced, renown: whole(v.renown, 'Base Renown', 0), profileEdits: profileEditor.changes(), anvil: readAnvil?.() ?? null };
+    const values = { type: usesAnvil ? 'Hero' : Ledger.unitType(type), status, rank, path, enhancements, scars, notes, name: required(v.name, 'Unit name'), warscroll: form.elements.warscroll.value.trim(), points: whole(v.points, pointsLabel, 0),
+      size, reinforced, renown: whole(v.renown, 'Base Renown', 0), profileEdits: profileEditor.changes(), anvil: anvilEditor?.read() ?? null };
     if (existing) Object.assign(existing, values);
     else a.units.push({ id: Ledger.id(), ...values });
     return ['Unit saved.', 'warbands'];
-  }, { label: usesAnvil ? 'Save hero' : 'Save unit', remove, description: usesAnvil ? 'Enter your build choices below. Base points are the hero’s roster cost.' : history ? `Battle history contributes ${Ledger.signed(history)} Renown to this unit’s total.` : 'Use base Renown for progress earned before you began logging battles here.' });
+  }, { label: usesAnvil ? 'Save hero' : 'Save unit', remove, description: usesAnvil ? 'Choose a warscroll to fill in the starting battle point cost and Destiny Point limit.' : history ? `Battle history contributes ${Ledger.signed(history)} Renown to this unit’s total.` : 'Use base Renown for progress earned before you began logging battles here.' });
   const form = dialog.querySelector('#editor-form');
   const fields = form.elements;
-  const catalogue = BattleCatalogue.list(a.faction).filter(entry => !usesAnvil || entry.category === 'Hero');
-  mountTextPicker(form, 'warscroll', catalogue.map(entry => ({ ...entry, detail: [fmt(entry.points) + ' pts', modelCount(entry.size), entry.kind].filter(Boolean).join(' · ') })));
-  if (usesAnvil) readAnvil = mountAnvilEditor(form, u.anvil);
+  if (usesAnvil) anvilEditor = mountAnvilEditor(form, u.anvil);
+  else mountTextPicker(form, 'warscroll', BattleCatalogue.list(a.faction).map(entry => ({ ...entry, detail: [fmt(entry.points) + ' pts', modelCount(entry.size), entry.kind].filter(Boolean).join(' · ') })));
   profileEditor = attachProfileEditor(form, initialProfile, u.profileEdits);
   const total = form.querySelector('#unit-totals');
   const refreshTotals = () => {
@@ -123,7 +124,13 @@ function unitForm(a, existing, { anvilHero = false } = {}) {
     refreshTotals();
   };
   fields.warscroll.addEventListener('change', () => {
-    if (!existing) {
+    if (usesAnvil) {
+      const preset = anvilWarscrolls.get(fields.warscroll.value);
+      if (preset) {
+        fields.points.value = preset.points;
+        anvilEditor.setLimit(preset.limit);
+      }
+    } else if (!existing) {
       const record = selected();
       if (record) apply(record);
       else suggestUnitName(fields.warscroll.value.trim());

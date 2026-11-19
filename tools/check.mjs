@@ -112,6 +112,14 @@ assert.deepEqual([...stageField.matchAll(/<option value="([^"]+)"(?: selected)?>
 assert.match(stageField, /<option value="" selected disabled>Choose a stage<\/option>/);
 assert.match(app.run(`anvilStageField('anvil-choice-1-stage', 'battle mount')`), /<option value="Battle Mount" selected>/);
 assert.match(app.run(`anvilStageField('anvil-choice-1-stage','Legacy & stage')`), /<option value="Legacy &amp; stage" selected disabled>/);
+const anvilPresets = [
+  ['Anvil of Apotheosis - Novice', { limit: 10, points: 150 }],
+  ['Anvil of Apotheosis - Veteran', { limit: 30, points: 250 }],
+  ['Anvil of Apotheosis - Lord', { limit: 50, points: 350 }],
+];
+assert.deepEqual(JSON.parse(app.run('JSON.stringify([...anvilWarscrolls])')), anvilPresets);
+assert.deepEqual([...app.run('anvilWarscrollField()').matchAll(/<option value="([^"]+)">/g)].map(match => match[1]), anvilPresets.map(([name]) => name));
+assert.match(app.run(`anvilWarscrollField('Previous custom hero')`), /<option value="Previous custom hero" selected disabled>/);
 app.run(`checkedUnit.type = 'Hero';
   checkedUnit.anvil = Ledger.normalizeAnvil({ limit: 20, rules: 'Campaign variant', choices: [
     { stage: 'Origin', name: 'Stone-born', cost: 4, notes: 'Original origin' },
@@ -122,6 +130,11 @@ assert.equal(app.run('Ledger.unitPoints(checkedUnit)'), 120);
 assert.match(app.run('anvilSummary(checkedUnit.anvil)'), /2 \/ 20 Destiny Points spent · 18 remaining/);
 assert.match(app.run('warbandDatacards(CampaignStore.data.campaign, activeArmy(), CampaignStore.data.battles)'), /Anvil of Apotheosis[\s\S]*Stone-born[\s\S]*Oathbound/);
 assert.equal(app.run('JSON.stringify(Ledger.normalize(CampaignStore.data).armies[0].units[0].anvil)'), app.run('JSON.stringify(checkedUnit.anvil)'));
+app.run(`checkedUnit.warscroll = 'Anvil of Apotheosis - Veteran'; checkedUnit.points = 260; checkedUnit.anvil.limit = 32;`);
+assert.deepEqual(JSON.parse(app.run(`JSON.stringify((() => {
+  const hero = Ledger.normalize(CampaignStore.data).armies[0].units[0];
+  return [hero.warscroll, hero.points, hero.anvil.limit];
+})())`)), ['Anvil of Apotheosis - Veteran', 260, 32]);
 assert.equal(app.run('Ledger.normalizeAnvil({ limit: "" }).limit'), null);
 
 const legacy = JSON.parse(app.run('JSON.stringify(Ledger.sample())'));

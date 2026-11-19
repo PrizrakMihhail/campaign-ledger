@@ -1,12 +1,25 @@
 'use strict';
 
 const anvilStages = ['Archetype', 'Origin', 'Flaw', 'Battle Mount', 'Battle Mount Upgrades', 'Other Upgrades'];
+const anvilWarscrolls = new Map([
+  ['Anvil of Apotheosis - Novice', { limit: 10, points: 150 }],
+  ['Anvil of Apotheosis - Veteran', { limit: 30, points: 250 }],
+  ['Anvil of Apotheosis - Lord', { limit: 50, points: 350 }],
+]);
 
-function anvilStageField(key, stage = '') {
-  const options = [['', 'Choose a stage', true], ...anvilStages];
-  const selected = anvilStages.find(option => option.toLowerCase() === stage.toLowerCase()) ?? stage;
-  if (selected && !anvilStages.includes(selected)) options.push([selected, `${selected} (saved)`, true]);
-  return select('Stage', key, options, selected);
+function anvilOptionField(label, key, labels, placeholder, value = '') {
+  const options = [['', placeholder, true], ...labels];
+  const selected = labels.find(option => option.toLowerCase() === value.toLowerCase()) ?? value;
+  if (selected && !labels.includes(selected)) options.push([selected, `${selected} (saved)`, true]);
+  return select(label, key, options, selected);
+}
+
+function anvilStageField(key, stage) {
+  return anvilOptionField('Stage', key, anvilStages, 'Choose a stage', stage);
+}
+
+function anvilWarscrollField(warscroll) {
+  return `<div class="full">${anvilOptionField('Warscroll', 'warscroll', [...anvilWarscrolls.keys()], 'Choose an Anvil warscroll', warscroll)}</div>`;
 }
 
 function anvilFields(anvil) {
@@ -78,7 +91,13 @@ function mountAnvilEditor(form, saved) {
   });
   addChoice.addEventListener('click', () => row().querySelector('select').focus());
   refresh();
-  return () => Ledger.normalizeAnvil(read());
+  return {
+    read: () => Ledger.normalizeAnvil(read()),
+    setLimit(value) {
+      limit.value = value;
+      refresh();
+    },
+  };
 }
 
 function anvilCard(anvil) {
