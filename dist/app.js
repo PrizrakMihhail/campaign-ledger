@@ -531,7 +531,7 @@ function unitCatalogueEntry(warband, unit) {
   const canonical = BattleCatalogue.groupName(warband.faction) === 'Khazalite Holds' ? WarbandProfiles.find(name)?.name : undefined;
   return BattleCatalogue.find(warband.faction, canonical || name);
 }
-const catalogueProfile = entry => entry.faction === 'Khazalite Holds' ? WarbandProfiles.find(entry.name) || entry.profile : entry.profile;
+const catalogueProfile = entry => entry.profile || (entry.faction === 'Khazalite Holds' ? WarbandProfiles.find(entry.name) : undefined);
 const unitProfile = (warband, unit, entry) => entry ? catalogueProfile(entry) : BattleCatalogue.groupName(warband.faction) === 'Khazalite Holds' ? WarbandProfiles.find(unitWarscroll(unit)) : undefined;
 const modelCount = size => `${fmt(size)} ${size === 1 ? 'model' : 'models'}`;
 const cardFacts = pairs => pairs.filter(([, value]) => value !== '' && value != null)
@@ -554,7 +554,7 @@ function profileContent(profile) {
   return `<dl class="dc-stats">${cardFacts(stats)}</dl>${weaponProfiles('Ranged weapons', profile.ranged, true)}${weaponProfiles('Melee weapons', profile.melee)}
     ${profile.abilities?.length ? `<section class="dc-detail"><h3>Ability reference</h3><p>${profile.abilities.map(escape).join(' · ')}</p></section>` : ''}
     ${profile.keywords?.length ? `<section class="dc-detail"><h3>Keywords</h3><p>${profile.keywords.map(escape).join(' · ')}</p></section>` : ''}
-    <p class="dc-source">${profile.url ? `<a href="${escape(profile.url)}" target="_blank" rel="noopener noreferrer">Wahapedia warscroll</a> · ${escape(BattleCatalogue.warscrollDate)}` : `${escape(WarbandProfiles.source)} · p. ${profile.page}`}</p>`;
+    <p class="dc-source">${profile.url ? `<a href="${escape(profile.url)}" target="_blank" rel="noopener noreferrer">Wahapedia warscroll</a> · ${profile.retrieved ? 'Retrieved ' + escape(profile.retrieved) : escape(BattleCatalogue.warscrollDate)}` : `${escape(WarbandProfiles.source)} · p. ${profile.page}`}</p>`;
 }
 
 function datacard(profile, unit, renown, entry) {
@@ -624,7 +624,7 @@ function viewProfileLibrary(reset = false) {
     libraryFilters = { group: BattleCatalogue.groupName(activeArmy()?.faction) || 'Khazalite Holds', query: '' };
   }
   viewDialog('Unit profile library', `<style>${datacardStyles}</style>
-    <p class="meta">Battle Profiles · ${escape(BattleCatalogue.edition)}. Linked characteristics and weapon profiles use the <a href="https://wahapedia.ru/aos4/the-rules/data-export/" target="_blank" rel="noopener noreferrer">Wahapedia export</a> where available.</p>
+    <p class="meta">Battle Profiles · ${escape(BattleCatalogue.edition)}. Datacards link to the matching warscroll source where available.</p>
     <div class="filter-row">${field('Search units', 'catalogue-query', libraryFilters.query, { type: 'search' })}${select('Faction or collection', 'catalogue-group', BattleCatalogue.groups, libraryFilters.group)}</div>
     <div id="catalogue-results"></div>`, '', true);
   const results = dialog.querySelector('#catalogue-results');

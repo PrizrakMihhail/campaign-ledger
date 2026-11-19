@@ -9,9 +9,11 @@ const BattleCatalogue = (() => {
   const byGroup = new Map(allGroups.map(group => [group, []]));
   const byName = new Map();
   for (const entry of entries) {
-    const lookup = `${key(entry.faction)}:${key(entry.name)}`;
     byGroup.get(entry.faction).push(entry);
-    byName.set(lookup, byName.has(lookup) ? null : entry);
+    for (const name of new Set([entry.name, ...(entry.aliases || [])].map(key))) {
+      const lookup = `${key(entry.faction)}:${name}`;
+      byName.set(lookup, byName.has(lookup) ? null : entry);
+    }
   }
   for (const list of byGroup.values()) list.sort((a, b) => a.name.localeCompare(b.name));
 
