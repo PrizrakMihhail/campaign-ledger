@@ -565,12 +565,26 @@ function weaponProfiles(title, rows, ranged = false) {
   return `<table class="dc-weapons"><caption>${title}</caption><thead><tr><th scope="col">Weapon</th>${head}</tr></thead><tbody>${body}</tbody></table>`;
 }
 
-function profileContent(profile) {
+function printChoice(label, name) {
+  return `<label class="dc-print-choice"><input type="checkbox" checked aria-label="${escape(`${label}: ${name}`)}"> ${label}</label>`;
+}
+
+function abilityCard(ability, printControls) {
+  const timing = ability.timing || '';
+  const phase = timing.toLowerCase().match(/\b(hero|movement|shooting|charge|combat|deployment|passive|end)\b/)?.[1] || '';
+  return `<section class="dc-ability" data-phase="${phase}">
+    ${printControls ? printChoice('Print ability', ability.name) : ''}
+    ${timing ? `<p class="dc-timing">${escape(timing)}</p>` : ''}
+    <h3>${escape(ability.name)}</h3>
+    ${ability.kind === 'Path upgrade' ? '<p class="dc-upgrade">Path upgrade</p>' : ''}
+    ${ability.effect ? `<p class="dc-effect">${escape(ability.effect)}</p>` : ''}
+  </section>`;
+}
+
+function profileContent(profile, printControls) {
   if (!profile) return '';
   const stats = cardFacts([...Object.entries(Ledger.profileStats).map(([key, label]) => [label, profile[key]]), ['Banishment', profile.banishment], ['Summon', profile.summon]]);
-  const abilities = profile.abilityDetails?.map(ability => `<section class="dc-detail"><h3>${escape(ability.name)}</h3>
-    ${ability.kind === 'Path upgrade' || ability.timing ? `<p class="dc-ability-meta">${[ability.kind === 'Path upgrade' ? ability.kind : '', ability.timing].filter(Boolean).map(escape).join(' · ')}</p>` : ''}
-    ${ability.effect ? `<p>${escape(ability.effect)}</p>` : ''}</section>`).join('');
+  const abilities = profile.abilityDetails?.map(ability => abilityCard(ability, printControls)).join('');
   const reference = profile.url ? `<a href="${escape(profile.url)}" target="_blank" rel="noopener noreferrer">Wahapedia warscroll</a> · ${profile.retrieved ? 'Retrieved ' + escape(profile.retrieved) : escape(BattleCatalogue.warscrollDate)}` : profile.page ? `${escape(WarbandProfiles.source)} · p. ${profile.page}` : '';
   return `${stats ? `<dl class="dc-stats">${stats}</dl>` : ''}${weaponProfiles('Ranged weapons', profile.ranged, true)}${weaponProfiles('Melee weapons', profile.melee)}
     ${abilities ?? (profile.abilities?.length ? `<section class="dc-detail"><h3>Ability reference</h3><p>${profile.abilities.map(escape).join(' · ')}</p></section>` : '')}
@@ -578,7 +592,7 @@ function profileContent(profile) {
     ${profile.customized || reference ? `<p class="dc-source">${profile.customized ? 'Customized profile' : ''}${profile.customized && reference ? ' · Base profile from ' : ''}${reference}</p>` : ''}`;
 }
 
-function datacard(profile, unit, renown, entry) {
+function datacard(profile, unit, renown, entry, printControls = false) {
   const name = unit?.name || entry?.name || profile.name;
   const category = profile?.category || entry?.category || unit.type;
   const points = unit?.points ?? entry?.points;
@@ -589,8 +603,9 @@ function datacard(profile, unit, renown, entry) {
     .filter(([, value]) => value?.trim()).map(([label, value]) => `<section class="dc-detail"><h3>${label}</h3><p>${escape(value)}</p></section>`).join('') : '';
   return `<article class="datacard"${unit?.status === 'Retired' ? ' data-retired' : ''}>
     <header class="dc-title"><div><p class="dc-label">${[category, entry?.kind].filter(Boolean).map(escape).join(' · ')}</p><h2>${escape(name)}</h2></div>${unit ? `<span class="dc-status">${escape(unit.status)}</span>` : ''}</header>
+    ${printControls ? printChoice('Print card', name) : ''}
     ${metrics ? `<dl class="dc-metrics">${metrics}</dl>` : ''}
-    ${profileContent(profile)}
+    ${profileContent(profile, printControls)}
     ${metainfo ? `<dl class="dc-details">${metainfo}</dl>` : ''}${details}
     ${entry ? `<p class="dc-source">Battle Profiles · ${escape(BattleCatalogue.edition)} · p. ${entry.page}</p>` : ''}</article>`;
 }
@@ -620,22 +635,29 @@ const datacardStyles = `
   .dc-details { display: flex; flex-wrap: wrap; gap: 8px 15px; padding-top: 10px; font-size: .9rem; }
   .dc-detail { border-top: 1px solid #c6d0c5; padding-top: 7px; margin-top: 9px; }
   .dc-detail p { white-space: pre-wrap; margin-top: 3px; line-height: 1.36; font-size: .88rem; }
-  .dc-detail .dc-ability-meta { color: #3d5a50; font-size: .78rem; font-weight: 700; }
+  .dc-ability { --phase-ink: #39574a; border: 1px solid #c6d0c5; border-inline-start: 3px solid var(--phase-ink); border-radius: 4px; padding: 8px 10px; margin-top: 10px; }
+  .dc-ability[data-phase="shooting"], .dc-ability[data-phase="movement"] { --phase-ink: #285a76; }
+  .dc-ability[data-phase="charge"], .dc-ability[data-phase="combat"] { --phase-ink: #813d31; }
+  .dc-ability[data-phase="hero"], .dc-ability[data-phase="end"] { --phase-ink: #645081; }
+  .dc-ability .dc-timing { color: var(--phase-ink); font-size: .76rem; font-weight: 750; margin-bottom: 3px; }
+  .dc-ability h3 { font: 700 1rem/1.2 Georgia, serif; }
+  .dc-ability .dc-upgrade { display: inline-block; border: 1px solid #a39777; color: #574824; border-radius: 3px; padding: 1px 4px; font-size: .74rem; margin-top: 5px; }
+  .dc-ability .dc-effect { white-space: pre-wrap; margin-top: 5px; line-height: 1.36; font-size: .88rem; }
   .dc-cards .dc-source { font-size: .75rem; color: #3d5a50; margin-top: 8px; }
   .dc-source a { color: #244e40; text-decoration: underline; }
 `;
 
-function warbandCardList(warband, battles, units = warband.units) {
+function warbandCardList(warband, battles, { units = warband.units, printControls = false } = {}) {
   const cards = units.map(unit => {
     const entry = unitCatalogueEntry(warband, unit);
-    return datacard(unitProfile(warband, unit, entry), unit, unitRenown(warband, unit, battles), entry);
+    return datacard(unitProfile(warband, unit, entry), unit, unitRenown(warband, unit, battles), entry, printControls);
   }).join('\n');
   return `<div class="dc-cards" style="--banner:${Ledger.validColor(warband.color)}">${cards}</div>`;
 }
 
 function viewWarbandDatacards(warband, unit) {
   viewDialog(unit ? `${unit.name} datacard` : `${warband.name} datacards`,
-    `<style>${datacardStyles}</style>${warbandCardList(warband, state.battles, unit ? [unit] : warband.units)}`,
+    `<style>${datacardStyles}</style>${warbandCardList(warband, state.battles, { units: unit ? [unit] : warband.units })}`,
     button('Export warband HTML', 'export-datacards', { glyph: 'download' }), !unit);
 }
 
@@ -697,15 +719,21 @@ function warbandDatacards(campaign, warband, battles) {
   button { align-self: start; font: inherit; font-weight: 650; color: #fff; padding: 9px 14px; border: 1px solid #25493f; border-radius: 5px; background: #25493f; cursor: pointer; }
   button:focus-visible { outline: 2px solid #25493f; outline-offset: 3px; }
   ${datacardStyles}
+  .dc-print-hint { color: #354a42; margin-bottom: 14px; }
+  .dc-print-choice { display: flex; align-items: center; gap: 6px; width: fit-content; margin: 6px 0; font-size: .8rem; }
+  .dc-print-choice input { accent-color: #25493f; margin: 0; width: 16px; height: 16px; }
+  .dc-ability > .dc-print-choice { float: inline-end; margin: 0 0 4px 8px; }
+  :is(.datacard, .dc-ability):has(> .dc-print-choice input:not(:checked)) { border-style: dashed; }
   @page { margin: 11mm; }
   @media print {
     :root, .dc-cards .datacard, .dc-stats > div, .dc-metrics > div { background: white; }
     body { max-width: none; padding: 0; font-size: 10pt; }
-    button { display: none; }
+    button, .dc-print-choice, .dc-print-hint, :is(.datacard, .dc-ability):has(> .dc-print-choice input:not(:checked)) { display: none; }
     .masthead { break-inside: avoid; margin-bottom: 4mm; padding-bottom: 3mm; }
     .masthead h1 { font-size: 22pt; }
     .dc-cards { display: block; column-count: 2; column-gap: 4mm; }
     .dc-cards .datacard { break-inside: avoid; margin: 0 0 4mm; padding: 3mm; }
+    .dc-ability { break-inside: avoid; }
     .dc-title h2 { font-size: 15pt; }
   }
 </style></head>
@@ -713,7 +741,7 @@ function warbandDatacards(campaign, warband, battles) {
 <header class="masthead"><div><p class="dc-label">Path to Glory · Campaign datacards</p><h1>${escape(warband.name)}</h1>
 <p class="warband-facts">${[campaign.name, warband.faction, warband.warlord ? `Warlord ${warband.warlord}` : '', `${fmt(Ledger.points(warband))} roster points`, warband.archived ? 'Archived' : ''].filter(Boolean).map(escape).join(' · ')}</p></div>
 <button type="button" onclick="window.print()">Print or save PDF</button></header>
-<main aria-label="Unit datacards">${warbandCardList(warband, battles)}</main></body></html>`;
+<main aria-label="Unit datacards"><p class="dc-print-hint">Uncheck a card or ability to omit it from the printout.</p>${warbandCardList(warband, battles, { printControls: true })}</main></body></html>`;
 }
 
 function exportDatacards() {
