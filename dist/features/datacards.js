@@ -100,17 +100,40 @@ const datacardStyles = `
   .dc-source a { color: #244e40; text-decoration: underline; }
 `;
 
-function warbandCardList(warband, battles, { units = warband.units, printControls = false } = {}) {
-  const cards = Ledger.sortedUnits(units, Ledger.warlord(warband)?.id).map(unit => {
+function hasWarbandDatacards(warband) {
+  return Boolean(warband && (warband.units.length || warband.lores?.some(lore => lore.entries.length)));
+}
+
+function loreDatacard(lore, entry, printControls) {
+  const labels = loreLabels[lore.kind];
+  return `<article class="datacard dc-lore-card">
+    <header class="dc-title"><div><p class="dc-label">${labels.title} · ${escape(lore.name)}</p><h2>${escape(entry.name)}</h2></div>
+    ${entry.value ? `<span class="dc-status">${labels.value} ${escape(entry.value)}</span>` : ''}</header>
+    ${printControls ? printChoice('Print card', entry.name) : ''}
+    ${[['Declare', entry.declare], ['Effect', entry.effect]].filter(([, value]) => value).map(([label, value]) =>
+      `<section class="dc-detail"><h3>${label}</h3><p>${escape(value)}</p></section>`).join('')}
+    </article>`;
+}
+
+function warbandCardList(warband, battles, { unit, printControls = false } = {}) {
+  const units = unit ? [unit] : Ledger.sortedUnits(warband.units, Ledger.warlord(warband)?.id);
+  const cards = units.map(unit => {
     const entry = unitCatalogueEntry(warband, unit);
     return datacard(unitProfile(warband, unit, entry), unit, unitRenown(warband, unit, battles), entry, printControls);
-  }).join('\n');
-  return `<div class="dc-cards" style="--banner:${Ledger.validColor(warband.color)}">${cards}</div>`;
+  });
+  if (!unit) {
+    for (const kind of Ledger.loreKinds) {
+      for (const lore of (warband.lores ?? []).filter(lore => lore.kind === kind)) {
+        for (const entry of lore.entries) cards.push(loreDatacard(lore, entry, printControls));
+      }
+    }
+  }
+  return `<div class="dc-cards" style="--banner:${Ledger.validColor(warband.color)}">${cards.join('\n')}</div>`;
 }
 
 function viewWarbandDatacards(warband, unit) {
   viewDialog(unit ? `${unit.name} datacard` : `${warband.name} datacards`,
-    `<style>${datacardStyles}</style>${warbandCardList(warband, CampaignStore.data.battles, { units: unit ? [unit] : warband.units })}`,
+    `<style>${datacardStyles}</style>${warbandCardList(warband, CampaignStore.data.battles, { unit })}`,
     button('Export warband HTML', 'export-datacards', { glyph: 'download' }), !unit);
 }
 
@@ -154,12 +177,12 @@ function warbandDatacards(campaign, warband, battles) {
 <header class="masthead"><div><p class="dc-label">Path to Glory · Campaign datacards</p><h1>${escape(warband.name)}</h1>
 <p class="warband-facts">${[campaign.name, warband.faction, warlord ? `Warlord ${Ledger.unitName(warlord)}` : '', `${fmt(Ledger.points(warband))} roster points`, warband.archived ? 'Archived' : ''].filter(Boolean).map(escape).join(' · ')}</p></div>
 <button type="button" onclick="window.print()">Print or save PDF</button></header>
-<main aria-label="Unit datacards"><p class="dc-print-hint">Uncheck a card or ability to omit it from the printout.</p>${warbandCardList(warband, battles, { printControls: true })}</main></body></html>`;
+<main aria-label="Warband datacards"><p class="dc-print-hint">Uncheck a card or ability to omit it from the printout.</p>${warbandCardList(warband, battles, { printControls: true })}</main></body></html>`;
 }
 
 function exportDatacards() {
   const warband = activeArmy();
-  if (!warband?.units.length) return;
+  if (!hasWarbandDatacards(warband)) return;
   const slug = warband.name.normalize('NFKD').toLowerCase().replace(/\p{M}/gu, '').replace(/[^a-z0-9]+/g, '-').slice(0, 72).replace(/^-|-$/g, '') || 'warband';
   downloadFile(`${slug}-datacards.html`, warbandDatacards(CampaignStore.data.campaign, warband, CampaignStore.data.battles), 'text/html;charset=utf-8');
   tell('Warband datacards downloaded.');

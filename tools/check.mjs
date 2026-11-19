@@ -86,6 +86,16 @@ assert.match(tome.run('warbands()'), /Includes 60 battle pts from Arcane Tome/);
 assert.match(tome.elements.get('#main').innerHTML, /Watchfire[\s\S]*Casting value[\s\S]*Declare<\/strong> &lt;target&gt;[\s\S]*Effect<\/strong> &lt;effect&gt;/);
 assert.match(tome.elements.get('#main').innerHTML, /Add prayer[\s\S]*Ashen Prayer[\s\S]*Chanting value[\s\S]*Add manifestation[\s\S]*Ember Spirit[\s\S]*Summoning value/);
 const reloadedTome = boot({ page: 'arcane-tome', saved: tomeSave });
+const arcaneExport = reloadedTome.run(`
+  const tomeWarband = activeArmy();
+  const loreOnlyWarband = { ...tomeWarband, units: [] };
+  warbandDatacards(CampaignStore.data.campaign, loreOnlyWarband, CampaignStore.data.battles);
+`);
+assert.equal((arcaneExport.match(/class="datacard dc-lore-card"/g) || []).length, 3);
+assert.match(arcaneExport, /Spell Lore · Ember Lore[\s\S]*Watchfire[\s\S]*Casting value 6[\s\S]*Print card[\s\S]*&lt;target&gt;[\s\S]*&lt;effect&gt;/);
+assert.match(arcaneExport, /Ashen Prayer[\s\S]*Chanting value 4[\s\S]*Ember Spirit[\s\S]*Summoning value 7/);
+assert.equal(reloadedTome.run('hasWarbandDatacards(loreOnlyWarband)'), true);
+assert.doesNotMatch(reloadedTome.run('warbandCardList(tomeWarband, CampaignStore.data.battles, { unit: tomeWarband.units[0] })'), /Watchfire/);
 assert.equal(reloadedTome.run('Ledger.lorePoints(activeArmy())'), 60);
 assert.match(reloadedTome.elements.get('#main').innerHTML, /Watchfire/);
 assert.equal(reloadedTome.run('activeArmy().lores[0].entries[0].declare'), '<target>');
