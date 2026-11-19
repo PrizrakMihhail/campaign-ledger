@@ -75,7 +75,7 @@ function attachProfileEditor(form, initialProfile, savedEdits) {
     }
   });
   root.addEventListener('invalid', event => { event.target.closest('details').open = true; }, true);
-  render(savedEdits);
+  render({ ...savedEdits, abilities: Ledger.profileAbilityEdits(initialProfile, savedEdits) });
   return {
     changes: () => Ledger.normalizeProfileEdits(changes()),
     rebase(profile) {

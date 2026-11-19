@@ -100,6 +100,7 @@ const Ledger = (() => {
       edits.abilities = value.abilities.filter(row => str(row?.name).trim()).map(row => ({
         name: row.name.trim(), timing: str(row.timing).trim(), effect: str(row.effect).trim(), kind: row.kind === 'Path upgrade' ? 'Path upgrade' : 'Ability',
       }));
+      if (value.abilityDetailsVersion === 1) edits.abilityDetailsVersion = 1;
     }
     return Object.keys(edits).length ? edits : null;
   }
@@ -107,8 +108,18 @@ const Ledger = (() => {
   function profileDefaults(profile) {
     const stats = Object.fromEntries(Object.keys(profileStats).map(key => [key, profile?.[key] || '']));
     const lists = normalizeProfileEdits({ melee: profile?.melee || [], ranged: profile?.ranged || [],
-      abilities: (profile?.abilities || []).map(name => ({ name })) });
+      abilities: profile?.abilityDetails ?? (profile?.abilities || []).map(name => ({ name })) });
     return { stats, ...lists };
+  }
+
+  function profileAbilityEdits(profile, edits) {
+    if (!edits?.abilities || edits.abilityDetailsVersion === 1 || !profile?.abilityDetails) return edits?.abilities;
+    const key = name => name.toLowerCase().trim();
+    const reference = new Map(profile.abilityDetails.map(ability => [key(ability.name), ability]));
+    return edits.abilities.map(ability => {
+      const original = ability.kind === 'Path upgrade' ? undefined : reference.get(key(ability.name));
+      return original ? { ...ability, timing: ability.timing || original.timing, effect: ability.effect || original.effect } : ability;
+    });
   }
 
   function profileChanges(base, draft) {
@@ -116,6 +127,7 @@ const Ledger = (() => {
     for (const kind of ['melee', 'ranged', 'abilities']) {
       if (JSON.stringify(draft[kind]) !== JSON.stringify(base[kind])) edits[kind] = draft[kind];
     }
+    if (edits.abilities) edits.abilityDetailsVersion = 1;
     return edits;
   }
 
@@ -203,6 +215,6 @@ const Ledger = (() => {
     return battle.result;
   }
 
-  return { packs, resultOptions, unitStatuses, questStatuses, categories, profileStats, weaponFields, normalizeProfileEdits, profileDefaults, profileChanges, validColor, integer, id, date, dateOrder,
+  return { packs, resultOptions, unitStatuses, questStatuses, categories, profileStats, weaponFields, normalizeProfileEdits, profileDefaults, profileAbilityEdits, profileChanges, validColor, integer, id, date, dateOrder,
     blank, normalize, sample, points, participants, signed, balance, transactions, unitHistory, battleRenown, record, resultFor };
 })();

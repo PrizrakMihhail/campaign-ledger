@@ -1,6 +1,7 @@
 import argparse
 import json
 import re
+from copy import deepcopy
 from datetime import date
 from pathlib import Path
 from urllib.parse import quote
@@ -52,6 +53,34 @@ def weapons(sheet):
     return groups
 
 
+def abilities(sheet):
+    entries = []
+    for body in classes(sheet, 'abBody'):
+        header, = body.getparent().xpath(f'./table[1]//*[{has_class("abHeader")}]')
+        heading, = body.xpath('./b[1]')
+        name = clean(heading.text).rstrip(':')
+        timing = text(header)
+
+        rules = deepcopy(body)
+        rules.xpath('./b[1]')[0].drop_tree()
+        for el in rules.xpath(f'.//*[{has_class("ShowFluff")}] | .//script | .//style'):
+            if el.getparent() is not None:
+                el.drop_tree()
+        for br in rules.xpath('.//br'):
+            br.tail = '\n' + (br.tail or '')
+        for divider in rules.xpath('.//div | .//p | .//ul | .//ol'):
+            divider.text = '\n' + (divider.text or '')
+            divider.tail = '\n' + (divider.tail or '')
+        for item in rules.xpath('.//li'):
+            item.text = '\n• ' + (item.text or '')
+            item.tail = '\n' + (item.tail or '')
+        effect = '\n'.join(line for part in rules.text_content().splitlines() if (line := clean(part)))
+        if not (name and timing and effect):
+            raise ValueError(f'Incomplete ability {name!r} on {sheet.xpath("./a/@id")}')
+        entries.append({'name': name, 'timing': timing, 'effect': effect, 'kind': 'Ability'})
+    return entries
+
+
 def profile(sheet, retrieved):
     stats = {}
     for field, class_name in {'move': 'wsMove', 'health': 'wsWounds', 'save': 'wsSave', 'control': 'wsBravery', 'ward': 'wsWard'}.items():
@@ -63,14 +92,15 @@ def profile(sheet, retrieved):
     anchor, = sheet.xpath('./a[@id]/@id')
     keyword_lines = classes(sheet, 'wsKeywordLine1') + classes(sheet, 'wsKeywordLine2')
     keywords = [clean(value) for node in keyword_lines for value in text(node).split(',') if clean(value)]
-    abilities = [clean(node.text) for body in classes(sheet, 'abBody') for node in body.xpath('./b[1]') if clean(node.text)]
+    details = abilities(sheet)
     return {
         **stats, 'url': SOURCE + '#' + quote(anchor, safe='-'), 'retrieved': retrieved,
-        'keywords': list(dict.fromkeys(keywords)), 'abilities': list(dict.fromkeys(abilities)), **weapons(sheet),
+        'keywords': list(dict.fromkeys(keywords)), 'abilities': list(dict.fromkeys(item['name'] for item in details)),
+        'abilityDetails': details, **weapons(sheet),
     }
 
 
-def update(catalogue, warscroll_page, retrieved):
+def update(catalogue, warscroll_page, retrieved, abilities_only):
     prefix, data = catalogue.read_text(encoding='utf-8').split('entries: ', 1)
     entries = json.loads(data.rsplit('}', 1)[0])
     root = html.fromstring(warscroll_page.read_text(encoding='utf-8-sig'))
@@ -81,6 +111,7 @@ def update(catalogue, warscroll_page, retrieved):
             by_name.setdefault(clean(headings[0].text).casefold(), []).append(sheet)
 
     linked = 0
+    ability_count = 0
     for entry in entries:
         if entry['faction'] != FACTION:
             continue
@@ -97,19 +128,28 @@ def update(catalogue, warscroll_page, retrieved):
             print(f'{name}: keeping the PDF’s {entry["points"]} points; the web page lists {numbers[2]}.')
         if name in ALIASES:
             entry['aliases'] = [ALIASES[name]]
-        entry['profile'] = profile(sheet, retrieved)
+        if abilities_only:
+            details = abilities(sheet)
+            entry['profile']['abilities'] = list(dict.fromkeys(item['name'] for item in details))
+            entry['profile']['abilityDetails'] = details
+        else:
+            entry['profile'] = profile(sheet, retrieved)
+        ability_count += len(entry['profile']['abilityDetails'])
         linked += 1
     if not linked:
         raise ValueError('No Khazalite Holds entries were found in the catalogue')
     rows = ',\n'.join('  ' + json.dumps(entry, ensure_ascii=False, separators=(',', ':')) for entry in entries)
     catalogue.write_text(prefix + 'entries: [\n' + rows + '\n] };\n', encoding='utf-8', newline='\n')
-    print(f'Linked {linked} Khazalite Holds warscrolls.')
+    print(f'Linked {ability_count} abilities across {linked} Khazalite Holds warscrolls.')
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Refresh Khazalite Holds profiles from a downloaded Wahapedia faction warscroll page.')
     parser.add_argument('catalogue', type=Path)
     parser.add_argument('warscroll_page', type=Path)
-    parser.add_argument('--retrieved', required=True, type=date.fromisoformat)
+    parser.add_argument('--retrieved', type=date.fromisoformat)
+    parser.add_argument('--abilities-only', action='store_true')
     args = parser.parse_args()
-    update(args.catalogue, args.warscroll_page, args.retrieved.isoformat())
+    if not args.abilities_only and args.retrieved is None:
+        parser.error('--retrieved is required when refreshing complete profiles')
+    update(args.catalogue, args.warscroll_page, args.retrieved.isoformat() if args.retrieved else None, args.abilities_only)

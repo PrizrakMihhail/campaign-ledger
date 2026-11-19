@@ -548,7 +548,7 @@ function unitProfile(warband, unit, entry) {
   const edits = unit.profileEdits;
   if (!edits) return reference;
   return { ...reference, ...edits.stats, melee: edits.melee ?? reference?.melee, ranged: edits.ranged ?? reference?.ranged,
-    abilityDetails: edits.abilities, customized: true };
+    abilityDetails: Ledger.profileAbilityEdits(reference, edits) ?? reference?.abilityDetails, customized: true };
 }
 const modelCount = size => `${fmt(size)} ${size === 1 ? 'model' : 'models'}`;
 const cardFacts = pairs => pairs.filter(([, value]) => value !== '' && value != null)
