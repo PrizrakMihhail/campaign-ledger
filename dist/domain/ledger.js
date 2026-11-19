@@ -19,8 +19,11 @@ const Ledger = (() => {
   const str = value => typeof value === 'string' ? value : '';
   const unitType = value => unitTypeNames.get(str(value).trim().toLowerCase()) ?? 'Other';
   const unitNameOrder = new Intl.Collator(undefined, { sensitivity: 'base' });
-  const sortedUnits = units => [...units].sort((a, b) =>
-    unitTypes.indexOf(unitType(a.type)) - unitTypes.indexOf(unitType(b.type)) || unitNameOrder.compare(a.name, b.name));
+  const unitName = unit => str(unit.name).trim() || str(unit.warscroll).trim() || 'Unnamed unit';
+  const warlord = army => army.units.find(unit => unit.id === army.warlordId && unitType(unit.type) === 'Hero');
+  const sortedUnits = (units, warlordId) => [...units].sort((a, b) =>
+    Number(b.id === warlordId && Boolean(warlordId)) - Number(a.id === warlordId && Boolean(warlordId)) ||
+    unitTypes.indexOf(unitType(a.type)) - unitTypes.indexOf(unitType(b.type)) || unitNameOrder.compare(unitName(a), unitName(b)));
   const integer = (value, fallback = 0) => Number.isSafeInteger(Number(value)) ? Number(value) : fallback;
   const id = () => globalThis.crypto?.randomUUID?.() || `${Date.now().toString(36)}-${Math.random().toString(36).slice(2)}`;
   const date = () => {
@@ -58,7 +61,7 @@ const Ledger = (() => {
   function normalizeUnit(unit) {
     const anvil = normalizeAnvil(unit.anvil);
     return {
-      name: str(unit.name) || 'Unnamed unit', warscroll: str(unit.warscroll), type: anvil ? 'Hero' : unitType(unit.type),
+      name: unitName(unit), warscroll: str(unit.warscroll), type: anvil ? 'Hero' : unitType(unit.type),
       points: Math.max(0, integer(unit.points)), size: Math.max(0, integer(unit.size)) || null, renown: integer(unit.renown),
       rank: str(unit.rank), path: str(unit.path), reinforced: unit.reinforced === true,
       status: choice(unit.status, unitStatuses, 'Active'), enhancements: str(unit.enhancements), scars: str(unit.scars), notes: str(unit.notes),
@@ -82,7 +85,7 @@ const Ledger = (() => {
     if (value.version && ![1, 2].includes(value.version)) throw new Error('This backup uses an unsupported version.');
     const c = value.campaign;
     const armies = records(value.armies, a => ({
-      name: str(a.name) || 'Unnamed warband', faction: str(a.faction), warlord: str(a.warlord),
+      name: str(a.name) || 'Unnamed warband', faction: str(a.faction), warlord: str(a.warlord), warlordId: a.warlordId == null ? null : str(a.warlordId),
       notes: str(a.notes), color: validColor(a.color), archived: a.archived === true,
       units: records(a.units, normalizeUnit),
       quests: records(a.quests, q => ({
@@ -91,6 +94,13 @@ const Ledger = (() => {
       })),
       ledger: records(a.ledger, l => ({ date: cleanDate(l.date), reason: str(l.reason), delta: integer(l.delta) })),
     }));
+    for (const army of armies) {
+      if (army.warlordId === null && army.warlord.trim()) {
+        const matches = army.units.filter(unit => unit.type === 'Hero' && unitName(unit) === army.warlord.trim());
+        if (matches.length === 1) army.warlordId = matches[0].id;
+      }
+      army.warlordId = warlord(army)?.id ?? '';
+    }
     const pack = str(c.pack) || 'Custom';
     return {
       version: 2, sample: value.sample === true,
@@ -247,6 +257,6 @@ const Ledger = (() => {
     return battle.result;
   }
 
-  return { packs, resultOptions, unitStatuses, questStatuses, unitTypes, unitType, sortedUnits, profileStats, weaponFields, normalizeProfileEdits, profileDefaults, profileAbilityEdits, profileChanges, validColor, integer, id, date, dateOrder,
+  return { packs, resultOptions, unitStatuses, questStatuses, unitTypes, unitType, unitName, warlord, sortedUnits, profileStats, weaponFields, normalizeProfileEdits, profileDefaults, profileAbilityEdits, profileChanges, validColor, integer, id, date, dateOrder,
     blank, normalize, normalizeAnvil, destinySpent, sample, unitPoints, unitSize, points, participants, signed, balance, transactions, unitHistory, battleRenown, record, resultFor };
 })();

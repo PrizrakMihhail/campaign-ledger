@@ -101,7 +101,7 @@ const datacardStyles = `
 `;
 
 function warbandCardList(warband, battles, { units = warband.units, printControls = false } = {}) {
-  const cards = Ledger.sortedUnits(units).map(unit => {
+  const cards = Ledger.sortedUnits(units, Ledger.warlord(warband)?.id).map(unit => {
     const entry = unitCatalogueEntry(warband, unit);
     return datacard(unitProfile(warband, unit, entry), unit, unitRenown(warband, unit, battles), entry, printControls);
   }).join('\n');
@@ -115,6 +115,7 @@ function viewWarbandDatacards(warband, unit) {
 }
 
 function warbandDatacards(campaign, warband, battles) {
+  const warlord = Ledger.warlord(warband);
 
   return `<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
@@ -151,7 +152,7 @@ function warbandDatacards(campaign, warband, battles) {
 </style></head>
 <body>
 <header class="masthead"><div><p class="dc-label">Path to Glory · Campaign datacards</p><h1>${escape(warband.name)}</h1>
-<p class="warband-facts">${[campaign.name, warband.faction, warband.warlord ? `Warlord ${warband.warlord}` : '', `${fmt(Ledger.points(warband))} roster points`, warband.archived ? 'Archived' : ''].filter(Boolean).map(escape).join(' · ')}</p></div>
+<p class="warband-facts">${[campaign.name, warband.faction, warlord ? `Warlord ${Ledger.unitName(warlord)}` : '', `${fmt(Ledger.points(warband))} roster points`, warband.archived ? 'Archived' : ''].filter(Boolean).map(escape).join(' · ')}</p></div>
 <button type="button" onclick="window.print()">Print or save PDF</button></header>
 <main aria-label="Unit datacards"><p class="dc-print-hint">Uncheck a card or ability to omit it from the printout.</p>${warbandCardList(warband, battles, { printControls: true })}</main></body></html>`;
 }

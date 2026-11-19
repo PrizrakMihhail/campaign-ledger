@@ -9,14 +9,15 @@ function warbands() {
   const a = activeArmy();
   if (!a) return title + empty('No warbands yet', 'Create a warband to start tracking a roster and its progress.');
   const rec = Ledger.record(CampaignStore.data, a.id);
+  const warlord = Ledger.warlord(a);
   const points = Ledger.points(a);
   const cap = CampaignStore.data.campaign.pointsLimit;
   const selector = section('Campaign warbands', CampaignStore.data.armies.map(item => warbandRow(item, 'select-warband', item.id === a.id)).join(''));
   const summary = `<section class="panel stack"><div class="split">${tile('shield', a.color)}<div class="row-main"><h2>${escape(a.name)}</h2><p class="meta">${escape(a.faction)}</p></div>${a.archived ? badge('Archived', 'retired') : ''}</div>
-    <div class="facts meta"><span><strong class="${points > cap ? 'negative' : ''}">${fmt(points)} / ${fmt(cap)}</strong> roster pts</span><span><strong>${rec.Victory}–${rec.Defeat}–${rec.Draw}</strong> W–L–D</span>${a.warlord ? `<span>Warlord · <strong>${escape(a.warlord)}</strong></span>` : ''}</div>
+    <div class="facts meta"><span><strong class="${points > cap ? 'negative' : ''}">${fmt(points)} / ${fmt(cap)}</strong> roster pts</span><span><strong>${rec.Victory}–${rec.Defeat}–${rec.Draw}</strong> W–L–D</span>${warlord ? `<span>Warlord · <strong>${escape(Ledger.unitName(warlord))}</strong></span>` : ''}</div>
     <progress class="progress" max="${cap}" value="${Math.min(points, cap)}" aria-label="Roster points reference"></progress>
     ${a.notes ? `<p class="copy muted">${escape(a.notes)}</p>` : ''}<div class="actions">${button('Edit warband', 'edit-warband')}${button(a.archived ? 'Restore warband' : 'Archive warband', 'archive-warband', { type: 'link' })}</div></section>`;
-  const units = a.units.length ? `<div class="cards">${Ledger.sortedUnits(a.units).map(unit => unitCard(a, unit)).join('')}</div>` : empty('No units on the roster', 'Add a unit to track its points, Path, and Renown.');
+  const units = a.units.length ? `<div class="cards">${Ledger.sortedUnits(a.units, warlord?.id).map(unit => unitCard(a, unit)).join('')}</div>` : empty('No units on the roster', 'Add a unit to track its points, Path, and Renown.');
   const transactions = Ledger.transactions(CampaignStore.data, a);
   const history = transactions.length ? `<div class="table-scroll"><table><thead><tr><th>Date</th><th>Reason</th><th>Change</th><th>Action</th></tr></thead><tbody>${transactions.map(t => `<tr><td class="nowrap">${makeDate(t.date)}</td><td>${escape(t.reason)}</td><td>${signed(t.delta)}</td><td>${t.manual ? button('Edit', 'edit-resource', { id: t.id }) : button('View battle', 'view-battle', { id: t.id, type: 'link' })}</td></tr>`).join('')}</tbody></table></div>` : empty('No resource changes', 'Battle rewards and manual adjustments appear here.');
   const datacardActions = a.units.length ? button('View datacards', 'view-datacards') + button('Export datacards', 'export-datacards', { glyph: 'download' }) : '';
@@ -31,7 +32,7 @@ function unitCard(a, unit) {
   const size = Ledger.unitSize(unit, entry?.size);
   const type = Ledger.unitType(unit.type);
   const summary = [type, unit.warscroll === type ? '' : unit.warscroll, `${fmt(Ledger.unitPoints(unit))} pts`].filter(Boolean).join(' · ');
-  return `<article class="card"><div class="unit-card-header"><h3>${escape(unit.name)}</h3><div class="unit-card-badges">${unit.anvil ? badge('Anvil hero', 'anvil-hero') : ''}${unit.reinforced ? badge('Reinforced') : ''}${badge(unit.status)}</div></div><p class="meta">${escape(summary)}</p>
+  return `<article class="card"><div class="unit-card-header"><h3>${escape(Ledger.unitName(unit))}</h3><div class="unit-card-badges">${Ledger.warlord(a)?.id === unit.id ? badge('Warlord') : ''}${unit.anvil ? badge('Anvil hero', 'anvil-hero') : ''}${unit.reinforced ? badge('Reinforced') : ''}${badge(unit.status)}</div></div><p class="meta">${escape(summary)}</p>
     <p class="facts meta">${size ? `<span><strong>${fmt(size)}</strong> ${size === 1 ? 'model' : 'models'}</span>` : ''}<span><strong>${fmt(renown)}</strong> Renown</span>${unit.rank ? `<span>${escape(unit.rank)}</span>` : ''}${unit.path ? `<span>${escape(unit.path)}</span>` : ''}</p>
     ${span('Enhancements', unit.enhancements)}${span('Scars', unit.scars)}${unit.notes ? `<p class="meta copy">${escape(unit.notes)}</p>` : ''}
     ${profile ? `<p class="meta">${Object.entries(Ledger.profileStats).filter(([key]) => profile[key]).map(([key, label]) => `${escape(profile[key])} ${label}`).join(' · ')}</p>` : ''}
@@ -40,9 +41,11 @@ function unitCard(a, unit) {
 
 function warbandForm(existing) {
   const a = existing || {};
+  const heroes = Ledger.sortedUnits(a.units ?? []).filter(unit => Ledger.unitType(unit.type) === 'Hero');
+  const warlordOptions = [['', heroes.length ? 'No warlord selected' : 'Add a Hero to choose a warlord'], ...heroes.map(unit => [unit.id, Ledger.unitName(unit)])];
   formDialog(existing ? 'Edit warband' : 'New warband', field('Warband name', 'name', a.name, { required: true }) + textPicker('Faction', 'faction', a.faction, { required: true }) +
-    field('Warlord or general', 'warlord', a.warlord) + field('Banner color', 'color', Ledger.validColor(a.color), { type: 'color' }) + area('Warband notes', 'notes', a.notes), v => {
-    const values = { name: required(v.name, 'Warband name'), faction: required(v.faction, 'Faction'), warlord: v.warlord.trim(), notes: v.notes.trim(), color: Ledger.validColor(v.color) };
+    select('Warlord or general', 'warlordId', warlordOptions, a.warlordId || '') + field('Banner color', 'color', Ledger.validColor(a.color), { type: 'color' }) + area('Warband notes', 'notes', a.notes), v => {
+    const values = { name: required(v.name, 'Warband name'), faction: required(v.faction, 'Faction'), warlordId: heroes.some(unit => unit.id === v.warlordId) ? v.warlordId : '', warlord: '', notes: v.notes.trim(), color: Ledger.validColor(v.color) };
     if (existing) Object.assign(existing, values);
     else {
       const id = Ledger.id();
@@ -68,7 +71,7 @@ function unitForm(a, existing, { anvilHero = false } = {}) {
   const warscrollField = usesAnvil ? anvilWarscrollField(u.warscroll) : textPicker('Warscroll', 'warscroll', u.warscroll, { full: true });
   const pointsLabel = usesAnvil ? 'Battle point cost' : 'Base points';
   formDialog(title,
-    warscrollField + field('Unit name', 'name', u.name, { required: true }) +
+    warscrollField + field('Unit name', 'name', u.name, { placeholder: 'Defaults to the warscroll name' }) +
     `<div class="full" id="unit-catalogue-values" hidden><div class="actions"><p class="meta" id="unit-catalogue-summary"></p><button type="button" class="button secondary" id="apply-unit-catalogue">Apply listed values</button></div></div>` +
     typeField + field(pointsLabel, 'points', u.points ?? 0, { type: 'number', min: 0 }) +
     field('Base model count', 'size', u.size ?? entry?.size ?? '', { type: 'number', min: 1 }) + field('Base Renown', 'renown', u.renown ?? 0, { type: 'number', min: 0 }) +
@@ -79,10 +82,12 @@ function unitForm(a, existing, { anvilHero = false } = {}) {
     const reinforced = v.reinforced === 'on';
     const size = v.size === '' ? null : whole(v.size, 'Base model count', 1);
     if (reinforced && size === null) throw new Error('Enter the base model count for a reinforced unit.');
-    const values = { type: usesAnvil ? 'Hero' : Ledger.unitType(type), status, rank, path, enhancements, scars, notes, name: required(v.name, 'Unit name'), warscroll: form.elements.warscroll.value.trim(), points: whole(v.points, pointsLabel, 0),
+    const warscroll = form.elements.warscroll.value.trim();
+    const values = { type: usesAnvil ? 'Hero' : Ledger.unitType(type), status, rank, path, enhancements, scars, notes, name: required(v.name.trim() || warscroll, 'Unit name or warscroll'), warscroll, points: whole(v.points, pointsLabel, 0),
       size, reinforced, renown: whole(v.renown, 'Base Renown', 0), profileEdits: profileEditor.changes(), anvil: anvilEditor?.read() ?? null };
     if (existing) Object.assign(existing, values);
     else a.units.push({ id: Ledger.id(), ...values });
+    if (!Ledger.warlord(a)) a.warlordId = '';
     return ['Unit saved.', 'warbands'];
   }, { label: usesAnvil ? 'Save hero' : 'Save unit', remove, description: usesAnvil ? 'Choose a warscroll to fill in the starting battle point cost and Destiny Point limit.' : history ? `Battle history contributes ${Ledger.signed(history)} Renown to this unit’s total.` : 'Use base Renown for progress earned before you began logging battles here.' });
   const form = dialog.querySelector('#editor-form');

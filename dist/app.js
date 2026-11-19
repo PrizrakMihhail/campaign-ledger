@@ -87,6 +87,7 @@ const actions = {
     const a = activeArmy();
     const u = a.units.find(unit => unit.id === id);
     removeRecord(a.units, u, `Remove ${u.name}?`, 'The unit will be removed from the roster. Its Renown awards will remain in the battle history.', () => {
+      if (a.warlordId === id) a.warlordId = '';
       for (const battle of CampaignStore.data.battles) {
         for (const award of battle.awards) if (award.armyId === a.id && award.unitId === id) award.unitName = u.name;
       }
