@@ -1,0 +1,128 @@
+'use strict';
+
+function warbandRow(a, action, selected = false) {
+  return `<div class="list-item"><button class="list-button row" type="button" data-action="${action}" data-id="${escape(a.id)}"${selected ? ' aria-current="true"' : ''}>${tile('shield', a.color)}<span class="row-main"><strong class="row-title">${escape(a.name)}</strong><span class="meta row-sub">${escape([a.faction, `${fmt(Ledger.points(a))} pts`].filter(Boolean).join(' · '))}</span></span>${a.archived ? badge('Archived', 'retired') : ''}</button></div>`;
+}
+
+function warbands() {
+  const title = heading('Warbands', 'Order of battle, unit progression, and resource ledgers.', button('Profile library', 'profile-library', { glyph: 'book' }) + add('New warband', 'new-warband'));
+  const a = activeArmy();
+  if (!a) return title + empty('No warbands yet', 'Create a warband to start tracking a roster and its progress.');
+  const rec = Ledger.record(CampaignStore.data, a.id);
+  const points = Ledger.points(a);
+  const cap = CampaignStore.data.campaign.pointsLimit;
+  const selector = section('Campaign warbands', CampaignStore.data.armies.map(item => warbandRow(item, 'select-warband', item.id === a.id)).join(''));
+  const summary = `<section class="panel stack"><div class="split">${tile('shield', a.color)}<div class="row-main"><h2>${escape(a.name)}</h2><p class="meta">${escape(a.faction)}</p></div>${a.archived ? badge('Archived', 'retired') : ''}</div>
+    <div class="facts meta"><span><strong class="${points > cap ? 'negative' : ''}">${fmt(points)} / ${fmt(cap)}</strong> roster pts</span><span><strong>${rec.Victory}–${rec.Defeat}–${rec.Draw}</strong> W–L–D</span>${a.warlord ? `<span>Warlord · <strong>${escape(a.warlord)}</strong></span>` : ''}</div>
+    <progress class="progress" max="${cap}" value="${Math.min(points, cap)}" aria-label="Roster points reference"></progress>
+    ${a.notes ? `<p class="copy muted">${escape(a.notes)}</p>` : ''}<div class="actions">${button('Edit warband', 'edit-warband')}${button(a.archived ? 'Restore warband' : 'Archive warband', 'archive-warband', { type: 'link' })}</div></section>`;
+  const units = a.units.length ? `<div class="cards">${a.units.map(unit => unitCard(a, unit)).join('')}</div>` : empty('No units on the roster', 'Add a unit to track its points, Path, and Renown.');
+  const transactions = Ledger.transactions(CampaignStore.data, a);
+  const history = transactions.length ? `<div class="table-scroll"><table><thead><tr><th>Date</th><th>Reason</th><th>Change</th><th>Action</th></tr></thead><tbody>${transactions.map(t => `<tr><td class="nowrap">${makeDate(t.date)}</td><td>${escape(t.reason)}</td><td>${signed(t.delta)}</td><td>${t.manual ? button('Edit', 'edit-resource', { id: t.id }) : button('View battle', 'view-battle', { id: t.id, type: 'link' })}</td></tr>`).join('')}</tbody></table></div>` : empty('No resource changes', 'Battle rewards and manual adjustments appear here.');
+  const datacardActions = a.units.length ? button('View datacards', 'view-datacards') + button('Export datacards', 'export-datacards', { glyph: 'download' }) : '';
+  const rosterActions = `<div class="actions">${datacardActions}${add('Add unit', 'new-unit')}</div>`;
+  return title + `<div class="layout roster-layout">${selector}<div class="stack">${summary}${section('Order of battle', units, rosterActions)}${section(`${CampaignStore.data.campaign.resource} ledger`, `<p class="meta" style="margin-bottom:12px">Current balance <strong class="gold">${fmt(Ledger.balance(CampaignStore.data, a))}</strong></p>${history}`, button('Adjust balance', 'new-resource'))}</div></div>`;
+}
+
+function unitCard(a, unit) {
+  const renown = unitRenown(a, unit, CampaignStore.data.battles);
+  const entry = unitCatalogueEntry(a, unit);
+  const profile = unitProfile(a, unit, entry);
+  const size = unit.size ?? entry?.size;
+  return `<article class="card"><div class="split"><h3>${escape(unit.name)}</h3>${badge(unit.status)}</div><p class="meta">${escape(unit.warscroll || unit.type)} · ${fmt(unit.points)} pts</p>
+    <p class="facts meta">${size ? `<span><strong>${fmt(size)}</strong> ${size === 1 ? 'model' : 'models'}</span>` : ''}<span><strong>${fmt(renown)}</strong> Renown</span>${unit.rank ? `<span>${escape(unit.rank)}</span>` : ''}${unit.path ? `<span>${escape(unit.path)}</span>` : ''}</p>
+    ${span('Enhancements', unit.enhancements)}${span('Scars', unit.scars)}${unit.notes ? `<p class="meta copy">${escape(unit.notes)}</p>` : ''}
+    ${profile ? `<p class="meta">${Object.entries(Ledger.profileStats).filter(([key]) => profile[key]).map(([key, label]) => `${escape(profile[key])} ${label}`).join(' · ')}</p>` : ''}
+    <div class="actions">${button('Datacard', 'view-unit-datacard', { id: unit.id, title: `View ${unit.name} datacard` })}${button('Edit', 'edit-unit', { id: unit.id })}${button('Renown history', 'unit-history', { id: unit.id, type: 'link' })}</div></article>`;
+}
+
+function warbandForm(existing) {
+  const a = existing || {};
+  formDialog(existing ? 'Edit warband' : 'New warband', field('Warband name', 'name', a.name, { required: true }) + field('Faction', 'faction', a.faction, { required: true, list: 'faction-options', placeholder: 'Choose or enter a faction' }) + datalist('faction-options', BattleCatalogue.factions) +
+    field('Warlord or general', 'warlord', a.warlord) + field('Banner color', 'color', Ledger.validColor(a.color), { type: 'color' }) + area('Warband notes', 'notes', a.notes), v => {
+    const values = { name: required(v.name, 'Warband name'), faction: required(v.faction, 'Faction'), warlord: v.warlord.trim(), notes: v.notes.trim(), color: Ledger.validColor(v.color) };
+    if (existing) Object.assign(existing, values);
+    else {
+      const id = Ledger.id();
+      CampaignStore.data.armies.push({ id, ...values, archived: false, units: [], quests: [], ledger: [] });
+      CampaignStore.data.activeArmyId = id;
+    }
+    return ['Warband saved.', 'warbands'];
+  }, { label: existing ? 'Save warband' : 'Create warband' });
+}
+
+function unitForm(a, existing) {
+  const u = existing || {};
+  const history = existing ? Ledger.battleRenown(CampaignStore.data, a.id, u.id) : 0;
+  const categories = [...new Set([...Ledger.categories, u.type || 'Infantry'])];
+  const remove = existing ? button('Remove unit', 'remove-unit', { id: u.id, type: 'danger' }) : '';
+  const catalogue = BattleCatalogue.list(a.faction);
+  const profileOptions = datalist('roster-profiles', catalogue.map(entry => entry.name));
+  const entry = existing && unitCatalogueEntry(a, existing);
+  const initialProfile = existing ? referenceUnitProfile(a, u, entry) : undefined;
+  let profileEditor;
+  formDialog(existing ? `Edit ${u.name}` : `Add unit to ${a.name}`,
+    field('Warscroll', 'warscroll', u.warscroll, { list: 'roster-profiles', placeholder: 'Choose a profile or enter a name' }) + profileOptions + field('Unit name', 'name', u.name, { required: true }) +
+    `<div class="full" id="unit-catalogue-values" hidden><div class="actions"><p class="meta" id="unit-catalogue-summary"></p><button type="button" class="button secondary" id="apply-unit-catalogue">Apply listed values</button></div></div>` +
+    select('Category', 'type', categories, u.type || 'Infantry') + field('Points', 'points', u.points ?? 0, { type: 'number', min: 0 }) +
+    field('Unit size (models)', 'size', u.size ?? entry?.size ?? '', { type: 'number', min: 1 }) + field('Base Renown', 'renown', u.renown ?? 0, { type: 'number', min: 0 }) +
+    select('Status', 'status', Ledger.unitStatuses, u.status || 'Active') + field('Rank', 'rank', u.rank) + field('Path', 'path', u.path) +
+    profileEditorFields(!initialProfile) + area('Enhancement notes', 'enhancements', u.enhancements) + area('Scars and injuries', 'scars', u.scars) + area('Unit notes', 'notes', u.notes), v => {
+    const { type, status, rank, path, enhancements, scars, notes } = v;
+    const values = { type, status, rank, path, enhancements, scars, notes, name: required(v.name, 'Unit name'), warscroll: v.warscroll.trim(), points: whole(v.points, 'Points', 0),
+      size: v.size === '' ? null : whole(v.size, 'Unit size', 1), renown: whole(v.renown, 'Base Renown', 0), profileEdits: profileEditor.changes() };
+    if (existing) Object.assign(existing, values);
+    else a.units.push({ id: Ledger.id(), ...values });
+    return ['Unit saved.', 'warbands'];
+  }, { label: 'Save unit', remove, description: history ? `Battle history contributes ${Ledger.signed(history)} Renown to this unit’s total.` : 'Use base Renown for progress earned before you began logging battles here.' });
+  const form = dialog.querySelector('#editor-form');
+  const fields = form.elements;
+  profileEditor = attachProfileEditor(form, initialProfile, u.profileEdits);
+  let suggestedName = '';
+  const selected = () => unitCatalogueEntry(a, { warscroll: fields.warscroll.value, name: fields.name.value });
+  const apply = record => {
+    if (!record) return;
+    fields.warscroll.value = record.name;
+    if (!fields.name.value.trim() || fields.name.value === suggestedName) {
+      fields.name.value = record.name;
+      suggestedName = record.name;
+    }
+    fields.type.value = record.category;
+    fields.points.value = record.points;
+    fields.size.value = record.size;
+  };
+  const refreshReference = () => {
+    const current = { warscroll: fields.warscroll.value, name: fields.name.value };
+    const record = unitCatalogueEntry(a, current);
+    profileEditor.rebase(referenceUnitProfile(a, current, record));
+    form.querySelector('#unit-catalogue-values').hidden = !record;
+    form.querySelector('#unit-catalogue-summary').textContent = record ? `${fmt(record.points)} listed points · ${modelCount(record.size)}${record.kind ? ` · ${record.kind}` : ''}` : '';
+  };
+  fields.warscroll.addEventListener('change', () => {
+    if (!existing) apply(selected());
+    refreshReference();
+  });
+  fields.name.addEventListener('change', refreshReference);
+  form.querySelector('#apply-unit-catalogue').addEventListener('click', () => { apply(selected()); refreshReference(); });
+  refreshReference();
+}
+
+function unitHistory(a, u) {
+  const history = Ledger.unitHistory(CampaignStore.data, a.id, u.id);
+  const total = u.renown + history.reduce((sum, award) => sum + award.delta, 0);
+  const list = history.map(row => `<div class="list-item split"><div><strong>${escape(row.title)}</strong><p class="meta">${makeDate(row.date)}</p></div>${signed(row.delta)}</div>`).join('');
+  viewDialog(`${u.name} · Renown`, `<p><strong class="gold">${fmt(total)}</strong> total Renown</p><p class="meta">Base Renown · ${fmt(u.renown)}</p>${list || empty('No battle awards yet', '')}`);
+}
+
+function resourceForm(a, existing) {
+  const row = existing || {};
+  formDialog(existing ? 'Edit adjustment' : `Adjust ${CampaignStore.data.campaign.resource}`,
+    field('Date', 'date', row.date || Ledger.date(), { type: 'date', required: true }) + field('Change', 'delta', row.delta ?? 0, { type: 'number', required: true }) +
+    field('Reason', 'reason', row.reason, { required: true, full: true }), v => {
+    const values = { date: v.date, reason: required(v.reason, 'Reason'), delta: whole(v.delta, 'Change') };
+    if (!values.delta) throw new Error('Enter a gain or expenditure greater than zero.');
+    if (existing) Object.assign(existing, values);
+    else a.ledger.push({ id: Ledger.id(), ...values });
+    return ['Resource adjustment saved.', 'warbands'];
+  }, { label: 'Save adjustment', description: 'Use a positive number for gains and a negative number for spending.', remove: existing ? button('Delete adjustment', 'remove-resource', { id: row.id, type: 'danger' }) : '' });
+}
