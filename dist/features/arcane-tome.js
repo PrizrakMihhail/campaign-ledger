@@ -30,11 +30,11 @@ function loreCard(lore) {
   const labels = loreLabels[lore.kind];
   const entries = lore.entries.map(entry => {
     const ref = JSON.stringify([lore.id, entry.id]);
-    return `<div class="list-item"><div class="split"><div class="row-main"><h4 class="row-title">${escape(entry.name)}</h4>
-      ${span(labels.value, entry.value)}</div>
-      ${button('Edit', 'edit-lore-entry', { id: ref, title: `Edit ${entry.name}` })}</div>
+    return `<div class="list-item"><div class="lore-entry-heading"><h4 class="row-title">${escape(entry.name)}</h4>
+      ${entry.value ? `<span class="meta lore-entry-value">${escape(labels.value)} <strong>${escape(entry.value)}</strong></span>` : ''}</div>
       ${entry.declare ? `<p class="copy"><strong>Declare</strong> ${escape(entry.declare)}</p>` : ''}
-      ${entry.effect ? `<p class="copy"><strong>Effect</strong> ${escape(entry.effect)}</p>` : ''}</div>`;
+      ${entry.effect ? `<p class="copy"><strong>Effect</strong> ${escape(entry.effect)}</p>` : ''}
+      <div class="lore-entry-actions">${button('Edit', 'edit-lore-entry', { id: ref, title: `Edit ${entry.name}` })}</div></div>`;
   }).join('');
   return `<article class="card arcane-lore"><div class="split"><h3 class="row-title">${escape(lore.name)}</h3>
     ${badge(`${fmt(lore.points)} battle pts`, 'lore-cost')}</div>
@@ -62,8 +62,8 @@ function loreForm(a, kind, lore) {
 
 function loreEntryForm(lore, entry) {
   const labels = loreLabels[lore.kind];
-  const fields = field('Name', 'name', entry?.name, { required: true }) +
-    field(labels.value, 'value', entry?.value) +
+  const fields = `<div class="lore-entry-fields full">${field('Name', 'name', entry?.name, { required: true })}
+    ${field(labels.value, 'value', entry?.value)}</div>` +
     area('Declare', 'declare', entry?.declare) + area('Effect', 'effect', entry?.effect, 5);
   formDialog(`${entry ? 'Edit' : 'Add'} ${labels.entry}`, fields, values => {
     const details = {

@@ -140,6 +140,10 @@ h3 { font-size: 1.19rem; line-height: 1.25; }
 .arcane-summary > .meta { margin-top: 12px; }
 .arcane-lore .split { flex-wrap: wrap; }
 .arcane-lore .copy { margin-top: 4px; }
+.lore-entry-heading { display: grid; grid-template-columns: minmax(0, 1fr) fit-content(45%); align-items: baseline; gap: 10px; }
+.lore-entry-value { text-align: right; overflow-wrap: anywhere; }
+.lore-entry-actions { display: flex; justify-content: flex-end; margin-top: 6px; }
+.lore-entry-fields { display: grid; grid-template-columns: minmax(0, 1fr) min(34%, 9rem); align-items: end; gap: 13px; }
 .facts { display: flex; gap: 8px 18px; flex-wrap: wrap; }
 .facts strong { color: var(--ink); }
 .divider { border: 0; border-top: 1px solid var(--line); margin: 16px 0; }
