@@ -71,6 +71,10 @@ assert.match(customCards, /&lt;example&gt;/);
 assert.doesNotMatch(customCards, /<example>/);
 assert.equal(app.run('unitCatalogueEntry(activeArmy(), checkedUnit).name'), 'Auric Runemaster');
 assert.match(app.run('profileEditorFields(true)'), /Add Path upgrade/);
+assert.match(app.run(`warscrollPicker('Custom <hero>')`), /value="Custom &lt;hero&gt;"[\s\S]*role="combobox"/);
+assert.equal(app.run(`warscrollChoices(BattleCatalogue.list('Khazalite Holds'), 'rune master')[0].name`), 'Auric Runemaster');
+assert.equal(app.run(`warscrollChoices(BattleCatalogue.list('Khazalite Holds'), 'Auric Runemaster').some(choice => choice.custom)`), false);
+assert.equal(app.run(`warscrollChoices(BattleCatalogue.list('Khazalite Holds'), ' My custom hero ').at(-1).name`), 'My custom hero');
 app.run('viewWarbandDatacards(activeArmy(), checkedUnit)');
 assert.match(app.elements.get('#dialog').innerHTML, /Test Path upgrade/);
 

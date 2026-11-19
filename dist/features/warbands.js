@@ -56,13 +56,11 @@ function unitForm(a, existing) {
   const history = existing ? Ledger.battleRenown(CampaignStore.data, a.id, u.id) : 0;
   const categories = [...new Set([...Ledger.categories, u.type || 'Infantry'])];
   const remove = existing ? button('Remove unit', 'remove-unit', { id: u.id, type: 'danger' }) : '';
-  const catalogue = BattleCatalogue.list(a.faction);
-  const profileOptions = datalist('roster-profiles', catalogue.map(entry => entry.name));
   const entry = existing && unitCatalogueEntry(a, existing);
   const initialProfile = existing ? referenceUnitProfile(a, u, entry) : undefined;
   let profileEditor;
   formDialog(existing ? `Edit ${u.name}` : `Add unit to ${a.name}`,
-    field('Warscroll', 'warscroll', u.warscroll, { list: 'roster-profiles', placeholder: 'Choose a profile or enter a name' }) + profileOptions + field('Unit name', 'name', u.name, { required: true }) +
+    warscrollPicker(u.warscroll) + field('Unit name', 'name', u.name, { required: true }) +
     `<div class="full" id="unit-catalogue-values" hidden><div class="actions"><p class="meta" id="unit-catalogue-summary"></p><button type="button" class="button secondary" id="apply-unit-catalogue">Apply listed values</button></div></div>` +
     select('Category', 'type', categories, u.type || 'Infantry') + field('Base points', 'points', u.points ?? 0, { type: 'number', min: 0 }) +
     field('Base model count', 'size', u.size ?? entry?.size ?? '', { type: 'number', min: 1 }) + field('Base Renown', 'renown', u.renown ?? 0, { type: 'number', min: 0 }) +
@@ -81,6 +79,7 @@ function unitForm(a, existing) {
   }, { label: 'Save unit', remove, description: history ? `Battle history contributes ${Ledger.signed(history)} Renown to this unit’s total.` : 'Use base Renown for progress earned before you began logging battles here.' });
   const form = dialog.querySelector('#editor-form');
   const fields = form.elements;
+  mountWarscrollPicker(form, BattleCatalogue.list(a.faction));
   profileEditor = attachProfileEditor(form, initialProfile, u.profileEdits);
   const total = form.querySelector('#unit-totals');
   const refreshTotals = () => {
@@ -95,13 +94,16 @@ function unitForm(a, existing) {
   fields.size.addEventListener('input', refreshTotals);
   let suggestedName = '';
   const selected = () => unitCatalogueEntry(a, { warscroll: fields.warscroll.value, name: fields.name.value });
+  const suggestUnitName = name => {
+    if (name && (!fields.name.value.trim() || fields.name.value === suggestedName)) {
+      fields.name.value = name;
+      suggestedName = name;
+    }
+  };
   const apply = record => {
     if (!record) return;
     fields.warscroll.value = record.name;
-    if (!fields.name.value.trim() || fields.name.value === suggestedName) {
-      fields.name.value = record.name;
-      suggestedName = record.name;
-    }
+    suggestUnitName(record.name);
     fields.type.value = record.category;
     fields.points.value = record.points;
     fields.size.value = record.size;
@@ -115,7 +117,11 @@ function unitForm(a, existing) {
     refreshTotals();
   };
   fields.warscroll.addEventListener('change', () => {
-    if (!existing) apply(selected());
+    if (!existing) {
+      const record = selected();
+      if (record) apply(record);
+      else suggestUnitName(fields.warscroll.value.trim());
+    }
     refreshReference();
   });
   fields.name.addEventListener('change', refreshReference);

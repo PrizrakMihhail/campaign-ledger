@@ -150,6 +150,18 @@ td:last-child, th:last-child { padding-right: 1px; }
 
 .form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 13px; }
 .field { min-width: 0; }
+.warscroll-picker { position: relative; }
+.warscroll-picker input { padding-inline-end: 47px; }
+.warscroll-toggle { position: absolute; inset: 1px 1px 1px auto; width: 42px; display: grid; place-items: center; border: 0; border-radius: 0 5px 5px 0; background: var(--inset); color: var(--gold); }
+.warscroll-toggle:hover { background: var(--raised); }
+.warscroll-toggle::after { content: ''; width: 8px; height: 8px; border: solid currentColor; border-width: 0 2px 2px 0; transform: translateY(-2px) rotate(45deg); }
+.warscroll-picker:has(input[aria-expanded="true"]) .warscroll-toggle::after { transform: translateY(2px) rotate(225deg); }
+.warscroll-options { position: absolute; z-index: 2; inset: calc(100% + 4px) 0 auto; max-height: min(17rem, 32vh); overflow-y: auto; overscroll-behavior: contain; margin: 0; padding: 4px; list-style: none; border: 1px solid var(--line-strong); border-radius: 6px; background: var(--panel); box-shadow: 0 9px 24px #0008; }
+.warscroll-options li { padding: 8px 10px; border-radius: 4px; overflow-wrap: anywhere; }
+.warscroll-options [role="option"] { cursor: pointer; }
+.warscroll-options [role="option"]:hover, .warscroll-options [aria-selected="true"] { background: var(--raised); color: var(--gold); }
+.warscroll-options .meta { display: block; margin-top: 2px; }
+.warscroll-empty { color: var(--muted); font-size: .875rem; }
 .reinforcement { padding: 10px 12px; border: 1px solid var(--line); border-radius: 6px; }
 .reinforcement label { display: flex; align-items: center; gap: 8px; width: fit-content; cursor: pointer; }
 .reinforcement input { width: 16px; height: 16px; min-height: 0; margin: 0; padding: 0; accent-color: var(--gold); }
