@@ -145,7 +145,9 @@ function warbands() {
   const units = a.units.length ? `<div class="cards">${a.units.map(unit => unitCard(a, unit)).join('')}</div>` : empty('No units on the roster', 'Add a unit to track its points, Path, and Renown.');
   const transactions = Ledger.transactions(state, a);
   const history = transactions.length ? `<div class="table-scroll"><table><thead><tr><th>Date</th><th>Reason</th><th>Change</th><th>Action</th></tr></thead><tbody>${transactions.map(t => `<tr><td class="nowrap">${makeDate(t.date)}</td><td>${escape(t.reason)}</td><td>${signed(t.delta)}</td><td>${t.manual ? button('Edit', 'edit-resource', { id: t.id }) : button('View battle', 'view-battle', { id: t.id, type: 'link' })}</td></tr>`).join('')}</tbody></table></div>` : empty('No resource changes', 'Battle rewards and manual adjustments appear here.');
-  return title + `<div class="layout roster-layout">${selector}<div class="stack">${summary}${section('Order of battle', units, add('Add unit', 'new-unit'))}${section(`${state.campaign.resource} ledger`, `<p class="meta" style="margin-bottom:12px">Current balance <strong class="gold">${fmt(Ledger.balance(state, a))}</strong></p>${history}`, button('Adjust balance', 'new-resource'))}</div></div>`;
+  const exportCards = a.units.length ? button('Export datacards', 'export-datacards', { glyph: 'download' }) : '';
+  const rosterActions = `<div class="actions">${exportCards}${add('Add unit', 'new-unit')}</div>`;
+  return title + `<div class="layout roster-layout">${selector}<div class="stack">${summary}${section('Order of battle', units, rosterActions)}${section(`${state.campaign.resource} ledger`, `<p class="meta" style="margin-bottom:12px">Current balance <strong class="gold">${fmt(Ledger.balance(state, a))}</strong></p>${history}`, button('Adjust balance', 'new-resource'))}</div></div>`;
 }
 
 function unitCard(a, unit) {
@@ -464,16 +466,93 @@ function viewBattle(b) {
     ${awards ? `<div><h3>Unit Renown awards</h3>${awards}</div>` : ''}`, button('Edit battle', 'edit-battle', { id: b.id, type: 'primary' }));
 }
 
-function exportBackup() {
-  const url = URL.createObjectURL(new Blob([JSON.stringify(state, null, 2)], { type: 'application/json' }));
+function downloadFile(filename, contents, type) {
+  const url = URL.createObjectURL(new Blob([contents], { type }));
   const a = document.createElement('a');
   a.href = url;
-  a.download = `path-to-glory-${Ledger.date()}.json`;
+  a.download = filename;
   document.body.append(a);
   a.click();
   a.remove();
   setTimeout(() => URL.revokeObjectURL(url), 2000);
+}
+
+function exportBackup() {
+  downloadFile(`path-to-glory-${Ledger.date()}.json`, JSON.stringify(state, null, 2), 'application/json');
   tell('Backup downloaded.');
+}
+
+function warbandDatacards(campaign, warband, battles) {
+  const facts = pairs => pairs.filter(([, value]) => value !== '' && value != null)
+    .map(([label, value]) => `<div><dt>${escape(label)}</dt><dd>${escape(value)}</dd></div>`).join('');
+  const cards = warband.units.map(unit => {
+    const renown = unit.renown + Ledger.battleRenown({ battles }, warband.id, unit.id);
+    const details = [
+      ['Enhancements and abilities', unit.enhancements], ['Scars and injuries', unit.scars], ['Unit notes', unit.notes],
+    ].filter(([, value]) => value?.trim()).map(([label, value]) => `<section class="detail"><h3>${label}</h3><p>${escape(value)}</p></section>`).join('');
+    const profile = facts([['Warscroll', unit.warscroll], ['Rank', unit.rank], ['Path', unit.path]]);
+    return `<article class="datacard"${unit.status === 'Retired' ? ' data-retired' : ''}>
+      <header class="card-title"><div><p class="eyebrow">${escape(unit.type)}</p><h2>${escape(unit.name)}</h2></div><span class="status">${escape(unit.status)}</span></header>
+      <dl class="metrics">${facts([['Points', fmt(unit.points)], ['Renown', fmt(renown)]])}</dl>
+      ${profile ? `<dl class="profile">${profile}</dl>` : ''}${details}
+    </article>`;
+  }).join('\n');
+
+  return `<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>${escape(warband.name)} · Campaign datacards</title>
+<style>
+  * { box-sizing: border-box; }
+  :root { font-family: system-ui, sans-serif; color: #192d29; background: #eef1ea; }
+  body { max-width: 1060px; margin: auto; padding: clamp(16px, 4vw, 44px); }
+  h1, h2, h3, p, dl, dd { margin: 0; overflow-wrap: anywhere; }
+  h1, h2 { font-family: Georgia, serif; }
+  .masthead { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 14px; padding: 0 0 19px; margin-bottom: 20px; border-bottom: 2px solid #48645b; }
+  .masthead h1 { font-size: clamp(1.9rem, 5vw, 3.1rem); margin: 4px 0 6px; }
+  .eyebrow, dt, h3 { font-size: .75rem; text-transform: uppercase; letter-spacing: .075em; font-weight: 750; color: #3d5a50; }
+  .warband-facts { color: #354a42; line-height: 1.5; }
+  button { align-self: start; font: inherit; font-weight: 650; color: #fff; padding: 9px 14px; border: 1px solid #25493f; border-radius: 5px; background: #25493f; cursor: pointer; }
+  button:focus-visible { outline: 2px solid #25493f; outline-offset: 3px; }
+  .cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; align-items: start; }
+  .datacard { background: #fffefa; border: 1px solid #839087; border-top: 5px solid var(--banner); border-radius: 6px; padding: 15px; min-width: 0; }
+  .card-title { display: flex; justify-content: space-between; flex-wrap: wrap; align-items: start; gap: 8px; }
+  .card-title > div { min-width: 0; }
+  h2 { margin-top: 2px; font-size: 1.5rem; }
+  .status { border: 1px solid #81948a; border-radius: 4px; padding: 3px 7px; font-size: .75rem; font-weight: 700; }
+  [data-retired] .status { border-color: #787878; color: #444; }
+  .metrics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-top: 13px; }
+  .metrics > div { border: 1px solid #b6c4b8; background: #ecf2ea; border-radius: 4px; padding: 6px 9px; }
+  .metrics dd { font: 700 1.45rem Georgia, serif; }
+  .profile { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(85px, 100%), 1fr)); gap: 9px; padding-top: 11px; }
+  .profile dd { margin-top: 2px; }
+  .detail { border-top: 1px solid #c6d0c5; padding-top: 8px; margin-top: 10px; }
+  .detail p { white-space: pre-wrap; margin-top: 3px; line-height: 1.4; }
+  @media screen and (max-width: 600px) { .cards { grid-template-columns: 1fr; } }
+  @page { margin: 11mm; }
+  @media print {
+    :root, .datacard, .metrics > div { background: white; }
+    body { max-width: none; padding: 0; font-size: 10pt; }
+    button { display: none; }
+    .masthead { break-inside: avoid; margin-bottom: 4mm; padding-bottom: 3mm; }
+    .masthead h1 { font-size: 22pt; }
+    .cards { display: block; column-count: 2; column-gap: 4mm; }
+    .datacard { break-inside: avoid; margin: 0 0 4mm; padding: 3mm; }
+    h2 { font-size: 15pt; }
+  }
+</style></head>
+<body style="--banner:${Ledger.validColor(warband.color)}">
+<header class="masthead"><div><p class="eyebrow">Path to Glory · Campaign datacards</p><h1>${escape(warband.name)}</h1>
+<p class="warband-facts">${[campaign.name, warband.faction, warband.warlord ? `Warlord ${warband.warlord}` : '', `${fmt(Ledger.points(warband))} roster points`, warband.archived ? 'Archived' : ''].filter(Boolean).map(escape).join(' · ')}</p></div>
+<button type="button" onclick="window.print()">Print or save PDF</button></header>
+<main class="cards" aria-label="Unit datacards">${cards}</main></body></html>`;
+}
+
+function exportDatacards() {
+  const warband = activeArmy();
+  if (!warband?.units.length) return;
+  const slug = warband.name.normalize('NFKD').toLowerCase().replace(/\p{M}/gu, '').replace(/[^a-z0-9]+/g, '-').slice(0, 72).replace(/^-|-$/g, '') || 'warband';
+  downloadFile(`${slug}-datacards.html`, warbandDatacards(state.campaign, warband, state.battles), 'text/html;charset=utf-8');
+  tell('Warband datacards downloaded.');
 }
 
 function removeRecord(records, record, title, description, beforeRemove) {
@@ -495,6 +574,7 @@ function selectWarband(id, page) {
 const actions = {
   start: startCampaign,
   export: exportBackup,
+  'export-datacards': exportDatacards,
   import: () => importFile.click(),
   print: () => {
     if (currentPage() === 'overview') window.print();
