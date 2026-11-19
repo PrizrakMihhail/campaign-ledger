@@ -68,6 +68,7 @@ function unitForm(a, existing, { anvilHero = false } = {}) {
   const initialProfile = existing ? referenceUnitProfile(a, u, entry) : undefined;
   let profileEditor;
   let anvilEditor;
+  let upgradeEditor;
   const title = existing ? `Edit ${u.name}` : usesAnvil ? 'Add Anvil of Apotheosis hero' : `Add unit to ${a.name}`;
   const typeField = usesAnvil ? '<input type="hidden" name="type" value="Hero">' : select('Unit type', 'type', Ledger.unitTypes, existing ? Ledger.unitType(u.type) : 'Infantry');
   const warscrollField = usesAnvil ? anvilWarscrollField(u.warscroll) : textPicker('Warscroll', 'warscroll', u.warscroll, { full: true });
@@ -79,14 +80,14 @@ function unitForm(a, existing, { anvilHero = false } = {}) {
     field('Base model count', 'size', u.size ?? entry?.size ?? '', { type: 'number', min: 1 }) + field('Base Renown', 'renown', u.renown ?? 0, { type: 'number', min: 0 }) +
     `<div class="full reinforcement"><label><input type="checkbox" name="reinforced" value="on"${u.reinforced ? ' checked' : ''}> Reinforced</label><p class="meta" id="unit-totals" aria-live="polite"></p></div>` +
     select('Status', 'status', Ledger.unitStatuses, u.status || 'Active') + field('Rank', 'rank', u.rank) + field('Path', 'path', u.path) +
-    (usesAnvil ? anvilFields(u.anvil) : '') + profileEditorFields(!initialProfile) + area('Enhancement notes', 'enhancements', u.enhancements) + area('Scars and injuries', 'scars', u.scars) + area('Unit notes', 'notes', u.notes), (v, form) => {
+    (usesAnvil ? anvilFields(u.anvil) : '') + unitUpgradeFields() + profileEditorFields(!initialProfile) + area('Enhancement notes', 'enhancements', u.enhancements) + area('Scars and injuries', 'scars', u.scars) + area('Unit notes', 'notes', u.notes), (v, form) => {
     const { type, status, rank, path, enhancements, scars, notes } = v;
     const reinforced = v.reinforced === 'on';
     const size = v.size === '' ? null : whole(v.size, 'Base model count', 1);
     if (reinforced && size === null) throw new Error('Enter the base model count for a reinforced unit.');
     const warscroll = form.elements.warscroll.value.trim();
     const values = { type: usesAnvil ? 'Hero' : Ledger.unitType(type), status, rank, path, enhancements, scars, notes, name: required(v.name.trim() || warscroll, 'Unit name or warscroll'), warscroll, points: whole(v.points, pointsLabel, 0),
-      size, reinforced, renown: whole(v.renown, 'Base Renown', 0), profileEdits: profileEditor.changes(), anvil: anvilEditor?.read() ?? null };
+      size, reinforced, renown: whole(v.renown, 'Base Renown', 0), profileEdits: profileEditor.changes(), anvil: anvilEditor?.read() ?? null, upgrades: upgradeEditor.read(true) };
     if (existing) Object.assign(existing, values);
     else a.units.push({ id: Ledger.id(), ...values });
     if (!Ledger.warlord(a)) a.warlordId = '';
@@ -100,11 +101,16 @@ function unitForm(a, existing, { anvilHero = false } = {}) {
   const total = form.querySelector('#unit-totals');
   const refreshTotals = () => {
     const reinforced = fields.reinforced.checked;
-    const draft = { reinforced, points: Math.max(0, Ledger.integer(fields.points.value)), size: Ledger.integer(fields.size.value) || null };
+    const draft = { reinforced, points: Math.max(0, Ledger.integer(fields.points.value)), size: Ledger.integer(fields.size.value) || null, upgrades: upgradeEditor.read() };
     const size = Ledger.unitSize(draft);
     fields.size.required = reinforced;
     total.textContent = [`Total ${fmt(Ledger.unitPoints(draft))} pts`, size > 0 ? modelCount(size) : reinforced ? 'Enter the base model count' : ''].filter(Boolean).join(' · ');
   };
+  upgradeEditor = mountUnitUpgrades(form, u.upgrades, refreshTotals);
+  form.addEventListener('invalid', event => {
+    const section = event.target.closest('details');
+    if (section) section.open = true;
+  }, true);
   fields.reinforced.addEventListener('change', refreshTotals);
   fields.points.addEventListener('input', refreshTotals);
   fields.size.addEventListener('input', refreshTotals);

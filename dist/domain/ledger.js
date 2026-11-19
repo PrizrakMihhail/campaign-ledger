@@ -78,6 +78,9 @@ const Ledger = (() => {
       name: unitName(unit), warscroll: str(unit.warscroll), type: anvil ? 'Hero' : unitType(unit.type),
       points: Math.max(0, integer(unit.points)), size: Math.max(0, integer(unit.size)) || null, renown: integer(unit.renown),
       rank: str(unit.rank), path: str(unit.path), reinforced: unit.reinforced === true,
+      upgrades: (Array.isArray(unit.upgrades) ? unit.upgrades : []).filter(upgrade => str(upgrade?.name).trim()).map(upgrade => ({
+        type: str(upgrade.type), name: str(upgrade.name), cost: Math.max(0, integer(upgrade.cost)), description: str(upgrade.description),
+      })),
       status: choice(unit.status, unitStatuses, 'Active'), enhancements: str(unit.enhancements), scars: str(unit.scars), notes: str(unit.notes),
       profileEdits: normalizeProfileEdits(unit.profileEdits), anvil,
     };
@@ -224,7 +227,8 @@ const Ledger = (() => {
   }
 
   const unitMultiplier = unit => unit.reinforced === true ? 2 : 1;
-  const unitPoints = unit => unit.points * unitMultiplier(unit);
+  const unitUpgradePoints = unit => (unit.upgrades ?? []).reduce((sum, upgrade) => sum + upgrade.cost, 0);
+  const unitPoints = unit => unit.points * unitMultiplier(unit) + unitUpgradePoints(unit);
   const unitSize = (unit, catalogueSize = null) => {
     const baseSize = unit.size ?? catalogueSize;
     return baseSize === null ? null : baseSize * unitMultiplier(unit);
@@ -274,5 +278,5 @@ const Ledger = (() => {
   }
 
   return { packs, resultOptions, unitStatuses, questStatuses, unitTypes, unitType, unitName, warlord, sortedUnits, profileStats, weaponFields, normalizeProfileEdits, profileDefaults, profileAbilityEdits, profileChanges, validColor, integer, id, date, dateOrder,
-    blank, normalize, normalizeAnvil, destinySpent, sample, unitPoints, unitSize, loreKinds, lorePoints, points, participants, signed, balance, transactions, unitHistory, battleRenown, record, resultFor };
+    blank, normalize, normalizeAnvil, destinySpent, sample, unitPoints, unitUpgradePoints, unitSize, loreKinds, lorePoints, points, participants, signed, balance, transactions, unitHistory, battleRenown, record, resultFor };
 })();

@@ -190,6 +190,21 @@ assert.match(app.run('warbands()'), /Add Anvil hero/);
 const newAnvilFields = app.run('anvilFields()');
 assert.match(newAnvilFields, /name="anvil-limit" value=""/);
 assert.match(newAnvilFields, /id="anvil-choices"><\/div>/);
+assert.match(newAnvilFields, /^<details[^>]*>\s*<summary>Anvil of Apotheosis<\/summary>/);
+assert.match(app.run('unitUpgradeFields()'), /^<details[^>]*><summary>Upgrades<\/summary>/);
+const upgradedUnit = { id: 'upgraded', name: 'Test Hero', type: 'Hero', status: 'Active', points: 120, reinforced: true, upgrades: [
+  { type: 'Hero Trait', name: 'Battle Wisdom', cost: 25, description: 'Example rule' },
+  { type: 'Enhancement', name: 'Banner', cost: 0, description: '' },
+] };
+app.context.upgradeFixture = upgradedUnit;
+assert.equal(app.run('Ledger.unitPoints(upgradeFixture)'), 265);
+assert.equal(app.run("Ledger.points({ units: [upgradeFixture, { ...upgradeFixture, status: 'Retired' }] })"), 265);
+assert.match(app.run('unitCard(activeArmy(), upgradeFixture)'), /265 pts/);
+assert.deepEqual(JSON.parse(app.run(`
+  const upgradedCampaign = Ledger.sample();
+  upgradedCampaign.armies[0].units.push(upgradeFixture);
+  JSON.stringify(Ledger.normalize(upgradedCampaign).armies[0].units.at(-1).upgrades);
+`)), upgradedUnit.upgrades);
 const stageLabels = ['Archetype', 'Origin', 'Flaw', 'Battle Mount', 'Battle Mount Upgrades', 'Other Upgrades'];
 const stageField = app.run(`anvilStageField('anvil-choice-1-stage')`);
 assert.deepEqual([...stageField.matchAll(/<option value="([^"]+)"(?: selected)?>/g)].map(match => match[1]), stageLabels);

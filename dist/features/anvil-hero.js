@@ -23,8 +23,8 @@ function anvilWarscrollField(warscroll) {
 }
 
 function anvilFields(anvil) {
-  return `<section class="full anvil-editor" aria-labelledby="anvil-heading">
-    <h3 id="anvil-heading">Anvil of Apotheosis</h3>
+  return `<details class="full unit-editor-section">
+    <summary>Anvil of Apotheosis</summary><div class="anvil-editor">
     <div class="profile-fields">
       ${field('Destiny Point limit', 'anvil-limit', anvil?.limit ?? '', { type: 'number', min: 0, placeholder: 'Optional' })}
       ${field('Rules reference', 'anvil-rules', anvil?.rules, { placeholder: 'Battletome or campaign variant' })}
@@ -32,7 +32,7 @@ function anvilFields(anvil) {
     <p class="meta anvil-totals" aria-live="polite" id="anvil-totals"></p>
     <div id="anvil-choices"></div>
     <div class="actions"><button type="button" class="button secondary" id="add-anvil-choice">Add choice</button><span class="meta">Use a negative cost for a refund.</span></div>
-  </section>`;
+  </div></details>`;
 }
 
 function anvilSummary(anvil) {
