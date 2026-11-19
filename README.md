@@ -2,25 +2,26 @@
 
 The app is a static site. Open `dist/index.html` in a browser to run a local copy. The same directory is the deployable site. No install or build step is needed.
 
-## Where to make a change
+## Source map
 
-| Change | Files |
-| --- | --- |
-| Warbands, units, resource adjustments | `dist/features/warbands.js` |
-| Searchable warscrolls and factions | `dist/ui/text-picker.js` |
-| Anvil hero choices and Destiny Points | `dist/features/anvil-hero.js` |
-| Unit characteristics, weapons, and ability editor | `dist/features/unit-profile-editor.js` |
-| Battles, filters, and Renown awards | `dist/features/battles.js` |
-| Arcane Tome lores and their entries | `dist/features/arcane-tome.js` |
-| Overview, quests, chronicle, and settings | `dist/features/campaign.js` |
-| Datacard preview, standalone HTML, or print layout | `dist/features/datacards.js` |
-| Profile library and search | `dist/features/profile-library.js` |
-| Catalogue entries and source data | `dist/data/` and `tools/` |
-| Record shapes, calculations, and profile overrides | `dist/domain/` |
-| Browser storage and downloads | `dist/storage/` |
-| Shared form controls, dialogs, styling, and artwork | `dist/ui/` and `dist/assets/` |
+Follow the file link, then search for the symbol or CSS selector in the last column.
 
-`dist/app.js` connects routes, actions, and persistence. `dist/index.html` loads classic scripts in dependency order, with the app last. This keeps direct file opening available and gives the hosted app the same entry point. Keep shared datacard styles with the card renderer so the downloaded HTML can include them without network access.
+| To change | Open | Search for |
+| --- | --- | --- |
+| Routes, navigation, or event wiring | [App](dist/app.js), [script order](dist/index.html) | `const pages`, `const actions` |
+| Unit cards, editor, or resource adjustments | [Warbands](dist/features/warbands.js) | `unitCard`, `unitForm`, `resourceForm` |
+| Anvil choices, upgrades, or custom profiles | [Anvil editor](dist/features/anvil-hero.js), [upgrades](dist/features/unit-upgrades.js), [profile editor](dist/features/unit-profile-editor.js) | `mountAnvilEditor`, `mountUnitUpgrades`, `attachProfileEditor` |
+| Spells, prayers, and manifestations | [Arcane Tome](dist/features/arcane-tome.js) | `loreCard`, `loreEntryForm`, `arcaneTomeActions` |
+| Battle results, filters, or Renown awards | [Battles](dist/features/battles.js) | `battleForm`, `battleResults` |
+| Overview, quests, chronicle, or settings | [Campaign](dist/features/campaign.js) | `overview`, `quests`, `chronicle`, `settings` |
+| Card fields, export content, or print selection | [Datacards](dist/features/datacards.js) | `datacard`, `loreDatacard`, `warbandDatacards`, `printChoice` |
+| Export colors, columns, or print layout | [Datacard styles](dist/ui/datacard-styles.js) | `datacardStyles`, `datacardExportStyles` |
+| In-app colors, unit card design, or lore card design | [App styles](dist/assets/styles.css), [campaign card styles](dist/assets/campaign-cards.css) | `:root`, `.unit-card`, `.lore-entry-card` |
+| Unit and warband points or backup conversion | [Ledger model](dist/domain/ledger.js), [browser store](dist/storage/campaign-store.js) | `unitPoints`, `lorePoints`, `normalize`, `migrateLegacy` |
+| Profile matching or catalogue search | [Profile matching](dist/domain/unit-profiles.js), [profile library](dist/features/profile-library.js), [search picker](dist/ui/text-picker.js) | `unitCatalogueEntry`, `libraryResults`, `mountTextPicker` |
+| Shared controls, dialogs, or file downloads | [UI components](dist/ui/components.js), [dialogs](dist/ui/dialogs.js), [downloads](dist/storage/downloads.js) | `field`, `formDialog`, `downloadFile` |
+
+The app loads classic scripts in dependency order, with `app.js` last. The downloaded HTML embeds both datacard style blocks and opens offline. When changing a record shape, update `Ledger.normalize` and check that older JSON backups still load.
 
 ## Update catalogue data
 

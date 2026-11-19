@@ -34,7 +34,7 @@ function unitCard(a, unit) {
   const size = Ledger.unitSize(unit, entry?.size);
   const type = Ledger.unitType(unit.type);
   const summary = [type, unit.warscroll === type ? '' : unit.warscroll, `${fmt(Ledger.unitPoints(unit))} pts`].filter(Boolean).join(' · ');
-  return `<article class="card"><div class="unit-card-header"><h3>${escape(Ledger.unitName(unit))}</h3><div class="unit-card-badges">${Ledger.warlord(a)?.id === unit.id ? badge('Warlord') : ''}${unit.anvil ? badge('Anvil hero', 'anvil-hero') : ''}${unit.reinforced ? badge('Reinforced') : ''}${badge(unit.status)}</div></div><p class="meta">${escape(summary)}</p>
+  return `<article class="card unit-card"><div class="unit-card-header"><h3>${escape(Ledger.unitName(unit))}</h3><div class="unit-card-badges">${Ledger.warlord(a)?.id === unit.id ? badge('Warlord') : ''}${unit.anvil ? badge('Anvil hero', 'anvil-hero') : ''}${unit.reinforced ? badge('Reinforced') : ''}${badge(unit.status)}</div></div><p class="meta">${escape(summary)}</p>
     <p class="facts meta">${size ? `<span><strong>${fmt(size)}</strong> ${size === 1 ? 'model' : 'models'}</span>` : ''}<span><strong>${fmt(renown)}</strong> Renown</span>${unit.rank ? `<span>${escape(unit.rank)}</span>` : ''}${unit.path ? `<span>${escape(unit.path)}</span>` : ''}</p>
     ${span('Enhancements', unit.enhancements)}${span('Scars', unit.scars)}${unit.notes ? `<p class="meta copy">${escape(unit.notes)}</p>` : ''}
     ${profile ? `<p class="meta">${Object.entries(Ledger.profileStats).filter(([key]) => profile[key]).map(([key, label]) => `${escape(profile[key])} ${label}`).join(' · ')}</p>` : ''}

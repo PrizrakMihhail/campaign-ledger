@@ -94,6 +94,9 @@ const arcaneExport = reloadedTome.run(`
 assert.equal((arcaneExport.match(/class="datacard dc-lore-card"/g) || []).length, 3);
 assert.match(arcaneExport, /Spell Lore · Ember Lore[\s\S]*Watchfire[\s\S]*Casting value 6[\s\S]*Print card[\s\S]*&lt;target&gt;[\s\S]*&lt;effect&gt;/);
 assert.match(arcaneExport, /Ashen Prayer[\s\S]*Chanting value 4[\s\S]*Ember Spirit[\s\S]*Summoning value 7/);
+assert.match(arcaneExport, /grid-template-columns: repeat\(2, minmax\(0, 1fr\)\)/);
+assert.match(arcaneExport, /@media screen and \(max-width: 720px\)/);
+assert.doesNotMatch(arcaneExport, /<link rel="stylesheet"/, 'Standalone export must embed its styles');
 assert.equal(reloadedTome.run('hasWarbandDatacards(loreOnlyWarband)'), true);
 assert.doesNotMatch(reloadedTome.run('warbandCardList(tomeWarband, CampaignStore.data.battles, { unit: tomeWarband.units[0] })'), /Watchfire/);
 assert.equal(reloadedTome.run('Ledger.lorePoints(activeArmy())'), 60);

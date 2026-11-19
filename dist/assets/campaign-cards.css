@@ -1,0 +1,48 @@
+/* Shared parchment surface for roster and lore entries */
+.unit-card, .lore-entry-card {
+  --card-accent: #c79a5d;
+  padding: clamp(13px, 1.6vw, 20px);
+  border: 1px solid #655039;
+  border-top: 3px double var(--card-accent);
+  border-radius: 8px;
+  background:
+    radial-gradient(ellipse at 8% 1%, #a575342b, transparent 62%),
+    radial-gradient(ellipse at 91% 100%, #06050377, transparent 67%),
+    repeating-linear-gradient(6deg, #fff2c707 0 1px, transparent 1px 5px),
+    #30271d;
+  box-shadow: 0 5px 12px #0003, inset 0 0 17px #120d0735;
+}
+
+/* Warband unit cards */
+.unit-card-header { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 7px 10px; }
+.unit-card-header h3 { flex: 1 1 9rem; min-width: 0; color: #fff0ce; font-size: 1.35rem; }
+.unit-card-badges { display: flex; flex-wrap: wrap; gap: 4px; min-width: 0; }
+.unit-card-badges .anvil-hero { flex: 0 0 auto; white-space: nowrap; }
+.unit-card .actions { padding-top: 11px; border-top: 1px solid #6e553b; }
+
+/* Arcane Tome entries and editor */
+.arcane-summary > .meta { margin-top: 12px; }
+.arcane-lore .split { flex-wrap: wrap; }
+.lore-entry-list { display: grid; gap: 11px; margin-top: 13px; }
+.arcane-lore[data-lore="spell"] .lore-entry-card { --card-accent: #beacd9; }
+.arcane-lore[data-lore="prayer"] .lore-entry-card { --card-accent: #e5b26b; }
+.arcane-lore[data-lore="manifestation"] .lore-entry-card { --card-accent: #9ac8c1; }
+.lore-entry-card { min-width: 0; padding: 13px 15px; }
+.lore-entry-heading {
+  display: grid; grid-template-columns: minmax(0, 1fr) fit-content(45%);
+  align-items: baseline; gap: 8px 10px; margin-bottom: 6px;
+}
+.lore-entry-heading h4 { margin: 0; font: 1.2rem/1.24 var(--serif); color: #fff0ce; }
+.lore-entry-value {
+  padding: 3px 7px; border: 1px solid var(--card-accent); border-radius: 4px;
+  color: var(--card-accent); text-align: right; overflow-wrap: anywhere; font-size: .8rem;
+}
+.lore-entry-card .copy { margin-top: 5px; }
+.lore-entry-card .copy strong { color: var(--card-accent); }
+.lore-entry-actions { display: flex; justify-content: flex-end; margin-top: 8px; }
+.lore-entry-fields { display: grid; grid-template-columns: minmax(0, 1fr) min(34%, 9rem); align-items: end; gap: 13px; }
+
+@media print {
+  .unit-card, .lore-entry-card { --card-accent: #614019 !important; background: white; box-shadow: none; break-inside: avoid; }
+  .unit-card-header h3, .lore-entry-heading h4 { color: var(--ink); }
+}
