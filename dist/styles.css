@@ -160,6 +160,13 @@ input:disabled, select:disabled { opacity: .65; }
 dialog { background: var(--panel); color: var(--ink); border: 1px solid var(--line-strong); border-radius: 9px; padding: 0; width: min(656px, calc(100% - 24px)); max-height: min(88vh, 940px); box-shadow: 0 20px 80px #000b; overflow: auto; }
 dialog::backdrop { background: #0a0a08bd; }
 dialog.wide { width: min(1060px, calc(100% - 24px)); }
+.unit-profile-editor { display: grid; gap: 8px; }
+.unit-profile-editor details { border: 1px solid var(--line); border-radius: 6px; padding: 9px 12px; }
+.unit-profile-editor summary { cursor: pointer; font-weight: 650; }
+.unit-profile-editor details[open] > summary { margin-bottom: 12px; }
+.profile-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
+.profile-row { padding: 10px; margin: 0 0 10px; min-width: 0; border: 1px solid var(--line); border-radius: 6px; }
+.profile-row legend { padding-inline: 5px; color: var(--gold); font-size: .875rem; }
 body:has(dialog[open]) { overflow: hidden; }
 .dialog-head, .dialog-foot { position: sticky; background: var(--panel); z-index: 1; padding: 12px 19px; }
 .dialog-head { top: 0; border-bottom: 1px solid var(--line); }

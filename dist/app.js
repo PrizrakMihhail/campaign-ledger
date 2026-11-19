@@ -158,7 +158,7 @@ function unitCard(a, unit) {
   return `<article class="card"><div class="split"><h3>${escape(unit.name)}</h3>${badge(unit.status)}</div><p class="meta">${escape(unit.warscroll || unit.type)} · ${fmt(unit.points)} pts</p>
     <p class="facts meta">${size ? `<span><strong>${fmt(size)}</strong> ${size === 1 ? 'model' : 'models'}</span>` : ''}<span><strong>${fmt(renown)}</strong> Renown</span>${unit.rank ? `<span>${escape(unit.rank)}</span>` : ''}${unit.path ? `<span>${escape(unit.path)}</span>` : ''}</p>
     ${span('Enhancements', unit.enhancements)}${span('Scars', unit.scars)}${unit.notes ? `<p class="meta copy">${escape(unit.notes)}</p>` : ''}
-    ${profile ? `<p class="meta">${escape(profile.move)} Move · ${escape(profile.health)} Health · ${escape(profile.save)} Save · ${escape(profile.control)} Control</p>` : ''}
+    ${profile ? `<p class="meta">${Object.entries(Ledger.profileStats).filter(([key]) => profile[key]).map(([key, label]) => `${escape(profile[key])} ${label}`).join(' · ')}</p>` : ''}
     <div class="actions">${button('Datacard', 'view-unit-datacard', { id: unit.id, title: `View ${unit.name} datacard` })}${button('Edit', 'edit-unit', { id: unit.id })}${button('Renown history', 'unit-history', { id: unit.id, type: 'link' })}</div></article>`;
 }
 
@@ -331,21 +331,25 @@ function unitForm(a, existing) {
   const catalogue = BattleCatalogue.list(a.faction);
   const profileOptions = datalist('roster-profiles', catalogue.map(entry => entry.name));
   const entry = existing && unitCatalogueEntry(a, existing);
+  const initialProfile = existing ? referenceUnitProfile(a, u, entry) : undefined;
+  let profileEditor;
   formDialog(existing ? `Edit ${u.name}` : `Add unit to ${a.name}`,
     field('Warscroll', 'warscroll', u.warscroll, { list: 'roster-profiles', placeholder: 'Choose a profile or enter a name' }) + profileOptions + field('Unit name', 'name', u.name, { required: true }) +
     `<div class="full" id="unit-catalogue-values" hidden><div class="actions"><p class="meta" id="unit-catalogue-summary"></p><button type="button" class="button secondary" id="apply-unit-catalogue">Apply listed values</button></div></div>` +
     select('Category', 'type', categories, u.type || 'Infantry') + field('Points', 'points', u.points ?? 0, { type: 'number', min: 0 }) +
     field('Unit size (models)', 'size', u.size ?? entry?.size ?? '', { type: 'number', min: 1 }) + field('Base Renown', 'renown', u.renown ?? 0, { type: 'number', min: 0 }) +
     select('Status', 'status', Ledger.unitStatuses, u.status || 'Active') + field('Rank', 'rank', u.rank) + field('Path', 'path', u.path) +
-    area('Enhancements and abilities', 'enhancements', u.enhancements) + area('Scars and injuries', 'scars', u.scars) + area('Unit notes', 'notes', u.notes), v => {
-    const values = { ...v, name: required(v.name, 'Unit name'), warscroll: v.warscroll.trim(), points: whole(v.points, 'Points', 0),
-      size: v.size === '' ? null : whole(v.size, 'Unit size', 1), renown: whole(v.renown, 'Base Renown', 0) };
+    profileEditorFields(!initialProfile) + area('Enhancement notes', 'enhancements', u.enhancements) + area('Scars and injuries', 'scars', u.scars) + area('Unit notes', 'notes', u.notes), v => {
+    const { type, status, rank, path, enhancements, scars, notes } = v;
+    const values = { type, status, rank, path, enhancements, scars, notes, name: required(v.name, 'Unit name'), warscroll: v.warscroll.trim(), points: whole(v.points, 'Points', 0),
+      size: v.size === '' ? null : whole(v.size, 'Unit size', 1), renown: whole(v.renown, 'Base Renown', 0), profileEdits: profileEditor.changes() };
     if (existing) Object.assign(existing, values);
     else a.units.push({ id: Ledger.id(), ...values });
     return ['Unit saved.', 'warbands'];
   }, { label: 'Save unit', remove, description: history ? `Battle history contributes ${Ledger.signed(history)} Renown to this unit’s total.` : 'Use base Renown for progress earned before you began logging battles here.' });
   const form = dialog.querySelector('#editor-form');
   const fields = form.elements;
+  profileEditor = attachProfileEditor(form, initialProfile, u.profileEdits);
   let suggestedName = '';
   const selected = () => unitCatalogueEntry(a, { warscroll: fields.warscroll.value, name: fields.name.value });
   const apply = record => {
@@ -360,7 +364,9 @@ function unitForm(a, existing) {
     fields.size.value = record.size;
   };
   const refreshReference = () => {
-    const record = selected();
+    const current = { warscroll: fields.warscroll.value, name: fields.name.value };
+    const record = unitCatalogueEntry(a, current);
+    profileEditor.rebase(referenceUnitProfile(a, current, record));
     form.querySelector('#unit-catalogue-values').hidden = !record;
     form.querySelector('#unit-catalogue-summary').textContent = record ? `${fmt(record.points)} listed points · ${modelCount(record.size)}${record.kind ? ` · ${record.kind}` : ''}` : '';
   };
@@ -532,7 +538,18 @@ function unitCatalogueEntry(warband, unit) {
   return BattleCatalogue.find(warband.faction, canonical || name);
 }
 const catalogueProfile = entry => entry.profile || (entry.faction === 'Khazalite Holds' ? WarbandProfiles.find(entry.name) : undefined);
-const unitProfile = (warband, unit, entry) => entry ? catalogueProfile(entry) : BattleCatalogue.groupName(warband.faction) === 'Khazalite Holds' ? WarbandProfiles.find(unitWarscroll(unit)) : undefined;
+function referenceUnitProfile(warband, unit, entry) {
+  if (entry) return catalogueProfile(entry);
+  if (BattleCatalogue.groupName(warband.faction) === 'Khazalite Holds') return WarbandProfiles.find(unitWarscroll(unit));
+}
+
+function unitProfile(warband, unit, entry) {
+  const reference = referenceUnitProfile(warband, unit, entry);
+  const edits = unit.profileEdits;
+  if (!edits) return reference;
+  return { ...reference, ...edits.stats, melee: edits.melee ?? reference?.melee, ranged: edits.ranged ?? reference?.ranged,
+    abilityDetails: edits.abilities, customized: true };
+}
 const modelCount = size => `${fmt(size)} ${size === 1 ? 'model' : 'models'}`;
 const cardFacts = pairs => pairs.filter(([, value]) => value !== '' && value != null)
   .map(([label, value]) => `<div><dt>${escape(label)}</dt><dd>${escape(value)}</dd></div>`).join('');
@@ -550,11 +567,15 @@ function weaponProfiles(title, rows, ranged = false) {
 
 function profileContent(profile) {
   if (!profile) return '';
-  const stats = [['Move', profile.move], ['Health', profile.health], ['Save', profile.save], ['Control', profile.control], ['Ward', profile.ward], ['Banishment', profile.banishment], ['Summon', profile.summon]];
-  return `<dl class="dc-stats">${cardFacts(stats)}</dl>${weaponProfiles('Ranged weapons', profile.ranged, true)}${weaponProfiles('Melee weapons', profile.melee)}
-    ${profile.abilities?.length ? `<section class="dc-detail"><h3>Ability reference</h3><p>${profile.abilities.map(escape).join(' · ')}</p></section>` : ''}
+  const stats = cardFacts([...Object.entries(Ledger.profileStats).map(([key, label]) => [label, profile[key]]), ['Banishment', profile.banishment], ['Summon', profile.summon]]);
+  const abilities = profile.abilityDetails?.map(ability => `<section class="dc-detail"><h3>${escape(ability.name)}</h3>
+    ${ability.kind === 'Path upgrade' || ability.timing ? `<p class="dc-ability-meta">${[ability.kind === 'Path upgrade' ? ability.kind : '', ability.timing].filter(Boolean).map(escape).join(' · ')}</p>` : ''}
+    ${ability.effect ? `<p>${escape(ability.effect)}</p>` : ''}</section>`).join('');
+  const reference = profile.url ? `<a href="${escape(profile.url)}" target="_blank" rel="noopener noreferrer">Wahapedia warscroll</a> · ${profile.retrieved ? 'Retrieved ' + escape(profile.retrieved) : escape(BattleCatalogue.warscrollDate)}` : profile.page ? `${escape(WarbandProfiles.source)} · p. ${profile.page}` : '';
+  return `${stats ? `<dl class="dc-stats">${stats}</dl>` : ''}${weaponProfiles('Ranged weapons', profile.ranged, true)}${weaponProfiles('Melee weapons', profile.melee)}
+    ${abilities ?? (profile.abilities?.length ? `<section class="dc-detail"><h3>Ability reference</h3><p>${profile.abilities.map(escape).join(' · ')}</p></section>` : '')}
     ${profile.keywords?.length ? `<section class="dc-detail"><h3>Keywords</h3><p>${profile.keywords.map(escape).join(' · ')}</p></section>` : ''}
-    <p class="dc-source">${profile.url ? `<a href="${escape(profile.url)}" target="_blank" rel="noopener noreferrer">Wahapedia warscroll</a> · ${profile.retrieved ? 'Retrieved ' + escape(profile.retrieved) : escape(BattleCatalogue.warscrollDate)}` : `${escape(WarbandProfiles.source)} · p. ${profile.page}`}</p>`;
+    ${profile.customized || reference ? `<p class="dc-source">${profile.customized ? 'Customized profile' : ''}${profile.customized && reference ? ' · Base profile from ' : ''}${reference}</p>` : ''}`;
 }
 
 function datacard(profile, unit, renown, entry) {
@@ -599,6 +620,7 @@ const datacardStyles = `
   .dc-details { display: flex; flex-wrap: wrap; gap: 8px 15px; padding-top: 10px; font-size: .9rem; }
   .dc-detail { border-top: 1px solid #c6d0c5; padding-top: 7px; margin-top: 9px; }
   .dc-detail p { white-space: pre-wrap; margin-top: 3px; line-height: 1.36; font-size: .88rem; }
+  .dc-detail .dc-ability-meta { color: #3d5a50; font-size: .78rem; font-weight: 700; }
   .dc-cards .dc-source { font-size: .75rem; color: #3d5a50; margin-top: 8px; }
   .dc-source a { color: #244e40; text-decoration: underline; }
 `;

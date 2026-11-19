@@ -12,6 +12,8 @@ const Ledger = (() => {
   const unitStatuses = ['Active', 'Scarred', 'Retired'];
   const questStatuses = ['Active', 'Completed', 'Abandoned'];
   const categories = ['Hero', 'Infantry', 'Cavalry', 'Artillery', 'Monster', 'Beast', 'Construct', 'Other'];
+  const profileStats = Object.freeze({ move: 'Move', health: 'Health', save: 'Save', control: 'Control', ward: 'Ward' });
+  const weaponFields = ranged => [...(ranged ? ['Range'] : []), 'Attacks', 'Hit', 'Wound', 'Rend', 'Damage', 'Weapon traits'];
   const validColor = value => /^#[a-f\d]{6}$/i.test(value) ? value : '#bd8e58';
   const str = value => typeof value === 'string' ? value : '';
   const integer = (value, fallback = 0) => Number.isSafeInteger(Number(value)) ? Number(value) : fallback;
@@ -55,6 +57,7 @@ const Ledger = (() => {
         name: str(u.name) || 'Unnamed unit', warscroll: str(u.warscroll), type: str(u.type) || 'Other',
         points: Math.max(0, integer(u.points)), size: Math.max(0, integer(u.size)) || null, renown: integer(u.renown), rank: str(u.rank), path: str(u.path),
         status: choice(u.status, unitStatuses, 'Active'), enhancements: str(u.enhancements), scars: str(u.scars), notes: str(u.notes),
+        profileEdits: normalizeProfileEdits(u.profileEdits),
       })),
       quests: records(a.quests, q => ({
         title: str(q.title) || 'Unnamed quest', goal: str(q.goal), status: choice(q.status, questStatuses, 'Active'),
@@ -81,6 +84,39 @@ const Ledger = (() => {
       })),
       entries: records(value.entries, j => ({ title: str(j.title) || 'Untitled entry', date: cleanDate(j.date), armyId: str(j.armyId), body: str(j.body) })),
     };
+  }
+
+  function normalizeProfileEdits(value = {}) {
+    const edits = {};
+    const stats = Object.fromEntries(Object.keys(profileStats).filter(key => typeof value?.stats?.[key] === 'string').map(key => [key, value.stats[key].trim()]));
+    if (Object.keys(stats).length) edits.stats = stats;
+    for (const kind of ['melee', 'ranged']) {
+      if (Array.isArray(value?.[kind])) {
+        edits[kind] = value[kind].filter(row => Array.isArray(row) && str(row[0]).trim())
+          .map(row => Array.from({ length: weaponFields(kind === 'ranged').length + 1 }, (_, index) => str(row[index]).trim()));
+      }
+    }
+    if (Array.isArray(value?.abilities)) {
+      edits.abilities = value.abilities.filter(row => str(row?.name).trim()).map(row => ({
+        name: row.name.trim(), timing: str(row.timing).trim(), effect: str(row.effect).trim(), kind: row.kind === 'Path upgrade' ? 'Path upgrade' : 'Ability',
+      }));
+    }
+    return Object.keys(edits).length ? edits : null;
+  }
+
+  function profileDefaults(profile) {
+    const stats = Object.fromEntries(Object.keys(profileStats).map(key => [key, profile?.[key] || '']));
+    const lists = normalizeProfileEdits({ melee: profile?.melee || [], ranged: profile?.ranged || [],
+      abilities: (profile?.abilities || []).map(name => ({ name })) });
+    return { stats, ...lists };
+  }
+
+  function profileChanges(base, draft) {
+    const edits = { stats: Object.fromEntries(Object.entries(draft.stats).filter(([key, value]) => value !== base.stats[key])) };
+    for (const kind of ['melee', 'ranged', 'abilities']) {
+      if (JSON.stringify(draft[kind]) !== JSON.stringify(base[kind])) edits[kind] = draft[kind];
+    }
+    return edits;
   }
 
   function sample() {
@@ -167,6 +203,6 @@ const Ledger = (() => {
     return battle.result;
   }
 
-  return { packs, resultOptions, unitStatuses, questStatuses, categories, validColor, integer, id, date, dateOrder,
+  return { packs, resultOptions, unitStatuses, questStatuses, categories, profileStats, weaponFields, normalizeProfileEdits, profileDefaults, profileChanges, validColor, integer, id, date, dateOrder,
     blank, normalize, sample, points, participants, signed, balance, transactions, unitHistory, battleRenown, record, resultFor };
 })();
