@@ -115,7 +115,7 @@ function warbandDatacards(campaign, warband, battles) {
 }
 
 function exportDatacards() {
-  const warband = activeArmy();
+  const warband = viewedArmy();
   if (!hasWarbandDatacards(warband)) return;
   const slug = warband.name.normalize('NFKD').toLowerCase().replace(/\p{M}/gu, '').replace(/[^a-z0-9]+/g, '-').slice(0, 72).replace(/^-|-$/g, '') || 'warband';
   downloadFile(`${slug}-datacards.html`, warbandDatacards(CampaignStore.data.campaign, warband, CampaignStore.data.battles), 'text/html;charset=utf-8');

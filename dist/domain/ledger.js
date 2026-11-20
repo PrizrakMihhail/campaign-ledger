@@ -10,6 +10,7 @@ const Ledger = (() => {
   }));
   const gloryPoints = 'Glory Points';
   const resourceName = value => str(value).trim().toLowerCase() === gloryPoints.toLowerCase() ? '' : str(value).trim();
+  const latestWarband = armies => armies.findLast(army => !army.archived);
   const resultOptions = ['Victory', 'Defeat', 'Draw', 'Other'];
   const unitStatuses = ['Active', 'In Reserves', 'Retired'];
   const firstScarCount = 5;
@@ -109,7 +110,7 @@ const Ledger = (() => {
 
   function blank() {
     return {
-      version: 3, sample: false, activeArmyId: '',
+      version: 3, sample: false, activeWarbandId: '',
       campaign: { name: 'My Path to Glory', pack: 'Ascension', location: 'The Mortal Realms', resource: '', pointsLimit: 1000, notes: '' },
       armies: [], battles: [], entries: [],
     };
@@ -151,7 +152,7 @@ const Ledger = (() => {
         resource,
         pointsLimit: Math.max(1, integer(c.pointsLimit) || 1000), notes: str(c.notes),
       },
-      activeArmyId: armies.some(a => a.id === value.activeArmyId) ? value.activeArmyId : armies[0]?.id || '',
+      activeWarbandId: armies.find(a => a.id === value.activeWarbandId && !a.archived)?.id ?? latestWarband(armies)?.id ?? '',
       armies,
       battles: records(value.battles, b => ({
         title: str(b.title) || 'Unnamed battle', date: cleanDate(b.date), battleplan: str(b.battleplan),
@@ -212,7 +213,7 @@ const Ledger = (() => {
 
   function sample() {
     return normalize({
-      ...blank(), sample: true, activeArmyId: 'forge',
+      ...blank(), sample: true, activeWarbandId: 'forge',
       campaign: {
         name: 'The Long Reckoning', pack: 'Ascension', location: 'The Ashen Marches', resource: '', pointsLimit: 1000,
         notes: 'Two rival warbands follow the old beacon road into the Ashen Marches. Whoever lights the final beacon will command the crossing.',
@@ -311,6 +312,6 @@ const Ledger = (() => {
     return battle.result;
   }
 
-  return { packs, gloryPoints, resourceName, resultOptions, unitStatuses, unitStatus, battleReady, battleScarSeverity, isScarred, questStatuses, unitTypes, unitType, unitName, warlord, sortedUnits, profileStats, weaponFields, normalizeProfileEdits, profileDefaults, profileAbilityEdits, profileChanges, validColor, integer, id, date, dateOrder,
+  return { packs, gloryPoints, resourceName, latestWarband, resultOptions, unitStatuses, unitStatus, battleReady, battleScarSeverity, isScarred, questStatuses, unitTypes, unitType, unitName, warlord, sortedUnits, profileStats, weaponFields, normalizeProfileEdits, profileDefaults, profileAbilityEdits, profileChanges, validColor, integer, id, date, dateOrder,
     blank, normalize, normalizeAnvil, destinySpent, sample, unitPoints, unitUpgradePoints, unitSize, loreKinds, lorePoints, points, participants, signed, balance, transactions, unitHistory, battleRenown, battleScarAwards, unitBattleScars, rosterStatus, record, resultFor };
 })();

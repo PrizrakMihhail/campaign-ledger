@@ -24,7 +24,12 @@ function currentPage() {
 function render() {
   const page = currentPage();
   document.querySelector('#nav').innerHTML = Object.entries(pages).map(([key, [label, glyph]]) => `<a class="nav-link" href="#${key}"${page === key ? ' aria-current="page"' : ''}>${icon(glyph)}${label}</a>`).join('');
-  document.querySelector('#topbar').innerHTML = `<div class="crumb"><span>Campaign</span><span aria-hidden="true">/</span><strong>${pages[page][0]}</strong></div>${button('Export backup', 'export', { glyph: 'download' })}`;
+  const selected = viewedArmy();
+  const options = armyOptions().map(([id, label]) => [id, id === CampaignStore.data.activeWarbandId ? `${label} (Active)` : label]);
+  if (!activeArmy()) options.unshift(['', 'Choose a warband']);
+  const picker = CampaignStore.data.armies.length ? select('Warband', 'view-warband', options, selected?.id ?? '') : '';
+  document.querySelector('#topbar').innerHTML = `<div class="crumb"><span>Campaign</span><span aria-hidden="true">/</span><strong>${pages[page][0]}</strong></div>
+    <div class="topbar-controls">${picker}${button('Export backup', 'export', { glyph: 'download' })}</div>`;
   const status = !CampaignStore.available ? 'Changes need a backup' : CampaignStore.data.sample && !CampaignStore.hasSavedCampaign ? 'Sample campaign' : 'Saved in this browser';
   document.querySelector('#sidebar-bottom').innerHTML = `${CampaignStore.data.sample && page !== 'overview' ? button('Start my campaign', 'start') : ''}<p class="save-info${CampaignStore.available ? '' : ' unsaved'}">${escape(status)}</p>`;
   main.innerHTML = pages[page][2]();
@@ -39,12 +44,10 @@ function removeRecord(records, record, title, description, beforeRemove) {
   });
 }
 
-function selectWarband(id, page) {
-  if (!army(id)) return;
-  CampaignStore.data.activeArmyId = id;
-  CampaignStore.save();
-  if (page && page !== currentPage()) location.hash = page;
-  else render();
+function selectWarband(id) {
+  if (id && !army(id)) return;
+  viewedArmyId = id === CampaignStore.data.activeWarbandId ? '' : id;
+  render();
 }
 
 const actions = {
@@ -52,9 +55,9 @@ const actions = {
   start: startCampaign,
   export: exportBackup,
   'export-datacards': exportDatacards,
-  'view-datacards': () => viewWarbandDatacards(activeArmy()),
+  'view-datacards': () => viewWarbandDatacards(viewedArmy()),
   'view-unit-datacard': id => {
-    const warband = activeArmy();
+    const warband = viewedArmy();
     const unit = warband?.units.find(item => item.id === id);
     if (unit) viewWarbandDatacards(warband, unit);
   },
@@ -71,22 +74,33 @@ const actions = {
   },
   close: requestDialogClose,
   'new-warband': () => warbandForm(),
-  'edit-warband': () => warbandForm(activeArmy()),
+  'edit-warband': () => warbandForm(viewedArmy()),
+  'make-active-warband': () => {
+    const a = viewedArmy();
+    if (!a || a.archived) return;
+    CampaignStore.data.activeWarbandId = a.id;
+    viewedArmyId = '';
+    commit(`${a.name} is now the Active warband.`);
+  },
   'archive-warband': () => {
-    const a = activeArmy();
+    const a = viewedArmy();
     a.archived = !a.archived;
-    if (a.archived) CampaignStore.data.activeArmyId = CampaignStore.data.armies.find(other => !other.archived)?.id || a.id;
+    if (a.archived && a.id === CampaignStore.data.activeWarbandId) {
+      CampaignStore.data.activeWarbandId = Ledger.latestWarband(CampaignStore.data.armies)?.id ?? '';
+      viewedArmyId = CampaignStore.data.activeWarbandId ? '' : a.id;
+    }
+    if (!a.archived && !activeArmy()) {
+      CampaignStore.data.activeWarbandId = a.id;
+      viewedArmyId = '';
+    }
     commit(a.archived ? 'Warband archived.' : 'Warband restored.');
   },
-  'select-warband': id => selectWarband(id),
-  'go-warband': id => selectWarband(id, 'warbands'),
-  'quest-warband': id => selectWarband(id, 'quests'),
-  'new-unit': () => unitForm(activeArmy()),
-  'new-anvil-hero': () => unitForm(activeArmy(), undefined, { anvilHero: true }),
-  'edit-unit': id => unitForm(activeArmy(), activeArmy().units.find(u => u.id === id)),
-  'unit-history': id => unitHistory(activeArmy(), activeArmy().units.find(u => u.id === id)),
+  'new-unit': () => unitForm(viewedArmy()),
+  'new-anvil-hero': () => unitForm(viewedArmy(), undefined, { anvilHero: true }),
+  'edit-unit': id => unitForm(viewedArmy(), viewedArmy().units.find(u => u.id === id)),
+  'unit-history': id => unitHistory(viewedArmy(), viewedArmy().units.find(u => u.id === id)),
   'remove-unit': id => {
-    const a = activeArmy();
+    const a = viewedArmy();
     const u = a.units.find(unit => unit.id === id);
     removeRecord(a.units, u, `Remove ${u.name}?`, 'The unit will be removed from the roster. Its Renown awards will remain in the battle history.', () => {
       if (a.warlordId === id) a.warlordId = '';
@@ -95,26 +109,26 @@ const actions = {
       }
     });
   },
-  'new-resource': kind => resourceForm(activeArmy(), undefined, kind),
-  'edit-resource': id => resourceForm(activeArmy(), activeArmy().ledger.find(item => item.id === id)),
+  'new-resource': kind => resourceForm(viewedArmy(), undefined, kind),
+  'edit-resource': id => resourceForm(viewedArmy(), viewedArmy().ledger.find(item => item.id === id)),
   'remove-resource': id => {
-    const list = activeArmy().ledger;
+    const list = viewedArmy().ledger;
     removeRecord(list, list.find(item => item.id === id), 'Delete adjustment?', 'The warband’s balance will be recalculated.');
   },
   'new-battle': () => battleForm(),
   'edit-battle': id => battleForm(CampaignStore.data.battles.find(b => b.id === id)),
   'view-battle': id => viewBattle(CampaignStore.data.battles.find(b => b.id === id)),
   'remove-battle': id => removeRecord(CampaignStore.data.battles, CampaignStore.data.battles.find(b => b.id === id), 'Delete battle?', 'This removes the result and its linked resource changes, Renown awards, and Battle Scars.'),
-  'new-quest': () => questForm(activeArmy()),
-  'edit-quest': id => questForm(activeArmy(), activeArmy().quests.find(q => q.id === id)),
+  'new-quest': () => questForm(viewedArmy()),
+  'edit-quest': id => questForm(viewedArmy(), viewedArmy().quests.find(q => q.id === id)),
   'complete-quest': id => {
-    const q = activeArmy().quests.find(item => item.id === id);
+    const q = viewedArmy().quests.find(item => item.id === id);
     q.status = 'Completed';
     if (q.target) q.progress = q.target;
     commit('Quest completed.');
   },
   'remove-quest': id => {
-    const list = activeArmy().quests;
+    const list = viewedArmy().quests;
     removeRecord(list, list.find(q => q.id === id), 'Delete quest?', 'This removes the quest, its progress, and reward notes.');
   },
   'new-entry': () => entryForm(),
@@ -170,7 +184,10 @@ main.addEventListener('input', event => {
 document.addEventListener('change', event => {
   const input = event.target;
   if (input.closest('#battle-filters') && input.name !== 'query') updateFilters(event);
-  if (input.name === 'quest-warband' || input.name === 'arcane-warband') selectWarband(input.value);
+  if (input.id === 'field-view-warband') {
+    selectWarband(input.value);
+    document.querySelector('#field-view-warband')?.focus();
+  }
   if (input.name === 'pack' && input.form) {
     const resource = input.form.elements.resource;
     if (!resource.value.trim() || [...Ledger.packs.values()].includes(resource.value)) resource.value = Ledger.packs.get(input.value) ?? '';
@@ -185,6 +202,7 @@ importFile.addEventListener('change', async () => {
     const incoming = Ledger.normalize(JSON.parse(await file.text()));
     confirmDialog(`Import ${incoming.campaign.name}?`, `This backup has ${incoming.armies.length} warbands and ${incoming.battles.length} battles. Importing replaces the current campaign in this browser.`, 'Import campaign', () => {
       CampaignStore.data = incoming;
+      viewedArmyId = '';
       resetBattleFilters();
       return ['Campaign imported.', 'overview'];
     });

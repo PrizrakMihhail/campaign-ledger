@@ -4,7 +4,7 @@ let libraryFilters;
 
 function viewProfileLibrary(reset = false) {
   if (reset || !libraryFilters) {
-    libraryFilters = { group: BattleCatalogue.groupName(activeArmy()?.faction) || 'Khazalite Holds', query: '' };
+    libraryFilters = { group: BattleCatalogue.groupName(viewedArmy()?.faction) || 'Khazalite Holds', query: '' };
   }
   viewDialog('Unit profile library', `<style>${datacardStyles}</style>
     <p class="meta">Battle Profiles · ${escape(BattleCatalogue.edition)}. Datacards link to the matching warscroll source where available.</p>

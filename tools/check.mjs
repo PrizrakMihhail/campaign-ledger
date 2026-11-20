@@ -45,6 +45,47 @@ function boot({ page = 'overview', saved = new Map() } = {}) {
 }
 
 const app = boot();
+const selectedSave = new Map();
+const selection = boot({ page: 'warbands', saved: selectedSave });
+selection.run(`
+  CampaignStore.data.battles.push({ ...CampaignStore.data.battles[0], id: 'veil-only', title: 'Veil-only battle', armyId: 'veil', opponentArmyId: '' });
+  CampaignStore.data.entries.push({ id: 'veil-note', armyId: 'veil', title: 'Veil-only entry', date: '', body: '' });
+  CampaignStore.data.entries.push({ id: 'shared-note', armyId: '', title: 'Shared entry', date: '', body: '' });
+  army('veil').quests.push({ id: 'veil-quest', title: 'Veil-only quest', status: 'Active' });
+  CampaignStore.data.armies[1].lores.push({ id: 'veil-lore', kind: 'spell', name: 'Veil-only lore', points: 0, entries: [] });
+`);
+for (const [page, content] of [['warbands', 'The Oathkeepers'], ['overview', 'Relight the Watchfires'], ['battles', 'Siege of the Ember Gate'], ['chronicle', 'A Light on the Old Road'], ['quests', 'Relight the Watchfires']]) {
+  assert.match(selection.run(`${page}()`), new RegExp(content));
+  assert.doesNotMatch(selection.run(`${page}()`), /Veil-only/);
+}
+selection.run("selectWarband('veil')");
+assert.equal(selection.run('activeArmy().id'), 'forge');
+assert.equal(selection.run('viewedArmy().id'), 'veil');
+assert.equal(selectedSave.size, 0);
+assert.match(selection.elements.get('#topbar').innerHTML, /Forge of the Sunset \(Active\)[\s\S]*value="veil" selected/);
+for (const [page, content] of [['warbands', 'The Oathbound Dead'], ['overview', 'Veil-only battle'], ['battles', 'Veil-only battle'], ['chronicle', 'Veil-only entry'], ['quests', 'Veil-only quest'], ['arcaneTome', 'Veil-only lore']]) {
+  assert.match(selection.run(`${page}()`), new RegExp(content));
+  assert.doesNotMatch(selection.run(`${page}()`), /The Oathkeepers|Relight the Watchfires|Siege of the Ember Gate|A Light on the Old Road/);
+}
+assert.match(selection.run('chronicle()'), /Shared entry/);
+selection.run("actions['make-active-warband']()");
+assert.equal(boot({ saved: selectedSave }).run('activeArmy().id'), 'veil');
+selection.run(`
+  const olderCampaign = Ledger.sample();
+  delete olderCampaign.activeWarbandId;
+  olderCampaign.activeArmyId = 'forge';
+  CampaignStore.data = Ledger.normalize(olderCampaign);
+`);
+assert.equal(selection.run('activeArmy().id'), 'veil');
+selection.run("actions['archive-warband']()");
+assert.equal(selection.run('activeArmy().id'), 'forge');
+selection.run(`
+  mountTextPicker = () => {};
+  warbandForm();
+  dialogEditor()({ name: 'Newest warband', faction: 'Custom', formation: '', color: '#ca935d', notes: '' });
+`);
+assert.equal(selection.run('activeArmy().name'), 'Newest warband');
+assert.equal(selection.run('viewedArmy().name'), 'Newest warband');
 const aftermath = boot();
 aftermath.run(`
   const state = CampaignStore.data;

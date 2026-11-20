@@ -8,11 +8,10 @@ const loreLabels = {
 
 function arcaneTome() {
   const title = heading('Arcane Tome', 'Spells, prayers, and manifestations for each warband.');
-  const a = activeArmy();
-  if (!a) return title + empty('No warbands yet', 'Create a warband to start adding lores.', pageLink('View warbands', 'warbands'));
+  const a = viewedArmy();
+  if (!a) return title + empty('No warband selected', 'Select or create a warband to track its lores.', pageLink('View warbands', 'warbands'));
 
-  const summary = section('Warband', `<div class="arcane-summary">
-    ${select('Campaign warband', 'arcane-warband', armyOptions(), a.id)}
+  const summary = section(a.name, `<div class="arcane-summary">
     <p class="meta"><strong class="gold">${fmt(Ledger.lorePoints(a))}</strong> battle pts from lores</p>
     <p class="meta"><strong>${fmt(Ledger.points(a, CampaignStore.data.battles))} / ${fmt(CampaignStore.data.campaign.pointsLimit)}</strong> roster pts</p>
   </div>`);
@@ -79,7 +78,7 @@ function loreEntryForm(lore, entry) {
   });
 }
 
-const activeLore = id => activeArmy()?.lores.find(lore => lore.id === id);
+const activeLore = id => viewedArmy()?.lores.find(lore => lore.id === id);
 
 function loreEntryTarget(ref) {
   const [loreId, entryId] = JSON.parse(ref);
@@ -88,14 +87,14 @@ function loreEntryTarget(ref) {
 }
 
 const arcaneTomeActions = {
-  'new-lore': kind => loreForm(activeArmy(), kind),
+  'new-lore': kind => loreForm(viewedArmy(), kind),
   'edit-lore': id => {
     const lore = activeLore(id);
-    if (lore) loreForm(activeArmy(), lore.kind, lore);
+    if (lore) loreForm(viewedArmy(), lore.kind, lore);
   },
   'remove-lore': id => {
     const lore = activeLore(id);
-    if (lore) removeRecord(activeArmy().lores, lore, 'Delete lore?', 'This removes the lore, all entries in it, and its battle point cost.');
+    if (lore) removeRecord(viewedArmy().lores, lore, 'Delete lore?', 'This removes the lore, all entries in it, and its battle point cost.');
   },
   'new-lore-entry': id => {
     const lore = activeLore(id);

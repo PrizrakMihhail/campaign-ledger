@@ -1,37 +1,39 @@
 'use strict';
 
-function warbandRow(a, action, selected = false) {
-  return `<div class="list-item"><button class="list-button row" type="button" data-action="${action}" data-id="${escape(a.id)}"${selected ? ' aria-current="true"' : ''}>${tile('shield', a.color)}<span class="row-main"><strong class="row-title">${escape(a.name)}</strong><span class="meta row-sub">${escape([a.faction, `${fmt(Ledger.points(a, CampaignStore.data.battles))} pts`].filter(Boolean).join(' · '))}</span></span>${a.archived ? badge('Archived', 'retired') : ''}</button></div>`;
+function warbandRow(a) {
+  return `<div class="list-item"><a class="list-button row" href="#warbands">${tile('shield', a.color)}<span class="row-main"><strong class="row-title">${escape(a.name)}</strong><span class="meta row-sub">${escape([a.faction, `${fmt(Ledger.points(a, CampaignStore.data.battles))} pts`].filter(Boolean).join(' · '))}</span></span>${a.archived ? badge('Archived', 'retired') : ''}</a></div>`;
 }
 
 function warbands() {
   const title = heading('Warbands', 'Order of battle, unit progression, and resource ledgers.', button('Profile library', 'profile-library', { glyph: 'book' }) + add('New warband', 'new-warband'));
-  const a = activeArmy();
-  if (!a) return title + empty('No warbands yet', 'Create a warband to start tracking a roster and its progress.');
+  const a = viewedArmy();
+  if (!a) return title + (CampaignStore.data.armies.length
+    ? empty('No Active warband', 'Select an archived warband to restore it, or create a new one.')
+    : empty('No warbands yet', 'Create a warband to start tracking a roster and its progress.'));
   const rec = Ledger.record(CampaignStore.data, a.id);
   const warlord = Ledger.warlord(a);
   const battles = CampaignStore.data.battles;
   const points = Ledger.points(a, battles);
   const lorePoints = Ledger.lorePoints(a);
   const cap = CampaignStore.data.campaign.pointsLimit;
-  const selector = section('Campaign warbands', CampaignStore.data.armies.map(item => warbandRow(item, 'select-warband', item.id === a.id)).join(''));
-  const summary = `<section class="panel stack"><div class="split">${tile('shield', a.color)}<div class="row-main"><h2>${escape(a.name)}</h2><p class="meta">${escape(a.faction)}</p></div>${a.archived ? badge('Archived', 'retired') : ''}</div>
+  const isActive = a.id === CampaignStore.data.activeWarbandId;
+  const summary = `<section class="panel stack"><div class="split">${tile('shield', a.color)}<div class="row-main"><h2>${escape(a.name)}</h2><p class="meta">${escape(a.faction)}</p></div>${a.archived ? badge('Archived', 'retired') : isActive ? badge('Active') : ''}</div>
     <div class="facts meta"><span><strong class="${points > cap ? 'negative' : ''}">${fmt(points)} / ${fmt(cap)}</strong> roster pts</span><span><strong>${rec.Victory}–${rec.Defeat}–${rec.Draw}</strong> W–L–D</span>${warlord ? `<span>Warlord · <strong>${escape(Ledger.unitName(warlord))}</strong></span>` : ''}</div>
     <progress class="progress" max="${cap}" value="${Math.min(points, cap)}" aria-label="Roster points reference"></progress>
     ${span('Battle Formation', a.formation)}
     ${lorePoints ? `<p class="meta">Includes ${fmt(lorePoints)} battle pts from Arcane Tome.</p>` : ''}
-    ${a.notes ? `<p class="copy muted">${escape(a.notes)}</p>` : ''}<div class="actions">${button('Edit warband', 'edit-warband')}${button(a.archived ? 'Restore warband' : 'Archive warband', 'archive-warband', { type: 'link' })}</div></section>`;
+    ${a.notes ? `<p class="copy muted">${escape(a.notes)}</p>` : ''}<div class="actions">${button('Edit warband', 'edit-warband')}${!a.archived && !isActive ? button('Make Active', 'make-active-warband', { type: 'primary' }) : ''}${button(a.archived ? 'Restore warband' : 'Archive warband', 'archive-warband', { type: 'link' })}</div></section>`;
   const sorted = Ledger.sortedUnits(a.units, warlord?.id);
   const unitCards = (units, emptyTitle) => units.length ? `<div class="cards">${units.map(unit => unitCard(a, unit)).join('')}</div>` : empty(emptyTitle, '');
   const resource = CampaignStore.data.campaign.resource;
   const datacardActions = hasWarbandDatacards(a) ? button('View datacards', 'view-datacards') + button('Export datacards', 'export-datacards', { glyph: 'download' }) : '';
   const rosterActions = `<div class="actions">${datacardActions}${button('Add Anvil hero', 'new-anvil-hero', { glyph: 'plus' })}${add('Add unit', 'new-unit')}</div>`;
-  return title + `<div class="layout roster-layout">${selector}<div class="stack">${summary}
+  return title + `<div class="stack">${summary}
     ${section('Order of battle', unitCards(sorted.filter(unit => Ledger.battleReady(unit, a.id, battles)), 'No units ready for battle'), rosterActions)}
     ${section('Reserved', unitCards(sorted.filter(unit => Ledger.rosterStatus(unit, a.id, battles) === 'In Reserves'), 'No units in reserves'))}
     ${section('Retired', unitCards(sorted.filter(unit => Ledger.rosterStatus(unit, a.id, battles) === 'Retired'), 'No retired units'))}
     ${warbandLedger(a, Ledger.gloryPoints, 'glory')}
-    ${resource ? warbandLedger(a, resource, 'resource') : ''}</div></div>`;
+    ${resource ? warbandLedger(a, resource, 'resource') : ''}</div>`;
 }
 
 function warbandLedger(a, label, kind) {
@@ -71,7 +73,8 @@ function warbandForm(existing) {
     else {
       const id = Ledger.id();
       CampaignStore.data.armies.push({ id, ...values, archived: false, units: [], lores: [], quests: [], ledger: [] });
-      CampaignStore.data.activeArmyId = id;
+      CampaignStore.data.activeWarbandId = id;
+      viewedArmyId = '';
     }
     return ['Warband saved.', 'warbands'];
   }, { label: existing ? 'Save warband' : 'Create warband' });

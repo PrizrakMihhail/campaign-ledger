@@ -2,24 +2,26 @@
 
 function overview() {
   const c = CampaignStore.data.campaign;
-  const active = CampaignStore.data.armies.filter(item => !item.archived);
-  const a = active.find(item => item.id === CampaignStore.data.activeArmyId) || active[0];
-  const activeQuests = active.flatMap(item => item.quests.filter(q => q.status === 'Active').map(q => ({ item, q })));
-  const completed = active.reduce((sum, item) => sum + item.quests.filter(q => q.status === 'Completed').length, 0);
-  const latest = sortedBattles().slice(0, 4);
+  const a = viewedArmy();
+  const activeQuests = a?.quests.filter(q => q.status === 'Active') ?? [];
+  const completed = a?.quests.filter(q => q.status === 'Completed').length ?? 0;
+  const recentBattles = warbandBattles(a);
+  const rostered = a?.units.filter(unit => Ledger.rosterStatus(unit, a.id, CampaignStore.data.battles) !== 'Retired').length ?? 0;
   const cards = [
-    ['shield', 'Warbands', active.length, `${active.reduce((sum, item) => sum + item.units.filter(u => Ledger.rosterStatus(u, item.id, CampaignStore.data.battles) !== 'Retired').length, 0)} rostered units`],
-    ['swords', 'Battles played', CampaignStore.data.battles.length, a ? `${Ledger.record(CampaignStore.data, a.id).Victory} wins for ${a.name}` : 'Campaign history'],
+    ['shield', 'Rostered units', rostered, a?.name ?? 'No warband selected'],
+    ['swords', 'Battles played', recentBattles.length, a ? `${Ledger.record(CampaignStore.data, a.id).Victory} wins for ${a.name}` : 'Battle history'],
     ['coin', Ledger.gloryPoints, a ? Ledger.balance(CampaignStore.data, a) : 0, a ? a.name : 'Warband balance'],
     ['flag', 'Active quests', activeQuests.length, `${completed} completed`],
   ];
   const stats = cards.map(([glyph, title, number, caption]) => `<div class="stat"><div class="stat-head">${icon(glyph)}${escape(title)}</div><strong class="stat-value">${fmt(number)}</strong><p class="meta">${escape(caption)}</p></div>`).join('');
-  const recent = latest.length ? latest.map(b => battleRow(b)).join('') : empty('No battles recorded', 'Log the first result and its aftermath.', a ? add('Record battle', 'new-battle') : '');
-  const quests = activeQuests.length ? activeQuests.slice(0, 4).map(({ item, q }) => `<div class="list-item"><button type="button" class="list-button row" data-action="quest-warband" data-id="${escape(item.id)}">${tile('flag')}<span class="row-main"><strong class="row-title">${escape(q.title)}</strong><span class="meta row-sub">${escape(item.name)}</span></span></button>${questProgress(q)}</div>`).join('') : empty('No active quests', 'Give a warband a campaign objective.');
-  const start = !a ? add('Create warband', 'new-warband') : add('Record battle', 'new-battle');
+  const canBattle = a && !a.archived;
+  const recent = recentBattles.length ? recentBattles.slice(0, 4).map(b => battleRow(b, a.id)).join('')
+    : empty('No battles recorded', canBattle ? 'Log the first result and its aftermath.' : '');
+  const quests = activeQuests.length ? activeQuests.slice(0, 4).map(q => `<div class="list-item"><a href="#quests" class="list-button row">${tile('flag')}<strong class="row-title">${escape(q.title)}</strong></a>${questProgress(q)}</div>`).join('') : empty('No active quests', '');
+  const start = !a ? add('Create warband', 'new-warband') : canBattle ? add('Record battle', 'new-battle') : '';
   return `<section class="hero"><div class="hero-content"><div class="hero-kicker">${escape(c.pack)}${CampaignStore.data.sample ? badge('Sample campaign', 'sample') : ''}</div><h1>${escape(c.name)}</h1>${c.location ? `<p class="meta">${escape(c.location)}</p>` : ''}<div class="actions">${start}${CampaignStore.data.sample ? button('Start my campaign', 'start') : ''}</div></div></section>
     <div class="stats">${stats}</div>
-    <div class="layout overview-layout"><div class="stack">${section('Recent battles', recent, pageLink('All battles', 'battles'))}${section('Warbands', active.length ? active.map(item => warbandRow(item, 'go-warband')).join('') : empty('No active warbands', 'Create or restore a warband.'), pageLink('View warbands', 'warbands'))}</div>
+    <div class="layout overview-layout"><div class="stack">${section('Recent battles', recent, pageLink('View battles', 'battles'))}${section('Warband', a ? warbandRow(a) : empty('No warband selected', 'Select or create a warband.'), pageLink('View warband', 'warbands'))}</div>
     <div class="stack">${section('Active quests', quests, pageLink('All quests', 'quests'))}${c.notes ? section('Campaign notes', `<p class="copy muted">${escape(c.notes)}</p>`) : ''}</div></div>`;
 }
 
@@ -29,21 +31,21 @@ function questProgress(q) {
 }
 
 function quests() {
-  const a = activeArmy();
-  const title = heading('Quests', 'Objectives and rewards by warband.', a ? add('Add quest', 'new-quest') : '');
-  if (!a) return title + empty('No warbands yet', 'Create a warband to start tracking quests.', pageLink('View warbands', 'warbands'));
-  const selector = section('Warband', select('Campaign warband', 'quest-warband', armyOptions(), a.id));
+  const a = viewedArmy();
+  const title = heading('Quests', a?.name, a ? add('Add quest', 'new-quest') : '');
+  if (!a) return title + empty('No warband selected', 'Select or create a warband to track its quests.', pageLink('View warbands', 'warbands'));
   const groups = Ledger.questStatuses.map(status => {
     const items = a.quests.filter(q => q.status === status);
     if (!items.length && status !== 'Active') return '';
     return section(`${status} quests`, items.length ? `<div class="cards">${items.map(q => `<article class="card"><div class="split"><h3>${escape(q.title)}</h3>${badge(q.status)}</div>${q.goal ? `<p class="copy muted">${escape(q.goal)}</p>` : ''}${questProgress(q)}${span('Reward', q.reward)}${q.notes ? `<p class="meta copy">${escape(q.notes)}</p>` : ''}<div class="actions">${button('Edit quest', 'edit-quest', { id: q.id })}${q.status === 'Active' ? button('Mark complete', 'complete-quest', { id: q.id, type: 'link' }) : ''}</div></article>`).join('')}</div>` : empty('No active quests', 'Add an objective for this warband.'));
   }).join('');
-  return title + `<div class="layout roster-layout">${selector}<div class="stack">${groups}</div></div>`;
+  return title + `<div class="stack">${groups}</div>`;
 }
 
 function chronicle() {
-  const entries = [...CampaignStore.data.entries].sort(Ledger.dateOrder);
-  return heading('Chronicle', 'The story of your campaign.', add('Write entry', 'new-entry')) + section('Campaign entries',
+  const a = viewedArmy();
+  const entries = CampaignStore.data.entries.filter(entry => !entry.armyId || entry.armyId === a?.id).sort(Ledger.dateOrder);
+  return heading('Chronicle', a?.name || 'Campaign-wide entries', add('Write entry', 'new-entry')) + section('Chronicle entries',
     entries.length ? entries.map(entry => `<article class="book-entry"><div class="split"><div><h3>${escape(entry.title)}</h3><p class="meta row-sub">${makeDate(entry.date)} · ${escape(army(entry.armyId)?.name || 'Campaign-wide')}</p></div>${button('Edit', 'edit-entry', { id: entry.id })}</div><p class="copy">${escape(entry.body)}</p></article>`).join('') : empty('No chronicle entries yet', 'Record a turning point, a rivalry, or a deed worth remembering.'));
 }
 
@@ -69,9 +71,10 @@ function campaignValues(v) {
 function startCampaign() {
   formDialog('Start a new campaign', campaignFields({ ...Ledger.blank().campaign, name: '' }), v => {
     CampaignStore.data = { ...Ledger.blank(), campaign: campaignValues(v) };
+    viewedArmyId = '';
     resetBattleFilters();
     return ['Campaign created.', 'overview'];
-  }, { label: 'Start campaign', description: CampaignStore.data.sample && savedValue === null ? 'Set up your campaign after exploring the sample.' : 'This replaces the current campaign in this browser. Export a backup first to keep a copy.' });
+  }, { label: 'Start campaign', description: CampaignStore.data.sample && !CampaignStore.hasSavedCampaign ? 'Set up your campaign after exploring the sample.' : 'This replaces the current campaign in this browser. Export a backup first to keep a copy.' });
 }
 
 function questForm(a, existing) {
@@ -92,7 +95,7 @@ function entryForm(existing) {
   const j = existing || {};
   formDialog(existing ? 'Edit chronicle entry' : 'Write a chronicle entry',
     field('Title', 'title', j.title, { full: true, required: true }) + field('Date', 'date', j.date || Ledger.date(), { type: 'date', required: true }) +
-    select('Warband', 'armyId', [['', 'Campaign-wide'], ...armyOptions()], j.armyId || '') + area('Entry', 'body', j.body, 7, true), v => {
+    select('Warband', 'armyId', [['', 'Campaign-wide'], ...armyOptions()], j.armyId ?? viewedArmy()?.id ?? '') + area('Entry', 'body', j.body, 7, true), v => {
     const values = { ...v, title: required(v.title, 'Title'), body: required(v.body, 'Entry') };
     if (existing) Object.assign(existing, values);
     else CampaignStore.data.entries.push({ id: Ledger.id(), ...values });

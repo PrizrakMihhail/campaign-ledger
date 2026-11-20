@@ -1,9 +1,9 @@
 'use strict';
 
-const filters = { query: '', army: '', result: '' };
+const filters = { query: '', result: '' };
 
 function resetBattleFilters() {
-  Object.assign(filters, { query: '', army: '', result: '' });
+  Object.assign(filters, { query: '', result: '' });
 }
 
 function battleRow(b, perspective = b.armyId) {
@@ -14,27 +14,31 @@ function battleRow(b, perspective = b.armyId) {
 }
 
 function battles() {
-  return heading('Battles', 'Results, resource changes, and unit Renown awards.', CampaignStore.data.armies.some(a => !a.archived) ? add('Record battle', 'new-battle') : '') + section('Battle record',
-    `<div class="filter-row" id="battle-filters">${field('Search', 'query', filters.query, { placeholder: 'Search battles', type: 'search' })}${select('Warband', 'army', [['', 'All warbands'], ...armyOptions()], filters.army)}${select('Result', 'result', [['', 'All results'], ...Ledger.resultOptions], filters.result)}</div><div id="battle-results">${battleResults()}</div>`);
+  const warband = viewedArmy();
+  const title = heading('Battles', warband?.name, warband && !warband.archived ? add('Record battle', 'new-battle') : '');
+  if (!warband) return title + empty('No warband selected', 'Select or create a warband to view its battles.', pageLink('View warbands', 'warbands'));
+  return title + section('Battle record',
+    `<div class="filter-row" id="battle-filters">${field('Search', 'query', filters.query, { placeholder: 'Search battles', type: 'search' })}${select('Result', 'result', [['', 'All results'], ...Ledger.resultOptions], filters.result)}</div><div id="battle-results">${battleResults()}</div>`);
 }
 
 function battleResults() {
   const search = filters.query.toLowerCase().trim();
-  const rows = sortedBattles().filter(b => {
-    if (filters.army && !Ledger.participants(b).includes(filters.army)) return false;
-    if (filters.result && Ledger.resultFor(b, filters.army || b.armyId) !== filters.result) return false;
+  const warband = viewedArmy();
+  const battles = warbandBattles(warband);
+  const rows = battles.filter(b => {
+    if (filters.result && Ledger.resultFor(b, warband.id) !== filters.result) return false;
     return !search || [b.title, b.battleplan, b.opponent, b.notes, ...Ledger.participants(b).map(id => army(id)?.name)].some(v => v?.toLowerCase().includes(search));
   });
-  if (rows.length) return rows.map(battle => battleRow(battle, filters.army || battle.armyId)).join('');
-  if (CampaignStore.data.battles.length) return empty('No matching battles', 'Try a different search or filter.');
-  return empty('No battles yet', CampaignStore.data.armies.some(a => !a.archived) ? 'Record your first result to start the battle history.' : 'Create or restore a warband before recording a battle.');
+  if (rows.length) return rows.map(battle => battleRow(battle, warband.id)).join('');
+  if (battles.length) return empty('No matching battles', 'Try a different search or filter.');
+  return empty('No battles yet', warband?.archived ? '' : 'Record your first result to start the battle history.');
 }
 
 function battleForm(existing) {
   const b = existing || {};
   const c = CampaignStore.data.campaign;
   const eligible = CampaignStore.data.armies.filter(a => !a.archived || (existing && Ledger.participants(b).includes(a.id)));
-  const primary = b.armyId || eligible.find(a => a.id === CampaignStore.data.activeArmyId)?.id || eligible[0]?.id;
+  const primary = b.armyId || eligible.find(a => a.id === viewedArmy()?.id)?.id || eligible[0]?.id;
   if (!primary) {
     tell('Create or restore a warband to record a battle.', true);
     return;
