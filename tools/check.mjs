@@ -45,6 +45,30 @@ function boot({ page = 'overview', saved = new Map() } = {}) {
 }
 
 const app = boot();
+const resources = boot({ page: 'warbands' });
+assert.equal(resources.run('CampaignStore.data.campaign.resource'), '');
+assert.equal(resources.run('Ledger.balance(CampaignStore.data, activeArmy())'), 6);
+assert.match(resources.run('warbands()'), /<h2>Glory Points ledger<\/h2>/);
+assert.doesNotMatch(resources.run('warbands()'), /<h2>Campaign Resources ledger<\/h2>/);
+resources.run(`
+  const oldCampaign = Ledger.sample();
+  oldCampaign.version = 2;
+  oldCampaign.campaign.pack = 'Ravaged Coast';
+  oldCampaign.campaign.resource = 'Emberstone Shards';
+  CampaignStore.data = Ledger.normalize(oldCampaign);
+`);
+assert.equal(resources.run('Ledger.balance(CampaignStore.data, activeArmy())'), 0);
+assert.equal(resources.run("Ledger.balance(CampaignStore.data, activeArmy(), 'resource')"), 6);
+assert.equal(resources.run("Ledger.balance(CampaignStore.data, CampaignStore.data.armies[1], 'resource')"), 5);
+assert.match(resources.run('warbands()'), /Glory Points ledger[\s\S]*Emberstone Shards ledger/);
+resources.run(`
+  CampaignStore.data.battles[0].delta = 3;
+  CampaignStore.data.campaign.resource = '';
+  CampaignStore.data = Ledger.normalize(CampaignStore.data);
+`);
+assert.equal(resources.run('Ledger.balance(CampaignStore.data, activeArmy())'), 3);
+assert.equal(resources.run("Ledger.balance(CampaignStore.data, activeArmy(), 'resource')"), 6);
+assert.doesNotMatch(resources.run('warbands()'), /Emberstone Shards ledger/);
 const editing = boot();
 const editorDialog = editing.elements.get('#dialog');
 const closePrompt = editing.elements.get('#unsaved-dialog');
@@ -312,7 +336,7 @@ const key = 'ptg_campaign_ledger_v2';
 const saved = new Map([['ptg_campaign_ledger_v1', JSON.stringify(legacy)]]);
 const migrated = boot({ saved });
 assert.equal(migrated.run('CampaignStore.data.campaign.name'), legacy.campaign.name);
-assert.equal(JSON.parse(saved.get(key)).version, 2);
+assert.equal(JSON.parse(saved.get(key)).version, 3);
 assert.equal(migrated.run('activeArmy().units[0].reinforced'), false);
 assert.deepEqual(JSON.parse(migrated.run('JSON.stringify(activeArmy().units.map(unit => unit.type))')), ['War Machine', 'Other', 'Other']);
 

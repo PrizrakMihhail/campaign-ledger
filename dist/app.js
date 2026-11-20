@@ -95,7 +95,7 @@ const actions = {
       }
     });
   },
-  'new-resource': () => resourceForm(activeArmy()),
+  'new-resource': kind => resourceForm(activeArmy(), undefined, kind),
   'edit-resource': id => resourceForm(activeArmy(), activeArmy().ledger.find(item => item.id === id)),
   'remove-resource': id => {
     const list = activeArmy().ledger;
@@ -173,7 +173,7 @@ document.addEventListener('change', event => {
   if (input.name === 'quest-warband' || input.name === 'arcane-warband') selectWarband(input.value);
   if (input.name === 'pack' && input.form) {
     const resource = input.form.elements.resource;
-    if (!resource.value.trim() || [...Ledger.packs.values()].includes(resource.value)) resource.value = Ledger.packs.get(input.value) || Ledger.packs.get('Custom');
+    if (!resource.value.trim() || [...Ledger.packs.values()].includes(resource.value)) resource.value = Ledger.packs.get(input.value) ?? '';
   }
 });
 

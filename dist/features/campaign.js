@@ -10,7 +10,7 @@ function overview() {
   const cards = [
     ['shield', 'Warbands', active.length, `${active.reduce((sum, item) => sum + item.units.filter(u => u.status !== 'Retired').length, 0)} rostered units`],
     ['swords', 'Battles played', CampaignStore.data.battles.length, a ? `${Ledger.record(CampaignStore.data, a.id).Victory} wins for ${a.name}` : 'Campaign history'],
-    ['coin', c.resource, a ? Ledger.balance(CampaignStore.data, a) : 0, a ? a.name : 'Warband balance'],
+    ['coin', Ledger.gloryPoints, a ? Ledger.balance(CampaignStore.data, a) : 0, a ? a.name : 'Warband balance'],
     ['flag', 'Active quests', activeQuests.length, `${completed} completed`],
   ];
   const stats = cards.map(([glyph, title, number, caption]) => `<div class="stat"><div class="stat-head">${icon(glyph)}${escape(title)}</div><strong class="stat-value">${fmt(number)}</strong><p class="meta">${escape(caption)}</p></div>`).join('');
@@ -59,11 +59,11 @@ function campaignFields(c) {
   const packs = [...Ledger.packs.keys()];
   if (!packs.includes(c.pack)) packs.push(c.pack);
   return field('Campaign name', 'name', c.name, { required: true }) + select('Battlepack', 'pack', packs, c.pack) + field('Region', 'location', c.location) +
-    field('Resource name', 'resource', c.resource) + field('Roster points reference', 'pointsLimit', c.pointsLimit, { type: 'number', min: 1, required: true }) + area('Campaign notes and house rules', 'notes', c.notes, 4);
+    field('Campaign Resource', 'resource', c.resource, { placeholder: 'Optional' }) + field('Roster points reference', 'pointsLimit', c.pointsLimit, { type: 'number', min: 1, required: true }) + area('Campaign notes and house rules', 'notes', c.notes, 4);
 }
 
 function campaignValues(v) {
-  return { name: required(v.name, 'Campaign name'), pack: v.pack, location: v.location.trim(), resource: v.resource.trim() || Ledger.packs.get(v.pack) || Ledger.packs.get('Custom'), pointsLimit: whole(v.pointsLimit, 'Roster points reference', 1), notes: v.notes.trim() };
+  return { name: required(v.name, 'Campaign name'), pack: v.pack, location: v.location.trim(), resource: Ledger.resourceName(v.resource), pointsLimit: whole(v.pointsLimit, 'Roster points reference', 1), notes: v.notes.trim() };
 }
 
 function startCampaign() {

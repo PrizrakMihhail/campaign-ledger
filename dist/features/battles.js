@@ -61,6 +61,7 @@ function battleForm(existing) {
     fields.opponentArmyId.value = options.some(([key]) => key === opponent) ? opponent : '';
     fields.opponent.disabled = Boolean(fields.opponentArmyId.value);
     fields.oppDelta.disabled = !fields.opponentArmyId.value;
+    if (fields.oppResourceDelta) fields.oppResourceDelta.disabled = fields.oppDelta.disabled;
 
     const ids = [yourArmy, fields.opponentArmyId.value].filter(Boolean);
     let index = 0;
@@ -81,7 +82,9 @@ function battleForm(existing) {
   const fields = field('Battle title', 'title', b.title, { full: true, required: true }) + field('Date', 'date', b.date || Ledger.date(), { type: 'date', required: true }) +
     field('Battleplan', 'battleplan', b.battleplan) + select('Warband', 'armyId', firstOptions, primary) + select('Opponent warband', 'opponentArmyId', [['', 'External opponent'], ...armyOptions(eligible), ...(b.opponentArmyId && !army(b.opponentArmyId) ? [[b.opponentArmyId, 'Unknown warband']] : [])], b.opponentArmyId || '') +
     field('External opponent name', 'opponent', b.opponent) + select('Result for selected warband', 'result', Ledger.resultOptions, b.result || 'Victory') +
-    field(`Warband ${c.resource} change`, 'delta', b.delta ?? 0, { type: 'number' }) + field(`Opponent ${c.resource} change`, 'oppDelta', b.oppDelta ?? 0, { type: 'number' }) +
+    field('Warband Glory Points change', 'delta', b.delta ?? 0, { type: 'number' }) + field('Opponent Glory Points change', 'oppDelta', b.oppDelta ?? 0, { type: 'number' }) +
+    (c.resource ? field(`Warband ${c.resource} change`, 'resourceDelta', b.resourceDelta ?? 0, { type: 'number' }) +
+      field(`Opponent ${c.resource} change`, 'oppResourceDelta', b.oppResourceDelta ?? 0, { type: 'number' }) : '') +
     `<fieldset class="awards full"><legend>Unit Renown awards</legend><p class="meta">Enter the Renown each unit earned in this battle.</p><div id="battle-awards"></div></fieldset>` + area('Aftermath notes', 'notes', b.notes, 4);
   formDialog(existing ? 'Edit battle' : 'Record battle', fields, (v, form) => {
     if (v.opponentArmyId === v.armyId) throw new Error('Choose a different opponent warband.');
@@ -92,7 +95,9 @@ function battleForm(existing) {
       return [{ id: drafts.get(awardKey(armyId, unitId))?.id || Ledger.id(), armyId, unitId, unitName, delta }];
     });
     const values = { title: required(v.title, 'Battle title'), date: v.date, armyId: v.armyId, opponentArmyId: v.opponentArmyId, opponent: v.opponent?.trim() || '',
-      result: v.result, battleplan: v.battleplan.trim(), notes: v.notes.trim(), delta: whole(v.delta, 'Warband resource change'), oppDelta: whole(v.oppDelta ?? 0, 'Opponent resource change'), awards };
+      result: v.result, battleplan: v.battleplan.trim(), notes: v.notes.trim(), delta: whole(v.delta, 'Warband Glory Points change'), oppDelta: whole(v.oppDelta ?? 0, 'Opponent Glory Points change'),
+      resourceDelta: c.resource ? whole(v.resourceDelta, 'Warband campaign resource change') : b.resourceDelta ?? 0,
+      oppResourceDelta: c.resource ? whole(v.oppResourceDelta ?? 0, 'Opponent campaign resource change') : b.oppResourceDelta ?? 0, awards };
     if (existing) Object.assign(existing, values);
     else CampaignStore.data.battles.push({ id: Ledger.id(), ...values });
     resetBattleFilters();
@@ -109,13 +114,16 @@ function battleForm(existing) {
 function viewBattle(b) {
   const first = army(b.armyId)?.name || 'Unknown warband';
   const second = army(b.opponentArmyId)?.name || b.opponent || 'External opponent';
+  const resource = CampaignStore.data.campaign.resource;
+  const changes = (label, delta, opponentDelta) => `<p class="meta">${escape(label)} · ${escape(first)} ${signed(delta)}${b.opponentArmyId ? ` · ${escape(second)} ${signed(opponentDelta)}` : ''}</p>`;
   const awards = b.awards.map(a => {
     const owner = army(a.armyId);
     const name = owner?.units.find(u => u.id === a.unitId)?.name || a.unitName || 'Removed unit';
     return `<div class="list-item split"><p>${escape(name)} <span class="meta">${escape(owner?.name || '')}</span></p><p class="nowrap">${signed(a.delta)} Renown</p></div>`;
   }).join('');
   viewDialog(b.title, `<div class="split"><p class="meta">${makeDate(b.date)}${b.battleplan ? ` · ${escape(b.battleplan)}` : ''}</p>${badge(b.result)}</div>
-    <p><strong>${escape(first)}</strong> vs ${escape(second)}</p><p class="meta">${escape(CampaignStore.data.campaign.resource)} · ${escape(first)} ${signed(b.delta)}${b.opponentArmyId ? ` · ${escape(second)} ${signed(b.oppDelta)}` : ''}</p>${b.notes ? `<p class="copy">${escape(b.notes)}</p>` : ''}
+    <p><strong>${escape(first)}</strong> vs ${escape(second)}</p>${changes(Ledger.gloryPoints, b.delta, b.oppDelta)}
+    ${resource ? changes(resource, b.resourceDelta, b.oppResourceDelta) : ''}${b.notes ? `<p class="copy">${escape(b.notes)}</p>` : ''}
     ${awards ? `<div><h3>Unit Renown awards</h3>${awards}</div>` : ''}`, button('Edit battle', 'edit-battle', { id: b.id, type: 'primary' }));
 }
 

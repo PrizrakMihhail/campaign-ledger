@@ -2,12 +2,14 @@
 
 const Ledger = (() => {
   const packs = new Map(Object.entries({
-    Ascension: 'Glory Points',
+    Ascension: '',
     'Ravaged Coast': 'Emberstone Shards',
     'Blighted Wilds': 'Campaign Resources',
     'The Grymmpeaks': 'Chamonite Ore Points',
     Custom: 'Campaign Resources',
   }));
+  const gloryPoints = 'Glory Points';
+  const resourceName = value => str(value).trim().toLowerCase() === gloryPoints.toLowerCase() ? '' : str(value).trim();
   const resultOptions = ['Victory', 'Defeat', 'Draw', 'Other'];
   const unitStatuses = ['Active', 'In Reserves', 'Retired'];
   const firstScarCount = 5;
@@ -104,8 +106,8 @@ const Ledger = (() => {
 
   function blank() {
     return {
-      version: 2, sample: false, activeArmyId: '',
-      campaign: { name: 'My Path to Glory', pack: 'Ascension', location: 'The Mortal Realms', resource: 'Glory Points', pointsLimit: 1000, notes: '' },
+      version: 3, sample: false, activeArmyId: '',
+      campaign: { name: 'My Path to Glory', pack: 'Ascension', location: 'The Mortal Realms', resource: '', pointsLimit: 1000, notes: '' },
       armies: [], battles: [], entries: [],
     };
   }
@@ -115,8 +117,11 @@ const Ledger = (() => {
         !Array.isArray(value.armies) || !Array.isArray(value.battles) || !Array.isArray(value.entries)) {
       throw new Error('Choose a Campaign Ledger JSON backup.');
     }
-    if (value.version && ![1, 2].includes(value.version)) throw new Error('This backup uses an unsupported version.');
+    if (value.version && ![1, 2, 3].includes(value.version)) throw new Error('This backup uses an unsupported version.');
     const c = value.campaign;
+    const pack = str(c.pack) || 'Custom';
+    const resource = resourceName(value.version === 3 ? c.resource : str(c.resource) || (packs.get(pack) ?? packs.get('Custom')));
+    const legacyResource = value.version !== 3 && Boolean(resource);
     const armies = records(value.armies, a => ({
       name: str(a.name) || 'Unnamed warband', faction: str(a.faction), warlord: str(a.warlord), warlordId: a.warlordId == null ? null : str(a.warlordId),
       formation: str(a.formation).trim(),
@@ -127,7 +132,7 @@ const Ledger = (() => {
         title: str(q.title) || 'Unnamed quest', goal: str(q.goal), status: choice(q.status, questStatuses, 'Active'),
         reward: str(q.reward), notes: str(q.notes), target: Math.max(0, integer(q.target)), progress: Math.max(0, integer(q.progress)),
       })),
-      ledger: records(a.ledger, l => ({ date: cleanDate(l.date), reason: str(l.reason), delta: integer(l.delta) })),
+      ledger: records(a.ledger, l => ({ date: cleanDate(l.date), reason: str(l.reason), delta: integer(l.delta), kind: legacyResource || l.kind === 'resource' ? 'resource' : 'glory' })),
     }));
     for (const army of armies) {
       if (army.warlordId === null && army.warlord.trim()) {
@@ -136,12 +141,11 @@ const Ledger = (() => {
       }
       army.warlordId = warlord(army)?.id ?? '';
     }
-    const pack = str(c.pack) || 'Custom';
     return {
-      version: 2, sample: value.sample === true,
+      version: 3, sample: value.sample === true,
       campaign: {
         name: str(c.name) || 'My Path to Glory', pack, location: str(c.location),
-        resource: str(c.resource) || packs.get(pack) || packs.get('Custom'),
+        resource,
         pointsLimit: Math.max(1, integer(c.pointsLimit) || 1000), notes: str(c.notes),
       },
       activeArmyId: armies.some(a => a.id === value.activeArmyId) ? value.activeArmyId : armies[0]?.id || '',
@@ -150,7 +154,8 @@ const Ledger = (() => {
         title: str(b.title) || 'Unnamed battle', date: cleanDate(b.date), battleplan: str(b.battleplan),
         armyId: str(b.armyId), opponentArmyId: str(b.opponentArmyId), opponent: str(b.opponent),
         result: choice(b.result, resultOptions, 'Other'), notes: str(b.notes),
-        delta: integer(b.delta), oppDelta: integer(b.oppDelta),
+        delta: legacyResource ? 0 : integer(b.delta), oppDelta: legacyResource ? 0 : integer(b.oppDelta),
+        resourceDelta: integer(legacyResource ? b.delta : b.resourceDelta), oppResourceDelta: integer(legacyResource ? b.oppDelta : b.oppResourceDelta),
         awards: records(b.awards, a => ({ armyId: str(a.armyId), unitId: str(a.unitId), unitName: str(a.unitName), delta: integer(a.delta) })),
       })),
       entries: records(value.entries, j => ({ title: str(j.title) || 'Untitled entry', date: cleanDate(j.date), armyId: str(j.armyId), body: str(j.body) })),
@@ -206,7 +211,7 @@ const Ledger = (() => {
     return normalize({
       ...blank(), sample: true, activeArmyId: 'forge',
       campaign: {
-        name: 'The Long Reckoning', pack: 'Ascension', location: 'The Ashen Marches', resource: 'Glory Points', pointsLimit: 1000,
+        name: 'The Long Reckoning', pack: 'Ascension', location: 'The Ashen Marches', resource: '', pointsLimit: 1000,
         notes: 'Two rival warbands follow the old beacon road into the Ashen Marches. Whoever lights the final beacon will command the crossing.',
       },
       armies: [
@@ -255,14 +260,15 @@ const Ledger = (() => {
   const participants = battle => [battle.armyId, battle.opponentArmyId].filter(Boolean);
   const signed = value => value > 0 ? `+${value.toLocaleString()}` : value.toLocaleString();
 
-  function balance(state, army) {
-    return transactions(state, army).reduce((sum, entry) => sum + entry.delta, 0);
+  function balance(state, army, kind) {
+    return transactions(state, army, kind).reduce((sum, entry) => sum + entry.delta, 0);
   }
 
-  function transactions(state, army) {
-    const entries = army.ledger.map(entry => ({ ...entry, manual: true }));
+  function transactions(state, army, kind = 'glory') {
+    const entries = army.ledger.filter(entry => entry.kind === kind).map(entry => ({ ...entry, manual: true }));
+    const [first, opponent] = kind === 'resource' ? ['resourceDelta', 'oppResourceDelta'] : ['delta', 'oppDelta'];
     for (const b of state.battles) {
-      const delta = b.armyId === army.id ? b.delta : b.opponentArmyId === army.id ? b.oppDelta : 0;
+      const delta = b.armyId === army.id ? b[first] : b.opponentArmyId === army.id ? b[opponent] : 0;
       if (delta) entries.push({ id: b.id, date: b.date, reason: b.title, delta, manual: false });
     }
     return entries.sort(dateOrder);
@@ -294,6 +300,6 @@ const Ledger = (() => {
     return battle.result;
   }
 
-  return { packs, resultOptions, unitStatuses, unitStatus, battleReady, battleScarSeverity, isScarred, questStatuses, unitTypes, unitType, unitName, warlord, sortedUnits, profileStats, weaponFields, normalizeProfileEdits, profileDefaults, profileAbilityEdits, profileChanges, validColor, integer, id, date, dateOrder,
+  return { packs, gloryPoints, resourceName, resultOptions, unitStatuses, unitStatus, battleReady, battleScarSeverity, isScarred, questStatuses, unitTypes, unitType, unitName, warlord, sortedUnits, profileStats, weaponFields, normalizeProfileEdits, profileDefaults, profileAbilityEdits, profileChanges, validColor, integer, id, date, dateOrder,
     blank, normalize, normalizeAnvil, destinySpent, sample, unitPoints, unitUpgradePoints, unitSize, loreKinds, lorePoints, points, participants, signed, balance, transactions, unitHistory, battleRenown, record, resultFor };
 })();
