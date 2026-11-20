@@ -19,24 +19,67 @@ for (const [, stylesheet] of html.matchAll(/<link rel="stylesheet" href="([^"]+)
   for (const [, path] of css.matchAll(/url\(['"]([^'"]+)['"]\)/g)) await readFile(asset(path, url));
 }
 
-function boot({ page = 'overview', saved = new Map() } = {}) {
+const key = 'ptg_campaign_ledger_v2';
+const fixture = {
+  version: 3, activeWarbandId: 'forge',
+  campaign: {
+    name: 'Verification Campaign', pack: 'Ascension', location: 'The Ashen Marches', resource: '', pointsLimit: 1000,
+    notes: 'Two rival warbands follow the old beacon road into the Ashen Marches. Whoever lights the final beacon will command the crossing.',
+  },
+  armies: [
+    {
+      id: 'forge', name: 'Forge of the Sunset', faction: 'Khazalite Holds', warlord: 'Dagna Emberhand', color: '#ca935d',
+      notes: 'Dagna and her company seek the last surviving beacon of their ancestral hold.',
+      units: [
+        { id: 'dagna', name: 'Dagna Emberhand', type: 'Hero', points: 280, renown: 4, path: 'Path of the Warrior' },
+        { id: 'oath', name: 'The Oathkeepers', type: 'Infantry', points: 300, renown: 2 },
+        { id: 'flint', name: 'Flintguard', type: 'Infantry', points: 240, renown: 1, battleScars: 5, scars: 'Still bearing wounds from the fight at the crossing.' },
+      ],
+      quests: [
+        { id: 'beacons', title: 'Relight the Watchfires', goal: 'Secure three abandoned beacons along the old road.', reward: 'Control of the beacon road', target: 3, progress: 2 },
+        { id: 'standard', title: 'Recover the Fallen Standard', goal: 'Find the company standard in the ruins of Cinderfall.', reward: 'The lost company banner' },
+      ],
+      ledger: [{ id: 'supply', date: '2026-10-04', reason: 'Supplies for the beacon road', delta: -2 }],
+    },
+    {
+      id: 'veil', name: 'The Hollow Host', faction: 'Nighthaunt', warlord: 'The Veiled Marshal', color: '#8eaa98',
+      units: [
+        { id: 'marshal', name: 'The Veiled Marshal', type: 'Hero', points: 280, renown: 3 },
+        { id: 'bound', name: 'The Oathbound Dead', type: 'Infantry', points: 460, renown: 2 },
+      ],
+    },
+  ],
+  battles: [
+    { id: 'crossing', title: 'The Cinderfall Crossing', date: '2026-11-14', battleplan: 'Hold the Crossing', armyId: 'forge', opponentArmyId: 'veil', result: 'Victory', delta: 4, oppDelta: 2,
+      notes: 'The Oathkeepers held the bridge long enough for Dagna to light the second beacon.',
+      awards: [{ id: 'award-crossing', armyId: 'forge', unitId: 'oath', unitName: 'The Oathkeepers', delta: 2 }] },
+    { id: 'gate', title: 'Siege of the Ember Gate', date: '2026-10-31', battleplan: 'The Broken Gate', armyId: 'forge', opponent: 'The Iron Maw', result: 'Draw', delta: 2 },
+    { id: 'valley', title: 'Into the Ashen Vale', date: '2026-10-17', armyId: 'forge', opponentArmyId: 'veil', result: 'Defeat', delta: 2, oppDelta: 3 },
+  ],
+  entries: [{ id: 'entry', title: 'A Light on the Old Road', date: '2026-11-14', armyId: 'forge', body: 'The second beacon burned through the night. Even from the valley floor, Dagna could see the old road take shape in its light.' }],
+};
+
+function boot({ page = 'overview', saved = new Map(), fresh = false } = {}) {
+  if (!fresh && saved.size === 0) saved.set(key, JSON.stringify(fixture));
   const elements = new Map();
   const events = new Map();
   const element = () => ({
     classList: { toggle() {} }, eventHandlers: new Map(), focus() {},
     addEventListener(name, callback) { this.eventHandlers.set(name, callback); },
-    showModal() { this.open = true; }, querySelector() { return { focus() {} }; },
+    showModal() { this.open = true; }, close() { this.open = false; }, querySelector() { return { focus() {} }; },
   });
   const context = createContext({
+    fixture,
     document: {
       querySelector(id) {
         if (!elements.has(id)) elements.set(id, element());
         return elements.get(id);
       },
-      addEventListener() {},
+      addEventListener: (name, callback) => events.set(name, callback),
     },
     localStorage: { getItem: key => saved.get(key) ?? null, setItem: (key, value) => saved.set(key, value) },
     window: { addEventListener: (name, callback) => events.set(name, callback), scrollTo() {} },
+    FormData: class { constructor(form) { return Object.entries(form.values); } },
     location: { hash: `#${page}` },
     setTimeout() {}, clearTimeout() {}, queueMicrotask,
   });
@@ -45,8 +88,45 @@ function boot({ page = 'overview', saved = new Map() } = {}) {
 }
 
 const app = boot();
+const freshStorage = new Map();
+const fresh = boot({ page: 'warbands', saved: freshStorage, fresh: true });
+const setup = fresh.elements.get('#main').innerHTML;
+assert.match(setup, /<h1>Start the campaign<\/h1>/);
+assert.match(setup, /Import backup/);
+for (const name of ['name', 'pack', 'location', 'resource', 'pointsLimit', 'notes']) assert.ok(setup.includes(`name="${name}"`));
+assert.equal(fresh.run('CampaignStore.data'), null);
+assert.equal(freshStorage.size, 0);
+const startError = { scrollIntoView() {} };
+const startForm = { id: 'start-form', querySelector: () => startError, values: {
+  name: ' ', pack: 'Custom', location: 'The Marches', resource: 'Emberstone', pointsLimit: '1250', notes: 'Use agreed house rules.',
+} };
+const submitStart = () => fresh.events.get('submit')({ target: startForm, preventDefault() {} });
+submitStart();
+assert.match(startError.textContent, /Campaign name is required/);
+assert.equal(freshStorage.size, 0);
+startForm.values.name = 'A New Campaign';
+submitStart();
+assert.match(fresh.context.location.hash, /^#?overview$/);
+fresh.events.get('hashchange')();
+assert.match(fresh.elements.get('#main').innerHTML, /<h1>A New Campaign<\/h1>/);
+const created = JSON.parse(freshStorage.get(key));
+assert.equal(created.campaign.pointsLimit, 1250);
+assert.equal(created.campaign.resource, 'Emberstone');
+assert.deepEqual([created.armies, created.battles, created.entries], [[], [], []]);
+assert.equal(boot({ saved: freshStorage }).run('currentPage()'), 'overview');
+freshStorage.clear();
+fresh.events.get('storage')({ key: null, newValue: null });
+assert.match(fresh.elements.get('#main').innerHTML, /Start the campaign/);
+const importFile = fresh.elements.get('#import-file');
+importFile.files = [{ text: async () => JSON.stringify(fixture) }];
+await importFile.eventHandlers.get('change')();
+assert.match(fresh.elements.get('#dialog').innerHTML, /Import Verification Campaign/);
+fresh.events.get('submit')({ target: { id: 'editor-form', values: {} }, preventDefault() {} });
+assert.equal(JSON.parse(freshStorage.get(key)).campaign.name, 'Verification Campaign');
+
 const selectedSave = new Map();
 const selection = boot({ page: 'warbands', saved: selectedSave });
+const selectionInitial = selectedSave.get(key);
 selection.run(`
   CampaignStore.data.battles.push({ ...CampaignStore.data.battles[0], id: 'veil-only', title: 'Veil-only battle', armyId: 'veil', opponentArmyId: '' });
   CampaignStore.data.entries.push({ id: 'veil-note', armyId: 'veil', title: 'Veil-only entry', date: '', body: '' });
@@ -61,7 +141,7 @@ for (const [page, content] of [['warbands', 'The Oathkeepers'], ['overview', 'Re
 selection.run("selectWarband('veil')");
 assert.equal(selection.run('activeArmy().id'), 'forge');
 assert.equal(selection.run('viewedArmy().id'), 'veil');
-assert.equal(selectedSave.size, 0);
+assert.equal(selectedSave.get(key), selectionInitial);
 assert.match(selection.elements.get('#topbar').innerHTML, /Forge of the Sunset \(Active\)[\s\S]*value="veil" selected/);
 for (const [page, content] of [['warbands', 'The Oathbound Dead'], ['overview', 'Veil-only battle'], ['battles', 'Veil-only battle'], ['chronicle', 'Veil-only entry'], ['quests', 'Veil-only quest'], ['arcaneTome', 'Veil-only lore']]) {
   assert.match(selection.run(`${page}()`), new RegExp(content));
@@ -71,7 +151,7 @@ assert.match(selection.run('chronicle()'), /Shared entry/);
 selection.run("actions['make-active-warband']()");
 assert.equal(boot({ saved: selectedSave }).run('activeArmy().id'), 'veil');
 selection.run(`
-  const olderCampaign = Ledger.sample();
+  const olderCampaign = Ledger.normalize(fixture);
   delete olderCampaign.activeWarbandId;
   olderCampaign.activeArmyId = 'forge';
   CampaignStore.data = Ledger.normalize(olderCampaign);
@@ -110,7 +190,7 @@ assert.equal(resources.run('Ledger.balance(CampaignStore.data, activeArmy())'), 
 assert.match(resources.run('warbands()'), /<h2>Glory Points ledger<\/h2>/);
 assert.doesNotMatch(resources.run('warbands()'), /<h2>Campaign Resources ledger<\/h2>/);
 resources.run(`
-  const oldCampaign = Ledger.sample();
+  const oldCampaign = Ledger.normalize(fixture);
   oldCampaign.version = 2;
   oldCampaign.campaign.pack = 'Ravaged Coast';
   oldCampaign.campaign.resource = 'Emberstone Shards';
@@ -348,7 +428,7 @@ assert.equal(app.run('Ledger.unitPoints(upgradeFixture)'), 265);
 assert.equal(app.run("Ledger.points({ units: [upgradeFixture, { ...upgradeFixture, status: 'Retired' }] })"), 265);
 assert.match(app.run('unitCard(activeArmy(), upgradeFixture)'), /265 pts/);
 assert.deepEqual(JSON.parse(app.run(`
-  const upgradedCampaign = Ledger.sample();
+  const upgradedCampaign = Ledger.normalize(fixture);
   upgradedCampaign.armies[0].units.push(upgradeFixture);
   JSON.stringify(Ledger.normalize(upgradedCampaign).armies[0].units.at(-1).upgrades);
 `)), upgradedUnit.upgrades);
@@ -383,7 +463,7 @@ assert.deepEqual(JSON.parse(app.run(`JSON.stringify((() => {
 })())`)), ['Anvil of Apotheosis - Veteran', 260, 32]);
 assert.equal(app.run('Ledger.normalizeAnvil({ limit: "" }).limit'), null);
 
-const legacy = JSON.parse(app.run('JSON.stringify(Ledger.sample())'));
+const legacy = JSON.parse(app.run('JSON.stringify(Ledger.normalize(fixture))'));
 legacy.version = 1;
 legacy.campaign.name = 'Migration example';
 delete legacy.armies[0].units[0].profileEdits;
@@ -391,7 +471,6 @@ delete legacy.armies[0].units[0].reinforced;
 legacy.armies[0].units[0].type = 'Artillery';
 legacy.armies[0].units[1].type = 'Beast';
 legacy.armies[0].units[2].type = 'Construct';
-const key = 'ptg_campaign_ledger_v2';
 const saved = new Map([['ptg_campaign_ledger_v1', JSON.stringify(legacy)]]);
 const migrated = boot({ saved });
 assert.equal(migrated.run('CampaignStore.data.campaign.name'), legacy.campaign.name);
@@ -404,9 +483,9 @@ external.campaign.name = 'Edited in another tab';
 saved.set(key, JSON.stringify(external));
 migrated.events.get('storage')({ key, newValue: saved.get(key) });
 assert.equal(migrated.run('CampaignStore.data.campaign.name'), external.campaign.name);
-saved.set(key, JSON.stringify({ ...external, sample: false }));
+saved.set(key, JSON.stringify({ ...external, activeWarbandId: 'veil' }));
 assert.equal(migrated.run('CampaignStore.save()'), false);
 assert.equal(migrated.run('CampaignStore.conflict'), true);
-assert.equal(JSON.parse(saved.get(key)).sample, false);
+assert.equal(JSON.parse(saved.get(key)).activeWarbandId, 'veil');
 
-console.log('Campaign Ledger checks passed: assets, routes, editors, warband selection, battle aftermath, datacards, and backup compatibility.');
+console.log('Campaign Ledger checks passed: assets, first-run setup, routes, editors, battle aftermath, datacards, and backup compatibility.');

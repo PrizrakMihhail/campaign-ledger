@@ -17,12 +17,19 @@ function commit(message, page) {
 }
 
 function currentPage() {
+  if (!CampaignStore.data) return 'start';
   const hash = location.hash.slice(1);
   return Object.hasOwn(pages, hash) ? hash : 'overview';
 }
 
 function render() {
   const page = currentPage();
+  document.querySelector('.shell').classList.toggle('setup-shell', page === 'start');
+  if (page === 'start') {
+    main.innerHTML = setupCampaign();
+    document.title = 'Start the campaign · Path to Glory';
+    return;
+  }
   document.querySelector('#nav').innerHTML = Object.entries(pages).map(([key, [label, glyph]]) => `<a class="nav-link" href="#${key}"${page === key ? ' aria-current="page"' : ''}>${icon(glyph)}${label}</a>`).join('');
   const selected = viewedArmy();
   const options = armyOptions().map(([id, label]) => [id, id === CampaignStore.data.activeWarbandId ? `${label} (Active)` : label]);
@@ -30,8 +37,8 @@ function render() {
   const picker = CampaignStore.data.armies.length ? select('Warband', 'view-warband', options, selected?.id ?? '') : '';
   document.querySelector('#topbar').innerHTML = `<div class="crumb"><span>Campaign</span><span aria-hidden="true">/</span><strong>${pages[page][0]}</strong></div>
     <div class="topbar-controls">${picker}${button('Export backup', 'export', { glyph: 'download' })}</div>`;
-  const status = !CampaignStore.available ? 'Changes need a backup' : CampaignStore.data.sample && !CampaignStore.hasSavedCampaign ? 'Sample campaign' : 'Saved in this browser';
-  document.querySelector('#sidebar-bottom').innerHTML = `${CampaignStore.data.sample && page !== 'overview' ? button('Start my campaign', 'start') : ''}<p class="save-info${CampaignStore.available ? '' : ' unsaved'}">${escape(status)}</p>`;
+  const status = CampaignStore.available ? 'Saved in this browser' : 'Changes need a backup';
+  document.querySelector('#sidebar-bottom').innerHTML = `<p class="save-info${CampaignStore.available ? '' : ' unsaved'}">${escape(status)}</p>`;
   main.innerHTML = pages[page][2]();
   document.title = `${pages[page][0]} · Path to Glory`;
 }
@@ -155,11 +162,13 @@ document.addEventListener('click', event => {
 
 document.addEventListener('submit', event => {
   const form = event.target;
-  if (form.id !== 'editor-form' && form.id !== 'settings-form') return;
+  if (!['editor-form', 'settings-form', 'start-form'].includes(form.id)) return;
   event.preventDefault();
   const values = Object.fromEntries(new FormData(form));
   try {
-    if (form.id === 'settings-form') {
+    if (form.id === 'start-form') {
+      if (!CampaignStore.data) commit(...createCampaign(values));
+    } else if (form.id === 'settings-form') {
       CampaignStore.data.campaign = campaignValues(values);
       commit('Campaign details saved.');
     } else {
@@ -203,7 +212,8 @@ importFile.addEventListener('change', async () => {
   if (!file) return;
   try {
     const incoming = Ledger.normalize(JSON.parse(await file.text()));
-    confirmDialog(`Import ${incoming.campaign.name}?`, `This backup has ${incoming.armies.length} warbands and ${incoming.battles.length} battles. Importing replaces the current campaign in this browser.`, 'Import campaign', () => {
+    const summary = `This backup has ${incoming.armies.length} warbands and ${incoming.battles.length} battles.`;
+    confirmDialog(`Import ${incoming.campaign.name}?`, CampaignStore.data ? `${summary} Importing replaces the current campaign in this browser.` : summary, 'Import campaign', () => {
       CampaignStore.data = incoming;
       viewedArmyId = '';
       resetBattleFilters();
@@ -222,13 +232,14 @@ window.addEventListener('hashchange', () => {
 
 window.addEventListener('storage', event => {
   if (!CampaignStore.matchesStorageKey(event.key)) return;
-  if (dialog.open || !CampaignStore.available || document.activeElement?.closest('#settings-form')) {
+  if (dialog.open || !CampaignStore.available || document.activeElement?.closest('#settings-form, #start-form')) {
     CampaignStore.flagConflict();
     tell('This campaign changed in another tab. Export any unsaved work before reloading.', true);
     return;
   }
   try {
     CampaignStore.acceptExternalValue(event.newValue);
+    if (!CampaignStore.data) viewedArmyId = '';
     resetBattleFilters();
     render();
   } catch {

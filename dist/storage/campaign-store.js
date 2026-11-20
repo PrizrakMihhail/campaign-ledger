@@ -9,7 +9,7 @@ const CampaignStore = (() => {
   let conflict = false;
   let loadedLegacy = false;
 
-  const read = value => value === null ? Ledger.sample() : Ledger.normalize(JSON.parse(value));
+  const read = value => value === null ? null : Ledger.normalize(JSON.parse(value));
 
   try {
     savedValue = localStorage.getItem(key);
@@ -17,7 +17,7 @@ const CampaignStore = (() => {
     data = read(savedValue ?? legacyValue);
     loadedLegacy = legacyValue !== null;
   } catch {
-    data = Ledger.sample();
+    data = null;
     available = false;
   }
 
@@ -42,7 +42,6 @@ const CampaignStore = (() => {
     get data() { return data; },
     set data(value) { data = value; },
     get available() { return available; },
-    get hasSavedCampaign() { return savedValue !== null; },
     get conflict() { return conflict; },
     matchesStorageKey: changedKey => changedKey === key || changedKey === null,
     flagConflict() { conflict = true; },

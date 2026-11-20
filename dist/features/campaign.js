@@ -19,7 +19,7 @@ function overview() {
     : empty('No battles recorded', canBattle ? 'Log the first result and its aftermath.' : '');
   const quests = activeQuests.length ? activeQuests.slice(0, 4).map(q => `<div class="list-item"><a href="#quests" class="list-button row">${tile('flag')}<strong class="row-title">${escape(q.title)}</strong></a>${questProgress(q)}</div>`).join('') : empty('No active quests', '');
   const start = !a ? add('Create warband', 'new-warband') : canBattle ? add('Record battle', 'new-battle') : '';
-  return `<section class="hero"><div class="hero-content"><div class="hero-kicker">${escape(c.pack)}${CampaignStore.data.sample ? badge('Sample campaign', 'sample') : ''}</div><h1>${escape(c.name)}</h1>${c.location ? `<p class="meta">${escape(c.location)}</p>` : ''}<div class="actions">${start}${CampaignStore.data.sample ? button('Start my campaign', 'start') : ''}</div></div></section>
+  return `<section class="hero"><div class="hero-content"><div class="hero-kicker">${escape(c.pack)}</div><h1>${escape(c.name)}</h1>${c.location ? `<p class="meta">${escape(c.location)}</p>` : ''}<div class="actions">${start}</div></div></section>
     <div class="stats">${stats}</div>
     <div class="layout overview-layout"><div class="stack">${section('Recent battles', recent, pageLink('View battles', 'battles'))}${section('Warband', a ? warbandRow(a) : empty('No warband selected', 'Select or create a warband.'), pageLink('View warband', 'warbands'))}</div>
     <div class="stack">${section('Active quests', quests, pageLink('All quests', 'quests'))}${c.notes ? section('Campaign notes', `<p class="copy muted">${escape(c.notes)}</p>`) : ''}</div></div>`;
@@ -68,13 +68,29 @@ function campaignValues(v) {
   return { name: required(v.name, 'Campaign name'), pack: v.pack, location: v.location.trim(), resource: Ledger.resourceName(v.resource), pointsLimit: whole(v.pointsLimit, 'Roster points reference', 1), notes: v.notes.trim() };
 }
 
+const newCampaignDefaults = () => ({ ...Ledger.blank().campaign, name: '' });
+
+function setupCampaign() {
+  return `<div class="campaign-setup stack">
+    <section class="hero"><div class="hero-content"><p class="hero-kicker">Path to Glory · Campaign Ledger</p><h1>Start the campaign</h1></div></section>
+    ${section('Campaign details', `<form id="start-form" class="form-grid">
+      ${campaignFields(newCampaignDefaults())}
+      <p class="form-error full" role="alert" hidden></p>
+      <div class="actions full"><button type="submit" class="button primary">Start campaign</button>${button('Import backup', 'import')}</div>
+    </form>`)}
+  </div>`;
+}
+
+function createCampaign(values) {
+  CampaignStore.data = { ...Ledger.blank(), campaign: campaignValues(values) };
+  viewedArmyId = '';
+  resetBattleFilters();
+  return ['Campaign created.', 'overview'];
+}
+
 function startCampaign() {
-  formDialog('Start a new campaign', campaignFields({ ...Ledger.blank().campaign, name: '' }), v => {
-    CampaignStore.data = { ...Ledger.blank(), campaign: campaignValues(v) };
-    viewedArmyId = '';
-    resetBattleFilters();
-    return ['Campaign created.', 'overview'];
-  }, { label: 'Start campaign', description: CampaignStore.data.sample && !CampaignStore.hasSavedCampaign ? 'Set up your campaign after exploring the sample.' : 'This replaces the current campaign in this browser. Export a backup first to keep a copy.' });
+  formDialog('Start a new campaign', campaignFields(newCampaignDefaults()), createCampaign,
+    { label: 'Start campaign', description: 'This replaces the current campaign in this browser. Export a backup first to keep a copy.' });
 }
 
 function questForm(a, existing) {

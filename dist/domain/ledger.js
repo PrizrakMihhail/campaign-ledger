@@ -110,7 +110,7 @@ const Ledger = (() => {
 
   function blank() {
     return {
-      version: 3, sample: false, activeWarbandId: '',
+      version: 3, activeWarbandId: '',
       campaign: { name: 'My Path to Glory', pack: 'Ascension', location: 'The Mortal Realms', resource: '', pointsLimit: 1000, notes: '' },
       armies: [], battles: [], entries: [],
     };
@@ -146,7 +146,7 @@ const Ledger = (() => {
       army.warlordId = warlord(army)?.id ?? '';
     }
     return {
-      version: 3, sample: value.sample === true,
+      version: 3,
       campaign: {
         name: str(c.name) || 'My Path to Glory', pack, location: str(c.location),
         resource,
@@ -211,47 +211,6 @@ const Ledger = (() => {
     return edits;
   }
 
-  function sample() {
-    return normalize({
-      ...blank(), sample: true, activeWarbandId: 'forge',
-      campaign: {
-        name: 'The Long Reckoning', pack: 'Ascension', location: 'The Ashen Marches', resource: '', pointsLimit: 1000,
-        notes: 'Two rival warbands follow the old beacon road into the Ashen Marches. Whoever lights the final beacon will command the crossing.',
-      },
-      armies: [
-        {
-          id: 'forge', name: 'Forge of the Sunset', faction: 'Khazalite Holds', warlord: 'Dagna Emberhand', color: '#ca935d',
-          notes: 'Dagna and her company seek the last surviving beacon of their ancestral hold.',
-          units: [
-            { id: 'dagna', name: 'Dagna Emberhand', type: 'Hero', points: 280, renown: 4, path: 'Path of the Warrior' },
-            { id: 'oath', name: 'The Oathkeepers', type: 'Infantry', points: 300, renown: 2 },
-            { id: 'flint', name: 'Flintguard', type: 'Infantry', points: 240, renown: 1, battleScars: 5, scars: 'Still bearing wounds from the fight at the crossing.' },
-          ],
-          quests: [
-            { id: 'beacons', title: 'Relight the Watchfires', goal: 'Secure three abandoned beacons along the old road.', reward: 'Control of the beacon road', target: 3, progress: 2 },
-            { id: 'standard', title: 'Recover the Fallen Standard', goal: 'Find the company standard in the ruins of Cinderfall.', reward: 'The lost company banner' },
-          ],
-          ledger: [{ id: 'supply', date: '2026-10-04', reason: 'Supplies for the beacon road', delta: -2 }],
-        },
-        {
-          id: 'veil', name: 'The Hollow Host', faction: 'Nighthaunt', warlord: 'The Veiled Marshal', color: '#8eaa98',
-          units: [
-            { id: 'marshal', name: 'The Veiled Marshal', type: 'Hero', points: 280, renown: 3 },
-            { id: 'bound', name: 'The Oathbound Dead', type: 'Infantry', points: 460, renown: 2 },
-          ],
-        },
-      ],
-      battles: [
-        { id: 'crossing', title: 'The Cinderfall Crossing', date: '2026-11-14', battleplan: 'Hold the Crossing', armyId: 'forge', opponentArmyId: 'veil', result: 'Victory', delta: 4, oppDelta: 2,
-          notes: 'The Oathkeepers held the bridge long enough for Dagna to light the second beacon.',
-          awards: [{ id: 'award-crossing', armyId: 'forge', unitId: 'oath', unitName: 'The Oathkeepers', delta: 2 }] },
-        { id: 'gate', title: 'Siege of the Ember Gate', date: '2026-10-31', battleplan: 'The Broken Gate', armyId: 'forge', opponent: 'The Iron Maw', result: 'Draw', delta: 2 },
-        { id: 'valley', title: 'Into the Ashen Vale', date: '2026-10-17', armyId: 'forge', opponentArmyId: 'veil', result: 'Defeat', delta: 2, oppDelta: 3 },
-      ],
-      entries: [{ id: 'entry', title: 'A Light on the Old Road', date: '2026-11-14', armyId: 'forge', body: 'The second beacon burned through the night. Even from the valley floor, Dagna could see the old road take shape in its light.' }],
-    });
-  }
-
   const unitMultiplier = unit => unit.reinforced === true ? 2 : 1;
   const unitUpgradePoints = unit => (unit.upgrades ?? []).reduce((sum, upgrade) => sum + upgrade.cost, 0);
   const unitPoints = unit => unit.points * unitMultiplier(unit) + unitUpgradePoints(unit);
@@ -313,5 +272,5 @@ const Ledger = (() => {
   }
 
   return { packs, gloryPoints, resourceName, latestWarband, resultOptions, unitStatuses, unitStatus, battleReady, battleScarSeverity, isScarred, questStatuses, unitTypes, unitType, unitName, warlord, sortedUnits, profileStats, weaponFields, normalizeProfileEdits, profileDefaults, profileAbilityEdits, profileChanges, validColor, integer, id, date, dateOrder,
-    blank, normalize, normalizeAnvil, destinySpent, sample, unitPoints, unitUpgradePoints, unitSize, loreKinds, lorePoints, points, participants, signed, balance, transactions, unitHistory, battleRenown, battleScarAwards, unitBattleScars, rosterStatus, record, resultFor };
+    blank, normalize, normalizeAnvil, destinySpent, unitPoints, unitUpgradePoints, unitSize, loreKinds, lorePoints, points, participants, signed, balance, transactions, unitHistory, battleRenown, battleScarAwards, unitBattleScars, rosterStatus, record, resultFor };
 })();
