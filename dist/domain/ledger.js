@@ -103,6 +103,7 @@ const Ledger = (() => {
     const c = value.campaign;
     const armies = records(value.armies, a => ({
       name: str(a.name) || 'Unnamed warband', faction: str(a.faction), warlord: str(a.warlord), warlordId: a.warlordId == null ? null : str(a.warlordId),
+      formation: str(a.formation).trim(),
       notes: str(a.notes), color: validColor(a.color), archived: a.archived === true,
       units: records(a.units, normalizeUnit),
       lores: records(a.lores, normalizeLore),

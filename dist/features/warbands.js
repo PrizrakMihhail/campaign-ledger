@@ -17,6 +17,7 @@ function warbands() {
   const summary = `<section class="panel stack"><div class="split">${tile('shield', a.color)}<div class="row-main"><h2>${escape(a.name)}</h2><p class="meta">${escape(a.faction)}</p></div>${a.archived ? badge('Archived', 'retired') : ''}</div>
     <div class="facts meta"><span><strong class="${points > cap ? 'negative' : ''}">${fmt(points)} / ${fmt(cap)}</strong> roster pts</span><span><strong>${rec.Victory}–${rec.Defeat}–${rec.Draw}</strong> W–L–D</span>${warlord ? `<span>Warlord · <strong>${escape(Ledger.unitName(warlord))}</strong></span>` : ''}</div>
     <progress class="progress" max="${cap}" value="${Math.min(points, cap)}" aria-label="Roster points reference"></progress>
+    ${span('Battle Formation', a.formation)}
     ${lorePoints ? `<p class="meta">Includes ${fmt(lorePoints)} battle pts from Arcane Tome.</p>` : ''}
     ${a.notes ? `<p class="copy muted">${escape(a.notes)}</p>` : ''}<div class="actions">${button('Edit warband', 'edit-warband')}${button(a.archived ? 'Restore warband' : 'Archive warband', 'archive-warband', { type: 'link' })}</div></section>`;
   const units = a.units.length ? `<div class="cards">${Ledger.sortedUnits(a.units, warlord?.id).map(unit => unitCard(a, unit)).join('')}</div>` : empty('No units on the roster', 'Add a unit to track its points, Path, and Renown.');
@@ -46,8 +47,9 @@ function warbandForm(existing) {
   const heroes = Ledger.sortedUnits(a.units ?? []).filter(unit => Ledger.unitType(unit.type) === 'Hero');
   const warlordOptions = [['', heroes.length ? 'No warlord selected' : 'Add a Hero to choose a warlord'], ...heroes.map(unit => [unit.id, Ledger.unitName(unit)])];
   formDialog(existing ? 'Edit warband' : 'New warband', field('Warband name', 'name', a.name, { required: true }) + textPicker('Faction', 'faction', a.faction, { required: true }) +
+    textPicker('Battle Formation', 'formation', a.formation) +
     select('Warlord or general', 'warlordId', warlordOptions, a.warlordId || '') + field('Banner color', 'color', Ledger.validColor(a.color), { type: 'color' }) + area('Warband notes', 'notes', a.notes), v => {
-    const values = { name: required(v.name, 'Warband name'), faction: required(v.faction, 'Faction'), warlordId: heroes.some(unit => unit.id === v.warlordId) ? v.warlordId : '', warlord: '', notes: v.notes.trim(), color: Ledger.validColor(v.color) };
+    const values = { name: required(v.name, 'Warband name'), faction: required(v.faction, 'Faction'), formation: v.formation?.trim() ?? '', warlordId: heroes.some(unit => unit.id === v.warlordId) ? v.warlordId : '', warlord: '', notes: v.notes.trim(), color: Ledger.validColor(v.color) };
     if (existing) Object.assign(existing, values);
     else {
       const id = Ledger.id();
@@ -56,7 +58,10 @@ function warbandForm(existing) {
     }
     return ['Warband saved.', 'warbands'];
   }, { label: existing ? 'Save warband' : 'Create warband' });
-  mountTextPicker(dialog.querySelector('#editor-form'), 'faction', BattleCatalogue.factions.map(name => ({ name })));
+  const form = dialog.querySelector('#editor-form');
+  const formations = [...new Set(CampaignStore.data.armies.map(warband => warband.formation).filter(Boolean))].sort((left, right) => left.localeCompare(right));
+  mountTextPicker(form, 'faction', BattleCatalogue.factions.map(name => ({ name })));
+  mountTextPicker(form, 'formation', formations.map(name => ({ name })));
 }
 
 function unitForm(a, existing, { anvilHero = false } = {}) {

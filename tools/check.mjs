@@ -44,6 +44,14 @@ function boot({ page = 'overview', saved = new Map() } = {}) {
 }
 
 const app = boot();
+const formationApp = boot({ page: 'warbands' });
+assert.equal(formationApp.run('activeArmy().formation'), '');
+formationApp.run(`
+  activeArmy().formation = '  Custom Vanguard  ';
+  CampaignStore.data = Ledger.normalize(CampaignStore.data);
+`);
+assert.equal(formationApp.run('activeArmy().formation'), 'Custom Vanguard');
+assert.match(formationApp.run('warbands()'), /Battle Formation[\s\S]*Custom Vanguard/);
 for (const page of ['overview', 'warbands', 'battles', 'arcane-tome', 'quests', 'chronicle', 'settings']) {
   app.context.location.hash = `#${page}`;
   app.events.get('hashchange')();
