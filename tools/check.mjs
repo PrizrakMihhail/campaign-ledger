@@ -60,7 +60,7 @@ const fixture = {
   entries: [{ id: 'entry', title: 'A Light on the Old Road', date: '2026-11-14', armyId: 'forge', body: 'The second beacon burned through the night. Even from the valley floor, Dagna could see the old road take shape in its light.' }],
 };
 
-function boot({ page = 'overview', saved = new Map(), fresh = false } = {}) {
+function boot({ page = 'overview', saved = new Map(), session = new Map(), fresh = false } = {}) {
   if (!fresh && saved.size === 0) saved.set(key, JSON.stringify(fixture));
   const elements = new Map();
   const events = new Map();
@@ -81,6 +81,7 @@ function boot({ page = 'overview', saved = new Map(), fresh = false } = {}) {
       addEventListener: (name, callback) => events.set(name, callback),
     },
     localStorage: { getItem: key => saved.get(key) ?? null, setItem: (key, value) => saved.set(key, value) },
+    sessionStorage: { getItem: key => session.get(key) ?? null, setItem: (key, value) => session.set(key, value) },
     window: { addEventListener: (name, callback) => events.set(name, callback), scrollTo() {} },
     FormData: class { constructor(form) { return Object.entries(form.values); } },
     location: { hash: `#${page}` },
@@ -170,13 +171,17 @@ assert.match(battleWorkflow.run("recordedBattleRounds(battleViewSeed(warband, ba
 const freshStorage = new Map();
 const fresh = boot({ page: 'warbands', saved: freshStorage, fresh: true });
 const setup = fresh.elements.get('#main').innerHTML;
-assert.match(setup, /<h1>Start the campaign<\/h1>/);
+assert.match(setup, /<h1>Campaigns<\/h1>/);
+assert.match(setup, /assets\/fortress\.jpg/);
+assert.match(setup, /No campaigns yet/);
 assert.match(setup, /Import backup/);
-for (const name of ['name', 'pack', 'location', 'resource', 'pointsLimit', 'notes']) assert.ok(setup.includes(`name="${name}"`));
 assert.equal(fresh.run('CampaignStore.data'), null);
 assert.equal(freshStorage.size, 0);
+fresh.run('actions.start()');
+const campaignDialog = fresh.elements.get('#dialog').innerHTML;
+for (const name of ['name', 'pack', 'location', 'resource', 'pointsLimit', 'notes']) assert.ok(campaignDialog.includes(`name="${name}"`));
 const startError = { scrollIntoView() {} };
-const startForm = { id: 'start-form', querySelector: () => startError, values: {
+const startForm = { id: 'editor-form', querySelector: () => startError, values: {
   name: ' ', pack: 'Custom', location: 'The Marches', resource: 'Emberstone', pointsLimit: '1250', notes: 'Use agreed house rules.',
 } };
 const submitStart = () => fresh.events.get('submit')({ target: startForm, preventDefault() {} });
@@ -188,20 +193,40 @@ submitStart();
 assert.match(fresh.context.location.hash, /^#?overview$/);
 fresh.events.get('hashchange')();
 assert.match(fresh.elements.get('#main').innerHTML, /<h1>A New Campaign<\/h1>/);
-const created = JSON.parse(freshStorage.get(key));
+const [{ data: created }] = JSON.parse(freshStorage.get(key)).campaigns;
 assert.equal(created.campaign.pointsLimit, 1250);
 assert.equal(created.campaign.resource, 'Emberstone');
 assert.deepEqual([created.armies, created.battles, created.entries], [[], [], []]);
 assert.equal(boot({ saved: freshStorage }).run('currentPage()'), 'overview');
-freshStorage.clear();
-fresh.events.get('storage')({ key: null, newValue: null });
-assert.match(fresh.elements.get('#main').innerHTML, /Start the campaign/);
+assert.match(fresh.elements.get('#main').innerHTML, /href="#campaigns"/);
+fresh.context.location.hash = '#campaigns';
+fresh.events.get('hashchange')();
+assert.match(fresh.elements.get('#main').innerHTML, /A New Campaign/);
 const importFile = fresh.elements.get('#import-file');
 importFile.files = [{ text: async () => JSON.stringify(fixture) }];
 await importFile.eventHandlers.get('change')();
 assert.match(fresh.elements.get('#dialog').innerHTML, /Import Verification Campaign/);
 fresh.events.get('submit')({ target: { id: 'editor-form', values: {} }, preventDefault() {} });
-assert.equal(JSON.parse(freshStorage.get(key)).campaign.name, 'Verification Campaign');
+assert.equal(fresh.run('CampaignStore.data.campaign.name'), 'Verification Campaign');
+assert.deepEqual(JSON.parse(freshStorage.get(key)).campaigns.map(({ data }) => data.campaign.name), ['A New Campaign', 'Verification Campaign']);
+const campaignSession = new Map();
+const campaignPicker = boot({ page: 'campaigns', saved: freshStorage, session: campaignSession });
+assert.match(campaignPicker.elements.get('#main').innerHTML, /A New Campaign[\s\S]*Verification Campaign/);
+campaignPicker.run("actions['open-campaign'](CampaignStore.campaigns[1].id)");
+assert.match(campaignPicker.context.location.hash, /^#?overview$/);
+assert.equal(campaignPicker.run('viewedArmy().id'), 'forge');
+assert.equal(boot({ saved: freshStorage, session: campaignSession }).run('viewedArmy().id'), 'forge');
+campaignPicker.run("actions['open-campaign'](CampaignStore.campaigns[0].id)");
+assert.equal(campaignPicker.run('CampaignStore.data.armies.length'), 0);
+assert.equal(campaignPicker.run('CampaignStore.data.battles.length'), 0);
+const legacyPicker = boot({ page: 'campaigns' });
+assert.match(legacyPicker.elements.get('#main').innerHTML, /Verification Campaign/);
+legacyPicker.run('actions.start()');
+legacyPicker.events.get('submit')({ target: startForm, preventDefault() {} });
+assert.equal(legacyPicker.run('CampaignStore.campaigns.length'), 2);
+assert.equal(legacyPicker.run('CampaignStore.data.campaign.name'), 'A New Campaign');
+legacyPicker.run("actions['open-campaign'](CampaignStore.campaigns[0].id)");
+assert.equal(legacyPicker.run('CampaignStore.data.battles.length'), fixture.battles.length);
 
 const selectedSave = new Map();
 const selection = boot({ page: 'warbands', saved: selectedSave });
@@ -233,7 +258,7 @@ selection.run(`
   const olderCampaign = Ledger.normalize(fixture);
   delete olderCampaign.activeWarbandId;
   olderCampaign.activeArmyId = 'forge';
-  CampaignStore.data = Ledger.normalize(olderCampaign);
+  Object.assign(CampaignStore.data, Ledger.normalize(olderCampaign));
 `);
 assert.equal(selection.run('activeArmy().id'), 'veil');
 selection.run("actions['archive-warband']()");
@@ -273,7 +298,7 @@ resources.run(`
   oldCampaign.version = 2;
   oldCampaign.campaign.pack = 'Ravaged Coast';
   oldCampaign.campaign.resource = 'Emberstone Shards';
-  CampaignStore.data = Ledger.normalize(oldCampaign);
+  Object.assign(CampaignStore.data, Ledger.normalize(oldCampaign));
 `);
 assert.equal(resources.run('Ledger.balance(CampaignStore.data, activeArmy())'), 0);
 assert.equal(resources.run("Ledger.balance(CampaignStore.data, activeArmy(), 'resource')"), 6);
@@ -282,7 +307,7 @@ assert.match(resources.run('warbands()'), /Glory Points ledger[\s\S]*Emberstone 
 resources.run(`
   CampaignStore.data.battles[0].delta = 3;
   CampaignStore.data.campaign.resource = '';
-  CampaignStore.data = Ledger.normalize(CampaignStore.data);
+  Object.assign(CampaignStore.data, Ledger.normalize(CampaignStore.data));
 `);
 assert.equal(resources.run('Ledger.balance(CampaignStore.data, activeArmy())'), 3);
 assert.equal(resources.run("Ledger.balance(CampaignStore.data, activeArmy(), 'resource')"), 6);
@@ -327,7 +352,7 @@ reserves.run(`
   warband.units.find(unit => unit.id === 'oath').status = 'In Reserves';
   warband.units.find(unit => unit.id === 'flint').battleScars = ['Serious', 'Critical'];
   warband.units.push({ ...warband.units[0], id: 'retired', name: 'Retired example', battleScars: 18 });
-  CampaignStore.data = Ledger.normalize(CampaignStore.data);
+  Object.assign(CampaignStore.data, Ledger.normalize(CampaignStore.data));
 `);
 reserves.run('const scarWarband = activeArmy()');
 assert.equal(reserves.run('Ledger.points(scarWarband)'), 820);
@@ -343,7 +368,7 @@ const formationApp = boot({ page: 'warbands' });
 assert.equal(formationApp.run('activeArmy().formation'), '');
 formationApp.run(`
   activeArmy().formation = '  Custom Vanguard  ';
-  CampaignStore.data = Ledger.normalize(CampaignStore.data);
+  Object.assign(CampaignStore.data, Ledger.normalize(CampaignStore.data));
 `);
 assert.equal(formationApp.run('activeArmy().formation'), 'Custom Vanguard');
 assert.match(formationApp.run('warbands()'), /Battle Formation[\s\S]*Custom Vanguard/);
@@ -696,18 +721,33 @@ legacy.armies[0].units[2].type = 'Construct';
 const saved = new Map([['ptg_campaign_ledger_v1', JSON.stringify(legacy)]]);
 const migrated = boot({ saved });
 assert.equal(migrated.run('CampaignStore.data.campaign.name'), legacy.campaign.name);
-assert.equal(JSON.parse(saved.get(key)).version, 3);
+assert.equal(JSON.parse(saved.get(key)).campaigns[0].data.version, 3);
+const uuidV4 = /^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}$/;
+assert.match(JSON.parse(saved.get(key)).campaigns[0].id, uuidV4);
 assert.equal(migrated.run('activeArmy().units[0].reinforced'), false);
 assert.deepEqual(JSON.parse(migrated.run('JSON.stringify(activeArmy().units.map(unit => unit.type))')), ['War Machine', 'Other', 'Other']);
 
+const oldCampaignList = new Map([[key, JSON.stringify({ campaigns: [
+  { id: 'abc-def', data: fixture }, { id: 'legacy', data: legacy },
+] })]]);
+const oldCampaignSelection = new Map([['ptg_selected_campaign', 'legacy']]);
+const rekeyed = boot({ saved: oldCampaignList, session: oldCampaignSelection });
+const [replaced, updated] = JSON.parse(oldCampaignList.get(key)).campaigns;
+assert.match(replaced.id, uuidV4);
+assert.match(updated.id, uuidV4);
+assert.equal(oldCampaignSelection.get('ptg_selected_campaign'), updated.id);
+assert.equal(rekeyed.run('CampaignStore.data.campaign.name'), legacy.campaign.name);
+assert.equal(boot({ saved: oldCampaignList, session: oldCampaignSelection }).run('CampaignStore.data.campaign.name'), legacy.campaign.name);
+
 const external = JSON.parse(saved.get(key));
-external.campaign.name = 'Edited in another tab';
+external.campaigns[0].data.campaign.name = 'Edited in another tab';
 saved.set(key, JSON.stringify(external));
 migrated.events.get('storage')({ key, newValue: saved.get(key) });
-assert.equal(migrated.run('CampaignStore.data.campaign.name'), external.campaign.name);
-saved.set(key, JSON.stringify({ ...external, activeWarbandId: 'veil' }));
+assert.equal(migrated.run('CampaignStore.data.campaign.name'), external.campaigns[0].data.campaign.name);
+external.campaigns[0].data.activeWarbandId = 'veil';
+saved.set(key, JSON.stringify(external));
 assert.equal(migrated.run('CampaignStore.save()'), false);
 assert.equal(migrated.run('CampaignStore.conflict'), true);
-assert.equal(JSON.parse(saved.get(key)).activeWarbandId, 'veil');
+assert.equal(JSON.parse(saved.get(key)).campaigns[0].data.activeWarbandId, 'veil');
 
 console.log('Campaign Ledger checks passed: assets, first-run setup, routes, editors, battle aftermath, datacards, and backup compatibility.');

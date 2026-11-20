@@ -58,14 +58,14 @@ No account or installation is required. Your campaign is saved in the browser yo
 
 Campaign data is stored locally in your browser. It is not uploaded to an account or synchronized between devices.
 
-Use **Export backup** regularly to download a JSON copy of your campaign. Use **Import backup** to restore it, move it to another browser or device, or continue after clearing browser data. Importing a backup replaces the campaign currently stored in that browser, so export the existing campaign first if you want to keep it.
+Use **Export backup** to download a JSON copy of the open campaign. Use **Import backup** to restore that copy as a separate campaign or move it to another browser or device.
 
 You can also print the campaign overview from **Settings**.
 
 ## Getting started
 
 1. Open the [Campaign Ledger](https://prizrakmihhail.github.io/campaign-ledger/).
-2. Enter the campaign details, or import an existing JSON backup.
+2. Open a saved campaign, create a campaign, or import an existing JSON backup. Use **Campaign selection** on the Overview to switch campaigns.
 3. Create a warband, choose its faction, and select the faction rules you want to import.
 4. Add units from the profile catalogue or create custom units.
 5. Use **Import faction rules** later if you want to add catalogue data to an existing warband.

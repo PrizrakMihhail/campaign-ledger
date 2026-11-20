@@ -19,19 +19,19 @@ function commit(message, page) {
 }
 
 function currentPage() {
-  if (!CampaignStore.data) return 'start';
   const hash = location.hash.slice(1);
+  if (!hash || hash === 'campaigns' || !CampaignStore.data) return 'campaigns';
   return Object.hasOwn(pages, hash) ? hash : 'overview';
 }
 
 function render() {
   const page = currentPage();
   const shell = document.querySelector('.shell');
-  shell.classList.toggle('setup-shell', page === 'start');
+  shell.classList.toggle('setup-shell', page === 'campaigns');
   shell.classList.toggle('battle-view-shell', page === 'battle-view');
-  if (page === 'start') {
-    main.innerHTML = setupCampaign();
-    document.title = 'Start the campaign · Path to Glory';
+  if (page === 'campaigns') {
+    main.innerHTML = campaignSelection();
+    document.title = 'Campaigns · Path to Glory';
     return;
   }
   const navPage = page === 'battle-view' ? 'warbands' : page;
@@ -66,6 +66,12 @@ function selectWarband(id) {
   render();
 }
 
+function resetCampaignView() {
+  viewedArmyId = '';
+  battleViewTab = 'units';
+  resetBattleFilters();
+}
+
 function setMobileMenu(open) {
   menuToggle.setAttribute('aria-expanded', String(open));
   menuToggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
@@ -84,6 +90,11 @@ document.addEventListener('keydown', event => {
 const actions = {
   ...arcaneTomeActions,
   start: startCampaign,
+  'open-campaign': id => {
+    if (!CampaignStore.select(id)) return;
+    resetCampaignView();
+    location.hash = 'overview';
+  },
   export: exportBackup,
   'export-datacards': exportDatacards,
   'view-datacards': () => viewWarbandDatacards(viewedArmy()),
@@ -219,13 +230,11 @@ document.addEventListener('click', event => {
 
 document.addEventListener('submit', event => {
   const form = event.target;
-  if (!['editor-form', 'settings-form', 'start-form'].includes(form.id)) return;
+  if (!['editor-form', 'settings-form'].includes(form.id)) return;
   event.preventDefault();
   const values = Object.fromEntries(new FormData(form));
   try {
-    if (form.id === 'start-form') {
-      if (!CampaignStore.data) commit(...createCampaign(values));
-    } else if (form.id === 'settings-form') {
+    if (form.id === 'settings-form') {
       CampaignStore.data.campaign = campaignValues(values);
       commit('Campaign details saved.');
     } else {
@@ -277,10 +286,9 @@ importFile.addEventListener('change', async () => {
   try {
     const incoming = Ledger.normalize(JSON.parse(await file.text()));
     const summary = `This backup has ${incoming.armies.length} warbands and ${incoming.battles.length} battles.`;
-    confirmDialog(`Import ${incoming.campaign.name}?`, CampaignStore.data ? `${summary} Importing replaces the current campaign in this browser.` : summary, 'Import campaign', () => {
-      CampaignStore.data = incoming;
-      viewedArmyId = '';
-      resetBattleFilters();
+    confirmDialog(`Import ${incoming.campaign.name}?`, `${summary} It will be added as a separate campaign.`, 'Import campaign', () => {
+      CampaignStore.add(incoming);
+      resetCampaignView();
       return ['Campaign imported.', 'overview'];
     });
   } catch (error) {
@@ -297,15 +305,14 @@ window.addEventListener('hashchange', () => {
 
 window.addEventListener('storage', event => {
   if (!CampaignStore.matchesStorageKey(event.key)) return;
-  if (dialog.open || !CampaignStore.available || document.activeElement?.closest('#settings-form, #start-form')) {
+  if (dialog.open || !CampaignStore.available || document.activeElement?.closest('#settings-form')) {
     CampaignStore.flagConflict();
     tell('This campaign changed in another tab. Export any unsaved work before reloading.', true);
     return;
   }
   try {
     CampaignStore.acceptExternalValue(event.newValue);
-    if (!CampaignStore.data) viewedArmyId = '';
-    resetBattleFilters();
+    resetCampaignView();
     render();
   } catch {
     CampaignStore.flagConflict();
@@ -316,5 +323,5 @@ window.addEventListener('storage', event => {
 document.querySelector('#brand-mark').innerHTML = icon('shield');
 menuToggle.innerHTML = icon('menu') + icon('close');
 setMobileMenu(false);
-CampaignStore.migrateLegacy();
+CampaignStore.migrate();
 render();

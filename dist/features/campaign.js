@@ -19,7 +19,7 @@ function overview() {
     : empty('No battles recorded', canBattle ? 'Log the first result and its aftermath.' : '');
   const quests = activeQuests.length ? activeQuests.map(q => `<div class="list-item"><a href="#quests" class="list-button row">${tile('flag')}<strong class="row-title">${escape(q.title)}</strong></a>${questProgress(a, q)}</div>`).join('') : empty('No active quests', '');
   const start = !a ? add('Create warband', 'new-warband') : canBattle ? add('Record battle', 'new-battle') : '';
-  return `<section class="hero"><div class="hero-content"><div class="hero-kicker">${escape(c.pack)}</div><h1>${escape(c.name)}</h1>${c.location ? `<p class="meta">${escape(c.location)}</p>` : ''}<div class="actions">${start}</div></div></section>
+  return `<section class="hero"><div class="hero-content"><div class="hero-kicker">${escape(c.pack)}</div><h1>${escape(c.name)}</h1>${c.location ? `<p class="meta">${escape(c.location)}</p>` : ''}<div class="actions">${start}${pageLink('Campaign selection', 'campaigns')}</div></div></section>
     <div class="stats">${stats}</div>
     <div class="layout overview-layout"><div class="stack">${section('Recent battles', recent, pageLink('View battles', 'battles'))}${section('Warband', a ? warbandRow(a) : empty('No warband selected', 'Select or create a warband.'), pageLink('View warband', 'warbands'))}</div>
     <div class="stack">${section('Active quests', quests, pageLink('All quests', 'quests'))}${c.notes ? section('Campaign notes', `<p class="copy muted">${escape(c.notes)}</p>`) : ''}</div></div>`;
@@ -55,8 +55,7 @@ function settings() {
   const c = CampaignStore.data.campaign;
   return heading('Settings', 'Campaign details and backups.') + `<div class="stack setting-panels">
     ${section('Campaign details', `<form id="settings-form" class="form-grid">${campaignFields(c)}<div class="actions full"><button type="submit" class="button primary">Save campaign details</button></div></form>`)}
-    ${section('Your data', `<p class="copy muted">Campaign records are stored in this browser. Export a JSON backup to keep a copy or move the campaign to another browser.</p><div class="actions" style="margin-top:13px">${button('Export backup', 'export', { glyph: 'download' })}${button('Import backup', 'import')}${button('Print overview', 'print')}</div>`)}
-    ${section('Start over', `<p class="copy muted">Starting a new campaign replaces the current record in this browser.</p><div class="actions" style="margin-top:13px">${button('Start new campaign', 'start', { type: 'danger' })}</div>`)}</div>`;
+    ${section('Your data', `<p class="copy muted">Campaign records are stored in this browser. Export a JSON backup to keep a copy or move the campaign to another browser.</p><div class="actions" style="margin-top:13px">${button('Export backup', 'export', { glyph: 'download' })}${button('Import backup', 'import')}${button('Print overview', 'print')}</div>`)}</div>`;
 }
 
 function campaignFields(c) {
@@ -72,27 +71,28 @@ function campaignValues(v) {
 
 const newCampaignDefaults = () => ({ ...Ledger.blank().campaign, name: '' });
 
-function setupCampaign() {
-  return `<div class="campaign-setup stack">
-    <section class="hero"><div class="hero-content"><p class="hero-kicker">Path to Glory · Campaign Ledger</p><h1>Start the campaign</h1></div></section>
-    ${section('Campaign details', `<form id="start-form" class="form-grid">
-      ${campaignFields(newCampaignDefaults())}
-      <p class="form-error full" role="alert" hidden></p>
-      <div class="actions full"><button type="submit" class="button primary">Start campaign</button>${button('Import backup', 'import')}</div>
-    </form>`)}
+function campaignSelection() {
+  const cards = CampaignStore.campaigns.map(({ id, data: { campaign, armies, battles } }) => `<article class="card campaign-option">
+    <div><p class="label">${escape(campaign.pack)}</p><h2>${escape(campaign.name)}</h2>
+      <p class="meta">${campaign.location ? `${escape(campaign.location)} · ` : ''}${fmt(armies.length)} ${armies.length === 1 ? 'warband' : 'warbands'} · ${fmt(battles.length)} ${battles.length === 1 ? 'battle' : 'battles'}</p></div>
+    ${button('Open campaign', 'open-campaign', { id, glyph: 'overview' })}</article>`).join('');
+  return `<div class="campaign-selection stack">
+    <header class="campaign-banner"><img src="assets/fortress.jpg" alt=""><div class="campaign-banner-title">
+      <p class="hero-kicker">Path to Glory</p><h1>Campaigns</h1></div></header>
+    <div class="actions">${button('Create campaign', 'start', { type: 'primary', glyph: 'plus' })}${button('Import backup', 'import')}</div>
+    ${cards ? `<div class="campaign-options">${cards}</div>` : empty('No campaigns yet', 'Create a campaign or import a backup.')}
   </div>`;
 }
 
 function createCampaign(values) {
-  CampaignStore.data = { ...Ledger.blank(), campaign: campaignValues(values) };
-  viewedArmyId = '';
-  resetBattleFilters();
+  CampaignStore.add({ ...Ledger.blank(), campaign: campaignValues(values) });
+  resetCampaignView();
   return ['Campaign created.', 'overview'];
 }
 
 function startCampaign() {
   formDialog('Start a new campaign', campaignFields(newCampaignDefaults()), createCampaign,
-    { label: 'Start campaign', description: 'This replaces the current campaign in this browser. Export a backup first to keep a copy.' });
+    { label: 'Create campaign' });
 }
 
 function questForm(a, existing) {

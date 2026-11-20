@@ -6,7 +6,7 @@ Track Path to Glory warbands, units, Glory Points, battles, Battle Scars, quests
 
 Open [the app](dist/index.html) in a modern browser. The complete static site lives in `dist/` and needs no build or server. Run `node tools/check.mjs` from the repository root to check the app routes, shipped assets, exports, and backup compatibility. The check uses Node.js and has no package dependencies.
 
-On first launch, **Start the campaign** lets you enter the same campaign details available in **Settings** or import a JSON backup.
+The **Campaigns** page lists the campaigns saved in this browser. Open a campaign to go to its Overview. You can create a campaign with the same fields available in **Settings** or import a JSON backup as a separate campaign. Use **Campaign selection** on the Overview to return to the list.
 
 Campaigns are stored in the browser. Export a **JSON backup** and import it at the new address when moving from a local copy or the private hosted site to GitLab Pages. Backups contain campaign data, so keep them outside `dist/` and the public repository.
 
