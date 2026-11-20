@@ -20,12 +20,17 @@ function warbands() {
     ${span('Battle Formation', a.formation)}
     ${lorePoints ? `<p class="meta">Includes ${fmt(lorePoints)} battle pts from Arcane Tome.</p>` : ''}
     ${a.notes ? `<p class="copy muted">${escape(a.notes)}</p>` : ''}<div class="actions">${button('Edit warband', 'edit-warband')}${button(a.archived ? 'Restore warband' : 'Archive warband', 'archive-warband', { type: 'link' })}</div></section>`;
-  const units = a.units.length ? `<div class="cards">${Ledger.sortedUnits(a.units, warlord?.id).map(unit => unitCard(a, unit)).join('')}</div>` : empty('No units on the roster', 'Add a unit to track its points, Path, and Renown.');
+  const sorted = Ledger.sortedUnits(a.units, warlord?.id);
+  const unitCards = (units, emptyTitle) => units.length ? `<div class="cards">${units.map(unit => unitCard(a, unit)).join('')}</div>` : empty(emptyTitle, '');
   const transactions = Ledger.transactions(CampaignStore.data, a);
   const history = transactions.length ? `<div class="table-scroll"><table><thead><tr><th>Date</th><th>Reason</th><th>Change</th><th>Action</th></tr></thead><tbody>${transactions.map(t => `<tr><td class="nowrap">${makeDate(t.date)}</td><td>${escape(t.reason)}</td><td>${signed(t.delta)}</td><td>${t.manual ? button('Edit', 'edit-resource', { id: t.id }) : button('View battle', 'view-battle', { id: t.id, type: 'link' })}</td></tr>`).join('')}</tbody></table></div>` : empty('No resource changes', 'Battle rewards and manual adjustments appear here.');
   const datacardActions = hasWarbandDatacards(a) ? button('View datacards', 'view-datacards') + button('Export datacards', 'export-datacards', { glyph: 'download' }) : '';
   const rosterActions = `<div class="actions">${datacardActions}${button('Add Anvil hero', 'new-anvil-hero', { glyph: 'plus' })}${add('Add unit', 'new-unit')}</div>`;
-  return title + `<div class="layout roster-layout">${selector}<div class="stack">${summary}${section('Order of battle', units, rosterActions)}${section(`${CampaignStore.data.campaign.resource} ledger`, `<p class="meta" style="margin-bottom:12px">Current balance <strong class="gold">${fmt(Ledger.balance(CampaignStore.data, a))}</strong></p>${history}`, button('Adjust balance', 'new-resource'))}</div></div>`;
+  return title + `<div class="layout roster-layout">${selector}<div class="stack">${summary}
+    ${section('Order of battle', unitCards(sorted.filter(Ledger.battleReady), 'No units ready for battle'), rosterActions)}
+    ${section('Reserved', unitCards(sorted.filter(unit => unit.status === 'In Reserves'), 'No units in reserves'))}
+    ${section('Retired', unitCards(sorted.filter(unit => unit.status === 'Retired'), 'No retired units'))}
+    ${section(`${CampaignStore.data.campaign.resource} ledger`, `<p class="meta" style="margin-bottom:12px">Current balance <strong class="gold">${fmt(Ledger.balance(CampaignStore.data, a))}</strong></p>${history}`, button('Adjust balance', 'new-resource'))}</div></div>`;
 }
 
 function unitCard(a, unit) {
@@ -39,7 +44,7 @@ function unitCard(a, unit) {
     <p class="facts meta">${size ? `<span><strong>${fmt(size)}</strong> ${size === 1 ? 'model' : 'models'}</span>` : ''}<span><strong>${fmt(renown)}</strong> Renown</span>${unit.rank ? `<span>${escape(unit.rank)}</span>` : ''}${unit.path ? `<span>${escape(unit.path)}</span>` : ''}</p>
     ${span('Enhancements', unit.enhancements)}${span('Scars', unit.scars)}${unit.notes ? `<p class="meta copy">${escape(unit.notes)}</p>` : ''}
     ${profile ? `<p class="meta">${Object.entries(Ledger.profileStats).filter(([key]) => profile[key]).map(([key, label]) => `${escape(profile[key])} ${label}`).join(' · ')}</p>` : ''}
-    <div class="actions">${button('Datacard', 'view-unit-datacard', { id: unit.id, title: `View ${unit.name} datacard` })}${button('Edit', 'edit-unit', { id: unit.id })}${button('Renown history', 'unit-history', { id: unit.id, type: 'link' })}</div></article>`;
+    <div class="actions">${unit.status === 'Retired' ? '' : button('Datacard', 'view-unit-datacard', { id: unit.id, title: `View ${unit.name} datacard` })}${button('Edit', 'edit-unit', { id: unit.id })}${button('Renown history', 'unit-history', { id: unit.id, type: 'link' })}</div></article>`;
 }
 
 function warbandForm(existing) {

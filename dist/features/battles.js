@@ -66,7 +66,7 @@ function battleForm(existing) {
     let index = 0;
     form.querySelector('#battle-awards').innerHTML = ids.map(id => {
       const a = army(id);
-      const units = new Map((a?.units || []).filter(u => u.status !== 'Retired' || drafts.has(awardKey(id, u.id))).map(u => [u.id, u.name]));
+      const units = new Map((a?.units || []).filter(u => Ledger.battleReady(u) || drafts.has(awardKey(id, u.id))).map(u => [u.id, u.name]));
       for (const award of drafts.values()) if (award.armyId === id && !units.has(award.unitId)) units.set(award.unitId, award.unitName || 'Removed unit');
       if (!units.size) return '';
       const rows = [...units].map(([unitId, name]) => {

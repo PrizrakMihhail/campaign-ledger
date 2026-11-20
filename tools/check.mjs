@@ -44,6 +44,19 @@ function boot({ page = 'overview', saved = new Map() } = {}) {
 }
 
 const app = boot();
+const reserves = boot({ page: 'warbands' });
+reserves.run(`
+  const warband = activeArmy();
+  warband.units.find(unit => unit.id === 'oath').status = 'In Reserves';
+  warband.units.push({ ...warband.units[0], id: 'retired', name: 'Retired example', status: 'Retired' });
+`);
+assert.equal(reserves.run('Ledger.points(warband)'), 820);
+assert.equal(reserves.run("Ledger.battleReady(warband.units.find(unit => unit.id === 'oath'))"), false);
+assert.match(reserves.run('warbands()'), /<h2>Reserved<\/h2>[\s\S]*The Oathkeepers[\s\S]*<h2>Retired<\/h2>[\s\S]*Retired example/);
+const reserveCards = reserves.run('warbandDatacards(CampaignStore.data.campaign, warband, CampaignStore.data.battles)');
+assert.match(reserveCards, /Dagna Emberhand<\/h2>[\s\S]*dc-warlord">Warlord<\/span>[\s\S]*Flintguard<\/h2>[\s\S]*dc-status">Scarred<\/span>/);
+assert.match(reserveCards, /The Oathkeepers/);
+assert.doesNotMatch(reserveCards, /Retired example|>Active<|>In Reserves</);
 const formationApp = boot({ page: 'warbands' });
 assert.equal(formationApp.run('activeArmy().formation'), '');
 formationApp.run(`

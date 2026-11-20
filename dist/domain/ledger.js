@@ -9,7 +9,8 @@ const Ledger = (() => {
     Custom: 'Campaign Resources',
   }));
   const resultOptions = ['Victory', 'Defeat', 'Draw', 'Other'];
-  const unitStatuses = ['Active', 'Scarred', 'Retired'];
+  const unitStatuses = ['Active', 'Scarred', 'In Reserves', 'Retired'];
+  const battleReady = unit => unit.status !== 'In Reserves' && unit.status !== 'Retired';
   const questStatuses = ['Active', 'Completed', 'Abandoned'];
   const unitTypes = Object.freeze(['Hero', 'Infantry', 'Cavalry', 'War Machine', 'Monster', 'Terrain', 'Other']);
   const unitTypeNames = new Map([...unitTypes.map(type => [type.toLowerCase(), type]), ['artillery', 'War Machine'], ['faction terrain', 'Terrain']]);
@@ -81,7 +82,7 @@ const Ledger = (() => {
       upgrades: (Array.isArray(unit.upgrades) ? unit.upgrades : []).filter(upgrade => str(upgrade?.name).trim()).map(upgrade => ({
         type: str(upgrade.type), name: str(upgrade.name), cost: Math.max(0, integer(upgrade.cost)), description: str(upgrade.description),
       })),
-      status: choice(unit.status, unitStatuses, 'Active'), enhancements: str(unit.enhancements), scars: str(unit.scars), notes: str(unit.notes),
+      status: choice(unit.status === 'In Reserve' ? 'In Reserves' : unit.status, unitStatuses, 'Active'), enhancements: str(unit.enhancements), scars: str(unit.scars), notes: str(unit.notes),
       profileEdits: normalizeProfileEdits(unit.profileEdits), anvil,
     };
   }
@@ -278,6 +279,6 @@ const Ledger = (() => {
     return battle.result;
   }
 
-  return { packs, resultOptions, unitStatuses, questStatuses, unitTypes, unitType, unitName, warlord, sortedUnits, profileStats, weaponFields, normalizeProfileEdits, profileDefaults, profileAbilityEdits, profileChanges, validColor, integer, id, date, dateOrder,
+  return { packs, resultOptions, unitStatuses, battleReady, questStatuses, unitTypes, unitType, unitName, warlord, sortedUnits, profileStats, weaponFields, normalizeProfileEdits, profileDefaults, profileAbilityEdits, profileChanges, validColor, integer, id, date, dateOrder,
     blank, normalize, normalizeAnvil, destinySpent, sample, unitPoints, unitUpgradePoints, unitSize, loreKinds, lorePoints, points, participants, signed, balance, transactions, unitHistory, battleRenown, record, resultFor };
 })();

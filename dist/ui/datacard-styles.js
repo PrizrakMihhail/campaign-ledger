@@ -37,7 +37,8 @@ const datacardStyles = `
   .dc-title > div { min-width: 0; }
   .dc-title h2 { margin-top: 4px; font: 700 clamp(1.45rem, 2.9cqi, 1.9rem)/1.16 Georgia, serif; }
   .dc-status { border: 1px solid currentColor; border-radius: 4px; padding: 4px 8px; font-size: .78rem; font-weight: 700; max-width: 100%; overflow-wrap: anywhere; }
-  [data-retired] .dc-status { opacity: .8; }
+  .dc-badges { display: flex; flex-wrap: wrap; gap: 5px; }
+  .dc-warlord { background: #f0ce90; color: #322411; border-color: #f0ce90; }
   .dc-label, .dc-cards dt, .dc-detail h3, .dc-weapons caption { font: 750 .76rem/1.2 system-ui, sans-serif; text-transform: uppercase; letter-spacing: .055em; color: var(--card-accent, #355e53); }
   .dc-title .dc-label { color: #fff1cb; }
   .dc-cards :is(.dc-stats, .dc-metrics) { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 70px), 1fr)); gap: 6px; margin-top: 12px; }

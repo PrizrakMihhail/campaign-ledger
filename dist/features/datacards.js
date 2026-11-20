@@ -41,7 +41,7 @@ function profileContent(profile, printControls) {
     ${profile.customized || reference ? `<p class="dc-source">${profile.customized ? 'Customized profile' : ''}${profile.customized && reference ? ' · Base profile from ' : ''}${reference}</p>` : ''}`;
 }
 
-function datacard(profile, unit, renown, entry, printControls = false) {
+function datacard(profile, unit, renown, entry, { printControls = false, warlord = false } = {}) {
   const name = unit?.name || entry?.name || profile.name;
   const category = unit ? Ledger.unitType(unit.type) : profile?.category || entry?.category;
   const points = unit ? Ledger.unitPoints(unit) : entry?.points;
@@ -50,8 +50,9 @@ function datacard(profile, unit, renown, entry, printControls = false) {
   const metainfo = unit ? cardFacts([['Warscroll', unit.warscroll || (profile?.name !== name ? profile?.name : '')], ['Rank', unit.rank], ['Path', unit.path]]) : '';
   const details = unit ? [['Enhancements and abilities', unit.enhancements], ['Scars and injuries', unit.scars], ['Unit notes', unit.notes]]
     .filter(([, value]) => value?.trim()).map(([label, value]) => `<section class="dc-detail"><h3>${label}</h3><p>${escape(value)}</p></section>`).join('') : '';
-  return `<article class="datacard"${unit?.status === 'Retired' ? ' data-retired' : ''}>
-    <header class="dc-title"><div><p class="dc-label">${[category, entry?.kind, unit?.reinforced ? 'Reinforced' : ''].filter(Boolean).map(escape).join(' · ')}</p><h2>${escape(name)}</h2></div>${unit ? `<span class="dc-status">${escape(unit.status)}</span>` : ''}</header>
+  return `<article class="datacard">
+    <header class="dc-title"><div><p class="dc-label">${[category, entry?.kind, unit?.reinforced ? 'Reinforced' : ''].filter(Boolean).map(escape).join(' · ')}</p><h2>${escape(name)}</h2></div>
+    ${warlord || unit?.status === 'Scarred' ? `<div class="dc-badges">${warlord ? '<span class="dc-status dc-warlord">Warlord</span>' : ''}${unit?.status === 'Scarred' ? '<span class="dc-status">Scarred</span>' : ''}</div>` : ''}</header>
     ${printControls ? printChoice('Print card', name) : ''}
     ${metrics ? `<dl class="dc-metrics">${metrics}</dl>` : ''}
     ${profileContent(profile, printControls)}
@@ -61,7 +62,7 @@ function datacard(profile, unit, renown, entry, printControls = false) {
 }
 
 function hasWarbandDatacards(warband) {
-  return Boolean(warband && (warband.units.length || warband.lores?.some(lore => lore.entries.length)));
+  return Boolean(warband && (warband.units.some(unit => unit.status !== 'Retired') || warband.lores?.some(lore => lore.entries.length)));
 }
 
 function loreDatacard(lore, entry, printControls) {
@@ -76,10 +77,11 @@ function loreDatacard(lore, entry, printControls) {
 }
 
 function warbandCardList(warband, battles, { unit, printControls = false } = {}) {
-  const units = unit ? [unit] : Ledger.sortedUnits(warband.units, Ledger.warlord(warband)?.id);
-  const cards = units.map(unit => {
+  const warlordId = Ledger.warlord(warband)?.id;
+  const units = unit ? [unit] : Ledger.sortedUnits(warband.units, warlordId);
+  const cards = units.filter(unit => unit.status !== 'Retired').map(unit => {
     const entry = unitCatalogueEntry(warband, unit);
-    return datacard(unitProfile(warband, unit, entry), unit, unitRenown(warband, unit, battles), entry, printControls);
+    return datacard(unitProfile(warband, unit, entry), unit, unitRenown(warband, unit, battles), entry, { printControls, warlord: unit.id === warlordId });
   });
   if (!unit) {
     for (const kind of Ledger.loreKinds) {
@@ -92,21 +94,20 @@ function warbandCardList(warband, battles, { unit, printControls = false } = {})
 }
 
 function viewWarbandDatacards(warband, unit) {
+  if (unit?.status === 'Retired') return;
   viewDialog(unit ? `${unit.name} datacard` : `${warband.name} datacards`,
     `<style>${datacardStyles}</style>${warbandCardList(warband, CampaignStore.data.battles, { unit })}`,
     button('Export warband HTML', 'export-datacards', { glyph: 'download' }), !unit);
 }
 
 function warbandDatacards(campaign, warband, battles) {
-  const warlord = Ledger.warlord(warband);
-
   return `<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${escape(warband.name)} · Campaign datacards</title>
 <style>${datacardStyles}${datacardExportStyles}</style></head>
 <body>
 <header class="masthead" style="--banner:${Ledger.validColor(warband.color)}"><div><p class="dc-label">Path to Glory · Campaign datacards</p><h1>${escape(warband.name)}</h1>
-<p class="warband-facts">${[campaign.name, warband.faction, warlord ? `Warlord ${Ledger.unitName(warlord)}` : '', `${fmt(Ledger.points(warband))} roster points`, warband.archived ? 'Archived' : ''].filter(Boolean).map(escape).join(' · ')}</p></div>
+<p class="warband-facts">${[campaign.name, warband.faction, `${fmt(Ledger.points(warband))} roster points`, warband.archived ? 'Archived' : ''].filter(Boolean).map(escape).join(' · ')}</p></div>
 <button type="button" onclick="window.print()">Print or save PDF</button></header>
 <main aria-label="Warband datacards"><p class="dc-print-hint">Uncheck a card or ability to omit it from the printout.</p>${warbandCardList(warband, battles, { printControls: true })}</main></body></html>`;
 }
