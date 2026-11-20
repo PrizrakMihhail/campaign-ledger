@@ -89,8 +89,6 @@ h3 { font-size: 1.19rem; line-height: 1.25; }
 .button.link:hover { color: var(--ink); }
 .button.danger { color: var(--red); }
 .button.icon-only { width: 40px; padding-inline: 0; }
-.button:disabled { cursor: default; opacity: .64; }
-.button:disabled:hover { border-color: var(--line-strong); }
 .pill { display: inline-flex; align-items: center; width: max-content; max-width: 100%; padding: 4px 9px; border: 1px solid #5b4e37; border-radius: 5px; background: #372d20; color: #eaca97; line-height: 1.23; font-size: .8rem; font-weight: 650; overflow-wrap: anywhere; }
 .pill.victory, .pill.completed { background: #273326; border-color: #455c43; color: var(--green); }
 .pill.defeat, .pill.scarred { background: #3a2722; border-color: #704538; color: var(--red); }
@@ -117,7 +115,7 @@ h3 { font-size: 1.19rem; line-height: 1.25; }
 .list-item { padding: 12px 0; border-top: 1px solid var(--line); }
 .list-item:last-child { padding-bottom: 3px; }
 .list-button { width: 100%; border: 0; padding: 0; background: transparent; color: inherit; text-align: left; }
-.list-button:hover .row-title, .list-button[aria-current] .row-title { color: var(--gold); }
+.list-button:hover .row-title { color: var(--gold); }
 .tile { width: 36px; height: 36px; flex: 0 0 auto; display: grid; place-items: center; color: var(--gold); background: var(--raised); border: 1px solid var(--line); border-radius: 6px; }
 .tile.warband { color: var(--warband, var(--gold)); }
 .split { display: flex; gap: 10px; align-items: center; justify-content: space-between; }

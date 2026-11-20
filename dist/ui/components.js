@@ -33,8 +33,8 @@ const heading = (title, subtitle, actions = '') => `<div class="page-head"><div>
 const span = (label, value) => value ? `<p class="meta copy"><span class="detail-label">${escape(label)}</span> · ${escape(value)}</p>` : '';
 const signed = value => `<span class="${value >= 0 ? 'positive' : 'negative'}">${Ledger.signed(value)}</span>`;
 
-function field(label, key, value = '', { type = 'text', placeholder = '', required = false, min, maxLength = 160, full = false, disabled = false } = {}) {
-  return `<div class="field${full ? ' full' : ''}"><label for="field-${key}">${escape(label)}</label><input id="field-${key}" name="${key}" value="${escape(value)}" type="${type}"${required ? ' required' : ''}${disabled ? ' disabled' : ''}${min !== undefined ? ` min="${min}"` : ''}${type === 'number' ? ' step="1"' : ''}${type === 'text' ? ` maxlength="${maxLength}"` : ''}${placeholder ? ` placeholder="${escape(placeholder)}"` : ''}></div>`;
+function field(label, key, value = '', { type = 'text', placeholder = '', required = false, min, full = false } = {}) {
+  return `<div class="field${full ? ' full' : ''}"><label for="field-${key}">${escape(label)}</label><input id="field-${key}" name="${key}" value="${escape(value)}" type="${type}"${required ? ' required' : ''}${min !== undefined ? ` min="${min}"` : ''}${type === 'number' ? ' step="1"' : ''}${type === 'text' ? ' maxlength="160"' : ''}${placeholder ? ` placeholder="${escape(placeholder)}"` : ''}></div>`;
 }
 
 function select(label, key, options, value) {

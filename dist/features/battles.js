@@ -6,7 +6,7 @@ function resetBattleFilters() {
   Object.assign(filters, { query: '', result: '' });
 }
 
-function battleRow(b, perspective = b.armyId) {
+function battleRow(b, perspective) {
   const first = army(b.armyId)?.name || 'Unknown warband';
   const second = army(b.opponentArmyId)?.name || b.opponent || 'External opponent';
   const result = Ledger.resultFor(b, perspective);

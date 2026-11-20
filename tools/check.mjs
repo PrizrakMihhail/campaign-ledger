@@ -409,4 +409,4 @@ assert.equal(migrated.run('CampaignStore.save()'), false);
 assert.equal(migrated.run('CampaignStore.conflict'), true);
 assert.equal(JSON.parse(saved.get(key)).sample, false);
 
-console.log('Passed script startup, seven screens, Arcane Tome, dropdowns, Anvil heroes, datacards, reinforcement, and storage checks.');
+console.log('Campaign Ledger checks passed: assets, routes, editors, warband selection, battle aftermath, datacards, and backup compatibility.');

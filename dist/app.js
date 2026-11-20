@@ -38,8 +38,10 @@ function render() {
 
 function removeRecord(records, record, title, description, beforeRemove) {
   confirmDialog(title, description, 'Delete record', () => {
+    const index = records.indexOf(record);
+    if (index < 0) return ['Record is already gone.'];
     if (beforeRemove) beforeRemove();
-    records.splice(records.indexOf(record), 1);
+    records.splice(index, 1);
     return ['Record deleted.'];
   });
 }
@@ -102,7 +104,8 @@ const actions = {
   'remove-unit': id => {
     const a = viewedArmy();
     const u = a.units.find(unit => unit.id === id);
-    removeRecord(a.units, u, `Remove ${u.name}?`, 'The unit will be removed from the roster. Its Renown awards will remain in the battle history.', () => {
+    if (!u) return;
+    removeRecord(a.units, u, `Remove ${u.name}?`, 'The unit will be removed from the roster. Its Renown and Battle Scars will remain in the battle history.', () => {
       if (a.warlordId === id) a.warlordId = '';
       for (const battle of CampaignStore.data.battles) {
         for (const award of battle.awards) if (award.armyId === a.id && award.unitId === id) award.unitName = u.name;
