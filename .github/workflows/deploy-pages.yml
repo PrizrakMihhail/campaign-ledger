@@ -18,23 +18,19 @@ permissions:
 
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
+  build:
     runs-on: ubuntu-latest
 
     steps:
       - name: Check out repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v4
 
       - name: Set up Python
         if: ${{ inputs.refresh_catalogue }}
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@v5
         with:
           python-version: '3.12'
 
@@ -47,13 +43,24 @@ jobs:
         run: node tools/check.mjs
 
       - name: Configure GitHub Pages
-        uses: actions/configure-pages@v6
+        uses: actions/configure-pages@v5
 
       - name: Upload static site
-        uses: actions/upload-pages-artifact@v5
+        uses: actions/upload-pages-artifact@v3
         with:
+          name: github-pages
           path: dist
 
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v5
+        with:
+          artifact_name: github-pages
