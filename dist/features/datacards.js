@@ -48,8 +48,8 @@ function datacard(profile, unit, renown, entry, { printControls = false, warlord
   const size = unit ? Ledger.unitSize(unit, entry?.size) : entry?.size;
   const metrics = cardFacts([['Points', points === undefined ? '' : fmt(points)], ['Models', size ? fmt(size) : ''], ['Renown', unit ? fmt(renown) : '']]);
   const metainfo = unit ? cardFacts([['Warscroll', unit.warscroll || (profile?.name !== name ? profile?.name : '')], ['Rank', unit.rank], ['Path', unit.path]]) : '';
-  const scarred = unit?.status === 'Scarred' || unit?.battleScars?.length > 0;
-  const details = unit ? [['Enhancements and abilities', unit.enhancements], ['Battle Scars', unit.battleScars?.join(', ')], ['Scars and injuries', unit.scars], ['Unit notes', unit.notes]]
+  const scarred = unit && Ledger.isScarred(unit);
+  const details = unit ? [['Enhancements and abilities', unit.enhancements], ['Scars and injuries', unit.scars], ['Unit notes', unit.notes]]
     .filter(([, value]) => value?.trim()).map(([label, value]) => `<section class="dc-detail"><h3>${label}</h3><p>${escape(value)}</p></section>`).join('') : '';
   return `<article class="datacard">
     <header class="dc-title"><div><p class="dc-label">${[category, entry?.kind, unit?.reinforced ? 'Reinforced' : ''].filter(Boolean).map(escape).join(' · ')}</p><h2>${escape(name)}</h2></div>

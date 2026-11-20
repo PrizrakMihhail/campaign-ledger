@@ -49,16 +49,19 @@ reserves.run(`
   const warband = activeArmy();
   warband.units.find(unit => unit.id === 'oath').status = 'In Reserves';
   warband.units.find(unit => unit.id === 'flint').battleScars = ['Serious', 'Critical'];
-  warband.units.push({ ...warband.units[0], id: 'retired', name: 'Retired example', status: 'Retired' });
+  warband.units.push({ ...warband.units[0], id: 'retired', name: 'Retired example', battleScars: 18 });
+  CampaignStore.data = Ledger.normalize(CampaignStore.data);
 `);
-assert.equal(reserves.run('Ledger.points(warband)'), 820);
+reserves.run('const scarWarband = activeArmy()');
+assert.equal(reserves.run('Ledger.points(scarWarband)'), 820);
 assert.equal(reserves.run("Ledger.battleReady(warband.units.find(unit => unit.id === 'oath'))"), false);
 assert.match(reserves.run('warbands()'), /<h2>Reserved<\/h2>[\s\S]*The Oathkeepers[\s\S]*<h2>Retired<\/h2>[\s\S]*Retired example/);
-const reserveCards = reserves.run('warbandDatacards(CampaignStore.data.campaign, warband, CampaignStore.data.battles)');
+const reserveCards = reserves.run('warbandDatacards(CampaignStore.data.campaign, scarWarband, CampaignStore.data.battles)');
 assert.match(reserveCards, /Dagna Emberhand<\/h2>[\s\S]*dc-warlord">Warlord<\/span>[\s\S]*Flintguard<\/h2>[\s\S]*dc-status">Scarred<\/span>/);
-assert.match(reserveCards, /Battle Scars<\/h3><p>Serious, Critical/);
+assert.equal(reserves.run("scarWarband.units.find(unit => unit.id === 'flint').battleScars"), 13);
 assert.doesNotMatch(reserveCards, /The Oathkeepers|Retired example|>Active<|>In Reserves</);
-assert.equal(reserves.run("Ledger.normalize(CampaignStore.data).armies[0].units.find(unit => unit.id === 'flint').battleScars.join(', ')"), 'Serious, Critical');
+assert.deepEqual(JSON.parse(reserves.run('JSON.stringify([0, 4, 5, 8, 9, 12, 13, 17, 18, 25].map(Ledger.battleScarSeverity))')),
+  ['-', '-', 'Serious', 'Serious', 'Severe', 'Severe', 'Critical', 'Critical', 'Succumbed to injuries', 'Succumbed to injuries']);
 const formationApp = boot({ page: 'warbands' });
 assert.equal(formationApp.run('activeArmy().formation'), '');
 formationApp.run(`

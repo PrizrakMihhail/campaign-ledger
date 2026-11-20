@@ -9,8 +9,12 @@ const Ledger = (() => {
     Custom: 'Campaign Resources',
   }));
   const resultOptions = ['Victory', 'Defeat', 'Draw', 'Other'];
-  const unitStatuses = ['Active', 'Scarred', 'In Reserves', 'Retired'];
-  const battleScarTypes = ['Serious', 'Severe', 'Critical'];
+  const unitStatuses = ['Active', 'In Reserves', 'Retired'];
+  const firstScarCount = 5;
+  const retirementScarCount = 18;
+  const battleScarThresholds = [[retirementScarCount, 'Succumbed to injuries'], [13, 'Critical'], [9, 'Severe'], [firstScarCount, 'Serious']];
+  const battleScarSeverity = count => battleScarThresholds.find(([minimum]) => count >= minimum)?.[1] ?? '-';
+  const isScarred = unit => unit.battleScars >= firstScarCount && unit.battleScars < retirementScarCount;
   const battleReady = unit => unit.status !== 'In Reserves' && unit.status !== 'Retired';
   const questStatuses = ['Active', 'Completed', 'Abandoned'];
   const unitTypes = Object.freeze(['Hero', 'Infantry', 'Cavalry', 'War Machine', 'Monster', 'Terrain', 'Other']);
@@ -74,8 +78,17 @@ const Ledger = (() => {
     };
   }
 
+  function unitStatus(status, battleScars) {
+    return battleScars >= retirementScarCount ? 'Retired' : choice(status === 'In Reserve' ? 'In Reserves' : status, unitStatuses, 'Active');
+  }
+
   function normalizeUnit(unit) {
     const anvil = normalizeAnvil(unit.anvil);
+    const legacySeverity = Array.isArray(unit.battleScars)
+      ? battleScarThresholds.slice(1).find(([, severity]) => unit.battleScars.includes(severity))?.[0]
+      : undefined;
+    const fallbackCount = unit.status === 'Scarred' ? firstScarCount : 0;
+    const battleScars = Math.max(0, Array.isArray(unit.battleScars) ? legacySeverity ?? fallbackCount : integer(unit.battleScars ?? fallbackCount));
     return {
       name: unitName(unit), warscroll: str(unit.warscroll), type: anvil ? 'Hero' : unitType(unit.type),
       points: Math.max(0, integer(unit.points)), size: Math.max(0, integer(unit.size)) || null, renown: integer(unit.renown),
@@ -83,8 +96,8 @@ const Ledger = (() => {
       upgrades: (Array.isArray(unit.upgrades) ? unit.upgrades : []).filter(upgrade => str(upgrade?.name).trim()).map(upgrade => ({
         type: str(upgrade.type), name: str(upgrade.name), cost: Math.max(0, integer(upgrade.cost)), description: str(upgrade.description),
       })),
-      status: choice(unit.status === 'In Reserve' ? 'In Reserves' : unit.status, unitStatuses, 'Active'), enhancements: str(unit.enhancements), scars: str(unit.scars), notes: str(unit.notes),
-      battleScars: battleScarTypes.filter(type => Array.isArray(unit.battleScars) && unit.battleScars.includes(type)),
+      status: unitStatus(unit.status, battleScars), enhancements: str(unit.enhancements), scars: str(unit.scars), notes: str(unit.notes),
+      battleScars,
       profileEdits: normalizeProfileEdits(unit.profileEdits), anvil,
     };
   }
@@ -203,7 +216,7 @@ const Ledger = (() => {
           units: [
             { id: 'dagna', name: 'Dagna Emberhand', type: 'Hero', points: 280, renown: 4, path: 'Path of the Warrior' },
             { id: 'oath', name: 'The Oathkeepers', type: 'Infantry', points: 300, renown: 2 },
-            { id: 'flint', name: 'Flintguard', type: 'Infantry', points: 240, renown: 1, status: 'Scarred', scars: 'Still bearing wounds from the fight at the crossing.' },
+            { id: 'flint', name: 'Flintguard', type: 'Infantry', points: 240, renown: 1, battleScars: 5, scars: 'Still bearing wounds from the fight at the crossing.' },
           ],
           quests: [
             { id: 'beacons', title: 'Relight the Watchfires', goal: 'Secure three abandoned beacons along the old road.', reward: 'Control of the beacon road', target: 3, progress: 2 },
@@ -281,6 +294,6 @@ const Ledger = (() => {
     return battle.result;
   }
 
-  return { packs, resultOptions, unitStatuses, battleReady, battleScarTypes, questStatuses, unitTypes, unitType, unitName, warlord, sortedUnits, profileStats, weaponFields, normalizeProfileEdits, profileDefaults, profileAbilityEdits, profileChanges, validColor, integer, id, date, dateOrder,
+  return { packs, resultOptions, unitStatuses, unitStatus, battleReady, battleScarSeverity, isScarred, questStatuses, unitTypes, unitType, unitName, warlord, sortedUnits, profileStats, weaponFields, normalizeProfileEdits, profileDefaults, profileAbilityEdits, profileChanges, validColor, integer, id, date, dateOrder,
     blank, normalize, normalizeAnvil, destinySpent, sample, unitPoints, unitUpgradePoints, unitSize, loreKinds, lorePoints, points, participants, signed, balance, transactions, unitHistory, battleRenown, record, resultFor };
 })();
