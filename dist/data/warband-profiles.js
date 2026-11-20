@@ -73,7 +73,7 @@ const WarbandProfiles = (() => {
   const roster = entries.filter(profile => ['Hero', 'Infantry'].includes(profile.category));
   const references = entries.filter(profile => !roster.includes(profile));
   const key = value => value?.toLowerCase().replace(/\bwith\b/g, '').replace(/[^a-z0-9]/g, '');
-  const names = new Map(roster.map(profile => [key(profile.name), profile]));
+  const names = new Map(entries.map(profile => [key(profile.name), profile]));
 
   return { source, roster, references, find: name => names.get(key(name)) };
 })();

@@ -24,7 +24,7 @@ const Ledger = (() => {
   }
   const questStatuses = ['Active', 'Completed', 'Forfeited'];
   const activeQuest = warband => warband?.quests.find(quest => quest.status === 'Active');
-  const unitTypes = Object.freeze(['Hero', 'Infantry', 'Cavalry', 'War Machine', 'Monster', 'Terrain', 'Other']);
+  const unitTypes = Object.freeze(['Hero', 'Infantry', 'Cavalry', 'War Machine', 'Monster', 'Terrain', 'Other', 'Manifestation']);
   const unitTypeNames = new Map([...unitTypes.map(type => [type.toLowerCase(), type]), ['artillery', 'War Machine'], ['faction terrain', 'Terrain']]);
   const profileStats = Object.freeze({ move: 'Move', health: 'Health', save: 'Save', control: 'Control', ward: 'Ward' });
   const weaponFields = ranged => [...(ranged ? ['Range'] : []), 'Attacks', 'Hit', 'Wound', 'Rend', 'Damage', 'Weapon traits'];
@@ -34,9 +34,9 @@ const Ledger = (() => {
   const unitNameOrder = new Intl.Collator(undefined, { sensitivity: 'base' });
   const unitName = unit => str(unit.name).trim() || str(unit.warscroll).trim() || 'Unnamed unit';
   const warlord = army => army.units.find(unit => unit.id === army.warlordId && unitType(unit.type) === 'Hero');
-  const sortedUnits = (units, warlordId) => [...units].sort((a, b) =>
+  const sortedUnits = (units, warlordId, typeOf = unit => unitType(unit.type)) => [...units].sort((a, b) =>
     Number(b.id === warlordId && Boolean(warlordId)) - Number(a.id === warlordId && Boolean(warlordId)) ||
-    unitTypes.indexOf(unitType(a.type)) - unitTypes.indexOf(unitType(b.type)) || unitNameOrder.compare(unitName(a), unitName(b)));
+    unitTypes.indexOf(typeOf(a)) - unitTypes.indexOf(typeOf(b)) || unitNameOrder.compare(unitName(a), unitName(b)));
   const integer = (value, fallback = 0) => Number.isSafeInteger(Number(value)) ? Number(value) : fallback;
   const id = () => globalThis.crypto?.randomUUID?.() || `${Date.now().toString(36)}-${Math.random().toString(36).slice(2)}`;
   const date = () => {

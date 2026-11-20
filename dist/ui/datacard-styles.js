@@ -35,6 +35,10 @@ const datacardStyles = `
     color: #fff8e6;
   }
   .dc-title > div { min-width: 0; }
+  .dc-identity { display: flex; align-items: center; gap: 10px; }
+  .dc-identity > div { min-width: 0; }
+  .dc-identity .icon { width: 1.8rem; height: 1.8rem; flex: none; color: #f0ce90; }
+  .masthead button .icon { width: 1rem; height: 1rem; vertical-align: -.15em; margin-inline-end: .45rem; }
   .dc-title h2 { margin-top: 4px; font: 700 clamp(1.45rem, 2.9cqi, 1.9rem)/1.16 Georgia, serif; }
   .dc-status { border: 1px solid currentColor; border-radius: 4px; padding: 4px 8px; font-size: .78rem; font-weight: 700; max-width: 100%; overflow-wrap: anywhere; }
   .dc-badges { display: flex; flex-wrap: wrap; gap: 5px; }
@@ -99,6 +103,7 @@ const datacardExportStyles = `
     .dc-cards .datacard { --card-padding: 3mm; break-inside: avoid; margin: 0 0 4mm; box-shadow: none; }
     .dc-title { background: var(--card-tint); color: var(--card-accent); }
     .dc-title .dc-label { color: var(--card-accent); }
+    .dc-identity .icon { color: var(--card-accent); }
     .dc-ability { break-inside: avoid; }
     .dc-title h2 { font-size: 15pt; }
   }

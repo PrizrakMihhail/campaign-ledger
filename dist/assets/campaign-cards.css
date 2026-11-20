@@ -16,6 +16,8 @@
 /* Warband unit cards */
 .unit-card-header { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 7px 10px; }
 .unit-card-header h3 { flex: 1 1 9rem; min-width: 0; color: #fff0ce; font-size: 1.35rem; }
+.unit-card-type { display: flex; align-items: center; gap: 7px; }
+.unit-card-type .icon { color: var(--card-accent); }
 .unit-card-badges { display: flex; flex-wrap: wrap; gap: 4px; min-width: 0; }
 .unit-card-badges .anvil-hero { flex: 0 0 auto; white-space: nowrap; }
 .unit-card .actions { padding-top: 11px; border-top: 1px solid #6e553b; }

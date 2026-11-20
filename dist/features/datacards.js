@@ -52,7 +52,7 @@ function datacard(profile, unit, renown, entry, { printControls = false, warlord
   const details = unit ? [['Enhancements and abilities', unit.enhancements], ['Scars and injuries', unit.scars], ['Unit notes', unit.notes]]
     .filter(([, value]) => value?.trim()).map(([label, value]) => `<section class="dc-detail"><h3>${label}</h3><p>${escape(value)}</p></section>`).join('') : '';
   return `<article class="datacard">
-    <header class="dc-title"><div><p class="dc-label">${[category, entry?.kind, unit?.reinforced ? 'Reinforced' : ''].filter(Boolean).map(escape).join(' · ')}</p><h2>${escape(name)}</h2></div>
+    <header class="dc-title"><div class="dc-identity">${unitIcon(category)}<div><p class="dc-label">${[category, entry?.kind, unit?.reinforced ? 'Reinforced' : ''].filter(Boolean).map(escape).join(' · ')}</p><h2>${escape(name)}</h2></div></div>
     ${warlord || scarred ? `<div class="dc-badges">${warlord ? '<span class="dc-status dc-warlord">Warlord</span>' : ''}${scarred ? '<span class="dc-status">Scarred</span>' : ''}</div>` : ''}</header>
     ${printControls ? printChoice('Print card', name) : ''}
     ${metrics ? `<dl class="dc-metrics">${metrics}</dl>` : ''}
@@ -75,40 +75,39 @@ function cardRules(entry) {
 function loreDatacard(lore, entry, printControls) {
   const labels = loreLabels[lore.kind];
   return `<article class="datacard dc-lore-card" data-lore="${escape(lore.kind)}">
-    <header class="dc-title"><div><p class="dc-label">${labels.title} · ${escape(lore.name)}</p><h2>${escape(entry.name)}</h2></div>
+    <header class="dc-title"><div class="dc-identity">${icon(lore.kind)}<div><p class="dc-label">${labels.title} · ${escape(lore.name)}</p><h2>${escape(entry.name)}</h2></div></div>
     ${entry.value ? `<span class="dc-status">${labels.value} ${escape(entry.value)}</span>` : ''}</header>
     ${printControls ? printChoice('Print card', entry.name) : ''}
     ${cardRules(entry)}
     </article>`;
 }
 
-function warbandCardList(warband, battles, { unit, printControls = false } = {}) {
-  const units = unit ? [unit] : battleReadyUnits(warband, battles);
-  const cards = units.map(unit => unitDatacard(warband, unit, battles, printControls));
-  if (!unit) {
-    for (const trait of warband.battleTraits ?? []) {
-      cards.push(`<article class="datacard dc-lore-card" data-lore="trait">
-        <header class="dc-title"><div><p class="dc-label">Battle Trait${warband.faction ? ` · ${escape(warband.faction)}` : ''}</p><h2>${escape(trait.name)}</h2></div></header>
+function factionTraitCards(warband, printControls = false) {
+  return (warband.battleTraits ?? []).map(trait => `<article class="datacard dc-lore-card" data-lore="trait">
+        <header class="dc-title"><div class="dc-identity">${icon('shield')}<div><p class="dc-label">Battle Trait${warband.faction ? ` · ${escape(warband.faction)}` : ''}</p><h2>${escape(trait.name)}</h2></div></div></header>
         ${printControls ? printChoice('Print card', trait.name) : ''}
         ${trait.timing ? `<p class="dc-source">${escape(trait.timing)}</p>` : ''}${cardRules(trait)}</article>`);
-    }
-    for (const kind of Ledger.loreKinds) {
-      for (const lore of (warband.lores ?? []).filter(lore => lore.kind === kind)) {
-        for (const entry of lore.entries) cards.push(loreDatacard(lore, entry, printControls));
-      }
-    }
-  }
-  return `<div class="dc-cards">${cards.join('\n')}</div>`;
 }
 
-function battleReadyUnits(warband, battles) {
-  return Ledger.sortedUnits(warband.units.filter(unit => Ledger.battleReady(unit, warband.id, battles)), Ledger.warlord(warband)?.id);
+function arcanaActionCards(warband, printControls = false) {
+  return Ledger.loreKinds.flatMap(kind => (warband.lores ?? []).filter(lore => lore.kind === kind)
+    .flatMap(lore => lore.entries.map(entry => loreDatacard(lore, entry, printControls))));
+}
+
+function warbandCardList(warband, battles, { unit, printControls = false } = {}) {
+  const renderUnit = item => unitDatacard(warband, item, battles, printControls);
+  if (unit) return `<div class="dc-cards">${renderUnit(unit)}</div>`;
+  const units = battleReadyUnits(warband, battles);
+  const cards = units.filter(item => unitRosterType(warband, item) !== 'Manifestation').map(renderUnit);
+  cards.push(...factionTraitCards(warband, printControls), ...arcanaActionCards(warband, printControls));
+  cards.push(...units.filter(item => unitRosterType(warband, item) === 'Manifestation').map(renderUnit));
+  return `<div class="dc-cards">${cards.join('\n')}</div>`;
 }
 
 function unitDatacard(warband, unit, battles, printControls = false) {
   const entry = unitCatalogueEntry(warband, unit);
   const battleScars = Ledger.unitBattleScars(unit, warband.id, battles);
-  return datacard(unitProfile(warband, unit, entry), { ...unit, battleScars }, unitRenown(warband, unit, battles), entry, { printControls, warlord: unit.id === Ledger.warlord(warband)?.id });
+  return datacard(unitProfile(warband, unit, entry), { ...unit, battleScars, type: unitRosterType(warband, unit, entry) }, unitRenown(warband, unit, battles), entry, { printControls, warlord: unit.id === Ledger.warlord(warband)?.id });
 }
 
 function viewWarbandDatacards(warband, unit) {
@@ -126,7 +125,7 @@ function warbandDatacards(campaign, warband, battles) {
 <body>
 <header class="masthead" style="--banner:${Ledger.validColor(warband.color)}"><div><p class="dc-label">Path to Glory · Campaign datacards</p><h1>${escape(warband.name)}</h1>
 <p class="warband-facts">${[campaign.name, warband.faction, `${fmt(Ledger.points(warband, battles))} roster points`, warband.archived ? 'Archived' : ''].filter(Boolean).map(escape).join(' · ')}</p></div>
-<button type="button" onclick="window.print()">Print or save PDF</button></header>
+<button type="button" onclick="window.print()">${icon('print')}Print or save PDF</button></header>
 <main aria-label="Warband datacards"><p class="dc-print-hint">Uncheck a card or ability to omit it from the printout.</p>${warbandCardList(warband, battles, { printControls: true })}</main></body></html>`;
 }
 

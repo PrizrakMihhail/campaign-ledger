@@ -109,6 +109,7 @@ h3 { font-size: 1.19rem; line-height: 1.25; }
 .panel { padding: 17px 19px; }
 .panel-head, .page-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
 .panel-head { margin-bottom: 12px; flex-wrap: wrap; }
+.panel-head h2 > .icon, .arcane-lore h3 > .icon, .battle-trait-card h3 > .icon { color: var(--gold); margin-inline-end: .45em; }
 .page-head { align-items: end; margin: 6px 0 22px; }
 .page-head .meta { margin-top: 7px; font-size: 1rem; }
 .row { display: flex; align-items: center; gap: 11px; min-width: 0; }
@@ -210,6 +211,8 @@ body:has(dialog[open]) { overflow: hidden; }
 .battle-awards input { width: clamp(3.5rem, 11vw, 5.5rem); }
 .battle-quest-target { align-self: end; padding-block: 8px; }
 .battle-view-unit { min-width: 0; border: 1px solid var(--line-strong); border-radius: 12px; padding: 5px; background: var(--panel); }
+.battle-view-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+.battle-view-tabs [aria-selected="true"] { background: var(--gold); border-color: var(--gold); color: var(--bg); }
 .battle-view-unit.is-dead > .datacard { filter: grayscale(1); opacity: .55; }
 .battle-view-controls { display: flex; align-items: flex-end; flex-wrap: wrap; gap: 10px 14px; padding: 10px 8px 6px; }
 .battle-view-controls label { display: grid; gap: 4px; color: var(--muted); font-size: .875rem; }

@@ -3,8 +3,8 @@
 const main = document.querySelector('#main');
 const importFile = document.querySelector('#import-file');
 const pages = {
-  overview: ['Overview', 'overview', overview], warbands: ['Warbands', 'shield', warbands], battles: ['Battles', 'swords', battles],
-  'arcane-tome': ['Arcane Tome', 'star', arcaneTome],
+  overview: ['Overview', 'overview', overview], warbands: ['Warbands', 'shield', warbands], battles: ['Battles', 'battle', battles],
+  'arcane-tome': ['Arcane Tome', 'spell', arcaneTome],
   'battle-view': ['Battle View', null, battleView],
   quests: ['Quests', 'flag', quests], chronicle: ['Chronicle', 'book', chronicle], settings: ['Settings', 'settings', settings],
 };
@@ -122,6 +122,7 @@ const actions = {
     const a = viewedArmy();
     if (a && !a.archived) battleForm(undefined, battleViewSeed(a, CampaignStore.data.battles));
   },
+  'battle-view-tab': selectBattleViewTab,
   'new-anvil-hero': () => unitForm(viewedArmy(), undefined, { anvilHero: true }),
   'edit-unit': id => unitForm(viewedArmy(), viewedArmy().units.find(u => u.id === id)),
   'unit-history': id => unitHistory(viewedArmy(), viewedArmy().units.find(u => u.id === id)),
@@ -218,6 +219,7 @@ document.addEventListener('submit', event => {
   }
 });
 
+main.addEventListener('keydown', navigateBattleViewTabs);
 main.addEventListener('input', event => {
   const input = event.target;
   if (input.name === 'query') updateFilters(event);

@@ -88,6 +88,7 @@ function boot({ page = 'overview', saved = new Map(), fresh = false } = {}) {
 }
 
 const app = boot();
+assert.equal(app.run('new Set(Ledger.unitTypes.map(unitIcon).filter(Boolean)).size'), app.run('Ledger.unitTypes.length'));
 const battleWorkflow = boot({ page: 'battle-view' });
 battleWorkflow.run(`
   const warband = viewedArmy();
@@ -122,6 +123,23 @@ battleWorkflow.run(`
 assert.match(battleWorkflow.run('quests()'), /Forfeited quests[\s\S]*Relight the Watchfires[\s\S]*5 \/ 3/);
 assert.doesNotMatch(battleWorkflow.run('quests()'), /data-action="new-quest" disabled/);
 assert.equal(battleWorkflow.run('Ledger.normalize(CampaignStore.data).armies[0].battleView[0].questPoints'), 3);
+battleWorkflow.run(`
+  warband.units.push({ ...warband.units[0], id: 'manifestation', type: 'Other', name: 'Molten Infernoth', warscroll: 'Molten Infernoth' });
+  warband.lores.push(
+    { kind: 'spell', name: 'Test lore', entries: [{ name: 'Test spell' }] },
+    { kind: 'prayer', name: 'Test lore', entries: [{ name: 'Test prayer' }] },
+    { kind: 'manifestation', name: 'Test lore', entries: [{ name: 'Test summon action' }] },
+  );
+`);
+assert.doesNotMatch(battleWorkflow.run('battleView()'), /Molten Infernoth|Faction test trait|Test spell/);
+battleWorkflow.run("selectBattleViewTab('traits')");
+assert.match(battleWorkflow.run('battleView()'), /Faction test trait/);
+assert.doesNotMatch(battleWorkflow.run('battleView()'), /Molten Infernoth|Dagna Emberhand/);
+battleWorkflow.run("selectBattleViewTab('arcana')");
+assert.match(battleWorkflow.run('battleView()'), /Test spell[\s\S]*Test prayer[\s\S]*Test summon action[\s\S]*Molten Infernoth/);
+assert.doesNotMatch(battleWorkflow.run('battleView()'), /Dagna Emberhand|Faction test trait/);
+assert.match(battleWorkflow.run('warbandCardList(warband, battleLog)'), /Test summon action[\s\S]*Molten Infernoth/);
+assert.equal(battleWorkflow.run('sortedWarbandUnits(warband).at(-1).id'), 'manifestation');
 const freshStorage = new Map();
 const fresh = boot({ page: 'warbands', saved: freshStorage, fresh: true });
 const setup = fresh.elements.get('#main').innerHTML;
@@ -221,8 +239,8 @@ assert.equal(aftermath.run('Ledger.unitBattleScars(unit, warband.id, state.battl
 const resources = boot({ page: 'warbands' });
 assert.equal(resources.run('CampaignStore.data.campaign.resource'), '');
 assert.equal(resources.run('Ledger.balance(CampaignStore.data, activeArmy())'), 6);
-assert.match(resources.run('warbands()'), /<h2>Glory Points ledger<\/h2>/);
-assert.doesNotMatch(resources.run('warbands()'), /<h2>Campaign Resources ledger<\/h2>/);
+assert.match(resources.run('warbands()'), /data-icon="coin"[^>]*aria-hidden="true"[\s\S]*?<\/svg>Glory Points ledger<\/h2>/);
+assert.doesNotMatch(resources.run('warbands()'), /Campaign Resources ledger<\/h2>/);
 resources.run(`
   const oldCampaign = Ledger.normalize(fixture);
   oldCampaign.version = 2;
@@ -415,7 +433,7 @@ assert.match(customCards, /Test Path upgrade/);
 assert.match(customCards, /&lt;example&gt;/);
 assert.doesNotMatch(customCards, /<example>/);
 assert.equal(app.run('unitCatalogueEntry(activeArmy(), checkedUnit).name'), 'Auric Runemaster');
-assert.deepEqual(JSON.parse(app.run('JSON.stringify(Ledger.unitTypes)')), ['Hero', 'Infantry', 'Cavalry', 'War Machine', 'Monster', 'Terrain', 'Other']);
+assert.deepEqual(JSON.parse(app.run('JSON.stringify(Ledger.unitTypes)')), ['Hero', 'Infantry', 'Cavalry', 'War Machine', 'Monster', 'Terrain', 'Other', 'Manifestation']);
 assert.equal(app.run('BattleCatalogueData.entries.every(entry => Ledger.unitTypes.includes(entry.category))'), true);
 assert.equal(app.run(`BattleCatalogue.find('Khazalite Holds', 'Oathkeeper Cannon').category`), 'War Machine');
 assert.match(app.run('profileEditorFields(true)'), /Add Path upgrade/);

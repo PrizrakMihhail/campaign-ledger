@@ -20,7 +20,7 @@ function arcaneTome() {
     const lores = a.lores.filter(lore => lore.kind === kind);
     const body = lores.length ? `<div class="stack">${lores.map(loreCard).join('')}</div>`
       : empty('No lores added', `Add a lore to record a ${entry} for this warband.`);
-    return section(title, body, button('Add lore', 'new-lore', { type: 'primary', glyph: 'plus', id: kind, title: `Add ${title}` }));
+    return section(title, body, button('Add lore', 'new-lore', { type: 'primary', glyph: 'plus', id: kind, title: `Add ${title}` }), kind);
   }).join('');
   return title + `<div class="layout roster-layout">${summary}<div class="stack">${groups}</div></div>`;
 }
@@ -35,7 +35,7 @@ function loreCard(lore) {
       ${entry.effect ? `<p class="copy"><strong>Effect</strong> ${escape(entry.effect)}</p>` : ''}
       <div class="lore-entry-actions">${button('Edit', 'edit-lore-entry', { id: ref, title: `Edit ${entry.name}` })}</div></article>`;
   }).join('');
-  return `<article class="card arcane-lore" data-lore="${escape(lore.kind)}"><div class="split"><h3 class="row-title">${escape(lore.name)}</h3>
+  return `<article class="card arcane-lore" data-lore="${escape(lore.kind)}"><div class="split"><h3 class="row-title">${icon(lore.kind)}${escape(lore.name)}</h3>
     ${badge(`${fmt(lore.points)} battle pts`, 'lore-cost')}</div>
     <div class="actions">${button(`Add ${labels.entry}`, 'new-lore-entry', { id: lore.id, glyph: 'plus' })}
     ${button('Edit lore', 'edit-lore', { id: lore.id, title: `Edit ${lore.name}` })}</div>

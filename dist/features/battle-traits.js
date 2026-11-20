@@ -1,11 +1,11 @@
 'use strict';
 
 function battleTraitsSection(warband) {
-  const traits = (warband.battleTraits ?? []).map(trait => `<article class="card">
-    <h3>${escape(trait.name)}</h3>${span('Timing', trait.timing)}${span('Declare', trait.declare)}${span('Effect', trait.effect)}
+  const traits = (warband.battleTraits ?? []).map(trait => `<article class="card battle-trait-card">
+    <h3>${icon('shield')}${escape(trait.name)}</h3>${span('Timing', trait.timing)}${span('Declare', trait.declare)}${span('Effect', trait.effect)}
     <div class="actions">${button('Edit trait', 'edit-battle-trait', { id: trait.id })}</div></article>`).join('');
   return section('Battle Traits', traits ? `<div class="cards">${traits}</div>`
-    : empty('No battle traits', 'Add a trait for this warband’s faction.'), add('Add battle trait', 'new-battle-trait'));
+    : empty('No battle traits', 'Add a trait for this warband’s faction.'), add('Add battle trait', 'new-battle-trait'), 'shield');
 }
 
 function battleTraitForm(warband, existing) {

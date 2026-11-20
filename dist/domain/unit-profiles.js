@@ -13,6 +13,21 @@ function referenceUnitProfile(warband, unit, entry) {
   if (BattleCatalogue.groupName(warband.faction) === 'Khazalite Holds') return WarbandProfiles.find(unitWarscroll(unit));
 }
 
+function unitRosterType(warband, unit, entry = unitCatalogueEntry(warband, unit)) {
+  const type = Ledger.unitType(unit.type);
+  if (type !== 'Other') return type;
+  return Ledger.unitType(entry?.category || referenceUnitProfile(warband, unit, entry)?.category) === 'Manifestation' ? 'Manifestation' : type;
+}
+
+function sortedWarbandUnits(warband, units = warband.units) {
+  const types = new Map(units.map(unit => [unit, unitRosterType(warband, unit)]));
+  return Ledger.sortedUnits(units, Ledger.warlord(warband)?.id, unit => types.get(unit));
+}
+
+function battleReadyUnits(warband, battles) {
+  return sortedWarbandUnits(warband, warband.units.filter(unit => Ledger.battleReady(unit, warband.id, battles)));
+}
+
 function unitProfile(warband, unit, entry) {
   const reference = referenceUnitProfile(warband, unit, entry);
   const edits = unit.profileEdits;

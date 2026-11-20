@@ -38,7 +38,7 @@ def category(value, hero=False):
         return 'Hero'
     return next((label for word, label in (
         ('infantry', 'Infantry'), ('cavalry', 'Cavalry'), ('war machine', 'War Machine'),
-        ('monster', 'Monster'), ('terrain', 'Terrain'),
+        ('manifestation', 'Manifestation'), ('monster', 'Monster'), ('terrain', 'Terrain'),
     ) if word in value.lower().replace('infa ntry', 'infantry')), 'Other')
 
 
