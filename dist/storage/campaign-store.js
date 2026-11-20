@@ -18,14 +18,21 @@ const CampaignStore = (() => {
     const records = Array.isArray(parsed?.campaigns) ? parsed.campaigns : [{ data: parsed }];
     let selection = previousId;
     let migrated = false;
-    const entries = records.map(({ id, data }) => {
+    const entries = records.map(({ id, data, revision, updatedAt, dirty, ownerId }) => {
       if (typeof id !== 'string' || !uuidV4.test(id)) {
         const replacement = Ledger.id();
         if (id === previousId) selection = replacement;
         id = replacement;
         migrated = true;
       }
-      return { id, data: Ledger.normalize(data) };
+      return {
+        id,
+        data: Ledger.normalize(data),
+        revision: Number.isSafeInteger(revision) && revision > 0 ? revision : null,
+        updatedAt: typeof updatedAt === 'string' ? updatedAt : '',
+        dirty: dirty !== false,
+        ownerId: typeof ownerId === 'string' ? ownerId : '',
+      };
     });
     return { entries, selection, migrated };
   }
@@ -51,7 +58,11 @@ const CampaignStore = (() => {
     available = false;
   }
 
-  function save() {
+  function save(markDirty = true) {
+    if (markDirty) {
+      const selected = campaigns.find(entry => entry.id === selectedId);
+      if (selected) selected.dirty = true;
+    }
     try {
       if (localStorage.getItem(key) !== savedValue) {
         conflict = true;
@@ -66,16 +77,26 @@ const CampaignStore = (() => {
     } catch {
       available = false;
     }
+    if (available && markDirty && typeof CampaignCloud !== 'undefined') CampaignCloud.queueSave(selectedId);
     return available;
   }
 
   return {
-    get data() { return campaigns.find(entry => entry.id === selectedId)?.data ?? null; },
-    get campaigns() { return campaigns; },
+    get data() {
+      const ownerId = typeof Account !== 'undefined' ? Account.user?.id ?? '' : '';
+      const entry = campaigns.find(item => item.id === selectedId);
+      return entry && (!ownerId || !entry.ownerId || entry.ownerId === ownerId) ? entry.data : null;
+    },
+    get campaigns() {
+      const ownerId = typeof Account !== 'undefined' ? Account.user?.id ?? '' : '';
+      return ownerId ? campaigns.filter(entry => !entry.ownerId || entry.ownerId === ownerId) : campaigns;
+    },
+    get allCampaigns() { return campaigns; },
     select,
     add(data) {
       const id = Ledger.id();
-      campaigns.push({ id, data });
+      const ownerId = typeof Account !== 'undefined' ? Account.user?.id ?? '' : '';
+      campaigns.push({ id, data, revision: null, updatedAt: '', dirty: true, ownerId });
       select(id);
     },
     get available() { return available; },
@@ -91,6 +112,6 @@ const CampaignStore = (() => {
       if (selection !== selectedId) select(selection);
     },
     save,
-    migrate() { if (needsMigration) save(); },
+    migrate() { if (needsMigration) save(false); },
   };
 })();

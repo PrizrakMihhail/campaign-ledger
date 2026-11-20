@@ -12,6 +12,13 @@ const asset = (path, base = site) => {
 };
 assert.equal(entries.at(-1), 'app.js', 'App must start after its dependencies');
 assert.equal(entries.length, new Set(entries).size, 'Each script should load only once');
+assert.ok(entries.includes('config.js'), 'Public Supabase configuration must load before the app');
+assert.ok(entries.includes('storage/account.js'), 'Account support must load before the app');
+assert.ok(entries.includes('storage/campaign-cloud.js'), 'Cloud campaign sync must load before the app');
+const cloudSource = await readFile(new URL('storage/campaign-cloud.js', site), 'utf8');
+assert.match(cloudSource, /function resolve\(choice\)/, 'Cloud conflicts must have a resolution handler');
+assert.match(cloudSource, /Use cloud version[\s\S]*Use local version/,
+  'Cloud conflicts must require an explicit local-or-cloud choice');
 assert.ok(entries.includes('data/wahapedia-catalogue-data.js'), 'Deployment catalogue must load before the app');
 const scripts = await Promise.all(entries.map(async path => new Script(await readFile(asset(path), 'utf8'), { filename: path })));
 for (const [, stylesheet] of html.matchAll(/<link rel="stylesheet" href="([^"]+)"/g)) {

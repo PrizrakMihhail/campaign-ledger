@@ -53,8 +53,13 @@ h3 { font-size: 1.19rem; line-height: 1.25; }
 .campaign-banner img { display: block; width: 100%; height: auto; }
 .campaign-banner-title { position: absolute; inset: auto 0 0; padding: clamp(13px, 4vw, 40px); background: linear-gradient(transparent, #171713 90%); }
 .campaign-options { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); }
+.campaign-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
 .campaign-option { display: flex; flex-direction: column; align-items: flex-start; justify-content: space-between; gap: 14px; }
 .campaign-option h2 { margin-block: 4px; }
+.account-controls { display: flex; align-items: center; justify-content: flex-end; gap: 9px; min-width: 0; }
+.account-status { max-width: min(18rem, 55vw); font-size: .82rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.sync-status { padding-left: 9px; border-left: 1px solid var(--line); color: var(--muted); font-size: .76rem; white-space: nowrap; }
+.conflict-versions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
 .sidebar { position: sticky; top: 0; height: 100vh; display: flex; flex-direction: column; padding: 27px 15px 19px; border-right: 1px solid var(--line); background: var(--side); }
 .brand { display: flex; gap: 12px; align-items: center; padding: 2px 6px 26px; color: var(--ink); }
 .brand:hover { text-decoration: none; }

@@ -41,6 +41,17 @@ const makeDate = date => `<time datetime="${escape(date)}">${dateText(date)}</ti
 const actionIcons = { 'view-datacards': 'book', 'view-unit-datacard': 'book', 'unit-history': 'swords', 'complete-quest': 'check', 'forfeit-quest': 'flag', 'new-resource': 'coin', import: 'download', print: 'print' };
 const button = (label, action, { type = 'secondary', glyph = actionIcons[action] ?? (action.startsWith('edit-') ? 'edit' : undefined), id, title, disabled = false } = {}) =>
   `<button class="button ${type}" type="button" data-action="${action}"${id ? ` data-id="${escape(id)}"` : ''}${title ? ` aria-label="${escape(title)}"` : ''}${disabled ? ' disabled' : ''}>${glyph ? icon(glyph) : ''}${escape(label)}</button>`;
+function accountControls() {
+  if (!Account.configured) return '<span class="account-status quiet">Cloud setup pending</span>';
+  if (!Account.ready) return '<span class="account-status quiet">Checking account…</span>';
+  if (Account.error) return `<span class="account-status negative">${escape(Account.error)}</span>`;
+  const user = Account.user;
+  if (!user) return button('Continue with Google', 'sign-in', { type: 'primary' });
+  const label = user.user_metadata?.full_name || user.email || 'Google account';
+  const sync = CampaignCloud.error || CampaignCloud.label;
+  const problem = ['error', 'conflict'].includes(CampaignCloud.state);
+  return `<span class="account-status" title="${escape(user.email)}">${escape(label)}</span><span class="sync-status${problem ? ' negative' : ''}" title="${escape(sync)}">${escape(CampaignCloud.label)}</span>${CampaignCloud.state === 'conflict' ? button('Resolve', 'resolve-conflict') : ''}${button('Sign out', 'sign-out')}`;
+}
 const pageLink = (label, page, glyph) => `<a class="button link" href="#${page}">${icon(glyph)}${escape(label)}</a>`;
 const badge = (label, style = label.toLowerCase()) => `<span class="pill ${style}">${escape(label)}</span>`;
 const add = (label, action) => button(label, action, { type: 'primary', glyph: 'plus' });

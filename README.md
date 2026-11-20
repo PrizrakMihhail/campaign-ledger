@@ -56,7 +56,9 @@ No account or installation is required. Your campaign is saved in the browser yo
 
 ## Saving and moving your campaign
 
-Campaign data is stored locally in your browser. It is not uploaded to an account or synchronized between devices.
+Campaign data is always stored locally in your browser. When Supabase is configured, signing in with Google also synchronizes each campaign to the account's protected cloud records. Signed-out use remains local-only.
+
+If a campaign changes independently in the browser and in the cloud, synchronization pauses and asks which complete version should replace the other. Export a backup before resolving a conflict when both versions need to be retained.
 
 Use **Export backup** to download a JSON copy of the open campaign. Use **Import backup** to restore that copy as a separate campaign or move it to another browser or device.
 

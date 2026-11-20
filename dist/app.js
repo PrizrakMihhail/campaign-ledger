@@ -43,9 +43,10 @@ function render() {
   if (!activeArmy()) options.unshift(['', 'Choose a warband']);
   const picker = CampaignStore.data.armies.length ? select('Warband', 'view-warband', options, selected?.id ?? '') : '';
   document.querySelector('#topbar').innerHTML = `<div class="crumb"><span>Campaign</span><span aria-hidden="true">/</span><strong>${pages[page][0]}</strong></div>
-    <div class="topbar-controls">${picker}${button('Export backup', 'export', { glyph: 'download' })}</div>`;
-  const status = CampaignStore.available ? 'Saved in this browser' : 'Changes need a backup';
-  document.querySelector('#sidebar-bottom').innerHTML = `<p class="save-info${CampaignStore.available ? '' : ' unsaved'}">${escape(status)}</p>`;
+    <div class="topbar-controls">${picker}${button('Export backup', 'export', { glyph: 'download' })}<div class="account-controls">${accountControls()}</div></div>`;
+  const cloudError = Account.user && ['error', 'conflict'].includes(CampaignCloud.state);
+  const status = !CampaignStore.available ? 'Changes need a backup' : Account.user ? CampaignCloud.label : 'Saved in this browser';
+  document.querySelector('#sidebar-bottom').innerHTML = `<p class="save-info${CampaignStore.available && !cloudError ? '' : ' unsaved'}"${cloudError ? ` title="${escape(CampaignCloud.error)}"` : ''}>${escape(status)}</p>`;
   main.innerHTML = pages[page][2]();
   document.title = `${pages[page][0]} · Path to Glory`;
 }
@@ -89,6 +90,27 @@ document.addEventListener('keydown', event => {
 
 const actions = {
   ...arcaneTomeActions,
+  'resolve-conflict': () => CampaignCloud.showConflict(),
+  'resolve-cloud': () => {
+    dialog.close();
+    CampaignCloud.useCloud();
+  },
+  'resolve-local': () => {
+    dialog.close();
+    CampaignCloud.useLocal();
+  },
+  'sign-in': async () => {
+    try { await Account.signIn(); }
+    catch (error) { tell(`Sign-in could not start. ${error.message}`, true); }
+  },
+  'sign-out': async () => {
+    try {
+      await Account.signOut();
+      tell('Signed out. Campaigns remain saved in this browser.');
+    } catch (error) {
+      tell(`Sign-out failed. ${error.message}`, true);
+    }
+  },
   start: startCampaign,
   'open-campaign': id => {
     if (!CampaignStore.select(id)) return;
@@ -325,3 +347,8 @@ menuToggle.innerHTML = icon('menu') + icon('close');
 setMobileMenu(false);
 CampaignStore.migrate();
 render();
+CampaignCloud.initialize(render);
+Account.initialize(() => {
+  CampaignCloud.setAccount(Account.user);
+  render();
+});

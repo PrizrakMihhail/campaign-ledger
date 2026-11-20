@@ -6,6 +6,8 @@ Track Path to Glory warbands, units, Glory Points, battles, Battle Scars, quests
 
 Open [the app](dist/index.html) in a modern browser. The complete static site lives in `dist/` and needs no build or server. Run `node tools/check.mjs` from the repository root to check the app routes, shipped assets, exports, and backup compatibility. The check uses Node.js and has no package dependencies.
 
+Google authentication requires serving `dist/` through the configured localhost address rather than opening it with `file://`. Add the Supabase Project URL and publishable key to `dist/config.js`; never add a secret/service-role key or Google client secret. Signed-in accounts synchronize each campaign with the RLS-protected `player_campaigns` table while retaining a browser copy. When both local and cloud revisions changed, synchronization pauses and asks the user to keep either the complete local version or the complete cloud version.
+
 The **Campaigns** page lists the campaigns saved in this browser. Open a campaign to go to its Overview. You can create a campaign with the same fields available in **Settings** or import a JSON backup as a separate campaign. Use **Campaign selection** on the Overview to return to the list.
 
 Campaigns are stored in the browser. Export a **JSON backup** and import it at the new address when moving from a local copy or the private hosted site to GitLab Pages. Backups contain campaign data, so keep them outside `dist/` and the public repository.

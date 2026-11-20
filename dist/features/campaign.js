@@ -79,7 +79,7 @@ function campaignSelection() {
   return `<div class="campaign-selection stack">
     <header class="campaign-banner"><img src="assets/fortress.jpg" alt=""><div class="campaign-banner-title">
       <p class="hero-kicker">Path to Glory</p><h1>Campaigns</h1></div></header>
-    <div class="actions">${button('Create campaign', 'start', { type: 'primary', glyph: 'plus' })}${button('Import backup', 'import')}</div>
+    <div class="campaign-toolbar"><div class="actions">${button('Create campaign', 'start', { type: 'primary', glyph: 'plus' })}${button('Import backup', 'import')}</div><div class="account-controls">${accountControls()}</div></div>
     ${cards ? `<div class="campaign-options">${cards}</div>` : empty('No campaigns yet', 'Create a campaign or import a backup.')}
   </div>`;
 }
