@@ -89,6 +89,23 @@ const Ledger = (() => {
     return { kills: Math.max(0, integer(value.kills)), questPoints: Math.max(0, integer(value.questPoints)), dead: value.dead === true };
   }
 
+  const battleRoundCount = 7;
+  const canExtendBattle = round => round >= 4 && round < battleRoundCount;
+  const roundSides = [['warband', 'You'], ['opponent', 'Opponent']];
+  const roundExtensions = [['', 'Undecided'], ['yes', 'Continue'], ['no', 'End battle']];
+
+  function normalizeBattleRounds(value) {
+    return Array.from({ length: battleRoundCount }, (_, index) => {
+      const row = Array.isArray(value) ? value[index] : undefined;
+      const score = key => row?.[key] == null || row[key] === '' ? null : Math.max(0, integer(row[key]));
+      return {
+        initiative: choice(row?.initiative, roundSides.map(([key]) => key), ''),
+        warbandPoints: score('warbandPoints'), opponentPoints: score('opponentPoints'),
+        extension: canExtendBattle(index + 1) ? choice(row?.extension, roundExtensions.map(([key]) => key), '') : '',
+      };
+    });
+  }
+
   function unitStatus(status, battleScars) {
     return battleScars >= retirementScarCount ? 'Retired' : choice(status === 'In Reserve' ? 'In Reserves' : status, unitStatuses, 'Active');
   }
@@ -139,6 +156,7 @@ const Ledger = (() => {
       lores: records(a.lores, normalizeLore),
       battleTraits: records(a.battleTraits, t => ({ name: str(t.name) || 'Unnamed trait', timing: str(t.timing), declare: str(t.declare), effect: str(t.effect), ruleset: str(t.ruleset) })),
       battleView: records(a.battleView, unitBattleStats),
+      battleRounds: normalizeBattleRounds(a.battleRounds),
       quests: records(a.quests, q => ({
         title: str(q.title) || 'Unnamed quest', goal: str(q.goal), status: choice(q.status === 'Abandoned' ? 'Forfeited' : q.status, questStatuses, 'Active'),
         reward: str(q.reward), notes: str(q.notes), target: Math.max(0, integer(q.target)), progress: Math.max(0, integer(q.progress)),
@@ -172,6 +190,7 @@ const Ledger = (() => {
         delta: legacyResource ? 0 : integer(b.delta), oppDelta: legacyResource ? 0 : integer(b.oppDelta),
         resourceDelta: integer(legacyResource ? b.delta : b.resourceDelta), oppResourceDelta: integer(legacyResource ? b.oppDelta : b.oppResourceDelta),
         questId: str(b.questId), questPoints: Math.max(0, integer(b.questPoints)),
+        rounds: normalizeBattleRounds(b.rounds),
         awards: records(b.awards, a => ({ armyId: str(a.armyId), unitId: str(a.unitId), unitName: str(a.unitName), delta: integer(a.delta), scars: Math.max(0, integer(a.scars)), ...unitBattleStats(a) })),
       })),
       entries: records(value.entries, j => ({ title: str(j.title) || 'Untitled entry', date: cleanDate(j.date), armyId: str(j.armyId), body: str(j.body) })),
@@ -287,6 +306,6 @@ const Ledger = (() => {
     return battle.result;
   }
 
-  return { packs, gloryPoints, resourceName, latestWarband, resultOptions, unitStatuses, unitStatus, battleReady, battleScarSeverity, isScarred, questStatuses, activeQuest, questBattlePoints, unitBattleStats, unitTypes, unitType, unitName, warlord, sortedUnits, profileStats, weaponFields, normalizeProfileEdits, profileDefaults, profileAbilityEdits, profileChanges, validColor, integer, id, date, dateOrder,
+  return { packs, gloryPoints, resourceName, latestWarband, resultOptions, unitStatuses, unitStatus, battleReady, battleScarSeverity, isScarred, questStatuses, activeQuest, questBattlePoints, unitBattleStats, normalizeBattleRounds, canExtendBattle, roundSides, roundExtensions, unitTypes, unitType, unitName, warlord, sortedUnits, profileStats, weaponFields, normalizeProfileEdits, profileDefaults, profileAbilityEdits, profileChanges, validColor, integer, id, date, dateOrder,
     blank, normalize, normalizeAnvil, destinySpent, unitPoints, unitUpgradePoints, unitSize, loreKinds, lorePoints, points, participants, signed, balance, transactions, unitHistory, battleRenown, battleScarAwards, unitBattleScars, rosterStatus, record, resultFor };
 })();

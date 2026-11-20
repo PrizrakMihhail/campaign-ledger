@@ -252,11 +252,13 @@ main.addEventListener('input', event => {
   const input = event.target;
   if (input.name === 'query') updateFilters(event);
   if (input.type === 'number' && input.hasAttribute('data-battle-counter')) updateBattleView(input);
+  if (input.type === 'number' && input.closest?.('[data-battle-round]')) updateBattleRound(input);
 });
 
 document.addEventListener('change', event => {
   const input = event.target;
   if (input.hasAttribute('data-battle-counter')) updateBattleView(input, true);
+  if (input.closest('[data-battle-round]')) updateBattleRound(input);
   if (input.closest('#battle-filters') && input.name !== 'query') updateFilters(event);
   if (input.id === 'field-view-warband') {
     selectWarband(input.value);

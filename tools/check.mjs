@@ -149,6 +149,24 @@ assert.match(battleWorkflow.run('battleView()'), /Test spell[\s\S]*Test prayer[\
 assert.doesNotMatch(battleWorkflow.run('battleView()'), /Dagna Emberhand|Faction test trait/);
 assert.match(battleWorkflow.run('warbandCardList(warband, battleLog)'), /Test summon action[\s\S]*Molten Infernoth/);
 assert.equal(battleWorkflow.run('sortedWarbandUnits(warband).at(-1).id'), 'manifestation');
+battleWorkflow.run("selectBattleViewTab('tracker')");
+const tracker = battleWorkflow.run('battleView()');
+assert.equal((tracker.match(/type="radio" name="initiative-/g) || []).length, 14);
+assert.doesNotMatch(tracker, /Unassigned|name="initiative-0"[^>]* checked/);
+assert.match(tracker, /data-battle-round="4" hidden/);
+assert.equal((tracker.match(/>Extend to next round\?</g) || []).length, 3);
+assert.deepEqual([...tracker.matchAll(/name="extension-(\d+)"/g)].map(match => Number(match[1]) + 1), [4, 5, 6]);
+assert.match(tracker, /The battle ends after this round\./);
+assert.match(tracker, /<legend>Round 7<\/legend>/);
+battleWorkflow.elements.get('#main').eventHandlers.get('input')({ target: {
+  type: 'number', name: 'warbandPoints-4', value: '4', validity: { valid: true },
+  hasAttribute: () => false, closest: () => ({ dataset: { battleRound: '4' } }),
+} });
+battleWorkflow.run(`warband.battleRounds[3].extension = 'yes'; warband.battleRounds[4].initiative = 'opponent'; warband.battleRounds[4].extension = 'yes';`);
+assert.doesNotMatch(battleWorkflow.run('battleRoundTracker(warband)'), /data-battle-round="[45]" hidden/);
+assert.match(battleWorkflow.run('battleRoundTracker(warband)'), /data-battle-round="6" hidden/);
+assert.equal(battleWorkflow.run('battleScore(warband.battleRounds)'), '4 – 0');
+assert.match(battleWorkflow.run("recordedBattleRounds(battleViewSeed(warband, battleLog).rounds, 'Forge', 'Opponent')"), /<th scope="row">5<\/th><td>Opponent<\/td><td>4<\/td>[\s\S]*Continue/);
 const freshStorage = new Map();
 const fresh = boot({ page: 'warbands', saved: freshStorage, fresh: true });
 const setup = fresh.elements.get('#main').innerHTML;

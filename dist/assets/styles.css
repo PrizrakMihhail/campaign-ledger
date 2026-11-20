@@ -217,6 +217,13 @@ body:has(dialog[open]) { overflow: hidden; }
 .battle-view-unit { min-width: 0; }
 .battle-view-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
 .battle-view-tabs [aria-selected="true"] { background: var(--gold); border-color: var(--gold); color: var(--bg); }
+.battle-round-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 12px; }
+.battle-round { margin: 0; }
+.battle-round legend { padding-inline: 6px; color: var(--gold); font: 1.2rem var(--serif); }
+.initiative-options { min-width: 0; margin: 0; padding: 0; border: 0; }
+.initiative-options legend { padding: 0; color: var(--muted); font: 650 .875rem 'Segoe UI', system-ui, sans-serif; }
+.initiative-options label { display: flex; align-items: center; gap: 6px; min-height: 44px; margin: 0; cursor: pointer; }
+.initiative-options input { width: 1rem; height: 1rem; min-height: 0; margin: 0; padding: 0; accent-color: var(--gold); }
 .battle-view-unit.is-dead > .datacard { background: #e0ddd4; }
 .battle-view-unit.is-dead .datacard > :not(.battle-view-controls) { filter: grayscale(1); opacity: .62; }
 .battle-view-controls { display: flex; align-items: end; flex-wrap: wrap; gap: 8px 12px; padding: 10px; margin-bottom: 12px; border-radius: 6px; background: #30271d; }
@@ -276,7 +283,7 @@ body:has(dialog[open]) { overflow: hidden; }
   .content, .footer, .topbar { padding-inline: clamp(10px, 4vw, 18px); }
   .dialog-head, .dialog-foot, .form-body { padding-inline: 12px; }
   input, select, textarea { font-size: 1rem; }
-  .battle-view-tabs { display: grid; grid-template-columns: minmax(0, 1.35fr) repeat(2, minmax(0, 1fr)); gap: 6px; margin-bottom: 12px; }
+  .battle-view-tabs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; margin-bottom: 12px; }
   .battle-view-tabs .button { flex-direction: column; gap: 4px; min-height: 58px; padding: 6px 3px; }
   .battle-view-controls { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr) auto; }
   .battle-view-controls input[type="number"] { width: 100%; }

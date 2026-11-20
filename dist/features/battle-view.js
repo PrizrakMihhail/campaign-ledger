@@ -1,7 +1,7 @@
 'use strict';
 
-const battleViewTabs = { traits: 'Faction Traits', units: 'Units', arcana: 'Arcana' };
-const battleViewIcons = { traits: 'shield', units: 'battle', arcana: 'spell' };
+const battleViewTabs = { tracker: 'Battle Tracker', traits: 'Faction Traits', units: 'Units', arcana: 'Arcana' };
+const battleViewIcons = { tracker: 'flag', traits: 'shield', units: 'battle', arcana: 'spell' };
 let battleViewTab = 'units';
 
 function selectBattleViewTab(tab, { focus = true } = {}) {
@@ -68,7 +68,9 @@ function battleView() {
   }).join('');
   let cards;
   let emptyTitle;
-  if (battleViewTab === 'traits') {
+  if (battleViewTab === 'tracker') {
+    cards = [];
+  } else if (battleViewTab === 'traits') {
     cards = factionTraitCards(warband);
     emptyTitle = 'No faction traits added';
   } else {
@@ -79,8 +81,73 @@ function battleView() {
   }
   return title + `<div class="battle-view-tabs" role="tablist" aria-label="Battle View">${tabs}</div>
     <section id="battle-tab-panel" role="tabpanel" aria-labelledby="battle-tab-${battleViewTab}" tabindex="0">
-      ${cards.length ? `<style>${datacardStyles}</style><div class="dc-cards">${cards.join('')}</div>` : empty(emptyTitle, '')}
+      ${battleViewTab === 'tracker' ? battleRoundTracker(warband) : cards.length ? `<style>${datacardStyles}</style><div class="dc-cards">${cards.join('')}</div>` : empty(emptyTitle, '')}
     </section>`;
+}
+
+function battleScore(rounds) {
+  const total = key => rounds.reduce((sum, row) => sum + (row[key] ?? 0), 0);
+  return `${fmt(total('warbandPoints'))} – ${fmt(total('opponentPoints'))}`;
+}
+
+function visibleBattleRounds(rounds) {
+  const stop = rounds.findIndex((row, index) => Ledger.canExtendBattle(index + 1) && row.extension !== 'yes');
+  return stop < 0 ? rounds : rounds.slice(0, stop + 1);
+}
+
+function battleRoundTracker(warband) {
+  const rounds = Ledger.normalizeBattleRounds(warband.battleRounds);
+  const visible = visibleBattleRounds(rounds);
+  return `<div class="stack battle-round-tracker">
+    <section class="panel"><h2>Score</h2><p class="meta">You vs Opponent</p>
+      <output class="stat-value" id="battle-tracker-score" aria-live="polite">${battleScore(visible)}</output></section>
+    <div class="battle-round-grid">${rounds.map((row, index) => `<fieldset class="panel battle-round" data-battle-round="${index}"${index >= visible.length ? ' hidden' : ''}>
+      <legend>Round ${index + 1}</legend><div class="form-grid">
+        <fieldset class="full initiative-options"><legend>Initiative</legend>
+          <div class="actions">${Ledger.roundSides.map(([value, label]) =>
+            `<label><input type="radio" name="initiative-${index}" value="${value}"${row.initiative === value ? ' checked' : ''}> ${label}</label>`).join('')}</div>
+        </fieldset>
+        ${field('Your points', `warbandPoints-${index}`, row.warbandPoints ?? '', { type: 'number', min: 0 })}
+        ${field('Opponent points', `opponentPoints-${index}`, row.opponentPoints ?? '', { type: 'number', min: 0 })}
+        ${Ledger.canExtendBattle(index + 1) ? `<div class="full">${select('Extend to next round?', `extension-${index}`, Ledger.roundExtensions, row.extension)}</div>` : ''}
+        ${index === rounds.length - 1 ? '<p class="meta full">The battle ends after this round.</p>' : ''}
+      </div></fieldset>`).join('')}</div>
+  </div>`;
+}
+
+function updateBattleRound(input) {
+  const group = input.closest('[data-battle-round]');
+  if (!group || !input.validity.valid) return;
+  const warband = viewedArmy();
+  const rounds = Ledger.normalizeBattleRounds(warband.battleRounds);
+  const index = Number(group.dataset.battleRound);
+  const key = input.name.split('-')[0];
+  const value = input.type === 'number' ? input.value === '' ? null : Number(input.value) : input.value;
+  if (!rounds[index] || !Object.hasOwn(rounds[index], key) || rounds[index][key] === value) return;
+  rounds[index][key] = value;
+  warband.battleRounds = Ledger.normalizeBattleRounds(rounds);
+  const visible = visibleBattleRounds(warband.battleRounds);
+  document.querySelector('#battle-tracker-score').textContent = battleScore(visible);
+  if (key === 'extension') {
+    for (let position = index + 1; position < rounds.length; position++) {
+      document.querySelector(`[data-battle-round="${position}"]`).hidden = position >= visible.length;
+    }
+  }
+  if (!CampaignStore.save()) tell('Battle Tracker changes could not be saved in this browser.', true);
+}
+
+function recordedBattleRounds(rounds, first, second) {
+  const rows = Ledger.normalizeBattleRounds(rounds).map((row, index) => {
+    if (!row.initiative && row.warbandPoints === null && row.opponentPoints === null && !row.extension) return '';
+    const initiative = row.initiative === 'warband' ? first : row.initiative === 'opponent' ? second : '—';
+    const extension = Ledger.roundExtensions.find(([key]) => key === row.extension)?.[1] ?? '—';
+    const format = score => score === null ? '—' : fmt(score);
+    return `<tr><th scope="row">${index + 1}</th><td>${escape(initiative)}</td><td>${format(row.warbandPoints)}</td><td>${format(row.opponentPoints)}</td>
+      <td>${row.extension ? extension : '—'}</td></tr>`;
+  }).join('');
+  return rows ? `<section><h3>Battle Tracker</h3><p class="meta">${escape(first)} ${battleScore(Ledger.normalizeBattleRounds(rounds))} ${escape(second)}</p>
+    <div class="table-scroll"><table><thead><tr><th scope="col">Round</th><th scope="col">Initiative</th><th scope="col">Warband pts</th><th scope="col">Opponent pts</th><th scope="col">Extension</th></tr></thead>
+    <tbody>${rows}</tbody></table></div></section>` : '';
 }
 
 function battleViewUnitCards(warband, units, battles) {
@@ -132,6 +199,7 @@ function battleViewSeed(warband, battles) {
   const draft = new Map(warband.battleView.map(row => [row.id, row]));
   return {
     armyId: warband.id,
+    rounds: visibleBattleRounds(Ledger.normalizeBattleRounds(warband.battleRounds)),
     awards: battleReadyUnits(warband, battles).map(unit => ({
       ...Ledger.unitBattleStats(draft.get(unit.id) ?? {}), armyId: warband.id, unitId: unit.id, unitName: Ledger.unitName(unit), scars: 0,
     })),

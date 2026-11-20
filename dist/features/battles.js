@@ -135,10 +135,14 @@ function battleForm(existing, seed) {
       result: v.result, battleplan: v.battleplan.trim(), notes: v.notes.trim(), delta: whole(v.delta, 'Warband Glory Points change'), oppDelta: whole(v.oppDelta ?? 0, 'Opponent Glory Points change'),
       resourceDelta: c.resource ? whole(v.resourceDelta, 'Warband campaign resource change') : b.resourceDelta ?? 0,
       oppResourceDelta: c.resource ? whole(v.oppResourceDelta ?? 0, 'Opponent campaign resource change') : b.oppResourceDelta ?? 0,
-      questId: quest?.id ?? '', questPoints, awards };
+      questId: quest?.id ?? '', questPoints, rounds: Ledger.normalizeBattleRounds(b.rounds ?? seed?.rounds), awards };
     if (existing) Object.assign(existing, values);
     else CampaignStore.data.battles.push({ id: Ledger.id(), ...values });
-    if (seed && seed.armyId === v.armyId) army(v.armyId).battleView = [];
+    if (seed && seed.armyId === v.armyId) {
+      const warband = army(v.armyId);
+      warband.battleView = [];
+      warband.battleRounds = Ledger.normalizeBattleRounds();
+    }
     resetBattleFilters();
     return ['Battle saved.', 'battles'];
   }, { label: 'Save battle', remove: existing ? button('Delete battle', 'remove-battle', { id: b.id, type: 'danger' }) : '' });
@@ -176,6 +180,7 @@ function viewBattle(b) {
   viewDialog(b.title, `<div class="split"><p class="meta">${makeDate(b.date)}${b.battleplan ? ` · ${escape(b.battleplan)}` : ''}</p>${badge(b.result)}</div>
     <p><strong>${escape(first)}</strong> vs ${escape(second)}</p>${changes(Ledger.gloryPoints, b.delta, b.oppDelta)}
     ${resource ? changes(resource, b.resourceDelta, b.oppResourceDelta) : ''}${b.questPoints ? span('Quest Points acquired', `${fmt(b.questPoints)} · ${quest?.title ?? 'Removed quest'}`) : ''}${b.notes ? `<p class="copy">${escape(b.notes)}</p>` : ''}
+    ${recordedBattleRounds(b.rounds, first, second)}
     ${awards ? `<div><h3>Unit aftermath</h3>${awards}</div>` : ''}`, button('Edit battle', 'edit-battle', { id: b.id, type: 'primary' }));
 }
 
