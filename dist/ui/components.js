@@ -26,6 +26,7 @@ const icons = {
   star: '<path d="M12 2l2.6 7.4L22 12l-7.4 2.6L12 22l-2.6-7.4L2 12l7.4-2.6L12 2Z"/>',
   coin: '<circle cx="12" cy="12" r="9"/><path d="m12 7 3 5-3 5-3-5 3-5Z"/>',
   close: '<path d="m6 6 12 12M18 6 6 18"/>',
+  menu: '<path d="M4 6h16M4 12h16M4 18h16"/>',
 };
 
 const icon = name => Object.hasOwn(icons, name) ? `<svg class="icon" data-icon="${name}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${icons[name]}</svg>` : '';

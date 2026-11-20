@@ -64,7 +64,9 @@ function boot({ page = 'overview', saved = new Map(), fresh = false } = {}) {
   const elements = new Map();
   const events = new Map();
   const element = () => ({
-    classList: { toggle() {} }, eventHandlers: new Map(), focus() {},
+    classList: { toggle() {} }, eventHandlers: new Map(), attributes: new Map(), focus() {},
+    setAttribute(name, value) { this.attributes.set(name, value); },
+    getAttribute(name) { return this.attributes.get(name) ?? null; },
     addEventListener(name, callback) { this.eventHandlers.set(name, callback); },
     showModal() { this.open = true; }, close() { this.open = false; }, querySelector() { return { focus() {} }; },
   });
@@ -88,6 +90,12 @@ function boot({ page = 'overview', saved = new Map(), fresh = false } = {}) {
 }
 
 const app = boot();
+const menu = app.elements.get('#menu-toggle');
+assert.equal(menu.getAttribute('aria-expanded'), 'false');
+menu.eventHandlers.get('click')();
+assert.equal(menu.getAttribute('aria-expanded'), 'true');
+app.events.get('keydown')({ key: 'Escape', preventDefault() {} });
+assert.equal(menu.getAttribute('aria-expanded'), 'false');
 assert.equal(app.run('new Set(Ledger.unitTypes.map(unitIcon).filter(Boolean)).size'), app.run('Ledger.unitTypes.length'));
 const battleWorkflow = boot({ page: 'battle-view' });
 battleWorkflow.run(`

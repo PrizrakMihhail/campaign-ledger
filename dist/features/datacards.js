@@ -9,9 +9,11 @@ function weaponProfiles(title, rows, ranged = false) {
   const head = columns.map(([label, full]) => `<th scope="col" aria-label="${full}">${label}</th>`).join('');
   const body = rows.map(([name, ...values]) => {
     const ability = values[columns.length];
-    return `<tr><th scope="row">${escape(name)}${ability ? `<small>${escape(ability)}</small>` : ''}</th>${values.slice(0, columns.length).map(value => `<td>${escape(value)}</td>`).join('')}</tr>`;
+    const stats = values.slice(0, columns.length).map((value, index) =>
+      `<td role="cell"><span class="dc-weapon-stat-label" aria-hidden="true">${columns[index][1]}</span>${escape(value)}</td>`).join('');
+    return `<tr role="row"><th scope="row">${escape(name)}${ability ? `<small>${escape(ability)}</small>` : ''}</th>${stats}</tr>`;
   }).join('');
-  return `<table class="dc-weapons"><caption>${title}</caption><thead><tr><th scope="col">Weapon</th>${head}</tr></thead><tbody>${body}</tbody></table>`;
+  return `<div class="dc-weapon-table"><table class="dc-weapons" role="table"><caption>${title}</caption><thead role="rowgroup"><tr role="row"><th scope="col">Weapon</th>${head}</tr></thead><tbody role="rowgroup">${body}</tbody></table></div>`;
 }
 
 function printChoice(label, name) {
@@ -41,7 +43,7 @@ function profileContent(profile, printControls) {
     ${profile.customized || reference ? `<p class="dc-source">${profile.customized ? 'Customized profile' : ''}${profile.customized && reference ? ' · Base profile from ' : ''}${reference}</p>` : ''}`;
 }
 
-function datacard(profile, unit, renown, entry, { printControls = false, warlord = false } = {}) {
+function datacard(profile, unit, renown, entry, { printControls = false, warlord = false, controls = '' } = {}) {
   const name = unit?.name || entry?.name || profile.name;
   const category = unit ? Ledger.unitType(unit.type) : profile?.category || entry?.category;
   const points = unit ? Ledger.unitPoints(unit) : entry?.points;
@@ -55,6 +57,7 @@ function datacard(profile, unit, renown, entry, { printControls = false, warlord
     <header class="dc-title"><div class="dc-identity">${unitIcon(category)}<div><p class="dc-label">${[category, entry?.kind, unit?.reinforced ? 'Reinforced' : ''].filter(Boolean).map(escape).join(' · ')}</p><h2>${escape(name)}</h2></div></div>
     ${warlord || scarred ? `<div class="dc-badges">${warlord ? '<span class="dc-status dc-warlord">Warlord</span>' : ''}${scarred ? '<span class="dc-status">Scarred</span>' : ''}</div>` : ''}</header>
     ${printControls ? printChoice('Print card', name) : ''}
+    ${controls}
     ${metrics ? `<dl class="dc-metrics">${metrics}</dl>` : ''}
     ${profileContent(profile, printControls)}
     ${anvilCard(unit?.anvil)}
@@ -95,7 +98,7 @@ function arcanaActionCards(warband, printControls = false) {
 }
 
 function warbandCardList(warband, battles, { unit, printControls = false } = {}) {
-  const renderUnit = item => unitDatacard(warband, item, battles, printControls);
+  const renderUnit = item => unitDatacard(warband, item, battles, { printControls });
   if (unit) return `<div class="dc-cards">${renderUnit(unit)}</div>`;
   const units = battleReadyUnits(warband, battles);
   const cards = units.filter(item => unitRosterType(warband, item) !== 'Manifestation').map(renderUnit);
@@ -104,10 +107,10 @@ function warbandCardList(warband, battles, { unit, printControls = false } = {})
   return `<div class="dc-cards">${cards.join('\n')}</div>`;
 }
 
-function unitDatacard(warband, unit, battles, printControls = false) {
+function unitDatacard(warband, unit, battles, options) {
   const entry = unitCatalogueEntry(warband, unit);
   const battleScars = Ledger.unitBattleScars(unit, warband.id, battles);
-  return datacard(unitProfile(warband, unit, entry), { ...unit, battleScars, type: unitRosterType(warband, unit, entry) }, unitRenown(warband, unit, battles), entry, { printControls, warlord: unit.id === Ledger.warlord(warband)?.id });
+  return datacard(unitProfile(warband, unit, entry), { ...unit, battleScars, type: unitRosterType(warband, unit, entry) }, unitRenown(warband, unit, battles), entry, { ...options, warlord: unit.id === Ledger.warlord(warband)?.id });
 }
 
 function viewWarbandDatacards(warband, unit) {

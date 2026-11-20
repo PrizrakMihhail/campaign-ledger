@@ -48,13 +48,29 @@ const datacardStyles = `
   .dc-cards :is(.dc-stats, .dc-metrics) { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 70px), 1fr)); gap: 6px; margin-top: 12px; }
   :is(.dc-stats, .dc-metrics) > div { border: 1px solid var(--card-rule); background: var(--card-tint); border-radius: 5px; padding: 6px 8px; }
   .dc-stats dd, .dc-metrics dd { font: 700 1.23rem/1.15 Georgia, serif; margin-top: 3px; }
-  .dc-weapons { width: 100%; border-collapse: collapse; text-align: left; margin-top: 11px; font: .83rem/1.2 system-ui, sans-serif; }
+  .dc-weapon-table { overflow-x: auto; margin-top: 11px; }
+  .dc-weapons { width: 100%; border-collapse: collapse; text-align: left; font: .83rem/1.2 system-ui, sans-serif; }
   .dc-weapons caption { text-align: left; padding-bottom: 5px; }
   .dc-weapons th, .dc-weapons td { border: 1px solid #c6d0c5; padding: 4px; font-size: inherit; color: inherit; }
   .dc-weapons thead th { background: var(--card-tint); }
   .dc-weapons th:first-child { width: 100%; overflow-wrap: anywhere; }
   .dc-weapons td { text-align: center; white-space: nowrap; }
   .dc-weapons small { display: block; font-size: .72rem; font-weight: 500; }
+  .dc-weapon-stat-label { display: none; }
+  @media screen {
+    @container (max-width: 500px) {
+      .dc-title { gap: 8px; }
+      .dc-title h2 { font-size: clamp(1.2rem, 5cqi, 1.55rem); }
+      .dc-identity .icon { width: 1.5rem; height: 1.5rem; }
+      .dc-cards .dc-stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .dc-weapons, .dc-weapons caption, .dc-weapons tbody { display: block; }
+      .dc-weapons thead { position: absolute; width: 1px; height: 1px; clip-path: inset(50%); overflow: hidden; white-space: nowrap; }
+      .dc-weapons tbody tr { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; padding: 1px; margin-top: 5px; border-radius: 5px; background: var(--card-rule); }
+      .dc-weapons tbody th[scope="row"] { grid-column: 1 / -1; width: auto; padding: 8px; border: 0; background: var(--card-tint); }
+      .dc-weapons tbody td { border: 0; padding: 5px 3px; background: #fffcf1; white-space: normal; overflow-wrap: anywhere; font-weight: 650; }
+      .dc-weapon-stat-label { display: block; margin-bottom: 2px; color: var(--card-accent); font-size: .72rem; }
+    }
+  }
   .dc-details { display: flex; flex-wrap: wrap; gap: 8px 15px; padding-top: 10px; font-size: .9rem; }
   .dc-detail { border-top: 1px solid var(--card-rule); padding-top: 9px; margin-top: 11px; }
   .dc-detail p { white-space: pre-wrap; margin-top: 4px; line-height: 1.52; font-size: .92rem; }
@@ -88,8 +104,17 @@ const datacardExportStyles = `
   button:focus-visible { outline: 2px solid #25493f; outline-offset: 3px; }
   .dc-print-hint { color: #354a42; margin-bottom: 14px; }
   .dc-print-choice { display: flex; align-items: center; gap: 6px; width: fit-content; margin: 6px 0; font-size: .8rem; }
-  .dc-print-choice input { accent-color: #25493f; margin: 0; width: 16px; height: 16px; }
+  .dc-print-choice input { accent-color: #25493f; margin: 0; width: 16px; height: 16px; flex-shrink: 0; }
   .dc-ability > .dc-print-choice { float: inline-end; margin: 0 0 4px 8px; }
+  @media screen and (max-width: 580px) {
+    body { padding: clamp(10px, 3vw, 16px); }
+    .masthead { gap: 11px; padding: 14px; margin-bottom: 12px; }
+    .masthead h1 { font-size: clamp(1.55rem, 7vw, 2rem); }
+    .warband-facts, .dc-print-hint { font-size: .875rem; }
+    .masthead button { width: 100%; min-height: 44px; line-height: 1.25; }
+    .dc-print-choice { min-height: 36px; }
+    .dc-ability > .dc-print-choice { float: none; margin: 0 0 4px; }
+  }
   :is(.datacard, .dc-ability):has(> .dc-print-choice input:not(:checked)) { border-style: dashed; }
   @page { margin: 11mm; }
   @media print {
@@ -105,6 +130,7 @@ const datacardExportStyles = `
     .dc-title .dc-label { color: var(--card-accent); }
     .dc-identity .icon { color: var(--card-accent); }
     .dc-ability { break-inside: avoid; }
+    .dc-weapon-table { overflow: visible; }
     .dc-title h2 { font-size: 15pt; }
   }
 `;

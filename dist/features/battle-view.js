@@ -24,7 +24,7 @@ function navigateBattleViewTabs(event) {
 
 function battleView() {
   const warband = viewedArmy();
-  const back = pageLink('Back to Warbands', 'warbands');
+  const back = pageLink('Warbands', 'warbands');
   const title = heading('Battle View', warband?.name, back +
     (warband && !warband.archived ? button('Record the battle', 'record-battle-view', { type: 'primary', glyph: 'battle' }) : ''));
   if (!warband || warband.archived) return title + empty('No playable warband selected', 'Select an unarchived warband.');
@@ -59,13 +59,13 @@ function battleViewUnitCards(warband, units, battles) {
     const name = Ledger.unitName(unit);
     const counter = (key, label) => `<label>${label}<input type="number" name="${key}" min="0" step="1" value="${row?.[key] ?? 0}"
       data-battle-counter data-id="${escape(unit.id)}" aria-label="${label} for ${escape(name)}"></label>`;
-    return `<section class="battle-view-unit${row?.dead ? ' is-dead' : ''}">
-      ${unitDatacard(warband, unit, battles)}
-      <div class="battle-view-controls">
+    const controls = `<div class="battle-view-controls">
         ${counter('kills', 'Kills')}${counter('questPoints', 'Quest Points')}
         <label class="battle-view-dead"><input type="checkbox" name="dead" data-battle-counter data-id="${escape(unit.id)}"
           aria-label="Mark ${escape(name)} dead"${row?.dead ? ' checked' : ''}> Dead</label>
-      </div>
+      </div>`;
+    return `<section class="battle-view-unit${row?.dead ? ' is-dead' : ''}">
+      ${unitDatacard(warband, unit, battles, { controls })}
     </section>`;
   });
 }

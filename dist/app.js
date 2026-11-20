@@ -2,6 +2,7 @@
 
 const main = document.querySelector('#main');
 const importFile = document.querySelector('#import-file');
+const menuToggle = document.querySelector('#menu-toggle');
 const pages = {
   overview: ['Overview', 'overview', overview], warbands: ['Warbands', 'shield', warbands], battles: ['Battles', 'battle', battles],
   'arcane-tome': ['Arcane Tome', 'spell', arcaneTome],
@@ -25,7 +26,9 @@ function currentPage() {
 
 function render() {
   const page = currentPage();
-  document.querySelector('.shell').classList.toggle('setup-shell', page === 'start');
+  const shell = document.querySelector('.shell');
+  shell.classList.toggle('setup-shell', page === 'start');
+  shell.classList.toggle('battle-view-shell', page === 'battle-view');
   if (page === 'start') {
     main.innerHTML = setupCampaign();
     document.title = 'Start the campaign · Path to Glory';
@@ -33,7 +36,8 @@ function render() {
   }
   const navPage = page === 'battle-view' ? 'warbands' : page;
   document.querySelector('#nav').innerHTML = Object.entries(pages).filter(([, [, glyph]]) => glyph)
-    .map(([key, [label, glyph]]) => `<a class="nav-link" href="#${key}"${navPage === key ? ' aria-current="page"' : ''}>${icon(glyph)}${label}</a>`).join('');
+    .map(([key, [label, glyph]]) => `<a class="nav-link" href="#${key}"${navPage === key ? ' aria-current="page"' : ''}>${icon(glyph)}${label}</a>`).join('') +
+    button('Export backup', 'export', { type: 'secondary mobile-menu-backup', glyph: 'download' });
   const selected = viewedArmy();
   const options = armyOptions().map(([id, label]) => [id, id === CampaignStore.data.activeWarbandId ? `${label} (Active)` : label]);
   if (!activeArmy()) options.unshift(['', 'Choose a warband']);
@@ -61,6 +65,21 @@ function selectWarband(id) {
   viewedArmyId = id === CampaignStore.data.activeWarbandId ? '' : id;
   render();
 }
+
+function setMobileMenu(open) {
+  menuToggle.setAttribute('aria-expanded', String(open));
+  menuToggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+}
+
+const mobileMenuOpen = () => menuToggle.getAttribute('aria-expanded') === 'true';
+menuToggle.addEventListener('click', () => setMobileMenu(!mobileMenuOpen()));
+
+document.addEventListener('keydown', event => {
+  if (event.key !== 'Escape' || dialog.open || !mobileMenuOpen()) return;
+  event.preventDefault();
+  setMobileMenu(false);
+  menuToggle.focus();
+});
 
 const actions = {
   ...arcaneTomeActions,
@@ -177,6 +196,11 @@ const actions = {
 };
 
 document.addEventListener('click', event => {
+  const navItem = event.target.closest('#nav a, #nav button, .brand');
+  if (mobileMenuOpen() && (navItem || !event.target.closest('.sidebar'))) {
+    setMobileMenu(false);
+    if (navItem) menuToggle.focus();
+  }
   const trigger = event.target.closest('[data-action]');
   if (trigger) actions[trigger.dataset.action]?.(trigger.dataset.id);
   if (event.target === dialog) {
@@ -259,6 +283,7 @@ importFile.addEventListener('change', async () => {
 });
 
 window.addEventListener('hashchange', () => {
+  if (mobileMenuOpen()) setMobileMenu(false);
   render();
   window.scrollTo(0, 0);
   main.focus({ preventScroll: true });
@@ -283,5 +308,7 @@ window.addEventListener('storage', event => {
 });
 
 document.querySelector('#brand-mark').innerHTML = icon('shield');
+menuToggle.innerHTML = icon('menu') + icon('close');
+setMobileMenu(false);
 CampaignStore.migrateLegacy();
 render();
