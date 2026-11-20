@@ -45,6 +45,24 @@ function boot({ page = 'overview', saved = new Map() } = {}) {
 }
 
 const app = boot();
+const aftermath = boot();
+aftermath.run(`
+  const state = CampaignStore.data;
+  const warband = activeArmy();
+  const unit = warband.units.find(unit => unit.id === 'flint');
+  const battle = state.battles[0];
+  battle.awards.push({ id: 'scar-test', armyId: warband.id, unitId: unit.id, unitName: unit.name, delta: 0, scars: 13 });
+`);
+assert.equal(aftermath.run('Ledger.unitBattleScars(unit, warband.id, state.battles)'), 18);
+assert.equal(aftermath.run('Ledger.points(warband, state.battles)'), 580);
+assert.match(aftermath.run('warbands()'), /<h2>Retired<\/h2>[\s\S]*Flintguard/);
+assert.doesNotMatch(aftermath.run('warbandDatacards(state.campaign, warband, state.battles)'), /Flintguard/);
+assert.equal(aftermath.run('Ledger.normalize(state).battles[0].awards.at(-1).scars'), 13);
+aftermath.run('battle.awards.at(-1).scars = 4');
+assert.equal(aftermath.run('Ledger.unitBattleScars(unit, warband.id, state.battles)'), 9);
+assert.equal(aftermath.run('Ledger.points(warband, state.battles)'), 820);
+aftermath.run('battle.awards.pop()');
+assert.equal(aftermath.run('Ledger.unitBattleScars(unit, warband.id, state.battles)'), 5);
 const resources = boot({ page: 'warbands' });
 assert.equal(resources.run('CampaignStore.data.campaign.resource'), '');
 assert.equal(resources.run('Ledger.balance(CampaignStore.data, activeArmy())'), 6);

@@ -203,9 +203,8 @@ body:has(dialog[open]) { overflow: hidden; }
 .awards { border: 0; border-top: 1px solid var(--line); padding: 10px 0 0; margin: 4px 0 0; min-width: 0; }
 .awards legend { padding-right: 8px; font: 1.12rem var(--serif); }
 .award-group { margin-top: 12px; }
-.award-input { margin-top: 7px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-.award-input label { margin: 0; overflow-wrap: anywhere; }
-.award-input input { width: 95px; flex-shrink: 0; }
+.battle-awards th[scope="row"] { font-weight: 600; overflow-wrap: anywhere; }
+.battle-awards input { width: clamp(3.5rem, 11vw, 5.5rem); }
 #toast:not(:empty) { position: fixed; z-index: 3; right: 17px; bottom: 17px; max-width: min(460px, calc(100% - 34px)); padding: 13px 16px; border: 1px solid #64735b; background: #2a3628; color: #f1eddf; border-radius: 6px; box-shadow: 0 8px 28px #0007; }
 #toast.error:not(:empty) { background: #3d2722; border-color: #986054; }
 

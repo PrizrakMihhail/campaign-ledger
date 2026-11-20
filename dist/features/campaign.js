@@ -8,7 +8,7 @@ function overview() {
   const completed = active.reduce((sum, item) => sum + item.quests.filter(q => q.status === 'Completed').length, 0);
   const latest = sortedBattles().slice(0, 4);
   const cards = [
-    ['shield', 'Warbands', active.length, `${active.reduce((sum, item) => sum + item.units.filter(u => u.status !== 'Retired').length, 0)} rostered units`],
+    ['shield', 'Warbands', active.length, `${active.reduce((sum, item) => sum + item.units.filter(u => Ledger.rosterStatus(u, item.id, CampaignStore.data.battles) !== 'Retired').length, 0)} rostered units`],
     ['swords', 'Battles played', CampaignStore.data.battles.length, a ? `${Ledger.record(CampaignStore.data, a.id).Victory} wins for ${a.name}` : 'Campaign history'],
     ['coin', Ledger.gloryPoints, a ? Ledger.balance(CampaignStore.data, a) : 0, a ? a.name : 'Warband balance'],
     ['flag', 'Active quests', activeQuests.length, `${completed} completed`],

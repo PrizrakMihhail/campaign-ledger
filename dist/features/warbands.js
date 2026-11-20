@@ -1,7 +1,7 @@
 'use strict';
 
 function warbandRow(a, action, selected = false) {
-  return `<div class="list-item"><button class="list-button row" type="button" data-action="${action}" data-id="${escape(a.id)}"${selected ? ' aria-current="true"' : ''}>${tile('shield', a.color)}<span class="row-main"><strong class="row-title">${escape(a.name)}</strong><span class="meta row-sub">${escape([a.faction, `${fmt(Ledger.points(a))} pts`].filter(Boolean).join(' · '))}</span></span>${a.archived ? badge('Archived', 'retired') : ''}</button></div>`;
+  return `<div class="list-item"><button class="list-button row" type="button" data-action="${action}" data-id="${escape(a.id)}"${selected ? ' aria-current="true"' : ''}>${tile('shield', a.color)}<span class="row-main"><strong class="row-title">${escape(a.name)}</strong><span class="meta row-sub">${escape([a.faction, `${fmt(Ledger.points(a, CampaignStore.data.battles))} pts`].filter(Boolean).join(' · '))}</span></span>${a.archived ? badge('Archived', 'retired') : ''}</button></div>`;
 }
 
 function warbands() {
@@ -10,7 +10,8 @@ function warbands() {
   if (!a) return title + empty('No warbands yet', 'Create a warband to start tracking a roster and its progress.');
   const rec = Ledger.record(CampaignStore.data, a.id);
   const warlord = Ledger.warlord(a);
-  const points = Ledger.points(a);
+  const battles = CampaignStore.data.battles;
+  const points = Ledger.points(a, battles);
   const lorePoints = Ledger.lorePoints(a);
   const cap = CampaignStore.data.campaign.pointsLimit;
   const selector = section('Campaign warbands', CampaignStore.data.armies.map(item => warbandRow(item, 'select-warband', item.id === a.id)).join(''));
@@ -26,9 +27,9 @@ function warbands() {
   const datacardActions = hasWarbandDatacards(a) ? button('View datacards', 'view-datacards') + button('Export datacards', 'export-datacards', { glyph: 'download' }) : '';
   const rosterActions = `<div class="actions">${datacardActions}${button('Add Anvil hero', 'new-anvil-hero', { glyph: 'plus' })}${add('Add unit', 'new-unit')}</div>`;
   return title + `<div class="layout roster-layout">${selector}<div class="stack">${summary}
-    ${section('Order of battle', unitCards(sorted.filter(Ledger.battleReady), 'No units ready for battle'), rosterActions)}
-    ${section('Reserved', unitCards(sorted.filter(unit => unit.status === 'In Reserves'), 'No units in reserves'))}
-    ${section('Retired', unitCards(sorted.filter(unit => unit.status === 'Retired'), 'No retired units'))}
+    ${section('Order of battle', unitCards(sorted.filter(unit => Ledger.battleReady(unit, a.id, battles)), 'No units ready for battle'), rosterActions)}
+    ${section('Reserved', unitCards(sorted.filter(unit => Ledger.rosterStatus(unit, a.id, battles) === 'In Reserves'), 'No units in reserves'))}
+    ${section('Retired', unitCards(sorted.filter(unit => Ledger.rosterStatus(unit, a.id, battles) === 'Retired'), 'No retired units'))}
     ${warbandLedger(a, Ledger.gloryPoints, 'glory')}
     ${resource ? warbandLedger(a, resource, 'resource') : ''}</div></div>`;
 }
@@ -48,12 +49,14 @@ function unitCard(a, unit) {
   const size = Ledger.unitSize(unit, entry?.size);
   const type = Ledger.unitType(unit.type);
   const summary = [type, unit.warscroll === type ? '' : unit.warscroll, `${fmt(Ledger.unitPoints(unit))} pts`].filter(Boolean).join(' · ');
-  const scarSeverity = Ledger.battleScarSeverity(unit.battleScars);
-  return `<article class="card unit-card"><div class="unit-card-header"><h3>${escape(Ledger.unitName(unit))}</h3><div class="unit-card-badges">${Ledger.warlord(a)?.id === unit.id ? badge('Warlord') : ''}${unit.anvil ? badge('Anvil hero', 'anvil-hero') : ''}${unit.reinforced ? badge('Reinforced') : ''}${badge(unit.status)}</div></div><p class="meta">${escape(summary)}</p>
+  const battleScars = Ledger.unitBattleScars(unit, a.id, CampaignStore.data.battles);
+  const scarSeverity = Ledger.battleScarSeverity(battleScars);
+  const status = Ledger.unitStatus(unit.status, battleScars);
+  return `<article class="card unit-card"><div class="unit-card-header"><h3>${escape(Ledger.unitName(unit))}</h3><div class="unit-card-badges">${Ledger.warlord(a)?.id === unit.id ? badge('Warlord') : ''}${unit.anvil ? badge('Anvil hero', 'anvil-hero') : ''}${unit.reinforced ? badge('Reinforced') : ''}${badge(status)}</div></div><p class="meta">${escape(summary)}</p>
     <p class="facts meta">${size ? `<span><strong>${fmt(size)}</strong> ${size === 1 ? 'model' : 'models'}</span>` : ''}<span><strong>${fmt(renown)}</strong> Renown</span>${unit.rank ? `<span>${escape(unit.rank)}</span>` : ''}${unit.path ? `<span>${escape(unit.path)}</span>` : ''}</p>
-    ${span('Enhancements', unit.enhancements)}${scarSeverity === '-' ? '' : span('Battle Scars', `${fmt(unit.battleScars)} · ${scarSeverity}`)}${span('Scars', unit.scars)}${unit.notes ? `<p class="meta copy">${escape(unit.notes)}</p>` : ''}
+    ${span('Enhancements', unit.enhancements)}${battleScars ? span('Battle Scars', scarSeverity === '-' ? fmt(battleScars) : `${fmt(battleScars)} · ${scarSeverity}`) : ''}${span('Scars', unit.scars)}${unit.notes ? `<p class="meta copy">${escape(unit.notes)}</p>` : ''}
     ${profile ? `<p class="meta">${Object.entries(Ledger.profileStats).filter(([key]) => profile[key]).map(([key, label]) => `${escape(profile[key])} ${label}`).join(' · ')}</p>` : ''}
-    <div class="actions">${unit.status === 'Retired' ? '' : button('Datacard', 'view-unit-datacard', { id: unit.id, title: `View ${unit.name} datacard` })}${button('Edit', 'edit-unit', { id: unit.id })}${button('Renown history', 'unit-history', { id: unit.id, type: 'link' })}</div></article>`;
+    <div class="actions">${status === 'Retired' ? '' : button('Datacard', 'view-unit-datacard', { id: unit.id, title: `View ${unit.name} datacard` })}${button('Edit', 'edit-unit', { id: unit.id })}${button('Battle history', 'unit-history', { id: unit.id, type: 'link' })}</div></article>`;
 }
 
 function warbandForm(existing) {
@@ -82,6 +85,8 @@ function unitForm(a, existing, { anvilHero = false } = {}) {
   const u = existing || {};
   const usesAnvil = anvilHero || Boolean(u.anvil);
   const history = existing ? Ledger.battleRenown(CampaignStore.data, a.id, u.id) : 0;
+  const awardedScars = existing ? Ledger.battleScarAwards(CampaignStore.data.battles, a.id, u.id) : 0;
+  let statusBeforeRetirement;
   const remove = existing ? button('Remove unit', 'remove-unit', { id: u.id, type: 'danger' }) : '';
   const entry = existing && unitCatalogueEntry(a, existing);
   const initialProfile = existing ? referenceUnitProfile(a, u, entry) : undefined;
@@ -99,8 +104,8 @@ function unitForm(a, existing, { anvilHero = false } = {}) {
     field('Base model count', 'size', u.size ?? entry?.size ?? '', { type: 'number', min: 1 }) + field('Base Renown', 'renown', u.renown ?? 0, { type: 'number', min: 0 }) +
     `<div class="full reinforcement"><label><input type="checkbox" name="reinforced" value="on"${u.reinforced ? ' checked' : ''}> Reinforced</label><p class="meta" id="unit-totals" aria-live="polite"></p></div>` +
     select('Status', 'status', Ledger.unitStatuses, u.status || 'Active') + field('Rank', 'rank', u.rank) + field('Path', 'path', u.path) +
-    `<div class="full battle-scar-field">${field('Battle Scars', 'battleScars', u.battleScars ?? 0, { type: 'number', min: 0 })}
-      <output class="meta" id="battle-scar-severity" for="field-battleScars" aria-live="polite">${Ledger.battleScarSeverity(u.battleScars)}</output></div>` +
+    `<div class="full battle-scar-field">${field(awardedScars ? 'Base Battle Scars' : 'Battle Scars', 'battleScars', u.battleScars ?? 0, { type: 'number', min: 0 })}
+      <output class="meta" id="battle-scar-severity" for="field-battleScars" aria-live="polite"></output></div>` +
     (usesAnvil ? anvilFields(u.anvil) : '') + unitUpgradeFields() + profileEditorFields(!initialProfile) + area('Enhancement notes', 'enhancements', u.enhancements) + area('Scars and injuries', 'scars', u.scars) + area('Unit notes', 'notes', u.notes), (v, form) => {
     const { type, status, rank, path, enhancements, scars, notes } = v;
     const battleScars = whole(v.battleScars, 'Battle Scars', 0);
@@ -108,7 +113,7 @@ function unitForm(a, existing, { anvilHero = false } = {}) {
     const size = v.size === '' ? null : whole(v.size, 'Base model count', 1);
     if (reinforced && size === null) throw new Error('Enter the base model count for a reinforced unit.');
     const warscroll = form.elements.warscroll.value.trim();
-    const values = { type: usesAnvil ? 'Hero' : Ledger.unitType(type), status: Ledger.unitStatus(status, battleScars), rank, path, enhancements, scars, notes, name: required(v.name.trim() || warscroll, 'Unit name or warscroll'), warscroll, points: whole(v.points, pointsLabel, 0),
+    const values = { type: usesAnvil ? 'Hero' : Ledger.unitType(type), status: Ledger.unitStatus(statusBeforeRetirement ?? status, battleScars), rank, path, enhancements, scars, notes, name: required(v.name.trim() || warscroll, 'Unit name or warscroll'), warscroll, points: whole(v.points, pointsLabel, 0),
       size, reinforced, battleScars,
       renown: whole(v.renown, 'Base Renown', 0), profileEdits: profileEditor.changes(), anvil: anvilEditor?.read() ?? null, upgrades: upgradeEditor.read(true) };
     if (existing) Object.assign(existing, values);
@@ -119,10 +124,10 @@ function unitForm(a, existing, { anvilHero = false } = {}) {
   const form = dialog.querySelector('#editor-form');
   const fields = form.elements;
   const severity = form.querySelector('#battle-scar-severity');
-  let statusBeforeRetirement;
   function refreshScars() {
-    const count = Ledger.integer(fields.battleScars.value);
-    severity.textContent = Ledger.battleScarSeverity(count);
+    const count = Ledger.integer(fields.battleScars.value) + awardedScars;
+    const label = Ledger.battleScarSeverity(count);
+    severity.textContent = awardedScars ? `${fmt(count)} total (${fmt(awardedScars)} from battles) · ${label}` : label;
     const mustRetire = Ledger.unitStatus('Active', count) === 'Retired';
     if (mustRetire) {
       statusBeforeRetirement ??= fields.status.value;
@@ -200,8 +205,10 @@ function unitForm(a, existing, { anvilHero = false } = {}) {
 function unitHistory(a, u) {
   const history = Ledger.unitHistory(CampaignStore.data, a.id, u.id);
   const total = u.renown + history.reduce((sum, award) => sum + award.delta, 0);
-  const list = history.map(row => `<div class="list-item split"><div><strong>${escape(row.title)}</strong><p class="meta">${makeDate(row.date)}</p></div>${signed(row.delta)}</div>`).join('');
-  viewDialog(`${u.name} · Renown`, `<p><strong class="gold">${fmt(total)}</strong> total Renown</p><p class="meta">Base Renown · ${fmt(u.renown)}</p>${list || empty('No battle awards yet', '')}`);
+  const scars = Ledger.unitBattleScars(u, a.id, CampaignStore.data.battles);
+  const list = history.map(row => `<div class="list-item split"><div><strong>${escape(row.title)}</strong><p class="meta">${makeDate(row.date)}</p></div>
+    <div class="facts meta">${row.delta ? `<span>${signed(row.delta)} Renown</span>` : ''}${row.scars ? `<span>${signed(row.scars)} Battle Scars</span>` : ''}</div></div>`).join('');
+  viewDialog(`${u.name} · Battle history`, `<p><strong class="gold">${fmt(total)}</strong> total Renown</p><p class="meta">Base Renown · ${fmt(u.renown)}</p><p class="meta">Total Battle Scars · ${fmt(scars)}</p>${list || empty('No battle awards yet', '')}`);
 }
 
 function resourceForm(a, existing, kind = existing?.kind ?? 'glory') {

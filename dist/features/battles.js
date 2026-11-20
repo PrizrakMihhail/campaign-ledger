@@ -45,12 +45,18 @@ function battleForm(existing) {
   const awardKey = (armyId, unitId) => JSON.stringify([armyId, unitId]);
   for (const award of b.awards || []) drafts.set(awardKey(award.armyId, award.unitId), award);
 
+  function readRows(form) {
+    return [...form.querySelectorAll('[data-award]')].map(row => {
+      const { army: armyId, unit: unitId, name: unitName } = row.dataset;
+      return { armyId, unitId, unitName, delta: row.querySelector('[data-renown]').value, scars: row.querySelector('[data-scars]').value };
+    });
+  }
+
   function refreshParticipants(form) {
     const fields = form.elements;
-    for (const input of form.querySelectorAll('[data-award]')) {
-      const key = awardKey(input.dataset.army, input.dataset.unit);
-      const { army: armyId, unit: unitId } = input.dataset;
-      drafts.set(key, { id: drafts.get(key)?.id || Ledger.id(), armyId, unitId, unitName: input.dataset.name, delta: input.value });
+    for (const award of readRows(form)) {
+      const key = awardKey(award.armyId, award.unitId);
+      drafts.set(key, { ...drafts.get(key), ...award });
     }
 
     const yourArmy = fields.armyId.value;
@@ -67,16 +73,22 @@ function battleForm(existing) {
     let index = 0;
     form.querySelector('#battle-awards').innerHTML = ids.map(id => {
       const a = army(id);
-      const units = new Map((a?.units || []).filter(u => Ledger.battleReady(u) || drafts.has(awardKey(id, u.id))).map(u => [u.id, u.name]));
+      const units = new Map((a?.units || []).filter(u => Ledger.battleReady(u, id, CampaignStore.data.battles) || drafts.has(awardKey(id, u.id))).map(u => [u.id, u.name]));
       for (const award of drafts.values()) if (award.armyId === id && !units.has(award.unitId)) units.set(award.unitId, award.unitName || 'Removed unit');
       if (!units.size) return '';
       const rows = [...units].map(([unitId, name]) => {
         const previous = drafts.get(awardKey(id, unitId));
         const fieldId = `award-${++index}`;
-        return `<div class="award-input"><label for="${fieldId}">${escape(name)}</label><input id="${fieldId}" name="${fieldId}" type="number" min="0" step="1" value="${escape(previous?.delta || '')}" placeholder="0" data-award data-army="${escape(id)}" data-unit="${escape(unitId)}" data-name="${escape(name)}"></div>`;
+        return `<tr data-award data-army="${escape(id)}" data-unit="${escape(unitId)}" data-name="${escape(name)}">
+          <th scope="row">${escape(name)}</th>
+          <td><input name="${fieldId}-renown" type="number" min="0" step="1" value="${escape(previous?.delta || '')}" placeholder="0" aria-label="Renown for ${escape(name)}" data-renown></td>
+          <td><input name="${fieldId}-scars" type="number" min="0" step="1" value="${escape(previous?.scars || '')}" placeholder="0" aria-label="Battle Scars for ${escape(name)}" data-scars></td>
+        </tr>`;
       }).join('');
-      return `<div class="award-group"><h3>${escape(a?.name || 'Unknown warband')}</h3>${rows}</div>`;
-    }).join('') || '<p class="meta">Add units to the participating warbands to log Renown here.</p>';
+      return `<div class="award-group"><h3>${escape(a?.name || 'Unknown warband')}</h3><div class="table-scroll">
+        <table class="battle-awards"><thead><tr><th scope="col">Unit</th><th scope="col">Renown</th><th scope="col">Battle Scars</th></tr></thead><tbody>${rows}</tbody></table>
+      </div></div>`;
+    }).join('') || '<p class="meta">Add battle-ready units to the participating warbands to log awards here.</p>';
   }
 
   const fields = field('Battle title', 'title', b.title, { full: true, required: true }) + field('Date', 'date', b.date || Ledger.date(), { type: 'date', required: true }) +
@@ -85,14 +97,14 @@ function battleForm(existing) {
     field('Warband Glory Points change', 'delta', b.delta ?? 0, { type: 'number' }) + field('Opponent Glory Points change', 'oppDelta', b.oppDelta ?? 0, { type: 'number' }) +
     (c.resource ? field(`Warband ${c.resource} change`, 'resourceDelta', b.resourceDelta ?? 0, { type: 'number' }) +
       field(`Opponent ${c.resource} change`, 'oppResourceDelta', b.oppResourceDelta ?? 0, { type: 'number' }) : '') +
-    `<fieldset class="awards full"><legend>Unit Renown awards</legend><p class="meta">Enter the Renown each unit earned in this battle.</p><div id="battle-awards"></div></fieldset>` + area('Aftermath notes', 'notes', b.notes, 4);
+    `<fieldset class="awards full"><legend>Unit aftermath</legend><p class="meta">Enter Renown earned and Battle Scars gained in this battle.</p><div id="battle-awards"></div></fieldset>` + area('Aftermath notes', 'notes', b.notes, 4);
   formDialog(existing ? 'Edit battle' : 'Record battle', fields, (v, form) => {
     if (v.opponentArmyId === v.armyId) throw new Error('Choose a different opponent warband.');
-    const awards = [...form.querySelectorAll('[data-award]')].flatMap(input => {
-      const delta = whole(input.value, 'Renown award', 0);
-      if (!delta) return [];
-      const { army: armyId, unit: unitId, name: unitName } = input.dataset;
-      return [{ id: drafts.get(awardKey(armyId, unitId))?.id || Ledger.id(), armyId, unitId, unitName, delta }];
+    const awards = readRows(form).flatMap(award => {
+      const delta = whole(award.delta, 'Renown award', 0);
+      const scars = whole(award.scars, 'Battle Scars gained', 0);
+      if (!delta && !scars) return [];
+      return [{ ...award, id: drafts.get(awardKey(award.armyId, award.unitId))?.id || Ledger.id(), delta, scars }];
     });
     const values = { title: required(v.title, 'Battle title'), date: v.date, armyId: v.armyId, opponentArmyId: v.opponentArmyId, opponent: v.opponent?.trim() || '',
       result: v.result, battleplan: v.battleplan.trim(), notes: v.notes.trim(), delta: whole(v.delta, 'Warband Glory Points change'), oppDelta: whole(v.oppDelta ?? 0, 'Opponent Glory Points change'),
@@ -119,12 +131,13 @@ function viewBattle(b) {
   const awards = b.awards.map(a => {
     const owner = army(a.armyId);
     const name = owner?.units.find(u => u.id === a.unitId)?.name || a.unitName || 'Removed unit';
-    return `<div class="list-item split"><p>${escape(name)} <span class="meta">${escape(owner?.name || '')}</span></p><p class="nowrap">${signed(a.delta)} Renown</p></div>`;
+    return `<div class="list-item split"><p>${escape(name)} <span class="meta">${escape(owner?.name || '')}</span></p><div class="facts meta">
+      ${a.delta ? `<span>${signed(a.delta)} Renown</span>` : ''}${a.scars ? `<span>${signed(a.scars)} Battle Scars</span>` : ''}</div></div>`;
   }).join('');
   viewDialog(b.title, `<div class="split"><p class="meta">${makeDate(b.date)}${b.battleplan ? ` · ${escape(b.battleplan)}` : ''}</p>${badge(b.result)}</div>
     <p><strong>${escape(first)}</strong> vs ${escape(second)}</p>${changes(Ledger.gloryPoints, b.delta, b.oppDelta)}
     ${resource ? changes(resource, b.resourceDelta, b.oppResourceDelta) : ''}${b.notes ? `<p class="copy">${escape(b.notes)}</p>` : ''}
-    ${awards ? `<div><h3>Unit Renown awards</h3>${awards}</div>` : ''}`, button('Edit battle', 'edit-battle', { id: b.id, type: 'primary' }));
+    ${awards ? `<div><h3>Unit aftermath</h3>${awards}</div>` : ''}`, button('Edit battle', 'edit-battle', { id: b.id, type: 'primary' }));
 }
 
 function updateFilters(event) {

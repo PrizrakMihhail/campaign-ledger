@@ -14,7 +14,7 @@ function arcaneTome() {
   const summary = section('Warband', `<div class="arcane-summary">
     ${select('Campaign warband', 'arcane-warband', armyOptions(), a.id)}
     <p class="meta"><strong class="gold">${fmt(Ledger.lorePoints(a))}</strong> battle pts from lores</p>
-    <p class="meta"><strong>${fmt(Ledger.points(a))} / ${fmt(CampaignStore.data.campaign.pointsLimit)}</strong> roster pts</p>
+    <p class="meta"><strong>${fmt(Ledger.points(a, CampaignStore.data.battles))} / ${fmt(CampaignStore.data.campaign.pointsLimit)}</strong> roster pts</p>
   </div>`);
   const groups = Ledger.loreKinds.map(kind => {
     const { title, entry } = loreLabels[kind];

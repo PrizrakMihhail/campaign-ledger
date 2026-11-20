@@ -17,7 +17,10 @@ const Ledger = (() => {
   const battleScarThresholds = [[retirementScarCount, 'Succumbed to injuries'], [13, 'Critical'], [9, 'Severe'], [firstScarCount, 'Serious']];
   const battleScarSeverity = count => battleScarThresholds.find(([minimum]) => count >= minimum)?.[1] ?? '-';
   const isScarred = unit => unit.battleScars >= firstScarCount && unit.battleScars < retirementScarCount;
-  const battleReady = unit => unit.status !== 'In Reserves' && unit.status !== 'Retired';
+  function battleReady(unit, armyId, battles) {
+    const status = rosterStatus(unit, armyId, battles);
+    return status !== 'In Reserves' && status !== 'Retired';
+  }
   const questStatuses = ['Active', 'Completed', 'Abandoned'];
   const unitTypes = Object.freeze(['Hero', 'Infantry', 'Cavalry', 'War Machine', 'Monster', 'Terrain', 'Other']);
   const unitTypeNames = new Map([...unitTypes.map(type => [type.toLowerCase(), type]), ['artillery', 'War Machine'], ['faction terrain', 'Terrain']]);
@@ -156,7 +159,7 @@ const Ledger = (() => {
         result: choice(b.result, resultOptions, 'Other'), notes: str(b.notes),
         delta: legacyResource ? 0 : integer(b.delta), oppDelta: legacyResource ? 0 : integer(b.oppDelta),
         resourceDelta: integer(legacyResource ? b.delta : b.resourceDelta), oppResourceDelta: integer(legacyResource ? b.oppDelta : b.oppResourceDelta),
-        awards: records(b.awards, a => ({ armyId: str(a.armyId), unitId: str(a.unitId), unitName: str(a.unitName), delta: integer(a.delta) })),
+        awards: records(b.awards, a => ({ armyId: str(a.armyId), unitId: str(a.unitId), unitName: str(a.unitName), delta: integer(a.delta), scars: Math.max(0, integer(a.scars)) })),
       })),
       entries: records(value.entries, j => ({ title: str(j.title) || 'Untitled entry', date: cleanDate(j.date), armyId: str(j.armyId), body: str(j.body) })),
     };
@@ -256,7 +259,7 @@ const Ledger = (() => {
     return baseSize === null ? null : baseSize * unitMultiplier(unit);
   };
   const lorePoints = army => (army.lores ?? []).reduce((sum, lore) => sum + lore.points, 0);
-  const points = army => army.units.reduce((sum, unit) => sum + (unit.status === 'Retired' ? 0 : unitPoints(unit)), lorePoints(army));
+  const points = (army, battles) => army.units.reduce((sum, unit) => sum + (rosterStatus(unit, army.id, battles) === 'Retired' ? 0 : unitPoints(unit)), lorePoints(army));
   const participants = battle => [battle.armyId, battle.opponentArmyId].filter(Boolean);
   const signed = value => value > 0 ? `+${value.toLocaleString()}` : value.toLocaleString();
 
@@ -284,6 +287,14 @@ const Ledger = (() => {
     return unitHistory(state, armyId, unitId).reduce((sum, award) => sum + award.delta, 0);
   }
 
+  function battleScarAwards(battles = [], armyId, unitId) {
+    return battles.reduce((total, battle) => total + battle.awards.reduce((sum, award) =>
+      sum + (award.armyId === armyId && award.unitId === unitId ? award.scars ?? 0 : 0), 0), 0);
+  }
+
+  const unitBattleScars = (unit, armyId, battles) => (unit.battleScars ?? 0) + battleScarAwards(battles, armyId, unit.id);
+  const rosterStatus = (unit, armyId, battles) => unitStatus(unit.status, unitBattleScars(unit, armyId, battles));
+
   function record(state, armyId) {
     const counts = { Victory: 0, Defeat: 0, Draw: 0, Other: 0 };
     for (const b of state.battles.filter(battle => participants(battle).includes(armyId))) {
@@ -301,5 +312,5 @@ const Ledger = (() => {
   }
 
   return { packs, gloryPoints, resourceName, resultOptions, unitStatuses, unitStatus, battleReady, battleScarSeverity, isScarred, questStatuses, unitTypes, unitType, unitName, warlord, sortedUnits, profileStats, weaponFields, normalizeProfileEdits, profileDefaults, profileAbilityEdits, profileChanges, validColor, integer, id, date, dateOrder,
-    blank, normalize, normalizeAnvil, destinySpent, sample, unitPoints, unitUpgradePoints, unitSize, loreKinds, lorePoints, points, participants, signed, balance, transactions, unitHistory, battleRenown, record, resultFor };
+    blank, normalize, normalizeAnvil, destinySpent, sample, unitPoints, unitUpgradePoints, unitSize, loreKinds, lorePoints, points, participants, signed, balance, transactions, unitHistory, battleRenown, battleScarAwards, unitBattleScars, rosterStatus, record, resultFor };
 })();

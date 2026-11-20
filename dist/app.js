@@ -104,7 +104,7 @@ const actions = {
   'new-battle': () => battleForm(),
   'edit-battle': id => battleForm(CampaignStore.data.battles.find(b => b.id === id)),
   'view-battle': id => viewBattle(CampaignStore.data.battles.find(b => b.id === id)),
-  'remove-battle': id => removeRecord(CampaignStore.data.battles, CampaignStore.data.battles.find(b => b.id === id), 'Delete battle?', 'This removes the result and its linked resource changes and Renown awards.'),
+  'remove-battle': id => removeRecord(CampaignStore.data.battles, CampaignStore.data.battles.find(b => b.id === id), 'Delete battle?', 'This removes the result and its linked resource changes, Renown awards, and Battle Scars.'),
   'new-quest': () => questForm(activeArmy()),
   'edit-quest': id => questForm(activeArmy(), activeArmy().quests.find(q => q.id === id)),
   'complete-quest': id => {
