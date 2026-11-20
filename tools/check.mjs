@@ -23,7 +23,8 @@ function boot({ page = 'overview', saved = new Map() } = {}) {
   const elements = new Map();
   const events = new Map();
   const element = () => ({
-    classList: { toggle() {} }, addEventListener() {}, focus() {},
+    classList: { toggle() {} }, eventHandlers: new Map(), focus() {},
+    addEventListener(name, callback) { this.eventHandlers.set(name, callback); },
     showModal() { this.open = true; }, querySelector() { return { focus() {} }; },
   });
   const context = createContext({
@@ -37,13 +38,47 @@ function boot({ page = 'overview', saved = new Map() } = {}) {
     localStorage: { getItem: key => saved.get(key) ?? null, setItem: (key, value) => saved.set(key, value) },
     window: { addEventListener: (name, callback) => events.set(name, callback), scrollTo() {} },
     location: { hash: `#${page}` },
-    setTimeout() {}, clearTimeout() {},
+    setTimeout() {}, clearTimeout() {}, queueMicrotask,
   });
   for (const script of scripts) script.runInContext(context);
   return { elements, events, context, run: code => runInContext(code, context) };
 }
 
 const app = boot();
+const editing = boot();
+const editorDialog = editing.elements.get('#dialog');
+const closePrompt = editing.elements.get('#unsaved-dialog');
+const nameInput = { name: 'name', value: 'Original' };
+let submitRequests = 0;
+const editorForm = { querySelectorAll: () => [nameInput], requestSubmit: () => { submitRequests++; } };
+const editorQuery = editorDialog.querySelector;
+editorDialog.querySelector = selector => selector === '#editor-form' ? editorForm : editorQuery(selector);
+for (const element of [editorDialog, closePrompt]) {
+  element.close = () => { element.open = false; element.eventHandlers.get('close')?.(); };
+}
+editing.run("formDialog('Edit card', field('Name', 'name', 'Original'), () => [])");
+await Promise.resolve();
+editing.run('requestDialogClose()');
+assert.equal(editorDialog.open, false);
+assert.ok(!closePrompt.open);
+editing.run("formDialog('Edit card', field('Name', 'name', 'Original'), () => [])");
+await Promise.resolve();
+nameInput.value = 'Edited';
+editorDialog.eventHandlers.get('cancel')({ preventDefault() {} });
+assert.equal(closePrompt.open, true);
+closePrompt.returnValue = 'cancel';
+closePrompt.close();
+assert.equal(editorDialog.open, true);
+assert.equal(nameInput.value, 'Edited');
+editing.run('requestDialogClose()');
+closePrompt.returnValue = 'save';
+closePrompt.close();
+assert.equal(submitRequests, 1);
+editing.run('requestDialogClose()');
+closePrompt.returnValue = 'discard';
+closePrompt.close();
+assert.equal(editorDialog.open, false);
+assert.equal(submitRequests, 1);
 const reserves = boot({ page: 'warbands' });
 reserves.run(`
   const warband = activeArmy();

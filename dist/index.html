@@ -50,6 +50,15 @@
     </div>
   </div>
   <dialog id="dialog" aria-labelledby="dialog-title"></dialog>
+  <dialog id="unsaved-dialog" aria-labelledby="unsaved-title" aria-describedby="unsaved-message">
+    <header class="dialog-head"><h2 id="unsaved-title">Unsaved changes</h2></header>
+    <p class="form-body" id="unsaved-message">Save your changes before closing?</p>
+    <form method="dialog" class="dialog-foot actions">
+      <button class="button secondary" value="cancel" autofocus>Cancel</button>
+      <button class="button secondary" value="discard">Don't save and close</button>
+      <button class="button primary" value="save">Save and close</button>
+    </form>
+  </dialog>
   <input id="import-file" type="file" accept=".json,application/json" hidden>
   <div id="toast" role="status" aria-live="polite"></div>
 </body>

@@ -69,7 +69,7 @@ const actions = {
       location.hash = 'overview';
     }
   },
-  close: () => dialog.close(),
+  close: requestDialogClose,
   'new-warband': () => warbandForm(),
   'edit-warband': () => warbandForm(activeArmy()),
   'archive-warband': () => {
@@ -127,7 +127,7 @@ document.addEventListener('click', event => {
   if (trigger) actions[trigger.dataset.action]?.(trigger.dataset.id);
   if (event.target === dialog) {
     const box = dialog.getBoundingClientRect();
-    if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) dialog.close();
+    if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) requestDialogClose();
   }
   if (event.target.closest('.skip-link')) {
     event.preventDefault();

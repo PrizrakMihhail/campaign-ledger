@@ -1,12 +1,22 @@
 'use strict';
 
 const dialog = document.querySelector('#dialog');
+const unsavedDialog = document.querySelector('#unsaved-dialog');
 
-const { formDialog, confirmDialog, viewDialog, dialogEditor } = (() => {
+const { formDialog, confirmDialog, viewDialog, dialogEditor, requestDialogClose } = (() => {
   let editor;
   let lastFocus;
+  let initialFormState;
+  let promptedForm;
+
+  function formState(form) {
+    return JSON.stringify(Array.from(form.querySelectorAll('input, select, textarea'), control => [
+      control.name, control.value, control.checked,
+    ]));
+  }
 
   function showDialog(title, body, wide = false) {
+    initialFormState = undefined;
     if (!dialog.open) lastFocus = document.activeElement;
     dialog.classList.toggle('wide', wide);
     dialog.innerHTML = `<header class="dialog-head split"><h2 id="dialog-title" tabindex="-1">${escape(title)}</h2>${button('', 'close', { type: 'icon-only secondary', glyph: 'close', title: 'Close' })}</header>${body}`;
@@ -20,6 +30,12 @@ const { formDialog, confirmDialog, viewDialog, dialogEditor } = (() => {
     editor = submit;
     showDialog(title, `<form id="editor-form"><div class="form-body">${description ? `<p class="copy muted" style="margin-bottom:15px">${escape(description)}</p>` : ''}<div class="form-grid">${fields}</div></div>
       <p class="form-error" role="alert" hidden></p><footer class="dialog-foot actions">${remove || ''}${button('Cancel', 'close')}<button type="submit" class="button primary">${escape(label)}</button></footer></form>`);
+    if (!fields) return;
+    const form = dialog.querySelector('#editor-form');
+    // Feature editors mount their dynamic rows synchronously after opening.
+    queueMicrotask(() => {
+      if (dialog.open && form === dialog.querySelector('#editor-form')) initialFormState = formState(form);
+    });
   }
 
   function confirmDialog(title, description, label, callback) {
@@ -31,6 +47,31 @@ const { formDialog, confirmDialog, viewDialog, dialogEditor } = (() => {
     showDialog(title, `<div class="form-body stack">${details}</div>${actions ? `<footer class="dialog-foot actions">${actions}</footer>` : ''}`, wide);
   }
 
+  function requestDialogClose() {
+    if (!dialog.open || unsavedDialog.open) return;
+    const form = dialog.querySelector('#editor-form');
+    if (form && initialFormState !== undefined && formState(form) !== initialFormState) {
+      promptedForm = form;
+      unsavedDialog.returnValue = '';
+      unsavedDialog.showModal();
+    } else {
+      dialog.close();
+    }
+  }
+
+  dialog.addEventListener('cancel', event => {
+    event.preventDefault();
+    requestDialogClose();
+  });
+
+  unsavedDialog.addEventListener('close', () => {
+    const form = promptedForm;
+    promptedForm = undefined;
+    if (!dialog.open || form !== dialog.querySelector('#editor-form')) return;
+    if (unsavedDialog.returnValue === 'discard') dialog.close();
+    if (unsavedDialog.returnValue === 'save') form.requestSubmit();
+  });
+
   dialog.addEventListener('close', () => {
     if (dialog.open) return;
     editor = null;
@@ -38,5 +79,5 @@ const { formDialog, confirmDialog, viewDialog, dialogEditor } = (() => {
     else document.querySelector('#main').focus();
   });
 
-  return { formDialog, confirmDialog, viewDialog, dialogEditor: () => editor };
+  return { formDialog, confirmDialog, viewDialog, dialogEditor: () => editor, requestDialogClose };
 })();
