@@ -34,7 +34,7 @@ The app loads scripts in dependency order, with `app.js` last. The downloaded da
 ## Maintenance tools
 
 - [check.mjs](tools/check.mjs) validates the current app and its data.
-- [sync_wahapedia.py](tools/sync_wahapedia.py) downloads Wahapedia's documented AoS 4 CSV export and writes a JSON manifest, one JSON file per faction, and the browser catalogue used by the deployed ledger. It uses only Python's standard library and runs automatically before every GitHub Pages deployment.
+- [sync_wahapedia.py](tools/sync_wahapedia.py) downloads Wahapedia's documented AoS 4 CSV export and writes a JSON manifest, one JSON file per faction, and the browser catalogue used by the deployed ledger. It uses only Python's standard library. GitHub Pages uses the committed catalogue unless the optional refresh is selected in a manual run.
 - [build_catalogue.py](tools/build_catalogue.py) regenerates the shipped catalogue from a Battle Profiles PDF and a Wahapedia CSV export. It uses `pdfplumber`.
 - [update_khazalite_warscrolls.py](tools/update_khazalite_warscrolls.py) applies Khazalite Holds profile details from a saved faction warscroll page. It uses `lxml`.
 
@@ -55,7 +55,7 @@ New warbands can choose one spell, prayer, and manifestation lore during creatio
 
 The generated JSON manifest is `dist/data/wahapedia/index.json`; faction files are under `dist/data/wahapedia/factions/`. The importer reads faction rules and separate Army of Renown battle-trait lists. Spearhead and embedded errata cards are excluded. Battle Traits groups saved records by standard faction, Army of Renown, formation abilities, and custom traits. **Import full trait list** offers the warband's standard faction and its Armies of Renown, preserving existing edits on repeated imports. Trait ruleset metadata survives backups; older records are matched to a source when unambiguous. Army of Renown traits replace standard faction traits in play; storing both lists does not make both eligible. Other Army of Renown rules such as lores and enhancements are not imported by this feature.
 
-Dropdown labels and text-picker choices use title case while retaining their original selection values. All imported records remain editable copies, and custom items remain available. The deployment fails instead of publishing stale or structurally invalid data when a download or schema validation fails.
+Dropdown labels and text-picker choices use title case while retaining their original selection values. All imported records remain editable copies, and custom items remain available. A failed download or validation stops a deployment that explicitly requested a refresh. A successful refresh applies to that deployment. Commit a locally generated refresh to include it in later deployments.
 
 ```text
 python tools/build_catalogue.py <battle-profiles.pdf> <csv-folder> dist/data/battle-catalogue-data.js

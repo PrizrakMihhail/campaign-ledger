@@ -73,7 +73,7 @@ You can also print the campaign overview from **Settings**.
 
 ## Imported rules and profiles
 
-The faction catalogue includes Age of Sigmar factions, unit profiles, Battle Formations, Battle Traits, Armies of Renown, spell and prayer lores, and shared or faction-specific manifestation lores and profiles. Catalogue data is refreshed from [Wahapedia](https://wahapedia.ru/) when the app is deployed, so the live site receives new data when a new deployment is published. Running the sync script locally updates a local development copy only.
+The faction catalogue includes Age of Sigmar factions, unit profiles, Battle Formations, Battle Traits, Armies of Renown, spell and prayer lores, and shared or faction-specific manifestation lores and profiles. GitHub Pages publishes the checked-in catalogue by default. To deploy with fresh data from [Wahapedia](https://wahapedia.ru/), enable the catalogue refresh when manually running the **Deploy to GitHub Pages** workflow. To carry the refresh forward into future deployments, run the sync locally and commit the generated files.
 
 Imported content is copied into your warband. You can edit or remove it without changing the catalogue, and a later catalogue refresh will not overwrite your saved customizations. Existing warbands are not changed automatically; use **Import faction rules** to choose which new catalogue entries to add.
 

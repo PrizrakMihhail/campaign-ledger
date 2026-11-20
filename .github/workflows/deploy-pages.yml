@@ -5,6 +5,11 @@ on:
     branches:
       - main
   workflow_dispatch:
+    inputs:
+      refresh_catalogue:
+        description: Refresh the Wahapedia catalogue before deploying
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -25,27 +30,30 @@ jobs:
 
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        if: ${{ inputs.refresh_catalogue }}
+        uses: actions/setup-python@v6
         with:
           python-version: '3.12'
 
       - name: Refresh Wahapedia faction data
+        if: ${{ inputs.refresh_catalogue }}
+        timeout-minutes: 10
         run: python tools/sync_wahapedia.py
 
-      - name: Verify generated site
+      - name: Verify static site
         run: node tools/check.mjs
 
       - name: Configure GitHub Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
 
       - name: Upload static site
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: dist
 
       - name: Deploy
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
