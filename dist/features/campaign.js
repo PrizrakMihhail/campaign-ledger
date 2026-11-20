@@ -17,7 +17,7 @@ function overview() {
   const canBattle = a && !a.archived;
   const recent = recentBattles.length ? recentBattles.slice(0, 4).map(b => battleRow(b, a.id)).join('')
     : empty('No battles recorded', canBattle ? 'Log the first result and its aftermath.' : '');
-  const quests = activeQuests.length ? activeQuests.slice(0, 4).map(q => `<div class="list-item"><a href="#quests" class="list-button row">${tile('flag')}<strong class="row-title">${escape(q.title)}</strong></a>${questProgress(q)}</div>`).join('') : empty('No active quests', '');
+  const quests = activeQuests.length ? activeQuests.map(q => `<div class="list-item"><a href="#quests" class="list-button row">${tile('flag')}<strong class="row-title">${escape(q.title)}</strong></a>${questProgress(a, q)}</div>`).join('') : empty('No active quests', '');
   const start = !a ? add('Create warband', 'new-warband') : canBattle ? add('Record battle', 'new-battle') : '';
   return `<section class="hero"><div class="hero-content"><div class="hero-kicker">${escape(c.pack)}</div><h1>${escape(c.name)}</h1>${c.location ? `<p class="meta">${escape(c.location)}</p>` : ''}<div class="actions">${start}</div></div></section>
     <div class="stats">${stats}</div>
@@ -25,19 +25,21 @@ function overview() {
     <div class="stack">${section('Active quests', quests, pageLink('All quests', 'quests'))}${c.notes ? section('Campaign notes', `<p class="copy muted">${escape(c.notes)}</p>`) : ''}</div></div>`;
 }
 
-function questProgress(q) {
-  if (!q.target) return '';
-  return `<div class="progress-caption meta"><span>Progress</span><strong>${fmt(q.progress)} / ${fmt(q.target)}</strong></div><progress class="progress" max="${q.target}" value="${Math.min(q.progress, q.target)}" aria-label="${escape(q.title)} progress"></progress>`;
+function questProgress(a, q) {
+  const points = (q.progress ?? 0) + Ledger.questBattlePoints(CampaignStore.data.battles, a.id, q.id);
+  if (!q.target) return `<p class="meta">Quest Points · <strong>${fmt(points)}</strong></p>`;
+  return `<div class="progress-caption meta"><span>Quest Points</span><strong>${fmt(points)} / ${fmt(q.target)}</strong></div><progress class="progress" max="${q.target}" value="${Math.min(points, q.target)}" aria-label="${escape(q.title)} progress"></progress>`;
 }
 
 function quests() {
   const a = viewedArmy();
-  const title = heading('Quests', a?.name, a ? add('Add quest', 'new-quest') : '');
+  const active = Ledger.activeQuest(a);
+  const title = heading('Quests', a?.name, a ? button('Add quest', 'new-quest', { type: 'primary', glyph: 'plus', disabled: Boolean(active) }) : '');
   if (!a) return title + empty('No warband selected', 'Select or create a warband to track its quests.', pageLink('View warbands', 'warbands'));
   const groups = Ledger.questStatuses.map(status => {
     const items = a.quests.filter(q => q.status === status);
     if (!items.length && status !== 'Active') return '';
-    return section(`${status} quests`, items.length ? `<div class="cards">${items.map(q => `<article class="card"><div class="split"><h3>${escape(q.title)}</h3>${badge(q.status)}</div>${q.goal ? `<p class="copy muted">${escape(q.goal)}</p>` : ''}${questProgress(q)}${span('Reward', q.reward)}${q.notes ? `<p class="meta copy">${escape(q.notes)}</p>` : ''}<div class="actions">${button('Edit quest', 'edit-quest', { id: q.id })}${q.status === 'Active' ? button('Mark complete', 'complete-quest', { id: q.id, type: 'link' }) : ''}</div></article>`).join('')}</div>` : empty('No active quests', 'Add an objective for this warband.'));
+    return section(`${status} quests`, items.length ? `<div class="cards">${items.map(q => `<article class="card"><div class="split"><h3>${escape(q.title)}</h3>${badge(q.status)}</div>${q.goal ? `<p class="copy muted">${escape(q.goal)}</p>` : ''}${questProgress(a, q)}${span('Reward', q.reward)}${q.notes ? `<p class="meta copy">${escape(q.notes)}</p>` : ''}<div class="actions">${button('Edit quest', 'edit-quest', { id: q.id })}${q.status === 'Active' ? button('Mark complete', 'complete-quest', { id: q.id, type: 'link' }) + button('Forfeit', 'forfeit-quest', { id: q.id, type: 'danger' }) : ''}</div></article>`).join('')}</div>` : empty('No active quests', 'Add an objective for this warband.'));
   }).join('');
   return title + `<div class="stack">${groups}</div>`;
 }
@@ -94,17 +96,21 @@ function startCampaign() {
 }
 
 function questForm(a, existing) {
+  const otherActive = Ledger.activeQuest(a);
+  if (!existing && otherActive) return;
   const q = existing || {};
-  formDialog(existing ? 'Edit quest' : `Add quest for ${a.name}`, field('Quest name', 'title', q.title, { required: true }) + select('Status', 'status', Ledger.questStatuses, q.status || 'Active') +
-    area('Objective', 'goal', q.goal) + field('Target (optional)', 'target', q.target || '', { type: 'number', min: 1 }) + field('Progress', 'progress', q.progress ?? 0, { type: 'number', min: 0 }) +
+  const statuses = Ledger.questStatuses.filter(status => status !== 'Active' || !otherActive || otherActive === existing);
+  const battlePoints = existing ? Ledger.questBattlePoints(CampaignStore.data.battles, a.id, q.id) : 0;
+  formDialog(existing ? 'Edit quest' : `Add quest for ${a.name}`, field('Quest name', 'title', q.title, { required: true }) + select('Status', 'status', statuses, q.status || 'Active') +
+    area('Objective', 'goal', q.goal) + field('Quest Points target (optional)', 'target', q.target || '', { type: 'number', min: 1 }) + field('Manual Quest Points', 'progress', q.progress ?? 0, { type: 'number', min: 0 }) +
     area('Reward', 'reward', q.reward) + area('Notes', 'notes', q.notes), v => {
     const values = { ...v, title: required(v.title, 'Quest name'), target: whole(v.target, 'Target', 0), progress: whole(v.progress, 'Progress', 0) };
-    if (values.target && values.progress > values.target) throw new Error('Progress cannot exceed the target.');
-    if (values.status === 'Completed' && values.target) values.progress = values.target;
+    if (values.status === 'Active' && a.quests.some(quest => quest !== existing && quest.status === 'Active')) throw new Error('Complete or forfeit the active quest first.');
+    if (values.status === 'Completed' && values.target) values.progress = Math.max(values.progress, values.target - battlePoints);
     if (existing) Object.assign(existing, values);
     else a.quests.push({ id: Ledger.id(), ...values });
     return ['Quest saved.', 'quests'];
-  }, { label: 'Save quest', remove: existing ? button('Delete quest', 'remove-quest', { id: q.id, type: 'danger' }) : '' });
+  }, { label: 'Save quest', description: battlePoints ? `${fmt(battlePoints)} Quest Points from recorded battles are added to the manual total.` : '', remove: existing ? button('Delete quest', 'remove-quest', { id: q.id, type: 'danger' }) : '' });
 }
 
 function entryForm(existing) {

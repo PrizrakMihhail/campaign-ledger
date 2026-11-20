@@ -63,7 +63,13 @@ function datacard(profile, unit, renown, entry, { printControls = false, warlord
 }
 
 function hasWarbandDatacards(warband, battles = CampaignStore.data.battles) {
-  return Boolean(warband && (warband.units.some(unit => Ledger.battleReady(unit, warband.id, battles)) || warband.lores?.some(lore => lore.entries.length)));
+  return Boolean(warband && (warband.units.some(unit => Ledger.battleReady(unit, warband.id, battles)) || warband.lores?.some(lore => lore.entries.length) || warband.battleTraits?.length));
+}
+
+function cardRules(entry) {
+  return [['Declare', entry.declare], ['Effect', entry.effect]]
+    .filter(([, value]) => value)
+    .map(([label, value]) => `<section class="dc-detail"><h3>${label}</h3><p>${escape(value)}</p></section>`).join('');
 }
 
 function loreDatacard(lore, entry, printControls) {
@@ -72,20 +78,20 @@ function loreDatacard(lore, entry, printControls) {
     <header class="dc-title"><div><p class="dc-label">${labels.title} · ${escape(lore.name)}</p><h2>${escape(entry.name)}</h2></div>
     ${entry.value ? `<span class="dc-status">${labels.value} ${escape(entry.value)}</span>` : ''}</header>
     ${printControls ? printChoice('Print card', entry.name) : ''}
-    ${[['Declare', entry.declare], ['Effect', entry.effect]].filter(([, value]) => value).map(([label, value]) =>
-      `<section class="dc-detail"><h3>${label}</h3><p>${escape(value)}</p></section>`).join('')}
+    ${cardRules(entry)}
     </article>`;
 }
 
 function warbandCardList(warband, battles, { unit, printControls = false } = {}) {
-  const warlordId = Ledger.warlord(warband)?.id;
-  const units = unit ? [unit] : Ledger.sortedUnits(warband.units.filter(unit => Ledger.battleReady(unit, warband.id, battles)), warlordId);
-  const cards = units.map(unit => {
-    const entry = unitCatalogueEntry(warband, unit);
-    const battleScars = Ledger.unitBattleScars(unit, warband.id, battles);
-    return datacard(unitProfile(warband, unit, entry), { ...unit, battleScars }, unitRenown(warband, unit, battles), entry, { printControls, warlord: unit.id === warlordId });
-  });
+  const units = unit ? [unit] : battleReadyUnits(warband, battles);
+  const cards = units.map(unit => unitDatacard(warband, unit, battles, printControls));
   if (!unit) {
+    for (const trait of warband.battleTraits ?? []) {
+      cards.push(`<article class="datacard dc-lore-card" data-lore="trait">
+        <header class="dc-title"><div><p class="dc-label">Battle Trait${warband.faction ? ` · ${escape(warband.faction)}` : ''}</p><h2>${escape(trait.name)}</h2></div></header>
+        ${printControls ? printChoice('Print card', trait.name) : ''}
+        ${trait.timing ? `<p class="dc-source">${escape(trait.timing)}</p>` : ''}${cardRules(trait)}</article>`);
+    }
     for (const kind of Ledger.loreKinds) {
       for (const lore of (warband.lores ?? []).filter(lore => lore.kind === kind)) {
         for (const entry of lore.entries) cards.push(loreDatacard(lore, entry, printControls));
@@ -93,6 +99,16 @@ function warbandCardList(warband, battles, { unit, printControls = false } = {})
     }
   }
   return `<div class="dc-cards">${cards.join('\n')}</div>`;
+}
+
+function battleReadyUnits(warband, battles) {
+  return Ledger.sortedUnits(warband.units.filter(unit => Ledger.battleReady(unit, warband.id, battles)), Ledger.warlord(warband)?.id);
+}
+
+function unitDatacard(warband, unit, battles, printControls = false) {
+  const entry = unitCatalogueEntry(warband, unit);
+  const battleScars = Ledger.unitBattleScars(unit, warband.id, battles);
+  return datacard(unitProfile(warband, unit, entry), { ...unit, battleScars }, unitRenown(warband, unit, battles), entry, { printControls, warlord: unit.id === Ledger.warlord(warband)?.id });
 }
 
 function viewWarbandDatacards(warband, unit) {

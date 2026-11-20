@@ -88,6 +88,40 @@ function boot({ page = 'overview', saved = new Map(), fresh = false } = {}) {
 }
 
 const app = boot();
+const battleWorkflow = boot({ page: 'battle-view' });
+battleWorkflow.run(`
+  const warband = viewedArmy();
+  const battleLog = CampaignStore.data.battles;
+  warband.battleTraits.push({ id: 'trait', name: 'Faction test trait', timing: 'Combat', declare: 'Choose <target>', effect: 'Gain a bonus.' });
+  warband.battleView = [{ id: 'dagna', dead: true, kills: 2, questPoints: 0 }];
+  warband.units.find(unit => unit.id === 'flint').status = 'In Reserves';
+`);
+battleWorkflow.elements.get('#main').eventHandlers.get('input')({ target: {
+  type: 'number', name: 'questPoints', value: '3', validity: { valid: true }, dataset: { id: 'dagna' },
+  hasAttribute: name => name === 'data-battle-counter',
+} });
+assert.match(battleWorkflow.run('warbands()'), /Battle Traits[\s\S]*Faction test trait/);
+assert.match(battleWorkflow.run('warbandDatacards(CampaignStore.data.campaign, warband, battleLog)'),
+  /Battle Trait · Khazalite Holds[\s\S]*Faction test trait[\s\S]*Choose &lt;target&gt;/);
+const liveView = battleWorkflow.run('battleView()');
+assert.match(liveView, /The Oathkeepers[\s\S]*battle-view-unit is-dead[\s\S]*Dagna Emberhand/);
+assert.doesNotMatch(liveView, /Flintguard/);
+assert.match(battleWorkflow.run('quests()'), /data-action="new-quest" disabled/);
+assert.match(battleWorkflow.run('quests()'), /data-action="forfeit-quest"/);
+assert.equal(battleWorkflow.run('warband.quests[1].status'), 'Forfeited');
+const battleSeed = JSON.parse(battleWorkflow.run('JSON.stringify(battleViewSeed(warband, battleLog))'));
+assert.equal(battleSeed.armyId, 'forge');
+assert.deepEqual(battleSeed.awards.map(({ unitId, delta, questPoints }) => [unitId, delta, questPoints]), [['dagna', undefined, 3], ['oath', undefined, 0]]);
+battleWorkflow.run(`
+  const active = Ledger.activeQuest(warband);
+  battleLog[0].questId = active.id;
+  battleLog[0].questPoints = 3;
+  actions['forfeit-quest'](active.id);
+  dialogEditor()();
+`);
+assert.match(battleWorkflow.run('quests()'), /Forfeited quests[\s\S]*Relight the Watchfires[\s\S]*5 \/ 3/);
+assert.doesNotMatch(battleWorkflow.run('quests()'), /data-action="new-quest" disabled/);
+assert.equal(battleWorkflow.run('Ledger.normalize(CampaignStore.data).armies[0].battleView[0].questPoints'), 3);
 const freshStorage = new Map();
 const fresh = boot({ page: 'warbands', saved: freshStorage, fresh: true });
 const setup = fresh.elements.get('#main').innerHTML;
@@ -268,7 +302,7 @@ formationApp.run(`
 `);
 assert.equal(formationApp.run('activeArmy().formation'), 'Custom Vanguard');
 assert.match(formationApp.run('warbands()'), /Battle Formation[\s\S]*Custom Vanguard/);
-for (const page of ['overview', 'warbands', 'battles', 'arcane-tome', 'quests', 'chronicle', 'settings']) {
+for (const page of ['overview', 'warbands', 'battle-view', 'battles', 'arcane-tome', 'quests', 'chronicle', 'settings']) {
   app.context.location.hash = `#${page}`;
   app.events.get('hashchange')();
   assert.ok(app.elements.get('#main').innerHTML.includes('<h1>'), `Page did not render: ${page}`);

@@ -27,11 +27,12 @@ function warbands() {
   const unitCards = (units, emptyTitle) => units.length ? `<div class="cards">${units.map(unit => unitCard(a, unit)).join('')}</div>` : empty(emptyTitle, '');
   const resource = CampaignStore.data.campaign.resource;
   const datacardActions = hasWarbandDatacards(a) ? button('View datacards', 'view-datacards') + button('Export datacards', 'export-datacards', { glyph: 'download' }) : '';
-  const rosterActions = `<div class="actions">${datacardActions}${button('Add Anvil hero', 'new-anvil-hero', { glyph: 'plus' })}${add('Add unit', 'new-unit')}</div>`;
+  const rosterActions = `<div class="actions">${!a.archived ? pageLink('Battle View', 'battle-view') : ''}${datacardActions}${button('Add Anvil hero', 'new-anvil-hero', { glyph: 'plus' })}${add('Add unit', 'new-unit')}</div>`;
   return title + `<div class="stack">${summary}
     ${section('Order of battle', unitCards(sorted.filter(unit => Ledger.battleReady(unit, a.id, battles)), 'No units ready for battle'), rosterActions)}
     ${section('Reserved', unitCards(sorted.filter(unit => Ledger.rosterStatus(unit, a.id, battles) === 'In Reserves'), 'No units in reserves'))}
     ${section('Retired', unitCards(sorted.filter(unit => Ledger.rosterStatus(unit, a.id, battles) === 'Retired'), 'No retired units'))}
+    ${battleTraitsSection(a)}
     ${warbandLedger(a, Ledger.gloryPoints, 'glory')}
     ${resource ? warbandLedger(a, resource, 'resource') : ''}</div>`;
 }
@@ -72,7 +73,7 @@ function warbandForm(existing) {
     if (existing) Object.assign(existing, values);
     else {
       const id = Ledger.id();
-      CampaignStore.data.armies.push({ id, ...values, archived: false, units: [], lores: [], quests: [], ledger: [] });
+      CampaignStore.data.armies.push({ id, ...values, archived: false, units: [], lores: [], quests: [], ledger: [], battleTraits: [], battleView: [] });
       CampaignStore.data.activeWarbandId = id;
       viewedArmyId = '';
     }

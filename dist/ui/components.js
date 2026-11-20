@@ -21,8 +21,8 @@ const dateFmt = new Intl.DateTimeFormat(undefined, { dateStyle: 'medium' });
 const dateText = date => date ? dateFmt.format(new Date(`${date}T12:00:00`)) : 'Undated';
 const makeDate = date => `<time datetime="${escape(date)}">${dateText(date)}</time>`;
 
-const button = (label, action, { type = 'secondary', glyph, id, title } = {}) =>
-  `<button class="button ${type}" type="button" data-action="${action}"${id ? ` data-id="${escape(id)}"` : ''}${title ? ` aria-label="${escape(title)}"` : ''}>${glyph ? icon(glyph) : ''}${escape(label)}</button>`;
+const button = (label, action, { type = 'secondary', glyph, id, title, disabled = false } = {}) =>
+  `<button class="button ${type}" type="button" data-action="${action}"${id ? ` data-id="${escape(id)}"` : ''}${title ? ` aria-label="${escape(title)}"` : ''}${disabled ? ' disabled' : ''}>${glyph ? icon(glyph) : ''}${escape(label)}</button>`;
 const pageLink = (label, page) => `<a class="button link" href="#${page}">${escape(label)}</a>`;
 const badge = (label, style = label.toLowerCase()) => `<span class="pill ${style}">${escape(label)}</span>`;
 const add = (label, action) => button(label, action, { type: 'primary', glyph: 'plus' });

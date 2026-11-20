@@ -5,6 +5,7 @@ const importFile = document.querySelector('#import-file');
 const pages = {
   overview: ['Overview', 'overview', overview], warbands: ['Warbands', 'shield', warbands], battles: ['Battles', 'swords', battles],
   'arcane-tome': ['Arcane Tome', 'star', arcaneTome],
+  'battle-view': ['Battle View', null, battleView],
   quests: ['Quests', 'flag', quests], chronicle: ['Chronicle', 'book', chronicle], settings: ['Settings', 'settings', settings],
 };
 
@@ -30,7 +31,9 @@ function render() {
     document.title = 'Start the campaign · Path to Glory';
     return;
   }
-  document.querySelector('#nav').innerHTML = Object.entries(pages).map(([key, [label, glyph]]) => `<a class="nav-link" href="#${key}"${page === key ? ' aria-current="page"' : ''}>${icon(glyph)}${label}</a>`).join('');
+  const navPage = page === 'battle-view' ? 'warbands' : page;
+  document.querySelector('#nav').innerHTML = Object.entries(pages).filter(([, [, glyph]]) => glyph)
+    .map(([key, [label, glyph]]) => `<a class="nav-link" href="#${key}"${navPage === key ? ' aria-current="page"' : ''}>${icon(glyph)}${label}</a>`).join('');
   const selected = viewedArmy();
   const options = armyOptions().map(([id, label]) => [id, id === CampaignStore.data.activeWarbandId ? `${label} (Active)` : label]);
   if (!activeArmy()) options.unshift(['', 'Choose a warband']);
@@ -105,6 +108,20 @@ const actions = {
     commit(a.archived ? 'Warband archived.' : 'Warband restored.');
   },
   'new-unit': () => unitForm(viewedArmy()),
+  'new-battle-trait': () => battleTraitForm(viewedArmy()),
+  'edit-battle-trait': id => {
+    const a = viewedArmy();
+    const trait = a.battleTraits.find(item => item.id === id);
+    if (trait) battleTraitForm(a, trait);
+  },
+  'remove-battle-trait': id => {
+    const traits = viewedArmy().battleTraits;
+    removeRecord(traits, traits.find(trait => trait.id === id), 'Delete battle trait?', 'This removes the trait from the warband and its datacard export.');
+  },
+  'record-battle-view': () => {
+    const a = viewedArmy();
+    if (a && !a.archived) battleForm(undefined, battleViewSeed(a, CampaignStore.data.battles));
+  },
   'new-anvil-hero': () => unitForm(viewedArmy(), undefined, { anvilHero: true }),
   'edit-unit': id => unitForm(viewedArmy(), viewedArmy().units.find(u => u.id === id)),
   'unit-history': id => unitHistory(viewedArmy(), viewedArmy().units.find(u => u.id === id)),
@@ -114,6 +131,7 @@ const actions = {
     if (!u) return;
     removeRecord(a.units, u, `Remove ${u.name}?`, 'The unit will be removed from the roster. Its Renown and Battle Scars will remain in the battle history.', () => {
       if (a.warlordId === id) a.warlordId = '';
+      a.battleView = a.battleView.filter(row => row.id !== id);
       for (const battle of CampaignStore.data.battles) {
         for (const award of battle.awards) if (award.armyId === a.id && award.unitId === id) award.unitName = u.name;
       }
@@ -132,10 +150,21 @@ const actions = {
   'new-quest': () => questForm(viewedArmy()),
   'edit-quest': id => questForm(viewedArmy(), viewedArmy().quests.find(q => q.id === id)),
   'complete-quest': id => {
-    const q = viewedArmy().quests.find(item => item.id === id);
+    const a = viewedArmy();
+    const q = Ledger.activeQuest(a);
+    if (!q || q.id !== id) return;
     q.status = 'Completed';
-    if (q.target) q.progress = q.target;
+    if (q.target) q.progress = Math.max(q.progress, q.target - Ledger.questBattlePoints(CampaignStore.data.battles, a.id, q.id));
     commit('Quest completed.');
+  },
+  'forfeit-quest': id => {
+    const a = viewedArmy();
+    const quest = Ledger.activeQuest(a);
+    if (!quest || quest.id !== id) return;
+    confirmDialog(`Forfeit ${quest.title}?`, 'Progress stays in your quest history and you can start another quest.', 'Forfeit', () => {
+      quest.status = 'Forfeited';
+      return ['Quest forfeited.', 'quests'];
+    });
   },
   'remove-quest': id => {
     const list = viewedArmy().quests;
@@ -190,11 +219,14 @@ document.addEventListener('submit', event => {
 });
 
 main.addEventListener('input', event => {
-  if (event.target.name === 'query') updateFilters(event);
+  const input = event.target;
+  if (input.name === 'query') updateFilters(event);
+  if (input.type === 'number' && input.hasAttribute('data-battle-counter')) updateBattleView(input);
 });
 
 document.addEventListener('change', event => {
   const input = event.target;
+  if (input.hasAttribute('data-battle-counter')) updateBattleView(input, true);
   if (input.closest('#battle-filters') && input.name !== 'query') updateFilters(event);
   if (input.id === 'field-view-warband') {
     selectWarband(input.value);

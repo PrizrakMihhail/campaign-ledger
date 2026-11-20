@@ -22,7 +22,8 @@ const Ledger = (() => {
     const status = rosterStatus(unit, armyId, battles);
     return status !== 'In Reserves' && status !== 'Retired';
   }
-  const questStatuses = ['Active', 'Completed', 'Abandoned'];
+  const questStatuses = ['Active', 'Completed', 'Forfeited'];
+  const activeQuest = warband => warband?.quests.find(quest => quest.status === 'Active');
   const unitTypes = Object.freeze(['Hero', 'Infantry', 'Cavalry', 'War Machine', 'Monster', 'Terrain', 'Other']);
   const unitTypeNames = new Map([...unitTypes.map(type => [type.toLowerCase(), type]), ['artillery', 'War Machine'], ['faction terrain', 'Terrain']]);
   const profileStats = Object.freeze({ move: 'Move', health: 'Health', save: 'Save', control: 'Control', ward: 'Ward' });
@@ -84,6 +85,10 @@ const Ledger = (() => {
     };
   }
 
+  function unitBattleStats(value) {
+    return { kills: Math.max(0, integer(value.kills)), questPoints: Math.max(0, integer(value.questPoints)), dead: value.dead === true };
+  }
+
   function unitStatus(status, battleScars) {
     return battleScars >= retirementScarCount ? 'Retired' : choice(status === 'In Reserve' ? 'In Reserves' : status, unitStatuses, 'Active');
   }
@@ -132,13 +137,19 @@ const Ledger = (() => {
       notes: str(a.notes), color: validColor(a.color), archived: a.archived === true,
       units: records(a.units, normalizeUnit),
       lores: records(a.lores, normalizeLore),
+      battleTraits: records(a.battleTraits, t => ({ name: str(t.name) || 'Unnamed trait', timing: str(t.timing), declare: str(t.declare), effect: str(t.effect) })),
+      battleView: records(a.battleView, unitBattleStats),
       quests: records(a.quests, q => ({
-        title: str(q.title) || 'Unnamed quest', goal: str(q.goal), status: choice(q.status, questStatuses, 'Active'),
+        title: str(q.title) || 'Unnamed quest', goal: str(q.goal), status: choice(q.status === 'Abandoned' ? 'Forfeited' : q.status, questStatuses, 'Active'),
         reward: str(q.reward), notes: str(q.notes), target: Math.max(0, integer(q.target)), progress: Math.max(0, integer(q.progress)),
       })),
       ledger: records(a.ledger, l => ({ date: cleanDate(l.date), reason: str(l.reason), delta: integer(l.delta), kind: legacyResource || l.kind === 'resource' ? 'resource' : 'glory' })),
     }));
     for (const army of armies) {
+      const currentQuest = activeQuest(army);
+      for (const quest of army.quests) {
+        if (quest.status === 'Active' && quest !== currentQuest) quest.status = 'Forfeited';
+      }
       if (army.warlordId === null && army.warlord.trim()) {
         const matches = army.units.filter(unit => unit.type === 'Hero' && unitName(unit) === army.warlord.trim());
         if (matches.length === 1) army.warlordId = matches[0].id;
@@ -160,7 +171,8 @@ const Ledger = (() => {
         result: choice(b.result, resultOptions, 'Other'), notes: str(b.notes),
         delta: legacyResource ? 0 : integer(b.delta), oppDelta: legacyResource ? 0 : integer(b.oppDelta),
         resourceDelta: integer(legacyResource ? b.delta : b.resourceDelta), oppResourceDelta: integer(legacyResource ? b.oppDelta : b.oppResourceDelta),
-        awards: records(b.awards, a => ({ armyId: str(a.armyId), unitId: str(a.unitId), unitName: str(a.unitName), delta: integer(a.delta), scars: Math.max(0, integer(a.scars)) })),
+        questId: str(b.questId), questPoints: Math.max(0, integer(b.questPoints)),
+        awards: records(b.awards, a => ({ armyId: str(a.armyId), unitId: str(a.unitId), unitName: str(a.unitName), delta: integer(a.delta), scars: Math.max(0, integer(a.scars)), ...unitBattleStats(a) })),
       })),
       entries: records(value.entries, j => ({ title: str(j.title) || 'Untitled entry', date: cleanDate(j.date), armyId: str(j.armyId), body: str(j.body) })),
     };
@@ -255,6 +267,10 @@ const Ledger = (() => {
   const unitBattleScars = (unit, armyId, battles) => (unit.battleScars ?? 0) + battleScarAwards(battles, armyId, unit.id);
   const rosterStatus = (unit, armyId, battles) => unitStatus(unit.status, unitBattleScars(unit, armyId, battles));
 
+  function questBattlePoints(battles, armyId, questId) {
+    return battles.reduce((sum, battle) => sum + (battle.armyId === armyId && battle.questId === questId ? battle.questPoints ?? 0 : 0), 0);
+  }
+
   function record(state, armyId) {
     const counts = { Victory: 0, Defeat: 0, Draw: 0, Other: 0 };
     for (const b of state.battles.filter(battle => participants(battle).includes(armyId))) {
@@ -271,6 +287,6 @@ const Ledger = (() => {
     return battle.result;
   }
 
-  return { packs, gloryPoints, resourceName, latestWarband, resultOptions, unitStatuses, unitStatus, battleReady, battleScarSeverity, isScarred, questStatuses, unitTypes, unitType, unitName, warlord, sortedUnits, profileStats, weaponFields, normalizeProfileEdits, profileDefaults, profileAbilityEdits, profileChanges, validColor, integer, id, date, dateOrder,
+  return { packs, gloryPoints, resourceName, latestWarband, resultOptions, unitStatuses, unitStatus, battleReady, battleScarSeverity, isScarred, questStatuses, activeQuest, questBattlePoints, unitBattleStats, unitTypes, unitType, unitName, warlord, sortedUnits, profileStats, weaponFields, normalizeProfileEdits, profileDefaults, profileAbilityEdits, profileChanges, validColor, integer, id, date, dateOrder,
     blank, normalize, normalizeAnvil, destinySpent, unitPoints, unitUpgradePoints, unitSize, loreKinds, lorePoints, points, participants, signed, balance, transactions, unitHistory, battleRenown, battleScarAwards, unitBattleScars, rosterStatus, record, resultFor };
 })();
