@@ -90,6 +90,10 @@ document.addEventListener('keydown', event => {
 
 const actions = {
   ...arcaneTomeActions,
+  'leave-battle-view': leaveBattleView,
+  'adjust-battle-unit': (_id, trigger) => adjustBattleCounter(trigger, updateBattleView),
+  'adjust-battle-round': (_id, trigger) => adjustBattleCounter(trigger, updateBattleRound),
+  'adjust-battle-quest': (_id, trigger) => adjustBattleCounter(trigger, updateBattleQuestPoints),
   'resolve-conflict': () => CampaignCloud.showConflict(),
   'resolve-cloud': () => {
     dialog.close();
@@ -112,6 +116,25 @@ const actions = {
     }
   },
   start: startCampaign,
+  'remove-campaign': campaignRemovalDialog,
+  'confirm-remove-campaign': async id => {
+    const entry = CampaignStore.campaigns.find(campaign => campaign.id === id);
+    if (!entry) return;
+    dialog.close();
+    try {
+      if (Account.user) {
+        if (typeof CampaignCloud.deleteCampaign !== 'function') throw new Error('The app update is incomplete. Reload the page and try again.');
+        await CampaignCloud.deleteCampaign(id);
+      }
+      if (!CampaignStore.remove(id)) throw new Error('The browser copy could not be removed.');
+      resetCampaignView();
+      location.hash = 'campaigns';
+      render();
+      tell('Campaign deleted.');
+    } catch (error) {
+      tell(`Campaign could not be deleted. ${error.message}`, true);
+    }
+  },
   'open-campaign': id => {
     if (!CampaignStore.select(id)) return;
     resetCampaignView();
@@ -232,13 +255,18 @@ const actions = {
 };
 
 document.addEventListener('click', event => {
+  const pageLink = event.target.closest('a[href^="#"]');
+  if (pageLink && requestBattleViewExit(pageLink.getAttribute('href'))) {
+    event.preventDefault();
+    return;
+  }
   const navItem = event.target.closest('#nav a, #nav button, .brand');
   if (mobileMenuOpen() && (navItem || !event.target.closest('.sidebar'))) {
     setMobileMenu(false);
     if (navItem) menuToggle.focus();
   }
   const trigger = event.target.closest('[data-action]');
-  if (trigger) actions[trigger.dataset.action]?.(trigger.dataset.id);
+  if (trigger) actions[trigger.dataset.action]?.(trigger.dataset.id, trigger);
   if (event.target === dialog) {
     const box = dialog.getBoundingClientRect();
     if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) requestDialogClose();
@@ -282,12 +310,14 @@ bindBattleViewSwipe(main);
 main.addEventListener('input', event => {
   const input = event.target;
   if (input.name === 'query') updateFilters(event);
+  if (input.hasAttribute('data-battle-quest-points')) updateBattleQuestPoints(input);
   if (input.type === 'number' && input.hasAttribute('data-battle-counter')) updateBattleView(input);
   if (input.type === 'number' && input.closest?.('[data-battle-round]')) updateBattleRound(input);
 });
 
 document.addEventListener('change', event => {
   const input = event.target;
+  if (input.hasAttribute('data-battle-quest-points')) updateBattleQuestPoints(input);
   if (input.hasAttribute('data-battle-counter')) updateBattleView(input, true);
   if (input.closest('[data-battle-round]')) updateBattleRound(input);
   if (input.closest('#battle-filters') && input.name !== 'query') updateFilters(event);
@@ -319,6 +349,12 @@ importFile.addEventListener('change', async () => {
 });
 
 window.addEventListener('hashchange', () => {
+  if (battleViewShouldWarn(location.hash)) {
+    const target = location.hash || '#campaigns';
+    history.replaceState(null, '', '#battle-view');
+    requestBattleViewExit(target);
+    return;
+  }
   if (mobileMenuOpen()) setMobileMenu(false);
   render();
   window.scrollTo(0, 0);

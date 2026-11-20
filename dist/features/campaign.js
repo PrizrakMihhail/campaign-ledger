@@ -75,13 +75,24 @@ function campaignSelection() {
   const cards = CampaignStore.campaigns.map(({ id, data: { campaign, armies, battles } }) => `<article class="card campaign-option">
     <div><p class="label">${escape(campaign.pack)}</p><h2>${escape(campaign.name)}</h2>
       <p class="meta">${campaign.location ? `${escape(campaign.location)} · ` : ''}${fmt(armies.length)} ${armies.length === 1 ? 'warband' : 'warbands'} · ${fmt(battles.length)} ${battles.length === 1 ? 'battle' : 'battles'}</p></div>
-    ${button('Open campaign', 'open-campaign', { id, glyph: 'overview' })}</article>`).join('');
+    <div class="actions">${button('Open campaign', 'open-campaign', { id, glyph: 'overview' })}${button('Delete campaign', 'remove-campaign', { id, type: 'danger' })}</div></article>`).join('');
   return `<div class="campaign-selection stack">
     <header class="campaign-banner"><img src="assets/fortress.jpg" alt=""><div class="campaign-banner-title">
       <p class="hero-kicker">Path to Glory</p><h1>Campaigns</h1></div></header>
     <div class="campaign-toolbar"><div class="actions">${button('Create campaign', 'start', { type: 'primary', glyph: 'plus' })}${button('Import backup', 'import')}</div><div class="account-controls">${accountControls()}</div></div>
     ${cards ? `<div class="campaign-options">${cards}</div>` : empty('No campaigns yet', 'Create a campaign or import a backup.')}
   </div>`;
+}
+
+function campaignRemovalDialog(id) {
+  const entry = CampaignStore.campaigns.find(campaign => campaign.id === id);
+  if (!entry) return;
+  const cloud = Boolean(Account.user);
+  const description = cloud
+    ? 'This permanently removes the campaign from this browser and your cloud account. Export a backup first if you may need it later.'
+    : 'This removes the campaign from this browser only. If it already exists in your cloud account, it will return the next time you sign in.';
+  viewDialog(`Delete ${entry.data.campaign.name}?`, `<p class="copy">${escape(description)}</p>`,
+    `${button('Cancel', 'close')}${button('Delete campaign', 'confirm-remove-campaign', { id, type: 'danger' })}`);
 }
 
 function createCampaign(values) {

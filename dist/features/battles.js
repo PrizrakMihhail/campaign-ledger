@@ -48,7 +48,7 @@ function battleForm(existing, seed) {
   const drafts = new Map();
   const awardKey = (armyId, unitId) => JSON.stringify([armyId, unitId]);
   for (const award of b.awards ?? seed?.awards ?? []) drafts.set(awardKey(award.armyId, award.unitId), award);
-  const questDrafts = new Map([[primary, b.questPoints ?? seed?.awards.reduce((sum, award) => sum + award.questPoints, 0) ?? 0]]);
+  const questDrafts = new Map([[primary, b.questPoints ?? seed?.questPoints ?? seed?.awards.reduce((sum, award) => sum + award.questPoints, 0) ?? 0]]);
   let questArmyId;
 
   function questTarget(armyId) {
@@ -141,7 +141,9 @@ function battleForm(existing, seed) {
     if (seed && seed.armyId === v.armyId) {
       const warband = army(v.armyId);
       warband.battleView = [];
+      warband.battleViewQuestPoints = 0;
       warband.battleRounds = Ledger.normalizeBattleRounds();
+      clearBattleViewChanges();
     }
     resetBattleFilters();
     return ['Battle saved.', 'battles'];

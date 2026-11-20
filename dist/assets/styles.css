@@ -228,6 +228,12 @@ body:has(dialog[open]) { overflow: hidden; }
 .battle-view-unit { min-width: 0; }
 .battle-view-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
 .battle-view-tabs [aria-selected="true"] { background: var(--gold); border-color: var(--gold); color: var(--bg); }
+.battle-tracker-summary { display: flex; align-items: end; justify-content: space-between; gap: 18px; flex-wrap: wrap; }
+.battle-quest-counter { width: min(100%, 13rem); }
+.counter-field { display: grid; gap: 5px; min-width: 0; }
+.counter-field > label, .battle-quest-counter > label { color: var(--muted); font-size: .875rem; font-weight: 650; }
+.counter-adjustments { display: flex; flex-wrap: wrap; gap: 5px; }
+.counter-step { min-width: 42px; padding-inline: 9px; }
 .battle-round-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 12px; }
 .battle-round { margin: 0; }
 .battle-round legend { padding-inline: 6px; color: var(--gold); font: 1.2rem var(--serif); }
@@ -296,7 +302,9 @@ body:has(dialog[open]) { overflow: hidden; }
   input, select, textarea { font-size: 1rem; }
   .battle-view-tabs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; margin-bottom: 12px; }
   .battle-view-tabs .button { flex-direction: column; gap: 4px; min-height: 58px; padding: 6px 3px; }
-  .battle-view-controls { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr) auto; }
+  .battle-tracker-summary { align-items: stretch; }
+  .battle-quest-counter { width: 100%; }
+  .battle-view-controls { display: grid; grid-template-columns: minmax(0, 1fr) auto; }
   .battle-view-controls input[type="number"] { width: 100%; }
 }
 

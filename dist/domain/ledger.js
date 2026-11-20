@@ -168,6 +168,7 @@ const Ledger = (() => {
       lores: records(a.lores, normalizeLore),
       battleTraits: records(a.battleTraits, t => ({ name: str(t.name) || 'Unnamed trait', timing: str(t.timing), declare: str(t.declare), effect: str(t.effect), ruleset: str(t.ruleset) })),
       battleView: records(a.battleView, unitBattleStats),
+      battleViewQuestPoints: Math.max(0, integer(a.battleViewQuestPoints ?? (Array.isArray(a.battleView) ? a.battleView.reduce((sum, row) => sum + Math.max(0, integer(row?.questPoints)), 0) : 0))),
       battleRounds: normalizeBattleRounds(a.battleRounds),
       quests: records(a.quests, q => ({
         title: str(q.title) || 'Unnamed quest', goal: str(q.goal), status: choice(q.status === 'Abandoned' ? 'Forfeited' : q.status, questStatuses, 'Active'),

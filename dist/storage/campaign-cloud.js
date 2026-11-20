@@ -199,6 +199,20 @@ const CampaignCloud = (() => {
     announce('error', reason?.message || 'Cloud synchronization failed.');
   }
 
+  function deleteCampaign(id) {
+    if (!userId || !Account.client) return Promise.resolve(false);
+    const task = operation.then(async () => {
+      announce('syncing');
+      const { error: deleteError } = await Account.client.from('player_campaigns').delete().eq('id', id);
+      if (deleteError) throw deleteError;
+      conflicts = conflicts.filter(conflict => conflict.id !== id);
+      announce(conflicts.length ? 'conflict' : 'synced', conflicts.length ? 'Another campaign conflict needs your decision.' : '');
+      return true;
+    });
+    operation = task.catch(syncError);
+    return task;
+  }
+
   return {
     get state() { return state; },
     get error() { return error; },
@@ -211,6 +225,7 @@ const CampaignCloud = (() => {
     initialize,
     setAccount,
     queueSave,
+    deleteCampaign,
     showConflict,
     useCloud() { resolve('cloud'); },
     useLocal() { resolve('local'); },

@@ -16,6 +16,7 @@ No account or installation is required. Your campaign is saved in the browser yo
 - See an overview of the active warband, recent battles, Glory Points, and active quests.
 - Keep a dated campaign chronicle with campaign-wide or warband-specific notes.
 - Manage several warbands in the same campaign, archive those no longer in play, or permanently remove a warband when it is no longer needed.
+- Create, switch between, import, and delete separate campaigns from the Campaigns page.
 
 ### Build and develop warbands
 

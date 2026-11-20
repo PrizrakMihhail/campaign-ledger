@@ -5,21 +5,24 @@ import { Script, createContext, runInContext } from 'node:vm';
 const site = new URL('../dist/', import.meta.url);
 const html = await readFile(new URL('index.html', site), 'utf8');
 const entries = [...html.matchAll(/<script src="([^"]+)" defer><\/script>/g)].map(match => match[1]);
+const entryPaths = entries.map(path => path.split(/[?#]/, 1)[0]);
 const asset = (path, base = site) => {
   const url = new URL(path, base);
   assert.ok(url.href.startsWith(site.href), `Asset must be inside dist: ${path}`);
+  url.search = '';
+  url.hash = '';
   return url;
 };
-assert.equal(entries.at(-1), 'app.js', 'App must start after its dependencies');
+assert.equal(entryPaths.at(-1), 'app.js', 'App must start after its dependencies');
 assert.equal(entries.length, new Set(entries).size, 'Each script should load only once');
-assert.ok(entries.includes('config.js'), 'Public Supabase configuration must load before the app');
-assert.ok(entries.includes('storage/account.js'), 'Account support must load before the app');
-assert.ok(entries.includes('storage/campaign-cloud.js'), 'Cloud campaign sync must load before the app');
+assert.ok(entryPaths.includes('config.js'), 'Public Supabase configuration must load before the app');
+assert.ok(entryPaths.includes('storage/account.js'), 'Account support must load before the app');
+assert.ok(entryPaths.includes('storage/campaign-cloud.js'), 'Cloud campaign sync must load before the app');
 const cloudSource = await readFile(new URL('storage/campaign-cloud.js', site), 'utf8');
 assert.match(cloudSource, /function resolve\(choice\)/, 'Cloud conflicts must have a resolution handler');
 assert.match(cloudSource, /Use cloud version[\s\S]*Use local version/,
   'Cloud conflicts must require an explicit local-or-cloud choice');
-assert.ok(entries.includes('data/wahapedia-catalogue-data.js'), 'Deployment catalogue must load before the app');
+assert.ok(entryPaths.includes('data/wahapedia-catalogue-data.js'), 'Deployment catalogue must load before the app');
 const scripts = await Promise.all(entries.map(async path => new Script(await readFile(asset(path), 'utf8'), { filename: path })));
 for (const [, stylesheet] of html.matchAll(/<link rel="stylesheet" href="([^"]+)"/g)) {
   const url = asset(stylesheet);
@@ -115,21 +118,23 @@ battleWorkflow.run(`
   warband.units.find(unit => unit.id === 'flint').status = 'In Reserves';
 `);
 battleWorkflow.elements.get('#main').eventHandlers.get('input')({ target: {
-  type: 'number', name: 'questPoints', value: '3', validity: { valid: true }, dataset: { id: 'dagna' },
-  hasAttribute: name => name === 'data-battle-counter',
+  type: 'number', name: 'battleViewQuestPoints', value: '3', validity: { valid: true },
+  hasAttribute: name => name === 'data-battle-quest-points', closest: () => null,
 } });
 assert.match(battleWorkflow.run('warbands()'), /Battle Traits[\s\S]*Faction test trait/);
 assert.match(battleWorkflow.run('warbandDatacards(CampaignStore.data.campaign, warband, battleLog)'),
   /Battle Trait · Khazalite Holds[\s\S]*Faction test trait[\s\S]*Choose &lt;target&gt;/);
 const liveView = battleWorkflow.run('battleView()');
 assert.match(liveView, /The Oathkeepers[\s\S]*battle-view-unit is-dead[\s\S]*Dagna Emberhand/);
+assert.match(liveView, /data-action="adjust-battle-unit" data-delta="1"[\s\S]*data-delta="-1"/);
 assert.doesNotMatch(liveView, /Flintguard/);
 assert.match(battleWorkflow.run('quests()'), /data-action="new-quest" disabled/);
 assert.match(battleWorkflow.run('quests()'), /data-action="forfeit-quest"/);
 assert.equal(battleWorkflow.run('warband.quests[1].status'), 'Forfeited');
 const battleSeed = JSON.parse(battleWorkflow.run('JSON.stringify(battleViewSeed(warband, battleLog))'));
 assert.equal(battleSeed.armyId, 'forge');
-assert.deepEqual(battleSeed.awards.map(({ unitId, delta, questPoints }) => [unitId, delta, questPoints]), [['dagna', undefined, 3], ['oath', undefined, 0]]);
+assert.equal(battleSeed.questPoints, 3);
+assert.deepEqual(battleSeed.awards.map(({ unitId, delta, questPoints }) => [unitId, delta, questPoints]), [['dagna', undefined, 0], ['oath', undefined, 0]]);
 battleWorkflow.run(`
   const active = Ledger.activeQuest(warband);
   battleLog[0].questId = active.id;
@@ -139,7 +144,7 @@ battleWorkflow.run(`
 `);
 assert.match(battleWorkflow.run('quests()'), /Forfeited quests[\s\S]*Relight the Watchfires[\s\S]*5 \/ 3/);
 assert.doesNotMatch(battleWorkflow.run('quests()'), /data-action="new-quest" disabled/);
-assert.equal(battleWorkflow.run('Ledger.normalize(CampaignStore.data).armies[0].battleView[0].questPoints'), 3);
+assert.equal(battleWorkflow.run('Ledger.normalize(CampaignStore.data).armies[0].battleViewQuestPoints'), 3);
 battleWorkflow.run(`
   warband.units.push({ ...warband.units[0], id: 'manifestation', type: 'Other', name: 'Molten Infernoth', warscroll: 'Molten Infernoth' });
   warband.lores.push(
@@ -159,6 +164,8 @@ assert.match(battleWorkflow.run('warbandCardList(warband, battleLog)'), /Test su
 assert.equal(battleWorkflow.run('sortedWarbandUnits(warband).at(-1).id'), 'manifestation');
 battleWorkflow.run("selectBattleViewTab('tracker')");
 const tracker = battleWorkflow.run('battleView()');
+assert.match(tracker, /name="battleViewQuestPoints"[\s\S]*data-action="adjust-battle-quest"/);
+assert.match(tracker, /data-action="adjust-battle-round" data-delta="5"[\s\S]*data-delta="1"[\s\S]*data-delta="-1"[\s\S]*data-delta="-5"/);
 assert.equal((tracker.match(/type="radio" name="initiative-/g) || []).length, 14);
 assert.doesNotMatch(tracker, /Unassigned|name="initiative-0"[^>]* checked/);
 assert.match(tracker, /data-battle-round="4" hidden/);
@@ -175,6 +182,8 @@ assert.doesNotMatch(battleWorkflow.run('battleRoundTracker(warband)'), /data-bat
 assert.match(battleWorkflow.run('battleRoundTracker(warband)'), /data-battle-round="6" hidden/);
 assert.equal(battleWorkflow.run('battleScore(warband.battleRounds)'), '4 – 0');
 assert.match(battleWorkflow.run("recordedBattleRounds(battleViewSeed(warband, battleLog).rounds, 'Forge', 'Opponent')"), /<th scope="row">5<\/th><td>Opponent<\/td><td>4<\/td>[\s\S]*Continue/);
+battleWorkflow.run("dialog.close(); requestBattleViewExit('#warbands')");
+assert.match(battleWorkflow.elements.get('#dialog').innerHTML, /Leave Battle View\?[\s\S]*draft is saved[\s\S]*Leave Battle View/);
 const freshStorage = new Map();
 const fresh = boot({ page: 'warbands', saved: freshStorage, fresh: true });
 const setup = fresh.elements.get('#main').innerHTML;
@@ -226,6 +235,12 @@ assert.equal(boot({ saved: freshStorage, session: campaignSession }).run('viewed
 campaignPicker.run("actions['open-campaign'](CampaignStore.campaigns[0].id)");
 assert.equal(campaignPicker.run('CampaignStore.data.armies.length'), 0);
 assert.equal(campaignPicker.run('CampaignStore.data.battles.length'), 0);
+campaignPicker.run("actions['remove-campaign'](CampaignStore.campaigns[0].id)");
+assert.match(campaignPicker.elements.get('#dialog').innerHTML, /Delete A New Campaign\?[\s\S]*browser only[\s\S]*Delete campaign/);
+await campaignPicker.run("actions['confirm-remove-campaign'](CampaignStore.campaigns[0].id)");
+assert.equal(campaignPicker.run('CampaignStore.campaigns.length'), 1);
+assert.equal(campaignPicker.run('CampaignStore.campaigns[0].data.campaign.name'), 'Verification Campaign');
+assert.equal(JSON.parse(freshStorage.get(key)).campaigns.length, 1);
 const legacyPicker = boot({ page: 'campaigns' });
 assert.match(legacyPicker.elements.get('#main').innerHTML, /Verification Campaign/);
 legacyPicker.run('actions.start()');

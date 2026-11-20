@@ -99,6 +99,19 @@ const CampaignStore = (() => {
       campaigns.push({ id, data, revision: null, updatedAt: '', dirty: true, ownerId });
       select(id);
     },
+    remove(id) {
+      const index = campaigns.findIndex(entry => entry.id === id);
+      if (index < 0) return false;
+      campaigns.splice(index, 1);
+      if (selectedId === id) {
+        const ownerId = typeof Account !== 'undefined' ? Account.user?.id ?? '' : '';
+        const fallback = campaigns.find(entry => !ownerId || !entry.ownerId || entry.ownerId === ownerId);
+        selectedId = '';
+        if (fallback) select(fallback.id);
+        else try { sessionStorage.setItem(selectionKey, ''); } catch { /* No selection needs to be remembered. */ }
+      }
+      return save(false);
+    },
     get available() { return available; },
     get conflict() { return conflict; },
     matchesStorageKey: changedKey => changedKey === key || changedKey === null,

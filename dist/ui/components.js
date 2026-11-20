@@ -46,7 +46,7 @@ function accountControls() {
   if (!Account.ready) return '<span class="account-status quiet">Checking account…</span>';
   if (Account.error) return `<span class="account-status negative">${escape(Account.error)}</span>`;
   const user = Account.user;
-  if (!user) return button('Continue with Google', 'sign-in', { type: 'primary' });
+  if (!user) return button('Sign in via Google', 'sign-in', { type: 'primary' });
   const label = user.user_metadata?.full_name || user.email || 'Google account';
   const sync = CampaignCloud.error || CampaignCloud.label;
   const problem = ['error', 'conflict'].includes(CampaignCloud.state);
