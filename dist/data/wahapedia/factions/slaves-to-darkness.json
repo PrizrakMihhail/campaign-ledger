@@ -1,0 +1,5247 @@
+{
+  "edition": "Age of Sigmar 4",
+  "lastUpdate": "2026-10-22 18:12:05",
+  "faction": {
+    "id": "StD",
+    "name": "Slaves to Darkness",
+    "slug": "slaves-to-darkness",
+    "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness",
+    "count": 72
+  },
+  "rules": {
+    "battleTraits": [
+      {
+        "name": "EYE OF THE GODS",
+        "timing": "Once Per Battle (Army), Deployment Phase",
+        "declare": "Pick a friendly non-UNIQUE WARRIORS OF CHAOS or DARKOATH HERO to be the target.",
+        "effect": "During the battle, the target gains Dark Apotheosis points as follows:\n• Each time the target uses a FIGHT ability, it gains D3 Dark Apotheosis points.\n• At the end of each of your turns, if the target is contesting an objective that is wholly outside friendly territory, it gains D3 Dark Apotheosis points.",
+        "unitLinks": []
+      },
+      {
+        "name": "PLEDGE TO CHAOS",
+        "timing": "Once Per Turn (Army), Your Hero Phase",
+        "declare": "Pick a friendly non-UNIQUE SLAVES TO DARKNESS unit that does not already have one of the keywords below to be the target.",
+        "effect": "Pick 1 of the following Pledge to Chaos keywords:\n• PLEDGED TO KHORNE\n• PLEDGED TO TZEENTCH\n• PLEDGED TO NURGLE\n• PLEDGED TO SLAANESH\nThe target has that keyword for the rest of the battle.",
+        "unitLinks": []
+      },
+      {
+        "name": "DARK APOTHEOSIS",
+        "timing": "Once Per Battle (Army), Any Hero Phase",
+        "declare": "Pick a friendly unit with 8 or more Dark Apotheosis points to be the target.",
+        "effect": "Pick 1 of the following:\nAura of Chaos: Heal (X) the target, where X is the number of damage points allocated to the target. In addition, the target has WARD (5+) for the rest of the battle.\nDaemonhood: Set up a Daemon Prince within 1\" of the target. Then, remove the target from the battlefield. If the target is your general, the Daemon Prince becomes your general instead and is added to your general’s regiment. If the target has any enhancements, the Daemon Prince has those enhancements instead. If the target has a Pledge to Chaos keyword, the Daemon Prince has the same keyword. Otherwise, pick 1 Pledge to Chaos keyword for the Daemon Prince to have for the rest of the battle. If any MANIFESTATIONS that were summoned by the target are on the battlefield, those MANIFESTATIONS are removed from play.",
+        "unitLinks": [
+          "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Daemon-Prince"
+        ]
+      },
+      {
+        "name": "PLEDGED TO TZEENTCH",
+        "timing": "Once Per Turn (Army), Your Movement Phase",
+        "declare": "Pick a friendly PLEDGED TO TZEENTCH unit to be the target.",
+        "effect": "Roll 2D6. Then pick a point within a number of inches of the target equal to the roll. Remove the target from the battlefield and set it up again on the battlefield wholly within 6\" of that point and more than 9\" from all enemy units.",
+        "unitLinks": []
+      },
+      {
+        "name": "PLEDGED TO KHORNE",
+        "timing": "Passive",
+        "declare": "",
+        "effect": "Add 1 to the Attacks characteristic of melee weapons used by friendly PLEDGED TO KHORNE units.",
+        "unitLinks": []
+      },
+      {
+        "name": "PLEDGED TO NURGLE",
+        "timing": "Passive",
+        "declare": "",
+        "effect": "Friendly PLEDGED TO NURGLE units have WARD (6+). If a unit already has WARD (6+), it has WARD (5+) instead.",
+        "unitLinks": []
+      },
+      {
+        "name": "PLEDGED TO SLAANESH",
+        "timing": "Your Charge Phase",
+        "declare": "",
+        "effect": "For the rest of the turn, when making charge rolls for friendly PLEDGED TO SLAANESH units, you can roll 1 additional dice (to a maximum of 3), but if you do, you must discard 1 dice of your choice.",
+        "unitLinks": []
+      }
+    ],
+    "armiesOfRenown": [
+      {
+        "id": "legion-of-the-first-prince",
+        "name": "Legion of the First Prince",
+        "battleTraits": [
+          {
+            "name": "FIRST-DAMNED PRINCE",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "While a friendly Be’lakor is within the combat range of any friendly non-HERO LEGION OF THE FIRST PRINCE DAEMON units:\nThat friendly Be’lakor has WARD (4+).\nIn addition, each time you make a successful ward roll for that friendly Be’lakor, allocate 1 damage point to a friendly non-HERO LEGION OF THE FIRST PRINCE DAEMON unit within Be’lakor’s combat range after the damage sequence for Be’lakor has been resolved (ward rolls cannot be made for those damage points).",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Be-lakor-the-Dark-Master"
+            ]
+          },
+          {
+            "name": "STORM OF BLACKENED BLADES",
+            "timing": "Once Per Battle (Army), Your Combat Phase",
+            "declare": "Pick a friendly Eternus that is in combat and up to 2 friendly non-HERO non-DAEMON LEGION OF THE FIRST PRINCE units wholly within 12\" of that Eternus to be the targets.",
+            "effect": "Add 1 to the Attacks characteristic of the targets’ melee weapons for the rest of the turn.",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Eternus-Blade-of-the-First-Prince"
+            ]
+          },
+          {
+            "name": "DAEMONIC REINFORCEMENTS",
+            "timing": "Once Per Turn (Army), Any Movement Phase",
+            "declare": "Pick a friendly non-non-HERO LEGION OF THE FIRST PRINCE DAEMON INFANTRY or CAVALRY unit that has been destroyed to be the target.",
+            "effect": "Set up a replacement unit with half the number of models from the target unit (rounding up) wholly within 12\" of a friendly Be’lakor and more than 9\" from all enemy units.",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Be-lakor-the-Dark-Master"
+            ]
+          },
+          {
+            "name": "BESTOW FAVOUR",
+            "timing": "Once Per Turn (Army), Your Hero Phase",
+            "declare": "If a friendly Be’lakor is on the battlefield, pick a non-HERO LEGION OF THE FIRST PRINCE unit to be the target.",
+            "effect": "Until the start of your next turn:\n• Add 5 to the target’s control score.\n• If the target is a DAEMON unit, add 1 to save rolls for the target.\n• If the target is a non-DAEMON unit, it has WARD (6+).",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Be-lakor-the-Dark-Master"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "the-swords-of-chaos",
+        "name": "The Swords of Chaos",
+        "battleTraits": [
+          {
+            "name": "DEMANDS OF THE DARK GODS",
+            "timing": "Once Per Turn (Army), Start of Battle Round",
+            "declare": "",
+            "effect": "Pick 1 of the following effects:\nDemand of Khorne: For the rest of the battle round, add 1 to the Rend characteristic of melee weapons used by friendly SWORDS OF CHAOS units.\nDemand of Tzeentch: Pick 1 visible enemy unit within 9\" of a friendly SWORDS OF CHAOS unit that is not in combat and roll a D6. On a 3+, inflict an amount of mortal damage on that enemy unit equal to the roll.\nDemand of Nurgle: Heal (D3) each friendly SWORDS OF CHAOS unit. Then pick a friendly SWORDS OF CHAOS unit that healed any damage points this turn. Until the start of the next battle round, that unit has WARD (6+).\nDemand of Slaanesh: Add 2\" to the Move characteristic of friendly SWORDS OF CHAOS units until the start of the next battle round.",
+            "unitLinks": []
+          },
+          {
+            "name": "KNIGHTS OF THE FIRST CIRCLE",
+            "timing": "Deployment Phase",
+            "declare": "If there are more friendly SWORDS OF CHAOS units on the battlefield than there are set up in reserve, pick a friendly SWORDS OF CHAOS unit that has not been deployed.",
+            "effect": "Set up that unit in reserve in the Ruinous Skies. It has now been deployed.",
+            "unitLinks": []
+          },
+          {
+            "name": "DESCENT FROM RUINOUS SKIES",
+            "timing": "Your Movement Phase",
+            "declare": "Pick a friendly SWORDS OF CHAOS unit that is in the Ruinous Skies.",
+            "effect": "Set up that unit anywhere on the battlefield more than 9\" from all enemy units.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "id": "tribes-of-the-snow-peaks",
+        "name": "Tribes of the Snow Peaks",
+        "battleTraits": [
+          {
+            "name": "PLEDGES TO THE DARK GODS",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "Each time a friendly SNOW PEAKS unit uses 1 of the following abilities and the effect of that ability is resolved, gain 1 oath point.\n• ‘Oath of Bloodshed’\n• ‘Oath of Murder’\n• ‘Oath of Supremacy’\n• ‘Oath of the Marauder’\n• ‘Oath of the Raider’\n• ‘Oath of Conquest’\n• ‘Oath of Dark Sacrifice’\nDesigner’s Note: The abilities listed above are abilities on DARKOATH warscrolls. By using those abilities (i.e. completing the oaths), the player gains oath points, which can then be spent to use the OATH abilities in these Army of Renown rules.",
+            "unitLinks": []
+          },
+          {
+            "name": "DAEMONFIRE WEAPONS",
+            "timing": "Once Per Phase (Army), Your Combat Phase",
+            "declare": "If you have 1 or more oath points, pick a friendly SNOW PEAKS unit that has not used an OATH ability this turn to be the target.",
+            "effect": "Spend 1 oath point. For the rest of the turn, add 1 to the Rend characteristic of the target’s melee weapons.",
+            "unitLinks": []
+          },
+          {
+            "name": "SPEED OF THE BLOOD CROW",
+            "timing": "Once Per Phase (Army), Your Charge Phase",
+            "declare": "If you have 1 or more oath points, pick a friendly SNOW PEAKS unit that has not used an OATH ability this turn to be the target.",
+            "effect": "Spend 1 oath point. For the rest of the turn, the target can use CHARGE abilities even if it used a RUN ability in the same turn.",
+            "unitLinks": []
+          },
+          {
+            "name": "HUNGER OF SHESH’SHAN",
+            "timing": "Once Per Phase (Army), Your Combat Phase",
+            "declare": "If you have 1 or more oath points, pick a friendly SNOW PEAKS unit that has not used an OATH ability this turn to be the target.",
+            "effect": "Spend 1 oath point. For the rest of the turn, add 1 to the Attacks characteristic of the target’s melee weapons.",
+            "unitLinks": []
+          },
+          {
+            "name": "MESSENGERS OF THE GODS",
+            "timing": "Once Per Phase (Army), End of Any Turn",
+            "declare": "If you have 1 or more oath points, pick a friendly SNOW PEAKS Darkoath Marauders or Fellriders unit that has been destroyed and has not used an OATH ability this turn to be the target.",
+            "effect": "Spend 2 oath points. Set up a replacement unit with half the number of models from the target unit (rounding up) on the battlefield, wholly within 6\" of a battlefield edge and more than 3\" from all enemy units.",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Darkoath-Marauders",
+              "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Darkoath-Fellriders"
+            ]
+          },
+          {
+            "name": "RAGE OF ARKHAR",
+            "timing": "Once Per Phase (Army), Your Combat Phase",
+            "declare": "If you have 1 or more oath points, pick a friendly SNOW PEAKS unit that has not used an OATH ability this turn to be the target.",
+            "effect": "Spend 2 oath points. The target can use 2 FIGHT abilities this phase. After the first is used, however, the target has STRIKE-LAST for the rest of the turn.",
+            "unitLinks": []
+          },
+          {
+            "name": "SHROUD OF THE PALE ELK",
+            "timing": "Once Per Phase (Army), Reaction: Opponent declared an ATTACK ability",
+            "declare": "",
+            "effect": "Used by: A friendly SNOW PEAKS unit targeted by that ATTACK ability, if you have 1 or more oath points.\nIf that friendly SNOW PEAKS unit has not used an OATH ability this turn, spend 1 oath point. For the rest of the turn, that friendly unit has WARD (4+).",
+            "unitLinks": []
+          }
+        ]
+      }
+    ],
+    "battleFormations": [
+      {
+        "name": "Legion of Chaos",
+        "abilities": [
+          {
+            "name": "UNITED IN DARKNESS",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "While there is at least 1 friendly WARRIORS OF CHAOS HERO and 1 other friendly DAEMON HERO or DARKOATH HERO on the battlefield, add 2 to the control scores of friendly SLAVES TO DARKNESS units while they are contesting an objective that is wholly outside friendly territory.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "name": "Despoilers",
+        "abilities": [
+          {
+            "name": "YOU WILL SERVE!",
+            "timing": "Once Per Turn (Army), End of Your Turn",
+            "declare": "Pick a friendly Daemon Prince to use this ability. Then, pick a visible friendly non-DAEMON non-UNIQUE SLAVES TO DARKNESS unit that does not have an Ensorcelled Banner wholly within 12\" of this unit to be the target.",
+            "effect": "Remove any Pledge to Chaos keywords the target has. Then, the target gains any Pledge to Chaos keywords this unit has.",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Daemon-Prince"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Godswrath Warband",
+        "abilities": [
+          {
+            "name": "IRONCLAD ONSLAUGHT",
+            "timing": "Once Per Turn (Army), End of Your Turn",
+            "declare": "Pick an objective that is contested by any friendly units to be the target.",
+            "effect": "Place a defiled token next to the target objective. Then, roll a D3 for each enemy unit contesting an objective that has a friendly defiled token. On a 2+, inflict an amount of mortal damage on that enemy unit equal to the roll.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "name": "Darkoath Horde",
+        "abilities": [
+          {
+            "name": "RALLY THE TRIBES",
+            "timing": "Once Per Turn (Army), Your Movement Phase",
+            "declare": "If there is a friendly DARKOATH HERO on the battlefield, pick a friendly non-HERO non-UNIQUE DARKOATH unit that has been destroyed to be the target.",
+            "effect": "Set up a replacement unit with half the number of models from the target unit (rounding up) on the battlefield, wholly within 6\" of a battlefield edge and more than 3\" from all enemy units.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "name": "Chaos Horde",
+        "abilities": [
+          {
+            "name": "DEVOTEES OF RUIN",
+            "timing": "Once Per Turn (Army), Your Hero Phase",
+            "declare": "Pick a friendly WARRIORS OF CHAOS unit. Then, pick up to 2 visible friendly DARKOATH units that do not have a Pledge to Chaos keyword and are wholly within 12\" of that WARRIORS OF CHAOS unit to be the targets.",
+            "effect": "Until the start of your next turn, the targets have the same Pledge to Chaos keyword as that WARRIORS OF CHAOS unit.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "name": "Champions of Chaos",
+        "abilities": [
+          {
+            "name": "PARAGONS OF DARKNESS",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "Add 2 to the Attacks characteristic of melee weapons used by friendly non-MONSTER SLAVES TO DARKNESS HEROES.",
+            "unitLinks": []
+          }
+        ]
+      }
+    ],
+    "lores": {
+      "spell": [
+        {
+          "name": "Lore of the Damned",
+          "kind": "spell",
+          "points": 0,
+          "entries": [
+            {
+              "name": "SPITE-TONGUE CURSE",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly SLAVES TO DARKNESS WIZARD to cast this spell, pick a visible enemy unit within 12\" of them to be the target, then make a casting roll of 2D6. If the casting attempt is unsuccessful or if the spell is unbound, inflict D3 mortal damage on the caster.",
+              "effect": "Inflict 3 mortal damage on the target.",
+              "value": "5",
+              "unitLinks": []
+            },
+            {
+              "name": "BINDING DAMNATION",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly SLAVES TO DARKNESS WIZARD to cast this spell, pick a visible enemy unit within 12\" of them to be the target, then make a casting roll of 2D6.",
+              "effect": "The target has STRIKE-LAST until the start of your next turn.",
+              "value": "7",
+              "unitLinks": []
+            },
+            {
+              "name": "DAEMONIC SPEED",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly SLAVES TO DARKNESS WIZARD to cast this spell, pick a visible friendly SLAVES TO DARKNESS unit wholly within 12\" of them to be the target, then make a casting roll of 2D6.",
+              "effect": "For the rest of the turn, add 1 to the number of dice rolled when making charge rolls for the target, to a maximum of 3.",
+              "value": "7",
+              "unitLinks": []
+            }
+          ]
+        }
+      ],
+      "prayer": [],
+      "manifestation": [
+        {
+          "name": "Manifestations of Malevolence",
+          "kind": "manifestation",
+          "points": 0,
+          "entries": [
+            {
+              "name": "SUMMON DARKFIRE DAEMONRIFT",
+              "timing": "Your Hero Phase",
+              "declare": "If there is not a friendly Darkfire Daemonrift on the battlefield, pick a friendly SLAVES TO DARKNESS WIZARD to cast this spell, then make a casting roll of 2D6.",
+              "effect": "Set up a Darkfire Daemonrift wholly within 12\" of the caster, visible to them and more than 9\" from all enemy units.",
+              "value": "7",
+              "unitLinks": [
+                "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Darkfire-Daemonrift"
+              ],
+              "manifestation": {
+                "faction": "Slaves to Darkness",
+                "name": "Darkfire Daemonrift"
+              }
+            },
+            {
+              "name": "SUMMON EIGHTFOLD DOOM-SIGIL",
+              "timing": "Your Hero Phase",
+              "declare": "If there is not a friendly Eightfold Doom-sigil on the battlefield, pick a friendly SLAVES TO DARKNESS WIZARD to cast this spell, then make a casting roll of 2D6.",
+              "effect": "Set up an Eightfold Doom-sigil wholly within 12\" of the caster and visible to them",
+              "value": "7",
+              "unitLinks": [
+                "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Eightfold-Doom-Sigil"
+              ],
+              "manifestation": {
+                "faction": "Slaves to Darkness",
+                "name": "Eightfold Doom-Sigil"
+              }
+            },
+            {
+              "name": "SUMMON REALMSCOURGE RUPTURE",
+              "timing": "Your Hero Phase",
+              "declare": "If there is not a friendly Realmscourge Rupture on the battlefield, pick a friendly SLAVES TO DARKNESS WIZARD to cast this spell, then make a casting roll of 2D6.",
+              "effect": "Set up a Realmscourge Rupture wholly within 12\" of the caster, visible to them and more than 9\" from all enemy units.",
+              "value": "7",
+              "unitLinks": [
+                "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Realmscourge-Rupture"
+              ],
+              "manifestation": {
+                "faction": "Slaves to Darkness",
+                "name": "Realmscourge Rupture"
+              }
+            }
+          ],
+          "scope": "faction"
+        }
+      ]
+    }
+  },
+  "entries": [
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Abraxia, Spear of the Everchosen",
+      "points": 230,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "10\"",
+        "health": "14",
+        "save": "3+",
+        "control": "5",
+        "ward": "5+",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Abraxia-Spear-of-the-Everchosen",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SLAVES TO DARKNESS",
+          "WARRIORS OF CHAOS",
+          "HERO",
+          "MONSTER",
+          "UNIQUE",
+          "WARD (5+)"
+        ],
+        "abilities": [
+          "Battle Damaged",
+          "Warlord of the First Circle",
+          "Roar of Domination",
+          "Gorbolga the Accurs’d",
+          "Blood of Molten Varanite"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of the Thanatorg’s Claws and Fangs is 4.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Warlord of the First Circle",
+            "timing": "Passive",
+            "effect": "Effect: If a friendly Varanguard unit uses the ‘Relentless Killers’ ability while it is wholly within 12\" of this unit, that unit does not have STRIKE-LAST as a result of that ability.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Roar of Domination",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick an enemy HERO in combat with this unit to be the target.\nEffect: Roll a dice. On a 3+, subtract 1 from the Attacks characteristic of the target’s melee weapons for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "keywords": "Rampage",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Gorbolga the Accurs’d",
+            "timing": "Any Combat Phase",
+            "effect": "Effect: If this unit is in combat, roll a dice and apply the corresponding effect:\n1 - Uncontrollable Power: Allocate 1 damage point to this unit.\n2 - The Spear Slumbers: No effect.\n3-5 - White-hot Varanite: Add 1 to the Damage characteristic of this unit’s Gorbolga for the rest of the turn.\n6 - Rampant Mutation: The effect of ‘White-hot Varanite’ applies and this unit’s Gorbolga has Crit (Mortal) for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Blood of Molten Varanite",
+            "timing": "Passive",
+            "effect": "Effect: Roll a dice each time a damage point inflicted by a combat attack is allocated to this unit. On a 4+, inflict 1 mortal damage on the attacking unit after the FIGHT ability has been resolved.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Gorbolga",
+            "5",
+            "3+",
+            "3+",
+            "2",
+            "2",
+            "Anti-HERO (+1 Rend), Charge (+1 Damage)"
+          ],
+          [
+            "The Thanatorg’s Claws and Fangs",
+            "6",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            "Companion · See battle damage rules"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Once a whelp in the Varanspire’s fighting pits, Abraxia has risen to command the Swords of Chaos – the infamous First Circle of the Varanguard. She is a warrior of matchless willpower, convinced that there is no challenge she cannot best through bloody-minded grit. To Abraxia, Chaos represents a state of perpetual testing rather than being embodied in four insane gods. Such an anti-deific attitude pleases Archaon, who offers Abraxia that rarest of boons – a measure of his trust. In her conquest of the Sigmarite city of the Phoenicium, Abraxia consumed the sacred fire at the bastion’s heart. Cinder now flickers when she speaks, while in her eyes rages a tortured and captive flame.",
+      "regimentOptions": "0-1 %000011658Ruinous Champion%, Any %000002488Slaves to Darkness%"
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Archaon, the Everchosen",
+      "points": 780,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "14\"",
+        "health": "25",
+        "save": "3+",
+        "control": "10",
+        "ward": "5+",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Archaon-the-Everchosen",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "DAEMON",
+          "SLAVES TO DARKNESS",
+          "WARRIORS OF CHAOS",
+          "FLY",
+          "HERO",
+          "MONSTER",
+          "UNIQUE",
+          "WARD (5+)",
+          "WARMASTER",
+          "WIZARD (2)"
+        ],
+        "abilities": [
+          "Battle Damaged",
+          "Three-headed Titan",
+          "The Slayer of Kings",
+          "The Eye of Sheerian"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of Dorghar’s Claws and Tails is 4.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Three-headed Titan",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Effect: Pick 1 of the following effects:\nFilth-spewer: Pick an enemy unit within 6\" of this unit and roll a number of dice equal to the number of models in that unit, to a maximum of 7. For each 3+, inflict 1 mortal damage on that unit.\nSkull-gorger: Pick an enemy unit in combat with this unit and roll a dice. If the roll exceeds that unit’s Health characteristic, 1 model in that unit is slain and you can Heal (X) this unit, where X is that unit’s Health characteristic.\nSpell-eater: Pick a MANIFESTATION within 12\" of this unit and roll a dice. On a 2+, it is banished and removed from play. In addition, inflict D3 mortal damage on the unit",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Rampage",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "The Slayer of Kings",
+            "timing": "Passive",
+            "effect": "Effect: Each time this unit uses a FIGHT ability, if the unmodified wound roll for 2 or more attacks made with The Slayer of Kings that target the same HERO is 6, that HERO is automatically destroyed.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "The Eye of Sheerian",
+            "timing": "Once Per Battle, Your Hero Phase",
+            "effect": "Effect: Roll a dice. This roll replaces the priority roll of the next battle round. On a 1-3, your opponent must take the first turn of that battle round. On a 4-6, you must take the first turn of that battle round. This ability cannot be used if there is an enemy Archaon on the battlefield.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Dorghar’s Heads",
+            "3",
+            "3+",
+            "2+",
+            "1",
+            "5",
+            "Companion"
+          ],
+          [
+            "Dorghar’s Claws and Tails",
+            "6",
+            "4+",
+            "2+",
+            "2",
+            "3",
+            "Companion · See battle damage rules"
+          ],
+          [
+            "The Slayer of Kings",
+            "4",
+            "2+",
+            "3+",
+            "2",
+            "3",
+            "Anti-HERO (+1 Rend)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Archaon is the Everchosen, champion of the Ruinous Powers, anointed in the blood of butchered empires. Many worship him as a demigod of Chaos, the primordial ruin of the false god Sigmar. It is true that the Everchosen despises the God-King – but he reserves similar loathings for the Brothers in Darkness, and indeed all deities. Were Archaon’s ultimate goals to be realised, it would be his banners alone rising over the charred corpse of the realms.",
+      "regimentOptions": "0-1 %000011658Ruinous Champion%, Any %000002488Slaves to Darkness%"
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Athol Khul",
+      "points": 150,
+      "size": 1,
+      "kind": "Legends",
+      "category": "Hero",
+      "profile": {
+        "move": "5\"",
+        "health": "6",
+        "save": "5+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Athol-Khul",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "DARKOATH",
+          "PLEDGED TO KHORNE",
+          "SLAVES TO DARKNESS",
+          "HERO",
+          "INFANTRY",
+          "UNIQUE"
+        ],
+        "abilities": [
+          "Unknowing Herald",
+          "Spear-Carrier"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Unknowing Herald",
+            "timing": "Once Per Battle, Your Charge Phase",
+            "effect": "Effect: For the rest of the turn, friendly units that do not already have a PLEDGE TO CHAOS keyword have the PLEDGED TO KHORNE keyword while they are wholly within 12\" of this unit.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Charge Phase"
+          },
+          {
+            "name": "Spear-Carrier",
+            "timing": "Once Per Battle, End of Any Turn",
+            "effect": "Effect: If this unit destroyed an enemy HERO this turn, this unit has WARD (4+) for the rest of the battle.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "End of Turn"
+          }
+        ],
+        "melee": [
+          [
+            "Spear of the Khul",
+            "6",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "The Rise of Khul",
+      "canReinforce": false,
+      "flavour": "Athol Khul was once the champion of his people, his name known to the prophet-monarchs of Aridian and honoured by warriors all across the Great Parch. Formidable and fair-handed, he was respected even by those who considered him a foe – and yet Athol was also a man wracked with doubt, harbouring ever-deepening concerns about the spread of grasping civilisations into Aqshy’s tribal heartlands. Through these fears, the influence of the Blood God began to take hold of him, and the Spear-Carrier took his first steps along a red road of skulls…",
+      "regimentOptions": "Any %000007612Darkoath%",
+      "notes": "Legends Warscroll\nThis unit cannot be included in an army with any other UNIQUE units."
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Beasts of Nurgle",
+      "points": 120,
+      "size": 1,
+      "kind": "",
+      "category": "Other",
+      "profile": {
+        "move": "7\"",
+        "health": "8",
+        "save": "5+",
+        "control": "1",
+        "ward": "5+",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Beasts-of-Nurgle",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "DAEMON",
+          "LEGION OF THE FIRST PRINCE",
+          "SLAVES TO DARKNESS",
+          "BEAST",
+          "WARD (5+)"
+        ],
+        "abilities": [
+          "Attention Seekers",
+          "Beast"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Attention Seekers",
+            "timing": "Once Per Turn (Army), Any Charge Phase",
+            "effect": "Declare: If this unit is not in combat, pick the closest enemy unit to it to be the target. If 2 or more enemy units are tied to be the closest, you can pick which is the target. Then, make a charge roll of 2D6.\nEffect: This unit can move a distance up to the value of the charge roll. During that move, this unit can move into combat and can pass through models in the target unit, but it must end that move within 1\" of the target. If it does so, this unit has charged. Then, inflict D3 mortal damage on the target.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Core, Charge, Move",
+            "phase": "Charge Phase"
+          },
+          {
+            "name": "Beast",
+            "timing": "Passive",
+            "effect": "Effect: This unit has a maximum control score of 1.",
+            "kind": "Ability",
+            "type": "Control",
+            "phase": "End of Turn"
+          }
+        ],
+        "melee": [
+          [
+            "Filthy Claws and Slobbering Maw",
+            "5",
+            "4+",
+            "3+",
+            "1",
+            "D3",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "Maggotkin of Nurgle",
+      "canReinforce": false,
+      "flavour": "As stupid as they are enthusiastic, Beasts of Nurgle bound forth with burbles of joy. Huge, slug-like abominations, they gleefully assail their luckless playmates until their joy proves lethal, before bounding off after new victims.",
+      "description": "This unit can only be taken in a Legion of the First Prince Army of Renown"
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Be’lakor, the Dark Master",
+      "points": 450,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "14\"",
+        "health": "14",
+        "save": "4+",
+        "control": "10",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Be-lakor-the-Dark-Master",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "DAEMON",
+          "SLAVES TO DARKNESS",
+          "FLY",
+          "HERO",
+          "MONSTER",
+          "UNIQUE",
+          "WARD (6+)",
+          "WARMASTER",
+          "WIZARD (2)"
+        ],
+        "abilities": [
+          "Battle Damaged",
+          "Enfeeble Foe",
+          "Shadow Form",
+          "Deadly Trap",
+          "The Dark Master"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of its Blade of Shadows is 6.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Enfeeble Foe",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Pick a visible enemy unit within 18\" of this unit to be the target, then make a casting roll of 2D6.\nEffect: Until the start of your next turn:\n• Subtract 1 from hit rolls from the target’s combat attacks.\n• The target’s combat attacks cannot score critical hits (treat them as regular hits instead).",
+            "kind": "Ability",
+            "type": "Defensive",
+            "keywords": "Spell",
+            "phase": "Hero Phase",
+            "pointsType": "Spell",
+            "points": "6"
+          },
+          {
+            "name": "Shadow Form",
+            "timing": "Passive",
+            "effect": "Effect: Ignore modifiers to save rolls for this unit (positive and negative).",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          },
+          {
+            "name": "Deadly Trap",
+            "timing": "Once Per Turn (Army), Enemy Combat Phase",
+            "effect": "Declare: Pick this unit and up to 2 friendly SLAVES TO DARKNESS units within this unit’s combat range to be the targets.\nEffect: Roll a dice for each target. On a 4+, that target has STRIKE-FIRST for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Rampage",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "The Dark Master",
+            "timing": "Once Per Battle, Enemy Hero Phase",
+            "effect": "Declare: Pick a visible enemy unit to be the target.\nEffect: Until the start of your next turn, each time the target is picked to use an ability, roll a dice as a reaction. On a 3+, that ability has no effect.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Fell Claw and Spearing Tail",
+            "2",
+            "2+",
+            "2+",
+            "2",
+            "2",
+            "Charge (+1 Damage)"
+          ],
+          [
+            "Blade of Shadows",
+            "8",
+            "3+",
+            "3+",
+            "2",
+            "2",
+            "Crit (Auto-wound) · See battle damage rules"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Once, Be’lakor – first of the Daemon Princes – stood paramount before the Ruinous Powers. How he fell from these heights is not known; likely his ambitions played a part, for Be’lakor craves godhood. His punishment was to crown each Everchosen but be denied the mantle himself. Yet Be’lakor is a creature of matchless cunning; even as he raged at his predicament, nursing hatred for the ‘False King’ Archaon, he schemed to reclaim his place at the forefront of the hordes of Chaos.",
+      "regimentOptions": "0-1 %000014407Eternus% or %000011658Ruinous Champion%, Any %000002488Slaves to Darkness%"
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Bloodcrushers",
+      "points": 150,
+      "size": 3,
+      "kind": "",
+      "category": "Cavalry",
+      "profile": {
+        "move": "8\"",
+        "health": "5",
+        "save": "4+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Bloodcrushers",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "DAEMON",
+          "LEGION OF THE FIRST PRINCE",
+          "SLAVES TO DARKNESS",
+          "CAVALRY",
+          "CHAMPION",
+          "MUSICIAN (1/3)",
+          "STANDARD BEARER (1/3)",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "SLAUGHTEROUS CHARGE"
+        ],
+        "abilityDetails": [
+          {
+            "name": "SLAUGHTEROUS CHARGE",
+            "timing": "Any Charge Phase",
+            "effect": "Declare: If this unit charged this turn, pick an enemy unit within 1\" of it to be the target.\nEffect: Make a crushing charge roll of D3. On a 2+, inflict an amount of mortal damage on the target equal to the roll.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Charge Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Bloodcrusher Hellblade",
+            "2",
+            "3+",
+            "3+",
+            "1",
+            "1",
+            "Anti-INFANTRY (+1 Rend), Crit (Mortal)"
+          ],
+          [
+            "Juggernaut's Brazen Hooves",
+            "2",
+            "4+",
+            "3+",
+            "1",
+            "D3",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "Blades of Khorne",
+      "canReinforce": true,
+      "flavour": "The ground shakes beneath the onrushing fury of the Bloodcrushers before they crash into the enemy with the force of a falling mountain. Those not crushed beneath the Juggernauts’ hooves are slain by the swinging hellblades of the beasts’ riders.",
+      "description": "This unit can only be taken in a Legion of the First Prince Army of Renown"
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Bloodletters",
+      "points": 170,
+      "size": 10,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "5\"",
+        "health": "2",
+        "save": "5+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Bloodletters",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "DAEMON",
+          "LEGION OF THE FIRST PRINCE",
+          "SLAVES TO DARKNESS",
+          "CHAMPION",
+          "INFANTRY",
+          "MUSICIAN (1/10)",
+          "STANDARD BEARER (1/10)",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "THE THINNING VEIL"
+        ],
+        "abilityDetails": [
+          {
+            "name": "THE THINNING VEIL",
+            "timing": "End of Any Turn",
+            "effect": "Effect: If this unit is in combat, you can return D3 slain models to this unit.",
+            "kind": "Ability",
+            "type": "Rallying",
+            "phase": "End of Turn"
+          }
+        ],
+        "melee": [
+          [
+            "Hellblade",
+            "2",
+            "3+",
+            "3+",
+            "1",
+            "1",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "Blades of Khorne",
+      "canReinforce": true,
+      "flavour": "Beneath unholy icons and blood-soaked banners, letting loose roaring battle cries and terrifying blasts from brazen horns, the Bloodletters of Khorne surge forwards in a tide of corded muscle and hellforged swords to maim and slaughter their foes.",
+      "description": "This unit can only be taken in a Legion of the First Prince Army of Renown"
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Centaurion Marshal",
+      "points": 120,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "8\"",
+        "health": "10",
+        "save": "4+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Centaurion-Marshal",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SLAVES TO DARKNESS",
+          "CAVALRY",
+          "HERO"
+        ],
+        "abilities": [
+          "Marshal of the Legions"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Marshal of the Legions",
+            "timing": "Reaction: You declared a %000010870FIGHT ability% for this unit",
+            "effect": "Effect: Pick a friendly non-HERO DAEMON or Chaos Legionnaires unit that has not used a FIGHT ability this turn and is within this unit’s combat range to be the target. The target can be picked to use a FIGHT ability immediately after the FIGHT ability used by this unit has been resolved. If it is picked to do so, add 1 to hit rolls for the target’s attacks for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase",
+            "reaction": true
+          }
+        ],
+        "melee": [
+          [
+            "Centaurion Weapons",
+            "6",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            "Charge (+1 Damage)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "The Centaurion Marshals are creatures of terrifying stature that serve as focal points for the First Prince’s legions, commanding warriors sworn to them with cunning and tactical guile before charging headlong into the fray, where they wreak havoc upon the enemy.",
+      "regimentOptions": "0-1 %000007597Monster%, Any %000014312Chaos Legionnaires%, Any %000018183Daemon%",
+      "notes": "This HERO can join an eligible regiment as a Ruinous Champion."
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Chaos Chariot",
+      "points": 90,
+      "size": 1,
+      "kind": "",
+      "category": "War Machine",
+      "profile": {
+        "move": "10\"",
+        "health": "7",
+        "save": "4+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Chaos-Chariot",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SLAVES TO DARKNESS",
+          "WARRIORS OF CHAOS",
+          "WAR MACHINE"
+        ],
+        "abilities": [
+          "Swift Death"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Swift Death",
+            "timing": "Any Charge Phase",
+            "effect": "Declare: If this unit charged this phase, pick an enemy unit within 1\" of it to be the target.\nEffect: Roll a D3. On a 2+, inflict an amount of mortal damage on the target equal to the roll.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Charge Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Lashing Whip",
+            "2",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            ""
+          ],
+          [
+            "Chaos Greatblade",
+            "3",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            ""
+          ],
+          [
+            "Chaos Steeds’ Trampling Hooves",
+            "4",
+            "5+",
+            "3+",
+            "-",
+            "1",
+            "Companion"
+          ],
+          [
+            "Chaos War-flail",
+            "6",
+            "3+",
+            "3+",
+            "-",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "The chariots of Chaos are implements of crushing death that leave a wake of corpses. Forged from black iron, they are capable of attaining remarkable speed in spite of their bulk, converting gathered momentum into deadly force as they hurtle into the enemy ranks. It is considered a great honour to make war from a chariot, for these constructs are as pulpits from which the murderous will of the Dark Gods can be enacted.",
+      "regimentOptions": "Warriors of Chaos, War Machine",
+      "description": "This unit is armed with a Lashing Whip, Chaos Steeds’ Trampling Hooves and 1 of the following options:\n• Chaos War-flail\n• Chaos Greatblade"
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Chaos Chosen",
+      "points": 250,
+      "size": 5,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "5\"",
+        "health": "3",
+        "save": "3+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Chaos-Chosen",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SLAVES TO DARKNESS",
+          "WARRIORS OF CHAOS",
+          "CHAMPION",
+          "INFANTRY",
+          "MUSICIAN (1/5)",
+          "STANDARD BEARER (1/5)"
+        ],
+        "abilities": [
+          "Heralds of Ruination"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Heralds of Ruination",
+            "timing": "Once Per Battle, Any Combat Phase",
+            "effect": "Effect: This unit can use 2 FIGHT abilities this phase. After the first is used, however, this unit has STRIKE-LAST for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Soul Splitter",
+            "3",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Devotees of Chaos who garner many dark rewards may rise to the ranks of the Chosen. Armed with wicked soul-cleaving weapons, these champions fight at the forefront of the Chaotic hordes, inspiring their brethren through acts of brutal violence.",
+      "regimentOptions": "Warriors of Chaos, Infantry"
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Chaos Furies",
+      "points": 100,
+      "size": 6,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "12\"",
+        "health": "1",
+        "save": "6+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Chaos-Furies",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "DAEMON",
+          "SLAVES TO DARKNESS",
+          "FLY",
+          "INFANTRY",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Sneaky Little Devils"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Sneaky Little Devils",
+            "timing": "Any Combat Phase",
+            "effect": "Effect: If this unit is in combat, roll a dice. On a 3+, this unit can immediately use the ‘Retreat’ ability as if it were your movement phase without any mortal damage being inflicted on it.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Razor-sharp Dagger and Claws",
+            "3",
+            "4+",
+            "4+",
+            "1",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Furies are spiteful daemonic imps that throng those lands under the sway of Chaos. Though individually weak, when they swarm they can prove surprisingly deadly, waiting until the foe’s back is turned before launching vicious hit-and-run attacks.",
+      "regimentOptions": "Daemon, Infantry"
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Chaos Knights",
+      "points": 240,
+      "size": 5,
+      "kind": "",
+      "category": "Cavalry",
+      "profile": {
+        "move": "10\"",
+        "health": "4",
+        "save": "3+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Chaos-Knights",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SLAVES TO DARKNESS",
+          "WARRIORS OF CHAOS",
+          "CAVALRY",
+          "CHAMPION",
+          "MUSICIAN (1/5)",
+          "STANDARD BEARER (1/5)"
+        ],
+        "abilities": [
+          "Impaling Charge"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Impaling Charge",
+            "timing": "Passive",
+            "effect": "Effect: If this unit charged this turn, for the rest of the turn, add 1 to the Rend characteristic of its Cursed Lances.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Cursed Lance",
+            "3",
+            "3+",
+            "3+",
+            "1",
+            "1",
+            "Charge (+1 Damage)"
+          ],
+          [
+            "Warsteed’s Hooves",
+            "2",
+            "5+",
+            "3+",
+            "-",
+            "1",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "The coming of the Chaos Knights heralds a crushing defeat for their adversaries. These dreaded champions charge fearlessly into the deadliest of battles, striking down foes all around them with sundering blows from their ensorcelled weapons.",
+      "regimentOptions": "Warriors of Chaos, Cavalry"
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Chaos Legionnaires",
+      "points": 80,
+      "size": 8,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "5\"",
+        "health": "1",
+        "save": "4+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Chaos-Legionnaires",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SLAVES TO DARKNESS",
+          "UNDIVIDED",
+          "CHAMPION (1/8)",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "Sow Confusion"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Sow Confusion",
+            "timing": "Once Per Turn (Army), Your Movement Phase",
+            "effect": "Declare: Pick an enemy unit within 6\" of this unit to be the target.\nEffect: Roll a dice. On a 4+, the target cannot use commands for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Movement Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Darkiron Weapons",
+            "2",
+            "3+",
+            "4+",
+            "1",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Sworn to Be’lakor, these warriors wage war on two different fronts. They openly march alongside the legions of Chaos, bringing ruin to the Mortal Realms, yet serve ulterior motives, seeking to undermine the Everchosen and secure the ascension of the First Prince in his stead.",
+      "regimentOptions": "Infantry"
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Chaos Lord",
+      "points": 100,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "5\"",
+        "health": "6",
+        "save": "3+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Chaos-Lord",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SLAVES TO DARKNESS",
+          "WARRIORS OF CHAOS",
+          "HERO",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "Glory In Battle"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Glory In Battle",
+            "timing": "Reaction: You declared a %000010870FIGHT ability% for this unit",
+            "effect": "Effect: Pick a friendly non-HERO WARRIORS OF CHAOS INFANTRY unit that has not used a FIGHT ability this turn and is within this unit’s combat range to be the target. The target can be picked to use a FIGHT ability immediately after the FIGHT ability used by this unit has been resolved. If it is picked to do so, add 1 to wound rolls for the target’s attacks for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase",
+            "reaction": true
+          }
+        ],
+        "melee": [
+          [
+            "Reaperblade",
+            "5",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Chaos Lords are dark champions who have walked the Path to Glory and are now only one step away from glory or damnation. They are the rulers of great warbands and hordes, and their followers will die before failing these fearsome warlords.",
+      "regimentOptions": "0-1 %000011658Ruinous Champion%, Any %000002488Slaves to Darkness%",
+      "notes": "This HERO can join an eligible regiment as a Ruinous Champion."
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Chaos Lord on Daemonic Mount",
+      "points": 130,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "10\"",
+        "health": "8",
+        "save": "3+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Chaos-Lord-on-Daemonic-Mount",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SLAVES TO DARKNESS",
+          "WARRIORS OF CHAOS",
+          "CAVALRY",
+          "HERO"
+        ],
+        "abilities": [
+          "The Knights of Chaos"
+        ],
+        "abilityDetails": [
+          {
+            "name": "The Knights of Chaos",
+            "timing": "Reaction: You declared a %000010870FIGHT ability% for this unit",
+            "effect": "Effect: Pick a friendly non-HERO WARRIORS OF CHAOS CAVALRY unit that has not used a FIGHT ability this turn and is within this unit’s combat range to be the target. The target can be picked to use a FIGHT ability immediately after the FIGHT ability used by this unit has been resolved. If it is picked to do so, add 1 to wound rolls for the target’s attacks for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase",
+            "reaction": true
+          }
+        ],
+        "melee": [
+          [
+            "Daemonic Mount’s Mighty Hooves",
+            "3",
+            "5+",
+            "3+",
+            "-",
+            "1",
+            "Companion"
+          ],
+          [
+            "Cursed Weapons",
+            "5",
+            "3+",
+            "3+",
+            "2",
+            "2",
+            "Charge (+1 Damage)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Particularly favoured Chaos Lords may be granted a daemonic steed to bear them into battle. These champions become the rulers of feared cavalry warbands, driving their mounted brethren into battle with roared oaths to the Dark Gods.",
+      "regimentOptions": "0-1 %000011658Ruinous Champion%, Any %000002488Slaves to Darkness%",
+      "notes": "This HERO can join an eligible regiment as a Ruinous Champion."
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Chaos Lord on Karkadrak",
+      "points": 180,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "9\"",
+        "health": "10",
+        "save": "3+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Chaos-Lord-on-Karkadrak",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SLAVES TO DARKNESS",
+          "WARRIORS OF CHAOS",
+          "CAVALRY",
+          "HERO"
+        ],
+        "abilities": [
+          "Drive The Legions Forward",
+          "Brutish Rampage"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Drive The Legions Forward",
+            "timing": "Once Per Battle (Army), Any Charge Phase",
+            "effect": "Declare: Pick this unit and up to 2 friendly non-HERO non-CAVALRY WARRIORS OF CHAOS units wholly within 12\" of this unit to be the targets.\nEffect: Add 2 to charge rolls for the targets for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Charge Phase"
+          },
+          {
+            "name": "Brutish Rampage",
+            "timing": "Any Charge Phase",
+            "effect": "Declare: If this unit charged this phase, pick up to 3 enemy units within 1\" of it to be the targets.\nEffect: Roll a D3 for each target. On a 2+, inflict an amount of mortal damage on the target equal to the roll.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Charge Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Hexed Weapons",
+            "5",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            "Crit (Mortal), Charge (+1 Damage)"
+          ],
+          [
+            "Karkadrak’s Claws and Horn",
+            "4",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Karkadraks are monstrous lizard-beasts clad in thick scales, whose destructive rampages are almost impossible to stop. Only the strongest Chaos Lords can dominate a Karkadrak, but those who succeed become truly deadly linebreakers.",
+      "regimentOptions": "0-1 %000011658Ruinous Champion%, Any %000002488Slaves to Darkness%",
+      "notes": "This HERO can join an eligible regiment as a Ruinous Champion."
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Chaos Lord on Manticore",
+      "points": 260,
+      "size": 1,
+      "kind": "Legends",
+      "category": "Hero",
+      "profile": {
+        "move": "12\"",
+        "health": "12",
+        "save": "4+",
+        "control": "5",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Chaos-Lord-on-Manticore-1",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SLAVES TO DARKNESS",
+          "WARRIORS OF CHAOS",
+          "FLY",
+          "HERO",
+          "MONSTER"
+        ],
+        "abilities": [
+          "Iron-willed Overlord",
+          "Apex Predator"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Iron-willed Overlord",
+            "timing": "Passive",
+            "effect": "Effect: Add 2 to the control scores of friendly WARRIORS OF CHAOS units while they are wholly within 12\" of this unit.",
+            "kind": "Ability",
+            "type": "Control",
+            "phase": "End of Turn"
+          },
+          {
+            "name": "Apex Predator",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick an enemy MONSTER in combat with this unit to be the target.\nEffect: Add 1 to hit rolls for this unit’s combat attacks that target that MONSTER for the rest of the turn. This ability also affects Companion weapons.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Rampage",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Daemonbound Weapons",
+            "5",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            "Crit (Mortal)"
+          ],
+          [
+            "Manticore’s Claws and Fangs",
+            "6",
+            "4+",
+            "2+",
+            "1",
+            "2",
+            "Anti-MONSTER (+1 Rend), Companion"
+          ]
+        ]
+      },
+      "source": "Legends Warscrolls",
+      "canReinforce": false,
+      "flavour": "For those Chaos Lords who truly wish to display their dominance, only one form of mount will suffice: a Manticore, a terrible leonine beast from the wildest reaches of the realms. A Manticore is an apex predator of the battlefield, devoid of fear and filled with a berserk frenzy as it soars on great leathery wings. Only the most iron-willed of warlords can collar a Manticore’s bloodthirsty frenzy and compel the beast to serve their purpose. Those who do, however, gain a monstrous living weapon capable of shattering a battleline single-handedly.",
+      "regimentOptions": "0-1 %000011658Ruinous Champion%, 0-1 %000007597Monster%, Any %000002488Slaves to Darkness%"
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Chaos Sorcerer Lord",
+      "points": 120,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "5\"",
+        "health": "5",
+        "save": "4+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Chaos-Sorcerer-Lord",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SLAVES TO DARKNESS",
+          "WARRIORS OF CHAOS",
+          "HERO",
+          "INFANTRY",
+          "WIZARD (1)"
+        ],
+        "abilities": [
+          "Oracular Visions"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Oracular Visions",
+            "timing": "Once Per Turn (Army), Your Hero Phase",
+            "effect": "Declare: Pick a friendly WARRIORS OF CHAOS unit wholly within 12\" of this unit to be the target.\nEffect: If this unit successfully cast a spell this phase, the target has WARD (5+) until the start of your next turn. Otherwise, the target has WARD (6+) until the start of your next turn.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Hero Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Sorcerer Staff and Runeblade",
+            "3",
+            "4+",
+            "3+",
+            "1",
+            "D3",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "The very air around a Sorcerer Lord is saturated with dark magic. With their command of daemonic powers and gift of foresight, these warlocks bolster the power of their allies while unleashing their own devastating spellcraft on the enemy.",
+      "regimentOptions": "0-1 %000011658Ruinous Champion%, 0-1 %000007597Monster%, Any %000010824Warriors of Chaos%",
+      "notes": "This HERO can join an eligible regiment as a Ruinous Champion."
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Chaos Sorcerer Lord on Manticore",
+      "points": 280,
+      "size": 1,
+      "kind": "Legends",
+      "category": "Hero",
+      "profile": {
+        "move": "12\"",
+        "health": "12",
+        "save": "4+",
+        "control": "5",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Chaos-Sorcerer-Lord-on-Manticore",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SLAVES TO DARKNESS",
+          "WARRIORS OF CHAOS",
+          "FLY",
+          "HERO",
+          "MONSTER",
+          "WIZARD (1)"
+        ],
+        "abilities": [
+          "Oracular Visions",
+          "Venomous Tail Strike"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Oracular Visions",
+            "timing": "Once Per Turn (Army), Your Hero Phase",
+            "effect": "Declare: Pick a friendly WARRIORS OF CHAOS unit wholly within 12\" of this unit to be the target and roll a dice.\nEffect: On a 3+, the target has WARD (5+) until the start of your next turn.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Venomous Tail Strike",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick an enemy MONSTER in combat with this unit to be the target.\nEffect: Roll a dice. On a 3+, the target has STRIKE-LAST for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "keywords": "Rampage",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Manticore’s Claws and Fangs",
+            "6",
+            "4+",
+            "2+",
+            "1",
+            "2",
+            "Anti-MONSTER (+1 Rend), Companion"
+          ],
+          [
+            "Sorcerous Reaping Staff",
+            "3",
+            "3+",
+            "3+",
+            "1",
+            "D3",
+            ""
+          ]
+        ]
+      },
+      "source": "Legends Warscrolls",
+      "canReinforce": false,
+      "flavour": "Chaos Sorcerers wield the energies of magic unbound. Theirs are the old traditions of the soothsayer and the tribal shaman, empowered by eldritch gifts from their patron deities. The most aggressive Sorcerer Lords are not content to be whispering viziers to the champions of Chaos; they desire to command hordes, to see enemies terrified and broken before them. So do they seek out the winged alpha predators known as Manticores, arcanely forcing these beasts into service.",
+      "regimentOptions": "0-1 %000011658Ruinous Champion%, 0-1 %000007597Monster%, Any %000010824Warriors of Chaos%"
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Chaos Spawn",
+      "points": 60,
+      "size": 1,
+      "kind": "",
+      "category": "Other",
+      "profile": {
+        "move": "2D6\"",
+        "health": "5",
+        "save": "5+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Chaos-Spawn",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SLAVES TO DARKNESS",
+          "BEAST"
+        ],
+        "abilities": [
+          "Beast",
+          "Drawn to Power"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Beast",
+            "timing": "Passive",
+            "effect": "Effect: This unit has a maximum control score of 1.",
+            "kind": "Ability",
+            "type": "Control",
+            "phase": "End of Turn"
+          },
+          {
+            "name": "Drawn to Power",
+            "timing": "Passive",
+            "effect": "Effect: While this unit is wholly within 12\" of a friendly Daemon Prince, you can re-roll the random characteristic rolls for this unit’s Move and Attacks characteristics.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          }
+        ],
+        "melee": [
+          [
+            "Freakish Mutations",
+            "2D6",
+            "5+",
+            "4+",
+            "-",
+            "1",
+            "Crit (2 Hits), Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Those who receive too many gifts from the gods may degenerate into a hideous Chaos Spawn. Lumpen and misformed, these creatures lurch from their lairs when death is on the wind, slaughtering all before them with flailing tentacles and crooked claws.",
+      "regimentOptions": "Beast"
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Chaos Warriors",
+      "points": 180,
+      "size": 10,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "5\"",
+        "health": "2",
+        "save": "3+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Chaos-Warriors",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SLAVES TO DARKNESS",
+          "WARRIORS OF CHAOS",
+          "CHAMPION",
+          "INFANTRY",
+          "MUSICIAN (1/10)",
+          "STANDARD BEARER (1/10)"
+        ],
+        "abilities": [
+          "Bringers of Desolation"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Bringers of Desolation",
+            "timing": "Passive",
+            "effect": "Effect: Add 1 to the Attacks characteristic of this unit’s Rune-etched Weapons while it is contesting an objective you control.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Rune-etched Weapons",
+            "2",
+            "3+",
+            "3+",
+            "1",
+            "1",
+            "Crit (Auto-wound)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Clad in hellforged iron and swollen with dark blessings, Chaos Warriors are the bane of civilisation. Entire legions of these armoured killers march into battle in search of divine favour, each warrior the equal of several lesser mortals.",
+      "regimentOptions": "Warriors of Chaos, Infantry"
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Chaos Warshrine",
+      "points": 250,
+      "size": 1,
+      "kind": "Legends",
+      "category": "Hero",
+      "profile": {
+        "move": "8\"",
+        "health": "14",
+        "save": "4+",
+        "control": "5",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Chaos-Warshrine",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SLAVES TO DARKNESS",
+          "WARRIORS OF CHAOS",
+          "HERO",
+          "PRIEST (1)",
+          "WAR MACHINE"
+        ],
+        "abilities": [
+          "Battle Damaged",
+          "Protection of the Dark Gods",
+          "Favour of Chaos"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of its Flailing Fists is 4.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Protection of the Dark Gods",
+            "timing": "Passive",
+            "effect": "Effect: Friendly WARRIORS OF CHAOS units have WARD (6+) while they are wholly within 12\" of this unit.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          },
+          {
+            "name": "Favour of Chaos",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Pick a visible friendly SLAVES TO DARKNESS unit wholly within 12\" of this unit to be the target. Then, make a chanting roll of D6.\nEffect: Apply 1 of the following effects to the target for the rest of the turn:\n• UNDIVIDED: When the target uses the ‘Rally’ command, you can make 3 additional rally rolls of D6.\n• KHORNE: Add 1 to hit rolls for the target’s attacks.\n• TZEENTCH: The target has",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Prayer",
+            "phase": "Hero Phase",
+            "pointsType": "Prayer",
+            "points": "4"
+          }
+        ],
+        "melee": [
+          [
+            "Flailing Fists",
+            "6",
+            "4+",
+            "3+",
+            "-",
+            "2",
+            "Companion · See battle damage rules"
+          ],
+          [
+            "Sacrificial Blade",
+            "4",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            ""
+          ]
+        ]
+      },
+      "source": "Legends Warscrolls",
+      "canReinforce": false,
+      "flavour": "Though the Ruinous Powers are worshipped at countless warped temples and unholy sites, it is only in battle that they may truly be honoured. The most devout champions of Chaos seek to combine both these forms of worship, crafting bladed shrines that are carried into battle by swollen and lumbering mutants. These Warshrines are utterly suffused with fell powers. Their altars are slick with the blood of the sacrificed slain, and the great icon that crowns them pulses with the energies of the Dark Gods.",
+      "regimentOptions": "0-1 %000011658Ruinous Champion%, Any %000010824Warriors of Chaos%"
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Corvus Cabal",
+      "points": 100,
+      "size": 9,
+      "kind": "Legends",
+      "category": "Infantry",
+      "profile": {
+        "move": "6\"",
+        "health": "1",
+        "save": "6+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Corvus-Cabal",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SLAVES TO DARKNESS",
+          "UNDIVIDED",
+          "CHAMPION (1/9)",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "Shadow-lurkers",
+          "Strike From The Shadows"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Shadow-lurkers",
+            "timing": "Deployment Phase",
+            "effect": "Declare: Pick this unit if it has not been deployed.\nEffect: Set up this unit in reserve lurking in the shadows. It has now been deployed.",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Deploy",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Strike From The Shadows",
+            "timing": "Your Movement Phase",
+            "effect": "Declare: Pick this unit if it is lurking in the shadows.\nEffect: Set up this unit anywhere on the battlefield more than 9\" from all enemy units. Then, add 1 to charge rolls for this unit for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Movement Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Raven Darts",
+            "10\"",
+            "1",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            "Shoot in Combat"
+          ]
+        ],
+        "melee": [
+          [
+            "Hooked Weapons",
+            "2",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            "Crit (2 Hits)"
+          ]
+        ]
+      },
+      "source": "Legends Warscrolls",
+      "canReinforce": true,
+      "flavour": "Agile and avaricious, the murder-cultists of the Corvus Cabal descend on their prey from above. Always hunting for worthy trinkets to offer the Great Gatherer, chaotic patron of cut-throats and thieves, the Cabal strike without warning or mercy.",
+      "regimentOptions": "Infantry"
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Cypher Lords",
+      "points": 100,
+      "size": 8,
+      "kind": "Legends",
+      "category": "Infantry",
+      "profile": {
+        "move": "6\"",
+        "health": "1",
+        "save": "6+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Cypher-Lords",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SLAVES TO DARKNESS",
+          "UNDIVIDED",
+          "CHAMPION (1/8)",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "Shattered Gloom Globes",
+          "Acrobatic Leaps"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Shattered Gloom Globes",
+            "timing": "Once Per Battle, Any Hero Phase",
+            "effect": "Effect: This unit cannot be targeted by shooting attacks for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Acrobatic Leaps",
+            "timing": "Passive",
+            "effect": "Effect: This unit has STRIKE-FIRST if it charged in the same turn.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Throwing Stars and Chakrams",
+            "10\"",
+            "1",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            "Shoot in Combat"
+          ]
+        ],
+        "melee": [
+          [
+            "Exotic Blades",
+            "2",
+            "3+",
+            "4+",
+            "-",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "Legends Warscrolls",
+      "canReinforce": true,
+      "flavour": "The Cypher Lords seek not only to defeat their foes, but to drive them to insanity, for they believe madness is the purest form of Chaos. In battle, the alchemical bombs and illusory tactics of these Hyshian cultists render them almost impossible to pin down.",
+      "regimentOptions": "Infantry"
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Daemon Prince",
+      "points": 230,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "8\"",
+        "health": "10",
+        "save": "3+",
+        "control": "5",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Daemon-Prince",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "DAEMON",
+          "SLAVES TO DARKNESS",
+          "HERO",
+          "INFANTRY",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "The Mounted Skulls of the Fallen",
+          "Airborne Horror",
+          "Immortal Champion"
+        ],
+        "abilityDetails": [
+          {
+            "name": "The Mounted Skulls of the Fallen",
+            "timing": "Passive",
+            "effect": "Effect: If this unit has a Trophy Rack, its Hellforged Weapons also have Anti-HERO (+1 Rend).",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Airborne Horror",
+            "timing": "Passive",
+            "effect": "Effect: If this unit has Wings, it has a Move characteristic of 10\" and has FLY.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Movement Phase"
+          },
+          {
+            "name": "Immortal Champion",
+            "timing": "Any Combat Phase",
+            "effect": "Effect: Roll a dice. On a 4+, this unit has STRIKE-FIRST for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Hellforged Weapons",
+            "6",
+            "3+",
+            "3+",
+            "1",
+            "3",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Daemon Princes are those champions who, through determination and countless atrocities, have surpassed the heights of the Path to Glory. Only the most vanishingly rare souls can hold the gods’ attention long enough to achieve this apotheosis, joining the infernal ranks of daemonkind as an embodiment of Chaos itself. The earth rebels at their presence, for they are things that should not exist. Palls of shadow surround a Daemon Prince as the land cracks and vomits torrents of hellflame. With talon and cursed blade, the Daemon Prince brings ruin to the realms, assured that there are none who might challenge them.",
+      "regimentOptions": "0-1 %000011658Ruinous Champion%, Any %000002488Slaves to Darkness%",
+      "description": "Marks of Chaos\nDuring army composition, if this unit is part of a Slaves to Darkness army, you can pick 1 of the following Pledge to Chaos keywords for this unit:\n• PLEDGED TO KHORNE\n• PLEDGED TO TZEENTCH\n• PLEDGED TO NURGLE\n• PLEDGED TO SLAANESH\nThis unit is armed with Hellforged Weapons and has 1 of the following options:\n• Wings\n• Trophy Rack"
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Darkfire Daemonrift",
+      "points": 0,
+      "size": 1,
+      "kind": "",
+      "category": "Manifestation",
+      "profile": {
+        "move": "9\"",
+        "health": "6",
+        "save": "6+",
+        "ward": "6+",
+        "banishment": "7",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Darkfire-Daemonrift",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SLAVES TO DARKNESS",
+          "ENDLESS SPELL",
+          "FLY",
+          "MANIFESTATION",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Fuelled By Sorcery"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Fuelled By Sorcery",
+            "timing": "Passive",
+            "effect": "Effect: Each time a spell is successfully cast by a unit within 12\" of this MANIFESTATION, give this MANIFESTATION 1 ruinous energy point, to a maximum of 6.\nEach time this MANIFESTATION uses a SHOOT ability, add 1 to the Attacks characteristic of its Darkfire Torrent for each ruinous energy point it has.\nIf this MANIFESTATION is removed from play, all of its ruinous energy points are lost.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          }
+        ],
+        "ranged": [
+          [
+            "Darkfire Torrent",
+            "8\"",
+            "D6",
+            "2+",
+            "3+",
+            "1",
+            "1",
+            "Shoot in Combat"
+          ]
+        ],
+        "melee": [
+          [
+            "Daemonrift Maw",
+            "3",
+            "4+",
+            "2+",
+            "-",
+            "D3",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Darkfire Daemonrifts are eldritch portals torn ajar by fell incantations. Once the veil has been sundered, raw magic seeping from the Realm of Chaos forms an opening for the horrors beyond to vent their spite, widened and empowered by spellcraft that draws upon the essence of Chaos."
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Darkoath Chieftain",
+      "points": 80,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "5\"",
+        "health": "5",
+        "save": "5+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Darkoath-Chieftain",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "DARKOATH",
+          "SLAVES TO DARKNESS",
+          "HERO",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "Tribal Warleader",
+          "Oath of Murder"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Tribal Warleader",
+            "timing": "Reaction: You declared a %000010870FIGHT ability% for this unit",
+            "effect": "Effect: Pick a friendly non-HERO DARKOATH INFANTRY unit that has not used a FIGHT ability this turn and is within this unit’s combat range to be the target. The target can be picked to use a FIGHT ability immediately after the FIGHT ability used by this unit has been resolved. If it is picked to do so, add 1 to the Attacks characteristic of the target’s melee weapons for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase",
+            "reaction": true
+          },
+          {
+            "name": "Oath of Murder",
+            "timing": "Once Per Battle, End of Any Turn",
+            "effect": "Effect: If this unit destroyed an enemy HERO or MONSTER this turn, this unit has STRIKE-FIRST for the rest of the battle.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "End of Turn"
+          }
+        ],
+        "melee": [
+          [
+            "Cursed Broadsword",
+            "5",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Darkoath Chieftains lead their barbarian tribes to war with the fury and conviction of the truly devoted. These masterful warriors are always seeking greater challenges, and their skill at arms is spoken of in awe by their followers.",
+      "regimentOptions": "0-1 %000011659Oathsworn%, 0-1 %000007597Monster%, Any %000007612Darkoath%",
+      "notes": "This HERO can join an eligible regiment as an Oathsworn."
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Darkoath Chieftain on Warsteed",
+      "points": 90,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "12\"",
+        "health": "7",
+        "save": "4+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Darkoath-Chieftain-on-Warsteed",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "DARKOATH",
+          "SLAVES TO DARKNESS",
+          "CAVALRY",
+          "HERO"
+        ],
+        "abilities": [
+          "Cavalry Warleader",
+          "Oath of Murder"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Cavalry Warleader",
+            "timing": "Passive",
+            "effect": "Effect: You can re-roll charge rolls for friendly DARKOATH CAVALRY units while they are wholly within 12\" of this unit.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Charge Phase"
+          },
+          {
+            "name": "Oath of Murder",
+            "timing": "Once Per Battle, End of Any Turn",
+            "effect": "Effect: If this unit destroyed an enemy HERO or MONSTER this turn, this unit has STRIKE-FIRST for the rest of the battle.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "End of Turn"
+          }
+        ],
+        "melee": [
+          [
+            "Darkoath Cursed Weapon",
+            "5",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            "Crit (Mortal)"
+          ],
+          [
+            "Warsteed’s Hooves",
+            "2",
+            "5+",
+            "3+",
+            "-",
+            "1",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Only the mightiest and most ruthless Darkoath warriors may rise to command their tribe in battle. Their killing prowess honed by years of strife and slaughter, they lead their people to victory after bloody victory, claiming heads with every swing of their cursed weapons.",
+      "regimentOptions": "0-1 %000011659Oathsworn%, 0-1 %000007597Monster%, Any %000007612Darkoath%",
+      "notes": "This HERO can join an eligible regiment as an Oathsworn."
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Darkoath Fellriders",
+      "points": 130,
+      "size": 5,
+      "kind": "",
+      "category": "Cavalry",
+      "profile": {
+        "move": "12\"",
+        "health": "3",
+        "save": "5+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Darkoath-Fellriders",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "DARKOATH",
+          "SLAVES TO DARKNESS",
+          "CAVALRY",
+          "CHAMPION",
+          "MUSICIAN (1/5)",
+          "STANDARD BEARER (1/5)"
+        ],
+        "abilities": [
+          "Oath of the Raider",
+          "Swift Attackers"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Oath of the Raider",
+            "timing": "Once Per Battle, Any Charge Phase",
+            "effect": "Effect: If this unit charged this phase and is only in combat with 1 enemy unit, and that enemy unit is only in combat with this unit, add 1 to the Rend characteristic of this unit’s weapons for the rest of the battle.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Charge Phase"
+          },
+          {
+            "name": "Swift Attackers",
+            "timing": "Passive",
+            "effect": "Effect: Subtract 1 from hit rolls for shooting attacks that target this unit.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          }
+        ],
+        "ranged": [
+          [
+            "Marauder Javelin",
+            "10\"",
+            "1",
+            "4+",
+            "3+",
+            "-",
+            "D3",
+            ""
+          ]
+        ],
+        "melee": [
+          [
+            "Fellrider Blades",
+            "2",
+            "4+",
+            "3+",
+            "-",
+            "1",
+            "Charge (+1 Damage)"
+          ],
+          [
+            "Marauder Javelin",
+            "2",
+            "4+",
+            "4+",
+            "1",
+            "1",
+            ""
+          ],
+          [
+            "Warsteed’s Hooves",
+            "2",
+            "5+",
+            "3+",
+            "-",
+            "1",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "The Darkoath prize speed and agility above all in their light cavalry. Fellriders are mounted daredevils, outflanking their foes on lightning-swift and aggressive mounts, riddling their ranks with volleys of javelins before charging in to deal the killing blow.",
+      "regimentOptions": "Darkoath, Cavalry",
+      "description": "Each model in this unit is armed with Warsteed’s Hooves and 1 of the following options:\n• Marauder Javelin\n• Fellrider Blades"
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Darkoath Marauders",
+      "points": 80,
+      "size": 10,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "5\"",
+        "health": "1",
+        "save": "5+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Darkoath-Marauders",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "DARKOATH",
+          "SLAVES TO DARKNESS",
+          "CHAMPION",
+          "INFANTRY",
+          "MUSICIAN (1/10)",
+          "STANDARD BEARER (1/10)"
+        ],
+        "abilities": [
+          "Oath of the Marauder",
+          "Glorious Death"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Oath of the Marauder",
+            "timing": "Once Per Battle, Any Charge Phase",
+            "effect": "Effect: If this unit charged this phase and the unmodified charge roll was 8+, add 1 to the Rend characteristic of this unit’s weapons for the rest of the battle.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Charge Phase"
+          },
+          {
+            "name": "Glorious Death",
+            "timing": "Passive",
+            "effect": "Effect: While this unit is wholly within 12\" of any friendly DARKOATH HEROES, each time a model in this unit is slain by a combat attack and that model was in combat with the attacking unit, roll a dice. On a 5+, inflict 1 mortal damage on the attacking unit after the FIGHT ability has been resolved.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Raider Weapons",
+            "2",
+            "4+",
+            "3+",
+            "-",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Each and every Darkoath warrior is trained in the way of the axe and the sword from the youngest age. Having sworn bloody oaths to their patron gods, they seek to fulfil them by any means necessary, their bodies flushed with power by every pledge completed.",
+      "regimentOptions": "Darkoath, Infantry"
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Darkoath Savagers",
+      "points": 90,
+      "size": 10,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "5\"",
+        "health": "1",
+        "save": "5+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Darkoath-Savagers",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "DARKOATH",
+          "SLAVES TO DARKNESS",
+          "CHAMPION (1/10)",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "Oath of Conquest"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Oath of Conquest",
+            "timing": "Once Per Battle, Any Hero Phase",
+            "effect": "Effect: If this unit is contesting an objective you control that is not within friendly territory, this unit has WARD (5+) for the rest of the battle.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Hero Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Darkoath Weapons",
+            "2",
+            "4+",
+            "3+",
+            "-",
+            "1",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Screaming blood-curdling vows to the Ruinous Powers, the Darkoath Savagers make brutal war across the length and breadth of the Mortal Realms. To these barbarous marauders, each new dawn is an opportunity to win the favour of the gods.",
+      "regimentOptions": "Darkoath, Infantry"
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Darkoath Warqueen",
+      "points": 80,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "5\"",
+        "health": "5",
+        "save": "5+",
+        "control": "2",
+        "ward": "5+",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Darkoath-Warqueen",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "DARKOATH",
+          "SLAVES TO DARKNESS",
+          "HERO",
+          "INFANTRY",
+          "WARD (5+)"
+        ],
+        "abilities": [
+          "Ruin-blessed Conqueror",
+          "Oath of Supremacy"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Ruin-blessed Conqueror",
+            "timing": "Once Per Turn (Army), Any Hero Phase",
+            "effect": "Declare: Pick an objective that this unit is contesting.\nEffect: Roll a dice. On a 3+, for the rest of the turn, friendly DARKOATH units have WARD (5+) while they are contesting that objective.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Oath of Supremacy",
+            "timing": "Once Per Battle, Any Charge Phase",
+            "effect": "Effect: If this unit is wholly within enemy territory and charged this phase, for the rest of the battle, add 1 to hit rolls for combat attacks made by friendly DARKOATH units while they are wholly within 12\" of this unit.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Charge Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Rune-etched Axe",
+            "5",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "A Darkoath Warqueen has proven herself the rightful ruler of her barbarian tribesfolk time and again. She has sworn dread pacts to bring carnage to the Mortal Realms, and all who stand in her way must face both her wrath and that of her devoted warriors.",
+      "regimentOptions": "0-1 %000011659Oathsworn%, 0-1 %000007597Monster%, Any %000007612Darkoath%",
+      "notes": "This HERO can join an eligible regiment as an Oathsworn."
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Darkoath Wilderfiend",
+      "points": 120,
+      "size": 1,
+      "kind": "",
+      "category": "Other",
+      "profile": {
+        "move": "8\"",
+        "health": "9",
+        "save": "5+",
+        "control": "1",
+        "ward": "5+",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Darkoath-Wilderfiend",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "DARKOATH",
+          "SLAVES TO DARKNESS",
+          "BEAST",
+          "WARD (5+)"
+        ],
+        "abilities": [
+          "Beast",
+          "Feed on Flesh",
+          "Primal Sorcery"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Beast",
+            "timing": "Passive",
+            "effect": "Effect: This unit has a maximum control score of 1.",
+            "kind": "Ability",
+            "type": "Control",
+            "phase": "End of Turn"
+          },
+          {
+            "name": "Feed on Flesh",
+            "timing": "Passive",
+            "effect": "Effect: Each time a model (friendly or enemy) is slain within 12\" of this unit, give this unit a sacrifice point, to a maximum of 6. If there are more than 1 friendly Darkoath Wilderfiend units within 12\" of the slain model, only 1 of them can be given a sacrifice point for that slain model.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Primal Sorcery",
+            "timing": "Your Hero Phase",
+            "effect": "Effect: Pick 1 of the following effects:\nMind Shroud: Pick an enemy unit within 12\" of this unit to be the target and roll a number of dice equal to the number of sacrifice points this unit has. If any of the rolls are a 5+, the target cannot use commands for the rest of the turn.\nWarping Balefire: Pick an enemy unit within 12\" of this unit to be the target and roll a number of dice equal to the number of sacrifice points this unit has. For each 3+, inflict 1 mortal damage on the target.\nDark Might: Heal (X) this unit, where X is the number of sacrifice points this unit has.\nAfter applying the effect you picked, reset this unit’s sacrifice points to 0.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Razor-sharp Claws",
+            "6",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            "Companion"
+          ],
+          [
+            "Flesh-tearing Maw",
+            "3",
+            "3+",
+            "3+",
+            "2",
+            "D3",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Wilderfiends are both guardians and persecutors of the Darkoath tribes. Once mortal heroes themselves, they have been warped and twisted into hunched abominations that crave flesh and wield powers of primal sorcery to annihilate their prey.",
+      "regimentOptions": "Darkoath, Beast"
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Eightfold Doom-Sigil",
+      "points": 0,
+      "size": 1,
+      "kind": "",
+      "category": "Manifestation",
+      "profile": {
+        "move": "-",
+        "health": "6",
+        "save": "5+",
+        "ward": "6+",
+        "banishment": "7",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Eightfold-Doom-Sigil",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SLAVES TO DARKNESS",
+          "ENDLESS SPELL",
+          "MANIFESTATION",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Empowered By Atrocity"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Empowered By Atrocity",
+            "timing": "Passive",
+            "effect": "Effect: If 2 or more units (friendly or enemy) were destroyed this turn, for the rest of the turn, add 1 to the Attacks characteristic of melee weapons used by friendly SLAVES TO DARKNESS units while they are wholly within 12\" of this MANIFESTATION.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Eightfold Doom-Sigils are icons of Chaos in all its glory, blazing symbols of pure ruin. To fall in the presence of such a sorcerous construct is to be damned, for these lingering spells hungrily suck souls into the Realm of Chaos for the gods to feast upon."
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Eternus, Blade of the First Prince",
+      "points": 160,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "9\"",
+        "health": "9",
+        "save": "3+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Eternus-Blade-of-the-First-Prince",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SLAVES TO DARKNESS",
+          "CAVALRY",
+          "HERO",
+          "UNIQUE"
+        ],
+        "abilities": [
+          "Veins of Black Lightning",
+          "Network of Spies"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Veins of Black Lightning",
+            "timing": "Any Movement Phase",
+            "effect": "Declare: This unit can use this ability if it has been destroyed.\nEffect: Roll 2D6. Add 1 to the roll if a friendly Be’lakor is on the battlefield. On an 8+, set up a replacement unit on the battlefield more than 9\" from all enemy units.",
+            "kind": "Ability",
+            "type": "Movement",
+            "keywords": "Core",
+            "phase": "Movement Phase"
+          },
+          {
+            "name": "Network of Spies",
+            "timing": "Reaction: Opponent declared a command for a unit within 12\" of this unit",
+            "effect": "Effect: Roll a dice. Add 1 to the roll if the enemy unit is in combat with a friendly Chaos Legionnaires or Chaos Furies unit. On a 5+, that command has no effect. The command still counts as having been used and the command points spent to use the command are still lost.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn",
+            "reaction": true
+          }
+        ],
+        "melee": [
+          [
+            "Drakocephalus’s Fangs",
+            "3",
+            "4+",
+            "3+",
+            "-",
+            "1",
+            "Companion"
+          ],
+          [
+            "Death Glaive and Skull Flail",
+            "6",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            "Charge (+1 Damage)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Sworn to Be’lakor and granted immortality, Eternus rides at the head of First Prince’s legions, crushing those who oppose his ascension. His mighty weapons are not his only means of waging war, for Eternus commands a vast network of spies and warriors loyal to the Dark Master.",
+      "regimentOptions": "0-1 %000011658Ruinous Champion%, Any %000002488Slaves to Darkness%",
+      "notes": "This HERO can join Be’lakor’s regiment."
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Exalted Hero of Chaos",
+      "points": 90,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "5\"",
+        "health": "6",
+        "save": "3+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Exalted-Hero-of-Chaos",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SLAVES TO DARKNESS",
+          "WARRIORS OF CHAOS",
+          "HERO",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "Glory-seeker"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Glory-seeker",
+            "timing": "Passive",
+            "effect": "Effect: Add 1 to the Damage characteristic of this unit’s melee weapons for attacks that target HEROES or MONSTERS.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Blades of the Dark Champion",
+            "5",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            "Anti-HERO (+1 Rend), Anti-MONSTER (+1 Rend)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Exalted Heroes are those warriors who have caught the notice of the gods and now seek to make a true name for themselves. Their favoured prey are monsters and enemy champions, for by slaying these foes an Exalted Hero proves their own might.",
+      "regimentOptions": "0-1 %000007597Monster%, Any %000010824Warriors of Chaos%",
+      "notes": "This HERO can join an eligible regiment as a Ruinous Champion."
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Fiends",
+      "points": 140,
+      "size": 3,
+      "kind": "",
+      "category": "Other",
+      "profile": {
+        "move": "10\"",
+        "health": "4",
+        "save": "5+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Fiends",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "DAEMON",
+          "LEGION OF THE FIRST PRINCE",
+          "SLAVES TO DARKNESS",
+          "BEAST",
+          "CHAMPION",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "SOPORIFIC MUSK",
+          "DISRUPTIVE SONG",
+          "BEAST"
+        ],
+        "abilityDetails": [
+          {
+            "name": "SOPORIFIC MUSK",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick an enemy unit in combat with this unit to be the target.\nEffect: Roll a dice. On a 4+, the target has STRIKE-LAST for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "DISRUPTIVE SONG",
+            "timing": "Passive",
+            "effect": "Effect: Subtract 1 from casting rolls and unbinding rolls for enemy WIZARDS while they are within 12\" of this unit.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "BEAST",
+            "timing": "Passive",
+            "effect": "Effect: This unit has a maximum control score of 1.",
+            "kind": "Ability",
+            "type": "Control",
+            "phase": "End of Turn"
+          }
+        ],
+        "melee": [
+          [
+            "Deadly Pincers and Barbed Stinger",
+            "4",
+            "4+",
+            "3+",
+            "1",
+            "D3",
+            "Anti-MONSTER (+1 Rend), Companion"
+          ]
+        ]
+      },
+      "source": "Hedonites of Slaanesh",
+      "canReinforce": true,
+      "flavour": "Horrific nightmares given bestial shape, Fiends of Slaanesh emit a harsh, trilling call as they race towards their prey. A dream-inducing scent hangs thick around the Fiends, reducing their foes to a stupor and sapping them of their will to fight.",
+      "description": "This unit can only be taken in a Legion of the First Prince Army of Renown"
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Flamers of Tzeentch",
+      "points": 120,
+      "size": 3,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "9\"",
+        "health": "2",
+        "save": "5+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Flamers-of-Tzeentch",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "DAEMON",
+          "LEGION OF THE FIRST PRINCE",
+          "SLAVES TO DARKNESS",
+          "CHAMPION",
+          "FLY",
+          "INFANTRY",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Wyrdflame of Tzeentch"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Wyrdflame of Tzeentch",
+            "timing": "Once Per Turn (Army), Your Shooting Phase",
+            "effect": "Declare: Pick an enemy unit to be the target.\nEffect: For the rest of the turn, add 1 to wound rolls for this unit’s shooting attacks that target that unit. In addition, if every shooting attack made by this unit this phase targets that enemy unit, inflict D3 mortal damage on the target after the SHOOT ability has been resolved.",
+            "kind": "Ability",
+            "type": "Shooting",
+            "phase": "Shooting Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Warping Flames",
+            "12\"",
+            "3",
+            "3+",
+            "4+",
+            "-",
+            "D3",
+            "Anti-INFANTRY (+1 Rend)"
+          ]
+        ],
+        "melee": [
+          [
+            "Flaming Maws",
+            "3",
+            "3+",
+            "4+",
+            "-",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "Disciples of Tzeentch",
+      "canReinforce": true,
+      "flavour": "Bounding in a disturbing fashion, Flamers of Tzeentch spring towards the foe spouting the warpfires of Chaos. Yet the Changer of the Ways is fickle, and fires that have burnt out may once more leap to life, guiding even more flames to the target.",
+      "description": "This unit can only be taken in a Legion of the First Prince Army of Renown"
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Fomoroid Crusher",
+      "points": 100,
+      "size": 1,
+      "kind": "",
+      "category": "Monster",
+      "profile": {
+        "move": "6\"",
+        "health": "8",
+        "save": "5+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Fomoroid-Crusher",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SLAVES TO DARKNESS",
+          "MONSTER"
+        ],
+        "abilities": [
+          "Cursed Destroyers"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Cursed Destroyers",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick a terrain feature within 1\" of this unit, then pick each other unit (friendly and enemy) within 3\" of that terrain feature to be the targets.\nEffect: Roll a D3 for each target. On a 2+, inflict an amount of mortal damage on the target equal to the roll.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Rampage",
+            "phase": "Combat Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Hurled Terrain",
+            "12\"",
+            "D3",
+            "4+",
+            "2+",
+            "1",
+            "2",
+            ""
+          ]
+        ],
+        "melee": [
+          [
+            "Crushing Fists and Swinging Masonry",
+            "6",
+            "4+",
+            "2+",
+            "1",
+            "D3",
+            "Crit (2 Hits)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Brutish creatures from a lost age, the Fomoroid Crushers now exist only to tear down and destroy. In battle they fly into a terrible rage, torturous memories of the creatures they once were lending their blows a maddened strength.",
+      "regimentOptions": "Monster"
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Gaunt Summoner",
+      "points": 160,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "5\"",
+        "health": "5",
+        "save": "5+",
+        "control": "2",
+        "ward": "5+",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Gaunt-Summoner",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "DAEMON",
+          "SLAVES TO DARKNESS",
+          "HERO",
+          "INFANTRY",
+          "PLEDGED TO TZEENTCH",
+          "WARD (5+)",
+          "WIZARD (2)"
+        ],
+        "abilities": [
+          "Minions of the Silver Tower",
+          "Book of Profane Secrets",
+          "Divert Realmgate"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Minions of the Silver Tower",
+            "timing": "Deployment Phase",
+            "effect": "Declare: Pick a friendly unit that has not been deployed to be the target.\nEffect: The target is set up in reserve in a Silver Tower. It has now been deployed.",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Deploy",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Book of Profane Secrets",
+            "timing": "Your Movement Phase",
+            "effect": "Declare: Pick a friendly unit in a Silver Tower to be the target.\nEffect: Set up the target on the battlefield wholly within 12\" of this unit and more than 9\" from all enemy units.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Movement Phase"
+          },
+          {
+            "name": "Divert Realmgate",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Make a casting roll of 2D6.\nEffect: Units set up this turn using this unit’s ‘Book of Profane Secrets’ ability can be set up wholly within 18\" of this unit and more than 7\" from all enemy units instead of the distances in the ability.",
+            "kind": "Ability",
+            "type": "Movement",
+            "keywords": "Spell",
+            "phase": "Hero Phase",
+            "pointsType": "Spell",
+            "points": "7"
+          }
+        ],
+        "ranged": [
+          [
+            "Changestaff",
+            "12\"",
+            "3",
+            "4+",
+            "3+",
+            "1",
+            "D3",
+            "Crit (Mortal)"
+          ]
+        ],
+        "melee": [
+          [
+            "Warptongue Blade",
+            "3",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "To the daemonic Gaunt Summoners, reality is but a plaything. At the will of their master Archaon they lead armies of mortals to wreak terrible havoc. They can consume their foes in hellfire and manipulate realmgates to summon minions to their side in a matter of moments.",
+      "regimentOptions": "Any %000002488Slaves to Darkness%"
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Gaunt Summoner on Disc of Tzeentch",
+      "points": 190,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "14\"",
+        "health": "7",
+        "save": "5+",
+        "control": "2",
+        "ward": "5+",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Gaunt-Summoner-on-Disc-of-Tzeentch",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "DAEMON",
+          "SLAVES TO DARKNESS",
+          "CAVALRY",
+          "FLY",
+          "HERO",
+          "PLEDGED TO TZEENTCH",
+          "WARD (5+)",
+          "WIZARD (2)"
+        ],
+        "abilities": [
+          "Minions of the Silver Tower",
+          "Book of Profane Secrets",
+          "Arcane Imprisonment"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Minions of the Silver Tower",
+            "timing": "Deployment Phase",
+            "effect": "Declare: Pick a friendly unit that has not been deployed to be the target.\nEffect: The target is set up in reserve in a Silver Tower. It has now been deployed.",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Deploy",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Book of Profane Secrets",
+            "timing": "Your Movement Phase",
+            "effect": "Declare: Pick a friendly unit in a Silver Tower to be the target.\nEffect: Set up the target on the battlefield wholly within 12\" of this unit and more than 9\" from all enemy units.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Movement Phase"
+          },
+          {
+            "name": "Arcane Imprisonment",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Pick an enemy HERO in combat with this unit to be the target, then make a casting roll of 2D6.\nEffect: If the unmodified casting roll exceeds the target’s Health characteristic, it is automatically destroyed. For the rest of the battle, that unit cannot be picked to be the target of an ability that allows a replacement unit to be set up.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Spell",
+            "phase": "Hero Phase",
+            "pointsType": "Spell",
+            "points": "7"
+          }
+        ],
+        "ranged": [
+          [
+            "Changestaff",
+            "12\"",
+            "3",
+            "4+",
+            "3+",
+            "1",
+            "D3",
+            "Crit (Mortal)"
+          ]
+        ],
+        "melee": [
+          [
+            "Disc’s Teeth and Horns",
+            "2",
+            "4+",
+            "3+",
+            "1",
+            "D3",
+            "Companion"
+          ],
+          [
+            "Warptongue Blade",
+            "3",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "The Gaunt Summoners are strange daemon-sorcerers of Tzeentch bound to the will of the Everchosen. Some glide above the battlefield on scintillating Discs of Tzeentch, laying the enemy low with arcane power and cursed daggers.",
+      "regimentOptions": "Any %000002488Slaves to Darkness%"
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Godsworn Hunt",
+      "points": 110,
+      "size": 6,
+      "kind": "Legends",
+      "category": "Infantry",
+      "profile": {
+        "move": "5\"",
+        "health": "2",
+        "save": "6+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Godsworn-Hunt",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "DARKOATH",
+          "SLAVES TO DARKNESS",
+          "UNDIVIDED",
+          "CHAMPION",
+          "INFANTRY",
+          "UNIQUE"
+        ],
+        "abilities": [
+          "Oath of Conquest",
+          "Theddra Skull-scryer"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Oath of Conquest",
+            "timing": "Once Per Battle, Any Hero Phase",
+            "effect": "Effect: If this unit is contesting an objective you control that is wholly within enemy territory, this unit has WARD (5+) for the rest of the battle.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Theddra Skull-scryer",
+            "timing": "Passive",
+            "effect": "Effect: While this unit’s Theddra Skull-scryer is on the battlefield, it has WIZARD (1).",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Hunting Bow",
+            "20\"",
+            "2",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            "Crit (Auto-wound)"
+          ]
+        ],
+        "melee": [
+          [
+            "Godsworn Weapons",
+            "2",
+            "4+",
+            "3+",
+            "-",
+            "1",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "Legends Warscrolls",
+      "canReinforce": false,
+      "flavour": "Guided by searing visions of conquest and glory, the Godspeaker known as Theddra Skull-scryer leads warriors from the Tribe of the Black Fang through a combination of ruthlessness and awesome displays of gods-given power. The Godsworn Hunt is formed of the greatest champions of the Tribe of the Black Fang. Each is a hardened killer who has earned their name through bloody deeds, and their bodies are bedecked with gruesome trophies and oathstones.",
+      "regimentOptions": "Unique, Darkoath, Infantry",
+      "notes": "This unit cannot be reinforced.",
+      "description": "Each model in this unit is armed with Godsworn Weapons. The models in this unit are:\n• Theddra Skull-scryer (champion)\n• Grundann Blood-Eye\n• Shond Head-Claimer\n• Jagathra\n• Grawl\n• Ollo (also armed with a Hunting Bow)"
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Gorebeast Chariot",
+      "points": 100,
+      "size": 1,
+      "kind": "",
+      "category": "War Machine",
+      "profile": {
+        "move": "9\"",
+        "health": "8",
+        "save": "4+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Gorebeast-Chariot",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SLAVES TO DARKNESS",
+          "WARRIORS OF CHAOS",
+          "WAR MACHINE"
+        ],
+        "abilities": [
+          "Brutal Momentum"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Brutal Momentum",
+            "timing": "Passive",
+            "effect": "Effect: When this unit uses the ‘Power Through’ command, inflict an additional D3 mortal damage on the target and add 3\" to the distance this unit can move as part of that ability.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "End of Turn"
+          }
+        ],
+        "melee": [
+          [
+            "Lashing Whip",
+            "2",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            ""
+          ],
+          [
+            "Chaos War-flail",
+            "6",
+            "3+",
+            "3+",
+            "-",
+            "1",
+            ""
+          ],
+          [
+            "Chaos Greatblade",
+            "3",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            ""
+          ],
+          [
+            "Gorebeast’s Crushing Fists",
+            "4",
+            "4+",
+            "4+",
+            "-",
+            "2",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Only the most brutal of champions can hope to yoke one of the grotesque Gorebeasts to their will. These unnatural creatures lie somewhere between a monstrous simian and a Ghurish rokodile, and one swing of their fists can punch clean through a mortal’s chest. Once bludgeoned into submission, a Gorebeast’s strength allows them to pull a Chaos Chariot with relative ease. It is often more difficult to get the creature to stop, as they smash aside enemy regiments and barrel onwards in search of more foes to crush.",
+      "regimentOptions": "Warriors of Chaos, War Machine",
+      "description": "This unit is armed with a Lashing Whip, Gorebeast’s Crushing Fists and 1 of the following options:\n• Chaos War-flail\n• Chaos Greatblade"
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Gunnar Brand",
+      "points": 180,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "5\"",
+        "health": "6",
+        "save": "5+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Gunnar-Brand",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "DARKOATH",
+          "GUNNAR’S OATHSWORN",
+          "SLAVES TO DARKNESS",
+          "HERO",
+          "INFANTRY",
+          "UNIQUE"
+        ],
+        "abilities": [
+          "Carve a Path To Glory",
+          "Oath of Bloodshed"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Carve a Path To Glory",
+            "timing": "Any Combat Phase",
+            "effect": "Declare: This unit can only use this ability if it is in combat with an enemy HERO.\nEffect: This unit can use 2 FIGHT abilities this phase. After the first is used, however, this unit has STRIKE-LAST for the rest of the turn. When using the second FIGHT ability, this unit must pick an enemy HERO to be the target of all of its attacks.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Oath of Bloodshed",
+            "timing": "Once Per Battle, End of Any Turn",
+            "effect": "Declare: This unit can only use this ability if any enemy HEROES were slain by this unit’s combat attacks this turn.\nEffect: Friendly GUNNAR’S OATHSWORN units have WARD (4+) for the rest of the battle.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "End of Turn"
+          }
+        ],
+        "melee": [
+          [
+            "Dual Axes",
+            "10",
+            "4+",
+            "3+",
+            "1",
+            "1",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Gunnar Brand is a legend amongst the Darkoath tribes of the eastern Great Parch. His warrior skills, coarse charisma and raw grit have seen him emerge triumphant against seemingly impossible odds time and again. Many whisper that Gunnar’s brother forged a deal with a Wilderfiend and that the Chaos Gods have their gaze upon him.",
+      "regimentOptions": "%000014330Singri Brand% (required), %000014327The Oathsworn Kin% (required), Any %000007612Darkoath%"
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Hellflayer",
+      "points": 130,
+      "size": 1,
+      "kind": "",
+      "category": "War Machine",
+      "profile": {
+        "move": "10\"",
+        "health": "7",
+        "save": "4+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Hellflayer",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "DAEMON",
+          "LEGION OF THE FIRST PRINCE",
+          "SLAVES TO DARKNESS",
+          "WAR MACHINE",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "SOULSCENT",
+          "THRESHING DOOM"
+        ],
+        "abilityDetails": [
+          {
+            "name": "SOULSCENT",
+            "timing": "Any Movement Phase",
+            "effect": "Declare: Pick up to 3 enemy units that this unit passed across this phase to be the targets.\nEffect: Roll a D3 for each target. On a 2+, inflict an amount of mortal damage on the target equal to the roll. If any models are slain by this ability, this unit has WARD (5+) for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Movement Phase"
+          },
+          {
+            "name": "THRESHING DOOM",
+            "timing": "Passive",
+            "effect": "Effect: When this unit moves, it can pass through models in enemy INFANTRY units and can pass through the combat ranges of enemy INFANTRY units, but it cannot end a move in combat unless specified in the ability used.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Movement Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Flensing Whips and Piercing Claws",
+            "6",
+            "3+",
+            "4+",
+            "1",
+            "1",
+            ""
+          ],
+          [
+            "Steeds' Poisoned Tongues",
+            "4",
+            "3+",
+            "4+",
+            "-",
+            "1",
+            "Companion"
+          ],
+          [
+            "Axle Blades",
+            "4",
+            "4+",
+            "2+",
+            "2",
+            "D3",
+            "Anti-INFANTRY (+1 Rend), Companion"
+          ]
+        ]
+      },
+      "source": "Hedonites of Slaanesh",
+      "canReinforce": false,
+      "flavour": "Hellflayer chariots drive through the meadows of Slaanesh’s realm, dismembering those cursed to lie there in purgatory. On the battlefields of the Mortal Realms, they are roving weapons of war, their many scythes delivering death by a thousand cuts.",
+      "description": "This unit can only be taken in a Legion of the First Prince Army of Renown"
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Horns of Hashut",
+      "points": 120,
+      "size": 10,
+      "kind": "Legends",
+      "category": "Infantry",
+      "profile": {
+        "move": "5\"",
+        "health": "1",
+        "save": "4+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Horns-of-Hashut",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SLAVES TO DARKNESS",
+          "UNDIVIDED",
+          "CHAMPION (1/10)",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "Stampede of Iron"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Stampede of Iron",
+            "timing": "Any Charge Phase",
+            "effect": "Declare: If this unit charged this phase, pick an enemy unit within 1\" of it to be the target.\nEffect: Roll a dice for each model in this unit that is within the target’s combat range. For each 5+, inflict 1 mortal damage on the target. If 3 or more mortal damage is inflicted on the target by this ability, subtract 1 from hit rolls for the target’s combat attacks for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Charge Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Flamehurler",
+            "8\"",
+            "D6",
+            "2+",
+            "3+",
+            "-",
+            "1",
+            "Anti-INFANTRY (+1 Rend), Shoot in Combat"
+          ]
+        ],
+        "melee": [
+          [
+            "Forge Weapons",
+            "2",
+            "4+",
+            "4+",
+            "1",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "Legends Warscrolls",
+      "canReinforce": true,
+      "flavour": "The Horns of Hashut are bringers of ruin and desolation, heralds sent forth by the Father of Darkness to claim territories in advance of his marching legions. Each region they conquer is pulverised, rendered empty and barren.",
+      "regimentOptions": "Infantry",
+      "description": "Each model in this unit is armed with Forge Weapons.\n• 1/10 models is armed with a Flamehurler in addition to their other weapons.\n• The champion cannot be armed with a Flamehurler."
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Iron Golem",
+      "points": 100,
+      "size": 8,
+      "kind": "Legends",
+      "category": "Infantry",
+      "profile": {
+        "move": "4\"",
+        "health": "1",
+        "save": "4+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Iron-Golem",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SLAVES TO DARKNESS",
+          "UNDIVIDED",
+          "CHAMPION (1/8)",
+          "INFANTRY",
+          "STANDARD BEARER (1/8)"
+        ],
+        "abilities": [
+          "Ogor Breacher",
+          "Iron Resilience"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Ogor Breacher",
+            "timing": "Passive",
+            "effect": "Effect: While this unit includes an Ogor Breacher, ignore the first damage point that would be allocated to this unit in each phase.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          },
+          {
+            "name": "Iron Resilience",
+            "timing": "Passive",
+            "effect": "Effect: Add 1 to save rolls for this unit if it has not used a MOVE ability in the same turn.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          }
+        ],
+        "ranged": [
+          [
+            "Bolas",
+            "8\"",
+            "1",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            "Shoot in Combat"
+          ]
+        ],
+        "melee": [
+          [
+            "Legion Weapons",
+            "2",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "Legends Warscrolls",
+      "canReinforce": true,
+      "flavour": "Skilled blacksmiths, the Iron Golem believe themselves chosen to provide arms and armour to Archaon’s forces. Amongst the war-wracked lands of Chamon, their legions are renowned for their dauntless resilience and chilling efficiency.",
+      "regimentOptions": "Infantry",
+      "description": "1/8 models in this unit is an Ogor Breacher. An Ogor Breacher cannot be the champion or a standard bearer."
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Khagra’s Ravagers",
+      "points": 170,
+      "size": 4,
+      "kind": "Legends",
+      "category": "Infantry",
+      "profile": {
+        "move": "6\"",
+        "health": "3",
+        "save": "3+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Khagra-s-Ravagers",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SLAVES TO DARKNESS",
+          "WARRIORS OF CHAOS",
+          "CHAMPION",
+          "INFANTRY",
+          "UNIQUE"
+        ],
+        "abilities": [
+          "Zarshia Bittersoul",
+          "Ravagers of the Mortal Realms"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Zarshia Bittersoul",
+            "timing": "Passive",
+            "effect": "Effect: While this unit’s Zarshia Bittersoul is on the battlefield, it has WIZARD (1).",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Ravagers of the Mortal Realms",
+            "timing": "Passive",
+            "effect": "Effect: This unit has WARD (5+) while it is contesting an objective you control.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          }
+        ],
+        "melee": [
+          [
+            "Hellforged Weapons",
+            "3",
+            "3+",
+            "3+",
+            "1",
+            "1",
+            "Crit (Auto-wound)"
+          ]
+        ]
+      },
+      "source": "Legends Warscrolls",
+      "canReinforce": false,
+      "flavour": "Having usurped command from her sister, Zarshia Bittersoul, Khagra leads her warriors on the Path to Glory as they seek to earn the favour of the Dark Gods. While Zarshia has lost command of her warriors to her sister, her mastery over sorcery is no less diminished and this rivalry has further fuelled her dark ambitions.",
+      "regimentOptions": "Unique, Warriors of Chaos, Infantry",
+      "notes": "This unit cannot be reinforced.",
+      "description": "Each model in this unit is armed with Hellforged Weapons. The models in this unit are:\n• Khagra the Usurper (champion)\n• Zarshia Bittersoul\n• Razek Godblessed\n• Dour Cragan"
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Mindstealer Sphiranx",
+      "points": 140,
+      "size": 1,
+      "kind": "",
+      "category": "Monster",
+      "profile": {
+        "move": "10\"",
+        "health": "10",
+        "save": "5+",
+        "control": "5",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Mindstealer-Sphiranx",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SLAVES TO DARKNESS",
+          "MONSTER"
+        ],
+        "abilities": [
+          "Dominate Mind"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Dominate Mind",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick an enemy unit within 6\" of this unit to be the target.\nEffect: Roll a dice. If the roll exceeds the target’s Control characteristic, the target has STRIKE-LAST for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "keywords": "Rampage",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Shredding Claws",
+            "6",
+            "4+",
+            "4+",
+            "1",
+            "2",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Mindstealer Sphiranxes are powerful and sinister telepaths. These cruel-hearted beasts enjoy nothing more than toying with their prey, plundering their innermost secrets before summarily ripping them to shreds with sharpened claws.",
+      "regimentOptions": "Monster"
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Mutalith Vortex Beast",
+      "points": 150,
+      "size": 1,
+      "kind": "",
+      "category": "Monster",
+      "profile": {
+        "move": "10\"",
+        "health": "14",
+        "save": "4+",
+        "control": "5",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Mutalith-Vortex-Beast",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "DAEMON",
+          "SLAVES TO DARKNESS",
+          "MONSTER",
+          "PLEDGED TO TZEENTCH"
+        ],
+        "abilities": [
+          "Battle Damaged",
+          "Mutant Regeneration",
+          "Aura of Mutation"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of its Betentacled Maw is 8.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Mutant Regeneration",
+            "timing": "Any Hero Phase",
+            "effect": "Effect: Heal (D3) this unit.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Aura of Mutation",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick a visible enemy unit within 12\" of this unit to be the target.\nEffect: Roll a dice and apply the corresponding effect below. If this unit is wholly within 12\" of a friendly PLEDGED TO TZEENTCH WIZARD, you can roll 2 dice instead, pick either result, then apply the corresponding effect below.\n1 - Untouched No effect.\n2 - Hideous Disfigurement Subtract 3 from the target’s control score until the start of your next turn.\n3 - Troggbrains The target cannot use commands for the rest of the turn.\n4 - Gift o",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Rampage",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Betentacled Maw",
+            "12",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            "Companion, Crit (Auto-wound) · See battle damage rules"
+          ],
+          [
+            "Crushing Claws",
+            "4",
+            "4+",
+            "2+",
+            "1",
+            "D3",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Within the pulsating star suspended above the back of a Mutalith Vortex Beast can be found a portal to the Realm of Chaos itself. These horrific monsters constantly seethe with the power of mutation, those around them rewrought into horrific forms.",
+      "regimentOptions": "Daemon, Monster"
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Nexus Chaotica",
+      "points": 0,
+      "size": 1,
+      "kind": "",
+      "category": "Terrain",
+      "profile": {
+        "move": "-",
+        "health": "12",
+        "save": "4+",
+        "control": "0",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Nexus-Chaotica",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SLAVES TO DARKNESS",
+          "FACTION TERRAIN"
+        ],
+        "abilities": [
+          "Draw Power",
+          "Infernal Sorcery",
+          "Corrupt The Realms"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Draw Power",
+            "timing": "Your Hero Phase",
+            "effect": "Effect: Roll a dice. Give a number of power points to this terrain feature equal to the roll. This terrain feature can have a maximum of 12 power points at once.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Infernal Sorcery",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: If this terrain feature has 3 or more power points, pick a friendly SLAVES TO DARKNESS WIZARD within 3\" of this terrain feature to be the target.\nEffect: Remove 3 power points from this terrain feature, then add 1 to casting rolls for the target for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Corrupt The Realms",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: If this terrain feature has 9 or more power points, pick an objective or terrain feature within 24\" of this terrain feature to be the source. Then, pick any number of enemy units within 3\" of the source to be the targets.\nEffect: Remove 9 power points from this terrain feature, then roll a D3 for each target. On a 2+, inflict an amount of mortal damage on the target equal to the roll.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Hero Phase"
+          }
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "True champions of Chaos recognise that the gods demand more than simple slaughter. The realms themselves must be laced with taint; the arcane ley lines must be inundated with corruption. This is the purpose of the Nexus Chaotica, a shrine raised at a geomantic confluence for the express purpose of withering it.",
+      "description": "The following universal terrain abilities apply to this terrain feature (Terrain, 1.2):\nCover, Impassable"
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Ogroid Myrmidon",
+      "points": 120,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "8",
+        "save": "4+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Ogroid-Myrmidon",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SLAVES TO DARKNESS",
+          "HERO",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "Pit Master",
+          "Myrmidon Rage"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Pit Master",
+            "timing": "Reaction: You declared a %000010870FIGHT ability% for this unit",
+            "effect": "Effect: Pick a friendly Ogroid Theridons unit that has not used a FIGHT ability this turn and is within this unit’s combat range to be the target. The target can be picked to use a FIGHT ability immediately after the FIGHT ability used by this unit has been resolved. If it is picked to do so, add 1 to hit rolls for the target’s attacks for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase",
+            "reaction": true
+          },
+          {
+            "name": "Myrmidon Rage",
+            "timing": "Passive",
+            "effect": "Effect: While this unit is damaged, add 2 to the Attacks characteristic of its melee weapons.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Gladiator Spear",
+            "10\"",
+            "1",
+            "3+",
+            "3+",
+            "1",
+            "D3",
+            ""
+          ]
+        ],
+        "melee": [
+          [
+            "Gladiator Spear",
+            "6",
+            "3+",
+            "2+",
+            "1",
+            "3",
+            "Anti-MONSTER (+1 Rend)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Myrmidons are masters of the Varanspire’s fighting pits, and have spent decades mastering the gladiatorial arts. In battle they lead those who seek to join the Everchosen’s legions, for to impress a Myrmidon is to be marked for glory.",
+      "regimentOptions": "Any %000014300Ogroid Theridons%, Any %000007597Monster%, Any %000018183Daemon%",
+      "notes": "This HERO can join an eligible regiment as a Ruinous Champion."
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Ogroid Theridons",
+      "points": 150,
+      "size": 3,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "6\"",
+        "health": "5",
+        "save": "4+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Ogroid-Theridons",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SLAVES TO DARKNESS",
+          "CHAMPION",
+          "INFANTRY",
+          "MUSICIAN (1/3)",
+          "STANDARD BEARER (1/3)"
+        ],
+        "abilities": [
+          "Unleashed Savagery"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Unleashed Savagery",
+            "timing": "Once Per Battle, Any Combat Phase",
+            "effect": "Effect: Add 1 to the Damage characteristic of this unit’s melee weapons for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Goroan Weapons",
+            "4",
+            "4+",
+            "2+",
+            "1",
+            "2",
+            "Anti-INFANTRY (+1 Rend)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Serving as shock troops to the armies of Chaos, these formidable warriors are found where the fighting is thickest, wielding both monstrous strength and honed martial skill to carve swathes of ruin through the ranks of the enemy.",
+      "regimentOptions": "Infantry"
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Plaguebearers",
+      "points": 140,
+      "size": 10,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "4\"",
+        "health": "2",
+        "save": "6+",
+        "control": "1",
+        "ward": "5+",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Plaguebearers",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "DAEMON",
+          "LEGION OF THE FIRST PRINCE",
+          "SLAVES TO DARKNESS",
+          "CHAMPION",
+          "INFANTRY",
+          "MUSICIAN (1/10)",
+          "STANDARD BEARER (1/10)",
+          "WARD (5+)"
+        ],
+        "abilities": [
+          "Cloud of Flies"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Cloud of Flies",
+            "timing": "Passive",
+            "effect": "Effect: Subtract 1 from hit rolls for shooting attacks that target this unit.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          }
+        ],
+        "melee": [
+          [
+            "Plaguesword",
+            "1",
+            "4+",
+            "3+",
+            "-",
+            "1",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "Maggotkin of Nurgle",
+      "canReinforce": true,
+      "flavour": "Plaguebearers trudge to battle amidst the drone of flies’ wings and endless counting. These daemons tally the diseases unleashed upon the realms, all the while stabbing and hacking at their enemies with filthy plagueswords.",
+      "description": "This unit can only be taken in a Legion of the First Prince Army of Renown"
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Raptoryx",
+      "points": 100,
+      "size": 6,
+      "kind": "",
+      "category": "Other",
+      "profile": {
+        "move": "10\"",
+        "health": "2",
+        "save": "6+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Raptoryx",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SLAVES TO DARKNESS",
+          "BEAST"
+        ],
+        "abilities": [
+          "Beast",
+          "Crazed Flock"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Beast",
+            "timing": "Passive",
+            "effect": "Effect: This unit has a maximum control score of 1.",
+            "kind": "Ability",
+            "type": "Control",
+            "phase": "End of Turn"
+          },
+          {
+            "name": "Crazed Flock",
+            "timing": "Passive",
+            "effect": "Effect: If this unit charged this turn, for the rest of the turn, add 1 to the Attacks characteristic of its melee weapons. This ability also affects Companion weapons.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Razor-sharp Beak and Talons",
+            "3",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "One of the many forms of wildlife twisted by the power of Chaos, Raptoryx cross the land in vast flocks. Cunning and vicious beasts, they are willing to take on prey many times their size, pulling them down in a frenzy of slashing talons and snapping beaks.",
+      "regimentOptions": "Beast"
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Realmscourge Rupture",
+      "points": 0,
+      "size": 1,
+      "kind": "",
+      "category": "Manifestation",
+      "profile": {
+        "move": "9\"",
+        "health": "6",
+        "save": "5+",
+        "ward": "6+",
+        "banishment": "7",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Realmscourge-Rupture",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SLAVES TO DARKNESS",
+          "ENDLESS SPELL",
+          "FLY",
+          "MANIFESTATION",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Debilitating Shockwave"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Debilitating Shockwave",
+            "timing": "Any Charge Phase",
+            "effect": "Declare: If this MANIFESTATION charged this phase, pick an enemy unit within 1\" of it to be the target.\nEffect: Roll a dice for each model in the target unit. For each 6, inflict 1 mortal damage on the target. If any models in the target unit are slain by this ability, subtract 1 from hit rolls for the target’s attacks for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Charge Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Surging Spikes",
+            "2D3",
+            "4+",
+            "3+",
+            "1",
+            "1",
+            "Crit (2 Hits)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Realmscourge Ruptures are not subtle weapons. When the necessary magical power has been channelled and released by a tribal shaman, the land itself writhes in the grip of Chaos, sharpened spikes surging forth like an accursed tidal wave to overwhelm anything in their path."
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Scions of the Flame",
+      "points": 120,
+      "size": 8,
+      "kind": "Legends",
+      "category": "Infantry",
+      "profile": {
+        "move": "5\"",
+        "health": "1",
+        "save": "5+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Scions-of-the-Flame",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SLAVES TO DARKNESS",
+          "UNDIVIDED",
+          "CHAMPION (1/8)",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "All Shall Burn"
+        ],
+        "abilityDetails": [
+          {
+            "name": "All Shall Burn",
+            "timing": "Passive",
+            "effect": "Effect: Add 1 to the Damage characteristic of this unit’s Flameburst Pots and Infernal Fires for attacks that target WAR MACHINES or INFANTRY units with 10 or more models.",
+            "kind": "Ability",
+            "type": "Shooting",
+            "phase": "Shooting Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Flameburst Pots and Infernal Fires",
+            "10\"",
+            "1",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            "Anti-INFANTRY (+1 Rend)"
+          ]
+        ],
+        "melee": [
+          [
+            "Scion Weapons",
+            "2",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            "Anti-INFANTRY (+1 Rend)"
+          ]
+        ]
+      },
+      "source": "Legends Warscrolls",
+      "canReinforce": true,
+      "flavour": "The Scions of the Flame seek nothing less than to immolate the realms in a tide of fire. Natives of Aqshy, they are zealous worshippers of Chaos as the Ever-Raging Flame, and delight in bringing burning death to their foes.",
+      "regimentOptions": "Infantry"
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Scourge of Aqshy Chaos Lord on Karkadrak",
+      "points": 200,
+      "size": 1,
+      "kind": "Scourge of Aqshy",
+      "category": "Hero",
+      "profile": {
+        "move": "9\"",
+        "health": "10",
+        "save": "3+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Scourge-of-Aqshy-Chaos-Lord-on-Karkadrak",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SLAVES TO DARKNESS",
+          "WARRIORS OF CHAOS",
+          "CAVALRY",
+          "HERO"
+        ],
+        "abilities": [
+          "FEROCIOUS INFLUENCE",
+          "WRATHFUL ABANDON"
+        ],
+        "abilityDetails": [
+          {
+            "name": "FEROCIOUS INFLUENCE",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: You can only use this ability if this unit charged this turn. Pick an enemy unit in combat with this unit to be the target.\nEffect: For the rest of the turn:\n• Add 1 to the Damage characteristic of this unit’s Companion weapons for attacks that target that enemy unit.\n• Add 1 to hit rolls for attacks made with Companion weapons used by friendly SLAVES TO DARKNESS CAVALRY and WAR MACHINE units while they are wholly within 12\" of and",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "WRATHFUL ABANDON",
+            "timing": "Once Per Turn (Army), End of Any Turn",
+            "effect": "Declare: If this unit charged this turn, pick this unit and a friendly non-HERO WARRIORS OF CHAOSunit that charged this turn and is wholly within 12\" of this unit to be the targets.\nEffect: Each target can move a number of inches equal to your fury level. If a target was in combat at the start of the move, it must end that move in combat with all of the units it was already in combat with at the start of the move. It cannot move into combat with units it was not already in combat with at the start of that move",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "End of Turn"
+          }
+        ],
+        "melee": [
+          [
+            "Hexed Weapons",
+            "5",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            "Charge (+1 Damage), Crit (Mortal)"
+          ],
+          [
+            "Karkadrak’s Claws and Horn",
+            "4",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "Scourge of Aqshy - Slaves to Darkness",
+      "canReinforce": false,
+      "flavour": "Those Chaos Lords who succeed in dominating a Karkadrak, a drake-like creature known for its frenzied rampages, are rewarded with a terrifying mount that inspires bloodlust in their warriors’ dark steeds.",
+      "regimentOptions": "0-1 %000011658Ruinous Champion%, Any %000002488Slaves to Darkness%",
+      "notes": "This HERO can join an eligible regiment as a Ruinous Champion.\nThis unit is legal for Matched Play for battles fought using the General’s Handbook 2026-27 battlepack."
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Scourge of Aqshy Chaos Warriors",
+      "points": 200,
+      "size": 10,
+      "kind": "Scourge of Aqshy",
+      "category": "Infantry",
+      "profile": {
+        "move": "5\"",
+        "health": "2",
+        "save": "3+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Scourge-of-Aqshy-Chaos-Warriors",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SLAVES TO DARKNESS",
+          "WARRIORS OF CHAOS",
+          "CHAMPION",
+          "INFANTRY",
+          "MUSICIAN (1/10)",
+          "STANDARD BEARER (1/10)"
+        ],
+        "abilities": [
+          "For the glory of the Dark Gods"
+        ],
+        "abilityDetails": [
+          {
+            "name": "For the glory of the Dark Gods",
+            "timing": "Once Per Turn (Army), Your Hero Phase",
+            "effect": "Effect: Until the start of your next turn, the following cumulative effects apply depending on your fury level.\n$000003124",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Rune-etched Weapons",
+            "2",
+            "3+",
+            "3+",
+            "1",
+            "1",
+            "Crit (Auto-wound)"
+          ]
+        ]
+      },
+      "source": "Scourge of Aqshy - Slaves to Darkness",
+      "canReinforce": true,
+      "flavour": "Across the Great Parch, legions of Chaos Warriors march into battle in search of divine favour. No ordinary soldiers, their blackened armour has fused with their flesh and their cursed weapons leave indelible marks of corruption on those they strike.",
+      "regimentOptions": "Warriors of Chaos, Infantry",
+      "notes": "This unit is legal for Matched Play for battles fought using the General’s Handbook 2026-27 battlepack."
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Scourge of Ghyran Abraxia, Spear of the Everchosen",
+      "points": 300,
+      "size": 1,
+      "kind": "Scourge of Ghyran",
+      "category": "Hero",
+      "profile": {
+        "move": "10\"",
+        "health": "14",
+        "save": "3+",
+        "control": "5",
+        "ward": "5+",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Scourge-of-Ghyran-Abraxia-Spear-of-the-Everchosen",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SLAVES TO DARKNESS",
+          "WARRIORS OF CHAOS",
+          "HERO",
+          "MONSTER",
+          "UNIQUE",
+          "WARD (5+)"
+        ],
+        "abilities": [
+          "Battle Damaged",
+          "Unstoppable Invasion",
+          "Champion of the Undivided",
+          "Unending Will To Conquer",
+          "Mutative Spear"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of The Thanatorg’s Claws and Fangs is 4.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Unstoppable Invasion",
+            "timing": "Once Per Turn (Army), Any Charge Phase",
+            "effect": "Declare: If this unit charged this phase, pick an enemy unit within 1\" of it to be the target.\nEffect: Inflict D3 mortal damage on the target. Then, roll 2D6. This unit can move a distance up to the value of the roll. It can pass through models in the target unit but must end that move in combat.",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Rampage",
+            "phase": "Charge Phase"
+          },
+          {
+            "name": "Champion of the Undivided",
+            "timing": "Your Combat Phase",
+            "effect": "Declare: Pick a friendly non-UNIQUE SLAVES TO DARKNESS unit wholly within 12\" of this unit and that does not have a Pledge to Chaos keyword to be the target.\nEffect: For the rest of the turn, add 1 to the Rend characteristic of melee weapons used by the target while they are contesting an objective you do not control.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Unending Will To Conquer",
+            "timing": "End of Any Turn",
+            "effect": "Effect: If this unit is contesting an objective you do not control. Heal (D6) this unit.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "End of Turn"
+          },
+          {
+            "name": "Mutative Spear",
+            "timing": "End of Any Turn",
+            "effect": "Declare: Pick an enemy unit that had any damage points allocated to it this turn by this unit’s combat attacks to be the target.\nEffect: The target has a maximum control score of 1 for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Control",
+            "phase": "End of Turn"
+          }
+        ],
+        "melee": [
+          [
+            "Gorbolga the Accurs’d",
+            "5",
+            "3+",
+            "3+",
+            "2",
+            "3",
+            "Anti-HERO (+1 Rend), Charge (+1 Damage)"
+          ],
+          [
+            "The Thanatorg’s Claws and Fangs",
+            "6",
+            "4+",
+            "2+",
+            "2",
+            "2",
+            "Companion · See battle damage rules"
+          ]
+        ]
+      },
+      "source": "Scourge of Ghyran - Slaves to Darkness",
+      "canReinforce": false,
+      "flavour": "Few of the Dark Gods’ champions have wrought more horror upon the Everspring Swathe than Abraxia, the Spear of the Everchosen. She has sworn to drown the jungles in the blood of her foes and charges into battle at the head of a vast Chaos horde. Her warriors dread her anger and will obey whatever order she gives, no matter how likely it is to result in their gruesome deaths.",
+      "regimentOptions": "0-1 %000011658Ruinous Champion%, Any %000002488SLAVES TO DARKNESS%",
+      "notes": "This unit is legal for Matched Play for battles fought using the General’s Handbook 2025-26 battlepack."
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Screamers of Tzeentch",
+      "points": 70,
+      "size": 3,
+      "kind": "",
+      "category": "Other",
+      "profile": {
+        "move": "14\"",
+        "health": "3",
+        "save": "5+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Screamers-of-Tzeentch",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "DAEMON",
+          "LEGION OF THE FIRST PRINCE",
+          "SLAVES TO DARKNESS",
+          "BEAST",
+          "FLY",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Slashing Fins",
+          "Beast"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Slashing Fins",
+            "timing": "Your Movement Phase",
+            "effect": "Declare: Pick an enemy unit that this unit passed across this phase to be the target.\nEffect: Roll a dice for each model in this unit that passed across the target. For each 4+, inflict 1 mortal damage on the target.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Movement Phase"
+          },
+          {
+            "name": "Beast",
+            "timing": "Passive",
+            "effect": "Effect: This unit has a maximum control score of 1.",
+            "kind": "Ability",
+            "type": "Control",
+            "phase": "End of Turn"
+          }
+        ],
+        "melee": [
+          [
+            "Lamprey Bite",
+            "3",
+            "4+",
+            "3+",
+            "1",
+            "1",
+            "Anti-MONSTER (+1 Rend), Companion"
+          ]
+        ]
+      },
+      "source": "Disciples of Tzeentch",
+      "canReinforce": true,
+      "flavour": "Speeding blurs that leave shimmering trails of change-magic in the air, Screamers streak across the skies with a wailing cry. They slash any foes they pass with razor-sharp horns and fins before darting down to savage their chosen quarry.",
+      "description": "This unit can only be taken in a Legion of the First Prince Army of Renown"
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Singri Brand",
+      "points": 0,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "12\"",
+        "health": "4",
+        "save": "5+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Singri-Brand",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "DARKOATH",
+          "GUNNAR’S OATHSWORN",
+          "SLAVES TO DARKNESS",
+          "CAVALRY",
+          "HERO",
+          "UNIQUE"
+        ],
+        "abilities": [
+          "Swift As The Wind",
+          "Uncanny Shot"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Swift As The Wind",
+            "timing": "Passive",
+            "effect": "Effect: Only critical hits score successful hits for shooting attacks that target this unit.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Shooting Phase"
+          },
+          {
+            "name": "Uncanny Shot",
+            "timing": "Passive",
+            "effect": "Effect: Add 1 to the Rend characteristic of this unit’s Singri’s Warbow for attacks that target enemy units that are within 6\" of a friendly Gunnar Brand.",
+            "kind": "Ability",
+            "type": "Shooting",
+            "phase": "Shooting Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Singri’s Warbow",
+            "18\"",
+            "2",
+            "3+",
+            "3+",
+            "1",
+            "D3",
+            "Crit (Auto-wound)"
+          ]
+        ],
+        "melee": [
+          [
+            "Warsteed’s Hooves",
+            "2",
+            "5+",
+            "3+",
+            "-",
+            "1",
+            "Companion"
+          ],
+          [
+            "Brand Ancestral Knife",
+            "3",
+            "4+",
+            "3+",
+            "1",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Singri is the daughter of Gunnar Brand, heir apparent to the Darkoath tribes of the Snow Peaks. She charges into battle with a brash ferocity, one that often vexes her father, yet none are as capable as she at teasing out speed from a warhorse, nor as skilled in loosing pinpoint arrows while galloping at full tilt as Singri.",
+      "regimentOptions": "None",
+      "notes": "This unit can only be taken in Gunnar Brand’s regiment."
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Slaughterbrute",
+      "points": 170,
+      "size": 1,
+      "kind": "",
+      "category": "Monster",
+      "profile": {
+        "move": "10\"",
+        "health": "14",
+        "save": "4+",
+        "control": "5",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Slaughterbrute",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "DAEMON",
+          "PLEDGED TO KHORNE",
+          "SLAVES TO DARKNESS",
+          "MONSTER"
+        ],
+        "abilities": [
+          "Battle Damaged",
+          "Sigils of Domination",
+          "Rampaging Charge"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of its Razor-tipped Claws is 5.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Sigils of Domination",
+            "timing": "Deployment Phase",
+            "effect": "Declare: Pick a friendly SLAVES TO DARKNESS HERO within this unit’s combat range to be this unit’s master.\nEffect: For the rest of the battle, while this unit is within its master’s combat range:\n• Add 1 to the number of dice rolled when making charge rolls for this unit, to a maximum of 3.\n• This unit can ignore the effects of the Companion weapon ability on its weapons.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Rampaging Charge",
+            "timing": "Once Per Turn (Army), Any Charge Phase",
+            "effect": "Declare: If this unit charged this phase, pick an enemy unit within 1\" of it to be the target.\nEffect: Roll a D3. On a 2+, inflict an amount of mortal damage on the target equal to the roll. If the target unit is INFANTRY, double the amount of mortal damage inflicted.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Rampage",
+            "phase": "Charge Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Razor-tipped Claws",
+            "8",
+            "4+",
+            "2+",
+            "1",
+            "2",
+            "Anti-INFANTRY (+1 Rend), Companion · See battle damage rules"
+          ],
+          [
+            "Mighty Jaws",
+            "2",
+            "4+",
+            "2+",
+            "1",
+            "3",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Even the greatest champions cannot hope to bind a Slaughterbrute through physical might alone. Only through specially forged blades of binding can these monstrosities be controlled, and their boundless fury directed towards their master’s enemies.",
+      "regimentOptions": "Daemon, Monster"
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Soul Grinder",
+      "points": 330,
+      "size": 1,
+      "kind": "Legends",
+      "category": "Monster",
+      "profile": {
+        "move": "10\"",
+        "health": "16",
+        "save": "4+",
+        "control": "5",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Soul-Grinder",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "DAEMON",
+          "SLAVES TO DARKNESS",
+          "MONSTER",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Battle Damaged",
+          "Implacable Advance",
+          "Piston-driven Carnage"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of its Piston-driven Legs and Daemonic Blade or Claw is 6.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Implacable Advance",
+            "timing": "Passive",
+            "effect": "Effect: This unit can use CHARGE abilities even if it used a RUN ability in the same turn.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Charge Phase"
+          },
+          {
+            "name": "Piston-driven Carnage",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick an enemy INFANTRY unit in combat with this unit to be the target.\nEffect: Roll a D3. On a 2+, inflict an amount of mortal damage on the target equal to the roll. Then, this unit can move 6\". During that move, it can pass through models in the target unit but must end that move in combat.",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Rampage",
+            "phase": "Combat Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Harvester Cannon",
+            "12\"",
+            "6",
+            "4+",
+            "3+",
+            "1",
+            "1",
+            "Companion"
+          ],
+          [
+            "Phlegm Bombardment",
+            "12\"",
+            "1",
+            "4+",
+            "3+",
+            "1",
+            "3",
+            "Companion"
+          ]
+        ],
+        "melee": [
+          [
+            "Piston-driven Legs and Daemonic Blade or Claw",
+            "8",
+            "4+",
+            "2+",
+            "1",
+            "D3",
+            "Companion · See battle damage rules"
+          ],
+          [
+            "Hellforged Claw",
+            "1",
+            "4+",
+            "2+",
+            "2",
+            "D6",
+            "Crit (Mortal), Companion"
+          ]
+        ]
+      },
+      "source": "Legends Warscrolls",
+      "canReinforce": false,
+      "flavour": "Sometimes, when a daemon is banished in an especially humiliating fashion, their bitterness will lead them to seek the insane overseers of the Forge of Souls. To these seekers is offered a bargain: an opportunity to re-enter the Mortal Realms far sooner than the terms of banishment typically allows in exchange for paying a tithe of souls to the forgemasters. Daemons who accept these stipulations are transformed; they become Soul Grinders, fusions of metal and raw Chaotic energy, unleashed upon the hapless realms.",
+      "regimentOptions": "Daemon, Monster"
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Spire Tyrants",
+      "points": 110,
+      "size": 9,
+      "kind": "Legends",
+      "category": "Infantry",
+      "profile": {
+        "move": "5\"",
+        "health": "1",
+        "save": "5+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Spire-Tyrants",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SLAVES TO DARKNESS",
+          "UNDIVIDED",
+          "CHAMPION (1/9)",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "Fight For Glory"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Fight For Glory",
+            "timing": "Passive",
+            "effect": "Effect: The first time each turn that this unit is picked to use a FIGHT ability in the combat phase, if this unit is wholly within 12\" of any friendly SLAVES TO DARKNESS HEROES, add 1 to the Attacks characteristic of this unit’s melee weapons for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Gladiator Weapons",
+            "2",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            "Anti-HERO (+1 Rend)"
+          ]
+        ]
+      },
+      "source": "Legends Warscrolls",
+      "canReinforce": true,
+      "flavour": "Each member of the Spire Tyrants has earned glory and renown in the fighting pits of the Varanspire. These ferocious gladiators constantly seek new and deadlier challenges, believing themselves to be favoured by Archaon himself.",
+      "regimentOptions": "Infantry"
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Splintered Fang",
+      "points": 110,
+      "size": 9,
+      "kind": "Legends",
+      "category": "Infantry",
+      "profile": {
+        "move": "6\"",
+        "health": "1",
+        "save": "5+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Splintered-Fang",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SLAVES TO DARKNESS",
+          "UNDIVIDED",
+          "CHAMPION (1/9)",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "Paralysing Strikes",
+          "Slithering Serpents"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Paralysing Strikes",
+            "timing": "Passive",
+            "effect": "Effect: Each time this unit uses a FIGHT ability, if its attacks score 2 or more critical hits against the same enemy unit, that unit has STRIKE-LAST for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Slithering Serpents",
+            "timing": "End of Any Turn",
+            "effect": "Declare: If this unit’s Serpents are on the battlefield, pick an enemy unit in combat with this unit to be the target.\nEffect: Roll a D3. On a 1, remove this unit’s Serpents from the battlefield. On a 2+, inflict an amount of mortal damage on the target equal to the roll.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "End of Turn"
+          }
+        ],
+        "melee": [
+          [
+            "Poisoned Weapons",
+            "2",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "Legends Warscrolls",
+      "canReinforce": true,
+      "flavour": "The mystic leaders of the Splintered Fang lead their people in worship of the Coiling Ones, serpentine daemons who embody cunning and might. Poison is the greatest weapon of the Fangs, and a single cut from their blades can prove fatal.",
+      "regimentOptions": "Infantry",
+      "description": "This unit’s Serpents are a token. There is 1 Serpents token for every 9 models in this unit."
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Tarantulos Brood",
+      "points": 150,
+      "size": 13,
+      "kind": "Legends",
+      "category": "Infantry",
+      "profile": {
+        "move": "6\"",
+        "health": "1",
+        "save": "6+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Tarantulos-Brood",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SLAVES TO DARKNESS",
+          "UNDIVIDED",
+          "CHAMPION (1/13)",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "Creeping Summons"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Creeping Summons",
+            "timing": "End of Any Turn",
+            "effect": "Effect: Roll a dice. On a 2+, you can return D3 slain Spider Swarms to this unit.",
+            "kind": "Ability",
+            "type": "Rallying",
+            "phase": "End of Turn"
+          }
+        ],
+        "ranged": [
+          [
+            "Envenomed Projectiles",
+            "10\"",
+            "1",
+            "4+",
+            "4+",
+            "1",
+            "1",
+            "Crit (Auto-wound)"
+          ]
+        ],
+        "melee": [
+          [
+            "Brood Weapons",
+            "2",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            ""
+          ],
+          [
+            "Venomous Bites",
+            "4",
+            "5+",
+            "5+",
+            "-",
+            "1",
+            "Crit (Mortal), Companion"
+          ]
+        ]
+      },
+      "source": "Legends Warscrolls",
+      "canReinforce": true,
+      "flavour": "Worshippers of a dark power called the Eightfold Watcher, these strange and sinister warriors have wrought dark rituals of tainted arachnid blood and varanite upon their flesh to alter their form to be a dark mirror of their master.",
+      "regimentOptions": "Infantry",
+      "description": "Each model in this unit is armed with Envenomed Projectiles and Brood Weapons.\n• 3/13 models are Spider Swarms and must replace their weapons with Venomous Bites.\n• A Spider Swarm cannot be the champion."
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "The Gnarlspirit Pack",
+      "points": 110,
+      "size": 4,
+      "kind": "Legends",
+      "category": "Infantry",
+      "profile": {
+        "move": "5\"",
+        "health": "2",
+        "save": "6+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/The-Gnarlspirit-Pack",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "DARKOATH",
+          "SLAVES TO DARKNESS",
+          "UNDIVIDED",
+          "CHAMPION",
+          "INFANTRY",
+          "UNIQUE"
+        ],
+        "abilities": [
+          "Sarrakkar Blackwing",
+          "Oath of Dark Sacrifice"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Sarrakkar Blackwing",
+            "timing": "Passive",
+            "effect": "Effect: While this unit’s Sarrakkar Blackwing is on the battlefield, it has WIZARD (1).",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Oath of Dark Sacrifice",
+            "timing": "Once Per Battle, Any Hero Phase",
+            "effect": "Effect: If an unmodified casting roll for this unit this phase was 8+, this unit has WARD (5+) for the rest of the battle.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Hero Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Gnarlspirit Weapons",
+            "3",
+            "4+",
+            "3+",
+            "1",
+            "1",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "Legends Warscrolls",
+      "canReinforce": false,
+      "flavour": "Sarrakkar Blackwing is the hunt-shaman of the Gnarlspirit Pack. This gaunt and savage figure communes with the mysterious entities to whom his warriors have pledged themselves, translating their growls into commands and their fury into dark sorcery. The Gnarlspirit Pack are Darkoath warriors in thrall to monstrous spirits. These entities demand a tribute of slaughter and atrocity – and so long as these warriors can wet their blades with warm blood, they are eager to comply.",
+      "regimentOptions": "Unique, Darkoath, Infantry",
+      "notes": "This unit cannot be reinforced.",
+      "description": "Each model in this unit is armed with Gnarlspirit Weapons. The models in this unit are:\n• Sarrakkar Blackwing (champion)\n• Gorl Spinehammer\n• Crimson Kheira\n• Lupan Longcut"
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "The Oathsworn Kin",
+      "points": 0,
+      "size": 3,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "5\"",
+        "health": "3",
+        "save": "5+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/The-Oathsworn-Kin",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "DARKOATH",
+          "GUNNAR’S OATHSWORN",
+          "SLAVES TO DARKNESS",
+          "INFANTRY",
+          "UNIQUE"
+        ],
+        "abilities": [
+          "Broken Nadja",
+          "Withering Death"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Broken Nadja",
+            "timing": "Passive",
+            "effect": "Effect: While this unit’s Broken Nadja is on the battlefield, it has WIZARD (1).",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Withering Death",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Pick a visible enemy HERO within 18\" of this unit to be the target, then make a casting roll of 2D6.\nEffect: Inflict 1 mortal damage on the target and subtract 1 from the Attacks characteristic of the target’s melee weapons until the start of your next turn.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "keywords": "Spell",
+            "phase": "Hero Phase",
+            "pointsType": "Spell",
+            "points": "5"
+          }
+        ],
+        "melee": [
+          [
+            "Gnarled Staff",
+            "3",
+            "4+",
+            "4+",
+            "-",
+            "D3",
+            ""
+          ],
+          [
+            "Heavy Darkoath Weapon",
+            "4",
+            "4+",
+            "3+",
+            "-",
+            "2",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Gunnar Brand is a hero amongst the Darkoath tribes of Aqshy, but he could not have won his greatest victories without the aid of his companions. The Oathsworn Kin form his closest circle of confidants – Dendrel Direbrand and Warqueen Tanari cave in skulls with hammer and spear while Broken Nadja trails behind, her deadly incantations reducing foes to madness.",
+      "regimentOptions": "Unique, Darkoath, Infantry",
+      "notes": "This unit can only be taken in Gunnar Brand’s regiment. This unit cannot be reinforced.",
+      "description": "• Warqueen Tanari and Dendrel Direbrand are each armed with a Heavy Darkoath Weapon.\n• Broken Nadja is armed with a Gnarled Staff."
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "The Unmade",
+      "points": 110,
+      "size": 9,
+      "kind": "Legends",
+      "category": "Infantry",
+      "profile": {
+        "move": "6\"",
+        "health": "1",
+        "save": "6+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/The-Unmade",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SLAVES TO DARKNESS",
+          "UNDIVIDED",
+          "CHAMPION (1/9)",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "Frozen In Fear"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Frozen In Fear",
+            "timing": "Passive",
+            "effect": "Effect: Enemy units cannot use the ‘Redeploy’ or ‘Rally’ commands while they are within 12\" of this unit.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          }
+        ],
+        "melee": [
+          [
+            "Maiming Weapons",
+            "2",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            "Anti-INFANTRY (+1 Rend)"
+          ],
+          [
+            "Nightmare Sickles",
+            "6",
+            "4+",
+            "3+",
+            "1",
+            "1",
+            "Anti-INFANTRY (+1 Rend)"
+          ]
+        ]
+      },
+      "source": "Legends Warscrolls",
+      "canReinforce": true,
+      "flavour": "The island of Tzlid, drifting ever closer to the Shyish Nadir, is home to the cannibal tribes of the Unmade. The self-mutilation performed by these pain worshippers is horrifying to behold, and their leaders are visions from the darkest of nightmares.",
+      "description": "Each model in this unit is armed with Maiming Weapons.\n• The champion must replace their Maiming Weapons with Nightmare Sickles."
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Untamed Beasts",
+      "points": 110,
+      "size": 9,
+      "kind": "Legends",
+      "category": "Infantry",
+      "profile": {
+        "move": "6\"",
+        "health": "1",
+        "save": "6+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Untamed-Beasts",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SLAVES TO DARKNESS",
+          "UNDIVIDED",
+          "CHAMPION (1/9)",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "Jagged Harpoon",
+          "Unleash The Beast"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Jagged Harpoon",
+            "timing": "End of Any Turn",
+            "effect": "Declare: If this unit includes a First Fang, pick an enemy unit in combat with this unit to be the target.\nEffect: Roll a D3. If the target is a BEAST or MONSTER, roll a dice instead. On a 2+, inflict an amount of mortal damage on the target equal to the roll.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "End of Turn"
+          },
+          {
+            "name": "Unleash The Beast",
+            "timing": "Deployment Phase",
+            "effect": "Effect: This unit can use the ‘Normal Move’ ability as if it were your movement phase.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Start of Turn"
+          }
+        ],
+        "melee": [
+          [
+            "Ghurish Hunting Weapons",
+            "2",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            "Crit (2 Hits)"
+          ]
+        ]
+      },
+      "source": "Legends Warscrolls",
+      "canReinforce": true,
+      "flavour": "By devouring the flesh of Ghur’s many predators, the Untamed Beasts seek to gain their strength and power. These shamanistic savages worship Chaos as the Devourer of Existence and are peerless trackers and hunters.",
+      "description": "1/9 models in this unit is a First Fang. A First Fang cannot be the champion."
+    },
+    {
+      "faction": "Slaves to Darkness",
+      "name": "Varanguard",
+      "points": 290,
+      "size": 3,
+      "kind": "",
+      "category": "Cavalry",
+      "profile": {
+        "move": "10\"",
+        "health": "5",
+        "save": "3+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness/Varanguard",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SLAVES TO DARKNESS",
+          "WARRIORS OF CHAOS",
+          "CAVALRY"
+        ],
+        "abilities": [
+          "Relentless Killers"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Relentless Killers",
+            "timing": "Once Per Battle, Any Combat Phase",
+            "effect": "Effect: This unit can use 2 FIGHT abilities this phase. After the first is used, however, this unit has STRIKE-LAST for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Daemonforged Blades",
+            "3",
+            "3+",
+            "3+",
+            "2",
+            "2",
+            "Crit (Mortal), Charge (+1 Damage)"
+          ],
+          [
+            "Steed’s Tearing Fangs",
+            "3",
+            "4+",
+            "3+",
+            "1",
+            "1",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Each of the Varanguard is a mighty champion who has passed the many tests set for them by Archaon and sworn themselves to his service. Riding atop their hulking steeds, these lords of darkness bring inescapable death to the Everchosen’s enemies.",
+      "regimentOptions": "Warriors of Chaos, Cavalry"
+    }
+  ]
+}

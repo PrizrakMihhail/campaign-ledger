@@ -12,6 +12,7 @@ const asset = (path, base = site) => {
 };
 assert.equal(entries.at(-1), 'app.js', 'App must start after its dependencies');
 assert.equal(entries.length, new Set(entries).size, 'Each script should load only once');
+assert.ok(entries.includes('data/wahapedia-catalogue-data.js'), 'Deployment catalogue must load before the app');
 const scripts = await Promise.all(entries.map(async path => new Script(await readFile(asset(path), 'utf8'), { filename: path })));
 for (const [, stylesheet] of html.matchAll(/<link rel="stylesheet" href="([^"]+)"/g)) {
   const url = asset(stylesheet);
@@ -202,7 +203,7 @@ selection.run("selectWarband('veil')");
 assert.equal(selection.run('activeArmy().id'), 'forge');
 assert.equal(selection.run('viewedArmy().id'), 'veil');
 assert.equal(selectedSave.get(key), selectionInitial);
-assert.match(selection.elements.get('#topbar').innerHTML, /Forge of the Sunset \(Active\)[\s\S]*value="veil" selected/);
+assert.match(selection.elements.get('#topbar').innerHTML, /Forge Of The Sunset \(Active\)[\s\S]*value="veil" selected/);
 for (const [page, content] of [['warbands', 'The Oathbound Dead'], ['overview', 'Veil-only battle'], ['battles', 'Veil-only battle'], ['chronicle', 'Veil-only entry'], ['quests', 'Veil-only quest'], ['arcaneTome', 'Veil-only lore']]) {
   assert.match(selection.run(`${page}()`), new RegExp(content));
   assert.doesNotMatch(selection.run(`${page}()`), /The Oathkeepers|Relight the Watchfires|Siege of the Ember Gate|A Light on the Old Road/);
@@ -443,6 +444,7 @@ assert.doesNotMatch(customCards, /<example>/);
 assert.equal(app.run('unitCatalogueEntry(activeArmy(), checkedUnit).name'), 'Auric Runemaster');
 assert.deepEqual(JSON.parse(app.run('JSON.stringify(Ledger.unitTypes)')), ['Hero', 'Infantry', 'Cavalry', 'War Machine', 'Monster', 'Terrain', 'Other', 'Manifestation']);
 assert.equal(app.run('BattleCatalogueData.entries.every(entry => Ledger.unitTypes.includes(entry.category))'), true);
+assert.equal(app.run('WahapediaCatalogueData.entries.every(entry => Ledger.unitTypes.includes(entry.category))'), true);
 assert.equal(app.run(`BattleCatalogue.find('Khazalite Holds', 'Oathkeeper Cannon').category`), 'War Machine');
 assert.match(app.run('profileEditorFields(true)'), /Add Path upgrade/);
 assert.match(app.run(`textPicker('Warscroll','warscroll','Custom <hero>')`), /value="Custom &lt;hero&gt;"[\s\S]*role="combobox"/);
@@ -495,7 +497,7 @@ assert.deepEqual(JSON.parse(app.run(`
 const stageLabels = ['Archetype', 'Origin', 'Flaw', 'Battle Mount', 'Battle Mount Upgrades', 'Other Upgrades'];
 const stageField = app.run(`anvilStageField('anvil-choice-1-stage')`);
 assert.deepEqual([...stageField.matchAll(/<option value="([^"]+)"(?: selected)?>/g)].map(match => match[1]), stageLabels);
-assert.match(stageField, /<option value="" selected disabled>Choose a stage<\/option>/);
+assert.match(stageField, /<option value="" selected disabled>Choose A Stage<\/option>/);
 assert.match(app.run(`anvilStageField('anvil-choice-1-stage', 'battle mount')`), /<option value="Battle Mount" selected>/);
 assert.match(app.run(`anvilStageField('anvil-choice-1-stage','Legacy & stage')`), /<option value="Legacy &amp; stage" selected disabled>/);
 const anvilPresets = [
@@ -522,6 +524,148 @@ assert.deepEqual(JSON.parse(app.run(`JSON.stringify((() => {
   return [hero.warscroll, hero.points, hero.anvil.limit];
 })())`)), ['Anvil of Apotheosis - Veteran', 260, 32]);
 assert.equal(app.run('Ledger.normalizeAnvil({ limit: "" }).limit'), null);
+
+app.run(`BattleCatalogue.rules = () => ({
+  battleTraits: [{ name: 'Faction trait', timing: 'Passive', declare: '', effect: 'Faction effect' }],
+  battleFormations: [{ name: 'Test formation', abilities: [{ name: 'Formation trait', timing: 'Combat', declare: 'Pick a unit', effect: 'Formation effect' }] }],
+  lores: { spell: [{ name: 'Test spell lore', kind: 'spell', points: 0, entries: [{ name: 'Test spell', value: '7', declare: 'Pick a caster', effect: 'Spell effect' }] }], prayer: [] },
+});`);
+const importedRules = JSON.parse(app.run(`JSON.stringify(importedWarbandRules('Test faction', 'Test formation'))`));
+assert.deepEqual(importedRules.battleTraits.map(trait => trait.name), ['Faction trait', 'Formation trait']);
+assert.deepEqual(importedRules.lores.map(lore => [lore.kind, lore.name, lore.entries[0].value]), [['spell', 'Test spell lore', '7']]);
+
+// Exercise the reference picker through its events and save callbacks, including
+// customization and a second import into a lore that already contains edits.
+const importEditor = boot();
+importEditor.run(`
+  const referenceRules = {
+    battleTraits: [{ name: 'Imported trait', timing: 'Passive', effect: 'Original trait' }],
+    battleFormations: [{ name: 'Imported formation', abilities: [{ name: 'Formation ability', timing: 'Combat', effect: 'Formation effect' }] }],
+    lores: { spell: [{ name: 'Imported lore', kind: 'spell', points: 20, entries: [
+      { name: 'Imported spell', value: '6', declare: 'Choose a caster', effect: 'Original spell' },
+      { name: 'Second spell', value: '7', effect: 'Second effect' },
+    ] }] },
+  };
+  BattleCatalogue.rules = () => referenceRules;
+  BattleCatalogue.lores = (faction, kind) => referenceRules.lores[kind] || [];
+  globalThis.Event = class { constructor(type) { this.type = type; } };
+  const controls = Object.fromEntries(['name', 'timing', 'value', 'declare', 'effect', 'points', 'importedChoice'].map(key => [key, {
+    value: '', handlers: {}, addEventListener(type, callback) { this.handlers[type] = callback; },
+  }]));
+  const applyReference = { handlers: {}, addEventListener(type, callback) { this.handlers[type] = callback; } };
+  const editorStatus = {};
+  const editorForm = { elements: controls, querySelectorAll() { return []; }, dispatchEvent() {}, querySelector(selector) {
+    return selector === '#apply-imported-choice' ? applyReference : editorStatus;
+  } };
+  dialog.querySelector = selector => selector === '#editor-form' ? editorForm : { focus() {} };
+  function useReference(index) {
+    controls.importedChoice.value = String(index);
+    controls.importedChoice.handlers.change();
+    applyReference.handlers.click();
+  }
+  battleTraitForm(activeArmy());
+  useReference(0);
+  controls.effect.value = 'Customized trait';
+  dialogEditor()({ name: controls.name.value, timing: controls.timing.value, declare: controls.declare.value, effect: controls.effect.value });
+`);
+assert.equal(importEditor.run('activeArmy().battleTraits.at(-1).effect'), 'Customized trait');
+assert.equal(importEditor.run('referenceRules.battleTraits[0].effect'), 'Original trait');
+importEditor.run(`
+  loreForm(activeArmy(), 'spell');
+  useReference(0);
+  dialogEditor()({ name: 'My customized lore', points: '25' });
+  const myLore = activeArmy().lores.at(-1);
+  myLore.entries[0].effect = 'Keep my spell edit';
+  loreForm(activeArmy(), 'spell', myLore);
+  useReference(0);
+  dialogEditor()({ name: myLore.name, points: '25' });
+`);
+assert.equal(importEditor.run('myLore.entries.length'), 2);
+assert.equal(importEditor.run('myLore.entries[0].effect'), 'Keep my spell edit');
+assert.equal(importEditor.run('referenceRules.lores.spell[0].entries[0].effect'), 'Original spell');
+importEditor.run(`
+  loreEntryForm(myLore, myLore.entries[1]);
+  useReference(0);
+  dialogEditor()({ name: 'Custom spell name', value: '8', declare: controls.declare.value, effect: 'Custom spell effect' });
+`);
+assert.equal(importEditor.run('myLore.entries[1].value'), '8');
+assert.equal(importEditor.run('myLore.entries[1].name'), 'Custom spell name');
+assert.equal(importEditor.run('Ledger.normalize(CampaignStore.data).armies[0].lores.at(-1).entries[0].effect'), 'Keep my spell edit');
+
+const manifestationApp = boot();
+assert.doesNotMatch(manifestationApp.run('battleTraitsSection(activeArmy())'), /Import faction rules/);
+assert.match(manifestationApp.run('warbandImportFields("Khazalite Holds")'), /Manifestation Lore to import/);
+assert.equal(manifestationApp.run('BattleCatalogue.factions.includes("Endless Spells")'), false);
+manifestationApp.run(`
+  const shared = BattleCatalogue.lores('Khazalite Holds', 'manifestation');
+  const sharedIndex = shared.findIndex(lore => lore.name === 'Morbid Conjuration');
+  const privateIndex = shared.findIndex(lore => lore.name === 'Magmic Invocations');
+  if (sharedIndex < 0 || privateIndex < 0) throw new Error('Missing shared or faction manifestation lores');
+  const manifestationArmy = activeArmy();
+  const manifestationSettings = { includeFactionRules: 'on', 'import-manifestation': String(sharedIndex), includeManifestationUnits: 'on' };
+  // Emulate an older warband with no optional collections.
+  delete manifestationArmy.battleTraits;
+  delete manifestationArmy.lores;
+  applyWarbandImport(manifestationArmy, manifestationSettings);
+  manifestationArmy.battleTraits[0].effect = 'Keep trait customization';
+  manifestationArmy.lores[0].entries[0].effect = 'Keep summon customization';
+  const counts = [manifestationArmy.battleTraits.length, manifestationArmy.lores.length, manifestationArmy.units.length];
+  applyWarbandImport(manifestationArmy, manifestationSettings);
+  if (JSON.stringify(counts) !== JSON.stringify([manifestationArmy.battleTraits.length, manifestationArmy.lores.length, manifestationArmy.units.length])) throw new Error('Repeated import created duplicate records');
+  applyWarbandImport(manifestationArmy, { 'import-manifestation': String(privateIndex), includeManifestationUnits: 'on' });
+`);
+assert.equal(manifestationApp.run('manifestationArmy.battleTraits[0].effect'), 'Keep trait customization');
+assert.equal(manifestationApp.run('manifestationArmy.lores[0].entries[0].effect'), 'Keep summon customization');
+assert.equal(manifestationApp.run('manifestationArmy.lores.length'), 2);
+assert.equal(manifestationApp.run('manifestationArmy.units.filter(unit => unit.type === "Manifestation").length'), 7);
+assert.ok(manifestationApp.run('catalogueProfile(unitCatalogueEntry(manifestationArmy, manifestationArmy.units.find(unit => unit.warscroll === "Purple Sun of Shyish")))?.health'));
+assert.ok(manifestationApp.run('catalogueProfile(unitCatalogueEntry(manifestationArmy, manifestationArmy.units.find(unit => unit.warscroll === "Runic Fyrewall")))?.health'));
+assert.equal(manifestationApp.run('Ledger.normalize(CampaignStore.data).armies[0].lores[0].entries[0].effect'), 'Keep summon customization');
+assert.match(manifestationApp.run('warbandDatacards(CampaignStore.data.campaign, manifestationArmy, CampaignStore.data.battles)'), /Purple Sun of Shyish/);
+
+assert.equal(manifestationApp.run(`optionTitle('THORGRIM’S BEARD! mixed CASE')`), 'Thorgrim’s Beard! Mixed Case');
+assert.match(manifestationApp.run(`select('Test', 'test', [['RAW_ID', 'ALL CAPS mixed']], 'RAW_ID')`), /value="RAW_ID" selected>All Caps Mixed/);
+manifestationApp.run(`
+  const armyGroup = traitRulesets(manifestationArmy).find(group => group.name === 'Lofnir Drothkeepers');
+  if (!armyGroup) throw new Error('Missing Army of Renown traits');
+  importTraitList(manifestationArmy, armyGroup.id);
+  const importedArmyTrait = manifestationArmy.battleTraits.find(trait => trait.ruleset === armyGroup.id);
+  importedArmyTrait.effect = 'Custom Army of Renown effect';
+  if (importTraitList(manifestationArmy, armyGroup.id) !== 0) throw new Error('Repeated full-list import created duplicates');
+`);
+assert.equal(manifestationApp.run('importedArmyTrait.effect'), 'Custom Army of Renown effect');
+assert.match(manifestationApp.run('battleTraitsSection(manifestationArmy)'), /Standard Faction[\s\S]*Lofnir Drothkeepers/);
+assert.equal(manifestationApp.run('Ledger.normalize(CampaignStore.data).armies[0].battleTraits.find(trait => trait.id === importedArmyTrait.id).ruleset'), 'lofnir-drothkeepers');
+
+const deletion = boot();
+deletion.run(`
+  CampaignStore.data.entries.push({ id: 'shared-note', armyId: '', title: 'Shared', body: 'Keep', date: '2026-11-20' });
+  CampaignStore.data.battles[0].awards.push({ id: 'survivor-award', armyId: 'veil', unitId: 'marshal', delta: 3, scars: 2 });
+  actions['remove-warband']();
+`);
+assert.match(deletion.elements.get('#dialog').innerHTML, /Permanently removes[\s\S]*Remove warband/);
+assert.equal(deletion.run('CampaignStore.data.armies.length'), 2, 'Opening confirmation must not delete');
+deletion.run('dialogEditor()()');
+assert.equal(deletion.run('activeArmy().id'), 'veil');
+assert.equal(deletion.run('viewedArmy().id'), 'veil');
+assert.equal(deletion.run('CampaignStore.data.battles.length'), 2);
+assert.equal(deletion.run('CampaignStore.data.battles[0].result'), 'Defeat');
+assert.equal(deletion.run('CampaignStore.data.battles[0].delta'), 2);
+assert.equal(deletion.run('CampaignStore.data.battles[0].opponent'), 'Forge of the Sunset');
+assert.equal(deletion.run('CampaignStore.data.battles[0].awards[0].armyId'), 'veil');
+assert.equal(deletion.run('CampaignStore.data.entries[0].id'), 'shared-note');
+deletion.run(`actions['remove-warband'](); dialogEditor()();`);
+assert.equal(deletion.run('CampaignStore.data.armies.length'), 0);
+assert.equal(deletion.run('CampaignStore.data.activeWarbandId'), '');
+assert.match(deletion.run('warbands()'), /No warbands yet/);
+const opponentDeletion = boot();
+opponentDeletion.run(`selectWarband('veil'); actions['remove-warband'](); dialogEditor()();`);
+assert.equal(opponentDeletion.run('activeArmy().id'), 'forge');
+assert.equal(opponentDeletion.run('CampaignStore.data.battles.length'), 3);
+assert.equal(opponentDeletion.run('CampaignStore.data.battles[0].result'), 'Victory');
+assert.equal(opponentDeletion.run('CampaignStore.data.battles[0].opponentArmyId'), '');
+assert.equal(opponentDeletion.run('CampaignStore.data.battles[0].delta'), 4);
+assert.equal(opponentDeletion.run('Ledger.normalize(CampaignStore.data).armies.length'), 1);
 
 const legacy = JSON.parse(app.run('JSON.stringify(Ledger.normalize(fixture))'));
 legacy.version = 1;

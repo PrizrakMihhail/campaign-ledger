@@ -1,0 +1,2658 @@
+{
+  "edition": "Age of Sigmar 4",
+  "lastUpdate": "2026-10-22 18:12:05",
+  "faction": {
+    "id": "SY",
+    "name": "Sylvaneth",
+    "slug": "sylvaneth",
+    "url": "https://wahapedia.ru/aos4/factions/sylvaneth",
+    "count": 31
+  },
+  "rules": {
+    "battleTraits": [
+      {
+        "name": "THE CREEPING OVERGROWTH",
+        "timing": "Passive",
+        "declare": "",
+        "effect": "The creeping overgrowth is measured from each terrain feature that has a friendly overgrown token. The range of the creeping overgrowth is based on the number of friendly overgrown tokens on the battlefield as shown:\nOvergrown\nTokensCreeping\nOvergrowth Range0-26\"3-59\"6-812\"9+Whole battlefield\nDesigner’s Note: Awakened Wyldwoods are your main way of generating overgrown tokens. Some unit abilities allow you to do so too.",
+        "unitLinks": [
+          "https://wahapedia.ru/aos4/factions/sylvaneth/Awakened-Wyldwood"
+        ]
+      },
+      {
+        "name": "FURY OF THE FOREST",
+        "timing": "Enemy Combat Phase",
+        "declare": "Pick a friendly SYLVANETH unit wholly within the creeping overgrowth and that is in combat with only 1 enemy unit to use this ability.",
+        "effect": "The unit using this ability has STRIKE-FIRST for the rest of the turn.",
+        "unitLinks": []
+      },
+      {
+        "name": "THE LAND AWAKENS",
+        "timing": "End of Your Turn",
+        "declare": "Pick a friendly non-HERO REVENANT INFANTRY unit or friendly Dryads unit that has been destroyed to be the target.",
+        "effect": "Set up a replacement unit with half the number of models from the target unit (rounding up) wholly within the creeping overgrowth and more than 9\" from all enemy units.",
+        "unitLinks": [
+          "https://wahapedia.ru/aos4/factions/sylvaneth/Dryads"
+        ]
+      },
+      {
+        "name": "ENDLESS GROWTH",
+        "timing": "Once Per Turn (Army), End of Any Turn",
+        "declare": "Pick each friendly SYLVANETH unit that is wholly within the creeping overgrowth to be the targets.",
+        "effect": "For each target, roll a D3 and pick 1 of the following effects:\n• Heal (X) the target, where X is equal to the roll.\n• Return a number of slain models to it with a combined Health characteristic of up to the value of the roll.",
+        "unitLinks": []
+      },
+      {
+        "name": "RECLAIMED BY NATURE",
+        "timing": "Once Per Turn (Army), Your Hero Phase",
+        "declare": "",
+        "effect": "If there are fewer than 3 friendly Awakened Wyldwoods on the battlefield, you can set up an Awakened Wyldwood on the battlefield more than 3\" from all objectives and enemy units, more than 12\" from all other friendly Awakened Wyldwoods and more than 1\" from all other terrain features.",
+        "unitLinks": [
+          "https://wahapedia.ru/aos4/factions/sylvaneth/Awakened-Wyldwood"
+        ]
+      },
+      {
+        "name": "CREEPING DREAD",
+        "timing": "Once Per Turn (Army), Start of Any Turn",
+        "declare": "Pick an enemy unit within the creeping overgrowth to be the target.",
+        "effect": "For the rest of the turn, the first time your opponent declares a command for the target while it is not wholly within 12\" of a HERO in their army, unless your opponent spends 1 additional command point to use that command, the command has no effect, it still counts as being used and the command points spent to use the command are still lost.",
+        "unitLinks": []
+      }
+    ],
+    "armiesOfRenown": [
+      {
+        "id": "lords-of-the-clan",
+        "name": "Lords of the Clan",
+        "battleTraits": [
+          {
+            "name": "DORMANT HEROES",
+            "timing": "Deployment Phase",
+            "declare": "If there are more friendly LORDS OF THE CLAN units on the battlefield than there are in reserve, pick a friendly LORDS OF THE CLAN MONSTER unit that has not been deployed.",
+            "effect": "Set up that unit in reserve as a dormant forest spirit. It has now been deployed.",
+            "unitLinks": []
+          },
+          {
+            "name": "ELDER AUTHORITY",
+            "timing": "Once Per Turn (Army), Deployment Phase",
+            "declare": "You can only use this ability if there is a friendly Awakened Wyldwood on the battlefield.",
+            "effect": "You can set up up to 2 additional Awakened Wyldwoods on the battlefield (an Awakened Wyldwood is a single tree miniature with a crescent- shaped base). The first can be set up anywhere on the battlefield more than 3\" from all units, objectives and other terrain features. The second can be set up anywhere on the battlefield wholly outside of enemy territory and more than 3\" from all units, objectives and other terrain features.\nDesigner’s Note: The original Awakened Wyldwood is set up in Step 1 of the deployment phase using the ’Deploy Faction Terrain’ ability. This ability allows you to set up a second and third such terrain feature and is used in Step 3 of the deployment phase, after armies have been deployed.",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/sylvaneth/Awakened-Wyldwood"
+            ]
+          },
+          {
+            "name": "OUR REACH IS LONG",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "The creeping overgrowth (referenced by other abilities) extends 6\" from each terrain feature that has a friendly overgrown token.\nIncrease this range by 1\" for each friendly LORDS OF THE CLAN unit that is wholly outside friendly territory.",
+            "unitLinks": []
+          },
+          {
+            "name": "ROUSED TO FURY",
+            "timing": "Enemy Movement Phase",
+            "declare": "Pick an enemy unit within 9\" of a friendly Awakened Wyldwood to be the target.",
+            "effect": "Pick 1 of the following units:\n• A friendly LORDS OF THE CLAN unit that is in reserve as a dormant forest spirit.\n• A friendly LORDS OF THE CLAN MONSTER that has been destroyed.\nSet up the unit you picked, or a replacement unit if you picked a destroyed unit, within 9\" of the target, wholly within 6\" of that friendly Awakened Wyldwood and not in combat. If you set up a replacement unit, allocate 6 damage points to it (ward rolls cannot be made for those damage points).\nThen, remove that friendly Awakened Wyldwood from the battlefield.",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/sylvaneth/Awakened-Wyldwood"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "soulpod-guardians",
+        "name": "Soulpod Guardians",
+        "battleTraits": [
+          {
+            "name": "THE SACRED GROVES",
+            "timing": "Once Per Battle (Army), Deployment Phase",
+            "declare": "You must use this ability.",
+            "effect": "Set up 3 Awakened Wyldwoods (an Awakened Wyldwood is a single tree miniature with a crescent-shaped base) wholly within friendly territory, more than 1\" from all other terrain features and more than 3\" from all objectives. The tips of each crescent-shaped base must touch, forming a circle.\nOnce you have done so, for the rest of the battle, the 3 tree miniatures join to form 1 Soulpod Grove terrain feature. The area inside the circle formed by the trees is part of the terrain feature",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/sylvaneth/Awakened-Wyldwood"
+            ]
+          },
+          {
+            "name": "JADE HAVEN",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "The Health characteristic of your Soulpod Grove is 18. The creeping overgrowth extends 12\" from your Soulpod Grove.",
+            "unitLinks": []
+          },
+          {
+            "name": "VENGEANCE FOR THE LOST",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "If your Soulpod Grove has been demolished this battle, add 2 to the Attacks characteristic of friendly SOULPOD GUARDIANS units’ melee weapons.",
+            "unitLinks": []
+          },
+          {
+            "name": "HEART OF THE FOREST",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "You cannot allocate more than 10 damage points per phase to a friendly SOULPOD GUARDIANS unit while it is wholly within 12\" of your Soulpod Grove (remaining damage points inflicted on it in that phase have no effect).",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "id": "the-evergreen-hunt",
+        "name": "The Evergreen Hunt",
+        "battleTraits": [
+          {
+            "name": "NATURE AETHERIC",
+            "timing": "Once Per Battle (Army), Deployment Phase",
+            "declare": "Pick a terrain feature that is within friendly territory to be the target.",
+            "effect": "For the rest of the battle, friendly units are wholly within the creeping overgrowth while they are wholly within 6\" of the target.",
+            "unitLinks": []
+          },
+          {
+            "name": "OPENING HORN BLAST",
+            "timing": "Once Per Battle Round (Army), Start of Battle Round",
+            "declare": "You must use this ability at the start of the battle round.",
+            "effect": "Your chords are reset to 0. Then, you gain 1 chord:\n• If a friendly Belthanos is on the battlefield.\n• For each friendly EVERGREEN HUNT unit that is wholly within the same large quarter of the battlefield as the quarry.\n• For each quarry destroyed so far during the battle.",
+            "unitLinks": []
+          },
+          {
+            "name": "SONG OF THE HUNT",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "The following cumulative effects apply to friendly EVERGREEN HUNT units depending on the number of chords you have:\n1 chord – Simple: Add 1 to run rolls and charge rolls for friendly units wholly within the same quarter of the battlefield as the quarry.\n2 chords – Tuneful: Add 1 to hit rolls and wound rolls for friendly units’ combat attacks that target an enemy unit wholly within the same quarter of the battlefield as the quarry.\n3-5 chords – Melodic: Add 1 to the Attacks characteristic of melee weapons used by friendly units while they are in combat with the quarry.\n6+ chords – Mellifluous: While a friendly unit is in combat with the quarry, the quarry has STRIKE-LAST.",
+            "unitLinks": []
+          },
+          {
+            "name": "RHYTHM OF THE CHASE",
+            "timing": "Once Per Battle Round (Army), Start of Battle Round",
+            "declare": "If there is no quarry on the battlefield, pick an enemy unit on the battlefield to be the target.",
+            "effect": "The target is the quarry for the rest of the battle.",
+            "unitLinks": []
+          },
+          {
+            "name": "QUESTING TENDRILS",
+            "timing": "Once Per Turn (Army), Start of Any Turn",
+            "declare": "Pick the terrain feature that is closest to the quarry to be the target.",
+            "effect": "For the rest of the turn, friendly units are wholly within the creeping overgrowth while they are wholly within 6\" of the target.",
+            "unitLinks": []
+          },
+          {
+            "name": "A PRIZE QUARRY IS SIGHTED",
+            "timing": "Once Per Battle (Army), Your Hero Phase",
+            "declare": "Pick an enemy unit within 9\" of a friendly EVERGREEN HUNT unit to be the target.",
+            "effect": "The target becomes the quarry for the rest of the battle. If there was already a quarry on the battlefield when you declared this ability, that unit is no longer the quarry.",
+            "unitLinks": []
+          },
+          {
+            "name": "MERCIFUL STRIKE",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "declare": "Pick a friendly EVERGREEN HUNT MONSTER that has not used a RAMPAGE ability this turn to use this ability, then pick an enemy unit in combat with it to be the target.",
+            "effect": "Roll a dice and add the number of damage points the target has. If the result exceeds the target’s Health characteristic, 1 model in the target unit is slain.",
+            "unitLinks": []
+          },
+          {
+            "name": "ABUNDANT GROWTH",
+            "timing": "Once Per Turn (Army), Your Hero Phase",
+            "declare": "Pick each friendly EVERGREEN HUNT unit that is wholly within 3\" of a terrain feature to be the targets.",
+            "effect": "Heal (1) each target.",
+            "unitLinks": []
+          }
+        ]
+      }
+    ],
+    "battleFormations": [
+      {
+        "name": "Outcasts",
+        "abilities": [
+          {
+            "name": "FEAR OF THE DEEPWOODS",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "In the ‘Creeping Dread’ ability, replace ‘while it is not wholly within 12\" of a HERO in their army’ with ‘while it is not wholly within 6\" of a HERO in their army’.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "name": "Followers of Kurnoth",
+        "abilities": [
+          {
+            "name": "SACRED QUARRY",
+            "timing": "Once Per Turn (Army), Your Hero Phase",
+            "declare": "Pick a friendly SYLVANETH unit to be the target.",
+            "effect": "Until the start of your next turn, add 1 to hit rolls for the target’s attacks while it is wholly within 12\" of the enemy general or an enemy WARMASTER.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "name": "Lords of the Clan",
+        "abilities": [
+          {
+            "name": "NATURE’S TITANS",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "When using the ‘Endless Growth’ ability, do not roll a D3 for MONSTER targets. Instead, Heal (3) each of those targets.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "name": "Glade Defenders",
+        "abilities": [
+          {
+            "name": "MEMORIES OF THE FALLEN",
+            "timing": "Once Per Turn (Army), Any Hero Phase",
+            "declare": "For each friendly SYLVANETH unit or friendly Awakened Wyldwood that was destroyed in the previous turn, you can pick a friendly SYLVANETH unit to be a target.",
+            "effect": "Add 1 to the Attacks characteristic of each target’s melee weapons for the rest of the turn.",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/sylvaneth/Awakened-Wyldwood"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Wargrove of the Burgeoning",
+        "abilities": [
+          {
+            "name": "WALK THE HIDDEN PATHS",
+            "timing": "Once Per Turn (Army), End of Your Turn",
+            "declare": "Pick a friendly SYLVANETH unit within 12\" of a friendly Awakened Wyldwood to be the target.",
+            "effect": "Remove the target from the battlefield and set it up again wholly within 12\" of another friendly Awakened Wyldwood and more than 9\" from all enemies.",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/sylvaneth/Awakened-Wyldwood"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Wargrove of Everdusk",
+        "abilities": [
+          {
+            "name": "SPITEFUL DUSK",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "The first time each phase an enemy unit within the creeping overgrowth uses a command, inflict D3 mortal damage on that unit after that command has been resolved. If that command was a reaction, instead inflict D3 mortal damage on that unit after the ability that command was a reaction to has been resolved.",
+            "unitLinks": []
+          }
+        ]
+      }
+    ],
+    "lores": {
+      "spell": [
+        {
+          "name": "Lore of the Deepwood",
+          "kind": "spell",
+          "points": 0,
+          "entries": [
+            {
+              "name": "JADE THORNS",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly SYLVANETH WIZARD to cast this spell, pick a visible friendly SYLVANETH unit wholly within 12\" of them to be the target, then make a casting roll of 2D6.",
+              "effect": "Add 1 to wound rolls for the target’s combat attacks for the rest of the turn, including attacks made with Companion weapons.",
+              "value": "6",
+              "unitLinks": []
+            },
+            {
+              "name": "ZEPHYRSPITE RUSH",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly SYLVANETH WIZARD to cast this spell, pick a visible friendly SYLVANETH unit wholly within 12\" of them to be the target, then make a casting roll of 2D6.",
+              "effect": "For the rest of the turn, the target can use CHARGE abilities even if it used a RUN ability in the same turn.",
+              "value": "6",
+              "unitLinks": []
+            },
+            {
+              "name": "GRASPING ROOTS",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly SYLVANETH WIZARD to cast this spell, pick a visible enemy unit within 18\" of them to be the target, then make a casting roll of 2D6.",
+              "effect": "Until the start of your next turn:\n• The target cannot use RUN abilities.\n• Subtract 1 from charge rolls for the target.",
+              "value": "5",
+              "unitLinks": []
+            }
+          ]
+        }
+      ],
+      "prayer": [
+        {
+          "name": "Lore of the Spirit-Song",
+          "kind": "prayer",
+          "points": 0,
+          "entries": [
+            {
+              "name": "SONG OF THE LOST",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly SYLVANETH PRIEST to chant this prayer, pick a friendly SYLVANETH unit that is wholly within the creeping overgrowth or that is visible to them and wholly within 12\" of them to be the target, then make a chanting roll of D6.",
+              "effect": "Until the start of your next turn, subtract 1 from wound rolls for attacks that target that friendly unit. In addition, if the chanting roll was 8+, pick 1 of the following effects:\n• You can Heal (3) the target.\n• If the target is not a MONSTER, ignore modifiers to save rolls for the target (positive and negative) until the start of your next turn.",
+              "value": "4",
+              "unitLinks": []
+            },
+            {
+              "name": "SONG OF WAR",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly SYLVANETH PRIEST to chant this prayer, pick a friendly SYLVANETH unit that is wholly within the creeping overgrowth or that is visible to them and wholly within 12\" of them to be the target, then make a chanting roll of D6.",
+              "effect": "If the chanting roll was 10+, you can pick another eligible unit to be a second target. Until the start of your next turn, add 1 to the Rend characteristic of the target(s) melee weapons.",
+              "value": "5",
+              "unitLinks": []
+            },
+            {
+              "name": "SONG OF DREAD",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly SYLVANETH PRIEST to chant this prayer, pick an enemy unit that is wholly within the creeping overgrowth or that is visible to them and within 18\" of them to be the target, then make a chanting roll of D6.",
+              "effect": "If the chanting roll was 8+, you can pick another eligible unit to be a second target. Until the start of your next turn, each time a target uses a MOVE ability and ends that move within the creeping overgrowth, inflict D3 mortal damage on that target after that MOVE ability has been resolved.",
+              "value": "4",
+              "unitLinks": []
+            }
+          ]
+        }
+      ],
+      "manifestation": [
+        {
+          "name": "Manifestations of the Deepwood",
+          "kind": "manifestation",
+          "points": 0,
+          "entries": [
+            {
+              "name": "SUMMON GLADEWYRM",
+              "timing": "Your Hero Phase",
+              "declare": "If there is not a friendly Gladewyrm on the battlefield, pick a friendly SYLVANETH WIZARD to cast this spell, then make a casting roll of 2D6.",
+              "effect": "Set up a Gladewyrm wholly within 12\" of the caster, visible to them and more than 9\" from all enemy units.",
+              "value": "6",
+              "unitLinks": [
+                "https://wahapedia.ru/aos4/factions/sylvaneth/Gladewyrm"
+              ],
+              "manifestation": {
+                "faction": "Sylvaneth",
+                "name": "Gladewyrm"
+              }
+            },
+            {
+              "name": "SUMMON VENGEFUL SKULLROOT",
+              "timing": "Your Hero Phase",
+              "declare": "If there is not a friendly Vengeful Skullroot on the battlefield, pick a friendly SYLVANETH WIZARD to cast this spell, then make a casting roll of 2D6.",
+              "effect": "Set up a Vengeful Skullroot wholly within 12\" of the caster, visible to them and more than 9\" from all enemy units.",
+              "value": "6",
+              "unitLinks": [
+                "https://wahapedia.ru/aos4/factions/sylvaneth/Vengeful-Skullroot"
+              ],
+              "manifestation": {
+                "faction": "Sylvaneth",
+                "name": "Vengeful Skullroot"
+              }
+            },
+            {
+              "name": "SUMMON SPITESWARM HIVE",
+              "timing": "Your Hero Phase",
+              "declare": "If there is not a friendly Spiteswarm Hive on the battlefield, pick a friendly SYLVANETH WIZARD to cast this spell, then make a casting roll of 2D6.",
+              "effect": "Set up a Spiteswarm Hive wholly within 12\" of the caster and visible to them.",
+              "value": "6",
+              "unitLinks": [
+                "https://wahapedia.ru/aos4/factions/sylvaneth/Spiteswarm-Hive"
+              ],
+              "manifestation": {
+                "faction": "Sylvaneth",
+                "name": "Spiteswarm Hive"
+              }
+            }
+          ],
+          "scope": "faction"
+        }
+      ]
+    }
+  },
+  "entries": [
+    {
+      "faction": "Sylvaneth",
+      "name": "Alarielle the Everqueen",
+      "points": 620,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "14\"",
+        "health": "16",
+        "save": "4+",
+        "control": "10",
+        "ward": "5+",
+        "url": "https://wahapedia.ru/aos4/factions/sylvaneth/Alarielle-the-Everqueen",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "ORDER",
+          "SYLVANETH",
+          "FLY",
+          "HERO",
+          "MONSTER",
+          "UNIQUE",
+          "WARD (5+)",
+          "WARMASTER",
+          "WIZARD (3)"
+        ],
+        "abilities": [
+          "Battle Damaged",
+          "Seasons of War",
+          "Lifebloom",
+          "Metamorphosis",
+          "The Goddess of Life",
+          "Living Battering Ram"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of its Wardroth Beetle’s Antlers is 4.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Seasons of War",
+            "timing": "Start of Battle Round",
+            "effect": "Declare: You must use this ability.\nEffect: Pick 1 of the following effects to apply for the rest of the battle round. You cannot pick the effect that you picked in the previous battle round.\nThe Burgeoning: Each time a friendly Awakened Wyldwood uses the ‘Ever Growing’ ability, you can pick any terrain feature your opponent does not control to be the target rather than the closest.\nThe Reaping: Add 1 to casting rolls and chanting rolls for friendly SYLVANETH units while they are wholly within 12\" of this unit.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Lifebloom",
+            "timing": "Once Per Turn (Army), Any Hero Phase",
+            "effect": "Effect: Heal (2D6) this unit.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Metamorphosis",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Pick a visible enemy unit within 12\" of this unit to be the target, then make a casting roll of 2D6.\nEffect: Inflict 2D3 mortal damage on the target. If the target would be destroyed by this spell, before removing any models, pick the closest terrain feature to the target that does not have a friendly overgrown token and give it a friendly overgrown token. If all terrain features on the battlefield already have a friendly overgrown token, inflict D3 mortal damage on each enemy unit within 6\" of the target instead.",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Spell",
+            "phase": "Hero Phase",
+            "pointsType": "Spell",
+            "points": "7"
+          },
+          {
+            "name": "The Goddess of Life",
+            "timing": "Once Per Battle, Your Movement Phase",
+            "effect": "Declare: This unit can use this ability even if it has been destroyed.\nEffect: Set up a replacement unit with 8 damage points allocated to it (ward rolls cannot be made for those damage points) wholly within the creeping overgrowth and more than 9\" from all enemy units.",
+            "kind": "Ability",
+            "type": "Rallying",
+            "phase": "Movement Phase",
+            "pointsType": "Command",
+            "points": "2"
+          },
+          {
+            "name": "Living Battering Ram",
+            "timing": "Once Per Turn (Army), Any Charge Phase",
+            "effect": "Declare: If this unit charged this turn, pick a visible enemy unit within 1\" of it to be the target.\nEffect: Roll a dice. On a 3+, inflict an amount of mortal damage on the target equal to the roll.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Rampage",
+            "phase": "Charge Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Spear of Kurnoth",
+            "12\"",
+            "1",
+            "2+",
+            "3+",
+            "2",
+            "4",
+            ""
+          ]
+        ],
+        "melee": [
+          [
+            "Spear of Kurnoth",
+            "5",
+            "3+",
+            "3+",
+            "2",
+            "2",
+            "Charge (+1 Damage)"
+          ],
+          [
+            "Wardroth Beetle’s Antlers",
+            "6",
+            "4+",
+            "2+",
+            "2",
+            "4",
+            "Companion · See battle damage rules"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "The ground shudders beneath the tread of Alarielle’s gargantuan Wardroth Beetle as she leads the Sylvaneth charge. Wherever the goddess’s gaze falls, her foes cower, for there is no mercy in the Everqueen’s heart towards those who despoil her realm.",
+      "regimentOptions": "0-1 %000012691Forest Sentinel%, Any %000001426SYLVANETH%"
+    },
+    {
+      "faction": "Sylvaneth",
+      "name": "Arch-Revenant",
+      "points": 90,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "12\"",
+        "health": "6",
+        "save": "4+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/sylvaneth/Arch-Revenant",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "ORDER",
+          "REVENANT",
+          "SYLVANETH",
+          "FLY",
+          "HERO",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "Gossamid Commander",
+          "Fight and Fly"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Gossamid Commander",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: If this unit charged this turn, pick a visible friendly Gossamid Archers unit that is not in combat and is wholly within 18\" of this unit to be the target.\nEffect: The target can immediately use a SHOOT ability as if it were your shooting phase but all of the attacks made as part of that SHOOT ability must target an enemy unit that is in combat with this unit.",
+            "kind": "Ability",
+            "type": "Shooting",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Fight and Fly",
+            "timing": "Reaction: You declared a %000010870FIGHT ability% for this unit",
+            "effect": "Effect: If this unit charged this turn, this unit can move up to 2D6\" after that FIGHT ability has been resolved. It cannot end that move in combat.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Combat Phase",
+            "reaction": true
+          }
+        ],
+        "melee": [
+          [
+            "Arch-Revenant’s Glaive",
+            "5",
+            "3+",
+            "4+",
+            "1",
+            "2",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Arch-Revenants soar high over the battlefield, borne upon the wings of a companion zephyrspite. Swooping down to strike where the foe is most vulnerable, their majestic glaives weave a dance of death before they take flight once more, seeking out the next target to feel their wrath.",
+      "regimentOptions": "Any %000021848SYLVANETH% non-%000021848MONSTER%",
+      "notes": "This HERO can join an eligible regiment as a Forest Sentinel."
+    },
+    {
+      "faction": "Sylvaneth",
+      "name": "Belthanos, First Thorn of Kurnoth",
+      "points": 290,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "12\"",
+        "health": "14",
+        "save": "3+",
+        "control": "5",
+        "url": "https://wahapedia.ru/aos4/factions/sylvaneth/Belthanos-First-Thorn-of-Kurnoth",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "KURNOTHI",
+          "ORDER",
+          "SYLVANETH",
+          "FLY",
+          "HERO",
+          "MONSTER",
+          "UNIQUE"
+        ],
+        "abilities": [
+          "Battle Damaged",
+          "Kurnothi War-horn",
+          "Huntmaster’s Strike",
+          "Rhythm of the Chase"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of its Carnelian Greatspite’s Mandibles is 3.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Kurnothi War-horn",
+            "timing": "Passive",
+            "effect": "Effect: Add 2\" to the Move characteristic of friendly KURNOTHI units while they are wholly within 12\" of this unit.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Movement Phase"
+          },
+          {
+            "name": "Huntmaster’s Strike",
+            "timing": "Once Per Turn (Army), End of Any Turn",
+            "effect": "Effect: If this unit charged this turn, remove it from the battlefield and set it up again more than 6\" from all enemy units and wholly within the creeping overgrowth.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "End of Turn"
+          },
+          {
+            "name": "Rhythm of the Chase",
+            "timing": "Once per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick an enemy unit in combat with this unit to be the target.\nEffect: Roll a D3. On a 2+, inflict an amount of mortal damage on the target equal to the roll, then you can remove this unit from the battlefield and set it up again within 1\" of the target.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Rampage",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Kurnoth Glaive",
+            "5",
+            "3+",
+            "3+",
+            "2",
+            "2",
+            "Charge (+1 Damage)"
+          ],
+          [
+            "Carnelian Greatspite’s Mandibles",
+            "4",
+            "4+",
+            "2+",
+            "2",
+            "3",
+            "Companion · See battle damage rules"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Belthanos is the greatest champion of the Hunter God, Kurnoth, and one of the Sylvaneth’s most fearsome warriors. Riding atop his loyal and deadly Carnelian Greatspite, the First Thorn hunts worthy prey, unleashing thunderous blasts from his Kurnothi war- horn before impaling his quarry with a thrust of his huge glaive.",
+      "regimentOptions": "Any %000001426SYLVANETH%"
+    },
+    {
+      "faction": "Sylvaneth",
+      "name": "Branchwych",
+      "points": 100,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "5",
+        "save": "5+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/sylvaneth/Branchwych",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "ORDER",
+          "SYLVANETH",
+          "HERO",
+          "INFANTRY",
+          "WIZARD (1)"
+        ],
+        "abilities": [
+          "Slay the Trespassers!"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Slay the Trespassers!",
+            "timing": "Once Per Turn (Army), Your Hero Phase",
+            "effect": "Declare: Pick an enemy unit that is within the creeping overgrowth or that is visible to this unit and within friendly territory to be the target.\nEffect: Roll a dice. On a 3+, add 1 to wound rolls for combat attacks that target that enemy unit for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Hero Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Greenwood Scythe and Bittergrub",
+            "3",
+            "3+",
+            "4+",
+            "1",
+            "D3",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Matriarchs of the Sylvaneth's warrior households, the Branchwyches lead their kin to battle with blasts of jade magic and hissing swings of their scythes. These same weapons are used when the fighting is done to harvest the lamentiri of the fallen.",
+      "regimentOptions": "Any %000012693INFANTRY%",
+      "notes": "This HERO can join an eligible regiment as a Forest Sentinel"
+    },
+    {
+      "faction": "Sylvaneth",
+      "name": "Dryads",
+      "points": 100,
+      "size": 10,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "6\"",
+        "health": "1",
+        "save": "5+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/sylvaneth/Dryads",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "ORDER",
+          "SYLVANETH",
+          "CHAMPION",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "One With The Forest"
+        ],
+        "abilityDetails": [
+          {
+            "name": "One With The Forest",
+            "timing": "Passive",
+            "effect": "Effect: Subtract 1 from hit rolls and wound rolls for attacks that target this unit while it is wholly within the creeping overgrowth.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          }
+        ],
+        "melee": [
+          [
+            "Wracking Talons",
+            "2",
+            "3+",
+            "4+",
+            "-",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Singing a song of slaughter, Dryads stride from the deepwoods to fall upon those who would defile the Sylvaneth’s soulpod groves. With vicious talons, these forest spirits rip and impale, dancing lithely between their enemies even as they tear them apart."
+    },
+    {
+      "faction": "Sylvaneth",
+      "name": "Drycha Hamadreth",
+      "points": 250,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "10\"",
+        "health": "12",
+        "save": "3+",
+        "control": "5",
+        "url": "https://wahapedia.ru/aos4/factions/sylvaneth/Drycha-Hamadreth",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "FOREST ELDER",
+          "ORDER",
+          "SYLVANETH",
+          "HERO",
+          "MONSTER",
+          "UNIQUE",
+          "WIZARD (1)"
+        ],
+        "abilities": [
+          "Terror of the Deep Woods",
+          "Enrage the Spites",
+          "Merciless Ambush"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Terror of the Deep Woods",
+            "timing": "Passive",
+            "effect": "Effect: Enemy units cannot use RUN or RETREAT abilities while they are within 9\" of this unit.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Movement Phase"
+          },
+          {
+            "name": "Enrage the Spites",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Pick up to 3 enemy units that are visible to and within 12\" of this unit or that are within the creeping overgrowth to be the targets, then make a casting roll of 2D6.\nEffect: Inflict D3 mortal damage on each target.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Spell",
+            "phase": "Hero Phase",
+            "pointsType": "Spell",
+            "points": "7"
+          },
+          {
+            "name": "Merciless Ambush",
+            "timing": "Your Charge Phase",
+            "effect": "Declare: If this unit is not in combat and has not used a RUN or RETREAT ability this turn, make a charge roll of 2D6.\nEffect: You can remove this unit from the battlefield and set it up again within ½\" of an enemy unit and wholly within X\" of a terrain feature that has a friendly overgrown token, where X is equal to the charge roll. If you do so, this unit has charged.",
+            "kind": "Ability",
+            "type": "Movement",
+            "keywords": "Core, Move, Charge, Rampage",
+            "phase": "Charge Phase",
+            "pointsType": "Command",
+            "points": "1"
+          }
+        ],
+        "melee": [
+          [
+            "Slashing Talons",
+            "5",
+            "3+",
+            "2+",
+            "2",
+            "2",
+            "Crit (2 Hits)"
+          ],
+          [
+            "Swarm of Spites",
+            "20",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            "Crit (Mortal), Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Drycha Hamadreth keens with hatred as she tears through her enemies like a raging storm. The Queen of the Outcasts fights a never-ending crusade to eradicate those she sees as a threat to her people, leaving a trail of corpses of both friend and foe in her wake.",
+      "regimentOptions": "Any %000001426SYLVANETH%"
+    },
+    {
+      "faction": "Sylvaneth",
+      "name": "Gladewyrm",
+      "points": 0,
+      "size": 1,
+      "kind": "",
+      "category": "Manifestation",
+      "profile": {
+        "move": "8\"",
+        "health": "7",
+        "save": "4+",
+        "ward": "6+",
+        "banishment": "7",
+        "url": "https://wahapedia.ru/aos4/factions/sylvaneth/Gladewyrm",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "ORDER",
+          "SYLVANETH",
+          "ENDLESS SPELL",
+          "MANIFESTATION",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Feed on Eldritch Energy",
+          "Eldritch Hunters"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Feed on Eldritch Energy",
+            "timing": "Passive",
+            "effect": "Effect: Subtract 1 from casting rolls, unbinding rolls, chanting rolls and banishment rolls for enemy units while they are in combat with this MANIFESTATION.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Eldritch Hunters",
+            "timing": "Your Movement Phase",
+            "effect": "Effect: If this MANIFESTATION is not in combat, remove it from the battlefield and set it up again on the battlefield more than 9\" from all enemy non-WIZARD non-PRIEST units and more than 3\" from all enemy WIZARDS and enemy PRIESTS.",
+            "kind": "Ability",
+            "type": "Movement",
+            "keywords": "Core",
+            "phase": "Movement Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Fearsome Mandibles and Bladed Carapace",
+            "6",
+            "4+",
+            "2+",
+            "1",
+            "D3",
+            "Anti-PRIEST (+1 Rend), Anti-WIZARD (+1 Rend)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Gladewyrms are ferocious subterranean creatures formed from concentrated life magic, used by the Sylvaneth to protect the realmroots from eldritch invaders. When called upon, they leave their patrols along the spirit paths and erupt from the earth to aid their summoners."
+    },
+    {
+      "faction": "Sylvaneth",
+      "name": "Gossamid Archers",
+      "points": 120,
+      "size": 5,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "12\"",
+        "health": "2",
+        "save": "5+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/sylvaneth/Gossamid-Archers",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "ORDER",
+          "REVENANT",
+          "SYLVANETH",
+          "CHAMPION",
+          "FLY",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "Forest Fighters",
+          "Zephyrspites"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Forest Fighters",
+            "timing": "Passive",
+            "effect": "Effect: This unit has a coherency range of 2\".",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Zephyrspites",
+            "timing": "Reaction: You declared a SHOOT ability for this unit",
+            "effect": "Effect: After that SHOOT ability has been resolved, this unit can move up to D6\". It cannot move into combat during any part of that move.",
+            "kind": "Ability",
+            "type": "Movement",
+            "keywords": "Move",
+            "phase": "Shooting Phase",
+            "reaction": true
+          }
+        ],
+        "ranged": [
+          [
+            "Gossamid Bow",
+            "12\"",
+            "2",
+            "3+",
+            "4+",
+            "1",
+            "1",
+            "Crit (Auto-wound), Shoot in Combat"
+          ]
+        ],
+        "melee": [
+          [
+            "Cruel Talons",
+            "1",
+            "3+",
+            "4+",
+            "-",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Gossamid Archers are afforded the power of flight by the zephyrspites that clasp their torsos. A gruesome fate awaits any struck by the shafts of these skirmishers, for the arrowheads contain voracious grubs that devour the target from within."
+    },
+    {
+      "faction": "Sylvaneth",
+      "name": "Grove Guardian",
+      "points": 200,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "4\"",
+        "health": "7",
+        "save": "5+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/sylvaneth/Grove-Guardian",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "FOREST ELDER",
+          "ORDER",
+          "SYLVANETH",
+          "HERO",
+          "INFANTRY",
+          "PRIEST (2)"
+        ],
+        "abilities": [
+          "Soulshriek",
+          "Regenesis"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Soulshriek",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick each friendly non-HERO REVENANT unit wholly within 12\" of and visible to this unit to be the targets.\nEffect: For the rest of the phase, each time a model in a target unit is slain by a combat attack, roll a dice. On a 5+, inflict 1 mortal damage on the attacking unit.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Regenesis",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Declare: Pick a friendly SYLVANETH unit that is wholly within the creeping overgrowth or that is visible to and wholly within 12\" of this unit to be the target, then make a chanting roll of D6.\nEffect: If the chanting roll was 6+, you can pick another eligible unit to be a second target. If a target is a non-HERO REVENANT INFANTRY or Dryads unit, return up to D3 models to the target unit. Othe",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Prayer",
+            "phase": "Hero Phase",
+            "pointsType": "Prayer",
+            "points": "4"
+          }
+        ],
+        "melee": [
+          [
+            "Grove Sickle or Shears",
+            "3",
+            "3+",
+            "4+",
+            "1",
+            "D3",
+            ""
+          ],
+          [
+            "Guardian Spites",
+            "6",
+            "4+",
+            "4+",
+            "1",
+            "D3",
+            "Crit (Mortal), Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Grove Guardians are the keepers of the sacred soulpod groves, fey wardens whose powers of rejuvenation can grant new life to fallen Sylvaneth. In battle, they slay their foes with deft strikes of their sickles or leaf-bladed shears whilst regenerating the life energy of harvested lamentiri within the amniotic pods of their genesis trees.",
+      "regimentOptions": "Any %000001426SYLVANETH%"
+    },
+    {
+      "faction": "Sylvaneth",
+      "name": "Kurnoth Hunters with Greatbows",
+      "points": 190,
+      "size": 3,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "6\"",
+        "health": "5",
+        "save": "4+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/sylvaneth/Kurnoth-Hunters-with-Greatbows",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "KURNOTHI",
+          "ORDER",
+          "SYLVANETH",
+          "CHAMPION",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "Hunter’s Endurance",
+          "Steady Aim"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Hunter’s Endurance",
+            "timing": "Passive",
+            "effect": "Effect: Subtract 1 from the Rend characteristic of weapons used for attacks that target this unit while it is wholly within the creeping overgrowth.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          },
+          {
+            "name": "Steady Aim",
+            "timing": "Once Per Turn (Army), Your Shooting Phase",
+            "effect": "Effect: If this unit has not used a MOVE ability this turn and was not set up this turn, add 1 to hit rolls for this unit’s shooting attacks for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Shooting",
+            "phase": "Shooting Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Kurnoth Greatbow",
+            "18\"",
+            "2",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            "Anti-CAVALRY (+1 Rend)"
+          ]
+        ],
+        "melee": [
+          [
+            "Vicious Claws",
+            "3",
+            "3+",
+            "3+",
+            "-",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Some Kurnoth Hunters are armed with towering bows, each the size of the mobile artillery pieces of other races. Drawn by the great strength of their wielders, the huge shafts loosed by these weapons can be fired across awesome distances, skewering clutches of lesser foes and slaying the enemy’s elite with relentless precision."
+    },
+    {
+      "faction": "Sylvaneth",
+      "name": "Kurnoth Hunters with Greatscythes",
+      "points": 200,
+      "size": 3,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "6\"",
+        "health": "5",
+        "save": "4+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/sylvaneth/Kurnoth-Hunters-with-Greatscythes",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "KURNOTHI",
+          "ORDER",
+          "SYLVANETH",
+          "CHAMPION",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "Hunter’s Endurance",
+          "Tanglethorn Thickets"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Hunter’s Endurance",
+            "timing": "Passive",
+            "effect": "Effect: Subtract 1 from the Rend characteristic of weapons used for attacks that target this unit while it is wholly within the creeping overgrowth.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          },
+          {
+            "name": "Tanglethorn Thickets",
+            "timing": "Any Combat Phase",
+            "effect": "Declare: Pick an enemy unit that charged this turn and is in combat with this unit to be the target.\nEffect: Roll a dice for each model in this unit that is in combat with the target. For each 3+, inflict 1 mortal damage on the target.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Kurnoth Greatscythe",
+            "3",
+            "3+",
+            "3+",
+            "1",
+            "3",
+            "Anti-charge (+1 Rend)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "The greatscythe is the weapon chosen by Kurnoth Hunters who show cool implacability and a desire to reap the greatest tally of kills. With a single sweep, these forest spirits can carve through multiple footsoldiers, and with their polearms’ hooked blades, they can drag cavalrymen from their saddles before ruthlessly dispatching them as they sprawl in the gore-sprayed undergrowth."
+    },
+    {
+      "faction": "Sylvaneth",
+      "name": "Kurnoth Hunters with Greatswords",
+      "points": 220,
+      "size": 3,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "6\"",
+        "health": "5",
+        "save": "4+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/sylvaneth/Kurnoth-Hunters-with-Greatswords",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "KURNOTHI",
+          "ORDER",
+          "SYLVANETH",
+          "CHAMPION",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "Hunter’s Endurance",
+          "Crashing Impact"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Hunter’s Endurance",
+            "timing": "Passive",
+            "effect": "Effect: Subtract 1 from the Rend characteristic of weapons used for attacks that target this unit while it is wholly within the creeping overgrowth.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          },
+          {
+            "name": "Crashing Impact",
+            "timing": "Any Combat Phase",
+            "effect": "Declare: If this unit charged this turn, pick an enemy unit in combat with it to be the target.\nEffect: Roll a dice for each model in this unit that is in combat with the target. For each 3+, inflict 1 mortal damage on the target.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Kurnoth Greatsword",
+            "4",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Many Kurnoth Hunters who favour the fury of close combat choose to wield immense greatswords, two-handed weapons that can cleave a warrior in two with a single blow. These Hunters favour an aggressive fighting style, pounding towards the foe on their powerful hindlegs and crashing into them like a hurricane in a forest canopy."
+    },
+    {
+      "faction": "Sylvaneth",
+      "name": "Kurnoth’s Heralds",
+      "points": 110,
+      "size": 3,
+      "kind": "Legends",
+      "category": "Cavalry",
+      "profile": {
+        "move": "12\"",
+        "health": "3",
+        "save": "5+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/sylvaneth/Kurnoth-s-Heralds",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "KURNOTHI",
+          "ORDER",
+          "SYLVANETH",
+          "CAVALRY",
+          "CHAMPION",
+          "UNIQUE"
+        ],
+        "abilities": [
+          "Graceful Leaps"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Graceful Leaps",
+            "timing": "Passive",
+            "effect": "Effect: Each time this unit makes a pile-in move:\n• Add 3\" to the distance this unit can move.\n• This unit can pass through models in enemy units.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Combat Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Kurnothi Bow",
+            "18\"",
+            "3",
+            "3+",
+            "4+",
+            "1",
+            "1",
+            ""
+          ]
+        ],
+        "melee": [
+          [
+            "Hunter Weapons",
+            "3",
+            "3+",
+            "4+",
+            "1",
+            "1",
+            "Charge (+1 Damage)"
+          ]
+        ]
+      },
+      "source": "Legends Warscrolls",
+      "canReinforce": false,
+      "flavour": "As graceful as they are merciless, Kurnoth’s Heralds have sworn to hunt and slay any trespassers who threaten the sanctity of Kurnotheal. They are led by Ylarin, Master of the Paths – a grizzled huntsman and veteran warden of the wild. Cullon is the warband’s mightiest fighter, as strong and resolute as an elder ironoak, while sharpshooter Lenwythe is so skilful that she can put an arrow through a grot’s eye at five hundred paces.",
+      "description": "Each model in this unit is armed with Hunter Weapons. The models in this unit are:\n• Ylarin, Master of the Paths (champion)\n• Cullon, Axe of Kurnoth\n• Lenwythe, Eye of the Forest (also armed with a Kurnothi Bow)"
+    },
+    {
+      "faction": "Sylvaneth",
+      "name": "Revenant Seekers",
+      "points": 180,
+      "size": 3,
+      "kind": "",
+      "category": "Cavalry",
+      "profile": {
+        "move": "12\"",
+        "health": "5",
+        "save": "4+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/sylvaneth/Revenant-Seekers",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "ORDER",
+          "REVENANT",
+          "SYLVANETH",
+          "CAVALRY",
+          "CHAMPION",
+          "FLY",
+          "MUSICIAN (1/3)",
+          "STANDARD BEARER (1/3)"
+        ],
+        "abilities": [
+          "Forest Fighters",
+          "Deafening Drone"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Forest Fighters",
+            "timing": "Passive",
+            "effect": "Effect: This unit has a coherency range of 2\".",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Deafening Drone",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: If this unit did not charge this turn, pick an enemy unit in combat with it to be the target.\nEffect: Subtract 1 from the Attacks characteristic of the target’s melee weapons for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Seeker’s Sickle",
+            "3",
+            "3+",
+            "4+",
+            "1",
+            "1",
+            "Crit (Mortal)"
+          ],
+          [
+            "Dragonspite’s Mandibles",
+            "3",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "It is the duty of the Revenant Seekers to extract the lamentiri of Sylvaneth who fall in battle and return them to the soulpod groves. The wickedly sharp sickles they wield for this purpose are equally useful for severing the mortal threads of those who would endanger the remains of their slain kin."
+    },
+    {
+      "faction": "Sylvaneth",
+      "name": "Scourge of Aqshy Kurnoth Hunters with Greatswords",
+      "points": 220,
+      "size": 3,
+      "kind": "Scourge of Aqshy",
+      "category": "Infantry",
+      "profile": {
+        "move": "6\"",
+        "health": "5",
+        "save": "4+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/sylvaneth/Scourge-of-Aqshy-Kurnoth-Hunters-with-Greatswords",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "KURNOTHI",
+          "ORDER",
+          "SYLVANETH",
+          "CHAMPION",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "Hunter’s Endurance",
+          "Vital Rangers"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Hunter’s Endurance",
+            "timing": "Passive",
+            "effect": "Effect: Subtract 1 from the Rend characteristic of weapons used for attacks that target this unit while it is wholly within the creeping overgrowth.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          },
+          {
+            "name": "Vital Rangers",
+            "timing": "Once Per Turn (Army), End of Your Turn",
+            "effect": "Effect: If this unit is not in combat, it can move a distance up to its Move characteristic. It must end that move within the creeping overgrowth and not in combat.",
+            "kind": "Ability",
+            "type": "Movement",
+            "keywords": "Move",
+            "phase": "End of Turn"
+          }
+        ],
+        "melee": [
+          [
+            "Kurnoth Greatsword",
+            "4",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "Scourge of Aqshy - Sylvaneth",
+      "canReinforce": true,
+      "flavour": "Knights of the forest, those Kurnoth Hunters who wield greatswords carve through the enemy with cleaving strikes. Relishing the thrill of the hunt, they stride across the ash-plains of the Great Parch with joyous fervour.",
+      "notes": "This unit is legal for Matched Play for battles fought using the General’s Handbook 2026-27 battlepack."
+    },
+    {
+      "faction": "Sylvaneth",
+      "name": "Scourge of Aqshy Treelord Ancient",
+      "points": 290,
+      "size": 1,
+      "kind": "Scourge of Aqshy",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "14",
+        "save": "3+",
+        "control": "5",
+        "url": "https://wahapedia.ru/aos4/factions/sylvaneth/Scourge-of-Aqshy-Treelord-Ancient",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "FOREST ELDER",
+          "ORDER",
+          "SYLVANETH",
+          "HERO",
+          "MONSTER",
+          "WIZARD (2)"
+        ],
+        "abilities": [
+          "Battle Damaged",
+          "Arcane Osmosis",
+          "Jade Abjuration"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of its Sweeping Blows is 3.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Arcane Osmosis",
+            "timing": "Once Per Turn (Army), Your Hero Phase",
+            "effect": "Effect: For the rest of the turn:\n• Each time you make a casting roll for this unit, add D3 to the roll.\n• This unit cannot move or be removed from the battlefield by an ability that would allow it to be set up elsewhere on the battlefield or in reserve.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Jade Abjuration",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Pick this unit or a visible friendly Awakened Wyldwood wholly within 12\" of this unit to be the target, then make a casting roll of 2D6.\nEffect: Until the start of your next turn:\n• Ignore the effects of enemy SPELL abilities on units (friendly and enemy) while they are within 6\" of the target.\n• Weapons used by enemy MANIFESTATIONS have a maximum Attacks characteristic of 1 while they are within 6\" of the target.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Spell",
+            "phase": "Hero Phase",
+            "pointsType": "Spell",
+            "points": "7"
+          }
+        ],
+        "ranged": [
+          [
+            "Doom Tendril Staff",
+            "18\"",
+            "4",
+            "4+",
+            "2+",
+            "1",
+            "D3",
+            ""
+          ]
+        ],
+        "melee": [
+          [
+            "Sweeping Blows",
+            "5",
+            "4+",
+            "2+",
+            "1",
+            "2",
+            "Anti-charge (+1 Rend) · See battle damage rules"
+          ],
+          [
+            "Massive Impaling Talons",
+            "2",
+            "4+",
+            "2+",
+            "2",
+            "3",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "Scourge of Aqshy - Sylvaneth",
+      "canReinforce": false,
+      "flavour": "Treelord Ancients are among the eldest of the treefolk and masters of jade spellcraft, having absorbed the energies of life over their many centuries of existence. Striding across the Aqshian landscape, they lead their kin in the defence of their ash-crowned forests",
+      "regimentOptions": "0-1 %000012691Forest Sentinel%, Any %000001426SYLVANETH%",
+      "notes": "This unit is legal for Matched Play for battles fought using the General’s Handbook 2026-27 battlepack."
+    },
+    {
+      "faction": "Sylvaneth",
+      "name": "Scourge of Ghyran Drycha Hamadreth",
+      "points": 300,
+      "size": 1,
+      "kind": "Scourge of Ghyran",
+      "category": "Hero",
+      "profile": {
+        "move": "10\"",
+        "health": "12",
+        "save": "3+",
+        "control": "5",
+        "url": "https://wahapedia.ru/aos4/factions/sylvaneth/Scourge-of-Ghyran-Drycha-Hamadreth",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "ORDER",
+          "SYLVANETH",
+          "HERO",
+          "MONSTER",
+          "UNIQUE",
+          "WIZARD (1)"
+        ],
+        "abilities": [
+          "Strength from Spite",
+          "Twisted Spirit-Song",
+          "Vicious Spiteswarms"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Strength from Spite",
+            "timing": "Passive",
+            "effect": "Effect: Ward rolls cannot be made for damage points inflicted by this unit’s attacks.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Twisted Spirit-Song",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Pick a visible friendly SYLVANETH unit wholly within 12\" of this unit to be the target. Then, make a casting roll of 2D6.\nEffect: Until the start of your next turn, add 1 to wound rolls for the target’s combat attacks, including those made with Companion weapons.\nIn addition, if the target is non-KURNOTHI, add 1 to the Attacks characteristics of the target’s melee weapons.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Spell",
+            "phase": "Hero Phase",
+            "pointsType": "Spell",
+            "points": "6"
+          },
+          {
+            "name": "Vicious Spiteswarms",
+            "timing": "Reaction: Opponent declared a CHARGE ability for a unit within 18\" of this unit",
+            "effect": "Effect: Your opponent must pick 1 of the following:\nAvoid the Swarm: Subtract D3 from the charge roll. In addition, if your opponent re-rolls that charge roll, subtract D3 from that roll.\nCharge Through the Swarm: Subtract 1 from hit rolls for that unit’s attacks for the rest of the turn, and add 1 to hit rolls for attacks that target that unit for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Rampage",
+            "phase": "Charge Phase",
+            "reaction": true
+          }
+        ],
+        "melee": [
+          [
+            "Slashing Talons",
+            "10",
+            "3+",
+            "2+",
+            "2",
+            "2",
+            "Crit (2 Hits)"
+          ]
+        ]
+      },
+      "source": "Scourge of Ghyran - Sylvaneth",
+      "canReinforce": false,
+      "flavour": "Ghyran’s most ruthless and cruel-hearted defender, the feared Drycha Hamadreth is as much a living hive as a true forest spirit. When her home realm is threatened, Drycha’s spite-swarms become more furious and potent than ever, impeding their advance and rendering them staggering and helpless in the face of a Sylvaneth attack.",
+      "regimentOptions": "0-1 %000012691Forest Sentinel%, Any %000001426SYLVANETH%",
+      "notes": "This unit is legal for Matched Play for battles fought using the General’s Handbook 2025-26 battlepack."
+    },
+    {
+      "faction": "Sylvaneth",
+      "name": "Scourge of Ghyran Revenant Seekers",
+      "points": 240,
+      "size": 3,
+      "kind": "Scourge of Ghyran",
+      "category": "Cavalry",
+      "profile": {
+        "move": "12\"",
+        "health": "5",
+        "save": "4+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/sylvaneth/Scourge-of-Ghyran-Revenant-Seekers",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "ORDER",
+          "SYLVANETH",
+          "CAVALRY",
+          "CHAMPION",
+          "FLY",
+          "MUSICIAN (1/3)",
+          "STANDARD BEARER (1/3)"
+        ],
+        "abilities": [
+          "Forest Fighters",
+          "Lamentiri Life Energies"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Forest Fighters",
+            "timing": "Passive",
+            "effect": "Effect: This unit has a coherency range of 2\".",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Lamentiri Life Energies",
+            "timing": "Once Per Turn (Army), Any Hero Phase",
+            "effect": "Declare: Pick a visible friendly SYLVANETH unit wholly within 12\" of this unit to be the target.\nEffect: Roll a dice. On a 3+, the target has WARD (5+) for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Hero Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Scourge Sickle",
+            "3",
+            "3+",
+            "4+",
+            "1",
+            "2",
+            "Crit (Mortal)"
+          ],
+          [
+            "Sharpened Mandibles",
+            "3",
+            "4+",
+            "3+",
+            "1",
+            "1",
+            "Charge (+1 Damage), Companion"
+          ]
+        ]
+      },
+      "source": "Scourge of Ghyran - Sylvaneth",
+      "canReinforce": true,
+      "flavour": "Riding atop fierce dragonspites and armed with sickles that can slice through ironoak bark, Revenant Seekers have the dangerous task of recovering lamentiri from fallen Sylvaneth. Tragically, when war comes to Ghyran, these soul-seeds are in plentiful number; in desperate times, their innate magic can be channelled by the Revenant Seekers to aid nearby Sylvaneth.",
+      "notes": "This unit is legal for Matched Play for battles fought using the General’s Handbook 2025-26 battlepack."
+    },
+    {
+      "faction": "Sylvaneth",
+      "name": "Skaeth’s Wild Hunt",
+      "points": 90,
+      "size": 5,
+      "kind": "Legends",
+      "category": "Infantry",
+      "profile": {
+        "move": "6\"",
+        "health": "2",
+        "save": "6+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/sylvaneth/Skaeth-s-Wild-Hunt",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "KURNOTHI",
+          "ORDER",
+          "SYLVANETH",
+          "CHAMPION",
+          "INFANTRY",
+          "MUSICIAN (1/5)",
+          "UNIQUE"
+        ],
+        "abilities": [
+          "Fleet of Foot",
+          "Karthaen"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Fleet of Foot",
+            "timing": "Passive",
+            "effect": "Effect: This unit can use SHOOT and/or CHARGE abilities even if it used a RUN or RETREAT ability in the same turn.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Karthaen",
+            "timing": "Passive",
+            "effect": "Effect: While this unit’s Karthaen, Huntcaller, is on the battlefield, it has WIZARD (1).",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Wild Hunt Ranged Weapons",
+            "12\"",
+            "2",
+            "3+",
+            "4+",
+            "1",
+            "1",
+            ""
+          ]
+        ],
+        "melee": [
+          [
+            "Tracker Weapons",
+            "2",
+            "3+",
+            "4+",
+            "1",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "Legends Warscrolls",
+      "canReinforce": false,
+      "flavour": "Skaeth and his Kurnothi kin are merciless hunters of those who would dare despoil the wilderness, running their prey to ground before piercing their hearts with spears, arrows and hurled javelins.",
+      "notes": "This unit cannot be reinforced.",
+      "description": "Each model in this unit is armed with Tracker Weapons. The models in this unit are:\n• Skaeth the Huntsman (champion, also armed with Wild Hunt Ranged Weapons)\n• Karthaen, Huntcaller (musician)\n• Althaen (also armed with Wild Hunt Ranged Weapons)\n• Sheoch\n• Lighaen"
+    },
+    {
+      "faction": "Sylvaneth",
+      "name": "Spirit of Durthu",
+      "points": 320,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "14",
+        "save": "3+",
+        "control": "5",
+        "url": "https://wahapedia.ru/aos4/factions/sylvaneth/Spirit-of-Durthu",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "FOREST ELDER",
+          "ORDER",
+          "SYLVANETH",
+          "HERO",
+          "MONSTER"
+        ],
+        "abilities": [
+          "Battle Damaged",
+          "Guardian of the Glades",
+          "Titanic Duel"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of its Guardian Sword is 3.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Guardian of the Glades",
+            "timing": "Once Per Turn (Army), Reaction: You declared a CHARGE ability for this unit",
+            "effect": "Effect: Add 2 to the charge roll but this unit must end that charge move within ½\" of an enemy unit that is in combat with another friendly SYLVANETH HERO.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Charge Phase",
+            "reaction": true
+          },
+          {
+            "name": "Titanic Duel",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick an enemy non-FLY INFANTRY or CAVALRY unit in combat with this unit to be the target.\nEffect: Roll a dice. On a 3+, the target has STRIKE-LAST for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "keywords": "Rampage",
+            "phase": "Combat Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Verdant Blast",
+            "12\"",
+            "5",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            ""
+          ]
+        ],
+        "melee": [
+          [
+            "Guardian Sword",
+            "5",
+            "3+",
+            "2+",
+            "2",
+            "4",
+            "Anti-MONSTER (+1 Rend) · See battle damage rules"
+          ],
+          [
+            "Massive Impaling Talons",
+            "2",
+            "4+",
+            "2+",
+            "2",
+            "3",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "A Spirit of Durthu is a walking pillar of oaken barkflesh and fiery, righteous anger. Some amongst them form the personal guard of the Everqueen; others walk abroad to stamp her enemies into the mulch or cut down her foes with scything sweeps of their guardian swords.",
+      "regimentOptions": "0-1 %000012691Forest Sentinel%, Any %000001426SYLVANETH%"
+    },
+    {
+      "faction": "Sylvaneth",
+      "name": "Spite-Revenants",
+      "points": 100,
+      "size": 5,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "6\"",
+        "health": "2",
+        "save": "5+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/sylvaneth/Spite-Revenants",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "ORDER",
+          "REVENANT",
+          "SYLVANETH",
+          "CHAMPION",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "Shadowcreep"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Shadowcreep",
+            "timing": "Once Per Turn (Army), Your Movement Phase",
+            "effect": "Effect: If this unit is wholly within the creeping overgrowth, remove this unit from the battlefield and set it up again wholly within 3\" of a terrain feature and more than 9\" from all enemy units. Then, add 1 to charge rolls for this unit for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Movement Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Cruel Talons and Fangs",
+            "3",
+            "3+",
+            "4+",
+            "-",
+            "1",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Spite-Revenants are shrieking terrors from the depths of nightmare. Light and shadow play weirdly around these ghastly beings as they tear and bite their victims, rending to bloody tatters any who do not simply fling down their weapons and flee."
+    },
+    {
+      "faction": "Sylvaneth",
+      "name": "Spiterider Lancers",
+      "points": 230,
+      "size": 3,
+      "kind": "",
+      "category": "Cavalry",
+      "profile": {
+        "move": "12\"",
+        "health": "5",
+        "save": "4+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/sylvaneth/Spiterider-Lancers",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "ORDER",
+          "REVENANT",
+          "SYLVANETH",
+          "CAVALRY",
+          "CHAMPION",
+          "FLY",
+          "MUSICIAN (1/3)",
+          "STANDARD BEARER (1/3)"
+        ],
+        "abilities": [
+          "Forest Fighters",
+          "Strike and Fade"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Forest Fighters",
+            "timing": "Passive",
+            "effect": "Effect: This unit has a coherency range of 2\".",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Strike and Fade",
+            "timing": "Once Per Turn (Army), End of Any Turn",
+            "effect": "Effect: If this unit charged this turn, remove it from the battlefield and set it up again more than 9\" from all enemy units and wholly within the creeping overgrowth.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "End of Turn"
+          }
+        ],
+        "melee": [
+          [
+            "Spiterider Lance",
+            "3",
+            "3+",
+            "4+",
+            "1",
+            "1",
+            "Charge (+1 Damage), Crit (2 Hits)"
+          ],
+          [
+            "Dragonspite’s Mandibles",
+            "3",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "The Spiterider Lancers are Alarielle's elite cavalry. Mounted on agile dragonspites whose bodies thrum with life magic, they deftly swoop and whirl above the battlefield before suddenly diving into a charge, striking the enemy lines with shocking force."
+    },
+    {
+      "faction": "Sylvaneth",
+      "name": "Spiteswarm Hive",
+      "points": 0,
+      "size": 1,
+      "kind": "",
+      "category": "Manifestation",
+      "profile": {
+        "move": "-",
+        "health": "6",
+        "save": "6+",
+        "ward": "6+",
+        "banishment": "7",
+        "url": "https://wahapedia.ru/aos4/factions/sylvaneth/Spiteswarm-Hive",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "ORDER",
+          "SYLVANETH",
+          "ENDLESS SPELL",
+          "MANIFESTATION",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Anger the Hive"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Anger the Hive",
+            "timing": "Your Shooting Phase",
+            "effect": "Effect: If this MANIFESTATION was not set up this turn, add 10 to the Attacks characteristic of this MANIFESTATION’s ranged weapons for the rest of the phase, but all of the shooting attacks it makes this phase must target an enemy unit within 9\" of it.",
+            "kind": "Ability",
+            "type": "Shooting",
+            "phase": "Shooting Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Spiteswarm",
+            "18\"",
+            "5",
+            "4+",
+            "3+",
+            "1",
+            "1",
+            "Crit (2 Hits)"
+          ]
+        ],
+        "melee": [
+          [
+            "Spiteswarm",
+            "10",
+            "4+",
+            "3+",
+            "1",
+            "1",
+            "Crit (2 Hits)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "With a humming chant, those versed in the magic of Ghyran can summon a Spiteswarm Hive. As enemies cautiously approach the comb, the air thrums angrily before the inhabiting spites buzz forth, their swarms swirling around the foe, crawling between gaps in armour to burrow into eyes, chew through jugulars and clog screaming throats."
+    },
+    {
+      "faction": "Sylvaneth",
+      "name": "The Lady of Vines",
+      "points": 280,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "10",
+        "save": "4+",
+        "control": "5",
+        "ward": "5+",
+        "url": "https://wahapedia.ru/aos4/factions/sylvaneth/The-Lady-of-Vines",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "FOREST ELDER",
+          "ORDER",
+          "SYLVANETH",
+          "HERO",
+          "MONSTER",
+          "UNIQUE",
+          "WARD (5+)",
+          "WIZARD (2)"
+        ],
+        "abilities": [
+          "Hand of the Everqueen",
+          "Protection of the Everqueen",
+          "Verdian Crown"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Hand of the Everqueen",
+            "timing": "Once Per Turn (Army), Any Hero Phase",
+            "effect": "Declare: Pick a terrain feature within 18\" of this unit that has a friendly overgrown token to be the target.\nEffect: The next time this unit uses a non-SUMMON SPELL ability this phase, when picking targets for that spell, you can measure range and visibility from the target terrain feature instead of from this unit, and your opponent can measure range and visibility to the target terrain feature instead of to this unit for the purposes of the ‘Unbind’ ability.",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Rampage",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Protection of the Everqueen",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Make a casting roll of 2D6. Add 1 to the roll if this unit is wholly within the creeping overgrowth.\nEffect: Until the start of your next turn, friendly SYLVANETH units have WARD (5+) while they are wholly within 12\" of this unit.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "keywords": "Spell",
+            "phase": "Hero Phase",
+            "pointsType": "Spell",
+            "points": "7"
+          },
+          {
+            "name": "Verdian Crown",
+            "timing": "Once Per Battle, Any Hero Phase",
+            "effect": "Declare: Pick a terrain feature within 18\" of this unit that does not have a friendly overgrown token to be the target.\nEffect: Give the target a friendly overgrown token.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Kurnotheal’s Wrath",
+            "12\"",
+            "1",
+            "2+",
+            "2+",
+            "2",
+            "D6",
+            ""
+          ]
+        ],
+        "melee": [
+          [
+            "Kurnotheal’s Wrath and Lashing Vines",
+            "6",
+            "3+",
+            "3+",
+            "2",
+            "2",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "The Lady of Vines is literally the hand of Alarielle, cut from the goddess’s wrist and then grown into a towering war leader. Her lashing whip-limbs and spear, Kurnotheal’s Wrath, have slain thousands of the Sylvaneth’s foes.",
+      "regimentOptions": "Any %000001426SYLVANETH%"
+    },
+    {
+      "faction": "Sylvaneth",
+      "name": "The Twistweald",
+      "points": 160,
+      "size": 8,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "6\"",
+        "health": "2",
+        "save": "5+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/sylvaneth/The-Twistweald",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "ORDER",
+          "REVENANT",
+          "SYLVANETH",
+          "CHAMPION",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "Latching Paraspites",
+          "Pain-Induced Frenzy"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Latching Paraspites",
+            "timing": "Once Per Turn (Army), End of Any Turn",
+            "effect": "Declare: Pick an enemy unit in combat with this unit to be the target.\nEffect: The target has the INFESTED keyword for the rest of the battle. INFESTED enemy units cannot move more than 6\" when using non-CHARGE MOVE abilities.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "End of Turn"
+          },
+          {
+            "name": "Pain-Induced Frenzy",
+            "timing": "Passive",
+            "effect": "Effect: This unit’s melee weapons have Crit (2 Hits) if it charged in the same turn.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Voracious Swarm",
+            "10\"",
+            "6",
+            "3+",
+            "4+",
+            "1",
+            "1",
+            "Shoot in Combat"
+          ],
+          [
+            "Warden’s Bow",
+            "18\"",
+            "2",
+            "3+",
+            "4+",
+            "1",
+            "1",
+            ""
+          ]
+        ],
+        "melee": [
+          [
+            "Twistroot Weapons",
+            "3",
+            "3+",
+            "4+",
+            "1",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "The Twistweald were once Sylvaneth like any other. Now their bodies are grown over with parasitic plants and fungi that choke their bark and muddy their minds. They wander in a state of pain-induced frenzy, attacking with lashing thorned roots and clouds of vicious spites until their enemies are shredded into pulp.",
+      "description": "Each model in this unit is armed with Twistroot Weapons.\n• The champion is a Swarmsage and is also armed with a Voracious Swarm.\n• 2/8 models are Twistroot Wardens.\n• 1/2 Twistroot Wardens can also be armed with a Warden’s Bow."
+    },
+    {
+      "faction": "Sylvaneth",
+      "name": "Tree-Revenants",
+      "points": 110,
+      "size": 5,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "6\"",
+        "health": "2",
+        "save": "5+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/sylvaneth/Tree-Revenants",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "ORDER",
+          "REVENANT",
+          "SYLVANETH",
+          "CHAMPION",
+          "INFANTRY",
+          "MUSICIAN (1/5)",
+          "STANDARD BEARER (1/5)"
+        ],
+        "abilities": [
+          "Warriors of the Woods"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Warriors of the Woods",
+            "timing": "Passive",
+            "effect": "Effect: While this unit is in combat and has not charged this turn, add 1 to the Damage characteristic of this unit’s melee weapons.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Revenant Blade",
+            "3",
+            "3+",
+            "4+",
+            "1",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Tree-Revenants move with flowing grace, flickering along the spirit paths to carve their way through the enemy’s ranks. Their highly ritualised martial customs and the memories of war they inherit from past generations of Sylvaneth through their lamentiri lend them a skill in combat that few enemies can match."
+    },
+    {
+      "faction": "Sylvaneth",
+      "name": "Treelord",
+      "points": 200,
+      "size": 1,
+      "kind": "",
+      "category": "Monster",
+      "profile": {
+        "move": "6\"",
+        "health": "14",
+        "save": "3+",
+        "control": "5",
+        "url": "https://wahapedia.ru/aos4/factions/sylvaneth/Treelord",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "FOREST ELDER",
+          "ORDER",
+          "SYLVANETH",
+          "MONSTER"
+        ],
+        "abilities": [
+          "Battle Damaged",
+          "Lash and Tangle",
+          "Strangling Grasp"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of its Sweeping Blows is 3.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Lash and Tangle",
+            "timing": "Once Per Turn (Army), Any Shooting Phase",
+            "effect": "Declare: Pick an enemy unit that had any damage points allocated to it this turn by attacks made with this unit’s Strangleroots to be the target.\nEffect: Roll a dice. Add 1 to the roll if the target is within the creeping overgrowth. On a 3+, subtract 1 from hit rolls for the target’s attacks until the start of your next turn.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Shooting Phase"
+          },
+          {
+            "name": "Strangling Grasp",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick a visible enemy unit within 10\" of this unit to be the target.\nEffect: Roll a dice. If the roll exceeds the target’s Health characteristic, 1 model in the target unit is slain.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Rampage",
+            "phase": "Combat Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Strangleroots",
+            "10\"",
+            "3",
+            "3+",
+            "2+",
+            "1",
+            "2",
+            "Shoot in Combat"
+          ]
+        ],
+        "melee": [
+          [
+            "Sweeping Blows",
+            "5",
+            "4+",
+            "2+",
+            "1",
+            "2",
+            "Anti-charge (+1 Rend) · See battle damage rules"
+          ],
+          [
+            "Massive Impaling Talons",
+            "2",
+            "4+",
+            "2+",
+            "2",
+            "3",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Treelords bear down on the enemy with earth- shaking strides, ignoring the feeble attempts of the enemy to slow their advance. Lashing vines shoot forth from their open talons to rend and ensnare, while every swing of their huge talons slaughters another swathe of foes."
+    },
+    {
+      "faction": "Sylvaneth",
+      "name": "Treelord Ancient",
+      "points": 260,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "14",
+        "save": "3+",
+        "control": "5",
+        "url": "https://wahapedia.ru/aos4/factions/sylvaneth/Treelord-Ancient",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "FOREST ELDER",
+          "ORDER",
+          "SYLVANETH",
+          "HERO",
+          "MONSTER",
+          "WIZARD (2)"
+        ],
+        "abilities": [
+          "Battle Damaged",
+          "Awakening Slumbering Spirits",
+          "Eldest of Elders"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of its Sweeping Blows is 3.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Awakening Slumbering Spirits",
+            "timing": "Once Per Turn (Army), Your Movement Phase",
+            "effect": "Declare: Pick a visible terrain feature that has a friendly overgrown token and is within 12\" of this unit. Then, pick a friendly non-UNIQUE KURNOTHI or Treelord unit that has been destroyed to be the target.\nEffect: Set up a replacement unit with 1 model from the target unit wholly within 6\" of that terrain feature and more than 9\" from all enemy units. Then, remove the friendly overgrown token from that terrain feature. If the",
+            "kind": "Ability",
+            "type": "Rallying",
+            "phase": "Movement Phase"
+          },
+          {
+            "name": "Eldest of Elders",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick each friendly FOREST ELDER within this unit’s combat range to be the targets.\nEffect: Roll a dice for each target. On a 3+, add 1 to hit rolls for that target’s combat attacks until the start of your next turn.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Rampage",
+            "phase": "Combat Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Doom Tendril Staff",
+            "18\"",
+            "4",
+            "4+",
+            "2+",
+            "1",
+            "D3",
+            ""
+          ]
+        ],
+        "melee": [
+          [
+            "Sweeping Blows",
+            "5",
+            "4+",
+            "2+",
+            "1",
+            "2",
+            "Anti-charge (+1 Rend) · See battle damage rules"
+          ],
+          [
+            "Massive Impaling Talons",
+            "2",
+            "4+",
+            "2+",
+            "2",
+            "3",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "The fury of the forest is roused by the magics of the Treelord Ancients. Amongst the eldest living creatures in the realms, these towering tree spirits are not only fearsome warriors but also potent spell-weavers who can loose the wrath of the wyldwoods.",
+      "regimentOptions": "0-1 %000012691Forest Sentinel%, Any %000001426SYLVANETH%"
+    },
+    {
+      "faction": "Sylvaneth",
+      "name": "Vengeful Skullroot",
+      "points": 0,
+      "size": 1,
+      "kind": "",
+      "category": "Manifestation",
+      "profile": {
+        "move": "8\"",
+        "health": "8",
+        "save": "4+",
+        "ward": "6+",
+        "banishment": "7",
+        "url": "https://wahapedia.ru/aos4/factions/sylvaneth/Vengeful-Skullroot",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "ORDER",
+          "SYLVANETH",
+          "ENDLESS SPELL",
+          "FLY",
+          "MANIFESTATION",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Vengeful Terrors"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Vengeful Terrors",
+            "timing": "Passive",
+            "effect": "Effect: Subtract 1 from hit rolls for attacks made by enemy units while they are within 6\" of this MANIFESTATION.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          }
+        ],
+        "melee": [
+          [
+            "Writhing Roots",
+            "3",
+            "4+",
+            "2+",
+            "1",
+            "D3",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Also known as the Drifting Death or the Creeping Willow, the Vengeful Skullroot is a manifestation of a forest’s fury. Black-hearted and hateful, these arcane plants can be summoned by Sylvaneth versed in magic. As the tree stalks across the battlefield, its tentacle-like roots bludgeon, crush and strangle all they pass over."
+    },
+    {
+      "faction": "Sylvaneth",
+      "name": "Warsong Revenant",
+      "points": 190,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "7",
+        "save": "5+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/sylvaneth/Warsong-Revenant",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "ORDER",
+          "REVENANT",
+          "SYLVANETH",
+          "FLY",
+          "HERO",
+          "INFANTRY",
+          "PRIEST (1)",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Alarielle’s Song",
+          "Rousing Accompaniment"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Alarielle’s Song",
+            "timing": "Passive",
+            "effect": "Effect: Friendly SYLVANETH units have WARD (6+) while they are wholly within 12\" of this unit. Subtract 1 from ward rolls for enemy units while they are within 12\" of this unit.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Rousing Accompaniment",
+            "timing": "Once Per Turn (Army), Reaction: You made an unmodified %000010763chanting roll% of 1 for a %000021836SYLVANETH PRIEST% wholly within 12\" of this unit",
+            "effect": "Effect: Re-roll that chanting roll.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase",
+            "reaction": true
+          }
+        ],
+        "melee": [
+          [
+            "Spirit Falchion and Spearing Vines",
+            "5",
+            "3+",
+            "3+",
+            "1",
+            "D3",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "The Warsong Revenants are few in number, but their influence is far-reaching. Their odd, skirling music causes the lands themselves to come alive, and the harmonies it brings to the spirit-song are a balm to nearby Sylvaneth.",
+      "regimentOptions": "Any %000001426SYLVANETH%"
+    },
+    {
+      "faction": "Sylvaneth",
+      "name": "Ylthari’s Guardians",
+      "points": 140,
+      "size": 4,
+      "kind": "Legends",
+      "category": "Infantry",
+      "profile": {
+        "move": "5\"",
+        "health": "3",
+        "save": "5+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/sylvaneth/Ylthari-s-Guardians",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "ORDER",
+          "SYLVANETH",
+          "CHAMPION",
+          "INFANTRY",
+          "UNIQUE"
+        ],
+        "abilities": [
+          "Ylthari",
+          "Bitterness of the Soul"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Ylthari",
+            "timing": "Passive",
+            "effect": "Effect: While this unit’s Ylthari is on the battlefield, it has WIZARD (1).",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Bitterness of the Soul",
+            "timing": "Passive",
+            "effect": "Effect: Add 1 to the Damage characteristic of this unit’s Enchanted Glade Weapons for each model in this unit that is slain.\nDesigner’s Note: Models that have been slain and returned to this unit do not count as being slain for the purposes of this ability.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Revenant Bow",
+            "18\"",
+            "2",
+            "3+",
+            "4+",
+            "1",
+            "1",
+            "Crit (Auto-wound)"
+          ]
+        ],
+        "melee": [
+          [
+            "Enchanted Glade Weapons",
+            "3",
+            "3+",
+            "4+",
+            "1",
+            "1",
+            "Crit (Auto-wound)"
+          ],
+          [
+            "Revenant Bow",
+            "1",
+            "3+",
+            "4+",
+            "-",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "Legends Warscrolls",
+      "canReinforce": false,
+      "flavour": "The Thornwych Ylthari tirelessly seeks those soulpods that have been claimed by Nagash, and by channelling rampant life magic she rids the dead places of those who would serve the Great Necromancer. Grown from ancient soulpods in the Realm of Death, Ylthari’s Guardians were once diplomats and emissaries, though now they are evergreen with bitter wrath and seek only vengeance for their kin who have been slain.",
+      "notes": "This unit cannot be reinforced.",
+      "description": "The models in this unit are:\n• Ylthari (champion, armed with Enchanted Glade Weapons)\n• Gallanghann (armed with Enchanted Glade Weapons)\n• Skhathael (armed with Enchanted Glade Weapons)\n• Ahnslaine (armed with a Revenant Bow)"
+    }
+  ]
+}

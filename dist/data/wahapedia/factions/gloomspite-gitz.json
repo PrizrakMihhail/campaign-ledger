@@ -1,0 +1,4449 @@
+{
+  "edition": "Age of Sigmar 4",
+  "lastUpdate": "2026-10-22 18:12:05",
+  "faction": {
+    "id": "GG",
+    "name": "Gloomspite Gitz",
+    "slug": "gloomspite-gitz",
+    "url": "https://wahapedia.ru/aos4/factions/gloomspite-gitz",
+    "count": 56
+  },
+  "rules": {
+    "battleTraits": [
+      {
+        "name": "THE FACES OF THE BAD MOON",
+        "timing": "Once Per Battle Round (Army), Start of Battle Round",
+        "declare": "You must use this ability at the start of the battle round. If multiple players are commanding a Gloomspite Gitz army, then instead, at the start of the battle round, those players roll off and only the winner declares and uses this ability this battle round.",
+        "effect": "If it is the first battle round, pick the starting face of the Bad Moon (Grinnin’, Scowlin’, Sulkin’ or Cacklin’). If it is not the first battle round, the face of the Bad Moon moves to the next face in the sequence.",
+        "unitLinks": []
+      },
+      {
+        "name": "CREEPING GLOOM",
+        "timing": "Once Per Turn (Army), Your Hero Phase",
+        "declare": "Pick a terrain feature to be the target.",
+        "effect": "Until the start of your next turn, while friendly non-MONSTER non-WAR MACHINE GLOOMSPITE GITZ units are wholly within 3\" of that terrain feature, they are not visible to enemy units more than 9\" away",
+        "unitLinks": []
+      },
+      {
+        "name": "UNDER THE LIGHT OF THE BAD MOON",
+        "timing": "Passive",
+        "declare": "",
+        "effect": "During the battle, the effects below apply to friendly GLOOMSPITE GITZ units based on the current face of the Bad Moon:\nFrothing Zealots: While the Bad Moon is Cacklin’ or Grinnin’, add 5 to the control scores of friendly non-SQUIG MOONCLAN units.\nSpiderfang Venom: While the Bad Moon is Cacklin’ or Grinnin’, combat attacks made by friendly SPIDERFANG units score critical hits on unmodified hit rolls of 5+. This also affects Companion weapons.\nMoonlit Hide: While the Bad Moon is Grinnin’ or Scowlin’, subtract 1 from the Rend characteristic of combat attacks that target friendly TROGGOTH units.\nLunar Squigs: While the Bad Moon is Scowlin’ or Sulkin’, instead of rolling the dice to determine the Move characteristic of a friendly SQUIG unit, you can use a value of 4.\nSneaky Snarlfangs: While the Bad Moon is Sulkin’ or Cacklin’, friendly GITMOB units can use CHARGE and SHOOT abilities even if they used a RETREAT ability in the same turn.",
+        "unitLinks": []
+      }
+    ],
+    "armiesOfRenown": [
+      {
+        "id": "da-king-s-gitz",
+        "name": "Da King’s Gitz",
+        "battleTraits": [
+          {
+            "name": "THE MOON AND THE LOON",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "While a friendly unit is wholly within 9\" of a friendly Skragrott, a friendly Malevolent Moon or a friendly Bad Moon Loonshrine:\n• Add 5 to the control scores of friendly non-SQUIG MOONCLAN units.\n• Instead of rolling the dice to determine the Move characteristic of a friendly SQUIG unit, you can use a value of 4.",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Skragrott-the-Loonking",
+              "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Malevolent-Moon",
+              "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Bad-Moon-Loonshrine"
+            ]
+          },
+          {
+            "name": "DA KING’S GUARDS",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "While a friendly TROGGOTH unit is within the combat range of a friendly HERO:\n• That HERO has WARD (4+).\n• Each time you make a successful ward roll for that HERO, allocate 1 damage point to a friendly TROGGOTH unit within that HERO’s combat range after the damage sequence for that HERO has been resolved (ward rolls cannot be made for those damage points).",
+            "unitLinks": []
+          },
+          {
+            "name": "DA LOONKING’S COURT",
+            "timing": "Once Per Battle, Deployment Phase",
+            "declare": "Pick up to D3 friendly non-UNIQUE KING’S GITZ HEROES that do not have an enhancement.",
+            "effect": "Give each HERO 1 enhancement from the ‘Da King’s Gitz’ Army of Renown rules.\nDesigner’s Note: These enhancements are given to the HEROES during the deployment phase, not during army composition.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "id": "droggz-s-gitmob",
+        "name": "Droggz’s Gitmob",
+        "battleTraits": [
+          {
+            "name": "GET AROUND ’EM",
+            "timing": "Deployment Phase",
+            "declare": "Pick a friendly DROGGZ’S GITMOB unit that has not been deployed.",
+            "effect": "Set up that unit in reserve outflanking the enemy. It has now been deployed.",
+            "unitLinks": []
+          },
+          {
+            "name": "GLOWERING LIGHT",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "declare": "Pick an enemy unit in combat with a friendly DROGGZ’S GITMOB unit that has charged this turn to be the target.",
+            "effect": "Roll a dice. On a 3+, for the rest of the turn, the target cannot make a pile-in move when it is picked to use a FIGHT ability.",
+            "unitLinks": []
+          },
+          {
+            "name": "SURPRISE, YA GITZ!",
+            "timing": "Your Movement Phase",
+            "declare": "Pick a friendly DROGGZ’S GITMOB unit that is outflanking the enemy.",
+            "effect": "Set up that unit on the battlefield wholly within 6\" of a battlefield edge and more than 9\" from all enemy units.",
+            "unitLinks": []
+          },
+          {
+            "name": "DIS FIGHT’S NOT FER ME",
+            "timing": "Once Per Turn (Army), Enemy Combat Phase",
+            "declare": "Pick a friendly DROGGZ’S GITMOB unit that is in combat with any enemy units that charged this turn and is not in combat with any enemy units that did not charge this turn to be the target.",
+            "effect": "Roll a dice. On a 4+, the target can immediately use the ‘Retreat’ ability as if it were your movement phase.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "id": "trugg-s-troggherd",
+        "name": "Trugg’s Troggherd",
+        "battleTraits": [
+          {
+            "name": "HERD HEALING",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "Each time a friendly TROGGOTH unit uses a FIGHT ability, after that ability has been resolved, Heal (D3) that unit.",
+            "unitLinks": []
+          },
+          {
+            "name": "AURA OF HAYWIRE MAGIC",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "The effects of a friendly Trugg’s ‘Malfunctioning Leystone’ ability affect friendly TRUGG’S TROGGHERD units anywhere on the battlefield instead of only those wholly within 12\" of that friendly Trugg.",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Trugg-the-Troggoth-King"
+            ]
+          },
+          {
+            "name": "MOON-TOUGHENED HIDE",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "In battle rounds 2 and 3, subtract 1 from the Rend characteristic of melee weapons used for attacks that target friendly TRUGG’S TROGGHERD units.",
+            "unitLinks": []
+          },
+          {
+            "name": "LIVING LANDMARK",
+            "timing": "Once Per Battle (Army), Deployment Phase",
+            "declare": "Pick a friendly TRUGG’S TROGGHERD unit that has not been deployed.",
+            "effect": "Set up that unit in reserve as a living landmark. It has now been deployed.",
+            "unitLinks": []
+          },
+          {
+            "name": "BROKEN SLUMBER",
+            "timing": "Your Movement Phase",
+            "declare": "Pick a friendly TRUGG’S TROGGHERD unit that is a living landmark.",
+            "effect": "Set up that unit anywhere on the battlefield wholly within 3\" of a terrain feature and more than 9\" from all enemy units.",
+            "unitLinks": []
+          }
+        ]
+      }
+    ],
+    "battleFormations": [
+      {
+        "name": "Gloomspite Horde",
+        "abilities": [
+          {
+            "name": "SPREADING LOONACY",
+            "timing": "Once Per Turn (Army), End of Your Turn",
+            "declare": "Pick up to 3 friendly non-SQUIG MOONCLAN or SPIDERFANG units in combat to be the targets.",
+            "effect": "For each target:\n• Make a pile-in move with the target.\n• Then, pick an enemy unit in combat with the target and roll a D3. On a 2+, inflict an amount of mortal damage on that enemy unit equal to the roll.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "name": "Troggherd",
+        "abilities": [
+          {
+            "name": "HERD HEALING",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "Each time a friendly TROGGOTH unit uses a FIGHT ability, after that ability has been resolved, Heal (D3) that unit.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "name": "Squigalanche",
+        "abilities": [
+          {
+            "name": "BOUNCING FURY",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "Each time a friendly SQUIG unit charges, add 1 to the Attacks characteristic of its Fang-filled Gobs, Massive Fang-filled Gobs or Huge Fang-filled Gobs for the rest of the turn.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "name": "Gitmob Pack",
+        "abilities": [
+          {
+            "name": "GIT AND RUN",
+            "timing": "Your Movement Phase",
+            "declare": "Pick a friendly GITMOB unit that is in combat to use this ability. Then, you can pick an enemy unit in combat with that GITMOB unit to be the target. The same enemy unit cannot be picked to be the target of this ability more than once per phase.",
+            "effect": "If you picked a target, roll a D3. On a 2+, inflict an amount of mortal damage on the target equal to the roll. Then, the unit using this ability can move a distance up to its Move characteristic. It can move through the combat ranges of enemy units but cannot end that move in combat.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "name": "Sunbiter Pack",
+        "abilities": [
+          {
+            "name": "EXTRA SNAPPY",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "declare": "Pick up to 3 friendly GITMOB units that charged this turn to be the targets.",
+            "effect": "Add 1 to the Rend characteristic of Companion weapons used by the targets for the rest of turn.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "name": "Gittish Tide",
+        "abilities": [
+          {
+            "name": "GROTS UPON GROTS",
+            "timing": "Once Per Turn (Army), End of Any Turn",
+            "declare": "Pick a friendly non-SQUIG MOONCLAN unit that is contesting an objective to be the target.",
+            "effect": "For the rest of the turn, add 1 to the control score of the target unit for each model in that unit that is not contesting any objectives.",
+            "unitLinks": []
+          }
+        ]
+      }
+    ],
+    "lores": {
+      "spell": [
+        {
+          "name": "Lore of the Clammy Dank",
+          "kind": "spell",
+          "points": 0,
+          "entries": [
+            {
+              "name": "BAD PORTENTS",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly GLOOMSPITE GITZ WIZARD to cast this spell, then make a casting roll of 2D6.",
+              "effect": "Roll a dice. On 1-2, nothing happens. On a 3-5, the face of the Bad Moon moves to the next face. On a 6, pick a new face of the Bad Moon for this battle round.",
+              "value": "6",
+              "unitLinks": []
+            },
+            {
+              "name": "SPORE MAWS",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly GLOOMSPITE GITZ WIZARD to cast this spell, pick up to 3 visible enemy units within 12\" of them to be the targets, then make a casting roll of 2D6.",
+              "effect": "Roll a D3 for each target. On a 2+, inflict an amount of mortal damage on the target equal to the roll.",
+              "value": "7",
+              "unitLinks": []
+            },
+            {
+              "name": "THE HAND OF GORK",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly GLOOMSPITE GITZ WIZARD to cast this spell, pick a visible friendly GLOOMSPITE GITZ unit wholly within 12\" of them and not in combat to be the target, then make a casting roll of 2D6.",
+              "effect": "Remove the target from the battlefield and set it up again on the battlefield wholly within 24\" of the caster and more than 9\" from all enemy units.",
+              "value": "7",
+              "unitLinks": []
+            }
+          ]
+        },
+        {
+          "name": "Lore of Frazzlegit",
+          "kind": "spell",
+          "points": 0,
+          "entries": [
+            {
+              "name": "BRIGHT FRIGHT",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly GLOOMSPITE GITZ WIZARD to cast this spell, pick up to 3 friendly visible GLOOMSPITE GITZ units wholly within 12\" of them to be the targets, then make a casting roll of 2D6.",
+              "effect": "Each target can immediately use a RETREAT ability as if it was your movement phase. No mortal damage is inflicted on the targets by those RETREAT abilities.",
+              "value": "6",
+              "unitLinks": []
+            },
+            {
+              "name": "GITSPEED",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly GLOOMSPITE GITZ WIZARD to cast this spell, then make a casting roll of 2D6.",
+              "effect": "Until the start of your next turn, add 2\" to the Move characteristic of friendly non-TROGGOTH GLOOMSPITE GITZ units while they are wholly within 12\" of this unit.",
+              "value": "6",
+              "unitLinks": []
+            },
+            {
+              "name": "GAZE OF GLAREFACE",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly GLOOMSPITE GITZ WIZARD to cast this spell, pick a visible enemy unit within 18\" of them to be the target, then make a casting roll of 2D6.",
+              "effect": "Until the start of your next turn:\n• The target cannot use RUN abilities.\n• Halve the Range characteristic of the target’s ranged weapons.",
+              "value": "6",
+              "unitLinks": []
+            }
+          ]
+        },
+        {
+          "name": "Lore of the Little Waaagh!",
+          "kind": "spell",
+          "points": 0,
+          "entries": [
+            {
+              "name": "BRIGHT FRIGHT",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly GLOOMSPITE GITZ WIZARD to cast this spell, pick an objective within 18\" of this unit to be the target, then make a casting roll of 2D6.",
+              "effect": "Until the start of your next turn, subtract 1 from wound rolls for attacks made by enemy units while they are contesting the target objective.",
+              "value": "6",
+              "unitLinks": []
+            },
+            {
+              "name": "GITSPEED",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly GLOOMSPITE GITZ WIZARD to cast this spell, then make a casting roll of 2D6.",
+              "effect": "For the rest of the turn, if a friendly Bad Moon Loonshrine uses the ‘Moonclan Lairs’ ability, you can set up the replacement unit wholly within 6\" of this unit and more than 3\" from all enemy units instead of wholly within 12\" of that Bad Moon Loonshrine.",
+              "value": "7",
+              "unitLinks": [
+                "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Bad-Moon-Loonshrine"
+              ]
+            },
+            {
+              "name": "GAZE OF GLAREFACE",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly GLOOMSPITE GITZ WIZARD to cast this spell, pick a visible friendly GLOOMSPITE GITZ unit wholly within 12\" of them to be the target, then make a casting roll of 2D6.",
+              "effect": "Until the start of your next turn, each time an ability inflicts damage points on the target, after the ability has been resolved, the target can move up to 3\". It can move through the combat ranges of enemy units but can only end that move in combat with units it was in combat with at the start of that move. It does not have to end the move in combat.",
+              "value": "6",
+              "unitLinks": []
+            }
+          ]
+        }
+      ],
+      "prayer": [],
+      "manifestation": [
+        {
+          "name": "Dank Manifestations",
+          "kind": "manifestation",
+          "points": 0,
+          "entries": [
+            {
+              "name": "SUMMON MORK’S MIGHTY MUSHROOM",
+              "timing": "Your Hero Phase",
+              "declare": "If there is not a friendly Mork’s Mighty Mushroom on the battlefield, pick a friendly GLOOMSPITE GITZ WIZARD to cast this spell, then make a casting roll of 2D6.",
+              "effect": "Set up a Mork’s Mighty Mushroom wholly within 12\" of the caster and visible to them.",
+              "value": "6",
+              "unitLinks": [
+                "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Mork-s-Mighty-Mushroom"
+              ],
+              "manifestation": {
+                "faction": "Gloomspite Gitz",
+                "name": "Mork’s Mighty Mushroom"
+              }
+            },
+            {
+              "name": "SUMMON SCUTTLETIDE",
+              "timing": "Your Hero Phase",
+              "declare": "If there is not a friendly Scuttletide on the battlefield, pick a friendly GLOOMSPITE GITZ WIZARD to cast this spell, then make a casting roll of 2D6.",
+              "effect": "Set up a Scuttletide wholly within 12\" of the caster, visible to them and more than 9\" from all enemy units.",
+              "value": "6",
+              "unitLinks": [
+                "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Scuttletide"
+              ],
+              "manifestation": {
+                "faction": "Gloomspite Gitz",
+                "name": "Scuttletide"
+              }
+            },
+            {
+              "name": "SUMMON SCRAPSKUTTLE’S ARACHNACAULDRON",
+              "timing": "Your Hero Phase",
+              "declare": "If there is not a friendly Scrapskuttle’s Arachnacauldron on the battlefield, pick a friendly GLOOMSPITE GITZ WIZARD to cast this spell, then make a casting roll of 2D6.",
+              "effect": "Set up a Scrapskuttle’s Arachnacauldron wholly within 12\" of the caster, visible to them and more than 9\" from all enemy units.",
+              "value": "7",
+              "unitLinks": [
+                "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Scrapskuttle-s-Arachnacauldron"
+              ],
+              "manifestation": {
+                "faction": "Gloomspite Gitz",
+                "name": "Scrapskuttle’s Arachnacauldron"
+              }
+            },
+            {
+              "name": "SUMMON MALEVOLENT MOON",
+              "timing": "Your Hero Phase",
+              "declare": "If there is not a friendly Malevolent Moon on the battlefield, pick a friendly GLOOMSPITE GITZ WIZARD to cast this spell, then make a casting roll of 2D6.",
+              "effect": "Set up a Malevolent Moon wholly within 12\" of the caster, visible to them and more than 9\" from all enemy units.",
+              "value": "7",
+              "unitLinks": [
+                "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Malevolent-Moon"
+              ],
+              "manifestation": {
+                "faction": "Gloomspite Gitz",
+                "name": "Malevolent Moon"
+              }
+            }
+          ],
+          "scope": "faction"
+        }
+      ]
+    }
+  },
+  "entries": [
+    {
+      "faction": "Gloomspite Gitz",
+      "name": "Aleguzzler Gargant",
+      "points": 150,
+      "size": 1,
+      "kind": "Legends",
+      "category": "Monster",
+      "profile": {
+        "move": "8\"",
+        "health": "12",
+        "save": "5+",
+        "control": "10",
+        "url": "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Aleguzzler-Gargant",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "GLOOMSPITE GITZ",
+          "MONSTER"
+        ],
+        "abilities": [
+          "Stuff ’Em In Me Bag",
+          "Timberrrrr!"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Stuff ’Em In Me Bag",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick an enemy unit in combat with this unit to be the target.\nEffect: Roll a dice. If the roll is at least double the target’s Health characteristic, 1 model in the target unit is slain.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Rampage",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Timberrrrr!",
+            "timing": "Passive",
+            "effect": "Effect: When this unit is destroyed, before removing it from play, the players must roll off. The winner picks a point on the battlefield within 3\" of this unit. Inflict D3 mortal damage on each unit (friendly and enemy) within 3\" of that point that has a lower Health characteristic than this unit.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Throwin’ Rocks",
+            "12\"",
+            "1",
+            "5+",
+            "2+",
+            "2",
+            "D3",
+            ""
+          ]
+        ],
+        "melee": [
+          [
+            "Massive Club",
+            "4",
+            "4+",
+            "2+",
+            "1",
+            "2",
+            ""
+          ],
+          [
+            "’Eadbutt",
+            "1",
+            "4+",
+            "2+",
+            "2",
+            "4",
+            ""
+          ],
+          [
+            "Mighty Kick",
+            "1",
+            "4+",
+            "2+",
+            "2",
+            "D3",
+            ""
+          ]
+        ]
+      },
+      "source": "Legends Warscrolls",
+      "canReinforce": true,
+      "flavour": "Aleguzzler Gargants that accompany Gloomspite hordes into battle are often combating raging hangovers from drinking too much crude fungus brew. They fight for more barrels of the same foul stuff, so that they can get inebriated all over again."
+    },
+    {
+      "faction": "Gloomspite Gitz",
+      "name": "Arachnarok Spider with Flinger",
+      "points": 210,
+      "size": 1,
+      "kind": "",
+      "category": "Monster",
+      "profile": {
+        "move": "10\"",
+        "health": "16",
+        "save": "4+",
+        "control": "5",
+        "url": "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Arachnarok-Spider-with-Flinger",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "ARACHNAROK",
+          "DESTRUCTION",
+          "GLOOMSPITE GITZ",
+          "SPIDERFANG",
+          "MONSTER"
+        ],
+        "abilities": [
+          "Battle Damaged",
+          "Wall Crawler",
+          "Flinger",
+          "Beast-binding Webbing"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of its Chitinous Legs is 6.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Wall Crawler",
+            "timing": "Passive",
+            "effect": "Effect: This unit can pass across terrain features as if it had FLY.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Movement Phase"
+          },
+          {
+            "name": "Flinger",
+            "timing": "Passive",
+            "effect": "Effect: If any attacks made with this unit’s Flinger score a hit, after the SHOOT ability has been resolved, roll a dice. On a 2+, halve the Move characteristic of the target unit until the start of your next turn.",
+            "kind": "Ability",
+            "type": "Shooting",
+            "phase": "Shooting Phase"
+          },
+          {
+            "name": "Beast-binding Webbing",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick an enemy unit that charged this turn and is in combat with this unit to be the target.\nEffect: Roll a dice. On a 3+, subtract 1 from the Attacks characteristic of the target’s Companion weapons for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "keywords": "Rampage",
+            "phase": "Combat Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Flinger",
+            "24\"",
+            "D3",
+            "4+",
+            "3+",
+            "-",
+            "1",
+            "Crit (2 Hits)"
+          ],
+          [
+            "Spider-bows",
+            "18\"",
+            "10",
+            "4+",
+            "5+",
+            "-",
+            "1",
+            ""
+          ]
+        ],
+        "melee": [
+          [
+            "Crooked Spears",
+            "10",
+            "5+",
+            "4+",
+            "-",
+            "1",
+            ""
+          ],
+          [
+            "Monstrous Spider Fangs",
+            "4",
+            "3+",
+            "2+",
+            "1",
+            "3",
+            "Crit (Mortal), Companion"
+          ],
+          [
+            "Chitinous Legs",
+            "8",
+            "4+",
+            "2+",
+            "1",
+            "1",
+            "Companion · See battle damage rules"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Some Arachnarok Spiders bear howdahs upon their backs that have flinger catapults built into them. Operated by a cackling grot crew, these weapons lob tumbling masses of envenomed webbing that slam down to entangle and poison the enemy."
+    },
+    {
+      "faction": "Gloomspite Gitz",
+      "name": "Arachnarok Spider with Spiderfang Warparty",
+      "points": 200,
+      "size": 1,
+      "kind": "",
+      "category": "Monster",
+      "profile": {
+        "move": "10\"",
+        "health": "16",
+        "save": "4+",
+        "control": "10",
+        "url": "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Arachnarok-Spider-with-Spiderfang-Warparty",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "ARACHNAROK",
+          "DESTRUCTION",
+          "GLOOMSPITE GITZ",
+          "SPIDERFANG",
+          "MONSTER"
+        ],
+        "abilities": [
+          "Battle Damaged",
+          "Wall Crawler",
+          "Voracious Predator"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of its Chitinous Legs is 6.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Wall Crawler",
+            "timing": "Passive",
+            "effect": "Effect: This unit can pass across terrain features as if it had FLY.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Movement Phase"
+          },
+          {
+            "name": "Voracious Predator",
+            "timing": "Once Per Turn (Army), Any Charge Phase",
+            "effect": "Declare: Pick up to 3 enemy units within 1\" of this unit to be the targets.\nEffect: Roll a D3 for each target. On a 2+, inflict an amount of mortal damage on the target equal to the roll.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Rampage",
+            "phase": "Charge Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Spider-bows",
+            "18\"",
+            "10",
+            "4+",
+            "5+",
+            "-",
+            "1",
+            ""
+          ]
+        ],
+        "melee": [
+          [
+            "Crooked Spears",
+            "10",
+            "5+",
+            "4+",
+            "-",
+            "1",
+            ""
+          ],
+          [
+            "Monstrous Spider Fangs",
+            "4",
+            "3+",
+            "2+",
+            "1",
+            "3",
+            "Crit (Mortal), Companion"
+          ],
+          [
+            "Chitinous Legs",
+            "8",
+            "4+",
+            "2+",
+            "1",
+            "1",
+            "Companion · See battle damage rules"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Vast arachnid predators possessed of a malevolent sentience, Arachnarok Spiders stalk into battle carrying rickety howdahs full of shrieking Spiderfang grots, who worship the creatures as the progeny of their eight-legged god."
+    },
+    {
+      "faction": "Gloomspite Gitz",
+      "name": "Bad Moon Loonshrine",
+      "points": 0,
+      "size": 1,
+      "kind": "",
+      "category": "Terrain",
+      "profile": {
+        "move": "-",
+        "health": "14",
+        "save": "4+",
+        "control": "-",
+        "url": "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Bad-Moon-Loonshrine",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "GLOOMSPITE GITZ",
+          "FACTION TERRAIN"
+        ],
+        "abilities": [
+          "Moonclan Lairs"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Moonclan Lairs",
+            "timing": "Once Per Turn (Army), End of Your Turn",
+            "effect": "Declare: Pick a friendly non-HERO non-MONSTER non-WAR MACHINE GLOOMSPITE GITZ unit that has been destroyed to be the target.\nEffect: Set up a replacement unit with half the number of models from the target unit (rounding up) wholly within 12\" of this terrain feature and more than 3\" from all enemy units.",
+            "kind": "Ability",
+            "type": "Rallying",
+            "phase": "End of Turn",
+            "pointsType": "Command",
+            "points": "1"
+          }
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Where the Fangz of the Bad Moon fall, they smash down upon the landscape causing untold devastation. Then come the Gloomspite hordes, creeping from below to hew these loonstone outcroppings into grotesque shrinelairs that soon become encrusted with fungi and imbued with the sinister energies of their progenitor rock.",
+      "description": "The following universal terrain abilities apply to this terrain feature (Terrain, 1.2): Cover, Impassable"
+    },
+    {
+      "faction": "Gloomspite Gitz",
+      "name": "Boingrot Bounderz",
+      "points": 120,
+      "size": 5,
+      "kind": "",
+      "category": "Cavalry",
+      "profile": {
+        "move": "D6+6\"",
+        "health": "2",
+        "save": "5+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Boingrot-Bounderz",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "GLOOMSPITE GITZ",
+          "MOONCLAN",
+          "SQUIG",
+          "CAVALRY",
+          "CHAMPION",
+          "FLY"
+        ],
+        "abilities": [
+          "Boing! Smash!"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Boing! Smash!",
+            "timing": "Any Charge Phase",
+            "effect": "Declare: If this unit charged this phase, pick an enemy unit within 1\" of it to be the target.\nEffect: Roll a dice for each model in this unit. For each 4+, inflict 1 mortal damage on the target.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Charge Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Pokin’ Lance",
+            "3",
+            "4+",
+            "4+",
+            "1",
+            "1",
+            "Charge (+1 Damage)"
+          ],
+          [
+            "Fang-filled Gob",
+            "3",
+            "4+",
+            "3+",
+            "1",
+            "1",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Should a squig rider actually survive a battle or two, it will immediately go to their head. Cladding themselves in crude armour complete with crescent-shaped helms, these swaggering show-offs form into elite mobs who refer to themselves as Boingrot Bounderz."
+    },
+    {
+      "faction": "Gloomspite Gitz",
+      "name": "Borgit’s Beastgrabbaz",
+      "points": 90,
+      "size": 5,
+      "kind": "Legends",
+      "category": "Infantry",
+      "profile": {
+        "move": "5\"",
+        "health": "2",
+        "save": "6+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Borgit-s-Beastgrabbaz",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "GLOOMSPITE GITZ",
+          "MOONCLAN",
+          "CHAMPION",
+          "INFANTRY",
+          "UNIQUE"
+        ],
+        "abilities": [
+          "Uglug the Troggoth",
+          "Borgit’s Masterplan"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Uglug the Troggoth",
+            "timing": "Passive",
+            "effect": "Effect: While this unit includes Uglug, ignore the first damage point allocated to it each phase.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          },
+          {
+            "name": "Borgit’s Masterplan",
+            "timing": "Once Per Battle, Any Combat Phase",
+            "effect": "Declare: This unit can only use this ability if any models in this unit have been slain.\nEffect: For the rest of the turn:\n• This unit has STRIKE-FIRST.\n• Double the Attacks characteristic of this unit’s melee weapons.\n• This unit’s attacks must target an enemy MONSTER or BEAST.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Borgit’s Stabba",
+            "5",
+            "4+",
+            "4+",
+            "1",
+            "D3",
+            "Anti-BEAST (+1 Rend), Anti-MONSTER(+1 Rend)"
+          ],
+          [
+            "Troggoth Fists",
+            "4",
+            "4+",
+            "3+",
+            "-",
+            "2",
+            "Anti-BEAST (+1 Rend), Anti-MONSTER(+1 Rend)"
+          ],
+          [
+            "Beastgrabba Weapons",
+            "2",
+            "4+",
+            "5+",
+            "-",
+            "1",
+            "Anti-BEAST (+1 Rend), Anti-MONSTER(+1 Rend)"
+          ]
+        ]
+      },
+      "source": "Legends Warscrolls",
+      "canReinforce": false,
+      "flavour": "Borgit Wolf-Killa fancies himself a hunter. His grottish mates eagerly employ lures and poisons, little realising that the grotboss in fact uses them as the real bait. Borgit’s trump card is Uglug the Troggoth, whom he dreams of growing to massive size – though the grots’ spiteful tendency to keep him in cramped spaces has the opposite effect.",
+      "notes": "This unit cannot be reinforced.",
+      "description": "The models in this unit are:\n• Borgit Wolf-Killa (champion, armed with Borgit’s Stabba)\n• Uglug (armed with Troggoth Fists)\n• Rigg and Shamm (armed with Beastgrabba Weapons)\n• Snagz (armed with Beastgrabba Weapons)\n• Hobblin’ Dregg (armed with Beastgrabba Weapons)"
+    },
+    {
+      "faction": "Gloomspite Gitz",
+      "name": "Dankhold Troggboss",
+      "points": 200,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "12",
+        "save": "4+",
+        "control": "5",
+        "url": "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Dankhold-Troggboss",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "GLOOMSPITE GITZ",
+          "TROGGOTH",
+          "HERO",
+          "MONSTER"
+        ],
+        "abilities": [
+          "Greater Regeneration",
+          "Magical Resistance",
+          "Shepherd of Destruction"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Greater Regeneration",
+            "timing": "Start of Any Turn",
+            "effect": "Effect: Heal (D6) this unit.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Magical Resistance",
+            "timing": "Reaction: Opponent declared a SPELL ability",
+            "effect": "Effect: If this unit was picked to be the target of that spell, roll a dice. On a 4+, ignore the effect of that spell on this unit.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Hero Phase",
+            "reaction": true
+          },
+          {
+            "name": "Shepherd of Destruction",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Effect: Roll a dice. On a 4+, for the rest of the turn, add 1 to the Attacks characteristic of melee weapons used by friendly TROGGOTH units while they are wholly within 12\" of this unit.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Rampage",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Boulder Club",
+            "5",
+            "4+",
+            "2+",
+            "2",
+            "D6",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Dankhold Troggbosses are ancient creatures that sometimes wake from their subterranean slumbers and go on the rampage. Though potent forces of destruction in their own right, Troggbosses also inspire any lesser troggoths fighting in their shadow.",
+      "regimentOptions": "Any %000000552TROGGOTH%",
+      "notes": "This HERO can join Trugg’s regiment."
+    },
+    {
+      "faction": "Gloomspite Gitz",
+      "name": "Dankhold Troggoth",
+      "points": 140,
+      "size": 1,
+      "kind": "",
+      "category": "Monster",
+      "profile": {
+        "move": "6\"",
+        "health": "10",
+        "save": "4+",
+        "control": "5",
+        "url": "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Dankhold-Troggoth",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "GLOOMSPITE GITZ",
+          "TROGGOTH",
+          "MONSTER"
+        ],
+        "abilities": [
+          "Regeneration",
+          "Magical Resistance",
+          "Wade and Smash"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Regeneration",
+            "timing": "Start of Any Turn",
+            "effect": "Effect: Heal (D3) this unit.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Magical Resistance",
+            "timing": "Reaction: Opponent declared a SPELL ability",
+            "effect": "Effect: If this unit was picked to be the target of that spell, roll a dice. On a 4+, ignore the effect of that spell on this unit.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Hero Phase",
+            "reaction": true
+          },
+          {
+            "name": "Wade and Smash",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Effect: This unit can move 6\" but must end that move in combat. Then, roll a D3 for each enemy unit within 1\" of this unit. On a 2+, inflict an amount of mortal damage on that unit equal to the roll.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Rampage",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Colossal Boulder Club",
+            "4",
+            "4+",
+            "2+",
+            "2",
+            "D3+3",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Dankhold Troggoths sleep deep underground until the Gloomspite moves them to lumber up to the surface and wreak havoc. They swat and crush everything within reach, soak up spellcraft like sponges and are nigh unkillable in battle."
+    },
+    {
+      "faction": "Gloomspite Gitz",
+      "name": "Doom Diver Catapult",
+      "points": 150,
+      "size": 1,
+      "kind": "",
+      "category": "War Machine",
+      "profile": {
+        "move": "5\"",
+        "health": "12",
+        "save": "4+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Doom-Diver-Catapult",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "GITMOB",
+          "GLOOMSPITE GITZ",
+          "WAR MACHINE"
+        ],
+        "abilities": [
+          "Shoddy Wing-Like Gizmos"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Shoddy Wing-Like Gizmos",
+            "timing": "Once Per Turn (Army), Any Shooting Phase",
+            "effect": "Effect: You can re-roll hit rolls for this unit’s shooting attacks this turn, but for each hit roll that is re-rolled, subtract 1 from the Rend characteristic of this unit’s Doom Diver for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Shooting",
+            "phase": "Shooting Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Doom Diver",
+            "24\"",
+            "4",
+            "4+",
+            "3+",
+            "3",
+            "3",
+            ""
+          ]
+        ],
+        "melee": [
+          [
+            "Catapult Crew Tools",
+            "2",
+            "5+",
+            "6+",
+            "-",
+            "1",
+            ""
+          ],
+          [
+            "Slicers and Krag‑smasha’s Paws",
+            "6",
+            "4+",
+            "3+",
+            "-",
+            "1",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Only the grots could don bomb-strapped hats, launch themselves into battle via catapult and still expect to have a chance of surviving the ordeal. Of course, this is rarely the case, but the carnage they cause upon ‘landing’ is so fantastic that there are always more who prefer taking the risk to displeasing the boss."
+    },
+    {
+      "faction": "Gloomspite Gitz",
+      "name": "Droggz Da Sunchompa",
+      "points": 150,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "12\"",
+        "health": "7",
+        "save": "4+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Droggz-Da-Sunchompa",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "GITMOB",
+          "GLOOMSPITE GITZ",
+          "CAVALRY",
+          "HERO",
+          "UNIQUE"
+        ],
+        "abilities": [
+          "Da Frazzlefangz",
+          "Time Ta Scarper",
+          "Rip ’Em Ta Bits"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Da Frazzlefangz",
+            "timing": "Passive",
+            "effect": "Effect: While an enemy unit is within 6\" of this unit:\n• Subtract 1 from hit rolls for that enemy unit’s attacks.\n• That enemy unit cannot use the ‘All-out Attack’ command.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Defensive reaction"
+          },
+          {
+            "name": "Time Ta Scarper",
+            "timing": "Once Per Turn (Army), Reaction: You declared a Fight ability for a unit wholly within 9\" of this unit",
+            "effect": "Effect: Roll a dice. On a 4+, the unit using that FIGHT ability can move 2D6\" after that FIGHT ability has been resolved. It can move through the combat ranges of any enemy units but cannot end that move in combat.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Combat Phase",
+            "reaction": true
+          },
+          {
+            "name": "Rip ’Em Ta Bits",
+            "timing": "Once Per Turn (Army), Reaction: You declared a FIGHT ability for this unit",
+            "effect": "Effect: Pick a friendly GITMOB unit that has not used a FIGHT ability this turn and is within this unit’s combat range to be the target. The target can be picked to use a FIGHT ability immediately after the FIGHT ability used by this unit has been resolved.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase",
+            "reaction": true
+          }
+        ],
+        "melee": [
+          [
+            "Da Metal Toof",
+            "5",
+            "3+",
+            "4+",
+            "1",
+            "2",
+            "Crit (Mortal)"
+          ],
+          [
+            "Jaggedsnarl’s Jaws",
+            "4",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Most feared and famed leader of the Gitmobs, Droggz da Sunchompa speeds into the battle upon his wily mount, Jaggedsnarl. Wreathed by an eye-searing corona of stolen Hyshian light, Droggz is nigh impossible to target as he smashes into his foes, his meteoric war-pick cracking skulls left and right.",
+      "regimentOptions": "Any %000000550Gloomspite Gitz%, 0-1 %000015381Top Dog%"
+    },
+    {
+      "faction": "Gloomspite Gitz",
+      "name": "Fellwater Troggoths",
+      "points": 160,
+      "size": 3,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "6\"",
+        "health": "5",
+        "save": "5+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Fellwater-Troggoths",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "GLOOMSPITE GITZ",
+          "TROGGOTH",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "Regeneration",
+          "Noxious Vomit"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Regeneration",
+            "timing": "Start of Any Turn",
+            "effect": "Effect: Heal (D3) this unit.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Noxious Vomit",
+            "timing": "Passive",
+            "effect": "Effect: If any damage points are allocated to an enemy unit by attacks made with this unit’s Noxious Vomit, that unit is drenched in vomit until the start of your next turn.\nWhile a unit is drenched in vomit:\n• Subtract 1 from save rolls for that unit.\n• Ignore positive modifiers to save rolls for that unit.",
+            "kind": "Ability",
+            "type": "Shooting",
+            "phase": "Shooting Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Noxious Vomit",
+            "6\"",
+            "D3",
+            "2+",
+            "3+",
+            "2",
+            "1",
+            "Shoot in Combat"
+          ]
+        ],
+        "melee": [
+          [
+            "Spiked Club",
+            "4",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "These slime-slick beasties stink worse than a plague pit full of incontinent Nurglings. They throw up jetting streams of viciously corrosive vomit, softening their prey up – quite literally – before tearing into them with wicked talons and tusks."
+    },
+    {
+      "faction": "Gloomspite Gitz",
+      "name": "Frazzlegit Shaman on War-Wheela",
+      "points": 120,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "12\"",
+        "health": "9",
+        "save": "4+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Frazzlegit-Shaman-on-War-Wheela",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "GITMOB",
+          "GLOOMSPITE GITZ",
+          "HERO",
+          "WAR MACHINE",
+          "WIZARD (1)"
+        ],
+        "abilities": [
+          "Gimme All Da Light",
+          "Frazzlemist"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Gimme All Da Light",
+            "timing": "Passive",
+            "effect": "Effect: Friendly GITMOB units that are not Frazzlegit Shamans on War-Wheelas cannot be targeted by shooting attacks while they are wholly within 6\" of this unit.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          },
+          {
+            "name": "Frazzlemist",
+            "timing": "Once Per Turn (Army), Your Shooting Phase",
+            "effect": "Declare: Pick up to 3 visible enemy units within 9\" of this unit to be the targets.\nEffect: Roll a D3 for each target. On a 2+, inflict an amount of mortal damage on the target equal to the roll.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Shooting Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Wheela Slicers",
+            "3",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            ""
+          ],
+          [
+            "Snarlfang’s Frothing Jaws",
+            "6",
+            "4+",
+            "3+",
+            "-",
+            "2",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "The Frazzlegit Shamans of the Gitmobs are an enigma both on the battlefield and off, babbling inscrutable incantations over pieces of scavenged metal and infusing them with solar magic. When carried into battle on a thundering War-Wheela, they cast wild spells from their high perch, wielding the power of Glareface Frazzlegit to fuel fiery conjurations. Their conveyance is a deadly weapon in its own right, scything down enemies with the wickedly sharp ‘slicers’ fitted to its undercarriage and crushing them under its iron- banded wheels.",
+      "regimentOptions": "Any %000015358GITMOB%"
+    },
+    {
+      "faction": "Gloomspite Gitz",
+      "name": "Fungoid Cave-Shaman",
+      "points": 100,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "5\"",
+        "health": "5",
+        "save": "6+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Fungoid-Cave-Shaman",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "GLOOMSPITE GITZ",
+          "MOONCLAN",
+          "HERO",
+          "INFANTRY",
+          "WIZARD (1)"
+        ],
+        "abilities": [
+          "Deffcap Mushroom"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Deffcap Mushroom",
+            "timing": "Once Per Battle, Your Hero Phase",
+            "effect": "Effect: Add 1 to this unit’s power level for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Moon-sickle",
+            "3",
+            "4+",
+            "4+",
+            "1",
+            "2",
+            ""
+          ],
+          [
+            "Spore Squig’s Vicious Teeth",
+            "2",
+            "4+",
+            "3+",
+            "1",
+            "1",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Cave-Shamans fuel their magic with the Deffcap, a highly hallucinogenic mushroom that grows inside the shaman until it bursts out of their cranium. As the willing host of such a fungus, they are capable of casting far more potent spells, for the mushroom appears to draw power from the Bad Moon itself.",
+      "regimentOptions": "0-1 %000013838Moonclan Agitator%, Any %000000543MOONCLAN%"
+    },
+    {
+      "faction": "Gloomspite Gitz",
+      "name": "Gobbapalooza",
+      "points": 150,
+      "size": 5,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "5\"",
+        "health": "3",
+        "save": "6+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Gobbapalooza",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "GLOOMSPITE GITZ",
+          "MOONCLAN",
+          "INFANTRY",
+          "WIZARD (1)"
+        ],
+        "abilities": [
+          "Hallucinogenic Fungus Brews",
+          "Gobbapalooza Know-Wotz"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Hallucinogenic Fungus Brews",
+            "timing": "Passive",
+            "effect": "Effect: In the first battle round, this unit has WARD (4+). In the second battle round, this unit has WARD (5+). In the third and subsequent battle rounds, this unit has WARD (6+).",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Gobbapalooza Know-Wotz",
+            "timing": "Once Per Turn (Army), Your Hero Phase",
+            "effect": "Effect: Roll a dice. On a 3+, pick 1 of the following effects:\nGlareface Dance: Pick a friendly GLOOMSPITE GITZ unit within this unit’s combat range. Add 1 to run rolls and charge rolls for that unit until the start of your next turn.\nNasty Poisons: Pick a friendly GLOOMSPITE GITZ unit within this unit’s combat range. Add 1 to the Rend characteristic of that unit’s weapons until the start of your next turn.\nMesmerise: Pick a visible enemy unit within 12\" of this unit. Until the start of your next turn, that unit cannot use commands.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Staff, Stikka or Jaggedy Blade",
+            "1",
+            "4+",
+            "4+",
+            "1",
+            "D3",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Any bossgrot of sufficient power and renown is sure to have at least one Gobbapalooza roaming around their lurklair. This cackling gang of loon-priests and petty shamans is a motley gathering of wise-grots, each employing a different set of superstitions, practices and volatile fungus brews that either bolster their fellow gitz with all sorts of bizarre effects or cause mayhem amongst the ranks of the enemy.",
+      "notes": "This unit cannot be reinforced."
+    },
+    {
+      "faction": "Gloomspite Gitz",
+      "name": "Grinkrak’s Looncourt",
+      "points": 100,
+      "size": 7,
+      "kind": "Legends",
+      "category": "Infantry",
+      "profile": {
+        "move": "5\"",
+        "health": "2",
+        "save": "6+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Grinkrak-s-Looncourt",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "GLOOMSPITE GITZ",
+          "MOONCLAN",
+          "CHAMPION",
+          "INFANTRY",
+          "UNIQUE"
+        ],
+        "abilities": [
+          "The Looncourt’s Quest",
+          "Quest’s End"
+        ],
+        "abilityDetails": [
+          {
+            "name": "The Looncourt’s Quest",
+            "timing": "Deployment Phase",
+            "effect": "Effect: Pick an objective or terrain feature within enemy territory to be the object of this unit’s quest.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Quest’s End",
+            "timing": "Start of Any Turn",
+            "effect": "Declare: This unit can only use this ability if you control the object of this unit’s quest and this unit is contesting it.\nEffect: For the rest of the battle, this unit has STRIKE-FIRST and WARD (4+).",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          }
+        ],
+        "ranged": [
+          [
+            "Squigapult",
+            "15\"",
+            "1",
+            "4+",
+            "3+",
+            "1",
+            "D3+2",
+            "Crit (Auto-wound)"
+          ]
+        ],
+        "melee": [
+          [
+            "Moon-slicer",
+            "5",
+            "4+",
+            "4+",
+            "1",
+            "D3",
+            ""
+          ],
+          [
+            "Looncourt Weapons",
+            "2",
+            "4+",
+            "5+",
+            "1",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "Legends Warscrolls",
+      "canReinforce": false,
+      "flavour": "A denizen of the Gnarlwood, Grinkrak holds court around the ‘Great Stinkhorn’ – a particularly colossal mushroom. His latest scheme is to ‘knight’ his grot minions using his bossin’ stikk, filling them with a sort of bravery. The motley band of grots that make up the Looncourt have entirely bought into Grinkrak’s claims of knighthood, believing themselves to be holy guardians of the Stinkhorn. The madcap quests they embark on never end well for those in their way.",
+      "notes": "This unit cannot be reinforced.",
+      "description": "Each model in this unit is armed with Looncourt Weapons. The models in this unit are:\n• Grinkrak the Great (champion, also armed with a Moon-slicer)\n• Skolko and Pronk (also armed with a Squigapult)\n• Grib, da Wonky Lance\n• Pokin’ Snark\n• Snorbo da Spore\n• Pointy Burk\n• Moonface Nagz"
+    },
+    {
+      "faction": "Gloomspite Gitz",
+      "name": "Kragnos, the End of Empires",
+      "points": 580,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "10\"",
+        "health": "18",
+        "save": "4+",
+        "control": "15",
+        "ward": "5+",
+        "url": "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Kragnos-the-End-of-Empires",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "GLOOMSPITE GITZ",
+          "HERO",
+          "MONSTER",
+          "UNIQUE",
+          "WARD (5+)",
+          "WARMASTER"
+        ],
+        "abilities": [
+          "Battle Damaged",
+          "Rampaging Destruction",
+          "The End of Empires",
+          "The Shield Inviolate",
+          "Avatar of Destruction"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of The Dread Mace is 4 and this unit has a Control characteristic of 10.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Rampaging Destruction",
+            "timing": "Once Per Turn (Army), Any Charge Phase",
+            "effect": "Effect: If this unit charged this phase, pick 1 of the following effects:\n• Roll a dice for each enemy unit within 1\" of this unit. On a 2+, inflict an amount of mortal damage on that unit equal to the roll.\n• Pick an enemy MONSTER in combat with this unit and roll 2D6. On a 7, this ability has no effect. Otherwise, inflict an amount of mortal damage on that unit equal to the results on the dice used for the 2D6 roll multiplied together. For example, a 2D6 roll of 2 and 6 would inflict 12 mortal damage (2 × 6).",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Rampage",
+            "phase": "Charge Phase"
+          },
+          {
+            "name": "The End of Empires",
+            "timing": "Your Charge Phase",
+            "effect": "Effect: For the rest of the turn, add 1 to the number of dice rolled when making charge rolls for friendly DESTRUCTION units while they are wholly within 12\" of this unit, to a maximum of 3.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Charge Phase"
+          },
+          {
+            "name": "The Shield Inviolate",
+            "timing": "Reaction: Opponent declared a SPELL ability",
+            "effect": "Effect: If this unit was picked to be the target of that spell, roll a dice. On a 3+, ignore the effect of that spell on this unit. This unit can use this ability more than once per phase but only once per SPELL ability.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Hero Phase",
+            "reaction": true
+          },
+          {
+            "name": "Avatar of Destruction",
+            "timing": "Passive",
+            "effect": "Effect: If this unit would be automatically destroyed, it is not automatically destroyed. Instead, allocate 6 damage points to it (ward rolls cannot be made for those damage points).",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          }
+        ],
+        "melee": [
+          [
+            "The Dread Mace",
+            "6",
+            "3+",
+            "2+",
+            "3",
+            "4",
+            "See battle damage rules"
+          ],
+          [
+            "Tuskbreaker",
+            "3",
+            "4+",
+            "2+",
+            "2",
+            "D3",
+            "Crit (2 Hits)"
+          ],
+          [
+            "Hooves of Wrack and Ruin",
+            "6",
+            "3+",
+            "2+",
+            "1",
+            "2",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "A roaring, trampling god of earthquakes and wanton destruction, Kragnos is known as the End of Empires. Already a natural disaster made manifest, his rampages are further augmented by his legendary armaments. The shield Tuskbreaker is said to have been cast aside by Gorkamorka himself; the spells of enemy mages break instantly upon its surface, supposedly due to the residual divine essence that suffuses it. The Dread Mace, Kragnos’s massive studded club, is powerful enough to shatter walls of solid rock. Legends say that he retrieved the weapon’s head from an ancient geomantic nexus, and that it is infused with Ghur’s own destructive animus.",
+      "regimentOptions": "Any %000000550GLOOMSPITE GITZ%, 0-1 %000015381Top Dog%, 0-1 %000013838Moonclan Agitator%"
+    },
+    {
+      "faction": "Gloomspite Gitz",
+      "name": "Loonboss",
+      "points": 70,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "5\"",
+        "health": "5",
+        "save": "4+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Loonboss",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "GLOOMSPITE GITZ",
+          "MOONCLAN",
+          "HERO",
+          "INFANTRY",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Let’s Get Stabbin’!",
+          "I’m Da Boss"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Let’s Get Stabbin’!",
+            "timing": "Reaction: You declared a FIGHT ability for this unit",
+            "effect": "Effect: Pick a friendly non-HERO MOONCLAN INFANTRY unit that has not used a FIGHT ability this turn and is within this unit’s combat range to be the target. The target can be picked to use a FIGHT ability immediately after the FIGHT ability used by this unit has been resolved.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase",
+            "reaction": true
+          },
+          {
+            "name": "I’m Da Boss",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Pick a visible friendly Moonclan Stabbas unit wholly within 12\" of this unit to be the target.\nEffect: Roll a dice. On a 2+, pick 1 of the following effects:\nGet Back ’Ere!: If the target is not in combat, you can return D6 slain models to it.\nStab ’Em Good!: Add 1 to wound rolls for the target’s attacks until the start of your next turn.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Moon-slicer",
+            "5",
+            "4+",
+            "4+",
+            "1",
+            "D3",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Loonbosses are the warlords of the Moonclan skraps. They relish a fight, and the weapons they wield are laden with so many spiteful enchantments that they can carve clean through steel plate. However, Loonbosses never fight fair. Ducking and weaving around their enemies, they hurl mobs of cackling grots at them to wear them down before finishing them off with a slice to the throat or a blow between the shoulder blades.",
+      "regimentOptions": "Any %000000543MOONCLAN%, 0-1 %000015267Doom Diver Catapult%",
+      "notes": "This HERO can join an eligible regiment as a Moonclan Agitator."
+    },
+    {
+      "faction": "Gloomspite Gitz",
+      "name": "Loonboss on Giant Cave Squig",
+      "points": 80,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "D6+6\"",
+        "health": "6",
+        "save": "5+",
+        "control": "5",
+        "url": "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Loonboss-on-Giant-Cave-Squig",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "GLOOMSPITE GITZ",
+          "MOONCLAN",
+          "SQUIG",
+          "CAVALRY",
+          "FLY",
+          "HERO"
+        ],
+        "abilities": [
+          "Let’s Get Bouncin’!"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Let’s Get Bouncin’!",
+            "timing": "Reaction: You declared a FIGHT ability for this unit",
+            "effect": "Effect: Pick a friendly non-HERO MOONCLAN CAVALRY unit that has not used a FIGHT ability this turn and is within this unit’s combat range to be the target. The target can be picked to use a FIGHT ability immediately after the FIGHT ability used by this unit has been resolved.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase",
+            "reaction": true
+          }
+        ],
+        "melee": [
+          [
+            "Moon-cutta or Loonboss Stabba",
+            "5",
+            "4+",
+            "4+",
+            "1",
+            "2",
+            "Charge (+1 Damage)"
+          ],
+          [
+            "Massive Fang-filled Gob",
+            "4",
+            "4+",
+            "3+",
+            "2",
+            "D3",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Many Loonbosses take squigs as mounts or pets and have their choice of prime specimens, among them the Giant Cave Squigs. Such bossgrots are often found at the head of a Squigalanche, and while it might be an exaggeration to say that they intentionally ‘lead’ their fellows anywhere, their force of personality is enough to draw squig-mounted gitz to their side from miles around.",
+      "regimentOptions": "0-1 %000013838Moonclan Agitator%, Any %000000543MOONCLAN%",
+      "notes": "This HERO can join an eligible regiment as a Moonclan Agitator."
+    },
+    {
+      "faction": "Gloomspite Gitz",
+      "name": "Loonboss on Mangler Squigs",
+      "points": 140,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "D6+8\"",
+        "health": "14",
+        "save": "5+",
+        "control": "5",
+        "url": "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Loonboss-on-Mangler-Squigs",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "GLOOMSPITE GITZ",
+          "MOONCLAN",
+          "SQUIG",
+          "FLY",
+          "HERO",
+          "MONSTER"
+        ],
+        "abilities": [
+          "Squig Rage",
+          "Ker-Splat!",
+          "Watch Out!",
+          "Bite Da Moon!"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Squig Rage",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of its Huge Fang-filled Gobs is 6.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Ker-Splat!",
+            "timing": "Once Per Turn (Army), Any Charge Phase",
+            "effect": "Declare: If this unit charged this phase, pick an enemy unit within 1\" of it to be the target.\nEffect: Roll a dice for each model in the target unit, to a maximum of 10. For each 4+, inflict 1 mortal damage on the target.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Rampage",
+            "phase": "Charge Phase"
+          },
+          {
+            "name": "Watch Out!",
+            "timing": "Passive",
+            "effect": "Effect: If this unit is destroyed, before removing it from play, roll a dice for each enemy unit within this unit’s combat range. On a 4+, inflict D3 mortal damage on that unit.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Bite Da Moon!",
+            "timing": "Once Per Battle (Army), Any Combat Phase",
+            "effect": "Declare: Pick this unit and all friendly SQUIG units wholly within 12\" of this unit to be the targets.\nEffect: Add 1 to hit rolls for attacks made with the targets’ Fang-filled Gobs, Massive Fang-filled Gobs and Huge Fang-filled Gobs for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Moon-cutta",
+            "5",
+            "4+",
+            "4+",
+            "1",
+            "2",
+            ""
+          ],
+          [
+            "Huge Fang-filled Gobs",
+            "4",
+            "4+",
+            "2+",
+            "1",
+            "D6",
+            "Companion · See battle damage rules"
+          ],
+          [
+            "Balls and Chains",
+            "4",
+            "4+",
+            "4+",
+            "-",
+            "D3",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "It takes a particularly deranged loon to lead the charge whilst clinging on to a pair of giant squigs, but some Loonbosses – along with their most bonkers cronies – are only too eager to do so. Mangler Squigs are living wrecking balls, and though only the most tenacious grots could hope to survive the ride, those who succeed revel in the spectacular violence they inflict as they crash into the melee, cackling in wicked glee as severed body parts, arcs of gore and screaming victims fly through the air all around them.",
+      "regimentOptions": "0-1 %000013838Moonclan Agitator%, Any %000000543MOONCLAN%"
+    },
+    {
+      "faction": "Gloomspite Gitz",
+      "name": "Loonboss with Giant Cave Squig",
+      "points": 120,
+      "size": 1,
+      "kind": "Legends",
+      "category": "Hero",
+      "profile": {
+        "move": "5\"",
+        "health": "6",
+        "save": "5+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Loonboss-with-Giant-Cave-Squig",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "GLOOMSPITE GITZ",
+          "MOONCLAN",
+          "SQUIG",
+          "HERO",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "Gobbled Up",
+          "Goin’ Somewhere?"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Gobbled Up",
+            "timing": "End of Any Turn",
+            "effect": "Declare: Pick an enemy unit within 1\" of this unit to be the target.\nEffect: Roll a dice. If the roll equals or exceeds the target’s Health characteristic, 1 model in the target unit is slain.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "End of Turn"
+          },
+          {
+            "name": "Goin’ Somewhere?",
+            "timing": "Passive",
+            "effect": "Effect: If a friendly MOONCLAN INFANTRY unit wholly within 12\" of this unit uses the ‘Rally’ command, you can make 3 additional rally rolls of D6. However, friendly MOONCLAN INFANTRY units cannot use RETREAT abilities while they are within 12\" of this unit.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          }
+        ],
+        "melee": [
+          [
+            "Massive Fang-filled Gob",
+            "4",
+            "4+",
+            "3+",
+            "2",
+            "D3",
+            "Companion"
+          ],
+          [
+            "Moon-prodder",
+            "5",
+            "4+",
+            "4+",
+            "1",
+            "2",
+            ""
+          ]
+        ]
+      },
+      "source": "Legends Warscrolls",
+      "canReinforce": false,
+      "flavour": "Some particularly forceful and bullying Loonbosses are able to tame – in the loosest sense of the word – Giant Cave Squigs and bring them into battle as terrifying pets that are more than capable of biting a man in two.",
+      "regimentOptions": "0-1 %000013838Moonclan Agitator%, Any %000000543Moonclan%",
+      "notes": "This HERO can join an eligible regiment as a Moonclan Agitator"
+    },
+    {
+      "faction": "Gloomspite Gitz",
+      "name": "Loonsmasha Fanatics",
+      "points": 110,
+      "size": 5,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "2D6\"",
+        "health": "1",
+        "save": "6+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Loonsmasha-Fanatics",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "GLOOMSPITE GITZ",
+          "MOONCLAN",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "Hidden Loons",
+          "Release the Fanatics!",
+          "Whirling Death"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Hidden Loons",
+            "timing": "Deployment Phase",
+            "effect": "Declare: Pick this unit if it has not been deployed.\nEffect: Set up this unit in reserve hidden among the mobs. It has now been deployed.",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Deploy",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Release the Fanatics!",
+            "timing": "Any Movement Phase",
+            "effect": "Declare: Pick this unit if it is hidden among the mobs. Then, pick a friendly Moonclan Shootas or Moonclan Stabbas unit that has 10 or more models to be the target.\nEffect: Set up this unit anywhere on the battlefield wholly within 6\" of the target and more than 9\" from all enemy units.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Movement Phase"
+          },
+          {
+            "name": "Whirling Death",
+            "timing": "Passive",
+            "effect": "Effect: This unit has STRIKE-FIRST.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Ball and Chain",
+            "D6",
+            "4+",
+            "3+",
+            "2",
+            "D3",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Armed with massive wrecking balls attached to lengths of chain, Loonsmasha Fanatics are driven loopy with fungus brew then unleashed upon the enemy in a whirling storm. Though they inevitably come to a violent demise, they are sure to cause blood carnage first."
+    },
+    {
+      "faction": "Gloomspite Gitz",
+      "name": "Madcap Shaman",
+      "points": 80,
+      "size": 1,
+      "kind": "Legends",
+      "category": "Hero",
+      "profile": {
+        "move": "5\"",
+        "health": "4",
+        "save": "6+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Madcap-Shaman",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "GLOOMSPITE GITZ",
+          "MOONCLAN",
+          "HERO",
+          "INFANTRY",
+          "WIZARD (1)"
+        ],
+        "abilities": [
+          "Madcap Mushroom"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Madcap Mushroom",
+            "timing": "Once Per Battle, Your Hero Phase",
+            "effect": "Effect: For the rest of the turn:\n• Add 1 to this unit’s power level.\n• If 2 or more dice in a casting roll for this unit have the same value, inflict D3 mortal damage on this unit after the SPELL ability has been resolved.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Moon Staff",
+            "3",
+            "4+",
+            "4+",
+            "1",
+            "D3",
+            ""
+          ]
+        ]
+      },
+      "source": "Legends Warscrolls",
+      "canReinforce": false,
+      "flavour": "Black-clad Madcap Shamans caper into battle, chanting and jabbering madly. They stuff Madcap Mushrooms into their gobs, eyes crackling with power as they channel the Gloomspite into deadly magical attacks.",
+      "regimentOptions": "Any %000000543MOONCLAN%"
+    },
+    {
+      "faction": "Gloomspite Gitz",
+      "name": "Malevolent Moon",
+      "points": 0,
+      "size": 1,
+      "kind": "",
+      "category": "Manifestation",
+      "profile": {
+        "move": "12\"",
+        "health": "6",
+        "save": "6+",
+        "ward": "6+",
+        "banishment": "7",
+        "url": "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Malevolent-Moon",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "GLOOMSPITE GITZ",
+          "ENDLESS SPELL",
+          "FLY",
+          "MANIFESTATION",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Lurid Light"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Lurid Light",
+            "timing": "Passive",
+            "effect": "Effect: While friendly GLOOMSPITE GITZ units are wholly within 12\" of this MANIFESTATION they are affected by all four faces of the Bad Moon (Grinnin’, Scowlin’, Sulkin’ and Cacklin’).",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          }
+        ],
+        "melee": [
+          [
+            "Lunarock Slam",
+            "1",
+            "4+",
+            "3+",
+            "-",
+            "D3",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "The Malevolent Moon is conjured when a shaman raises high a carved loonstone simulacrum of the Bad Moon and jabbers the right words. The statue swells into a cackling, glowing abomination that sweeps across the battlefield wreaking havoc."
+    },
+    {
+      "faction": "Gloomspite Gitz",
+      "name": "Mangler Squigs",
+      "points": 130,
+      "size": 1,
+      "kind": "",
+      "category": "Monster",
+      "profile": {
+        "move": "D6+8\"",
+        "health": "14",
+        "save": "5+",
+        "control": "5",
+        "url": "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Mangler-Squigs",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "GLOOMSPITE GITZ",
+          "MOONCLAN",
+          "SQUIG",
+          "FLY",
+          "MONSTER"
+        ],
+        "abilities": [
+          "Squig Rage",
+          "Watch Out!",
+          "Giant Boing!"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Squig Rage",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of its Huge Fang-filled Gobs is 6.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Watch Out!",
+            "timing": "Passive",
+            "effect": "Effect: If this unit is destroyed, before removing it from play, roll a dice for each enemy unit within this unit’s combat range. On a 4+, inflict D3 mortal damage on that unit.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Giant Boing!",
+            "timing": "Once Per Turn (Army), Any Charge Phase",
+            "effect": "Effect: If this unit charged this turn, roll a dice. On a 3+, this unit can move 3D6\" but must end that move in combat.",
+            "kind": "Ability",
+            "type": "Movement",
+            "keywords": "Rampage",
+            "phase": "Charge Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Bashin’ Stikks",
+            "4",
+            "4+",
+            "5+",
+            "-",
+            "1",
+            ""
+          ],
+          [
+            "Huge Fang-filled Gobs",
+            "4",
+            "4+",
+            "2+",
+            "1",
+            "D6",
+            "Companion · See battle damage rules"
+          ],
+          [
+            "Balls and Chains",
+            "4",
+            "4+",
+            "4+",
+            "-",
+            "D3",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Some particularly brave and idiotic grots undertake the insane task of lashing two huge Cave Squigs together to form the living wrecking balls known as Manglers. Pushing and pulling against one another constantly as their riders desperately try to point them in the right direction, these conjoined titans can lay waste to entire sections of a battleline – though whether it belongs to the enemy or their own forces hardly concerns the squigs."
+    },
+    {
+      "faction": "Gloomspite Gitz",
+      "name": "Mollog",
+      "points": 210,
+      "size": 1,
+      "kind": "Legends",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "8",
+        "save": "4+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Mollog",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "GLOOMSPITE GITZ",
+          "TROGGOTH",
+          "HERO",
+          "INFANTRY",
+          "UNIQUE"
+        ],
+        "abilities": [
+          "Regeneration",
+          "Mollog’s Mob",
+          "Bitey Distractions",
+          "Unleash The Critters!"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Regeneration",
+            "timing": "Start of Any Turn",
+            "effect": "Effect: Heal (D3) this unit.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Mollog’s Mob",
+            "timing": "Passive",
+            "effect": "Effect: This unit’s Bat Squig, Spiteshroom and Stalagsquig are tokens. After setting up this unit on the battlefield for the first time, place its tokens next to it.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Bitey Distractions",
+            "timing": "Passive",
+            "effect": "Effect: This unit has WARD (5+) while any of its tokens are on the battlefield.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          },
+          {
+            "name": "Unleash The Critters!",
+            "timing": "Any Combat Phase",
+            "effect": "Effect: Pick 1 of the following effects:\nSpore Cloud: Remove this unit’s Spiteshroom. For the rest of the turn, subtract 1 from hit rolls for attacks made by enemy units while they are in combat with this unit.\nBat Squig Attack!: Remove this unit’s Bat Squig. Pick an enemy unit in combat with this unit to be the target and roll a D3. On a 2+, inflict an amount of mortal damage on the target equal to the roll.\nRock-hard Skin: Remove this unit’s Stalagsquig. Ignore all modifiers to save rolls for this unit (positive and negative) for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Combat Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Jabbertoad",
+            "8\"",
+            "1",
+            "4+",
+            "4+",
+            "-",
+            "D3",
+            "Shoot in Combat"
+          ]
+        ],
+        "melee": [
+          [
+            "Puff-fungus Club",
+            "4",
+            "4+",
+            "2+",
+            "2",
+            "3",
+            ""
+          ]
+        ]
+      },
+      "source": "Legends Warscrolls",
+      "canReinforce": false,
+      "flavour": "Mollog, the ancient Dankhold Troggoth, really just wants to find somewhere dark and damp to go back to sleep, but people keep disturbing him and getting in his way. Suffice it to say, this never ends well for them…",
+      "regimentOptions": "Any %000000552TROGGOTH%",
+      "notes": "This HERO can join Trugg’s regiment."
+    },
+    {
+      "faction": "Gloomspite Gitz",
+      "name": "Moonclan Shootas",
+      "points": 110,
+      "size": 20,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "5\"",
+        "health": "1",
+        "save": "6+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Moonclan-Shootas",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "GLOOMSPITE GITZ",
+          "MOONCLAN",
+          "CHAMPION",
+          "INFANTRY",
+          "MUSICIAN (1/20)",
+          "STANDARD BEARER (1/20)"
+        ],
+        "abilities": [
+          "Netters"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Netters",
+            "timing": "Any Combat Phase",
+            "effect": "Declare: Pick an enemy INFANTRY unit in combat with this unit to be the target.\nEffect: Roll a dice. On a 3+, subtract 1 from hit rolls for the target’s attacks for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Moonclan Bow",
+            "18\"",
+            "2",
+            "4+",
+            "5+",
+            "-",
+            "1",
+            ""
+          ]
+        ],
+        "melee": [
+          [
+            "Moonclan Bow",
+            "1",
+            "4+",
+            "5+",
+            "-",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Moonclan Shootas gather in sizeable skulkmobs that rain black-fletched arrows upon the enemy. They pincushion their victims with sheer weight of fire, before surrounding any survivors and stabbing them viciously to death with spare arrows or clobbering them repeatedly with their knobbly bows."
+    },
+    {
+      "faction": "Gloomspite Gitz",
+      "name": "Moonclan Stabbas",
+      "points": 110,
+      "size": 20,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "5\"",
+        "health": "1",
+        "save": "5+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Moonclan-Stabbas",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "GLOOMSPITE GITZ",
+          "MOONCLAN",
+          "CHAMPION",
+          "INFANTRY",
+          "MUSICIAN (1/20)",
+          "STANDARD BEARER (1/20)"
+        ],
+        "abilities": [
+          "Netters"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Netters",
+            "timing": "Any Combat Phase",
+            "effect": "Declare: Pick an enemy INFANTRY unit in combat with this unit to be the target.\nEffect: Roll a dice. On a 3+, subtract 1 from hit rolls for the target’s attacks for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Stabba",
+            "2",
+            "4+",
+            "5+",
+            "-",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Moonclan Stabbas form ragged ranks that advance upon the foe with gongs clanging and banners waving. Eyes bulging with the madness of the Gloomspite, they pour over the enemy lines and stab wildly at everything in their path."
+    },
+    {
+      "faction": "Gloomspite Gitz",
+      "name": "Mork’s Mighty Mushroom",
+      "points": 0,
+      "size": 1,
+      "kind": "",
+      "category": "Manifestation",
+      "profile": {
+        "move": "-",
+        "health": "6",
+        "save": "6+",
+        "ward": "6+",
+        "banishment": "7",
+        "url": "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Mork-s-Mighty-Mushroom",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "GLOOMSPITE GITZ",
+          "ENDLESS SPELL",
+          "MANIFESTATION",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Mutating Spores"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Mutating Spores",
+            "timing": "Any Shooting Phase",
+            "effect": "Declare: Pick up to 3 enemy units within 6\" of this MANIFESTATION to be the targets.\nEffect: For each target, roll a number of dice equal to the number of models in that unit that are within 6\" of this MANIFESTATION. For each 5+, inflict 1 mortal damage on the target.",
+            "kind": "Ability",
+            "type": "Shooting",
+            "phase": "Shooting Phase"
+          }
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Mork’s Mighty Mushroom begins as a single spore plucked from between the caster’s filthy toes. By the time it is flung at the foe, it has swollen into a fully grown mushroom, and within moments it blooms into something huge and unutterably foul."
+    },
+    {
+      "faction": "Gloomspite Gitz",
+      "name": "Rabble-Rowza",
+      "points": 100,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "5\"",
+        "health": "5",
+        "save": "5+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Rabble-Rowza",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "GLOOMSPITE GITZ",
+          "MOONCLAN",
+          "HERO",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "Secret Tunnels",
+          "Emerge from the Depths",
+          "’Neh Neh Na-Neh Neh! Can’t Catch Me!’"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Secret Tunnels",
+            "timing": "Deployment Phase",
+            "effect": "Declare: Pick this unit if it has not been deployed.\nEffect: Set up this unit in reserve in a secret tunnel. It has now been deployed.",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Deploy",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Emerge from the Depths",
+            "timing": "Your Movement Phase",
+            "effect": "Declare: Pick this unit if it is in a secret tunnel.\nEffect: Set up this unit anywhere on the battlefield more than 9\" from all enemy units.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Movement Phase"
+          },
+          {
+            "name": "’Neh Neh Na-Neh Neh! Can’t Catch Me!’",
+            "timing": "Once Per Turn (Army), Your Movement Phase",
+            "effect": "Declare: Pick a visible friendly MONSTER or BEAST unit to be the target.\nEffect: For the rest of the turn, the target can use CHARGE abilities even if it used a RUN ability in the same turn, but each time it uses a MOVE ability, it must end the move closer to this unit. In addition, for the rest of the turn, the first time the target ends a move within this unit’s combat range, inflict D6 mortal damage on this unit.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Movement Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Bat Squigs",
+            "12\"",
+            "3",
+            "4+",
+            "4+",
+            "-",
+            "D3",
+            "Crit (Auto-wound)"
+          ]
+        ],
+        "melee": [
+          [
+            "Moon-sickle and Basha",
+            "5",
+            "4+",
+            "4+",
+            "1",
+            "D3",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Like all of Gorkamorka’s creatures, grots love a good scrap. The Rabble-Rowzas take it upon themselves to see this desire fulfilled. Their shrieking voices are not just enhanced but magically weaponised. Through a mixture of gleeful threats and cutting insults, the Rabble-Rowzas direct the wave of destructive madness that is a Gloomspite army onwards, ensuring that it crashes upon the enemy and tramples them to paste.",
+      "regimentOptions": "0-1 %000009098MONSTER%, Any %000013839MOONCLAN INFANTRY%",
+      "notes": "This HERO can join an eligible regiment as a Moonclan Agitator."
+    },
+    {
+      "faction": "Gloomspite Gitz",
+      "name": "Rippa’s Snarlfangs",
+      "points": 100,
+      "size": 3,
+      "kind": "Legends",
+      "category": "Cavalry",
+      "profile": {
+        "move": "12\"",
+        "health": "3",
+        "save": "5+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Rippa-s-Snarlfangs",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "GITMOB",
+          "GLOOMSPITE GITZ",
+          "CAVALRY",
+          "CHAMPION",
+          "UNIQUE"
+        ],
+        "abilities": [
+          "Marking Your Territory",
+          "Hamstring"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Marking Your Territory",
+            "timing": "Passive",
+            "effect": "Effect: Add 1 to the Rend characteristic of this unit’s Wolfgit Weapons while it contests an objective you control that is not contested by any other friendly units.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Hamstring",
+            "timing": "Once per Turn (Army), Your Shooting Phase",
+            "effect": "Declare: If this unit’s Mean-eye is on the battlefield and not in combat, pick a visible enemy unit within 15\" of this unit to be the target.\nEffect: Roll a dice. Add 1 to the roll if the target is damaged. On a 5+, inflict 1 mortal damage on the target.",
+            "kind": "Ability",
+            "type": "Shooting",
+            "phase": "Shooting Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Wolfgit Weapons",
+            "3",
+            "4+",
+            "5+",
+            "-",
+            "1",
+            "Charge (+1 Damage)"
+          ],
+          [
+            "Snarlfang’s Slavering Jaws",
+            "2",
+            "4+",
+            "3+",
+            "-",
+            "2",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "Legends Warscrolls",
+      "canReinforce": false,
+      "flavour": "Racing forth on fleet-pawed Snarlfang mounts come Rippa Narkbad and his ladz, whooping and hollering as they seek out fleeing prey to stick with spears and cruel, barbed arrows.",
+      "notes": "This unit cannot be reinforced.",
+      "description": "Each model in this unit is armed with Wolfgit Weapons and Snarlfang’s Slavering Jaws. The models in this unit are:\n• Rippa Narkbad (champion)\n• Stabbit\n• Mean-eye"
+    },
+    {
+      "faction": "Gloomspite Gitz",
+      "name": "Rockgut Troggoths",
+      "points": 170,
+      "size": 3,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "6\"",
+        "health": "5",
+        "save": "4+",
+        "control": "2",
+        "ward": "5+",
+        "url": "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Rockgut-Troggoths",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "GLOOMSPITE GITZ",
+          "TROGGOTH",
+          "INFANTRY",
+          "WARD (5+)"
+        ],
+        "abilities": [
+          "Regeneration"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Regeneration",
+            "timing": "Start of Any Turn",
+            "effect": "Effect: Heal (D3) this unit.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Start of Turn"
+          }
+        ],
+        "ranged": [
+          [
+            "Throwin’ Boulders",
+            "10\"",
+            "1",
+            "5+",
+            "2+",
+            "2",
+            "D3",
+            ""
+          ]
+        ],
+        "melee": [
+          [
+            "Stone Maul or Craggy Hands",
+            "2",
+            "4+",
+            "2+",
+            "2",
+            "3",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Rockgut Troggoths have stony hides that are proof against blade, bolt and magical blast alike. Their lumpen claws pass through stone as though it were water, allowing them to scoop up huge clubs and throwing boulders at will. Subtle they are not."
+    },
+    {
+      "faction": "Gloomspite Gitz",
+      "name": "Scourge of Aqshy Fellwater Troggoths",
+      "points": 160,
+      "size": 3,
+      "kind": "Scourge of Aqshy",
+      "category": "Infantry",
+      "profile": {
+        "move": "6\"",
+        "health": "5",
+        "save": "5+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Scourge-of-Aqshy-Fellwater-Troggoths",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "GLOOMSPITE GITZ",
+          "TROGGOTH",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "Regeneration",
+          "Gut-Wrenching Stench"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Regeneration",
+            "timing": "Start of Any Turn",
+            "effect": "Effect: Heal (D3) this unit.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Gut-Wrenching Stench",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick an enemy unit in combat with this unit to be the target.\nEffect: Roll a dice. You can spend up to 3 rage dice. If you do:\n• Add X to the roll, where X is the number of rage dice spent.\n• If your opponent’s fury level is lower than yours, they must increase their fury level by 1, to a maximum of 7.\nThen, on a 5+, the target has STRIKE-LAST for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Noxious Vomit",
+            "6\"",
+            "D3",
+            "2+",
+            "3+",
+            "2",
+            "1",
+            "Shoot in Combat"
+          ]
+        ],
+        "melee": [
+          [
+            "Spiked Club",
+            "4",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            ""
+          ]
+        ]
+      },
+      "source": "Scourge of Aqshy - Gloomspite Gitz",
+      "canReinforce": true,
+      "flavour": "Not even the sulphur lakes of the Great Parch can mask the nostril-burning odour of a group of Fellwater Troggoths. Oozing slime and heaving up caustic vomit, they are truly loathsome creatures.",
+      "notes": "This unit is legal for Matched Play for battles fought using the General’s Handbook 2026-27 battlepack."
+    },
+    {
+      "faction": "Gloomspite Gitz",
+      "name": "Scourge of Aqshy Sunsteala Wheelas",
+      "points": 150,
+      "size": 2,
+      "kind": "Scourge of Aqshy",
+      "category": "War Machine",
+      "profile": {
+        "move": "12\"",
+        "health": "6",
+        "save": "4+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Scourge-of-Aqshy-Sunsteala-Wheelas",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "GITMOB",
+          "GLOOMSPITE GITZ",
+          "CHAMPION",
+          "WAR MACHINE"
+        ],
+        "abilities": [
+          "Slice and Soar"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Slice and Soar",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: This unit can only use this ability if it charged this turn. Pick an enemy unit in combat with this unit to be the target.\nEffect: Roll a dice for each model in the target unit. If there are 2 models in this unit, add 1 to each roll. If there are 3 or more models in this unit, add 2 to each roll. For each 6+, inflict 1 mortal damage on the target.\nThen, you can spend 1 rage dice. If you do:\n• Roll 2D6. This unit can move a distance in inches up to the value of the roll. It can move through the combat ranges of enemy units but cannot end that move in combat.\n• If your opponent’s fury level is lower th",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Core, Attack, Fight",
+            "phase": "Combat Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Grot Bow",
+            "15\"",
+            "2",
+            "4+",
+            "5+",
+            "-",
+            "1",
+            ""
+          ]
+        ],
+        "melee": [
+          [
+            "Wheela Slicers and Stabbin’ Stikka",
+            "4",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            ""
+          ],
+          [
+            "Snarlfangs’ Frothing Jaws",
+            "6",
+            "4+",
+            "3+",
+            "-",
+            "2",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "Scourge of Aqshy - Gloomspite Gitz",
+      "canReinforce": true,
+      "flavour": "Combining lightweight wicker frames with razor-sharp blades, the Sunsteala Wheelas can run down the foe and slice their tendons before being quickly flung out of combat. Their main challenge in the Realm of Fire is stopping the chariot catching alight.",
+      "notes": "This unit is legal for Matched Play for battles fought using the General’s Handbook 2026-27 battlepack."
+    },
+    {
+      "faction": "Gloomspite Gitz",
+      "name": "Scourge of Ghyran Loonsmasha Fanatics",
+      "points": 110,
+      "size": 5,
+      "kind": "Scourge of Ghyran",
+      "category": "Infantry",
+      "profile": {
+        "move": "2D6\"",
+        "health": "1",
+        "save": "6+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Scourge-of-Ghyran-Loonsmasha-Fanatics",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "GLOOMSPITE GITZ",
+          "MOONCLAN",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "Lost in the Horde",
+          "Whirling Destruction"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Lost in the Horde",
+            "timing": "Deployment Phase",
+            "effect": "Declare: Pick this unit if it has not been deployed.\nEffect: Set up this unit in reserve lost in the horde. This unit has now been deployed.",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Deploy",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Whirling Destruction",
+            "timing": "Once Per Turn (Army), Any Charge Phase",
+            "effect": "Declare: Pick this unit if it is lost in the horde.\nEffect: Set up this unit anywhere on the battlefield wholly within 3\" of a friendly Moonclan Stabbas or Moonclan Shootas unit. Then, this unit can move 2D6\". It can pass through enemy models and their combat ranges and can end that move in combat. Then, roll a dice for each enemy unit in combat with this unit or that this unit passed across as part of that move. Inflict an amount of mortal damage on that unit equal to the roll. If this unit ended that move in combat, it has charged.",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Core, Move, Charge",
+            "phase": "Charge Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Ball and Chain",
+            "3",
+            "4+",
+            "3+",
+            "2",
+            "D3",
+            ""
+          ]
+        ]
+      },
+      "source": "Scourge of Ghyran - Gloomspite Gitz",
+      "canReinforce": true,
+      "flavour": "Armed with massive wrecking balls attached to lengths of chain, Loonsmasha Fanatics are driven loopy with fungus brew then unleashed upon the enemy in a whirling storm. Though they inevitably come to a violent demise, they are sure to cause blood carnage first.",
+      "notes": "This unit is legal for Matched Play for battles fought using the General’s Handbook 2025-26 battlepack."
+    },
+    {
+      "faction": "Gloomspite Gitz",
+      "name": "Scourge of Ghyran Sporesplatta Fanatics",
+      "points": 80,
+      "size": 5,
+      "kind": "Scourge of Ghyran",
+      "category": "Infantry",
+      "profile": {
+        "move": "2D6\"",
+        "health": "1",
+        "save": "6+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Scourge-of-Ghyran-Sporesplatta-Fanatics",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "GLOOMSPITE GITZ",
+          "MOONCLAN",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "Choking Spore-Clouds",
+          "Spinning Loons"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Choking Spore-Clouds",
+            "timing": "Passive",
+            "effect": "Effect: Subtract 1 from the Attacks characteristic of weapons used by enemy units while they are in combat with this unit.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          },
+          {
+            "name": "Spinning Loons",
+            "timing": "Once Per Turn (Army), End of Any Turn",
+            "effect": "Effect: If this unit was not set up this phase, this unit can move 2D6\". It can move through the combat ranges of enemy units and can finish that move in combat.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "End of Turn"
+          }
+        ],
+        "melee": [
+          [
+            "Spore-ball and Chain",
+            "2",
+            "3+",
+            "4+",
+            "1",
+            "D3",
+            ""
+          ]
+        ]
+      },
+      "source": "Scourge of Ghyran - Gloomspite Gitz",
+      "canReinforce": true,
+      "flavour": "Filled to the brim with lethal mushrooms of all kinds, the jungles of the Everspring Swathe are a haven for the insane grots known as Sporesplatta Fanatics. These ’shroom-addled maniacs swing their fungal weapons in wild circles, splattering their foes with noxious spores that leave them dazed, sickened and choked with toxins.",
+      "notes": "This unit is legal for Matched Play for battles fought using the General’s Handbook 2025-26 battlepack."
+    },
+    {
+      "faction": "Gloomspite Gitz",
+      "name": "Scrapskuttle’s Arachnacauldron",
+      "points": 0,
+      "size": 1,
+      "kind": "",
+      "category": "Manifestation",
+      "profile": {
+        "move": "6\"",
+        "health": "6",
+        "save": "5+",
+        "ward": "6+",
+        "banishment": "7",
+        "url": "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Scrapskuttle-s-Arachnacauldron",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "GLOOMSPITE GITZ",
+          "ENDLESS SPELL",
+          "MANIFESTATION",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Blessings of the Cauldron"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Blessings of the Cauldron",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Pick a friendly GLOOMSPITE GITZ WIZARD within 1\" of this MANIFESTATION to be the target.\nEffect: Add 1 to the target’s power level until the start of your next turn.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Spider Legs",
+            "2",
+            "4+",
+            "3+",
+            "-",
+            "2",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Scrapskuttle’s Arachnacauldron fumes with sorcerous energies, and a shaman who drinks of its foul fluids feels magical knowledge burn through their brain. Yet the cauldron squeals always with idiot hunger, and there is a price to be paid for the arcane power it bestows"
+    },
+    {
+      "faction": "Gloomspite Gitz",
+      "name": "Scuttleboss on Gigantic Spider",
+      "points": 160,
+      "size": 1,
+      "kind": "Legends",
+      "category": "Hero",
+      "profile": {
+        "move": "10\"",
+        "health": "7",
+        "save": "5+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Scuttleboss-on-Gigantic-Spider",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "GLOOMSPITE GITZ",
+          "SPIDERFANG",
+          "CAVALRY",
+          "HERO"
+        ],
+        "abilities": [
+          "Scuttle Away!",
+          "Wall Crawler"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Scuttle Away!",
+            "timing": "Once Per Turn (Army), End of Any Turn",
+            "effect": "Declare: If this unit is in combat, pick this unit and up to 1 friendly Spider Riders unit that is in combat and wholly within 12\" of this unit to be the targets.\nEffect: The targets can immediately use the ‘Retreat’ ability as if it were your movement phase without any mortal damage being inflicted on them.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "End of Turn"
+          },
+          {
+            "name": "Wall Crawler",
+            "timing": "Passive",
+            "effect": "Effect: This unit can pass across terrain features as if it had FLY.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Movement Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Envenomed Spear",
+            "5",
+            "4+",
+            "4+",
+            "1",
+            "2",
+            ""
+          ],
+          [
+            "Gigantic Fangs",
+            "4",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            "Crit (Mortal), Companion"
+          ]
+        ]
+      },
+      "source": "Legends Warscrolls",
+      "canReinforce": false,
+      "flavour": "Swaggering bullies whose twisted anatomies are part arachnid, Scuttlebosses charge into battle upon the backs of Gigantic Spiders, exhorting nearby skittermobs to follow their violent example and ride the foe into the ground.",
+      "regimentOptions": "Any %000000554SPIDERFANG%"
+    },
+    {
+      "faction": "Gloomspite Gitz",
+      "name": "Scuttletide",
+      "points": 0,
+      "size": 1,
+      "kind": "",
+      "category": "Manifestation",
+      "profile": {
+        "move": "8\"",
+        "health": "6",
+        "save": "6+",
+        "ward": "6+",
+        "banishment": "7",
+        "url": "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Scuttletide",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "GLOOMSPITE GITZ",
+          "ENDLESS SPELL",
+          "MANIFESTATION",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Wall Crawler",
+          "Endless Terrors"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Wall Crawler",
+            "timing": "Passive",
+            "effect": "Effect: This MANIFESTATION can pass across terrain features as if it had FLY.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Movement Phase"
+          },
+          {
+            "name": "Endless Terrors",
+            "timing": "Passive",
+            "effect": "Effect: This unit has WARD (4+) while it is wholly within 12\" of any friendly ARACHNAROK units.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          }
+        ],
+        "melee": [
+          [
+            "Spider Bites",
+            "8",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "First comes a weird whispering, a rising scrape and skitter like a wind through dry leaves. Then the Scuttletide spills out onto the battlefield, sorcerous spiders by the thousand squeezing from cracks in the ground and surging from shadows and undergrowth to overrun and frenziedly bite everything in their path."
+    },
+    {
+      "faction": "Gloomspite Gitz",
+      "name": "Skitterstrand Arachnarok",
+      "points": 180,
+      "size": 1,
+      "kind": "",
+      "category": "Monster",
+      "profile": {
+        "move": "10\"",
+        "health": "13",
+        "save": "4+",
+        "control": "5",
+        "url": "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Skitterstrand-Arachnarok",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "ARACHNAROK",
+          "DESTRUCTION",
+          "GLOOMSPITE GITZ",
+          "SPIDERFANG",
+          "MONSTER"
+        ],
+        "abilities": [
+          "Wall Crawler",
+          "Realmweb Lurker",
+          "Ambush from Beyond",
+          "Scuttling Terror"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Wall Crawler",
+            "timing": "Passive",
+            "effect": "Effect: This unit can pass across terrain features as if it had FLY.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Movement Phase"
+          },
+          {
+            "name": "Realmweb Lurker",
+            "timing": "Deployment Phase",
+            "effect": "Declare: Pick this unit if it has not been deployed.\nEffect: Set up this unit in reserve skittering through tunnels in reality. It has now been deployed.",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Deploy",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Ambush from Beyond",
+            "timing": "Any Movement Phase",
+            "effect": "Declare: Pick this unit if it is skittering through tunnels in reality.\nEffect: Set up this unit anywhere on the battlefield more than 9\" from all enemy units.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Movement Phase"
+          },
+          {
+            "name": "Scuttling Terror",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Effect: If this unit charged this turn, roll a dice. On a 3+, this unit can move 2D6\". It can pass through the combat ranges of enemy units and can pass through models in enemy INFANTRY units, but it must end that move in combat.\nThen, pick an enemy INFANTRY unit that this unit passed across during that move. Inflict D3 mortal damage on that enemy unit.",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Rampage",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Monstrous Spider Fangs",
+            "4",
+            "3+",
+            "2+",
+            "1",
+            "3",
+            "Crit (Mortal), Companion"
+          ],
+          [
+            "Chitinous Legs",
+            "8",
+            "4+",
+            "2+",
+            "1",
+            "1",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Creeping out from their web-wreathed Shyishan lairs, Skitterstrand Arachnaroks burst through temporary realmgates to snatch up their prey, biting off heads, injecting paralysing venom and dragging choice victims away into the darkness."
+    },
+    {
+      "faction": "Gloomspite Gitz",
+      "name": "Skragrott, the Loonking",
+      "points": 200,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "5\"",
+        "health": "6",
+        "save": "6+",
+        "control": "2",
+        "ward": "4+",
+        "url": "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Skragrott-the-Loonking",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "GLOOMSPITE GITZ",
+          "MOONCLAN",
+          "HERO",
+          "INFANTRY",
+          "UNIQUE",
+          "WARD (4+)",
+          "WARMASTER",
+          "WIZARD (2)"
+        ],
+        "abilities": [
+          "The Loonking’s Entreaty",
+          "Fangz of Da Bad Moon",
+          "Babbling Wand"
+        ],
+        "abilityDetails": [
+          {
+            "name": "The Loonking’s Entreaty",
+            "timing": "Once Per Battle (Army), Reaction: You declared the ‘%000015359The Faces of the Bad Moon%’ ability",
+            "effect": "Effect: The face of the Bad Moon stays in its current position this battle round instead of moving to the next face in the sequence.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn",
+            "reaction": true
+          },
+          {
+            "name": "Fangz of Da Bad Moon",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Pick a visible enemy unit within 18\" of this unit to be the target, then make a casting roll of 2D6.\nEffect: Roll a number of dice equal to the unmodified casting roll. For each 3+, inflict 1 mortal damage on the target.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Spell",
+            "phase": "Hero Phase",
+            "pointsType": "Spell",
+            "points": "7"
+          },
+          {
+            "name": "Babbling Wand",
+            "timing": "Passive",
+            "effect": "Effect: Each time a friendly MOONCLAN unit wholly within 12\" of this unit uses the ‘Redeploy’ command, no command points are spent.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Movement Phase",
+            "reaction": true
+          }
+        ],
+        "melee": [
+          [
+            "Da Moon Onna Stikk",
+            "4",
+            "3+",
+            "4+",
+            "1",
+            "D3",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Skragrott carved his way into history when he defeated the orruks of Ayadah at the head of hundreds of thousands of grots. He attributes his success to the Bad Moon, which he claims once spoke to him as he slept. When Skragrott awoke, a fungal crown was deeply rooted upon his brow, and a stave capped with a Badloon Bossfungus lay at his side. This was seen as proof by all the Moonclans of his right to rule and a conduit through which he could channel their sinister god’s power.",
+      "regimentOptions": "Any %000000550GLOOMSPITE GITZ%, 0-1 %000013838Moonclan Agitator%, 0-1 %000015381Top Dog%"
+    },
+    {
+      "faction": "Gloomspite Gitz",
+      "name": "Snarlboss",
+      "points": 100,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "12\"",
+        "health": "5",
+        "save": "5+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Snarlboss",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "GITMOB",
+          "GLOOMSPITE GITZ",
+          "CAVALRY",
+          "HERO"
+        ],
+        "abilities": [
+          "Boss Snarlfang",
+          "Vicious Snarls and Great Howls"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Boss Snarlfang",
+            "timing": "Passive",
+            "effect": "Effect: Add 2 to charge rolls for friendly GITMOB CAVALRY units while they are wholly within 12\" of this unit.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Charge Phase"
+          },
+          {
+            "name": "Vicious Snarls and Great Howls",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: If this unit charged this turn, pick this unit and up to 2 friendly GITMOB CAVALRY units within this unit’s combat range to be the targets.\nEffect: For the rest of the turn, add 1 to the Attacks characteristic of the targets’ Companion melee weapons.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Boss Loppa",
+            "5",
+            "4+",
+            "4+",
+            "1",
+            "2",
+            ""
+          ],
+          [
+            "Snarlfang’s Slavering Jaws",
+            "2",
+            "4+",
+            "3+",
+            "-",
+            "2",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Snarlbosses are the leaders of the Gitmobs. They prove their right to lead by somehow convincing an Alpha Snarlfang to carry them into battle – usually by demonstrating that they are much sneakier and meaner than their prospective mount. Doing so also means that the other Snarlfangs of their pack will follow their lead as they run rings around the enemy, filling them full of arrows before dashing in to finish the job when the smell of weakness is in the air.",
+      "regimentOptions": "Any %000015358GITMOB%",
+      "notes": "This HERO can join an eligible regiment as a Top Dog."
+    },
+    {
+      "faction": "Gloomspite Gitz",
+      "name": "Snarlboss on War-Wheela",
+      "points": 120,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "12\"",
+        "health": "9",
+        "save": "4+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Snarlboss-on-War-Wheela",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "GITMOB",
+          "GLOOMSPITE GITZ",
+          "HERO",
+          "WAR MACHINE"
+        ],
+        "abilities": [
+          "Keepin’ Up Wiv Da Boss",
+          "Da Glare of Frazzlegit",
+          "Frazzlegit’s Flame Stream"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Keepin’ Up Wiv Da Boss",
+            "timing": "Reaction: You declared a FIGHT ability for this unit",
+            "effect": "Effect: Pick a friendly Sunsteala Wheelas unit that has not used a FIGHT ability this turn and is within this unit’s combat range to be the target. The target can be picked to use a FIGHT ability immediately after the FIGHT ability used by this unit has been resolved.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Da Glare of Frazzlegit",
+            "timing": "Once Per Battle (Army), Any Hero Phase",
+            "effect": "Effect: For the rest of the turn:\n• Subtract 1 from hit rolls for attacks made by enemy units while they are in combat with any friendly Sunsteala Wheelas.\n• Add 6\" to the Move characteristic of this unit and friendly Sunsteala Wheelas.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Frazzlegit’s Flame Stream",
+            "timing": "Your Movement Phase",
+            "effect": "Effect: This unit can move a distance up to its Move characteristic. It can pass through other models and the combat ranges of enemy units, but it cannot end that move in combat. Then, pick up to 1 enemy INFANTRY unit that this unit passed across during that move to be the target. Inflict D6 mortal damage on the target.\nDesigner’s Note: This unit can use this ability even if it is in combat.",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Core, Move",
+            "phase": "Movement Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Chain Basha",
+            "5",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            "Crit (Auto-wound)"
+          ],
+          [
+            "Wheela Slicers",
+            "3",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            ""
+          ],
+          [
+            "Snarlfangs’ Frothing Jaws",
+            "6",
+            "4+",
+            "3+",
+            "-",
+            "2",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "The Snarlbosses of the biggest Gitmobs prefer being carried on an ostentatious War-Wheela to riding on wolfback, allowing them to concentrate on bashing the heads of the enemy rather than steering. Though all Gitmob chariots are capable of inflicting horrendous damage on the charge, those of the Snarlbosses do so in style, their paths of destruction marked by scorchmarks left by the flames that jet from the jars fitted to the back of their ride.",
+      "regimentOptions": "Any %000015358GITMOB%",
+      "notes": "This HERO can join an eligible regiment as a Top Dog."
+    },
+    {
+      "faction": "Gloomspite Gitz",
+      "name": "Snarlfang Riders",
+      "points": 110,
+      "size": 5,
+      "kind": "",
+      "category": "Cavalry",
+      "profile": {
+        "move": "12\"",
+        "health": "2",
+        "save": "5+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Snarlfang-Riders",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "GITMOB",
+          "GLOOMSPITE GITZ",
+          "CAVALRY",
+          "CHAMPION",
+          "MUSICIAN (1/5)",
+          "STANDARD BEARER (1/5)"
+        ],
+        "abilities": [
+          "Can’t Catch Us"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Can’t Catch Us",
+            "timing": "Once Per Turn (Army), Enemy Movement Phase",
+            "effect": "Effect: If this unit is not in combat, this unit can move D6\". It cannot end that move in combat.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Movement Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Grot Bow",
+            "15\"",
+            "2",
+            "4+",
+            "5+",
+            "-",
+            "1",
+            ""
+          ]
+        ],
+        "melee": [
+          [
+            "Stabbin’ Stikka",
+            "2",
+            "4+",
+            "5+",
+            "-",
+            "1",
+            ""
+          ],
+          [
+            "Snarlfang’s Slavering Jaws",
+            "2",
+            "4+",
+            "3+",
+            "-",
+            "2",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "The riders of the Gitmobs move in packs, some crashing into the enemy lines with blinding momentum while others pick off choice targets on the flanks with arrows fired on the move. Their great manoeuvrability makes these grots and their Snarlfang allies nigh impossible to pin down."
+    },
+    {
+      "faction": "Gloomspite Gitz",
+      "name": "Snarlpack Cavalry",
+      "points": 100,
+      "size": 3,
+      "kind": "",
+      "category": "Cavalry",
+      "profile": {
+        "move": "12\"",
+        "health": "3",
+        "save": "4+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Snarlpack-Cavalry",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "GITMOB",
+          "GLOOMSPITE GITZ",
+          "CAVALRY",
+          "CHAMPION"
+        ],
+        "abilities": [
+          "Markin’ Territory",
+          "Frazzleburned Scrap"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Markin’ Territory",
+            "timing": "Passive",
+            "effect": "Effect: If this unit charged this turn, add 5 to its control score for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Control",
+            "phase": "End of Turn"
+          },
+          {
+            "name": "Frazzleburned Scrap",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Effect: If this unit charged this turn, it has has STRIKE-FIRST for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Pointy Skewas",
+            "4",
+            "4+",
+            "5+",
+            "-",
+            "1",
+            "Charge (+1 Damage)"
+          ],
+          [
+            "Giant Snarlfang’s Jaws",
+            "3",
+            "4+",
+            "3+",
+            "-",
+            "2",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Giant Snarlfangs are, as the name suggests, particularly large and impressive specimens of their kind. So big are they that a pair of grots can ride a single such beast into battle, each rider guarding one of their mount’s flanks with jabs from their ‘skewas’, freeing up the Snarlfang to tear into enemies directly in front at its leisure."
+    },
+    {
+      "faction": "Gloomspite Gitz",
+      "name": "Sneaky Snufflers",
+      "points": 80,
+      "size": 6,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "5\"",
+        "health": "2",
+        "save": "6+",
+        "control": "1",
+        "ward": "5+",
+        "url": "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Sneaky-Snufflers",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "GLOOMSPITE GITZ",
+          "MOONCLAN",
+          "INFANTRY",
+          "WARD (5+)"
+        ],
+        "abilities": [
+          "Looncap Mushrooms"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Looncap Mushrooms",
+            "timing": "Once Per Turn (Army), Your Hero Phase",
+            "effect": "Declare: If this unit is not in combat, pick a friendly MOONCLAN unit wholly within 12\" of it and visible to it to be the target.\nEffect: Roll a dice. Add 1 to the roll if the face of the Bad Moon is Cacklin’ this turn. On a 3+, the target has WARD (5+) until the start of your next turn. On a 6+, also add 1 to the Attacks characteristic of the target’s melee weapons until the start of your next turn.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Loonfungus Sickle",
+            "3",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            ""
+          ],
+          [
+            "Snufflesquig’s Gnashers",
+            "2",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "It is the job of the Sneaky Snufflers to collect Looncaps and return them to the shamans, who use them as ingredients for magical potions. They are aided by Snufflesquigs, whose pronounced olfactory organs are highly attuned to different fungi. As battle rages, these grots harvest choice Looncaps with their trusty sickles, hurling bundles of the frenzy-inducing mushrooms over to their mates."
+    },
+    {
+      "faction": "Gloomspite Gitz",
+      "name": "Spider Riders",
+      "points": 110,
+      "size": 5,
+      "kind": "",
+      "category": "Cavalry",
+      "profile": {
+        "move": "10\"",
+        "health": "2",
+        "save": "5+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Spider-Riders",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "GLOOMSPITE GITZ",
+          "SPIDERFANG",
+          "CAVALRY",
+          "CHAMPION",
+          "MUSICIAN (1/5)",
+          "STANDARD BEARER (1/5)"
+        ],
+        "abilities": [
+          "Wall Crawler"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Wall Crawler",
+            "timing": "Passive",
+            "effect": "Effect: This unit can pass across terrain features as if it had FLY.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Movement Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Spider-bow",
+            "18\"",
+            "2",
+            "4+",
+            "5+",
+            "-",
+            "1",
+            ""
+          ]
+        ],
+        "melee": [
+          [
+            "Crooked Spear",
+            "2",
+            "4+",
+            "5+",
+            "-",
+            "1",
+            ""
+          ],
+          [
+            "Spider Fangs",
+            "2",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            "Crit (Mortal), Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Skittermobs of Spider Riders stream across the battlefield, pouring through, over and around even the densest terrain or most formidable fortifications. They encircle their foes, pelting them with poisoned arrows and jabbing them with crooked spears."
+    },
+    {
+      "faction": "Gloomspite Gitz",
+      "name": "Sporesplatta Fanatics",
+      "points": 90,
+      "size": 5,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "2D6\"",
+        "health": "1",
+        "save": "6+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Sporesplatta-Fanatics",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "GLOOMSPITE GITZ",
+          "MOONCLAN",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "A Prod in the Right Direction",
+          "Puffshroom Frenzy"
+        ],
+        "abilityDetails": [
+          {
+            "name": "A Prod in the Right Direction",
+            "timing": "Deployment Phase",
+            "effect": "Effect: This unit can use the ‘Normal Move’ ability as if it were your movement phase.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Puffshroom Frenzy",
+            "timing": "Passive",
+            "effect": "Effect: Add 1 to the Attacks characteristic of melee weapons used by other friendly MOONCLAN units while they are wholly within 12\" of this unit.\nSubtract 1 from the Attacks characteristic of melee weapons used by enemy units while they are in combat with this unit.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          }
+        ],
+        "melee": [
+          [
+            "Spore-ball and Chain",
+            "D3",
+            "3+",
+            "4+",
+            "1",
+            "D3",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Sporesplatta Fanatics careen towards the foe swinging Thwackwheezer Puffshrooms. The billowing clouds of spores spewed out by these fungi veil the grot hordes from sight, invigorating the followers of the Bad Moon whilst choking and blinding the foe."
+    },
+    {
+      "faction": "Gloomspite Gitz",
+      "name": "Squig Herd",
+      "points": 100,
+      "size": 12,
+      "kind": "",
+      "category": "Other",
+      "profile": {
+        "move": "D6+3\"",
+        "health": "1",
+        "save": "6+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Squig-Herd",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "GLOOMSPITE GITZ",
+          "MOONCLAN",
+          "SQUIG",
+          "BEAST"
+        ],
+        "abilities": [
+          "Herding Squigs",
+          "Squigs Gone Wild",
+          "Beast"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Herding Squigs",
+            "timing": "Your Hero Phase",
+            "effect": "Effect: Roll a dice for each Squig Herder in this unit. For each 2+, you can return D3 slain Cave Squigs to this unit. For each 1, 1 Squig Herder in this unit is slain.",
+            "kind": "Ability",
+            "type": "Rallying",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Squigs Gone Wild",
+            "timing": "Passive",
+            "effect": "Effect: Each time a model in this unit is slain by a combat attack and that model was in combat with the attacking unit, roll a dice. On a 5+, inflict 1 mortal damage on the attacking unit after the FIGHT ability has been resolved.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Beast",
+            "timing": "Passive",
+            "effect": "Effect: This unit has a maximum control score of 1.",
+            "kind": "Ability",
+            "type": "Control",
+            "phase": "End of Turn"
+          }
+        ],
+        "melee": [
+          [
+            "Fang-filled Gob",
+            "3",
+            "4+",
+            "3+",
+            "1",
+            "1",
+            "Companion"
+          ],
+          [
+            "Squig Prodder",
+            "2",
+            "5+",
+            "5+",
+            "-",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Herds of Cave Squigs race into battle gnashing their huge fangs and sinking them into anything that comes near. Their tough little grot herders keep the squigs moving in the right direction, using pointy sticks and noisemakers to really rile them up.",
+      "description": "Each model in this unit is armed with a Fang-filled Gob.\n• 1/6 models is a Squig Herder and is armed with a Squig Prodder instead of a Fang-filled Gob."
+    },
+    {
+      "faction": "Gloomspite Gitz",
+      "name": "Squig Hoppers",
+      "points": 150,
+      "size": 10,
+      "kind": "",
+      "category": "Cavalry",
+      "profile": {
+        "move": "D6+8\"",
+        "health": "2",
+        "save": "6+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Squig-Hoppers",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "GLOOMSPITE GITZ",
+          "MOONCLAN",
+          "SQUIG",
+          "CAVALRY",
+          "CHAMPION",
+          "FLY"
+        ],
+        "abilities": [
+          "Boing! Boing! Boing!"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Boing! Boing! Boing!",
+            "timing": "Any Movement Phase",
+            "effect": "Declare: Pick an enemy unit that this unit passed across this phase to be the target.\nEffect: Roll a dice for each model in this unit that passed across the target. For each 4+, inflict 1 mortal damage on the target.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Movement Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Slitta",
+            "2",
+            "4+",
+            "5+",
+            "-",
+            "1",
+            ""
+          ],
+          [
+            "Fang-filled Gob",
+            "3",
+            "4+",
+            "3+",
+            "1",
+            "1",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Squig Hoppers bounce madly into battle, wreaking havoc on anything they collide with. Each ill-tempered squig has a cackling grot clinging to its back, who flails wildly at nearby enemies as they try vainly to steer their weird steed."
+    },
+    {
+      "faction": "Gloomspite Gitz",
+      "name": "Squigboss with Gnasha-Squig",
+      "points": 120,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "5\"",
+        "health": "4",
+        "save": "6+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Squigboss-with-Gnasha-Squig",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "GLOOMSPITE GITZ",
+          "MOONCLAN",
+          "SQUIG",
+          "HERO",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "Feedin’ Time"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Feedin’ Time",
+            "timing": "Once Per Turn (Army), Your Hero Phase",
+            "effect": "Declare: Pick a friendly SQUIG unit within this unit’s combat range to be the target.\nEffect: Roll a dice. On a 2+, pick 1 of the following effects to apply for the rest of the turn:\nCrimson Deffcap: Add 3\" to the target’s Move characteristic.\nYellow Lurka: The target’s Fang-filled Gobs, Huge Fang-filled Gobs or Massive Fang-filled Gobs have Crit (Mortal).",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Squig-krook",
+            "5",
+            "4+",
+            "4+",
+            "-",
+            "2",
+            ""
+          ],
+          [
+            "Fang-filled Gob",
+            "2",
+            "4+",
+            "3+",
+            "1",
+            "1",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Squigbosses command their fungal herds through the offering of prized mushrooms and occasional jabbings from their squig-krooks. Most are accompanied by loyal Gnasha-squigs, who gleefully chomp at anything that gets too close.",
+      "regimentOptions": "0-1 %000013838Moonclan Agitator%, Any %000000543MOONCLAN%",
+      "notes": "This HERO can join an eligible regiment as a Moonclan Agitator."
+    },
+    {
+      "faction": "Gloomspite Gitz",
+      "name": "Sunsteala Wheelas",
+      "points": 120,
+      "size": 2,
+      "kind": "",
+      "category": "War Machine",
+      "profile": {
+        "move": "12\"",
+        "health": "6",
+        "save": "4+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Sunsteala-Wheelas",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "GITMOB",
+          "GLOOMSPITE GITZ",
+          "CHAMPION",
+          "WAR MACHINE"
+        ],
+        "abilities": [
+          "Careening Destruction"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Careening Destruction",
+            "timing": "Once Per Turn (Army), Any Movement Phase",
+            "effect": "Effect: If this unit is in combat, it can move a distance up to its Move characteristic. It can pass through other models and the combat ranges of enemy units, but it cannot end that move in combat. Then, pick up to 1 enemy INFANTRY or CAVALRY unit that this unit passed across during that move to be the target. Inflict D3 mortal damage on the target. Add 1 to the amount of mortal damage inflicted for each model in this unit\nDesigner’s Note: This unit can use this ability even if it is in combat.",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Core, Move",
+            "phase": "Movement Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Grot Bow",
+            "15\"",
+            "2",
+            "4+",
+            "5+",
+            "-",
+            "1",
+            ""
+          ]
+        ],
+        "melee": [
+          [
+            "Wheela Slicers and Stabbin’ Stikka",
+            "4",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            ""
+          ],
+          [
+            "Snarlfangs’ Frothing Jaws",
+            "6",
+            "4+",
+            "3+",
+            "-",
+            "2",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "The Sunsteala Wheelas favoured by the Gitmobs are built with lightweight wicker frames, allowing them to close down on the foe quickly and hit hard before deftly weaving out of combat. Their drivers favour stikkas and bows, weapons perfect for sneaky strikes from a reasonably safe distance."
+    },
+    {
+      "faction": "Gloomspite Gitz",
+      "name": "Trugg, the Troggoth King",
+      "points": 340,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "16",
+        "save": "4+",
+        "control": "5",
+        "url": "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Trugg-the-Troggoth-King",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "GLOOMSPITE GITZ",
+          "TROGGOTH",
+          "HERO",
+          "MONSTER",
+          "UNIQUE",
+          "WARMASTER"
+        ],
+        "abilities": [
+          "Battle Damaged",
+          "Malfunctioning Leystone",
+          "Greater Regeneration",
+          "Crushing Grip"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, when it uses the ‘Malfunctioning Leystone’ ability, roll 1 dice instead of 3.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Malfunctioning Leystone",
+            "timing": "Your Hero Phase",
+            "effect": "Effect: Roll 3 dice. You must pick 1 of those dice and apply the effect that corresponds to its value. Effects 2-6 persist until the start of your next turn.\n1 - Glyph of Shyish: Inflict D3 mortal damage on this unit.\n2 - Glyph of Ghur: Add 1 to the Attacks characteristic of melee weapons used by friendly TROGGOTH units while they are wholly within 12\" of this unit.\n3 - Glyph of Aqshy: Add 1 to the Rend characteristic of melee weapons used by friendly TROGGOTH units while they are wholly within 12\" of this unit.\n4 - Glyph of Hysh: This unit can use UNBIND abilities as if it had WIZARD",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Greater Regeneration",
+            "timing": "Start of Any Turn",
+            "effect": "Effect: Heal (D6) this unit.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Crushing Grip",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick an enemy unit within 1\" of this unit to be the target.\nEffect: Roll a dice. If the roll equals or exceeds the target’s Health characteristic, 1 model in the target unit is slain.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Rampage",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Ironshell Club",
+            "4",
+            "3+",
+            "2+",
+            "3",
+            "4",
+            ""
+          ],
+          [
+            "Mighty Antlers",
+            "2",
+            "4+",
+            "2+",
+            "2",
+            "D3+3",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Trugg is the mightiest of all troggoths. A towering mass of strength and ill temper, he carries atop his back an arcane leystone of ancient design, which fuels his already formidable physical might with unpredictable bursts of elemental magic.",
+      "regimentOptions": "0-1 %000015255Dankhold Troggboss%, Any %000000550GLOOMSPITE GITZ%"
+    },
+    {
+      "faction": "Gloomspite Gitz",
+      "name": "Webspinner Shaman",
+      "points": 100,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "4",
+        "save": "6+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Webspinner-Shaman",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "GLOOMSPITE GITZ",
+          "SPIDERFANG",
+          "HERO",
+          "INFANTRY",
+          "WARD (6+)",
+          "WIZARD (1)"
+        ],
+        "abilities": [
+          "Speed of the Spider God",
+          "Web Slingshot"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Speed of the Spider God",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Pick a visible friendly SPIDERFANG unit wholly within 12\" of this unit to be the target, then make a casting roll of 2D6.\nEffect: The target can use a RUN ability this turn and still use SHOOT and/or CHARGE abilities later in the turn.",
+            "kind": "Ability",
+            "type": "Movement",
+            "keywords": "Spell",
+            "phase": "Hero Phase",
+            "pointsType": "Spell",
+            "points": "6"
+          },
+          {
+            "name": "Web Slingshot",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Pick a friendly SPIDERFANG unit or terrain feature within 18\" of this unit to be the target.\nEffect: Roll a dice. On a 2+, remove this unit from the battlefield and set it up again wholly within 3\" of the target and more than 9\" from all enemy units.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Hero Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Spider God Staff",
+            "3",
+            "4+",
+            "5+",
+            "-",
+            "D3",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Veins thick with venom, Webspinner Shamans live in vivid waking visions through which they interpret the Spider God’s will. They are blessed by their arachnid deity, protected and sorcerously empowered by its sinister touch.",
+      "regimentOptions": "Any %000000554SPIDERFANG%, Any %000000543Moonclan%"
+    },
+    {
+      "faction": "Gloomspite Gitz",
+      "name": "Webspinner Shaman on Arachnarok Spider",
+      "points": 230,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "10\"",
+        "health": "16",
+        "save": "4+",
+        "control": "5",
+        "url": "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Webspinner-Shaman-on-Arachnarok-Spider",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "ARACHNAROK",
+          "DESTRUCTION",
+          "GLOOMSPITE GITZ",
+          "SPIDERFANG",
+          "HERO",
+          "MONSTER",
+          "WIZARD (1)"
+        ],
+        "abilities": [
+          "Battle Damaged",
+          "Wall Crawler",
+          "Catchweb Spidershrine",
+          "Ensnaring Webbing"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of its Chitinous Legs is 6.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Wall Crawler",
+            "timing": "Passive",
+            "effect": "Effect: This unit can pass across terrain features as if it had FLY.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Movement Phase"
+          },
+          {
+            "name": "Catchweb Spidershrine",
+            "timing": "Passive",
+            "effect": "Effect: Add 1 to casting rolls for friendly SPIDERFANG WIZARDS while they are wholly within 12\" of this unit.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Ensnaring Webbing",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick an enemy INFANTRY HERO within 1\" of this unit to be the target.\nEffect: Roll a dice. On a 3+, the target has STRIKE-LAST for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "keywords": "Rampage",
+            "phase": "Combat Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Spider-bows",
+            "18\"",
+            "10",
+            "4+",
+            "5+",
+            "-",
+            "1",
+            ""
+          ]
+        ],
+        "melee": [
+          [
+            "Spider God Staff",
+            "3",
+            "4+",
+            "5+",
+            "-",
+            "D3",
+            "Crit (Mortal)"
+          ],
+          [
+            "Crooked Spears",
+            "8",
+            "4+",
+            "5+",
+            "-",
+            "1",
+            ""
+          ],
+          [
+            "Monstrous Spider Fangs",
+            "4",
+            "3+",
+            "2+",
+            "1",
+            "3",
+            "Crit (Mortal), Companion"
+          ],
+          [
+            "Chitinous Legs",
+            "8",
+            "4+",
+            "2+",
+            "1",
+            "1",
+            "Companion · See battle damage rules"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Especially old and malevolent Arachnarok Spiders often bear a Webspinner Shaman and their mob of hangers-on into battle. The shaman draws power from their howdah’s catchweb spidershrine to boost their ability to weave spells.",
+      "regimentOptions": "Any %000000554SPIDERFANG%, Any %000000543Moonclan%"
+    },
+    {
+      "faction": "Gloomspite Gitz",
+      "name": "Wolfgit Retinue",
+      "points": 70,
+      "size": 2,
+      "kind": "",
+      "category": "Cavalry",
+      "profile": {
+        "move": "12\"",
+        "health": "2",
+        "save": "5+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Wolfgit-Retinue",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "GITMOB",
+          "GLOOMSPITE GITZ",
+          "CAVALRY"
+        ],
+        "abilities": [
+          "I Got Dis, Boss"
+        ],
+        "abilityDetails": [
+          {
+            "name": "I Got Dis, Boss",
+            "timing": "Passive",
+            "effect": "Effect: While a friendly Snarlboss is within this unit’s combat range, both this unit and that Snarlboss have WARD (5+).",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          }
+        ],
+        "ranged": [
+          [
+            "Grot Bow",
+            "15\"",
+            "2",
+            "4+",
+            "5+",
+            "-",
+            "1",
+            ""
+          ]
+        ],
+        "melee": [
+          [
+            "Stabbin’ Stikka",
+            "2",
+            "4+",
+            "5+",
+            "-",
+            "1",
+            ""
+          ],
+          [
+            "Snarlfang’s Slavering Jaws",
+            "2",
+            "4+",
+            "3+",
+            "-",
+            "2",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Those lucky grots of a Snarlboss’s retinue are often hand-picked from the least cowardly of the pack. They ride close to their leader and fend off attackers with stikkas and bows. These canny and adaptable fighters are a cut above the rest of their wolf-riding kin, and they possess an excellent sense for danger. Unfortunately for Wolfgit Retinues, they are often seen by their Snarlboss as potential rivals. Should they get too big for their boots, the boss is close enough to dispose of them at the drop of his fancy hat.",
+      "notes": "You can include 1 unit of this type for each Snarlboss in your army. This unit cannot be reinforced.",
+      "description": "1 model is armed with a Grot Bow and Snarlfang’s Slavering Jaws, and 1 model is armed with a Stabbin’ Stikka and Snarlfang’s Slavering Jaws."
+    },
+    {
+      "faction": "Gloomspite Gitz",
+      "name": "Zarbag’s Gitz",
+      "points": 130,
+      "size": 9,
+      "kind": "Legends",
+      "category": "Infantry",
+      "profile": {
+        "move": "5\"",
+        "health": "2",
+        "save": "6+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/gloomspite-gitz/Zarbag-s-Gitz",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "GLOOMSPITE GITZ",
+          "MOONCLAN",
+          "CHAMPION",
+          "INFANTRY",
+          "UNIQUE"
+        ],
+        "abilities": [
+          "Zarbag",
+          "Sniffer Spite"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Zarbag",
+            "timing": "Passive",
+            "effect": "Effect: While this unit’s Zarbag is on the battlefield, it has WIZARD (1).",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Sniffer Spite",
+            "timing": "Your Hero Phase",
+            "effect": "Effect: If this unit’s Zarbag is on the battlefield and within 3\" of a terrain feature, roll a dice. On a 4+, add 1 to this unit’s power level for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Moonclan Bow",
+            "18\"",
+            "2",
+            "4+",
+            "5+",
+            "-",
+            "1",
+            ""
+          ]
+        ],
+        "melee": [
+          [
+            "Git Weapons",
+            "2",
+            "4+",
+            "5+",
+            "1",
+            "1",
+            ""
+          ],
+          [
+            "Moonclan Bow",
+            "1",
+            "4+",
+            "5+",
+            "-",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "Legends Warscrolls",
+      "canReinforce": false,
+      "flavour": "Zarbag the shaman has wandered the twisted halls of the Nightvault for as long as he can remember. His sniffer spite helps him root out the best magical fungi, and he can transform his facial features into a warped vision of horror almost at will. Zarbag is accompanied by grottish hooligans who have followed him into countless dangerous and often ludicrous situations and have demonstrated a talent for emerging more or less in one piece with heaps of glinting shinies to show for it.",
+      "notes": "This unit cannot be reinforced.",
+      "description": "The models in this unit are:\n• Zarbag (champion, armed with Git Weapons)\n• Drizgit da Squig Herder (armed with Git Weapons)\n• Bonekrakka (armed with Git Weapons)\n• Gobbaluk (armed with Git Weapons)\n• Snirk Sourtongue (armed with Git Weapons)\n• Prog da Netter (armed with Git Weapons)\n• Stikkit (armed with a Moonclan Bow)\n• Redkap (armed with a Moonclan Bow)\n• Dibbz (armed with a Moonclan Bow)"
+    }
+  ]
+}

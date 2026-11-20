@@ -1,0 +1,211 @@
+{
+  "edition": "Age of Sigmar 4",
+  "lastUpdate": "2026-10-22 18:12:05",
+  "factions": [
+    {
+      "id": "BoC",
+      "name": "Beasts of Chaos",
+      "slug": "beasts-of-chaos",
+      "url": "https://wahapedia.ru/aos4/factions/beasts-of-chaos",
+      "count": 26
+    },
+    {
+      "id": "BoK",
+      "name": "Blades of Khorne",
+      "slug": "blades-of-khorne",
+      "url": "https://wahapedia.ru/aos4/factions/blades-of-khorne",
+      "count": 44
+    },
+    {
+      "id": "BS",
+      "name": "Bonesplitterz",
+      "slug": "bonesplitterz",
+      "url": "https://wahapedia.ru/aos4/factions/bonesplitterz",
+      "count": 12
+    },
+    {
+      "id": "CoS",
+      "name": "Cities of Sigmar",
+      "slug": "cities-of-sigmar",
+      "url": "https://wahapedia.ru/aos4/factions/cities-of-sigmar",
+      "count": 77
+    },
+    {
+      "id": "DoK",
+      "name": "Daughters of Khaine",
+      "slug": "daughters-of-khaine",
+      "url": "https://wahapedia.ru/aos4/factions/daughters-of-khaine",
+      "count": 34
+    },
+    {
+      "id": "DoT",
+      "name": "Disciples of Tzeentch",
+      "slug": "disciples-of-tzeentch",
+      "url": "https://wahapedia.ru/aos4/factions/disciples-of-tzeentch",
+      "count": 43
+    },
+    {
+      "id": "EnS",
+      "name": "Endless Spells",
+      "slug": "endless-spells",
+      "url": "https://wahapedia.ru/aos4/factions/endless-spells",
+      "count": 18
+    },
+    {
+      "id": "FE",
+      "name": "Flesh-eater Courts",
+      "slug": "flesh-eater-courts",
+      "url": "https://wahapedia.ru/aos4/factions/flesh-eater-courts",
+      "count": 36
+    },
+    {
+      "id": "FY",
+      "name": "Fyreslayers",
+      "slug": "fyreslayers",
+      "url": "https://wahapedia.ru/aos4/factions/fyreslayers",
+      "count": 27
+    },
+    {
+      "id": "GG",
+      "name": "Gloomspite Gitz",
+      "slug": "gloomspite-gitz",
+      "url": "https://wahapedia.ru/aos4/factions/gloomspite-gitz",
+      "count": 56
+    },
+    {
+      "id": "HS",
+      "name": "Hedonites of Slaanesh",
+      "slug": "hedonites-of-slaanesh",
+      "url": "https://wahapedia.ru/aos4/factions/hedonites-of-slaanesh",
+      "count": 42
+    },
+    {
+      "id": "HoH",
+      "name": "Helsmiths of Hashut",
+      "slug": "helsmiths-of-hashut",
+      "url": "https://wahapedia.ru/aos4/factions/helsmiths-of-hashut",
+      "count": 21
+    },
+    {
+      "id": "ID",
+      "name": "Idoneth Deepkin",
+      "slug": "idoneth-deepkin",
+      "url": "https://wahapedia.ru/aos4/factions/idoneth-deepkin",
+      "count": 26
+    },
+    {
+      "id": "IJ",
+      "name": "Ironjawz",
+      "slug": "ironjawz",
+      "url": "https://wahapedia.ru/aos4/factions/ironjawz",
+      "count": 27
+    },
+    {
+      "id": "KO",
+      "name": "Kharadron Overlords",
+      "slug": "kharadron-overlords",
+      "url": "https://wahapedia.ru/aos4/factions/kharadron-overlords",
+      "count": 24
+    },
+    {
+      "id": "bundled:khazalite-holds",
+      "name": "Khazalite Holds",
+      "slug": "khazalite-holds",
+      "url": "https://wahapedia.ru/aos4/factions/khazalite-holds",
+      "count": 38,
+      "warscrollSource": "bundled catalogue"
+    },
+    {
+      "id": "KB",
+      "name": "Kruleboyz",
+      "slug": "kruleboyz",
+      "url": "https://wahapedia.ru/aos4/factions/kruleboyz",
+      "count": 26
+    },
+    {
+      "id": "LRL",
+      "name": "Lumineth Realm-lords",
+      "slug": "lumineth-realm-lords",
+      "url": "https://wahapedia.ru/aos4/factions/lumineth-realm-lords",
+      "count": 35
+    },
+    {
+      "id": "MoN",
+      "name": "Maggotkin of Nurgle",
+      "slug": "maggotkin-of-nurgle",
+      "url": "https://wahapedia.ru/aos4/factions/maggotkin-of-nurgle",
+      "count": 40
+    },
+    {
+      "id": "NT",
+      "name": "Nighthaunt",
+      "slug": "nighthaunt",
+      "url": "https://wahapedia.ru/aos4/factions/nighthaunt",
+      "count": 38
+    },
+    {
+      "id": "OM",
+      "name": "Ogor Mawtribes",
+      "slug": "ogor-mawtribes",
+      "url": "https://wahapedia.ru/aos4/factions/ogor-mawtribes",
+      "count": 42
+    },
+    {
+      "id": "OB",
+      "name": "Ossiarch Bonereapers",
+      "slug": "ossiarch-bonereapers",
+      "url": "https://wahapedia.ru/aos4/factions/ossiarch-bonereapers",
+      "count": 35
+    },
+    {
+      "id": "SN",
+      "name": "Seraphon",
+      "slug": "seraphon",
+      "url": "https://wahapedia.ru/aos4/factions/seraphon",
+      "count": 40
+    },
+    {
+      "id": "ST",
+      "name": "Skaven",
+      "slug": "skaven",
+      "url": "https://wahapedia.ru/aos4/factions/skaven",
+      "count": 55
+    },
+    {
+      "id": "StD",
+      "name": "Slaves to Darkness",
+      "slug": "slaves-to-darkness",
+      "url": "https://wahapedia.ru/aos4/factions/slaves-to-darkness",
+      "count": 72
+    },
+    {
+      "id": "SoB",
+      "name": "Sons of Behemat",
+      "slug": "sons-of-behemat",
+      "url": "https://wahapedia.ru/aos4/factions/sons-of-behemat",
+      "count": 14
+    },
+    {
+      "id": "SG",
+      "name": "Soulblight Gravelords",
+      "slug": "soulblight-gravelords",
+      "url": "https://wahapedia.ru/aos4/factions/soulblight-gravelords",
+      "count": 56
+    },
+    {
+      "id": "SE",
+      "name": "Stormcast Eternals",
+      "slug": "stormcast-eternals",
+      "url": "https://wahapedia.ru/aos4/factions/stormcast-eternals",
+      "count": 99
+    },
+    {
+      "id": "SY",
+      "name": "Sylvaneth",
+      "slug": "sylvaneth",
+      "url": "https://wahapedia.ru/aos4/factions/sylvaneth",
+      "count": 31
+    }
+  ],
+  "entryCount": 1134
+}

@@ -55,10 +55,14 @@ function field(label, key, value = '', { type = 'text', placeholder = '', requir
   return `<div class="field${full ? ' full' : ''}"><label for="field-${key}">${escape(label)}</label><input id="field-${key}" name="${key}" value="${escape(value)}" type="${type}"${required ? ' required' : ''}${min !== undefined ? ` min="${min}"` : ''}${type === 'number' ? ' step="1"' : ''}${type === 'text' ? ' maxlength="160"' : ''}${placeholder ? ` placeholder="${escape(placeholder)}"` : ''}></div>`;
 }
 
+function optionTitle(value) {
+  return String(value ?? '').toLocaleLowerCase().replace(/(^|[\s\-–—/(])([\p{L}])/gu, (_, prefix, letter) => prefix + letter.toLocaleUpperCase());
+}
+
 function select(label, key, options, value) {
   const items = options.map(option => {
     const [id, name, disabled] = Array.isArray(option) ? option : [option, option];
-    return `<option value="${escape(id)}"${id === value ? ' selected' : ''}${disabled ? ' disabled' : ''}>${escape(name)}</option>`;
+    return `<option value="${escape(id)}"${id === value ? ' selected' : ''}${disabled ? ' disabled' : ''}>${escape(optionTitle(name))}</option>`;
   }).join('');
   return `<div class="field"><label for="field-${key}">${escape(label)}</label><select id="field-${key}" name="${key}">${items}</select></div>`;
 }

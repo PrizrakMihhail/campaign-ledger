@@ -1,0 +1,2607 @@
+{
+  "edition": "Age of Sigmar 4",
+  "lastUpdate": "2026-10-22 18:12:05",
+  "faction": {
+    "id": "DoK",
+    "name": "Daughters of Khaine",
+    "slug": "daughters-of-khaine",
+    "url": "https://wahapedia.ru/aos4/factions/daughters-of-khaine",
+    "count": 34
+  },
+  "rules": {
+    "battleTraits": [
+      {
+        "name": "ANOINTED RITUALIST",
+        "timing": "Start of First Battle Round",
+        "declare": "If there are no friendly anointed units on the battlefield, pick a friendly non-UNIQUE DAUGHTERS OF KHAINE HERO on the battlefield to be the target.",
+        "effect": "The target is anointed for the rest of the battle, even if it has been destroyed. Friendly anointed units on the battlefield treat EXALTED abilities on the warscrolls of friendly anointed units that have been destroyed as if they were on their warscrolls.",
+        "unitLinks": []
+      },
+      {
+        "name": "BLOODY SUCCESSION",
+        "timing": "Passive",
+        "declare": "",
+        "effect": "Each time a friendly anointed unit is destroyed, after removing it from play, you can immediately use the ‘Anointed Ritualist’ ability as if it were the start of the first battle round.",
+        "unitLinks": []
+      },
+      {
+        "name": "STRIDENT WAR CRY",
+        "timing": "Once Per Turn (Army), Reaction: You declared a CHARGE ability for an anointed unit",
+        "declare": "",
+        "effect": "Used By: That anointed unit.\nPick a friendly non-HERO DAUGHTERS OF KHAINE unit that is not in combat, is wholly within 12\" of that anointed unit and has not charged this turn to be the target. If that anointed unit charges, after that CHARGE ability has been resolved, the target can immediately use the ‘Charge’ ability even if it is not your charge phase. In addition, you can re-roll charge rolls for the target for the rest of the phase.",
+        "unitLinks": []
+      },
+      {
+        "name": "BLOOD RITES",
+        "timing": "Passive",
+        "declare": "",
+        "effect": "Only one blood rite can be performed per unit destroyed. You perform a blood rite each time:\n• An enemy unit is destroyed and any damage points were allocated to that unit by a friendly anointed unit’s combat attacks in the same turn.\n• A friendly anointed unit is destroyed.\n• A friendly unit contesting an objective you control is destroyed.\n• An enemy unit is destroyed by a friendly DAUGHTERS OF KHAINE unit’s attacks and any models in that enemy unit were contesting an objective you do not control in the same phase.\n• A unit (friendly or enemy) is destroyed and it was within 3\" of a Place of Power at the start of the phase.",
+        "unitLinks": []
+      },
+      {
+        "name": "BLESSINGS OF KHAINE",
+        "timing": "Once Per Turn (Army), End of Any Turn",
+        "declare": "You can only use this ability if you performed any blood rites this turn.",
+        "effect": "Pick 1 of the following blessings that is not active. That blessing is active. While a blessing is active, its effect applies to friendly DAUGHTERS OF KHAINE units. The effects of more than 1 blessing can apply to a unit at the same time.\n• Blessing of Ruthlessness: Add 1 to hit rolls for those units’ combat attacks.\n• Blessing of Hatred: Add 1 to wound rolls for those units’ combat attacks.\n• Blessing of Haste: Add 3\" to those units’ Move characteristic.\n• Blessing of Zeal: If those units charged in the same turn, they have WARD (5+) for the rest of the turn.\n• Blessing of Shadow: Subtract 1 from hit rolls for shooting attacks that target those units.\n• Blessing of Cruelty: Those units can use CHARGE and/or SHOOT abilities even if they have used a RETREAT ability in the same turn.\n• Blessing of Clarity: Add 1 to chanting rolls and casting rolls for those units.",
+        "unitLinks": []
+      }
+    ],
+    "armiesOfRenown": [
+      {
+        "id": "champions-of-the-arena",
+        "name": "Champions of the Arena",
+        "battleTraits": [
+          {
+            "name": "ARENA OF SLAUGHTER",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "If the number of units (friendly or enemy) that have been destroyed this battle equals or exceeds any of the numbers below, the corresponding effect applies to friendly CHAMPIONS OF THE ARENA units for the rest of the battle. More than 1 effect can apply to a unit at the same time.\n1Add 1 to run rolls for those units.2Add 1 to charge rolls for those units.3Add 1 to hit rolls for those units’ combat attacks.4Add 1 to wound rolls for those units’ combat attacks.5Add 1 to the Attacks characteristic of those units’ melee weapons.",
+            "unitLinks": []
+          },
+          {
+            "name": "LET THE BLOOD FLOW",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "All effects of the ‘Arena of Slaughter’ ability apply to friendly CHAMPIONS OF THE ARENA units while they are wholly within X\" of a friendly Shrine of Dark Tribute, where X is determined by the current battle round, as follows:\nBattle RoundX19\"212\"315\"418\"521\"",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/daughters-of-khaine/Shrine-of-Dark-Tribute"
+            ]
+          },
+          {
+            "name": "FRENZIED RESTORATION",
+            "timing": "End of Any Turn",
+            "declare": "Pick a friendly CHAMPIONS OF THE ARENA HERO that has been destroyed to be the target.",
+            "effect": "Set up a replacement unit identical to the target wholly within 12\" of a friendly Shrine of Dark Tribute and more than 9\" from all enemy units.",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/daughters-of-khaine/Shrine-of-Dark-Tribute"
+            ]
+          },
+          {
+            "name": "EXPLOSIVE FURY",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "declare": "Pick a friendly Slaughter Queen to use this ability, then pick each friendly Blood Hags unit on the battlefield and each visible friendly CHAMPIONS OF THE ARENA unit wholly within 12\" of that Slaughter Queen to be the targets.",
+            "effect": "For the rest of the turn, each time a target makes a pile-in move, add 3\" to the distance it can move.",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/daughters-of-khaine/Slaughter-Queen",
+              "https://wahapedia.ru/aos4/factions/daughters-of-khaine/Blood-Hags"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "the-croneseer-s-pariahs",
+        "name": "The Croneseer’s Pariahs",
+        "battleTraits": [
+          {
+            "name": "PLUMES OF AUSPICIOUS SMOKE",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "Friendly CAULDRON OF BLOOD units are either empty or full. They start the battle empty.\nWhile a friendly CAULDRON OF BLOOD unit is full:\n• That CAULDRON OF BLOOD has WARD (4+) against damage points inflicted by shooting attacks.\n• Subtract 1 from hit rolls for shooting attacks that target friendly CRONESEER’S PARIAHS units while they are wholly within 9\" of that CAULDRON OF BLOOD.",
+            "unitLinks": []
+          },
+          {
+            "name": "LADEN WITH PROPHECY",
+            "timing": "End of Any Turn",
+            "declare": "Pick a friendly empty CAULDRON OF BLOOD.",
+            "effect": "If any enemy models were slain this turn by that CAULDRON OF BLOOD’s combat attacks, it becomes full.",
+            "unitLinks": []
+          },
+          {
+            "name": "GUIDED BY MORAI-HEG",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "Add 1 to the Rend characteristic of combat attacks made by friendly non-HERO INFANTRY units while they are wholly within 9\" of a friendly Krethusa.",
+            "unitLinks": []
+          },
+          {
+            "name": "SKILLED SKIRMISHERS",
+            "timing": "Once Per Turn (Army), Any Charge Phase",
+            "declare": "Pick a friendly CRONESEER’S PARIAHS CAVALRY unit that has not charged this turn and is in combat with an enemy unit that charged this turn to be the target.",
+            "effect": "Roll a dice. On 3+, the target can immediately use a RETREAT ability as if it were your movement phase. In addition, no mortal damage is inflicted on the target by that RETREAT ability.",
+            "unitLinks": []
+          },
+          {
+            "name": "THE BLOOD REVEALS ALL",
+            "timing": "Once Per Battle (Army), Your Hero Phase",
+            "declare": "Pick a friendly CRONESEER’S PARIAHS HERO within the combat range of a friendly empty CAULDRON OF BLOOD. Then, pick another unit within the combat range of that HERO to be the target.",
+            "effect": "Roll a dice. Allocate a number of damage points to the target equal to the roll (ward rolls cannot be made for those damage points). Then, that CAULDRON OF BLOOD becomes full.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "id": "zainthar-kai",
+        "name": "Zainthar Kai",
+        "battleTraits": [
+          {
+            "name": "DARK MAJESTY",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "If the unmodified hit roll for an attack made by a non-HERO unit that targets the friendly Morathi-Khaine is 1-4, the attack fails and the attack sequence ends.",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/daughters-of-khaine/Morathi-Khaine"
+            ]
+          },
+          {
+            "name": "THE BLOOD SAINTS",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "While the friendly Shadow Queen is wholly within 6\" of a friendly non-HERO ZAINTHAR KAI unit, both that Shadow Queen and that non-HERO unit have WARD (5+).",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/daughters-of-khaine/The-Shadow-Queen"
+            ]
+          },
+          {
+            "name": "MATRIARCH OF THE ZAINTHAR KAI",
+            "timing": "Your Hero Phase",
+            "declare": "Pick the friendly Morathi-Khaine to use this ability.",
+            "effect": "Pick 1 of the following effects:\n• Until the start of your next turn, this unit has a Move characteristic of 12\" and has FLY.\n• This unit can use the ‘Iron Heart of Khaine’ ability as if you had performed a blood rite.\n• Pick a visible enemy unit within 18\" of this unit to be the target. For the rest of the turn, the target’s attacks cannot score critical hits (treat them as regular hits instead).\n• Pick a friendly non-UNIQUE ZAINTHAR KAI HERO that has been destroyed to be the target. Set up a replacement unit identical to the target within 3\" of this unit.",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/daughters-of-khaine/Morathi-Khaine"
+            ]
+          },
+          {
+            "name": "CURSED HERITAGE",
+            "timing": "Once Per Turn (Army), End of Your Turn",
+            "declare": "Pick each enemy unit in combat with any NON-UNIQUE ZAINTHAR KAI units to be the targets.",
+            "effect": "Inflict D3 mortal damage on each target.",
+            "unitLinks": []
+          }
+        ]
+      }
+    ],
+    "battleFormations": [
+      {
+        "name": "Coven of Blood",
+        "abilities": [
+          {
+            "name": "THE BREATH OF KHAINE",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "While each model in a friendly DAUGHTERS OF KHAINE unit is contesting an objective you control, those models are not visible to enemy models more than 9\" away.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "name": "Cold-Hearted Murderers",
+        "abilities": [
+          {
+            "name": "BLOODY-HANDED WORSHIPPERS",
+            "timing": "Reaction: You declared a FIGHT ability for an anointed unit",
+            "declare": "",
+            "effect": "Used By: That anointed unit.\nPick a friendly non-HERO DAUGHTERS OF KHAINE unit that has not used a FIGHT ability this turn and is within that anointed unit’s combat range to be the target. The target can be picked to use a FIGHT ability immediately after the FIGHT ability used by that anointed unit has been resolved. If it is picked to do so, the target’s melee weapons have Crit (Auto-wound) for the rest of the turn. If its melee weapons already have Crit (Auto-wound), they have Crit (Mortal) for the rest of the turn instead.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "name": "Frenzied Devotees",
+        "abilities": [
+          {
+            "name": "HERETIC’S BANE",
+            "timing": "Once Per Turn (Army), Start of Enemy Turn",
+            "declare": "Pick an enemy WIZARD or PRIEST on the battlefield to be the target.",
+            "effect": "Roll a dice for each objective you control. For each 3+, subtract 1 from casting rolls and chanting rolls for the target for the rest of the turn.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "name": "Fervent Ritualists",
+        "abilities": [
+          {
+            "name": "FINAL FRENZY",
+            "timing": "Once Per Turn (Army), End of Any Turn",
+            "declare": "Pick each friendly DAUGHTERS OF KHAINE unit contesting an objective to be the targets.",
+            "effect": "Return up to D3 slain models to each target that has a Health characteristic of up to 2. Return up to 1 slain model to each target that has a Health characteristic of 3 or more.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "name": "Coven Zealots",
+        "abilities": [
+          {
+            "name": "HIGHER PURPOSE",
+            "timing": "Once Per Turn (Army), End of Any Turn",
+            "declare": "",
+            "effect": "Return D3 slain models to each friendly DAUGHTERS OF KHAINE AELF INFANTRY unit.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "name": "Arena Veterans",
+        "abilities": [
+          {
+            "name": "GRACEFUL ELUSION",
+            "timing": "Any Combat Phase",
+            "declare": "",
+            "effect": "For the rest of the phase, friendly DAUGHTERS OF KHAINE AELF INFANTRY units have WARD (5+) until they have used a FIGHT ability.",
+            "unitLinks": []
+          }
+        ]
+      }
+    ],
+    "lores": {
+      "spell": [
+        {
+          "name": "Lore of Shadows",
+          "kind": "spell",
+          "points": 0,
+          "entries": [
+            {
+              "name": "STEED OF SHADOWS",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly DAUGHTERS OF KHAINE WIZARD to cast this spell, pick a visible friendly DAUGHTERS OF KHAINE unit wholly within 12\" of them to be the target, then make a casting roll of 2D6.",
+              "effect": "The target can use CHARGE abilities this turn even if it used a RUN ability in the same turn.",
+              "value": "6",
+              "unitLinks": []
+            },
+            {
+              "name": "MINDRAZOR",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly DAUGHTERS OF KHAINE WIZARD to cast this spell, pick a visible friendly DAUGHTERS OF KHAINE unit wholly within 12\" of them to be the target, then make a casting roll of 2D6.",
+              "effect": "The target’s melee weapons have Charge (+1 Damage) until the start of your next turn.",
+              "value": "7",
+              "unitLinks": []
+            },
+            {
+              "name": "BLACK HORROR OF ULGU",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly DAUGHTERS OF KHAINE WIZARD to cast this spell, pick a point on the battlefield within 18\" of them, pick up to 3 enemy units within 3\" of that point to be the targets, then make a casting roll of 2D6.",
+              "effect": "The targets cannot use RUN abilities until the start of your next turn.",
+              "value": "6",
+              "unitLinks": []
+            }
+          ]
+        }
+      ],
+      "prayer": [
+        {
+          "name": "Prayers of the Khainite Cult",
+          "kind": "prayer",
+          "points": 0,
+          "entries": [
+            {
+              "name": "CATECHISM OF MURDER",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly DAUGHTERS OF KHAINE PRIEST to chant this prayer, pick a visible friendly DAUGHTERS OF KHAINE unit wholly within 12\" of them to be the target, then make a chanting roll of D6.",
+              "effect": "The target’s melee weapons have Crit (Auto-wound) until the start of your next turn. In addition, if the chanting roll was 7+, the target’s combat attacks score critical hits on unmodified hit rolls of 5+ until the start of your next turn.",
+              "value": "3",
+              "unitLinks": []
+            },
+            {
+              "name": "COVENANT OF THE IRON HEART",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly DAUGHTERS OF KHAINE PRIEST to chant this prayer, pick a visible friendly DAUGHTERS OF KHAINE unit wholly within 12\" of them to be the target, then make a chanting roll of D6.",
+              "effect": "Add 10 to the target’s control score until the start of your next turn. In addition, if the chanting roll was 6+, ignore the first damage point that would be allocated to the target in each phase until the start of your next turn.",
+              "value": "3",
+              "unitLinks": []
+            },
+            {
+              "name": "DANCE OF DOOM",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly DAUGHTERS OF KHAINE PRIEST to chant this prayer, pick a visible friendly non-UNIQUE DAUGHTERS OF KHAINE unit wholly within 12\" of them to be the target, then make a chanting roll of D6.",
+              "effect": "Add 1 to the Attacks characteristic of the target’s melee weapons for the rest of the turn. In addition, if the chanting roll was 10+, the target can use 2 FIGHT abilities this turn. After the first is used, however, the target has STRIKE-LAST for the rest of the turn.",
+              "value": "4",
+              "unitLinks": []
+            }
+          ]
+        },
+        {
+          "name": "Bloodshadow Rites",
+          "kind": "prayer",
+          "points": 0,
+          "entries": [
+            {
+              "name": "SHADOWSTEP",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly DAUGHTERS OF KHAINE PRIEST to chant this prayer, pick a visible friendly DAUGHTERS OF KHAINE AELF INFANTRY unit wholly within 12\" of them and that has not been picked to be the target of this prayer this turn to be the target, then make a chanting roll of D6.",
+              "effect": "The target can move up to 6\". It can move through the combat ranges of enemy units but cannot end that move in combat. If the chanting roll was 8+, you can pick another eligible unit to be a second target.",
+              "value": "3",
+              "unitLinks": []
+            },
+            {
+              "name": "SCÁTHSCALE",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly DAUGHTERS OF KHAINE PRIEST to chant this prayer, pick a friendly DAUGHTERS OF KHAINE AELF INFANTRY unit wholly within 12\" of them to be the target, then make a chanting roll of D6.",
+              "effect": "Until the start of your next turn, subtract 1 from wound rolls for combat attacks that target that friendly unit. If the chanting roll was 8+, until the start of your next turn, subtract 1 from wound rolls for combat attacks that target friendly DAUGHTERS OF KHAINE AELF INFANTRY units while they are wholly within 12\" of the target of this ability instead.",
+              "value": "3",
+              "unitLinks": []
+            },
+            {
+              "name": "EXULTATION OF MURDER",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly DAUGHTERS OF KHAINE PRIEST to chant this prayer, pick a friendly DAUGHTERS OF KHAINE AELF INFANTRY unit wholly within 12\" of them to be the target, then make a chanting roll of D6.",
+              "effect": "Until the start of your next turn, add 1 to wound rolls for the target’s combat attacks. In addition, if the chanting roll was 9+, until the start of your next turn, add 1 to the Attacks characteristic of the target’s melee weapons.",
+              "value": "4",
+              "unitLinks": []
+            }
+          ]
+        }
+      ],
+      "manifestation": [
+        {
+          "name": "Manifestations of Khaine",
+          "kind": "manifestation",
+          "points": 0,
+          "entries": [
+            {
+              "name": "SUMMON BLOODWRACK VIPER",
+              "timing": "Your Hero Phase",
+              "declare": "If there is not a friendly Bloodwrack Viper on the battlefield, pick a friendly DAUGHTERS OF KHAINE WIZARD to cast this spell, then make a casting roll of 2D6.",
+              "effect": "Set up a Bloodwrack Viper wholly within 12\" of the caster, visible to them and more than 9\" from all enemy units.",
+              "value": "6",
+              "unitLinks": [
+                "https://wahapedia.ru/aos4/factions/daughters-of-khaine/Bloodwrack-Viper"
+              ],
+              "manifestation": {
+                "faction": "Daughters of Khaine",
+                "name": "Bloodwrack Viper"
+              }
+            },
+            {
+              "name": "SUMMON HEART OF FURY",
+              "timing": "Your Hero Phase",
+              "declare": "If there is not a friendly Heart of Fury on the battlefield, pick a friendly DAUGHTERS OF KHAINE WIZARD to cast this spell, then make a casting roll of 2D6.",
+              "effect": "Set up a Heart of Fury wholly within 18\" of the caster and visible to them.",
+              "value": "6",
+              "unitLinks": [
+                "https://wahapedia.ru/aos4/factions/daughters-of-khaine/Heart-of-Fury"
+              ],
+              "manifestation": {
+                "faction": "Daughters of Khaine",
+                "name": "Heart of Fury"
+              }
+            },
+            {
+              "name": "SUMMON BLADEWIND",
+              "timing": "Your Hero Phase",
+              "declare": "If there is not a friendly Bladewind on the battlefield, pick a friendly DAUGHTERS OF KHAINE WIZARD to cast this spell, then make a casting roll of 2D6.",
+              "effect": "Set up a Bladewind wholly within 12\" of the caster, visible to them and more than 9\" from all enemy units.",
+              "value": "6",
+              "unitLinks": [
+                "https://wahapedia.ru/aos4/factions/daughters-of-khaine/Bladewind"
+              ],
+              "manifestation": {
+                "faction": "Daughters of Khaine",
+                "name": "Bladewind"
+              }
+            }
+          ],
+          "scope": "faction"
+        }
+      ]
+    }
+  },
+  "entries": [
+    {
+      "faction": "Daughters of Khaine",
+      "name": "Avatar of Khaine",
+      "points": 0,
+      "size": 1,
+      "kind": "",
+      "category": "Manifestation",
+      "profile": {
+        "move": "6\"",
+        "health": "7",
+        "save": "3+",
+        "ward": "6+",
+        "banishment": "7",
+        "url": "https://wahapedia.ru/aos4/factions/daughters-of-khaine/Avatar-of-Khaine",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DAUGHTERS OF KHAINE",
+          "ORDER",
+          "ENDLESS SPELL",
+          "MANIFESTATION",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Lord of Murder Incarnate",
+          "Wrath of Khaine"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Lord of Murder Incarnate",
+            "timing": "Passive",
+            "effect": "Effect: This MANIFESTATION is affected by the ‘Blessings of Khaine’ ability as if it were a unit.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Wrath of Khaine",
+            "timing": "Passive",
+            "effect": "Effect: Add X to the Attacks characteristic of this MANIFESTATION’s melee weapons, where X is the number of times you have used the ‘Blessings of Khaine’ ability this battle, to a maximum of 3.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Blade of the Bloody‑Handed God",
+            "3",
+            "3+",
+            "3+",
+            "2",
+            "3",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Towering statues animated by blood magic, Avatars of Khaine march into battle hewing with their blazing swords, uncaring of any blow the enemy might land upon their scorching metal frames. Khainites rejoice to witness the carnage they leave in their wake."
+    },
+    {
+      "faction": "Daughters of Khaine",
+      "name": "Bladewind",
+      "points": 0,
+      "size": 1,
+      "kind": "",
+      "category": "Manifestation",
+      "profile": {
+        "move": "12\"",
+        "health": "7",
+        "save": "5+",
+        "ward": "6+",
+        "banishment": "7",
+        "url": "https://wahapedia.ru/aos4/factions/daughters-of-khaine/Bladewind",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DAUGHTERS OF KHAINE",
+          "ORDER",
+          "ENDLESS SPELL",
+          "FLY",
+          "MANIFESTATION",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Unnatural Edge"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Unnatural Edge",
+            "timing": "Any Combat Phase",
+            "effect": "Declare: If this MANIFESTATION charged this turn, pick an enemy unit in combat with it to be the target.\nEffect: If any damage points are allocated to the target this phase by this MANIFESTATION’s combat attacks, ward rolls cannot be made for the target for the rest of the battle.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Bladed Vortex",
+            "9",
+            "3+",
+            "3+",
+            "1",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Carried through the air by a crimson tempest of blood, these gleaming falchions carve a bloody path through anything in their way, slicing clean through armour to get to the flesh and blood beneath."
+    },
+    {
+      "faction": "Daughters of Khaine",
+      "name": "Blood Hags",
+      "points": 150,
+      "size": 10,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "6\"",
+        "health": "1",
+        "save": "5+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/daughters-of-khaine/Blood-Hags",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "AELF",
+          "DAUGHTERS OF KHAINE",
+          "ORDER",
+          "CHAMPION (1/10)",
+          "INFANTRY",
+          "STANDARD BEARER (1/10)",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Wicked Wardens",
+          "Crimson Offerings"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Wicked Wardens",
+            "timing": "Passive",
+            "effect": "Effect: While this unit is wholly within 12\" of a friendly Hag Queen on Cauldron of Blood, Slaughter Queen on Cauldron of Blood or Shrine of Dark Tribute, this unit’s melee weapons have Anti-charge (+1 Rend).",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Crimson Offerings",
+            "timing": "Once Per Turn (Army), Reaction: You declared the ‘%000021998Blessings of Khaine%’ ability",
+            "effect": "Effect: If an enemy unit was destroyed by this unit’s combat attacks this turn, when resolving that ability, you can pick 2 blessings instead of 1.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "End of Turn",
+            "reaction": true
+          }
+        ],
+        "ranged": [
+          [
+            "Ki’raich",
+            "10\"",
+            "1",
+            "3+",
+            "4+",
+            "1",
+            "1",
+            ""
+          ]
+        ],
+        "melee": [
+          [
+            "Valthrai",
+            "3",
+            "3+",
+            "4+",
+            "1",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Clad in gleaming armour and wielding twin-pronged valthrai polearms, Blood Hags are the fighting elite of the Khainite aelves. They march into battle beside the war-shrines and warlords of the cult, messily executing any foes who dare come too close."
+    },
+    {
+      "faction": "Daughters of Khaine",
+      "name": "Blood Sisters",
+      "points": 170,
+      "size": 5,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "8\"",
+        "health": "3",
+        "save": "5+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/daughters-of-khaine/Blood-Sisters",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DAUGHTERS OF KHAINE",
+          "ORDER",
+          "CHAMPION",
+          "INFANTRY",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Crystal Touch"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Crystal Touch",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick an enemy INFANTRY or CAVALRY unit in combat with this unit to be the target.\nEffect: Roll a dice. If the roll is equal to or less than the target’s Health characteristic, the target has STRIKE-LAST for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Heartshard Glaive",
+            "2",
+            "3+",
+            "4+",
+            "1",
+            "2",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Blood Sisters are true daughters of Morathi. Channelling the hatred inside their tainted souls, each longs to drive their heartshard glaive deep into an enemy’s vitals or to transmute flesh with their agonising scáth touch."
+    },
+    {
+      "faction": "Daughters of Khaine",
+      "name": "Blood Stalkers",
+      "points": 150,
+      "size": 5,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "8\"",
+        "health": "3",
+        "save": "5+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/daughters-of-khaine/Blood-Stalkers",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DAUGHTERS OF KHAINE",
+          "ORDER",
+          "CHAMPION",
+          "INFANTRY",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Barbed Arrows"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Barbed Arrows",
+            "timing": "Once Per Turn (Army), Reaction: You declared a SHOOT ability for this unit",
+            "effect": "Effect: After that SHOOT ability has been resolved, if all of this unit’s attacks targeted the same enemy unit, roll a dice. Add 1 to the roll if any other friendly Blood Stalkers units picked that enemy unit to be the target of all of their shooting attacks this turn. On a 3+, until the start of your next turn, subtract 1 from the number of dice rolled when making charge rolls for the target, to a minimum of 1.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Shooting Phase",
+            "reaction": true
+          }
+        ],
+        "ranged": [
+          [
+            "Heartseeker Bow",
+            "18\"",
+            "3",
+            "3+",
+            "4+",
+            "1",
+            "1",
+            "Crit (Auto-wound)"
+          ]
+        ],
+        "melee": [
+          [
+            "Scianlar",
+            "2",
+            "3+",
+            "4+",
+            "-",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Drawing their ornate heartseeker bows, the slithering Melusai hunters known as Blood Stalkers loose volleys of arrows that seek out their targets’ hearts with uncanny accuracy."
+    },
+    {
+      "faction": "Daughters of Khaine",
+      "name": "Bloodwrack Medusa",
+      "points": 140,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "8\"",
+        "health": "6",
+        "save": "5+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/daughters-of-khaine/Bloodwrack-Medusa",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DAUGHTERS OF KHAINE",
+          "ORDER",
+          "HERO",
+          "INFANTRY",
+          "WARD (6+)",
+          "WIZARD (1)"
+        ],
+        "abilities": [
+          "Exsanguinating Glare",
+          "Arcane Resonance"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Exsanguinating Glare",
+            "timing": "Once Per Turn (Army), Your Shooting Phase",
+            "effect": "Declare: If this unit is in combat, pick an enemy unit in combat with it to be the target. If this unit is not in combat, pick a visible enemy unit within 12\" of it to be the target.\nEffect: Roll a D3. On a 2+, inflict an amount of mortal damage on the target equal to the roll. Then, if any enemy models were slain by that mortal damage, inflict an amount of mortal damage on the target equal to its Health characteristic.",
+            "kind": "Ability",
+            "type": "Shooting",
+            "phase": "Shooting Phase"
+          },
+          {
+            "name": "Arcane Resonance",
+            "timing": "Passive",
+            "effect": "Effect: Add 1 to casting rolls for this unit when it uses a SUMMON ability and add 1 to banishment rolls for this unit.",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Exalted",
+            "phase": "Hero Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Bloodwrack Spear and Whisperclaw",
+            "5",
+            "3+",
+            "4+",
+            "1",
+            "2",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Bloodwrack Medusae are sorceresses cursed with enormous serpentine bodies and heads crowned with snakes. They are so full of spite and shadow magic that to meet their horrific gaze can cause explosive haemorrhaging.",
+      "regimentOptions": "Any %000022030non-AELF%"
+    },
+    {
+      "faction": "Daughters of Khaine",
+      "name": "Bloodwrack Shrine",
+      "points": 270,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "12",
+        "save": "4+",
+        "control": "5",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/daughters-of-khaine/Bloodwrack-Shrine",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DAUGHTERS OF KHAINE",
+          "ORDER",
+          "HERO",
+          "WAR MACHINE",
+          "WARD (6+)",
+          "WIZARD (2)"
+        ],
+        "abilities": [
+          "Born of Slaughter",
+          "Aura of Agony",
+          "Agonising Spasms"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Born of Slaughter",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: If there are fewer friendly Avatars of Khaine on the battlefield than there are friendly Bloodwrack Shrines on the battlefield, make a casting roll of 2D6.\nEffect: Set up an Avatar of Khaine wholly within 12\" of the caster, visible to them and more than 9\" from all enemy units.",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Summon, Spell",
+            "phase": "Hero Phase",
+            "pointsType": "Spell",
+            "points": "6"
+          },
+          {
+            "name": "Aura of Agony",
+            "timing": "Once Per Turn (Army), Your Hero Phase",
+            "effect": "Effect: Until the start of your next turn:\n• Enemy MANIFESTATIONS cannot be set up within 12\" of this unit.\n• This unit has WARD (4+) against mortal damage inflicted by SPELL abilities, PRAYER abilities and abilities used by MANIFESTATIONS.",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Exalted",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Agonising Spasms",
+            "timing": "Reaction: You declared a SHOOT ability for this unit",
+            "effect": "Effect: After that SHOOT ability has been resolved, if all of this unit’s attacks made as part of that SHOOT ability targeted the same enemy unit and any enemy models were slain by those attacks, roll a dice. On a 3+, that enemy unit has a maximum control score of 1 for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Control",
+            "phase": "Shooting Phase",
+            "reaction": true
+          }
+        ],
+        "ranged": [
+          [
+            "Bloodwrack Stare",
+            "15\"",
+            "4",
+            "3+",
+            "3+",
+            "2",
+            "3",
+            "Crit (2 Hits), Shoot in Combat"
+          ]
+        ],
+        "melee": [
+          [
+            "Shrine Guardians’ Blades",
+            "9",
+            "3+",
+            "4+",
+            "1",
+            "2",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "A Bloodwrack Shrine is a mobile altar that radiates an aura of agonising pain. As the shrine rolls into battle, its Medusa guardian hurls malevolent curses and affixes foes with her deadly gaze.",
+      "regimentOptions": "0-1 %000011552Coven Matriarch%, Any %000022030non-AELF%"
+    },
+    {
+      "faction": "Daughters of Khaine",
+      "name": "Bloodwrack Viper",
+      "points": 0,
+      "size": 1,
+      "kind": "",
+      "category": "Manifestation",
+      "profile": {
+        "move": "9\"",
+        "health": "10",
+        "save": "4+",
+        "ward": "6+",
+        "banishment": "7",
+        "url": "https://wahapedia.ru/aos4/factions/daughters-of-khaine/Bloodwrack-Viper",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DAUGHTERS OF KHAINE",
+          "ORDER",
+          "ENDLESS SPELL",
+          "MANIFESTATION",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Crushing Coils",
+          "Bind and Bite"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Crushing Coils",
+            "timing": "Any Combat Phase",
+            "effect": "Declare: Pick an enemy HERO or MONSTER in combat with this MANIFESTATION to be the target.\nEffect: Roll a dice. On a 3+, the target has STRIKE-LAST for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Bind and Bite",
+            "timing": "Passive",
+            "effect": "Effect: This unit’s combat attacks score critical hits on unmodified hit rolls of 4+ if the target of those attacks has STRIKE-LAST.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Fanged Strikes",
+            "4",
+            "4+",
+            "2+",
+            "1",
+            "3",
+            "Anti-HERO (+1 Rend), Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "The Bloodwrack Viper is an enormous serpent formed from boiling blood, a manifestation of hatred and bitterness that binds its prey in a crushing embrace before attacking with its monstrous fangs."
+    },
+    {
+      "faction": "Daughters of Khaine",
+      "name": "Doomfire Warlocks",
+      "points": 150,
+      "size": 5,
+      "kind": "Legends",
+      "category": "Cavalry",
+      "profile": {
+        "move": "14\"",
+        "health": "3",
+        "save": "5+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/daughters-of-khaine/Doomfire-Warlocks",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "AELF",
+          "DAUGHTERS OF KHAINE",
+          "ORDER",
+          "CAVALRY",
+          "CHAMPION",
+          "WARD (6+)",
+          "WIZARD (1)"
+        ],
+        "abilities": [
+          "Outmanoeuvre"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Outmanoeuvre",
+            "timing": "Passive",
+            "effect": "Effect: When this unit uses the ‘Redeploy’ command, if you roll a 1-3 when determining the distance this unit can move, you can use a value of 4 instead.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Movement Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Doomfire Crossbow",
+            "10\"",
+            "2",
+            "3+",
+            "4+",
+            "-",
+            "1",
+            ""
+          ]
+        ],
+        "melee": [
+          [
+            "Cursed Scimitar",
+            "2",
+            "3+",
+            "4+",
+            "1",
+            "1",
+            ""
+          ],
+          [
+            "Dark Steed’s Vicious Bite",
+            "2",
+            "5+",
+            "3+",
+            "-",
+            "1",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "Battletome Supplement: Daughters of Khaine",
+      "canReinforce": true,
+      "flavour": "The Doomfire Warlocks are the light cavalry of the war covens. They harass foes with blasts of arcane f lame and volleys of black-fletched bolts, harrying the enemy’s flanks and slaying unprotected targets. As the main Khainite formations are engaged, these swift riders charge in, scimitars drawn, to help overwhelm and finish off their distracted victims.",
+      "notes": "This unit will move to Warhammer Legends on 1 June 2027."
+    },
+    {
+      "faction": "Daughters of Khaine",
+      "name": "Gryselle’s Arenai",
+      "points": 70,
+      "size": 5,
+      "kind": "Legends",
+      "category": "Infantry",
+      "profile": {
+        "move": "6\"",
+        "health": "2",
+        "save": "6+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/daughters-of-khaine/Gryselle-s-Arenai",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "AELF",
+          "DAUGHTERS OF KHAINE",
+          "ORDER",
+          "CHAMPION",
+          "INFANTRY",
+          "UNIQUE",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Acrobatic Bloodshed"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Acrobatic Bloodshed",
+            "timing": "Any Combat Phase",
+            "effect": "Declare: Pick an enemy unit in combat with this unit to be the target.\nEffect: For the rest of the turn, while this unit is in combat with the target, its combat attacks must target that enemy unit. In addition, if any of this unit’s attacks score a critical hit on the target this phase, the target has STRIKE-LAST for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Gladiatorial Weapons",
+            "3",
+            "3+",
+            "4+",
+            "-",
+            "1",
+            "Crit (Auto-wound)"
+          ]
+        ]
+      },
+      "source": "Legends Warscrolls",
+      "canReinforce": false,
+      "flavour": "Gryselle’s Arenai are expert gladiators from the fighting pits of Har Kuron. Each is highly skilled at dispatching numerous enemies in a blur of flashing weapons. The Arenai are each a veteran of countless duels to the death, but they are also peerless performers, their acrobatic leaps and dazzling flourishes making every act of carnage a prayer to their bloody god.",
+      "notes": "This unit cannot be reinforced.",
+      "description": "Each model in this unit is armed with Gladiatorial Weapons. The models in this unit are:\n• Gryselle, the Slaughterer (champion)\n• Thrialla, the Lash\n• Retaria, the Entangler\n• Kalexis, the Silvered Blur\n• Traxya, the Aegis"
+    },
+    {
+      "faction": "Daughters of Khaine",
+      "name": "Hag Queen",
+      "points": 120,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "5",
+        "save": "5+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/daughters-of-khaine/Hag-Queen",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "AELF",
+          "DAUGHTERS OF KHAINE",
+          "ORDER",
+          "HERO",
+          "INFANTRY",
+          "PRIEST (1)",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Catechisms of Violence"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Catechisms of Violence",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Effect: For the rest of the turn, each time a visible friendly DAUGHTERS OF KHAINE unit wholly within 12\" of this unit uses a FIGHT ability, after that ability has been resolved, you can pick a visible friendly DAUGHTERS OF KHAINE PRIEST wholly within 12\" of this unit. That PRIEST gains 1 ritual point.",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Exalted",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Blade of Khaine",
+            "5",
+            "3+",
+            "4+",
+            "1",
+            "2",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Highest ranking of the Khainite priestesses are the Hag Queens. These zealous and cruel-hearted aelves lead their sisters in worship of the Bloody-Handed One, reciting violent dogma and brandishing sacred relics to drive their fellow Khainites into a frenzied fury.",
+      "regimentOptions": "0-1 %000011552Coven Matriarch%, Any %000011508AELF%",
+      "notes": "This HERO can join an eligible regiment as a Coven Matriarch."
+    },
+    {
+      "faction": "Daughters of Khaine",
+      "name": "Hag Queen on Cauldron of Blood",
+      "points": 280,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "12",
+        "save": "4+",
+        "control": "5",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/daughters-of-khaine/Hag-Queen-on-Cauldron-of-Blood",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "AELF",
+          "DAUGHTERS OF KHAINE",
+          "ORDER",
+          "HERO",
+          "PRIEST (1)",
+          "WAR MACHINE",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Wrathful Repulsion",
+          "Roaring Idol"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Wrathful Repulsion",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick a visible friendly DAUGHTERS OF KHAINE unit that is wholly within 12\" of this unit and is in combat with an enemy unit that charged this turn to be the target. If there are any friendly Slaughter Queens on Cauldrons of Blood on the battlefield, you can pick another eligible unit to be a second target.\nEffect: The targets have WARD (5+) for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "keywords": "Exalted",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Roaring Idol",
+            "timing": "Once Per Turn (Army), Your Hero Phase",
+            "effect": "Declare: Pick a friendly DAUGHTERS OF KHAINE MANIFESTATION wholly within 12\" of this unit to be the target.\nEffect: Roll a dice. On a 3+, the target cannot be picked to be the target of BANISH abilities used by enemy units until the start of your next turn.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Shrine Guardians’ Blades",
+            "9",
+            "3+",
+            "4+",
+            "1",
+            "2",
+            ""
+          ],
+          [
+            "Avatar’s Sword",
+            "5",
+            "3+",
+            "3+",
+            "2",
+            "3",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "A Cauldron of Blood is a sacred war-shrine, its enchanted gore blessed by a Hag Queen. The presence of this relic inspires nearby worshippers and strengthens Khainite manifestations so that they are all but impossible to dispel.",
+      "regimentOptions": "0-1 %000011552Coven Matriarch%, Any %000011508AELF%"
+    },
+    {
+      "faction": "Daughters of Khaine",
+      "name": "Heart of Fury",
+      "points": 0,
+      "size": 1,
+      "kind": "",
+      "category": "Manifestation",
+      "profile": {
+        "move": "-",
+        "health": "7",
+        "save": "4+",
+        "ward": "6+",
+        "banishment": "7",
+        "url": "https://wahapedia.ru/aos4/factions/daughters-of-khaine/Heart-of-Fury",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DAUGHTERS OF KHAINE",
+          "ORDER",
+          "ENDLESS SPELL",
+          "MANIFESTATION",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Locus of the Murder God"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Locus of the Murder God",
+            "timing": "Passive",
+            "effect": "Effect: Subtract 1 from wound rolls for attacks that target friendly DAUGHTERS OF KHAINE INFANTRY units while they are wholly within 12\" of this MANIFESTATION.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          }
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "A manifestation of Khaine’s Iron Heart, this blood-dripping icon burns with supernatural rage. Those bathed in its wrathful aura enter a delirious frenzy that sees them inured to pain."
+    },
+    {
+      "faction": "Daughters of Khaine",
+      "name": "High Gladiatrix",
+      "points": 120,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "5",
+        "save": "5+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/daughters-of-khaine/High-Gladiatrix",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "AELF",
+          "DAUGHTERS OF KHAINE",
+          "ORDER",
+          "HERO",
+          "INFANTRY",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Paragon of Slaughter"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Paragon of Slaughter",
+            "timing": "Once Per Turn (Army), Your Hero Phase",
+            "effect": "Declare: Pick a visible friendly DAUGHTERS OF KHAINE INFANTRY unit wholly within 12\" of this unit to be the target.\nEffect: If this unit is in combat, add 1 to the Rend characteristic of the target’s melee weapons for the rest of the turn.\nIf this unit is not in combat, roll a dice. On a 3+, add 1 to the Rend characteristic of the target’s melee weapons for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Exalted",
+            "phase": "Hero Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Barbed Whip and Gladiatrix’s Blade",
+            "6",
+            "3+",
+            "4+",
+            "1",
+            "2",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "A High Gladiatrix is a living conduit of Khaine’s wrath. Striding at the head of their sisters’ advance, these paragons of combat eviscerate their opponents with breathtaking skill and cruelty, to the awed delight of watching Khainites.",
+      "regimentOptions": "Any %000011508AELF%",
+      "notes": "This HERO can join an eligible regiment as a Coven Matriarch."
+    },
+    {
+      "faction": "Daughters of Khaine",
+      "name": "Khainite Shadowstalkers",
+      "points": 130,
+      "size": 9,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "6\"",
+        "health": "1",
+        "save": "5+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/daughters-of-khaine/Khainite-Shadowstalkers",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "AELF",
+          "DAUGHTERS OF KHAINE",
+          "ORDER",
+          "CHAMPION (1/9)",
+          "INFANTRY",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Shadow Leap"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Shadow Leap",
+            "timing": "Once Per Turn (Army), Your Movement Phase",
+            "effect": "Effect: Remove this unit from the battlefield and set it up again on the battlefield more than 9\" from all enemy units.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Movement Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Cursed Bolts and Missiles",
+            "10\"",
+            "2",
+            "3+",
+            "4+",
+            "1",
+            "1",
+            ""
+          ]
+        ],
+        "melee": [
+          [
+            "Blades of Murder",
+            "2",
+            "3+",
+            "4+",
+            "1",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Shadowstalkers are the elite assassins and agents of Morathi-Khaine. These shademarked wraiths leap between shadows to outflank their prey before charging forth in a murderous blur of sorcery and flashing knives."
+    },
+    {
+      "faction": "Daughters of Khaine",
+      "name": "Khinerai Heartrenders",
+      "points": 100,
+      "size": 5,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "12\"",
+        "health": "2",
+        "save": "5+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/daughters-of-khaine/Khinerai-Heartrenders",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DAUGHTERS OF KHAINE",
+          "ORDER",
+          "CHAMPION",
+          "FLY",
+          "INFANTRY",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Fire and Flight"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Fire and Flight",
+            "timing": "Once Per Turn (Army), Reaction: You declared a SHOOT ability for this unit",
+            "effect": "Effect: After that SHOOT ability has been resolved, this unit can move 2D6\". It cannot move into combat during any part of that move.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Shooting Phase",
+            "reaction": true
+          }
+        ],
+        "ranged": [
+          [
+            "Barbed Javelin",
+            "12\"",
+            "2",
+            "3+",
+            "4+",
+            "1",
+            "1",
+            ""
+          ]
+        ],
+        "melee": [
+          [
+            "Barbed Javelin",
+            "1",
+            "3+",
+            "4+",
+            "-",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Khinerai Heartrenders are merciless sky-predators who scan the battlefield for suitable quarry. Should they find a target to their liking, they will streak down from on high, hurling barbed javelins before deftly manoeuvring away."
+    },
+    {
+      "faction": "Daughters of Khaine",
+      "name": "Khinerai Lifetakers",
+      "points": 110,
+      "size": 5,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "12\"",
+        "health": "2",
+        "save": "5+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/daughters-of-khaine/Khinerai-Lifetakers",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DAUGHTERS OF KHAINE",
+          "ORDER",
+          "CHAMPION",
+          "FLY",
+          "INFANTRY",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Fight and Flight"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Fight and Flight",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Effect: If this unit is in combat, it can move 12\". It can pass through the combat ranges of enemy units but cannot end that move in combat. Then, roll a D3 for each enemy unit that this unit passed across during that move. On a 2+, inflict an amount of mortal damage on that enemy unit equal to the roll.",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Core, Attack, Fight",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Barbed Sickle",
+            "2",
+            "3+",
+            "4+",
+            "1",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Khinerai Lifetakers are swift-attack specialists, elite ambushers who swoop into battle to scythe down foes with their barbed sickles. They rake enemy formations in combat before flying out of the melee to seek other vulnerable prey."
+    },
+    {
+      "faction": "Daughters of Khaine",
+      "name": "Knives of the Crone",
+      "points": 220,
+      "size": 4,
+      "kind": "Legends",
+      "category": "Infantry",
+      "profile": {
+        "move": "6\"",
+        "health": "3",
+        "save": "5+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/daughters-of-khaine/Knives-of-the-Crone",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "AELF",
+          "DAUGHTERS OF KHAINE",
+          "ORDER",
+          "INFANTRY",
+          "UNIQUE",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Rituals of Prophecy"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Rituals of Prophecy",
+            "timing": "Your Hero Phase",
+            "effect": "Effect: Roll 6 dice:\n• For each 1, add 1 to the Attacks characteristic of this unit’s melee weapons until the start of your next turn.\n• For each 3, add 1\" to this unit’s Move characteristic until the start of your next turn.\n• If any of the rolls are a 6, add 1 to save rolls for this unit until the start of your next turn.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Aelven Crossbow",
+            "10\"",
+            "3",
+            "3+",
+            "4+",
+            "-",
+            "1",
+            "Crit (Auto-wound)"
+          ]
+        ],
+        "melee": [
+          [
+            "Haruspicy Blades",
+            "3",
+            "3+",
+            "4+",
+            "1",
+            "D3",
+            ""
+          ]
+        ]
+      },
+      "source": "Legends Warscrolls",
+      "canReinforce": false,
+      "flavour": "Fanatical believers in the creed of the prophetic goddess Morai-Heg, the Knives of the Crone exist to serve fate’s will. They are led by the seer Kaerna Vix, who reads the viscera of slain foes to glean her deity’s desires. A cadre of killers ensure Vix’s visions come to pass: Tazari is Kaerna’s strong right hand, while Krieta eagerly butchers those who draw her master’s gaze. Finally, the arbalist Azphel stands ready to put a crossbow bolt through distant foes.",
+      "notes": "This unit cannot be reinforced.",
+      "description": "Each model in this unit is armed with Haruspicy Blades. The models in this unit are:\n• Kaerna Vix (champion)\n• Tazari\n• Krieta, Wing of the Crone\n• Azphel, the Hag’s Eye (also armed with an Aelven Crossbow)"
+    },
+    {
+      "faction": "Daughters of Khaine",
+      "name": "Krethusa the Croneseer",
+      "points": 220,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "12\"",
+        "health": "6",
+        "save": "5+",
+        "control": "2",
+        "ward": "5+",
+        "url": "https://wahapedia.ru/aos4/factions/daughters-of-khaine/Krethusa-the-Croneseer",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "AELF",
+          "DAUGHTERS OF KHAINE",
+          "ORDER",
+          "FLY",
+          "HERO",
+          "INFANTRY",
+          "PRIEST (2)",
+          "UNIQUE",
+          "WARD (5+)"
+        ],
+        "abilities": [
+          "The Croneseer",
+          "Omens of Doom"
+        ],
+        "abilityDetails": [
+          {
+            "name": "The Croneseer",
+            "timing": "Passive",
+            "effect": "Effect: Each time you perform a blood rite, immediately after the ability that destroyed a unit has been resolved, give this unit 1 prophecy token.\n• While this unit has 2 or more prophecy tokens, this unit cannot be picked to be the target of shooting attacks or SPELL abilities used by enemy units.\n• While this unit has 3 or more prophecy tokens, you can re-roll unmodified chanting rolls of 1 for this unit.\n• While this unit has 4 or more prophecy tokens, if the unmodified hit roll for an attack that targets this unit is 1-4, the attack fails and the attack sequence ends.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Omens of Doom",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Make a chanting roll of D6.\nEffect: Pick 1 of the following effects. If the chanting roll was 10+, pick up to 2 different effects instead.\nProphecy of Exile: Pick a visible enemy WIZARD or PRIEST within 18\" of this unit. Subtract 1 from that unit’s power level until the start of your next turn.\nProphecy of Dark Wings: Pick a visible friendly DAUGHTERS OF KHAINE INFANTRY unit wholly within 12\" of this unit. That unit c",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Prayer",
+            "phase": "Hero Phase",
+            "pointsType": "Prayer",
+            "points": "4"
+          }
+        ],
+        "melee": [
+          [
+            "Staff of Morai-Heg",
+            "4",
+            "3+",
+            "4+",
+            "1",
+            "D3",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "A renegade prophet touched by the divine essence of a long-forgotten goddess, Krethusa the Croneseer’s rise to prominence has rocked the cult of Khaine to its core. She calls upon her powers of foresight and shadow magic to annihilate those who stand in the path of aelven destiny.",
+      "regimentOptions": "0-1 %000011552Coven Matriarch%, Any %000011508AELF%"
+    },
+    {
+      "faction": "Daughters of Khaine",
+      "name": "Maleneth Witchblade",
+      "points": 170,
+      "size": 1,
+      "kind": "Legends",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "5",
+        "save": "5+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/daughters-of-khaine/Maleneth-Witchblade",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "AELF",
+          "DAUGHTERS OF KHAINE",
+          "ORDER",
+          "HERO",
+          "INFANTRY",
+          "UNIQUE",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Vial of Secrets",
+          "Hidden Agent",
+          "Strike From the Shadows"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Vial of Secrets",
+            "timing": "Passive",
+            "effect": "Effect: If the unmodified hit roll for an attack that targets this unit is 1-4, the attack fails and the attack sequence ends.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          },
+          {
+            "name": "Hidden Agent",
+            "timing": "Deployment Phase",
+            "effect": "Effect: If this unit has not been deployed, set up this unit in reserve in hiding. It has now been deployed.",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Deploy",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Strike From the Shadows",
+            "timing": "Any Combat Phase",
+            "effect": "Declare: Pick this unit if it is in hiding. Then, pick a friendly INFANTRY unit that has 5 or more models to be the target.\nEffect: Roll a dice. On a 3+, set up this unit anywhere on the battlefield wholly within 6\" of the target. If you do so, this unit must be set up in combat and has STRIKE-FIRST for the rest of the turn. On a failed roll, this unit remains in hiding but you automatically pass the roll the next time you use this ability.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Poisoned Throwing Knives",
+            "10\"",
+            "3",
+            "2+",
+            "4+",
+            "1",
+            "D3",
+            "Crit (Auto-wound), Shoot in Combat"
+          ]
+        ],
+        "melee": [
+          [
+            "Deadly Blades",
+            "6",
+            "2+",
+            "4+",
+            "1",
+            "2",
+            "Anti-HERO (+1 Rend)"
+          ]
+        ]
+      },
+      "source": "Legends Warscrolls",
+      "canReinforce": false,
+      "flavour": "A feared assassin of the Bloody-Handed God, Maleneth Witchblade’s mysterious objectives have seen her abandon her duties as an agent of the Order of Azyr and accompany the legendary Gotrek Gurnisson into battle, where she turns her murderous talents upon the servants of ruin and darkness.",
+      "regimentOptions": "Any %000004068DAUGHTERS OF KHAINE AELF%"
+    },
+    {
+      "faction": "Daughters of Khaine",
+      "name": "Melusai Ironscale",
+      "points": 100,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "8\"",
+        "health": "6",
+        "save": "5+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/daughters-of-khaine/Melusai-Ironscale",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DAUGHTERS OF KHAINE",
+          "ORDER",
+          "HERO",
+          "INFANTRY",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Ironscale’s Fury"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Ironscale’s Fury",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick each friendly DAUGHTERS OF KHAINE unit within this unit’s combat range to be the targets.\nEffect: For the rest of the phase, each time a model in a target unit is slain by a combat attack, roll a dice. If that unit is a Blood Sisters or Blood Stalkers unit, roll 2 dice instead. For each 5+, inflict 1 mortal damage on the attacking unit.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Exalted",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Keldrisaíth",
+            "6",
+            "3+",
+            "4+",
+            "1",
+            "2",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Crafted from the souls of aelves that blazed brightest with the need for revenge, the Melusai Ironscales serve Morathi as elite warleaders amongst the Scáthborn and are terrifying martial champions in their own right.",
+      "regimentOptions": "Any %000022030non-AELF%",
+      "notes": "This HERO can join an eligible regiment as a Coven Matriarch."
+    },
+    {
+      "faction": "Daughters of Khaine",
+      "name": "Morathi-Khaine",
+      "points": 770,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "6",
+        "save": "5+",
+        "control": "2",
+        "ward": "4+",
+        "url": "https://wahapedia.ru/aos4/factions/daughters-of-khaine/Morathi-Khaine",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "AELF",
+          "DAUGHTERS OF KHAINE",
+          "ORDER",
+          "HERO",
+          "INFANTRY",
+          "UNIQUE",
+          "WARD (4+)",
+          "WARMASTER",
+          "WIZARD (3)"
+        ],
+        "abilities": [
+          "The Iron Heart of Khaine",
+          "Divine Matriarch",
+          "Surge of Hatred"
+        ],
+        "abilityDetails": [
+          {
+            "name": "The Iron Heart of Khaine",
+            "timing": "Passive",
+            "effect": "Effect: Each time you perform a blood rite, immediately after the ability that destroyed a unit has been resolved, pick 1 of the following effects:\n• Until the start of your next turn, this unit is only visible to enemy units while those units are within its combat range.\n• Heal (D6) this unit or a friendly Shadow Queen.\n• A friendly Shadow Queen can immediately use the ‘Normal Move’ or ‘Retreat’ ability as if it was your movement phase even if it has already used that ability or another CORE ability this phase.\nDesigner’s Note: If the Shadow Queen retreats with the ‘Iron Heart of Khaine’ ability,",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Divine Matriarch",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Pick a visible friendly DAUGHTERS OF KHAINE PRIEST or WIZARD wholly within 12\" of this unit to be the target.\nEffect: Add 1 to casting rolls and chanting rolls for the target until the start of your next turn.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Surge of Hatred",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Pick either a friendly Shadow Queen wholly within 12\" of this unit and in combat or a visible friendly non-HERO DAUGHTERS OF KHAINE unit wholly within 12\" of this unit and in combat to be the target, then make a casting roll of 2D6.\nEffect: If the target is a friendly Shadow Queen, it can immediately use a FIGHT ability as if it were your combat phase. Otherwise, inflict D3",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Spell",
+            "phase": "Hero Phase",
+            "pointsType": "Spell",
+            "points": "7"
+          }
+        ],
+        "melee": [
+          [
+            "Heartrender and Bladed Wings",
+            "5",
+            "3+",
+            "4+",
+            "2",
+            "2",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Proclaiming herself Khaine reborn, the goddess Morathi-Khaine bestrides the realms, holding aloft the Murder God’s Iron Heart and drawing power from its wrathful emanations. Endlessly cunning and depthlessly cruel, she is a master of manipulation and capable of inspiring her faithful to achieve the extraordinary.",
+      "regimentOptions": "%000021953The Shadow Queen% (required), 0-1 %000011552Coven Matriarch%, Any %000004296DAUGHTERS OF KHAINE%"
+    },
+    {
+      "faction": "Daughters of Khaine",
+      "name": "Morgwaeth’s Blade-coven",
+      "points": 120,
+      "size": 5,
+      "kind": "Legends",
+      "category": "Infantry",
+      "profile": {
+        "move": "6\"",
+        "health": "2",
+        "save": "6+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/daughters-of-khaine/Morgwaeth-s-Blade-coven",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "AELF",
+          "DAUGHTERS OF KHAINE",
+          "ORDER",
+          "CHAMPION",
+          "INFANTRY",
+          "UNIQUE",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Witchbrew",
+          "Morgwaeth the Bloodied"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Witchbrew",
+            "timing": "Once Per Turn (Army), Any Hero Phase",
+            "effect": "Declare: Pick a friendly DAUGHTERS OF KHAINE unit wholly within 12\" of this unit to be the target.\nEffect: Roll a dice. On a 3+, the target has WARD (5+) for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Morgwaeth the Bloodied",
+            "timing": "Passive",
+            "effect": "Effect: While this unit’s Morgwaeth the Bloodied is on the battlefield, it has PRIEST (1).",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Heartseeker Bow",
+            "18\"",
+            "3",
+            "3+",
+            "4+",
+            "1",
+            "1",
+            "Crit (Auto-wound)"
+          ]
+        ],
+        "melee": [
+          [
+            "Sacrificial Weapons",
+            "3",
+            "3+",
+            "4+",
+            "-",
+            "1",
+            "Crit (Auto-wound)"
+          ]
+        ]
+      },
+      "source": "Legends Warscrolls",
+      "canReinforce": false,
+      "flavour": "As coldly ambitious as any of Morathi-Khaine’s priestesses, the ruthless Hag Queen Morgwaeth the Bloodied travels the realms in search of precious Khainite treasures. Unflinchingly loyal to their bloodthirsty mistress Morgwaeth and to the cause of Hagg Nar, the warriors of the Blade-coven have spilled the blood of countless enemies in the course of their far-ranging missions.",
+      "notes": "This unit cannot be reinforced.",
+      "description": "Each model in this unit is armed with Sacrificial Weapons. The models in this unit are:\n• Morgwaeth the Bloodied (champion)\n• Khamyss\n• Kyrssa\n• Lethyr\n• Kyrae (also armed with a Heartseeker Bow)"
+    },
+    {
+      "faction": "Daughters of Khaine",
+      "name": "Scourge of Aqshy Khainite Shadowstalkers",
+      "points": 120,
+      "size": 9,
+      "kind": "Scourge of Aqshy",
+      "category": "Infantry",
+      "profile": {
+        "move": "6\"",
+        "health": "1",
+        "save": "5+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/daughters-of-khaine/Scourge-of-Aqshy-Khainite-Shadowstalkers",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "AELF",
+          "DAUGHTERS OF KHAINE",
+          "ORDER",
+          "CHAMPION (1/9)",
+          "INFANTRY",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Shadow Lariat"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Shadow Lariat",
+            "timing": "Once Per Turn (Army), End of Any Turn",
+            "effect": "Declare: If this unit is not in combat, pick a visible enemy INFANTRY or CAVALRY HERO that has no more than 1 model and is within 12\" of this unit to be the target.\nEffect: If the target is more than 3\" from all other enemy units, apply the effect below. Otherwise, roll a dice. On a 3+, apply the effect below.\nYour opponent must remove the target from the battlefield and set it up again in combat with this unit.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "End of Turn"
+          }
+        ],
+        "ranged": [
+          [
+            "Cursed Bolts and Missiles",
+            "10\"",
+            "2",
+            "3+",
+            "4+",
+            "1",
+            "1",
+            ""
+          ]
+        ],
+        "melee": [
+          [
+            "Blades of Murder",
+            "2",
+            "3+",
+            "4+",
+            "1",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "Scourge of Aqshy - Daughters of Khaine",
+      "canReinforce": true,
+      "flavour": "Bearing the mircath brand that allows them to access the shrouded realmgates of the Umbral Web, Morathi’s elite Shadowstalker assassins enter the Realm of Fire unseen, plunging murderous blades into hearts and necks before slipping away into the darkness.",
+      "notes": "This unit is legal for Matched Play for battles fought using the General’s Handbook 2026-27 battlepack."
+    },
+    {
+      "faction": "Daughters of Khaine",
+      "name": "Scourge of Aqshy Melusai Ironscale",
+      "points": 150,
+      "size": 1,
+      "kind": "Scourge of Aqshy",
+      "category": "Hero",
+      "profile": {
+        "move": "8\"",
+        "health": "6",
+        "save": "5+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/daughters-of-khaine/Scourge-of-Aqshy-Melusai-Ironscale",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DAUGHTERS OF KHAINE",
+          "ORDER",
+          "HERO",
+          "INFANTRY",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Frenzied Slaughter"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Frenzied Slaughter",
+            "timing": "Once Per Turn (Army), Your Hero Phase",
+            "effect": "Declare: Pick a visible friendly DAUGHTERS OF KHAINE unit wholly within 12\" of this unit to be the target.\nEffect: Roll a dice. If this unit is in combat, you can re-roll the dice. If the roll is lower than your fury level, add 1 to the Attacks characteristic of weapons used by this unit and the target until the start of your next turn.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Exalted",
+            "phase": "Hero Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Keldrisaíth",
+            "6",
+            "3+",
+            "4+",
+            "1",
+            "2",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "Scourge of Aqshy - Daughters of Khaine",
+      "canReinforce": false,
+      "flavour": "Creatures woven from shadow magic and the most tormented of aelf-souls, Melusai Ironscales burn with the desire for vengeance. The seething hatred that fills these serpentine killers combines with the furious essence of Aqshy to deadly effect.",
+      "regimentOptions": "Any %000022030non-Aelf%",
+      "notes": "This HERO can join an eligible regiment as a Coven Matriarch.\nThis unit is legal for Matched Play for battles fought using the General’s Handbook 2026-27 battlepack."
+    },
+    {
+      "faction": "Daughters of Khaine",
+      "name": "Scourge of Ghyran Bloodwrack Shrine",
+      "points": 250,
+      "size": 1,
+      "kind": "Scourge of Ghyran",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "12",
+        "save": "4+",
+        "control": "5",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/daughters-of-khaine/Scourge-of-Ghyran-Bloodwrack-Shrine",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DAUGHTERS OF KHAINE",
+          "MELUSAI",
+          "ORDER",
+          "HERO",
+          "WAR MACHINE",
+          "WARD (6+)",
+          "WIZARD (2)"
+        ],
+        "abilities": [
+          "Reflected Agony",
+          "Wracking Gaze"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Reflected Agony",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Make a casting roll of 2D6.\nEffect: Until the start of your next turn, enemy units and enemy MANIFESTATIONS cannot be set up within 12\" of this unit.",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Spell",
+            "phase": "Hero Phase",
+            "pointsType": "Spell",
+            "points": "5"
+          },
+          {
+            "name": "Wracking Gaze",
+            "timing": "Once Per Turn (Army), Any Shooting Phase",
+            "effect": "Declare: Pick a visible enemy unit within 15\" of this unit to be the target.\nEffect: Roll a dice. If the roll is equal to or less than that enemy unit’s Health characteristic, for the rest of the phase, you can re-roll failed hit rolls for attacks made by this unit that target that enemy unit.",
+            "kind": "Ability",
+            "type": "Shooting",
+            "phase": "Shooting Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Bloodwrack Gaze",
+            "15\"",
+            "4",
+            "3+",
+            "3+",
+            "2",
+            "3",
+            "Shoot in Combat, Crit (2 Hits)"
+          ]
+        ],
+        "melee": [
+          [
+            "Medusa’s Spear and Shrinekeeper’s Goadstaves",
+            "8",
+            "3+",
+            "4+",
+            "1",
+            "2",
+            ""
+          ]
+        ]
+      },
+      "source": "Scourge of Ghyran - Daughters of Khaine",
+      "canReinforce": false,
+      "flavour": "Khainite forces in Ghyran make great use of Bloodwrack Shrines, monuments to torment and bitterness attended to by a serpentine monster known as a Medusa, who delights in inflicting pain on her victims. At the apex of the Shrine sits a cursed mirror, emanating an aura of bitter hatred powerful enough to ravage mortals and shatter arcane manifestations into eldritch motes.",
+      "regimentOptions": "0-1 %000011552Coven Matriarch%, Any %000004296DAUGHTERS OF KHAINE%",
+      "notes": "This unit is legal for Matched Play for battles fought using the General’s Handbook 2025-26 battlepack."
+    },
+    {
+      "faction": "Daughters of Khaine",
+      "name": "Scourge of Ghyran Krethusa the Croneseer",
+      "points": 260,
+      "size": 1,
+      "kind": "Scourge of Ghyran",
+      "category": "Hero",
+      "profile": {
+        "move": "12\"",
+        "health": "6",
+        "save": "5+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/daughters-of-khaine/Scourge-of-Ghyran-Krethusa-the-Croneseer",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "AELF",
+          "DAUGHTERS OF KHAINE",
+          "ORDER",
+          "FLY",
+          "HERO",
+          "INFANTRY",
+          "PRIEST (2)",
+          "UNIQUE",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "The Croneseer",
+          "Blood Ritual",
+          "Gift of Foresight"
+        ],
+        "abilityDetails": [
+          {
+            "name": "The Croneseer",
+            "timing": "Enemy Hero Phase",
+            "effect": "Effect: Give this unit D3 ritual points.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Blood Ritual",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Pick a visible friendly DAUGHTERS OF KHAINE AELF INFANTRY or CAVALRY unit wholly within 12\" of this unit to be the target. Then, make a chanting roll of D6.\nEffect: Pick 1 of the following effects to apply until the start of your next turn:\nProphecy of Tyranny: Enemy units cannot use commands while they are in combat with the target.\nProphecy of Shelter: O",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Prayer",
+            "phase": "Hero Phase",
+            "pointsType": "Prayer",
+            "points": "3"
+          },
+          {
+            "name": "Gift of Foresight",
+            "timing": "Once Per Battle, Your Movement Phase",
+            "effect": "Declare: Pick a friendly non-UNIQUE DAUGHTERS OF KHAINE AELF INFANTRY or CAVALRY unit that has been destroyed to be the target.\nEffect: Set up a replacement unit with half the number of models from the target unit (rounding up) wholly within 9\" of a battlefield edge and more than 9\" from all enemy units.",
+            "kind": "Ability",
+            "type": "Rallying",
+            "phase": "Movement Phase",
+            "pointsType": "Command",
+            "points": "1"
+          }
+        ],
+        "melee": [
+          [
+            "Staff of Morai-Heg",
+            "5",
+            "3+",
+            "4+",
+            "1",
+            "D3",
+            "Crit (Auto-wound)"
+          ]
+        ]
+      },
+      "source": "Scourge of Ghyran - Daughters of Khaine",
+      "canReinforce": false,
+      "flavour": "The will of the goddess Morai-Heg has brought Krethusa the Croneseer to Ghyran, where ambitious warlords threaten to unpick the threads of destiny. With shadow magic and subterfuge the prophet will lay these tyrants low, ensuring that the promised future of aelfkind she has witnessed in her violent visions comes to pass.",
+      "regimentOptions": "0-1 %000011552Coven Matriarch%, Any %000011508AELF%",
+      "notes": "This unit is legal for Matched Play for battles fought using the General’s Handbook 2025-26 battlepack."
+    },
+    {
+      "faction": "Daughters of Khaine",
+      "name": "Shrine of Dark Tribute",
+      "points": 20,
+      "size": 1,
+      "kind": "",
+      "category": "Terrain",
+      "profile": {
+        "move": "-",
+        "health": "12",
+        "save": "4+",
+        "control": "-",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/daughters-of-khaine/Shrine-of-Dark-Tribute",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DAUGHTERS OF KHAINE",
+          "ORDER",
+          "FACTION TERRAIN",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Call to Murder",
+          "In Dark Communion"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Call to Murder",
+            "timing": "Your Hero Phase",
+            "effect": "Effect: Pick a blessing from the ‘Blessings of Khaine’ ability that is active. That blessing is no longer active. Then, pick a blessing that is not active. That blessing is now active.\nDesigner’s Note: When you use this ability, you are not using the ‘Blessings of Khaine’ ability.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "In Dark Communion",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Pick a friendly DAUGHTERS OF KHAINE WIZARD or PRIEST within 3\" of this terrain feature to be the target.\nEffect: The target is in dark communion until this terrain feature uses this ability again or until this terrain feature is removed from the battlefield, whichever comes first. While the target is in dark communion, you can re-roll 1 casting roll or 1 chanting roll for the target each turn.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          }
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "-",
+      "description": "The following universal terrain abilities apply to this terrain feature (Terrain, 1.2):\nCover, Impassable"
+    },
+    {
+      "faction": "Daughters of Khaine",
+      "name": "Sisters of Slaughter",
+      "points": 110,
+      "size": 10,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "6\"",
+        "health": "1",
+        "save": "6+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/daughters-of-khaine/Sisters-of-Slaughter",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "AELF",
+          "DAUGHTERS OF KHAINE",
+          "ORDER",
+          "CHAMPION",
+          "INFANTRY",
+          "MUSICIAN (1/5)",
+          "STANDARD BEARER (1/5)",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Dance of Death"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Dance of Death",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick an enemy unit that charged this turn and is in combat with this unit to be the target.\nEffect: Subtract 1 from hit rolls and wound rolls for the target’s combat attacks for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Kruiplash",
+            "3",
+            "3+",
+            "4+",
+            "-",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "With skills honed in ritual duels and gladiatorial fights, the Sisters of Slaughter send their kruiplash whips lashing out to tear open throats and strip flesh from bone, exulting in the perfection of each gory kill."
+    },
+    {
+      "faction": "Daughters of Khaine",
+      "name": "Slaughter Queen",
+      "points": 130,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "5",
+        "save": "5+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/daughters-of-khaine/Slaughter-Queen",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "AELF",
+          "DAUGHTERS OF KHAINE",
+          "ORDER",
+          "HERO",
+          "INFANTRY",
+          "PRIEST (1)",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Fanatical Blademaster"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Fanatical Blademaster",
+            "timing": "Once Per Turn (Army), Your Hero Phase",
+            "effect": "Declare: Pick a visible friendly DAUGHTERS OF KHAINE unit wholly within 12\" of this unit to be the target.\nEffect: Roll a dice. On a 3+, pick a blessing from the ‘Blessings of Khaine’ ability that is not active. The effect of that blessing applies to the target until the start of your next turn as if it were active. If you have used the ‘Blessings of Khaine’ ability 3 or more times this battle, you can pick 2 blessings instead of 1.",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Exalted",
+            "phase": "Hero Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Deathsword and Blade of Khaine",
+            "6",
+            "3+",
+            "4+",
+            "1",
+            "2",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "It is a Slaughter Queen’s role to embody the aggressive martial prowess of Khaine himself. With blades in hand, the Slaughter Queen hacks and spins in the maelstrom of close combat while chanting blood-curdling battle rites",
+      "regimentOptions": "0-1 %000011552Coven Matriarch%, Any %000011508AELF%",
+      "notes": "This HERO can join an eligible regiment as a Coven Matriarch."
+    },
+    {
+      "faction": "Daughters of Khaine",
+      "name": "Slaughter Queen on Cauldron of Blood",
+      "points": 300,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "12",
+        "save": "4+",
+        "control": "5",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/daughters-of-khaine/Slaughter-Queen-on-Cauldron-of-Blood",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "AELF",
+          "DAUGHTERS OF KHAINE",
+          "ORDER",
+          "HERO",
+          "PRIEST (1)",
+          "WAR MACHINE",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Consecrated Revulsion",
+          "Icon of Slaughter"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Consecrated Revulsion",
+            "timing": "Passive",
+            "effect": "Effect: Add 1 to save rolls for visible friendly DAUGHTERS OF KHAINE INFANTRY units while they are wholly within 12\" of this unit.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          },
+          {
+            "name": "Icon of Slaughter",
+            "timing": "Passive",
+            "effect": "Effect: Each time a friendly DAUGHTERS OF KHAINE unit wholly within 12\" of this unit uses the ‘Rally’ command, you can make 3 additional rally rolls of D6. In addition, if there are any friendly Hag Queens on Cauldrons of Blood on the battlefield when that command is used, you receive D3 additional rally points.",
+            "kind": "Ability",
+            "type": "Rallying",
+            "keywords": "Exalted",
+            "phase": "Hero Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Shrine Guardians’ Blades",
+            "9",
+            "3+",
+            "4+",
+            "1",
+            "2",
+            ""
+          ],
+          [
+            "Avatar’s Sword",
+            "5",
+            "3+",
+            "3+",
+            "2",
+            "3",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Some Slaughter Queens go to battle atop great Cauldrons of Blood, channelling the innate sorcery of these bladed shrines to drive nearby Khainites into a frenzy of bloodletting.",
+      "regimentOptions": "0-1 %000011552Coven Matriarch%, Any %000011508AELF%"
+    },
+    {
+      "faction": "Daughters of Khaine",
+      "name": "The Shadeborn",
+      "points": 80,
+      "size": 4,
+      "kind": "Legends",
+      "category": "Infantry",
+      "profile": {
+        "move": "6\"",
+        "health": "2",
+        "save": "5+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/daughters-of-khaine/The-Shadeborn",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "AELF",
+          "DAUGHTERS OF KHAINE",
+          "ORDER",
+          "CHAMPION",
+          "INFANTRY",
+          "UNIQUE",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Shadow Leap",
+          "Mask of Shadowed Mirrors"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Shadow Leap",
+            "timing": "Your Movement Phase",
+            "effect": "Effect: Remove this unit from the battlefield and set it up again on the battlefield more than 9\" from all enemy units.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Movement Phase"
+          },
+          {
+            "name": "Mask of Shadowed Mirrors",
+            "timing": "Any Combat Phase",
+            "effect": "Declare: Pick an enemy unit in combat with this unit to be the target.\nEffect: Roll a dice. On a 3+, the target cannot use commands for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Combat Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Cursed Missiles",
+            "10\"",
+            "1",
+            "3+",
+            "3+",
+            "1",
+            "1",
+            ""
+          ]
+        ],
+        "melee": [
+          [
+            "Shadowstalker Blades",
+            "2",
+            "3+",
+            "4+",
+            "-",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "Legends Warscrolls",
+      "canReinforce": false,
+      "flavour": "Wielding weapons forged from pure shadowstone, Slythael is a deadly foe to all who stand in her way. Branded with the mircath shademark, she is possessed of a mastery of umbral magic so potent that she can leap between the shadows, appearing more akin to an insubstantial wraith than any creature of flesh and blood. Accompanying her are Drusylla and Valyssa, two former Witch Aelves whose natural grace has been heightened by Shadowstalker training. The last member of the group is Sylarc Greyblood, who excels in his mastery of umbral magic and the crossbow.",
+      "notes": "This unit cannot be reinforced.",
+      "description": "Each model in this unit is armed with Cursed Missiles and Shadowstalker Blades. The models in this unit are:\n• Slythael Shadestalker (champion)\n• Drusylla Vyserax\n• Sylarc Greyblood\n• Valyssa Umbrael"
+    },
+    {
+      "faction": "Daughters of Khaine",
+      "name": "The Shadow Queen",
+      "points": 0,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "12\"",
+        "health": "15",
+        "save": "4+",
+        "control": "10",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/daughters-of-khaine/The-Shadow-Queen",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DAUGHTERS OF KHAINE",
+          "ORDER",
+          "FLY",
+          "HERO",
+          "MONSTER",
+          "UNIQUE",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Battle Damaged",
+          "Two Bodies, One Soul",
+          "Coils of the Shadow Queen",
+          "Crown of Serpents"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of its Heartrender is 5.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Two Bodies, One Soul",
+            "timing": "Once Per Battle (Army), Your Hero Phase",
+            "effect": "Declare: This unit can use this ability even if it has been destroyed. If you have used the Blessings of Khaine ability 3 or more times this battle, pick a friendly Morathi-Khaine or Shadow Queen that has been destroyed to be the target.\nEffect: Set up a replacement unit identical to the target within 3\" of a friendly Morathi-Khaine or Shadow Queen.",
+            "kind": "Ability",
+            "type": "Rallying",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Coils of the Shadow Queen",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: If any enemy units are constricted, they are no longer constricted. Pick an enemy HERO or MONSTER in combat with this unit to be the target.\nEffect: Roll a dice. On a 3+, until the start of your next turn, the target is constricted while it is in combat with this unit.\nThis unit’s combat attacks that target a constricted enemy unit score critical hits on unmodified hit rolls of 5+.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Rampage",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Crown of Serpents",
+            "timing": "Any Combat Phase",
+            "effect": "Declare: Pick an enemy unit in combat with this unit to be the target.\nEffect: Roll 5 dice. Add 2 to each roll if the target is constricted. For each 5+, pick 1 of the following effects. You cannot pick the same effect more than once per turn.\n• Subtract 1 from hit rolls for the target’s combat attacks for the rest of the turn.\n• Subtract 1 from wound rolls for the target’s combat attacks for the rest of the turn.\n• Random characteristic rolls for the Damage characteristic of the target’s melee weapons are treated as unmodified rolls of 1 for the rest of the turn.\n• Inflict D3 mortal damage on the target.\n• The target cannot be healed or have slain models returned to it for the",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Heartrender",
+            "8",
+            "3+",
+            "3+",
+            "2",
+            "3",
+            "Crit (Mortal) · See battle damage rules"
+          ],
+          [
+            "Envenomed Tail",
+            "1",
+            "3+",
+            "3+",
+            "2",
+            "6",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "The Shadow Queen is Morathi-Khaine’s dark reflection, the accumulation of all her hatred and bitterness given monstrous form. This serpentine monster delights in snatching up foes in her lashing coils and crushing them to death.",
+      "notes": "This unit can only be taken in Morathi‐Khaine’s regiment."
+    },
+    {
+      "faction": "Daughters of Khaine",
+      "name": "Witch Aelves",
+      "points": 120,
+      "size": 10,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "6\"",
+        "health": "1",
+        "save": "6+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/daughters-of-khaine/Witch-Aelves",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "AELF",
+          "DAUGHTERS OF KHAINE",
+          "ORDER",
+          "CHAMPION",
+          "INFANTRY",
+          "MUSICIAN (1/5)",
+          "STANDARD BEARER (1/5)",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Frenzied Fervour"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Frenzied Fervour",
+            "timing": "Passive",
+            "effect": "Effect: Add 1 to the Rend characteristic of this unit’s melee weapons if it charged in the same turn.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Sciansá",
+            "3",
+            "3+",
+            "4+",
+            "-",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Witch Aelves are devotees of bloodshed and murder, eschewing heavy armour in favour of nigh- supernatural agility. As fresh gore splatters their skin, they enter an ecstatic killing frenzy."
+    }
+  ]
+}

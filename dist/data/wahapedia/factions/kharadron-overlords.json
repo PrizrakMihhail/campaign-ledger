@@ -1,0 +1,2230 @@
+{
+  "edition": "Age of Sigmar 4",
+  "lastUpdate": "2026-10-22 18:12:05",
+  "faction": {
+    "id": "KO",
+    "name": "Kharadron Overlords",
+    "slug": "kharadron-overlords",
+    "url": "https://wahapedia.ru/aos4/factions/kharadron-overlords",
+    "count": 24
+  },
+  "rules": {
+    "battleTraits": [
+      {
+        "name": "SKYVESSEL COVER",
+        "timing": "Passive",
+        "declare": "",
+        "effect": "Subtract 1 from hit rolls for attacks that target friendly KHARADRON OVERLORDS INFANTRY units that have not charged in the same turn while they are wholly within 6\" of a friendly Arkanaut Ironclad or Arkanaut Frigate that has not charged in the same turn.",
+        "unitLinks": [
+          "https://wahapedia.ru/aos4/factions/kharadron-overlords/Arkanaut-Ironclad",
+          "https://wahapedia.ru/aos4/factions/kharadron-overlords/Arkanaut-Frigate"
+        ]
+      },
+      {
+        "name": "FLYING HIGH",
+        "timing": "Once Per Battle (Army), Deployment Phase",
+        "declare": "Pick a friendly SKYVESSEL that is in a regiment from which no units have been deployed, then pick a number of units up to its Transport Capacity (see its warscroll) that are in its regiment.",
+        "effect": "Set up all of those units in reserve in the clouds. They have now been deployed.",
+        "unitLinks": []
+      },
+      {
+        "name": "THE FLAGSHIP",
+        "timing": "Once Per Battle (Army), Deployment Phase",
+        "declare": "Pick a friendly SKYVESSEL to be the target. The target can be in reserve.",
+        "effect": "The target has the FLAGSHIP keyword for the rest of the battle. If the target does not have a Great Endrinwork, give the target 1 Great Endrinwork.\nDesigner’s Note: This Great Endrinwork is given to the unit during the deployment phase, not during army composition.",
+        "unitLinks": []
+      },
+      {
+        "name": "DESCEND FROM THE CLOUDS",
+        "timing": "Your Movement Phase",
+        "declare": "Pick a friendly SKYVESSEL in the clouds to use this ability.",
+        "effect": "Set up that SKYVESSEL anywhere on the battlefield more than 9\" from all enemy units. Then, set up all other units that were set up in the clouds with that SKYVESSEL wholly within 6\" of it and more than 9\" from all enemy units.",
+        "unitLinks": []
+      },
+      {
+        "name": "TRANSPORT SKYFARERS",
+        "timing": "Your Movement Phase, Reaction: You declared a non-CHARGE MOVE ability for a friendly SKYVESSEL",
+        "declare": "",
+        "effect": "Pick a number of units up to that SKYVESSEL’s Transport Capacity (see its warscroll) that are wholly within 6\" of it and not in combat to be the targets. Units that have been transported this turn cannot be targets.\nRemove the targets from the battlefield. After the SKYVESSEL ends its move, you must set up each target unit on the battlefield, wholly within 6\" of that SKYVESSEL and not in combat. Those units have been transported. A unit cannot use CHARGE abilities if it was transported in the same turn.",
+        "unitLinks": []
+      }
+    ],
+    "armiesOfRenown": [
+      {
+        "id": "grundstok-expeditionary-force",
+        "name": "Grundstok Expeditionary Force",
+        "battleTraits": [
+          {
+            "name": "TRANSPORT SKYFARERS",
+            "timing": "Reaction: You declared a non-CHARGE MOVE ability for a friendly SKYVESSEL",
+            "declare": "",
+            "effect": "Pick a number of units up to that SKYVESSEL’s Transport Capacity (see its warscroll) that are wholly within 6\" of it to be the targets. Units that have been transported this turn cannot be targets.\nRemove the targets from the battlefield. After the SKYVESSEL ends its move, you must set up each target unit on the battlefield, wholly within 6\" of that SKYVESSEL and not in combat. Those units have been transported. A unit cannot use CHARGE abilities if it was transported in the same turn.",
+            "unitLinks": []
+          },
+          {
+            "name": "GUN BUTT LOW BLOW",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "While a friendly EXPEDITIONARY FORCE INFANTRY unit is contesting an objective that you control, its melee weapons have Crit (Mortal).",
+            "unitLinks": []
+          },
+          {
+            "name": "NO SAFE HAVEN",
+            "timing": "End of Any Turn",
+            "declare": "Pick an enemy unit to be the target.",
+            "effect": "Subtract 1 from the control score of that unit for each damage point allocated to it this turn by a shooting attack made by a friendly EXPEDITIONARY FORCE unit, to a maximum of 10 damage points.",
+            "unitLinks": []
+          },
+          {
+            "name": "GRUDGEFIRE ROUNDS",
+            "timing": "Once Per Turn (Army), Any Shooting Phase",
+            "declare": "Pick a friendly EXPEDITIONARY FORCE INFANTRY unit to be the target.",
+            "effect": "Roll a dice. On a 3+, pick 1 of the target’s ranged weapons. Add 1 to the Attacks characteristic of that weapon for the rest of the phase.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "id": "pioneer-outpost",
+        "name": "Pioneer Outpost",
+        "battleTraits": [
+          {
+            "name": "INITIAL INVESTMENT",
+            "timing": "Once Per Turn (Army), Any Hero Phase",
+            "declare": "",
+            "effect": "Each friendly AUTO-ENDRIN can move 2D6\" but cannot finish that move in combat.",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/kharadron-overlords/Auto-Endrin"
+            ]
+          },
+          {
+            "name": "AGGRESSIVE ACQUISITIONS",
+            "timing": "Once Per Turn (Army), End of Any Turn",
+            "declare": "You can only use this ability if you have not used any CODE abilities this turn and if there is a friendly PIONEER unit in each large quarter of the battlefield. Each of those units must be more than 6\" from all other large quarters of the battlefield and not in combat.",
+            "effect": "For the rest of the battle, enemy units cannot be set up within your territory or within 9\" of an objective that you control.",
+            "unitLinks": []
+          },
+          {
+            "name": "SECURE INVESTMENTS",
+            "timing": "Once Per Turn (Army), End of Any Turn",
+            "declare": "You can only use this ability if you have not used any CODE abilities this turn and if any enemy units that were within 3\" of your Zontari Endrin Dock this turn were destroyed this turn.",
+            "effect": "For the rest of the battle, ignore the Rend characteristic of combat attacks that target friendly NON-INFANTRY PIONEER units or friendly faction terrain features.",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/kharadron-overlords/Zontari-Endrin-Dock"
+            ]
+          },
+          {
+            "name": "SETTLING ACCOUNTS",
+            "timing": "Once Per Turn (Army), End of Any Turn",
+            "declare": "You can only use this ability if you have not used any CODE abilities this turn and if a friendly AUTO-ENDRIN was destroyed this turn by an enemy unit.",
+            "effect": "For the rest of the battle, each time a friendly AUTO-ENDRIN is removed from the battlefield, before removing it, inflict D3 mortal damage on each enemy unit within 3\" of that AUTO-ENDRIN.",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/kharadron-overlords/Auto-Endrin"
+            ]
+          },
+          {
+            "name": "MARKET DOMINANCE",
+            "timing": "Once Per Turn (Army), End of Any Turn",
+            "declare": "You can only use this ability if you have not used any CODE abilities this turn and if you control every objective that is not wholly within enemy territory.",
+            "effect": "For the rest of the battle, each time you use your Zontari Endrin Dock’s ‘Endrinworks Outpost’ ability, you can set up a replacement AUTO-ENDRIN on a manufacturing roll of 3+ instead of 4+.",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/kharadron-overlords/Zontari-Endrin-Dock",
+              "https://wahapedia.ru/aos4/factions/kharadron-overlords/Auto-Endrin"
+            ]
+          },
+          {
+            "name": "HOSTILE TAKEOVER",
+            "timing": "Once Per Turn (Army), End of Any Turn",
+            "declare": "You can only use this ability if you have not used any CODE abilities this turn and if an enemy HERO was destroyed by shooting attacks made by a friendly PIONEER unit this turn.",
+            "effect": "For the rest of the battle, subtract 1 from hit rolls for shooting attacks that target friendly PIONEER units or friendly faction terrain features.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "id": "the-duardin-ascendant",
+        "name": "The Duardin Ascendant",
+        "battleTraits": [
+          {
+            "name": "DUARDRAZHAL",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "Friendly DUARDIN ASCENDANT units are unified while they are wholly within 12\" of at least 1 FYRESLAYERS, 1 KHARADRON OVERLORDS and 1 CITIES OF SIGMAR DUARDIN unit.",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/khazalite-holds/Scourge-of-Ghyran-Auric-Runeson-on-Magmadroth"
+            ]
+          },
+          {
+            "name": "'AS THE ANCESTORS INTENDED!'",
+            "timing": "Once Per Turn (Army), Your Hero Phase",
+            "declare": "Pick a friendly unified DUARDIN ASCENDANT PRIEST to be the target.",
+            "effect": "Add 1 to chanting rolls for the target for the rest of the turn.",
+            "unitLinks": []
+          },
+          {
+            "name": "'PAH! NOW THIS IS A SHOT...'",
+            "timing": "Once Per Turn (Army), Your Shooting Phase",
+            "declare": "Pick a friendly unified DUARDIN ASCENDANT INFANTRY unit to be the target.",
+            "effect": "Add 1 to the Attacks characteristic of the target’s ranged weapons for the rest of the turn .",
+            "unitLinks": []
+          },
+          {
+            "name": "'AS ONE, KINFOLK!'",
+            "timing": "Once Per Turn (Army), Your Charge Phase",
+            "declare": "Pick up to 3 friendly unified DUARDIN ASCENDANT INFANTRY units to be the targets.",
+            "effect": "For the rest of the turn, add 1 to the number of dice rolled when making charge rolls for the targets, to a maximum of 3.",
+            "unitLinks": []
+          },
+          {
+            "name": "'SETTLE EVERY GRUDGE! KHAZUK!'",
+            "timing": "Once Per Turn (Army), Any Comhat Phase",
+            "declare": "Pick a friendly unified DUARDIN ASCENDANT INFANTRY unit to be the target.",
+            "effect": "Add 1 to the Attacks characteristic of the target’s melee weapons for the rest of the turn.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "id": "the-magnate-s-crew",
+        "name": "The Magnate’s Crew",
+        "battleTraits": [
+          {
+            "name": "LOYALTY TO THE MAGNATE",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "While a friendly Brokk Grungsson is wholly within the combat range of another friendly MAGNATE’S CREW INFANTRY unit, both those units have WARD (5+).",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/kharadron-overlords/Brokk-Grungsson-Lord-Magnate-of-Barak-Nar"
+            ]
+          },
+          {
+            "name": "PAY YOUR DEBTS",
+            "timing": "Once Per Battle (Army), Deployment Phase",
+            "declare": "Pick an enemy unit on the battlefield or in reserve to be indebted.",
+            "effect": "Add 1 to wound rolls for combat attacks made by friendly MAGNATE’S CREW units that target the indebted unit.",
+            "unitLinks": []
+          },
+          {
+            "name": "BOLD MOVES",
+            "timing": "Once Per Battle (Army), Your Movement Phase",
+            "declare": "Pick any number of friendly MAGNATE’S CREW INFANTRY units that are in combat to be the targets. Make an emergency launch roll of 3D6 for each target.",
+            "effect": "Each target can move a distance up to the value of its emergency launch roll. It can move through the combat ranges of any enemy units but cannot end that move in combat with an enemy unit that it was not in combat with at the start of the phase.\nThe target(s) cannot use CHARGE abilities for the rest of the turn.",
+            "unitLinks": []
+          },
+          {
+            "name": "CUTTING-EDGE ENDRINPACKS",
+            "timing": "Once Per Turn (Army), Your Movement Phase",
+            "declare": "Pick up to 2 friendly MAGNATE’S CREW INFANTRY units that are wholly within 9\" of a friendly MAGNATE’S CREW SKYVESSEL to be the targets.",
+            "effect": "For the rest of the turn, each target can use CHARGE abilities even if it used a RUN ability in the same turn.",
+            "unitLinks": []
+          },
+          {
+            "name": "INVICTUNITE-LINED HULL",
+            "timing": "Once Per Battle (Army), Enemy Hero Phase",
+            "declare": "Pick a friendly MAGNATE’S CREW SKYVESSEL to be the target.",
+            "effect": "Roll a D3. For the rest of the turn, subtract X from the Rend characteristic of weapons used for attacks that target that SKYVESSEL, where X is equal to the roll.",
+            "unitLinks": []
+          },
+          {
+            "name": "CONSTANT BARRAGE",
+            "timing": "Once Per Turn (Army), Your Shooting Phase",
+            "declare": "Pick an enemy unit that had any damage points allocated to it this phase by a friendly MAGNATE’S CREW unit’s attacks to be the target.",
+            "effect": "Until the start of your next turn, each time the target ends a move within 10\" of any friendly MAGNATE’S CREW units, roll a D3. On a 2+, inflict an amount of mortal damage on the target equal to the roll.",
+            "unitLinks": []
+          }
+        ]
+      }
+    ],
+    "battleFormations": [
+      {
+        "name": "Pioneers and Scavengers",
+        "abilities": [
+          {
+            "name": "GRITTY FORTUNE-HUNTERS",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "Friendly Vongrim Harpoon Crew and Vongrim Salvagers units have WARD (6+) while they are contesting an objective.",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/kharadron-overlords/Vongrim-Harpoon-Crew",
+              "https://wahapedia.ru/aos4/factions/kharadron-overlords/Vongrim-Salvagers"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Veteran Ground Troops",
+        "abilities": [
+          {
+            "name": "ENTRENCHED CREWS",
+            "timing": "Once Per Turn (Army), Start of Battle Round",
+            "declare": "Pick up to 3 friendly Arkanaut Company units to be the targets.",
+            "effect": "For the rest of the battle round, if the target has not been set up this battle round and while it has not moved this turn, subtract 1 from the Rend characteristic of attacks that target that unit.",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/kharadron-overlords/Arkanaut-Company"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Rapid Redeployment Squadron",
+        "abilities": [
+          {
+            "name": "EXTRA RAPPEL ANCHORS",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "Friendly Grundstok Gunhaulers can transport up to 2 friendly KHARADRON OVERLORDS INFANTRY units instead of 1 and with a combined model count of up to 6 instead of 5 (see Battle Traits).",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/kharadron-overlords/Grundstok-Gunhauler"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Endrineers Guild Expeditionary Force",
+        "abilities": [
+          {
+            "name": "SPECIAL PROCUREMENT",
+            "timing": "Once Per Battle (Army), Deployment Phase",
+            "declare": "Pick a friendly non-UNIQUE KHARADRON OVERLORDS HERO that does not have an artefact of power. The target can be in reserve.",
+            "effect": "Give that Hero 1 artefact of power from the ‘Inventions of the Sky-ports’ or the ‘Ingenious Innovations’.\nDesigner’s Note: This artefact of power is given to the unit during the deployment phase, not during army composition.",
+            "unitLinks": []
+          }
+        ]
+      }
+    ],
+    "lores": {
+      "spell": [],
+      "prayer": [],
+      "manifestation": []
+    }
+  },
+  "entries": [
+    {
+      "faction": "Kharadron Overlords",
+      "name": "Aether-Khemist",
+      "points": 100,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "4\"",
+        "health": "5",
+        "save": "4+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/kharadron-overlords/Aether-Khemist",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DUARDIN",
+          "KHARADRON OVERLORDS",
+          "ORDER",
+          "SKYFARER",
+          "HERO",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "Atmospheric Isolation",
+          "Aetheric Augmentation"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Atmospheric Isolation",
+            "timing": "Passive",
+            "effect": "Effect: Subtract 1 from charge rolls for enemy units within 9\" of this unit.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Charge Phase"
+          },
+          {
+            "name": "Aetheric Augmentation",
+            "timing": "Once Per Turn (Army), Your Shooting Phase",
+            "effect": "Declare: Pick a friendly Arkanaut Company unit wholly within 12\" of this unit to be the target.\nEffect: Roll a dice. On a 3+, add 1 to the Rend characteristic of the target’s ranged weapons for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Shooting",
+            "phase": "Shooting Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Atmospheric Anatomiser",
+            "8\"",
+            "3D6",
+            "4+",
+            "4+",
+            "2",
+            "1",
+            "Shoot in Combat"
+          ]
+        ],
+        "melee": [
+          [
+            "Heavy Instruments",
+            "3",
+            "4+",
+            "4+",
+            "-",
+            "D3",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Masters of alchemy and atmospheric analysis, Aether-Khemists not only augment their comrades’ weapons with a boost of aether-gold, but they can also turn their esoteric devices against their foes to drain the air from their lungs.",
+      "regimentOptions": "0-1 %000002931SKYVESSEL%, Any %000013216INFANTRY%",
+      "notes": "This HERO can join an eligible regiment as a Guild Officer."
+    },
+    {
+      "faction": "Kharadron Overlords",
+      "name": "Aetheric Navigator",
+      "points": 120,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "4\"",
+        "health": "5",
+        "save": "3+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/kharadron-overlords/Aetheric-Navigator",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DUARDIN",
+          "KHARADRON OVERLORDS",
+          "ORDER",
+          "SKYFARER",
+          "HERO",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "Aethersight",
+          "Read the Winds"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Aethersight",
+            "timing": "Passive",
+            "effect": "Effect: This unit can use UNBIND abilities as if it had WIZARD (1).",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Read the Winds",
+            "timing": "Once Per Turn (Army), Your Movement Phase",
+            "effect": "Declare: Pick a friendly SKYVESSEL or AUTO-ENDRIN within this unit’s combat range and that is not in combat to be the target.\nEffect: Remove the target from the battlefield and set it up again on the battlefield more than 9\" from all enemy units. Then, if the target is a SKYVESSEL, you can remove this unit from the battlefield and set it up again on the battlefield wholly within 6\" of the target and more than 9\" from all enemy units.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Movement Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Ranging Pistol",
+            "10\"",
+            "2",
+            "3+",
+            "3+",
+            "1",
+            "1",
+            "Shoot in Combat"
+          ]
+        ],
+        "melee": [
+          [
+            "Zephyrscope",
+            "3",
+            "3+",
+            "4+",
+            "1",
+            "D3",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Utilising cutting-edge aethermatic science in order to decipher the ever-changing wind patterns of the Mortal Realms, Aetheric Navigators are an invaluable presence upon any Kharadron skyvessel.",
+      "regimentOptions": "0-1 %000002931SKYVESSEL%, Any %000013216INFANTRY%",
+      "notes": "This HERO can join an eligible regiment as a Guild Officer."
+    },
+    {
+      "faction": "Kharadron Overlords",
+      "name": "Arkanaut Admiral",
+      "points": 130,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "4\"",
+        "health": "6",
+        "save": "3+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/kharadron-overlords/Arkanaut-Admiral",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DUARDIN",
+          "KHARADRON OVERLORDS",
+          "ORDER",
+          "SKYFARER",
+          "HERO",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "The Admiral’s Flagship",
+          "Bring Every Gun to Bear!"
+        ],
+        "abilityDetails": [
+          {
+            "name": "The Admiral’s Flagship",
+            "timing": "Once Per Turn (Army), Your Shooting Phase",
+            "effect": "Declare: Pick a friendly FLAGSHIP wholly within 12\" of this unit to be the target.\nEffect: For the rest of the phase, each time the target uses a SHOOT ability, you can re-roll 1 of the hit rolls made for that ability.",
+            "kind": "Ability",
+            "type": "Shooting",
+            "phase": "Shooting Phase"
+          },
+          {
+            "name": "Bring Every Gun to Bear!",
+            "timing": "Once Per Turn (Army), Your Shooting Phase",
+            "effect": "Declare: Pick a friendly SKYVESSEL wholly within 24\" of this unit to be the target.\nEffect: For the rest of the turn, add 1 to the Attacks characteristic of the target’s ranged weapons.",
+            "kind": "Ability",
+            "type": "Shooting",
+            "phase": "Shooting Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Masterwork Volley Pistol",
+            "10\"",
+            "3",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            "Shoot in Combat"
+          ]
+        ],
+        "melee": [
+          [
+            "Skalfhammer",
+            "4",
+            "3+",
+            "3+",
+            "1",
+            "3",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Arkanaut Admirals are the cream of the sky-ports’ officer class, intrepid leaders and battle-hardened veterans of countless aerial engagements whose booming commands inspire their crews to mighty deeds in the search for profit.",
+      "regimentOptions": "0-1 %000013217Guild Officer%, Any %000002934KHARADRON OVERLORDS%"
+    },
+    {
+      "faction": "Kharadron Overlords",
+      "name": "Arkanaut Company",
+      "points": 80,
+      "size": 10,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "4\"",
+        "health": "1",
+        "save": "4+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/kharadron-overlords/Arkanaut-Company",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DUARDIN",
+          "KHARADRON OVERLORDS",
+          "ORDER",
+          "SKYFARER",
+          "CHAMPION",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "Grizzled Buccaneers"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Grizzled Buccaneers",
+            "timing": "Once Per Turn (Army), Any Charge Phase.",
+            "effect": "Declare: Pick an enemy unit that charged this turn and is in combat with this unit to be the target.\nEffect: Roll a dice. On a 3+:\n• This unit can immediately use a SHOOT ability as if it were your shooting phase but all of its attacks must target the target enemy unit.\n• For the rest of the phase, this unit’s Privateer Heavy Weapons have Shoot in Combat.",
+            "kind": "Ability",
+            "type": "Shooting",
+            "phase": "Charge Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Privateer Pistol",
+            "10\"",
+            "2",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            "Shoot in Combat"
+          ],
+          [
+            "Privateer Heavy Weapon",
+            "15\"",
+            "2",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            ""
+          ]
+        ],
+        "melee": [
+          [
+            "Arkanaut Hand Weapon",
+            "2",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            ""
+          ],
+          [
+            "Skypike",
+            "2",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            "Charge (+1 Damage)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "The backbone of the Kharadron airfleets are the Arkanaut Companies. These grizzled privateers crew the sky-ports’ vessels and are armed with a variety of aether-powered firearms and deck tools with which to repel boarders or take the fight to the enemy.",
+      "description": "• Each model in this unit is armed with a Privateer Pistol and Arkanaut Hand Weapon.\n• 2/10 models can replace their Privateer Pistol with a Privateer Heavy Weapon (Aethermatic Volley Gun or Light Skyhook).\n• 1/10 models can replace both their weapons with a Skypike.;\n• The champion cannot replace their weapons."
+    },
+    {
+      "faction": "Kharadron Overlords",
+      "name": "Arkanaut Frigate",
+      "points": 280,
+      "size": 1,
+      "kind": "",
+      "category": "War Machine",
+      "profile": {
+        "move": "10\"",
+        "health": "14",
+        "save": "2+",
+        "control": "5",
+        "url": "https://wahapedia.ru/aos4/factions/kharadron-overlords/Arkanaut-Frigate",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DUARDIN",
+          "KHARADRON OVERLORDS",
+          "ORDER",
+          "SKYVESSEL",
+          "FLY",
+          "WAR MACHINE"
+        ],
+        "abilities": [
+          "Battle Damaged",
+          "Transport Capacity",
+          "Assault Boat",
+          "Incoming!",
+          "Medium Bomb Racks"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of its Heavy Sky Ordnance is 3.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Transport Capacity",
+            "timing": "Passive",
+            "effect": "Effect: This unit can transport up to 2 friendly KHARADRON OVERLORDS INFANTRY units with a combined model count of up to 12 (see Battle Traits).",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Assault Boat",
+            "timing": "Your Charge Phase",
+            "effect": "Declare: This unit cannot use this ability if it is in combat or has used a RUN or RETREAT ability this turn. Pick a number of units up to its Transport Capacity that are wholly within 6\" of it, that are not in combat and that have not charged this turn to be the targets. Then, make a charge roll of 2D6.\nEffect: This unit can move a distance up to the value of the charge roll and must end the move within ½\" of a visible enemy unit. If it does so:\n• Remove the targets from the battlefield and set them up again wholly within this unit’s combat range. The targets ca",
+            "kind": "Ability",
+            "type": "Movement",
+            "keywords": "Core, Charge, Move",
+            "phase": "Charge Phase"
+          },
+          {
+            "name": "Incoming!",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick an enemy unit that charged this turn and is in combat with this unit to be the target.\nEffect: Roll a dice. On a 2+, inflict an amount of mortal damage on the target equal to the roll.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Medium Bomb Racks",
+            "timing": "Your Movement Phase",
+            "effect": "Declare: Pick an enemy unit that does not have FLY and that this unit passed across this phase to be the target.\nEffect: Roll 6 dice. For each 4+, inflict 1 mortal damage on the target.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Movement Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Heavy Sky Ordnance",
+            "24\"",
+            "4",
+            "4+",
+            "2+",
+            "2",
+            "3",
+            "See battle damage rules"
+          ]
+        ],
+        "melee": [
+          [
+            "Boarding Weapons",
+            "8",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "The unmistakable profile of an Arkanaut Frigate set against the sky is a sight greatly feared by the Kharadron’s many enemies, who know all too well the devastating firepower these airships possess and the fighting spirit of the privateers they carry into battle."
+    },
+    {
+      "faction": "Kharadron Overlords",
+      "name": "Arkanaut Ironclad",
+      "points": 430,
+      "size": 1,
+      "kind": "",
+      "category": "War Machine",
+      "profile": {
+        "move": "10\"",
+        "health": "18",
+        "save": "2+",
+        "control": "5",
+        "url": "https://wahapedia.ru/aos4/factions/kharadron-overlords/Arkanaut-Ironclad",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DUARDIN",
+          "KHARADRON OVERLORDS",
+          "ORDER",
+          "SKYVESSEL",
+          "FLY",
+          "WAR MACHINE"
+        ],
+        "abilities": [
+          "Battle Damaged",
+          "Transport Capacity",
+          "Incoming!",
+          "Heavy Bomb Racks"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of its Great Sky Ordnance is 4.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Transport Capacity",
+            "timing": "Passive",
+            "effect": "Effect: This unit can transport up to 3 friendly KHARADRON OVERLORDS INFANTRY units with a combined model count of up to 22 (see Battle Traits).",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Incoming!",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick an enemy unit that charged this turn and is in combat with this unit to be the target.\nEffect: Roll a dice. On a 2+, inflict an amount of mortal damage on the target equal to the roll.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Heavy Bomb Racks",
+            "timing": "Your Movement Phase",
+            "effect": "Declare: Pick an enemy unit that does not have FLY and that this unit passed across this phase to be the target.\nEffect: Roll 10 dice. For each 4+, inflict 1 mortal damage on the target.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Movement Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Aethershock Torpedoes",
+            "18\"",
+            "6",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            ""
+          ],
+          [
+            "Great Sky Ordnance",
+            "24\"",
+            "6",
+            "4+",
+            "2+",
+            "2",
+            "3",
+            "See battle damage rules"
+          ]
+        ],
+        "melee": [
+          [
+            "Boarding Weapons",
+            "8",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Amongst the heaviest Kharadron ships of the line, the redoubtable Ironclads provide a floating fortress at the heart of any airfleet, bombarding their targets from afar with explosive shells and armour-piercing torpedoes."
+    },
+    {
+      "faction": "Kharadron Overlords",
+      "name": "Brokk Grungsson, Lord-Magnate of Barak-Nar",
+      "points": 260,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "12\"",
+        "health": "8",
+        "save": "3+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/kharadron-overlords/Brokk-Grungsson-Lord-Magnate-of-Barak-Nar",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DUARDIN",
+          "KHARADRON OVERLORDS",
+          "ORDER",
+          "SKYFARER",
+          "FLY",
+          "HERO",
+          "INFANTRY",
+          "UNIQUE",
+          "WARMASTER"
+        ],
+        "abilities": [
+          "Command the Fleet",
+          "First Rule of Grungsson",
+          "Moustache-mounted Aetherblasters"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Command the Fleet",
+            "timing": "Once Per Battle, Your Movement Phase",
+            "effect": "Declare: Pick up to 3 visible friendly SKYVESSELS wholly within 24\" of this unit that are not in combat to be the targets.\nEffect: Each target can use a RUN ability and still use SHOOT and/or CHARGE abilities later in the turn.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Movement Phase"
+          },
+          {
+            "name": "First Rule of Grungsson",
+            "timing": "Any Combat Phase",
+            "effect": "Declare: Pick up to 2 other friendly SKYFARER units within this unit’s combat range to be the targets.\nEffect: Add 1 to the Attacks characteristic of the targets’ melee weapons for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Moustache-mounted Aetherblasters",
+            "timing": "End of Any Turn",
+            "effect": "Declare: Pick an enemy unit in combat with this unit to be the target.\nEffect: Roll a D3. On a 2+, inflict an amount of mortal damage on the target equal to the roll.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "End of Turn"
+          }
+        ],
+        "ranged": [
+          [
+            "The Magnate’s Charter",
+            "12\"",
+            "6",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            "Shoot in Combat"
+          ],
+          [
+            "Grungsson’s Boast",
+            "18\"",
+            "1",
+            "3+",
+            "2+",
+            "2",
+            "D3+3",
+            ""
+          ]
+        ],
+        "melee": [
+          [
+            "Brokk’s Aethermatic Saw",
+            "5",
+            "3+",
+            "3+",
+            "2",
+            "2",
+            "Crit (2 Hits)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Lord-Magnate Brokk Grungsson is the richest Kharadron privateer alive. Clad in a custom-built endrinharness and carrying a small armoury of lethal firearms, he seeks out fresh sources of aether-gold with single-minded belligerence.",
+      "regimentOptions": "0-1 %000013217Guild Officer%, Any %000002934KHARADRON OVERLORDS%"
+    },
+    {
+      "faction": "Kharadron Overlords",
+      "name": "Codewright",
+      "points": 80,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "4\"",
+        "health": "5",
+        "save": "3+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/kharadron-overlords/Codewright",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DUARDIN",
+          "KHARADRON OVERLORDS",
+          "ORDER",
+          "SKYFARER",
+          "HERO",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "Advisory Role"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Advisory Role",
+            "timing": "Once Per Turn (Army), Your Hero Phase",
+            "effect": "Declare: Pick up to 3 visible friendly SKYFARERS units to be the targets.\nEffect: Roll a dice for each target. On a 3+, pick 1 of the following effects to apply to that target for the rest of the turn:\nSeek New Prospects: Add 5 to the target’s control score.\nDon’t Argue with the Wind: Add 1 to run rolls and charge rolls for the target.\nThere’s No Trading With Some People: The target can use a RETREAT ability and still use SHOOT abilities later in the turn. In addition, no mortal damage",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Aethershot Pistol",
+            "10\"",
+            "2",
+            "3+",
+            "3+",
+            "1",
+            "1",
+            "Shoot in Combat"
+          ]
+        ],
+        "melee": [
+          [
+            "Battletome",
+            "3",
+            "4+",
+            "4+",
+            "-",
+            "D3",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "With every artycle, every amendment and every footnote of the Kharadron Code learnt by heart, Codewrights are adept at not only citing obscure sections of the Code that can expedite the completion of their airfleet’s current objectives but also at adding ‘clarifications’ on the fly.",
+      "regimentOptions": "0-1 %000002931SKYVESSEL%, Any %000013216INFANTRY%",
+      "notes": "This HERO can join an eligible regiment as a Guild Officer."
+    },
+    {
+      "faction": "Kharadron Overlords",
+      "name": "Drekki Flynt",
+      "points": 120,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "4\"",
+        "health": "6",
+        "save": "3+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/kharadron-overlords/Drekki-Flynt",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DUARDIN",
+          "KHARADRON OVERLORDS",
+          "ORDER",
+          "SKYFARER",
+          "HERO",
+          "INFANTRY",
+          "UNIQUE"
+        ],
+        "abilities": [
+          "Captain of the Aelsling",
+          "She Can Handle It!",
+          "Auxiliary Skyhook"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Captain of the Aelsling",
+            "timing": "Deployment Phase",
+            "effect": "Declare: Pick an Arkanaut Frigate in this unit’s regiment to be the target. This unit can use this ability while in reserve, and the target can also be in reserve.\nEffect: The target has the AELSLING keyword. Add 1 to the Damage characteristic of the target’s Boarding Weapons for the rest of the battle.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "She Can Handle It!",
+            "timing": "Passive",
+            "effect": "Effect: You can re-roll run rolls and charge rolls for the AELSLING while it is wholly within 12\" of this unit.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Auxiliary Skyhook",
+            "timing": "Any Combat Phase",
+            "effect": "Declare: Pick an enemy MONSTER in combat with this unit to be the target.\nEffect: Roll a D3. On a 2+:\n• Inflict an amount of mortal damage on the target equal to the roll.\n• Subtract 1 from wound rolls made for the target’s attacks for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Combat Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "The Aethermatic Equaliser Mk. III",
+            "10\"",
+            "2D6",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            "Shoot in Combat"
+          ]
+        ],
+        "melee": [
+          [
+            "Grunnsson’s Axe",
+            "4",
+            "3+",
+            "3+",
+            "1",
+            "3",
+            "Anti-MONSTER (+1 Rend)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Drekki Flynt. It is a name to which tankards have been raised and curses levelled a thousand times. Captain of the Aelsling, fastest ship in Barak‑Mhornar, Flynt earns his reputation with flexible morals, an aether-powered axe and a multi‑barrelled pistol always close to hand.",
+      "regimentOptions": "0-1 %000013217Guild Officer%, 0-1 %000016800Arkanaut Frigate%, Any %000013216INFANTRY%"
+    },
+    {
+      "faction": "Kharadron Overlords",
+      "name": "Endrinmaster with Dirigible Suit",
+      "points": 140,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "12\"",
+        "health": "8",
+        "save": "3+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/kharadron-overlords/Endrinmaster-with-Dirigible-Suit",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DUARDIN",
+          "KHARADRON OVERLORDS",
+          "ORDER",
+          "SKYFARER",
+          "FLY",
+          "HERO",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "Mobile Repairs",
+          "Combat Engineers"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Mobile Repairs",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Pick a friendly SKYVESSEL or Zontari Endrin Dock within this unit’s combat range to be the target.\nEffect: Roll a dice. On a 2+, Heal (3) the target.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Combat Engineers",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick this unit and up to 1 friendly Endrinriggers unit wholly within 12\" of this unit to be the targets.\nEffect: For the rest of the turn, combat attacks made by the targets against enemy units that charged this turn have Crit (2 Hits).",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Aethercannon",
+            "18\"",
+            "1",
+            "3+",
+            "3+",
+            "2",
+            "3",
+            ""
+          ],
+          [
+            "Dirigible Suit Weapon Battery",
+            "12\"",
+            "6",
+            "3+",
+            "3+",
+            "1",
+            "1",
+            "Shoot in Combat"
+          ]
+        ],
+        "melee": [
+          [
+            "Upgraded Aethermatic Saw",
+            "4",
+            "3+",
+            "3+",
+            "2",
+            "2",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Many Endrinmasters take to the skies in master-crafted dirigible suits, their aetherturbines allowing them to zoom through the air towards skyvessels in need of repair even as an in-built weapon array blasts their enemies into pieces.",
+      "regimentOptions": "0-1 %000002931SKYVESSEL%, Any %000013216INFANTRY%",
+      "notes": "This HERO can join an eligible regiment as a Guild Officer."
+    },
+    {
+      "faction": "Kharadron Overlords",
+      "name": "Endrinmaster with Endrinharness",
+      "points": 150,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "4\"",
+        "health": "6",
+        "save": "3+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/kharadron-overlords/Endrinmaster-with-Endrinharness",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DUARDIN",
+          "KHARADRON OVERLORDS",
+          "ORDER",
+          "SKYFARER",
+          "HERO",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "’Aye Aye, Captain!’",
+          "Mobile Repairs"
+        ],
+        "abilityDetails": [
+          {
+            "name": "’Aye Aye, Captain!’",
+            "timing": "Once Per Turn (Army), Your Hero Phase",
+            "effect": "Declare: Pick a friendly SKYVESSEL within this unit’s combat range to be the target.\nEffect: For the rest of the turn:\n• The target can use a RETREAT or RUN ability and still use SHOOT abilities later in the turn.\n• No mortal damage is inflicted on the target by RETREAT abilities.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Mobile Repairs",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Pick a friendly SKYVESSEL or Zontari Endrin Dock within this unit’s combat range to be the target.\nEffect: Roll a dice. On a 2+, Heal (3) the target.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Hero Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Aethermight Hammer",
+            "3",
+            "4+",
+            "2+",
+            "2",
+            "3",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Endrinmasters are peerless combat mechanics, well used to conducting emergency repairs in the white heat of battle. Many equip themselves with a strength-enhancing endrinharness that allows them to wield a fearsome aethermight hammer.",
+      "regimentOptions": "Any %000013216INFANTRY%, 0-1 %000002931SKYVESSEL%",
+      "notes": "This HERO can join an eligible regiment as a Guild Officer."
+    },
+    {
+      "faction": "Kharadron Overlords",
+      "name": "Endrinriggers",
+      "points": 90,
+      "size": 3,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "12\"",
+        "health": "2",
+        "save": "3+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/kharadron-overlords/Endrinriggers",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DUARDIN",
+          "KHARADRON OVERLORDS",
+          "ORDER",
+          "SKYFARER",
+          "CHAMPION",
+          "FLY",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "Emergency Field Repairs"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Emergency Field Repairs",
+            "timing": "End of Any Turn",
+            "effect": "Declare: Pick a friendly SKYVESSEL or Zontari Endrin Dock within this unit’s combat range to be the target.\nEffect: Make a field repairs roll of D6 for each model in this unit. For each 4-5, Heal (1) the target. For each 6, Heal (2) the target.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "End of Turn"
+          }
+        ],
+        "ranged": [
+          [
+            "Rapid-fire Rivet Gun",
+            "10\"",
+            "3",
+            "3+",
+            "4+",
+            "1",
+            "1",
+            "Shoot in Combat"
+          ],
+          [
+            "Aethermatic Volley Gun",
+            "15\"",
+            "2D6",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            "Crit (2 Hits)"
+          ],
+          [
+            "Skyrigger Heavy Weapon",
+            "15\"",
+            "1",
+            "4+",
+            "3+",
+            "1",
+            "D3",
+            "Anti-MONSTER (+1 Rend)"
+          ]
+        ],
+        "melee": [
+          [
+            "Aethermatic Saw",
+            "3",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            "Anti-charge (+1 Rend)"
+          ],
+          [
+            "Gun Butt",
+            "1",
+            "4+",
+            "5+",
+            "-",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "With aether-endrins strapped to their backs, Endrinriggers conduct repairs on their beloved airships miles above ground. In battle, their aether-powered tools become lethal weapons capable of punching through armour or messily sawing off limbs.",
+      "description": "• Each model in this unit is armed with a Rapid-fire Rivet Gun and Aethermatic Saw.\n• 1/3 models can replace their weapons with an Aethermatic Volley Gun and Gun Butt.\n• 1/3 models can replace their weapons with a Skyrigger Heavy Weapon (Grapnel Launcher, Skyhook or Drill Launcher) and Gun Butt.\n• The champion cannot replace their weapons."
+    },
+    {
+      "faction": "Kharadron Overlords",
+      "name": "Grundstok Gunhauler",
+      "points": 140,
+      "size": 1,
+      "kind": "",
+      "category": "War Machine",
+      "profile": {
+        "move": "14\"",
+        "health": "10",
+        "save": "2+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/kharadron-overlords/Grundstok-Gunhauler",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DUARDIN",
+          "KHARADRON OVERLORDS",
+          "ORDER",
+          "SKYVESSEL",
+          "FLY",
+          "WAR MACHINE"
+        ],
+        "abilities": [
+          "Transport Capacity",
+          "Long-line Slings",
+          "Light Bomb Racks",
+          "Aethershot Overwatch"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Transport Capacity",
+            "timing": "Passive",
+            "effect": "Effect: This unit can transport 1 friendly KHARADRON OVERLORDS INFANTRY unit with a model count of up to 5 (see Battle Traits).",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Long-line Slings",
+            "timing": "Passive",
+            "effect": "Effect: When you use the ‘Transport Skyfarers’ ability for this unit, you can pick units in combat to be targets.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Light Bomb Racks",
+            "timing": "Your Movement Phase",
+            "effect": "Declare: Pick an enemy unit that does not have FLY and that this unit passed across this phase to be the target.\nEffect: Roll 4 dice. For each 4+, inflict 1 mortal damage on the target.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Movement Phase"
+          },
+          {
+            "name": "Aethershot Overwatch",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick an enemy unit that charged this turn and is in combat with this unit to be the target.\nEffect: Roll a D3. On a 2+, inflict an amount of mortal damage on the target equal to the roll.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Sky Ordnance",
+            "15\"",
+            "3",
+            "4+",
+            "3+",
+            "2",
+            "3",
+            ""
+          ]
+        ],
+        "melee": [
+          [
+            "Boarding Weapons",
+            "4",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Small, manoeuvrable and deadly, the Grundstok Gunhauler is an escortclass ship tasked with ensuring the safety of the airfleets’ larger skyvessels. They perform this role well, swarming in defence before peeling off to launch blistering attack runs."
+    },
+    {
+      "faction": "Kharadron Overlords",
+      "name": "Grundstok Thunderers",
+      "points": 130,
+      "size": 5,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "4\"",
+        "health": "2",
+        "save": "3+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/kharadron-overlords/Grundstok-Thunderers",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DUARDIN",
+          "KHARADRON OVERLORDS",
+          "ORDER",
+          "SKYFARER",
+          "CHAMPION",
+          "INFANTRY",
+          "STANDARD BEARER (1/5)"
+        ],
+        "abilities": [
+          "Specialist Grundstok Ammunition"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Specialist Grundstok Ammunition",
+            "timing": "Once Per Turn (Army), Your Shooting Phase, Reaction: You declared a SHOOT ability for this unit",
+            "effect": "Declare: Pick Shieldbreaker ammunition or Thunderdrakk ammunition.\nEffect: If all of the attacks made for that SHOOT ability target the same enemy unit, after that SHOOT ability has been resolved, roll a dice and add the number of damage points allocated to the target by that SHOOT ability. If the roll is higher than the target’s Control characteristic, apply the following effect to the target based on the ammunition type picked:\nShieldbreaker: Ward rolls cannot be made for the target until the start of your next turn.\nThunderdrakk: That target has a maximum control score of 1 until the start of your next turn.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Shooting Phase",
+            "reaction": true
+          }
+        ],
+        "ranged": [
+          [
+            "Aethershot Rifle",
+            "18\"",
+            "2",
+            "3+",
+            "4+",
+            "1",
+            "1",
+            ""
+          ],
+          [
+            "Aetheric Fumigator or Decksweeper",
+            "10\"",
+            "5",
+            "3+",
+            "4+",
+            "-",
+            "1",
+            "Shoot in Combat"
+          ],
+          [
+            "Grundstok Mortar or Aethercannon",
+            "18\"",
+            "2",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            ""
+          ]
+        ],
+        "melee": [
+          [
+            "Gun Butt",
+            "1",
+            "4+",
+            "5+",
+            "-",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Grundstok Thunderers are heavily armoured marines employed by the airfleets to defend it from hostiles. Expert marksmen and battle-hardened veterans of many voyages, they obliterate their foes in a storm of aethershot and mortar rounds.",
+      "description": "• Each model in this unit is armed with an Aethershot Rifle and Gun Butt.\n• 2/5 models can replace their Aethershot Rifle with an Aetheric Fumigator or Decksweeper.\n• 2/5 models can replace their Aethershot Rifle with a Grundstok Mortar or Aethercannon.\n• The champion cannot replace their Aethershot Rifle."
+    },
+    {
+      "faction": "Kharadron Overlords",
+      "name": "Null-Khemist",
+      "points": 120,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "12\"",
+        "health": "8",
+        "save": "3+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/kharadron-overlords/Null-Khemist",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DUARDIN",
+          "KHARADRON OVERLORDS",
+          "ORDER",
+          "SKYFARER",
+          "FLY",
+          "HERO",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "Protection of the Void",
+          "Nullsuit"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Protection of the Void",
+            "timing": "Passive",
+            "effect": "Effect: While they are wholly within 12\" of this unit, friendly SKYFARER units have WARD (5+) against mortal damage inflicted by SPELL abilities, PRAYER abilities and abilities used by MANIFESTATIONS.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          },
+          {
+            "name": "Nullsuit",
+            "timing": "Passive",
+            "effect": "Effect: Double the Damage characteristic of this unit’s weapons for attacks that target PRIESTS, WIZARDS or MANIFESTATIONS.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Null-gas Extinguisher",
+            "8\"",
+            "3D6",
+            "2+",
+            "4+",
+            "1",
+            "1",
+            "Shoot in Combat"
+          ]
+        ],
+        "melee": [
+          [
+            "Prospecting Clamp",
+            "4",
+            "3+",
+            "4+",
+            "1",
+            "2",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Clad from head to toe in the latest aether-powered anti-magic suit, a Null-Khemist stands prepared to enter the most hostile environments in the Mortal Realms. Spells and arcane bolts sputter and die in the face of their null-gas emitters, while anyone foolish enough to stray too close finds their extremities crushed by a pneumatic clamp.",
+      "regimentOptions": "0-1 %000013217Guild Officer%, 0-1 %000002931SKYVESSEL%, Any %000013216INFANTRY%",
+      "notes": "This HERO can join an eligible regiment as a Guild Officer."
+    },
+    {
+      "faction": "Kharadron Overlords",
+      "name": "Scourge of Aqshy Endrinriggers",
+      "points": 120,
+      "size": 3,
+      "kind": "Scourge of Aqshy",
+      "category": "Infantry",
+      "profile": {
+        "move": "12\"",
+        "health": "2",
+        "save": "3+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/kharadron-overlords/Scourge-of-Aqshy-Endrinriggers",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DUARDIN",
+          "KHARADRON OVERLORDS",
+          "ORDER",
+          "SKYFARER",
+          "CHAMPION",
+          "FLY",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "We're Working Here!"
+        ],
+        "abilityDetails": [
+          {
+            "name": "We're Working Here!",
+            "timing": "Once Per Turn (Army), Your Hero Phase",
+            "effect": "Effect: Until the start of your next turn, if this unit has not charged in the same turn, the following cumulative effects apply depending on your fury level.\n$000003122",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Rapid-fire Rivet Gun",
+            "10\"",
+            "3",
+            "3+",
+            "4+",
+            "1",
+            "1",
+            "Shoot in Combat"
+          ],
+          [
+            "Skyrigger Heavy Weapon",
+            "15\"",
+            "1",
+            "4+",
+            "3+",
+            "1",
+            "D3",
+            "Anti-MONSTER (+1 Rend)"
+          ],
+          [
+            "Aethermatic Volley Gun",
+            "15\"",
+            "2D6",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            "Crit (2 Hits)"
+          ]
+        ],
+        "melee": [
+          [
+            "Aethermatic Saw",
+            "3",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            "Anti-charge (+1 Rend)"
+          ],
+          [
+            "Gun Butt",
+            "1",
+            "4+",
+            "5+",
+            "-",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "Scourge of Aqshy - Kharadron Overlords",
+      "canReinforce": true,
+      "flavour": "With aether-endrins strapped to their backs, Endrinriggers conduct repairs on their beloved airships miles above ground. In battle, their aether-powered tools become lethal weapons capable of punching through armour or messily sawing off limbs.",
+      "notes": "This unit is legal for Matched Play for battles fought using the General’s Handbook 2026-27 battlepack.",
+      "description": "• Each model in this unit is armed with a Rapid-fire Rivet Gun and Aethermatic Saw.\n• 1/3 models can replace their weapons with an Aethermatic Volley Gun and Gun Butt.\n• 1/3 models can replace their weapons with a Skyrigger Heavy Weapon (Grapnel Launcher, Skyhook or Drill Launcher) and Gun Butt.\n• The champion cannot replace their weapons."
+    },
+    {
+      "faction": "Kharadron Overlords",
+      "name": "Scourge of Aqshy Null-Khemist",
+      "points": 160,
+      "size": 1,
+      "kind": "Scourge of Aqshy",
+      "category": "Hero",
+      "profile": {
+        "move": "12\"",
+        "health": "8",
+        "save": "3+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/kharadron-overlords/Scourge-of-Aqshy-Null-Khemist",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DUARDIN",
+          "KHARADRON OVERLORDS",
+          "ORDER",
+          "SKYFARER",
+          "FLY",
+          "HERO",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "Customised Nullsuit",
+          "Diligent Researcher"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Customised Nullsuit",
+            "timing": "Passive",
+            "effect": "Effect:\n• This unit can use UNBIND and BANISH abilities as if it had WIZARD (1).\n• Add 1 to the number of dice rolled when making unbinding rolls and banishment rolls for this unit, to a maximum of 3.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Diligent Researcher",
+            "timing": "Passive",
+            "effect": "Effect: Each time your opponent spends any rage dice as part of the ‘Eruption of Fury’ ability, after that ability has been resolved, if this unit is not in combat, it can move up to XD6\", where X is the number of rage dice spent. It cannot end that move in combat.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "End of Turn"
+          }
+        ],
+        "ranged": [
+          [
+            "Null-gas Extinguisher",
+            "8\"",
+            "3D6",
+            "2+",
+            "4+",
+            "1",
+            "1",
+            "Shoot in Combat"
+          ]
+        ],
+        "melee": [
+          [
+            "Prospecting Clamp",
+            "4",
+            "3+",
+            "4+",
+            "1",
+            "2",
+            ""
+          ]
+        ]
+      },
+      "source": "Scourge of Aqshy - Kharadron Overlords",
+      "canReinforce": false,
+      "flavour": "Kept comfortably cool in the Aqshian climes by their hermetically sealed nullsuits, Null-Khemists dart through the skies in their haste to test out their newest inventions. Woe betide those who stand between them and their research.",
+      "regimentOptions": "0-1 %000002931Skyvessel%, 0-1 %000013217Guild Officer%, Any %000013216Infantry%",
+      "notes": "This HERO can join an eligible regiment as a Guild Officer.\nThis unit is legal for Matched Play for battles fought using the General’s Handbook 2026-27 battlepack."
+    },
+    {
+      "faction": "Kharadron Overlords",
+      "name": "Scourge of Ghyran Codewright",
+      "points": 100,
+      "size": 1,
+      "kind": "Scourge of Ghyran",
+      "category": "Hero",
+      "profile": {
+        "move": "4\"",
+        "health": "5",
+        "save": "3+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/kharadron-overlords/Scourge-of-Ghyran-Codewright",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DUARDIN",
+          "KHARADRON OVERLORDS",
+          "ORDER",
+          "SKYFARER",
+          "HERO",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "I’m Watching You",
+          "Alright, Listen Up"
+        ],
+        "abilityDetails": [
+          {
+            "name": "I’m Watching You",
+            "timing": "Any Hero Phase",
+            "effect": "Effect: Give this unit D3 vexed points.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Alright, Listen Up",
+            "timing": "Once Per Turn (Army), Any Hero Phase",
+            "effect": "Declare: If this unit is wholly within 12\" of a friendly non-HERO KHARADRON OVERLORDS unit, pick a visible enemy unit within 18\" of this unit to be the target. Then, choose to spend either 3 or 6 vexed points.\nEffect: Pick 1 of the following effects to apply to the target for the rest of the turn:\n• Do you see how fast they are going?!: If you spent 3 vexed points, subtract D3 from the target’s Move characteristic. If you spent 6 vexed points, halve the target’s Move characteristic.\n• Those weapons are against regulation!: If you spent 3 vexed points, subtract 1 from wound rolls for the target’s combat attacks. I",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Aethershot Pistol",
+            "10\"",
+            "2",
+            "3+",
+            "3+",
+            "1",
+            "1",
+            "Shoot in Combat"
+          ]
+        ],
+        "melee": [
+          [
+            "Battletome",
+            "3",
+            "4+",
+            "4+",
+            "-",
+            "D3",
+            ""
+          ]
+        ]
+      },
+      "source": "Scourge of Ghyran - Kharadron Overlords",
+      "canReinforce": false,
+      "flavour": "The Kharadron’s profitable wars in the Everspring Swathe have led to a great demand for Codewrights, experts skilled in debating the finer points of the Kharadron Code. Their utter dedication to the rule of law is so intense that a bellowed quote from the Code can cause enemies to falter in confusion and sudden panic, rendering them easy targets.",
+      "regimentOptions": "0-1 %000002931SKYVESSEL%, Any %000013216INFANTRY%",
+      "notes": "This HERO can join an eligible regiment as a Guild Officer.\nThis unit is legal for Matched Play for battles fought using the General’s Handbook 2025-26 battlepack."
+    },
+    {
+      "faction": "Kharadron Overlords",
+      "name": "Scourge of Ghyran Grundstok Gunhauler",
+      "points": 170,
+      "size": 1,
+      "kind": "Scourge of Ghyran",
+      "category": "War Machine",
+      "profile": {
+        "move": "14\"",
+        "health": "10",
+        "save": "2+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/kharadron-overlords/Scourge-of-Ghyran-Grundstok-Gunhauler",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DUARDIN",
+          "KHARADRON OVERLORDS",
+          "ORDER",
+          "SKYVESSEL",
+          "FLY",
+          "WAR MACHINE"
+        ],
+        "abilities": [
+          "Transport Capacity",
+          "Attack Squadron",
+          "Fighter Vessel"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Transport Capacity",
+            "timing": "Passive",
+            "effect": "Effect: This unit cannot transport any friendly units.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Attack Squadron",
+            "timing": "Passive",
+            "effect": "Effect: While this unit is wholly within 12\" of any other friendly Grundstok Gunhaulers, it can use SHOOT abilities even if it used the ‘Run’ ability in the same turn.",
+            "kind": "Ability",
+            "type": "Shooting",
+            "phase": "Shooting Phase"
+          },
+          {
+            "name": "Fighter Vessel",
+            "timing": "Any Shooting Phase",
+            "effect": "Effect: If this unit used a SHOOT ability this phase, this unit can move D6\". It cannot end that move in combat.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Shooting Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Sky Ordnance",
+            "15\"",
+            "3",
+            "4+",
+            "3+",
+            "2",
+            "3",
+            ""
+          ]
+        ],
+        "melee": [
+          [
+            "Bombs and Boarding Weapons",
+            "4",
+            "4+",
+            "4+",
+            "1",
+            "D3",
+            ""
+          ]
+        ]
+      },
+      "source": "Scourge of Ghyran - Kharadron Overlords",
+      "canReinforce": true,
+      "flavour": "State-of-the-art two-duardin attack craft, Grundstok Gunhaulers are the signature vessels of the Grundcorps. Both sturdy and swift, they have proved deadly above the tangled canopies of the Jade Kingdoms, taking on agile foes in aerial combat and laying waste to ground targets with a barrage of high-explosive bombs.",
+      "notes": "This unit is legal for Matched Play for battles fought using the General’s Handbook 2025-26 battlepack.\nThis unit can be reinforced even though it has a minimum unit size of 1."
+    },
+    {
+      "faction": "Kharadron Overlords",
+      "name": "Skywardens",
+      "points": 130,
+      "size": 3,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "12\"",
+        "health": "2",
+        "save": "3+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/kharadron-overlords/Skywardens",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DUARDIN",
+          "KHARADRON OVERLORDS",
+          "ORDER",
+          "SKYFARER",
+          "CHAMPION",
+          "FLY",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "Timed Charges"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Timed Charges",
+            "timing": "Once Per Turn (Army), End of Any Turn",
+            "effect": "Declare: Pick an enemy unit in combat with this unit to be the target.\nEffect: Roll a D3. On a 2+:\n• Inflict an amount of mortal damage on the target equal to the roll.\n• This unit can immediately use the ‘Retreat’ ability as if it were your movement phase without any mortal damage being inflicted on it.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "End of Turn"
+          }
+        ],
+        "ranged": [
+          [
+            "Vulcaniser Pistol",
+            "10\"",
+            "3",
+            "3+",
+            "3+",
+            "1",
+            "1",
+            "Shoot in Combat"
+          ],
+          [
+            "Aethermatic Volley Gun",
+            "15\"",
+            "2D6",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            "Crit (2 Hits)"
+          ],
+          [
+            "Skyrigger Heavy Weapon",
+            "15\"",
+            "1",
+            "4+",
+            "3+",
+            "1",
+            "D3",
+            "Anti-MONSTER (+1 Rend)"
+          ]
+        ],
+        "melee": [
+          [
+            "Skywarden’s Skypike",
+            "2",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            "Charge (+1 Damage)"
+          ],
+          [
+            "Gun Butt",
+            "1",
+            "4+",
+            "5+",
+            "-",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Skywardens are elite formations of Arkanaut warriors granted the power of flight by portable aether-endrins. They swoop from on high to skewer enemies upon long-hafted skypikes or hover at short range to incinerate them with vulcaniser pistols.",
+      "description": "• Each model in this unit is armed with a Vulcaniser Pistol and Skywarden’s Skypike.\n• 1/3 models can replace their weapons with an Aethermatic Volley Gun and Gun Butt.\n• 1/3 models can replace their weapons with a Skyrigger Heavy Weapon (Grapnel Launcher, Skyhook or Drill Launcher) and Gun Butt.\n• The champion cannot replace their weapons."
+    },
+    {
+      "faction": "Kharadron Overlords",
+      "name": "Thundrik’s Profiteers",
+      "points": 150,
+      "size": 5,
+      "kind": "Legends",
+      "category": "Infantry",
+      "profile": {
+        "move": "4\"",
+        "health": "2",
+        "save": "4+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/kharadron-overlords/Thundrik-s-Profiteers",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DUARDIN",
+          "KHARADRON OVERLORDS",
+          "ORDER",
+          "SKYFARER",
+          "INFANTRY",
+          "UNIQUE"
+        ],
+        "abilities": [
+          "Aethermatic Anatomiser"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Aethermatic Anatomiser",
+            "timing": "Your Shooting Phase",
+            "effect": "Declare: If this unit’s Bjorgen Thundrik is on the battlefield, pick an objective within 12\" of this unit to be the target.\nEffect: Roll a dice. On a 3+:\n• If the target is controlled by either player, that player loses control of that objective.\n• The target cannot be contested until the start of your next turn.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Shooting Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Aethermatic Anatomiser",
+            "8\"",
+            "3D6",
+            "4+",
+            "4+",
+            "2",
+            "1",
+            "Shoot in Combat"
+          ],
+          [
+            "Aethermatic Firearms",
+            "12\"",
+            "2",
+            "3+",
+            "4+",
+            "1",
+            "1",
+            ""
+          ]
+        ],
+        "melee": [
+          [
+            "Skypike",
+            "2",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            "Crit (Mortal)"
+          ],
+          [
+            "Arkanaut Cutter",
+            "2",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "Legends Warscrolls",
+      "canReinforce": false,
+      "flavour": "The dauntless leader of a band of profiteers, Bjorgen Thundrik has developed quite the reputation in Barak-Nar for being able to sniff out fresh seams of aether-gold and for being utterly tenacious in his pursuit of riches. Driven by constant competition for promotion, this eclectic band of skyfarers will go to any lengths to secure a valuable haul and they will pepper with volleys of aethershot all those who try to take their wealth.",
+      "notes": "This unit cannot be reinforced.",
+      "description": "The models in this unit are:\n• Bjorgen Thundrik (armed with an Aethermatic Anatomiser and an Arkanaut Cutter)\n• Khazgan Drakkskewer (armed with Aethermatic Firearms and a Skypike)\n• Dead-Eye Lund (armed with Aethermatic Firearms and an Arkanaut Cutter)\n• Enrik Ironhail (armed with Aethermatic Firearms and an Arkanaut Cutter)\n• Garodd Alensen (armed with Aethermatic Firearms and an Arkanaut Cutter)"
+    },
+    {
+      "faction": "Kharadron Overlords",
+      "name": "Vongrim Harpoon Crew",
+      "points": 120,
+      "size": 5,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "12\"",
+        "health": "2",
+        "save": "4+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/kharadron-overlords/Vongrim-Harpoon-Crew",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DUARDIN",
+          "KHARADRON OVERLORDS",
+          "ORDER",
+          "SKYFARER",
+          "CHAMPION",
+          "FLY",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "Light Endrinpacks"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Light Endrinpacks",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Effect: If this unit is in combat, it can move 2D6\" but must end that move in combat.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Combat Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Skydrake Harpoon or Firearm",
+            "12\"",
+            "2",
+            "3+",
+            "3+",
+            "1",
+            "1",
+            "Anti-MONSTER (+1 Rend)"
+          ]
+        ],
+        "melee": [
+          [
+            "Pioneer Weapons",
+            "2",
+            "4+",
+            "3+",
+            "1",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "A Vongrim Harpoon Crew is a supreme monster-hunting machine, a gathering of grizzle-bearded veterans who have seen, fought and killed some of the meanest horrors to ply the sky-lanes. They pursue their prey with light endrinpacks, hurling skydrake harpoons that can punch through the armoured hide of a megalofin with ease."
+    },
+    {
+      "faction": "Kharadron Overlords",
+      "name": "Vongrim Salvagers",
+      "points": 110,
+      "size": 5,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "12\"",
+        "health": "2",
+        "save": "4+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/kharadron-overlords/Vongrim-Salvagers",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DUARDIN",
+          "KHARADRON OVERLORDS",
+          "ORDER",
+          "SKYFARER",
+          "CHAMPION",
+          "FLY",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "Spotter’s Flaregun"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Spotter’s Flaregun",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick an objective within 9\" of this unit to be the target.\nEffect: Roll a dice. On a 3+, apply the following effects for the rest of the turn:\n• Add 1 to hit rolls for combat attacks made by friendly SKYFARER units that target a unit that is contesting the target objective.\n• Add 1 to the Rend characteristic of melee weapons used by friendly Vongrim Salvagers and Vongrim Harpoon Crew units for attacks that target a unit that is contesting the target objective.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Privateer Pistol",
+            "10\"",
+            "2",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            "Shoot in Combat"
+          ]
+        ],
+        "melee": [
+          [
+            "Vongrim Cutlass",
+            "3",
+            "4+",
+            "3+",
+            "1",
+            "1",
+            "Crit (2 Hits)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Bonded by the shared trauma of lost ships and a sense of unity forged by hard times, Vongrim Salvagers go about their dangerous work with customary efficiency. With pistol, steel and cudgel, they cut down their foes and seize hold of profitable territory, refusing to give up their gains at any cost."
+    },
+    {
+      "faction": "Kharadron Overlords",
+      "name": "Zontari Endrin Dock",
+      "points": 20,
+      "size": 1,
+      "kind": "",
+      "category": "Terrain",
+      "profile": {
+        "move": "-",
+        "health": "10",
+        "save": "3+",
+        "control": "-",
+        "url": "https://wahapedia.ru/aos4/factions/kharadron-overlords/Zontari-Endrin-Dock",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "KHARADRON OVERLORDS",
+          "ORDER",
+          "FACTION TERRAIN",
+          "FLY"
+        ],
+        "abilities": [
+          "Release The Auto-Endrins",
+          "Repair Routines",
+          "Endrinworks Outpost"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Release The Auto-Endrins",
+            "timing": "Deployment Phase",
+            "effect": "Effect: Set up a friendly Nullifier Auto-Endrin, Stuncloud Auto-Endrin and Grudgeblast Auto-Endrin (see the Auto-Endrin warscroll) on the battlefield within friendly territory, wholly within 6\" of this terrain feature and more than 9\" from all enemy units.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Repair Routines",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Pick a friendly SKYVESSEL within 3\" of this terrain feature to be the target.\nEffect: Make a repair roll of D6. Add 1 to the roll if there is a friendly Endrinmaster with Dirigible Suit or Endrinmaster with Endrinharness within 3\" of this terrain feature. On a 4+, Heal (3) the target.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Endrinworks Outpost",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Pick a friendly Auto-Endrin or replacement Auto-Endrin that has been removed from the battlefield to be the target.\nEffect: Make a manufacturing roll of D6. Add 1 to the roll if there is a friendly Endrinmaster with Dirigible Suit or Endrinmaster with Endrinharness within 3\" of this terrain feature. On a 4+, set up a replacement Auto-Endrin on the battlefield, wholly within 6\" of this terrain feature and more than 3\" from all enemy units.",
+            "kind": "Ability",
+            "type": "Rallying",
+            "phase": "Hero Phase"
+          }
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "A cutting-edge innovation from the finest endrineering minds in the sky-empire, the Zontari Endrin Dock is designed to allow the Kharadron to defend their most precious assets. It deploys aether-powered auto-endrins that seek out enemy formations before detonating or deploying anti-magic measures."
+    }
+  ]
+}

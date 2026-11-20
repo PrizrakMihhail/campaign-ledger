@@ -1,0 +1,1259 @@
+{
+  "edition": "Age of Sigmar 4",
+  "lastUpdate": "2026-10-22 18:12:05",
+  "faction": {
+    "id": "EnS",
+    "name": "Endless Spells",
+    "slug": "endless-spells",
+    "url": "https://wahapedia.ru/aos4/factions/endless-spells",
+    "count": 18
+  },
+  "rules": {
+    "battleTraits": [],
+    "armiesOfRenown": [],
+    "battleFormations": [],
+    "lores": {
+      "spell": [],
+      "prayer": [],
+      "manifestation": [
+        {
+          "name": "Aetherwrought Machineries",
+          "kind": "manifestation",
+          "points": 0,
+          "entries": [
+            {
+              "name": "SUMMON CHRONOMANTIC COGS",
+              "timing": "Your Hero Phase",
+              "declare": "If there is not a friendly Chronomantic Cogs endless spell on the battlefield, pick a friendly WIZARD to cast this spell, then make a casting roll of 2D6.",
+              "effect": "Set up a Chronomantic Cogs endless spell wholly within 12\" of the caster and visible to them.",
+              "value": "6",
+              "unitLinks": [],
+              "manifestation": {
+                "faction": "Endless Spells",
+                "name": "Chronomantic Cogs"
+              }
+            },
+            {
+              "name": "SUMMON AETHERVOID PENDULUM",
+              "timing": "Your Hero Phase",
+              "declare": "If there is not a friendly Aethervoid Pendulum on the battlefield, pick a friendly WIZARD to cast this spell, then make a casting roll of 2D6.",
+              "effect": "Set up an Aethervoid Pendulum wholly within 12\" of the caster, visible to them and more than 9\" from all enemy units.",
+              "value": "6",
+              "unitLinks": [],
+              "manifestation": {
+                "faction": "Endless Spells",
+                "name": "Aethervoid Pendulum"
+              }
+            },
+            {
+              "name": "SUMMON QUICKSILVER SWORDS",
+              "timing": "Your Hero Phase",
+              "declare": "If there is not a friendly Quicksilver Swords endless spell on the battlefield, pick a friendly WIZARD to cast this spell, then make a casting roll of 2D6.",
+              "effect": "Set up a Quicksilver Swords endless spell wholly within 12\" of the caster, visible to them and more than 9\" from all enemy units.",
+              "value": "6",
+              "unitLinks": [],
+              "manifestation": {
+                "faction": "Endless Spells",
+                "name": "Quicksilver Swords"
+              }
+            }
+          ],
+          "scope": "shared"
+        },
+        {
+          "name": "Forbidden Power",
+          "kind": "manifestation",
+          "points": 0,
+          "entries": [
+            {
+              "name": "SUMMON SOULSCREAM BRIDGE",
+              "timing": "Your Hero Phase",
+              "declare": "If there is not a friendly Soulscream Bridge on the battlefield, pick a friendly WIZARD to cast this spell, then make a casting roll of 2D6.",
+              "effect": "Set up a Soulscream Bridge wholly within 18\" of the caster and visible to them. A Soulscream Bridge has 2 parts that must be set up within 9\" of each other.",
+              "value": "6",
+              "unitLinks": [],
+              "manifestation": {
+                "faction": "Endless Spells",
+                "name": "Soulscream Bridge"
+              }
+            },
+            {
+              "name": "SUMMON LAUCHON THE SOULSEEKER",
+              "timing": "Your Hero Phase",
+              "declare": "If there is not a friendly Lauchon the Soulseeker on the battlefield, pick a friendly WIZARD to cast this spell, then make a casting roll of 2D6.",
+              "effect": "Set up a Lauchon the Soulseeker wholly within 12\" of the caster, visible to them and more than 9\" from all enemy units.",
+              "value": "7",
+              "unitLinks": [],
+              "manifestation": {
+                "faction": "Endless Spells",
+                "name": "Lauchon the Soulseeker"
+              }
+            },
+            {
+              "name": "SUMMON HORRORGHAST",
+              "timing": "Your Hero Phase",
+              "declare": "If there is not a friendly Horrorghast on the battlefield, pick a friendly WIZARD to cast this spell, then make a casting roll of 2D6.",
+              "effect": "Set up a Horrorghast wholly within 12\" of the caster, visible to them and more than 9\" from all enemy units.",
+              "value": "6",
+              "unitLinks": [],
+              "manifestation": {
+                "faction": "Endless Spells",
+                "name": "Horrorghast"
+              }
+            },
+            {
+              "name": "SUMMON SHARDS OF VALAGHARR",
+              "timing": "Your Hero Phase",
+              "declare": "If there is not a friendly Shards of Valagharr endless spell on the battlefield, pick a friendly WIZARD to cast this spell, then make a casting roll of 2D6.",
+              "effect": "Set up a Shards of Valagharr endless spell wholly within 18\" of the caster and visible to them. A Shards of Valagharr endless spell has 2 parts that must be set up within 9\" of each other.",
+              "value": "6",
+              "unitLinks": [],
+              "manifestation": {
+                "faction": "Endless Spells",
+                "name": "Shards of Valagharr"
+              }
+            }
+          ],
+          "scope": "shared"
+        },
+        {
+          "name": "Krondspine Incarnate",
+          "kind": "manifestation",
+          "points": 0,
+          "entries": [
+            {
+              "name": "SUMMON KRONDSPINE INCARNATE OF GHUR",
+              "timing": "Your Hero Phase",
+              "declare": "If there is not a friendly Krondspine Incarnate of Ghur on the battlefield, pick a friendly WIZARD to cast this spell, then make a casting roll of 2D6.",
+              "effect": "Set up a Krondspine Incarnate of Ghur wholly within 12\" of the caster, visible to them and more than 9\" from all enemy units.",
+              "value": "8",
+              "unitLinks": [],
+              "manifestation": {
+                "faction": "Endless Spells",
+                "name": "Krondspine Incarnate of Ghur"
+              }
+            }
+          ],
+          "scope": "shared"
+        },
+        {
+          "name": "Morbid Conjuration",
+          "kind": "manifestation",
+          "points": 0,
+          "entries": [
+            {
+              "name": "SUMMON SOULSNARE SHACKLES",
+              "timing": "Your Hero Phase",
+              "declare": "If there is not a friendly Soulsnare Shackles endless spell on the battlefield, pick a friendly WIZARD to cast this spell, then make a casting roll of 2D6.",
+              "effect": "Set up a Soulsnare Shackles endless spell wholly within 18\" of the caster and visible to them. A Soulsnare Shackles endless spell has 3 parts that must each be set up within 3\" of at least 1 other part.",
+              "value": "6",
+              "unitLinks": [],
+              "manifestation": {
+                "faction": "Endless Spells",
+                "name": "Soulsnare Shackles"
+              }
+            },
+            {
+              "name": "SUMMON MALEVOLENT MAELSTROM",
+              "timing": "Your Hero Phase",
+              "declare": "If there is not a friendly Malevolent Maelstrom on the battlefield, pick a friendly WIZARD to cast this spell, then make a casting roll of 2D6.",
+              "effect": "Set up a Malevolent Maelstrom wholly within 12\" of the caster, visible to them and more than 9\" from all enemy units.",
+              "value": "6",
+              "unitLinks": [],
+              "manifestation": {
+                "faction": "Endless Spells",
+                "name": "Malevolent Maelstrom"
+              }
+            },
+            {
+              "name": "SUMMON PURPLE SUN OF SHYISH",
+              "timing": "Your Hero Phase",
+              "declare": "If there is not a friendly Purple Sun of Shyish on the battlefield, pick a friendly WIZARD to cast this spell, then make a casting roll of 2D6.",
+              "effect": "Set up a Purple Sun of Shyish wholly within 12\" of the caster, visible to them and more than 9\" from all enemy units.",
+              "value": "8",
+              "unitLinks": [],
+              "manifestation": {
+                "faction": "Endless Spells",
+                "name": "Purple Sun of Shyish"
+              }
+            },
+            {
+              "name": "SUMMON SUFFOCATING GRAVETIDE",
+              "timing": "Your Hero Phase",
+              "declare": "If there is not a friendly Suffocating Gravetide on the battlefield, pick a friendly WIZARD to cast this spell, then make a casting roll of 2D6.",
+              "effect": "Set up a Suffocating Gravetide wholly within 12\" of the caster, visible to them and more than 9\" from all enemy units.",
+              "value": "8",
+              "unitLinks": [],
+              "manifestation": {
+                "faction": "Endless Spells",
+                "name": "Suffocating Gravetide"
+              }
+            }
+          ],
+          "scope": "shared"
+        },
+        {
+          "name": "Primal Energy",
+          "kind": "manifestation",
+          "points": 0,
+          "entries": [
+            {
+              "name": "SUMMON BURNING HEAD",
+              "timing": "Your Hero Phase",
+              "declare": "If there is not a friendly The Burning Head on the battlefield, pick a friendly WIZARD to cast this spell, then make a casting roll of 2D6.",
+              "effect": "Set up The Burning Head wholly within 12\" of the caster, visible to them and more than 9\" from all enemy units.",
+              "value": "5",
+              "unitLinks": [],
+              "manifestation": {
+                "faction": "Endless Spells",
+                "name": "The Burning Head"
+              }
+            },
+            {
+              "name": "SUMMON EMERALD LIFESWARM",
+              "timing": "Your Hero Phase",
+              "declare": "If there is not a friendly Emerald Lifeswarm on the battlefield, pick a friendly WIZARD to cast this spell, then make a casting roll of 2D6.",
+              "effect": "Set up an Emerald Lifeswarm wholly within 12\" of the caster, visible to them and more than 9\" from all enemy units.",
+              "value": "6",
+              "unitLinks": [],
+              "manifestation": {
+                "faction": "Endless Spells",
+                "name": "Emerald Lifeswarm"
+              }
+            },
+            {
+              "name": "SUMMON RAVENAK’S GNASHING JAWS",
+              "timing": "Your Hero Phase",
+              "declare": "If there is not a friendly Ravenak’s Gnashing Jaws endless spell on the battlefield, pick a friendly WIZARD to cast this spell, then make a casting roll of 2D6.",
+              "effect": "Set up a Ravenak’s Gnashing Jaws endless spell wholly within 12\" of the caster, visible to them and more than 9\" from all enemy units.",
+              "value": "7",
+              "unitLinks": [],
+              "manifestation": {
+                "faction": "Endless Spells",
+                "name": "Ravenak’s Gnashing Jaws"
+              }
+            }
+          ],
+          "scope": "shared"
+        },
+        {
+          "name": "Twilit Sorceries",
+          "kind": "manifestation",
+          "points": 0,
+          "entries": [
+            {
+              "name": "SUMMON GEMINIDS OF UHL-GYSH",
+              "timing": "Your Hero Phase",
+              "declare": "If there is not a friendly Geminids of Uhl-Gysh endless spell on the battlefield, pick a friendly WIZARD to cast this spell, then make a casting roll of 2D6.",
+              "effect": "Set up a Geminids of Uhl-Gysh endless spell wholly within 12\" of the caster, visible to them and more than 9\" from all enemy units. A Geminids of Uhl-Gysh endless spell has 2 parts that must be set up within 9\" of each other.",
+              "value": "7",
+              "unitLinks": [],
+              "manifestation": {
+                "faction": "Endless Spells",
+                "name": "Geminids of Uhl-Gysh"
+              }
+            },
+            {
+              "name": "SUMMON PRISMATIC PALISADE",
+              "timing": "Your Hero Phase",
+              "declare": "If there is not a friendly Prismatic Palisade on the battlefield, pick a friendly WIZARD to cast this spell, then make a casting roll of 2D6.",
+              "effect": "Set up a Prismatic Palisade wholly within 18\" of the caster and visible to them.",
+              "value": "7",
+              "unitLinks": [],
+              "manifestation": {
+                "faction": "Endless Spells",
+                "name": "Prismatic Palisade"
+              }
+            },
+            {
+              "name": "SUMMON UMBRAL SPELLPORTAL",
+              "timing": "Your Hero Phase",
+              "declare": "If there is not a friendly Umbral Spellportal on the battlefield, pick a friendly WIZARD to cast this spell, then make a casting roll of 2D6.",
+              "effect": "Set up an Umbral Spellportal wholly within 18\" of the caster and visible to them. An Umbral Spellportal has 2 parts that must be set up within 9\" of each other.",
+              "value": "7",
+              "unitLinks": [],
+              "manifestation": {
+                "faction": "Endless Spells",
+                "name": "Umbral Spellportal"
+              }
+            }
+          ],
+          "scope": "shared"
+        }
+      ]
+    }
+  },
+  "entries": [
+    {
+      "faction": "Endless Spells",
+      "name": "Aethervoid Pendulum",
+      "points": 0,
+      "size": 1,
+      "kind": "",
+      "category": "Manifestation",
+      "profile": {
+        "move": "8\"",
+        "health": "6",
+        "save": "6+",
+        "ward": "6+",
+        "banishment": "7",
+        "url": "https://wahapedia.ru/aos4/factions/endless-spells/Aethervoid-Pendulum",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "ENDLESS SPELL",
+          "FLY",
+          "MANIFESTATION",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "The Pendulum Swings",
+          "Scything Blade"
+        ],
+        "abilityDetails": [
+          {
+            "name": "The Pendulum Swings",
+            "timing": "Passive",
+            "effect": "Effect: This MANIFESTATION cannot use CHARGE or FIGHT abilities. In addition, when this MANIFESTATION moves, it must move in a straight line either in the direction in which the tip of the pendulum blade is pointing or in the opposite direction to the direction in which the tip of the pendulum blade is pointing.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Scything Blade",
+            "timing": "Any Movement Phase",
+            "effect": "Effect: This MANIFESTATION can move a distance up to its Move characteristic in one direction (see ‘The Pendulum Swings’). It can pass through models during that move and can end that move in combat. Then, pick up to 3 enemy units that this MANIFESTATION passed across during that move or that are within 1⁄2\" of it to be the targets. Roll a dice for each targets. On a 2+, inflict an amount of mortal damage on the target equal to the roll.",
+            "kind": "Ability",
+            "type": "Movement",
+            "keywords": "Core, Move",
+            "phase": "Movement Phase"
+          }
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Aethervoid Pendulums are conjured from the colourless nothingness between realms. They swing with a perfect, eerie rhythm, hissing as they drift across the battlefield. Their sibilant slashing can carve clean through a shieldwall, sending limbs and gore flying, or hack the leg from a titanic monster in one swing. Sinister rumours surround the Pendulums, from theories that doppel-spells appear in every realm whenever one is cast to legends of the Phantom Blade of Ulgu that cloaks itself in illusory mist as it scythes across the lands.",
+      "description": "SUMMONING REFERENCE\n• Casting value 6\n• Wholy within 12\" of and visible to caster\n• More than 9\" from enemy"
+    },
+    {
+      "faction": "Endless Spells",
+      "name": "Chronomantic Cogs",
+      "points": 0,
+      "size": 1,
+      "kind": "",
+      "category": "Manifestation",
+      "profile": {
+        "move": "-",
+        "health": "6",
+        "save": "6+",
+        "ward": "6+",
+        "banishment": "7",
+        "url": "https://wahapedia.ru/aos4/factions/endless-spells/Chronomantic-Cogs",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "ENDLESS SPELL",
+          "MANIFESTATION",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Mechanisms of Time"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Mechanisms of Time",
+            "timing": "Once Per Turn, Your Hero Phase",
+            "effect": "Effect: If there are any friendly WIZARDS within 3\" of this MANIFESTATION, pick 1 of the following effects:\nIncrease Time Flow: Until the start of your next turn, you can re roll charge rolls for friendly units while they are wholly within 12\" of this MANIFESTATION.\nDecrease Time Flow: Until the start of your next turn, subtract 1 from hit rolls for attacks that target friendly WIZARDS while they are wholly within 12\" of this MANIFESTATION.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          }
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "The Chronomantic Cogs are a series of arcane gears honed by the intricate magics of Azyr. Endlessly turning, they form a complex mechanism attuned to the heavenly rhythms. Those who gaze into the Cogs are offered glimpses of the cosmos turning at incredible speed or an awareness of the crushing passage of aeons. A wizard of suitable ability can reach into the mechanisms of the Cogs and manipulate them to their designs, either seeing their allies move ahead of time’s flow or immobilising opponents as causality is brought to a crawl.",
+      "description": "SUMMONING REFERENCE\n• Casting value 6\n• Wholy within 12\" of and visible to caster"
+    },
+    {
+      "faction": "Endless Spells",
+      "name": "Emerald Lifeswarm",
+      "points": 0,
+      "size": 1,
+      "kind": "",
+      "category": "Manifestation",
+      "profile": {
+        "move": "8\"",
+        "health": "5",
+        "save": "6+",
+        "ward": "6+",
+        "banishment": "7",
+        "url": "https://wahapedia.ru/aos4/factions/endless-spells/Emerald-Lifeswarm",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "ENDLESS SPELL",
+          "FLY",
+          "MANIFESTATION",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Bounteous Healing",
+          "Restored Vigour"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Bounteous Healing",
+            "timing": "Your Movement Phase",
+            "effect": "Declare: Pick a friendly unit within 3\" of this MANIFESTATION to be the target.\nEffect: Heal (3) the target.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Movement Phase"
+          },
+          {
+            "name": "Restored Vigour",
+            "timing": "End of Any Turn",
+            "effect": "Effect: Heal (3) this MANIFESTATION.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "End of Turn"
+          }
+        ],
+        "melee": [
+          [
+            "Swarming Bites",
+            "2D6",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            "Anti-INFANTRY (+1 Rend)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Carried upon buzzing insectile wings, an Emerald Lifeswarm embodies Ghyran’s healing powers. They are conjured from the remnants of life, be it a forlorn tree husk or a mouldering corpse. Seeking out those wounded unto death, a Lifeswarm descends to meld with torn tissue and reknit organs and bones. Yet all things are cyclical, and renewal is entwined with death. A Lifeswarm seeks out foes as eagerly as it does friends, but to these it delivers countless poisonous bites, burrowing inside armour to strike where they are most vulnerable.",
+      "description": "SUMMONING REFERENCE\n• Casting value 6\n• Wholy within 12\" of and visible to caster\n• More than 9\" from enemy"
+    },
+    {
+      "faction": "Endless Spells",
+      "name": "Geminids of Uhl-Gysh",
+      "points": 0,
+      "size": 2,
+      "kind": "",
+      "category": "Manifestation",
+      "profile": {
+        "move": "8\"",
+        "health": "8",
+        "save": "6+",
+        "ward": "6+",
+        "banishment": "6",
+        "url": "https://wahapedia.ru/aos4/factions/endless-spells/Geminids-of-Uhl-Gysh",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "ENDLESS SPELL",
+          "FLY",
+          "MANIFESTATION",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Multiple Parts",
+          "Tendrils of Light and Shadow"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Multiple Parts",
+            "timing": "Passive",
+            "effect": "Effect: When a number of damage points equal to this MANIFESTATION’s Health characteristic are allocated to it, this MANIFESTATION is destroyed and both its parts are removed from play.\nEach time this MANIFESTATION moves, both its parts must end within 9\" of each other.\nEach part of this MANIFESTATION is armed with Tendrils of Light and Shadow.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Tendrils of Light and Shadow",
+            "timing": "Passive",
+            "effect": "Effect: Enemy units cannot use commands while they are within 3\" of either part of this MANIFESTATION.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          }
+        ],
+        "melee": [
+          [
+            "Tendrils of Light and Shadow",
+            "4",
+            "4+",
+            "3+",
+            "1",
+            "D3",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Between Hysh and Ulgu lies the Hidden Gloaming, a paradoxical place of shadow and light where secrets fester. Through drawing on the symbiotic yet opposed energies of the Gloaming, a wizard may summon the Geminids: twin spheres that race across the battlefield in swirling tandem. From the Shadow Geminid trails smoke laced with illusory falsehoods, bringing waves of hopeless darkness. The Light Geminid sears the mind with pure reason, bestowing unwanted but undeniable knowledge that crushes those of weaker mental fortitude.",
+      "description": "SUMMONING REFERENCE\n• Casting value 7\n• Wholy within 18\" of and visible to caster\n• More than 9\" from enemy"
+    },
+    {
+      "faction": "Endless Spells",
+      "name": "Horrorghast",
+      "points": 0,
+      "size": 1,
+      "kind": "",
+      "category": "Manifestation",
+      "profile": {
+        "move": "8\"",
+        "health": "6",
+        "save": "6+",
+        "ward": "6+",
+        "banishment": "7",
+        "url": "https://wahapedia.ru/aos4/factions/endless-spells/Horrorghast",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "ENDLESS SPELL",
+          "FLY",
+          "MANIFESTATION",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Harbinger of Horror"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Harbinger of Horror",
+            "timing": "Any Shooting Phase",
+            "effect": "Declare: Pick an enemy unit that was targeted by this MANIFESTATION’s shooting attacks this phase to be the target.\nEffect: Roll a dice. If the roll is less than the number of models in the target unit that were slain this phase, the target cannot use commands for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Shooting Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Scream of Terror",
+            "10\"",
+            "6",
+            "4+",
+            "3+",
+            "2",
+            "1",
+            "Shoot in Combat, Anti-INFANTRY (+1 Rend)"
+          ]
+        ],
+        "melee": [
+          [
+            "Deathly Touch",
+            "4",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Horrorghasts are summoned by necromantic rituals or mass sacrifice. They have no form of their own, appearing as whatever will most terrify their prey, feeding off their panic and billowing it back out in a withering miasma of doom. Though most commonly encountered roaming the bleak wilds of Shyish, the battlefield offers much of a Horrorghast’s favoured sustenance. While Horrorghasts have been recorded as taking all manner of forms, there are few mortals who do not fear death, and so many manifest as the distorted visage of the Great Necromancer himself.",
+      "description": "SUMMONING REFERENCE\n• Casting value 6\n• Wholy within 12\" of and visible to caster\n• More than 9\" from enemy"
+    },
+    {
+      "faction": "Endless Spells",
+      "name": "Krondspine Incarnate of Ghur",
+      "points": 0,
+      "size": 1,
+      "kind": "",
+      "category": "Manifestation",
+      "profile": {
+        "move": "10\"",
+        "health": "12",
+        "save": "6+",
+        "ward": "6+",
+        "banishment": "8",
+        "url": "https://wahapedia.ru/aos4/factions/endless-spells/Krondspine-Incarnate-of-Ghur",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "ENDLESS SPELL",
+          "FLY",
+          "INCARNATE",
+          "MANIFESTATION",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Wild Form",
+          "Arcane Predator",
+          "Devourer of Magics"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Wild Form",
+            "timing": "Passive",
+            "effect": "Effect: Each time this MANIFESTATION is targeted by the ‘Banish Manifestation’ ability, if it would be banished, it is not banished Instead, allocate 6 damage points to it (ward rolls cannot be made for those damage points).",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          },
+          {
+            "name": "Arcane Predator",
+            "timing": "Passive",
+            "effect": "Effect: You can add 1 to the number of dice rolled when making charge rolls for this MANIFESTATION, to a maximum of 3, while it is within 18\" of any enemy MANIFESTATIONS, but if you do so, it must end the charge move within 1/2\" of an enemy MANIFESTATION.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Charge Phase"
+          },
+          {
+            "name": "Devourer of Magics",
+            "timing": "End of Any Turn",
+            "effect": "Effect: If this MANIFESTATION destroyed any enemy MANIFESTATIONS this turn, Heal (6) this MANIFESTATION.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "End of Turn"
+          }
+        ],
+        "melee": [
+          [
+            "Amberbone Claws and Fangs",
+            "6",
+            "4+",
+            "2+",
+            "2",
+            "3",
+            "Anti-MANIFESTATION (+1 Rend)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Blood pounds, war drums thunder in the mind and the hunt beckons as a Krondspine Incarnate emerges. These entities are shards of Ghur’s awakened animus, concentrated within primal realmstone and named for the mountains where they were first encountered. A Krondspine Incarnate draws to themselves the bones and claws of dead beasts, both to defend themselves and slaughter in kind. Like all things of Ghur, they are predatory, but their favoured prey is magic – opposing spells and arcane constructs that they can tear to aetheric chunks.",
+      "description": "SUMMONING REFERENCE\n• Casting value 8\n• Wholy within 12\" of and visible to caster\n• More than 9\" from enemy"
+    },
+    {
+      "faction": "Endless Spells",
+      "name": "Lauchon the Soulseeker",
+      "points": 0,
+      "size": 1,
+      "kind": "",
+      "category": "Manifestation",
+      "profile": {
+        "move": "12\"",
+        "health": "10",
+        "save": "6+",
+        "ward": "6+",
+        "banishment": "7",
+        "url": "https://wahapedia.ru/aos4/factions/endless-spells/Lauchon-the-Soulseeker",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "ENDLESS SPELL",
+          "FLY",
+          "MANIFESTATION",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Traverse the Tides of Death"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Traverse the Tides of Death",
+            "timing": "Your Movement Phase",
+            "effect": "Declare: Pick a friendly INFANTRY WIZARD HERO within 3\" of this MANIFESTATION to be the target.\nEffect: This MANIFESTATION can move a distance up to its Move characteristic. It can pass through models during that move but cannot end that move in combat. Then, remove the target from the battlefield and set them up again on the battlefield within 3\" of this MANIFESTATION and not in combat. Then, inflict 1 mortal damage on the target.",
+            "kind": "Ability",
+            "type": "Movement",
+            "keywords": "Core, Move",
+            "phase": "Movement Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Scything Oar",
+            "3",
+            "4+",
+            "3+",
+            "1",
+            "D3",
+            "Crit (2 Hits)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "When Nagash conquered Shyish, he did so by devouring all those gods who opposed him. Only a few fragments of these sundered deities endured. One such entity is the shade of Lauchon the Soulseeker, the graven boatman, who it is said knows the location of every soul in creation. A sorcerer who wishes to extricate themselves from danger may call upon Lauchon, for surely he shall find them. Yet the Soulseeker’s price is always the same: portions of the soul, devoured one sliver at a time.",
+      "description": "SUMMONING REFERENCE\n• Casting value 7\n• Wholy within 12\" of and visible to caster\n• More than 9\" from enemy"
+    },
+    {
+      "faction": "Endless Spells",
+      "name": "Malevolent Maelstrom",
+      "points": 0,
+      "size": 1,
+      "kind": "",
+      "category": "Manifestation",
+      "profile": {
+        "move": "8\"",
+        "health": "6",
+        "save": "6+",
+        "ward": "6+",
+        "banishment": "7",
+        "url": "https://wahapedia.ru/aos4/factions/endless-spells/Malevolent-Maelstrom",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "ENDLESS SPELL",
+          "FLY",
+          "MANIFESTATION",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Necrotic Vortex",
+          "Morbid Detonation"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Necrotic Vortex",
+            "timing": "Passive",
+            "effect": "Effect: Give this MANIFESTATION 1 maelstrom point each time:\n• This MANIFESTATION is set up.\n• A unit successfully casts a spell while it is within 12\" of this MANIFESTATION.\n• A model is slain within 12\" of this MANIFESTATION.\nThis MANIFESTATION can have a maximum of 6 maelstrom points at once.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Morbid Detonation",
+            "timing": "End of Any Turn",
+            "effect": "Declare: You must, and can only, use this ability if this unit has 6 maelstrom points. Pick each unit (friendly and enemy) within 9\" of it to be the targets.\nEffect: Roll a dice for each target. On a 2+, inflict an amount of mortal damage on the target equal to the roll. Then, this MANIFESTATION is destroyed.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "End of Turn"
+          }
+        ],
+        "melee": [
+          [
+            "Lashing Tendrils of Energy",
+            "2D6",
+            "4+",
+            "3+",
+            "-",
+            "1",
+            "Crit (2 Hits)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Those howling novas known as Malevolent Maelstroms are concentrations of volatile death magic. Trapped spirits strain and wail for release, even while guzzling upon errant magics and recently slain souls. Eventually, inevitably, the Maelstrom will glut itself to bursting upon these energies, detonating in a great necrotic paroxysm and obliterating anything nearby. Some scholars have noted similarities between the Maelstroms and the dreadful Necroquake that once swept the realms, theorising that these spells are localised aftershocks that can be conjured even decades later.",
+      "description": "SUMMONING REFERENCE\n• Casting value 6\n• Wholy within 12\" of and visible to caster\n• More than 9\" from enemy"
+    },
+    {
+      "faction": "Endless Spells",
+      "name": "Prismatic Palisade",
+      "points": 0,
+      "size": 1,
+      "kind": "",
+      "category": "Manifestation",
+      "profile": {
+        "move": "-",
+        "health": "8",
+        "save": "6+",
+        "ward": "6+",
+        "banishment": "7",
+        "url": "https://wahapedia.ru/aos4/factions/endless-spells/Prismatic-Palisade",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "ENDLESS SPELL",
+          "MANIFESTATION",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Blinding Light"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Blinding Light",
+            "timing": "Passive",
+            "effect": "Effect: This MANIFESTATION cannot be targeted by shooting attacks. In addition, a unit cannot be targeted by shooting attacks if it is impossible to draw a straight line from a model in the attacking unit to a model in the target unit without that line passing across this MANIFESTATION.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          }
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "A Prismatic Palisade rises in a flash of brilliant light and with the resonant chime of crystal. Such pure radiance shines from its elegant spars that those nearby are blinded and projectiles are burnt to nothing as they near the spell. Though a Prismatic Palisade may appear fragile, its aetheric substance is firmer than the most stubborn steel; it is, after all, conjured from the substance of symmetry and ineffable light, willed into being by minds brimming with potential.",
+      "description": "SUMMONING REFERENCE\n• Casting value 7\n• Wholy within 18\" of and visible to caster"
+    },
+    {
+      "faction": "Endless Spells",
+      "name": "Purple Sun of Shyish",
+      "points": 0,
+      "size": 1,
+      "kind": "",
+      "category": "Manifestation",
+      "profile": {
+        "move": "8\"",
+        "health": "10",
+        "save": "6+",
+        "ward": "6+",
+        "banishment": "7",
+        "url": "https://wahapedia.ru/aos4/factions/endless-spells/Purple-Sun-of-Shyish",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "ENDLESS SPELL",
+          "FLY",
+          "MANIFESTATION",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Pull of the Nadir",
+          "End Given Form"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Pull of the Nadir",
+            "timing": "Passive",
+            "effect": "Effect: Subtract 1 from save rolls for friendly and enemy units while they are within 3\" of this MANIFESTATION.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "End Given Form",
+            "timing": "Your Movement Phase",
+            "effect": "Effect: This MANIFESTATION can move a distance up to its Move characteristic. It can pass through models during that move but cannot end that move in combat. Then, pick up to 3 enemy units that this MANIFESTATION passed across during that move to be the targets. Roll a D3 for each target. On a 2+, inflict an amount of mortal damage on the target equal to the roll.",
+            "kind": "Ability",
+            "type": "Movement",
+            "keywords": "Core, Move",
+            "phase": "Movement Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Transmuting Rays",
+            "2D6",
+            "4+",
+            "3+",
+            "1",
+            "1",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "The Purple Sun is a harbinger of annihilation. Fell magics coalesce into a glowing orb that floats with an eerie serenity, emanating rays of amethyst light that turn any they strike to lifeless crystal. Strong or mighty, craven or courageous: none are spared. All the while, a skeletal face leers out of the Purple Sun. Learned Necromancers say that this is the face of the mad god Xereus, whose name is invoked in rites of conjuring and who is said to be imprisoned within the Purple Sun as penance for ancient crimes.",
+      "description": "SUMMONING REFERENCE\n• Casting value 8\n• Wholy within 12\" of and visible to caster\n• More than 9\" from enemy"
+    },
+    {
+      "faction": "Endless Spells",
+      "name": "Quicksilver Swords",
+      "points": 0,
+      "size": 1,
+      "kind": "",
+      "category": "Manifestation",
+      "profile": {
+        "move": "8\"",
+        "health": "6",
+        "save": "6+",
+        "ward": "6+",
+        "banishment": "7",
+        "url": "https://wahapedia.ru/aos4/factions/endless-spells/Quicksilver-Swords",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "ENDLESS SPELL",
+          "FLY",
+          "MANIFESTATION",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Dancing Blades"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Dancing Blades",
+            "timing": "Passive",
+            "effect": "Effect: Ward rolls cannot be made for damage points inflicted by this MANIFESTATION’s attacks.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Quicksilver Blades",
+            "12",
+            "4+",
+            "3+",
+            "1",
+            "1",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "It is said that the Quicksilver Swords were wrought by Celemnis, the fabled Silver Maiden of Elixia. Not even being boiled alive in molten quicksilver could end her labours; incarnated as a terrifying banshee, she imbued each of these magical blades with shards of her own undying essence and spite. So fine is their edge that they slice through even arcane defences, and so deep is their bitterness that they fight as if wielded by a master bladesman, an unearthly wail accompanying each chop and thrust.",
+      "description": "SUMMONING REFERENCE\n• Casting value 6\n• Wholy within 12\" of and visible to caster\n• More than 9\" from enemy"
+    },
+    {
+      "faction": "Endless Spells",
+      "name": "Ravenak’s Gnashing Jaws",
+      "points": 0,
+      "size": 1,
+      "kind": "",
+      "category": "Manifestation",
+      "profile": {
+        "move": "3D6\"",
+        "health": "10",
+        "save": "6+",
+        "ward": "6+",
+        "banishment": "7",
+        "url": "https://wahapedia.ru/aos4/factions/endless-spells/Ravenak-s-Gnashing-Jaws",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "ENDLESS SPELL",
+          "MANIFESTATION",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Ravening Hunger"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Ravening Hunger",
+            "timing": "Any Charge Phase",
+            "effect": "Declare: If this MANIFESTATION charged this turn, pick an enemy unit within 1\" of it to be the target.\nEffect: Roll 10 dice. For each 5+, inflict 1 mortal damage on the target.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Charge Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Gnashing Jaws",
+            "10",
+            "4+",
+            "2+",
+            "1",
+            "1",
+            "Charge (+1 Damage)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Ravenak’s Gnashing Jaws are the embodiment of hunger, an insatiable devourer that tears through anything that moves. No matter how many they rip into visceral, bloodied chunks, the Jaws never slacken. Gory streaks of meat and guts are left trailing behind such a spell – but more unsettling still is the uncertainty surrounding the fate of those devoured. Ravenak’s precise nature remains a topic of debate amongst scholars and shamans, with possibilities ranging from a godbeast trapped long ago by Sigmar to an aspect of savage Gorkamorka himself.",
+      "description": "SUMMONING REFERENCE\n• Casting value 7\n• Wholy within 12\" of and visible to caster\n• More than 9\" from enemy"
+    },
+    {
+      "faction": "Endless Spells",
+      "name": "Shards of Valagharr",
+      "points": 0,
+      "size": 2,
+      "kind": "",
+      "category": "Manifestation",
+      "profile": {
+        "move": "-",
+        "health": "8",
+        "save": "6+",
+        "ward": "6+",
+        "banishment": "7",
+        "url": "https://wahapedia.ru/aos4/factions/endless-spells/Shards-of-Valagharr",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "ENDLESS SPELL",
+          "MANIFESTATION",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Multiple Parts",
+          "Ensnaring Soul-Drain",
+          "Phantasmal Translocation"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Multiple Parts",
+            "timing": "Passive",
+            "effect": "Effect: When a number of damage points equal to this MANIFESTATION’s Health characteristic are allocated to it, this MANIFESTATION is destroyed and both its parts are removed from play.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Ensnaring Soul-Drain",
+            "timing": "Passive",
+            "effect": "Effect: Each time an enemy unit uses a MOVE ability while it is within 9\" of any parts of this MANIFESTATION, the effects of the ‘FLY’ ability do not apply to that unit. Enemy units cannot be set up within 9\" of either part of this MANIFESTATION.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Movement Phase"
+          },
+          {
+            "name": "Phantasmal Translocation",
+            "timing": "Your Movement Phase",
+            "effect": "Effect: Pick a part of this MANIFESTATION, remove it from the battlefield and set it up again on the battlefield wholly within 9\" of the other part and more than 3\" from all enemy units.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Movement Phase"
+          }
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "The Shards of Valagharr are prisms created by the legendary arch-mage Mython Valagharr to absorb amethyst magic before it could swell into deadly gheist-storms. Yet, over time, Valagharr was consumed by his grim work. Though he was struck down by Sigmar himself for monstrous transgressions, he had already begun to spread his dark knowledge, including how to transform his Shards into tools of magical restraining. When such an endless spell is summoned, any who find themselves nearby are dragged and bound to the earth.",
+      "description": "SUMMONING REFERENCE\n• Casting value 6\n• Wholy within 18\" of and visible to caster\n• Parts within 9\" of each other"
+    },
+    {
+      "faction": "Endless Spells",
+      "name": "Soulscream Bridge",
+      "points": 0,
+      "size": 2,
+      "kind": "",
+      "category": "Manifestation",
+      "profile": {
+        "move": "-",
+        "health": "12",
+        "save": "6+",
+        "ward": "6+",
+        "banishment": "7",
+        "url": "https://wahapedia.ru/aos4/factions/endless-spells/Soulscream-Bridge",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "ENDLESS SPELL",
+          "MANIFESTATION",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Multiple Parts",
+          "Deathly Passage"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Multiple Parts",
+            "timing": "Passive",
+            "effect": "Effect: When a number of damage points equal to this MANIFESTATION’s Health characteristic are allocated to it, this MANIFESTATION is destroyed and both its parts are removed from play.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Deathly Passage",
+            "timing": "Your Movement Phase",
+            "effect": "Declare: Pick a friendly unit wholly within 6\" of one part of this MANIFESTATION to be the target.\nEffect: Remove the target from the battlefield and set it up again on the battlefield wholly within 6\" of the other part of this MANIFESTATION and more than 9\" from all enemy units.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Movement Phase"
+          }
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Soulscream Bridges are considered by many mages to be a convenient, if morbid, means of translocating allies. Yet these spells are more macabre than they first appear. They are formed by capturing tormented souls and binding them in a facsimile of physicality, using their anguish to punch open a path across reality. Those who have travelled across a Soulscream Bridge are haunted by the wails for years to come, a terrible chorus of the damned that grows only stronger in the long shadows of the night...",
+      "description": "SUMMONING REFERENCE\n• Casting value 6\n• Wholy within 18\" of and visible to caster\n• Parts within 9\" of each other"
+    },
+    {
+      "faction": "Endless Spells",
+      "name": "Soulsnare Shackles",
+      "points": 0,
+      "size": 3,
+      "kind": "",
+      "category": "Manifestation",
+      "profile": {
+        "move": "-",
+        "health": "6",
+        "save": "6+",
+        "ward": "6+",
+        "banishment": "7",
+        "url": "https://wahapedia.ru/aos4/factions/endless-spells/Soulsnare-Shackles",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "ENDLESS SPELL",
+          "MANIFESTATION",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Multiple Parts",
+          "Bound for the Great Oubliette"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Multiple Parts",
+            "timing": "Passive",
+            "effect": "Effect: When a number of damage points equal to this MANIFESTATION’s Health characteristic are allocated to it, this MANIFESTATION is destroyed and all its parts are removed from play.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Bound for the Great Oubliette",
+            "timing": "Any Hero Phase",
+            "effect": "Declare: For each part of this MANIFESTATION, you can pick an enemy unit within 3\" of that part to be the targets. You cannot pick the same unit to be the target of this ability more than once per turn.\nEffect: Roll a D3 for each target. On a 2+:\n• Inflict an amount of mortal damage on the target equal to the roll.\n• Subtract a number of inches equal to the roll from the target’s Move characteristic for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          }
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "The Soulsnare Shackles rise from the Great Oubliette, that vast dungeon where Nagash entraps any who fall foul of his warped justice. Thrashing with unearthly sentience, they slither unerringly towards any who bear even the most minor guilt. The Shackles seal not around flesh but around the soul, ensuring not even ethereal beings can escape. The more they struggle, the more these unfortunates are drained of vigour. Dread and grief seizes them until, at last, they surrender and are yanked into the Oubliette for the rest of time.",
+      "description": "SUMMONING REFERENCE\n• Casting value 6\n• Wholy within 18\" of and visible to caster\n• Each part within 3\" of at least 1 other part"
+    },
+    {
+      "faction": "Endless Spells",
+      "name": "Suffocating Gravetide",
+      "points": 0,
+      "size": 1,
+      "kind": "",
+      "category": "Manifestation",
+      "profile": {
+        "move": "12\"",
+        "health": "8",
+        "save": "6+",
+        "ward": "6+",
+        "banishment": "7",
+        "url": "https://wahapedia.ru/aos4/factions/endless-spells/Suffocating-Gravetide",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "ENDLESS SPELL",
+          "FLY",
+          "MANIFESTATION",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Pulled to the Grave"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Pulled to the Grave",
+            "timing": "Your Movement Phase",
+            "effect": "Effect: This MANIFESTATION can move a distance up to its Move characteristic. It can pass through models during that move but cannot end that move in combat. Then, you can pick an enemy unit that this MANIFESTATION passed across during that move to be the target. Roll a dice for each model in the target unit. For each 5+, inflict 1 mortal damage on the target.",
+            "kind": "Ability",
+            "type": "Movement",
+            "keywords": "Core, Move",
+            "phase": "Movement Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Spectral Riptide",
+            "8",
+            "4+",
+            "3+",
+            "1",
+            "1",
+            "Charge (+1 Damage)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "The earth of the Mortal Realms is suffused with echoes of bloodshed. A sorcerer of sufficient might can stir these energies to a form of unhallowed wakefulness, conjuring a Suffocating Gravetide. These magical constructs stink of open coffins and desiccated flesh, and their impact can crush even cavalrymen, dragging them down to face choking asphyxiation or be torn apart by the writhing spirits within. There are grim tales of Gravetides endlessly circling old battlefields or swelling with such terrible malignancy that they loom over the towering heart-trees of ancient forests.",
+      "description": "SUMMONING REFERENCE\n• Casting value 8\n• Wholy within 12\" of and visible to caster\n• More than 9\" from enemy"
+    },
+    {
+      "faction": "Endless Spells",
+      "name": "The Burning Head",
+      "points": 0,
+      "size": 1,
+      "kind": "",
+      "category": "Manifestation",
+      "profile": {
+        "move": "8\"",
+        "health": "6",
+        "save": "6+",
+        "ward": "6+",
+        "banishment": "6",
+        "url": "https://wahapedia.ru/aos4/factions/endless-spells/The-Burning-Head",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "ENDLESS SPELL",
+          "FLY",
+          "MANIFESTATION",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Burning Up"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Burning Up",
+            "timing": "Passive",
+            "effect": "Effect: Each time this MANIFESTATION uses a SHOOT ability, after that ability has been resolved, allocate 1 damage point to this MANIFESTATION (ward rolls cannot be made for that damage point).",
+            "kind": "Ability",
+            "type": "Shooting",
+            "phase": "Shooting Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Burning Breath",
+            "10\"",
+            "D6",
+            "4+",
+            "3+",
+            "2",
+            "1",
+            "Shoot in Combat, Anti-WAR MACHINE (+1 Rend)"
+          ]
+        ],
+        "melee": [
+          [
+            "Flaming Maw",
+            "2D6",
+            "4+",
+            "3+",
+            "2",
+            "1",
+            "Anti-WAR MACHINE (+1 Rend)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "To summon the Burning Head, a wizard must draw upon their most volatile and fiery emotions. These crystallise as crackling motes and cinders that form a leering, cackling death’s head. Only the most reckless dare summon the Burning Head, for it races in whatever direction it chooses, heedlessly expending its essence in gouts of flame. In its wake, it leaves charred corpses and batteries of wooden-framed artillery set ablaze; even cities can be consumed by the incandescent mania of the Burning Head.",
+      "description": "SUMMONING REFERENCE\n• Casting value 5\n• Wholy within 12\" of and visible to caster\n• More than 9\" from enemy"
+    },
+    {
+      "faction": "Endless Spells",
+      "name": "Umbral Spellportal",
+      "points": 0,
+      "size": 2,
+      "kind": "",
+      "category": "Manifestation",
+      "profile": {
+        "move": "-",
+        "health": "8",
+        "save": "5+",
+        "ward": "6+",
+        "banishment": "6",
+        "url": "https://wahapedia.ru/aos4/factions/endless-spells/Umbral-Spellportal",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "ENDLESS SPELL",
+          "MANIFESTATION",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Multiple Parts",
+          "Arcane Passage"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Multiple Parts",
+            "timing": "Passive",
+            "effect": "Effect: When a number of damage points equal to this MANIFESTATION’s Health characteristic are allocated to it, this MANIFESTATION is destroyed and both its parts are removed from play.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Arcane Passage",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Pick a friendly WIZARD within 3\" of this MANIFESTATION to be the target.\nEffect: The next time the target uses a non-SUMMON SPELL ability this phase, add 1 to the casting value of that spell. When picking targets for that spell, you can measure range and visibility from either part of this MANIFESTATION instead of from the caster, and your opponent can measure range and visibility to either part of this MANIFESTATION instead of to the caster for the purposes of the ‘Unbind’ ability.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          }
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Umbral Spellportals manifest as pairs of floating, gloom-wreathed mirrors. Most who gaze into them see only half-glimpsed secrets or distorted memories, but wizards perceive them as passageways through which sorceries can be channelled to wreak destruction behind fortress walls or aid isolated warriors. Yet an ominous aura surrounds the Spellportals. Most mages have heard of Grandelthorpe the Lesser, whose attempts to discover the working of these constructs saw her mind gradually unravel until she was convinced that strange entities shadowed her steps from within impossible dimensions.",
+      "description": "SUMMONING REFERENCE\n• Casting value 7\n• Wholy within 18\" of and visible to caster\n• Parts within 9\" of each other"
+    }
+  ]
+}

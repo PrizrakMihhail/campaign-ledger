@@ -27,6 +27,17 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Refresh Wahapedia faction data
+        run: python tools/sync_wahapedia.py
+
+      - name: Verify generated site
+        run: node tools/check.mjs
+
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 

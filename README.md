@@ -15,16 +15,17 @@ No account or installation is required. Your campaign is saved in the browser yo
 - Set the campaign name, battlepack, region, points limit, and campaign resource.
 - See an overview of the active warband, recent battles, Glory Points, and active quests.
 - Keep a dated campaign chronicle with campaign-wide or warband-specific notes.
-- Manage several warbands in the same campaign and archive those no longer in play.
+- Manage several warbands in the same campaign, archive those no longer in play, or permanently remove a warband when it is no longer needed.
 
 ### Build and develop warbands
 
-- Record each warband's faction, battle formation, warlord, notes, and banner colour.
-- Add units from the built-in profile catalogue or enter a custom profile.
+- Choose a faction and import its available Battle Formation when creating a warband.
+- Add units from the built-in Age of Sigmar profile catalogue or enter a custom profile.
 - Track points, model count, Reinforced status, Renown, rank, progression path, enhancements, Battle Scars, and injuries.
 - Create custom Anvil of Apotheosis heroes, including their archetype, origin, flaw, mount, and upgrades.
 - Maintain a ledger of Glory Points and other campaign resources, including manual adjustments and rewards from battles.
 - Browse the profile library for available factions and units.
+- Import faction rules into an existing warband if it was created before the catalogue was available or its rules were not selected during creation.
 
 ### Record battles and progression
 
@@ -40,8 +41,12 @@ No account or installation is required. Your campaign is saved in the browser yo
 - Create quests with objectives and optional Quest Point targets.
 - Combine manually entered progress with Quest Points from recorded battles.
 - Complete or forfeit quests while retaining their history.
-- Store faction Battle Traits for quick reference.
-- Maintain an Arcane Tome of spells, prayers, and manifestations for each warband.
+- Import individual Battle Traits or the complete standard trait list for a faction.
+- Keep standard faction Battle Traits separate from Army of Renown traits, and select the relevant Army of Renown from the import list.
+- Import complete spell, prayer, and manifestation lores—or select individual entries—for each warband's Arcane Tome.
+- Use both shared and faction-specific manifestation lores, and add a linked manifestation unit to the warband roster when a profile is available.
+- Add custom Battle Traits, spells, prayers, manifestations, and lores alongside imported content.
+- Edit imported entries after adding them, so campaign-specific changes and house rules are preserved.
 
 ### Use and print datacards
 
@@ -61,7 +66,17 @@ You can also print the campaign overview from **Settings**.
 
 1. Open the [Campaign Ledger](https://prizrakmihhail.github.io/campaign-ledger/).
 2. Enter the campaign details, or import an existing JSON backup.
-3. Create a warband and add its units.
-4. Record battles, unit progression, resources, and quest progress as the campaign develops.
+3. Create a warband, choose its faction, and select the faction rules you want to import.
+4. Add units from the profile catalogue or create custom units.
+5. Use **Import faction rules** later if you want to add catalogue data to an existing warband.
+6. Record battles, unit progression, resources, and quest progress as the campaign develops.
+
+## Imported rules and profiles
+
+The faction catalogue includes Age of Sigmar factions, unit profiles, Battle Formations, Battle Traits, Armies of Renown, spell and prayer lores, and shared or faction-specific manifestation lores and profiles. Catalogue data is refreshed from [Wahapedia](https://wahapedia.ru/) when the app is deployed, so the live site receives new data when a new deployment is published. Running the sync script locally updates a local development copy only.
+
+Imported content is copied into your warband. You can edit or remove it without changing the catalogue, and a later catalogue refresh will not overwrite your saved customizations. Existing warbands are not changed automatically; use **Import faction rules** to choose which new catalogue entries to add.
+
+Wahapedia is an unofficial rules reference. For tournament play or rules disputes, check the current official publications and errata.
 
 The app is designed for modern desktop and mobile browsers.

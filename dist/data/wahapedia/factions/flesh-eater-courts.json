@@ -1,0 +1,2883 @@
+{
+  "edition": "Age of Sigmar 4",
+  "lastUpdate": "2026-10-22 18:12:05",
+  "faction": {
+    "id": "FE",
+    "name": "Flesh-eater Courts",
+    "slug": "flesh-eater-courts",
+    "url": "https://wahapedia.ru/aos4/factions/flesh-eater-courts",
+    "count": 36
+  },
+  "rules": {
+    "battleTraits": [
+      {
+        "name": "A KINGDOM DELUDED",
+        "timing": "Once Per Turn (Army), Start of Any Turn",
+        "declare": "You must use this ability at the start of each turn. If it is the first turn of the battle, pick a DELUSION from these battle traits or, unless otherwise specified, from the warscroll of a friendly unit on the battlefield. If it is not the first turn, make a delusion roll of D6.",
+        "effect": "On a delusion roll of 1-2, you must pick a different DELUSION to the one you picked last turn. On a 3-4, you must pick the same Delusion as the one you picked last turn, even if it is on the warscroll of a unit that has been destroyed. In such cases, the effect of that DELUSION applies as if the unit had not been destroyed. On a 5-6, you must pick a DELUSION like you did in the first turn. For the rest of the turn, you believe the DELUSION you picked.",
+        "unitLinks": []
+      },
+      {
+        "name": "A SPLENDID PAGEANT",
+        "timing": "Passive",
+        "declare": "",
+        "effect": "While you believe this DELUSION:\n• Each time a friendly FLESH-EATER COURTS unit wholly within 12\" of a friendly FLESH-EATER COURTS HERO uses a RUN ability, if you roll a 1-3 when determining the distance that unit can move, you can use a value of 4 instead.\n• While a friendly FLESH-EATER COURTS INFANTRY HERO is within the combat range of a friendly FLESH-EATER COURTS INFANTRY unit that has 5 or more models, that HERO is not visible to enemy units more than 6\" away.",
+        "unitLinks": []
+      },
+      {
+        "name": "A GLORIOUS BANQUET",
+        "timing": "Passive",
+        "declare": "",
+        "effect": "While you believe this DELUSION, add 1 to hit rolls for combat attacks made by friendly FLESH-EATER COURTS units that charged in the same turn while they are wholly within 12\" of any friendly FLESH-EATER COURTS HEROES.",
+        "unitLinks": []
+      },
+      {
+        "name": "ROYAL BLOOD",
+        "timing": "Once Per Turn (Army), Your Hero Phase",
+        "declare": "Pick any number of friendly ABHORRANTS to be the targets.",
+        "effect": "Heal (D3) each target.",
+        "unitLinks": []
+      },
+      {
+        "name": "SUMMON LOYAL SUBJECTS",
+        "timing": "Once Per Turn (Army), Your Movement Phase",
+        "declare": "Pick a friendly ABHORRANT to use this ability, then pick a friendly SERFS or KNIGHTS unit that has been destroyed to be the target.",
+        "effect": "Set up a replacement unit with half the number of models from the target unit (rounding up) wholly within 6\" of a battlefield edge and more than 9\" from all enemy units.",
+        "unitLinks": []
+      },
+      {
+        "name": "MUSTER GUARD",
+        "timing": "Once Per Turn (Army), Your Movement Phase",
+        "declare": "Pick any number of friendly NOBLES to be the targets.",
+        "effect": "For each target, pick 1 of the following:\n• Return up to 3 slain models to a friendly SERFS unit wholly within 12\" of it.\n• Return 1 slain model to a friendly KNIGHTS unit wholly within 12\" of it.\nThe same unit cannot have models returned to it by this ability more than once per turn.",
+        "unitLinks": []
+      },
+      {
+        "name": "FEEDING FRENZY",
+        "timing": "Once Per Battle (Army), Any Combat Phase",
+        "declare": "Pick a friendly FLESH-EATER COURTS HERO in combat to be the target.",
+        "effect": "For the rest of the turn, add 1 to the Attacks characteristic of melee weapons, including Companion weapons, used by friendly FLESH-EATER COURTS units while they are wholly within 12\" of the target.",
+        "unitLinks": []
+      }
+    ],
+    "armiesOfRenown": [
+      {
+        "id": "legions-of-nagash",
+        "name": "Legions of Nagash",
+        "battleTraits": [
+          {
+            "name": "ETHEREAL",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "Ignore negative modifiers to save rolls for friendly LEGIONS OF NAGASH NIGHTHAUNT units, excluding Nagash.",
+            "unitLinks": []
+          },
+          {
+            "name": "LEGIONS OF ENDLESS DEAD",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "Subtract 5 from the control scores of enemy units while they are in combat with 2 or more friendly units if any of those friendly units is Nagash or if none of those friendly units share any of the following keywords: SOULBLIGHT GRAVELORDS, FLESH-EATER COURTS, NIGHTHAUNT or OSSIARCH BONEREAPERS.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "id": "the-equinox-feast",
+        "name": "The Equinox Feast",
+        "battleTraits": [
+          {
+            "name": "THE EQUINOX PARADE",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "In the first battle round:\n• Add 1 to run rolls for friendly EQUINOX FEAST units for each other friendly EQUINOX FEAST unit that has used a RUN ability this phase.\n• Add D6\" to the distance friendly EQUINOX FEAST units can move when they use a RETREAT ability.",
+            "unitLinks": []
+          },
+          {
+            "name": "A DISPLAY OF FALCONRY",
+            "timing": "Once Per Turn (Army), Any Charge Phase",
+            "declare": "You can only use this ability in the second battle round. Pick each enemy unit that used a CHARGE ability this phase to be the targets.",
+            "effect": "Roll a D3. On a 2+, inflict an amount of mortal damage on the target equal to the roll.",
+            "unitLinks": []
+          },
+          {
+            "name": "THE RITUAL DANCE",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "In the third battle round, while a friendly EQUINOX FEAST unit is in combat with an enemy unit that contains any champions, musicians or standard bearers, it can move 6\" instead of 3\" when it makes a pile-in move.",
+            "unitLinks": []
+          },
+          {
+            "name": "EAT YOUR FILL!",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "In the fourth battle round, each time a friendly EQUINOX FEAST unit uses a FIGHT ability, after that ability has been resolved:\n• If that unit is damaged, Heal (D3) that unit.\n• If that unit is not damaged, return up to 3 slain models to it.",
+            "unitLinks": []
+          },
+          {
+            "name": "MAKE MERRY ’TIL THE MORN",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "In the fifth battle round, friendly EQUINOX FEAST units have WARD (4+) while they are within 3\" of 2 or more other visible friendly EQUINOX FEAST units.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "id": "the-knights-of-new-summercourt",
+        "name": "The Knights of New Summercourt",
+        "battleTraits": [
+          {
+            "name": "THE SUMMERKING’S COLOURS",
+            "timing": "Once Per Battle (Army), Deployment Phase",
+            "declare": "Pick a friendly NEW SUMMERCOURT unit that contains any standard bearers to be the target.",
+            "effect": "For the rest of the battle:\n• While the target unit contains any standard bearers, add 10 to the control scores of friendly NEW SUMMERCOURT units while they are wholly within 24\" of the target.\n• Once all of the standard bearers in the target unit have been slain, subtract 5 from the control scores of friendly NEW SUMMERCOURT units.",
+            "unitLinks": []
+          },
+          {
+            "name": "A DUEL, GOOD SIR!",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "declare": "You must use this ability if the friendly Ushoran is in combat with the enemy general. Pick the enemy general to be the target.",
+            "effect": "Your opponent must decide whether the target will accept or refuse Ushoran’s challenge.\nAccept: For the rest of the turn, when the friendly Ushoran and the target are picked to use a FIGHT ability, all of their attacks must target each other.\nRefuse: The target has STRIKE-LAST for the rest of the turn.",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/flesh-eater-courts/Ushoran-Mortarch-of-Delusion"
+            ]
+          },
+          {
+            "name": "IN THEIR SIRE’S SHADOW",
+            "timing": "Once Per Battle (Army), Any Charge Phase",
+            "declare": "If the friendly Ushoran is not in combat and has not used any RUN or RETREAT abilities this turn, pick him to use this ability. Then, pick up to 2 friendly NEW SUMMERCOURT KNIGHTS units within his combat range that are not in combat and have not used a RUN or RETREAT ability this turn to be his royal retinue. Then, make a charge roll of 2D6.",
+            "effect": "The friendly Ushoran can move a distance up to the value of the charge roll. He can move through the combat ranges of enemy units and must end that move within ½\" of a visible enemy unit. If he does so, he has charged. If he charged, then after this ability has been resolved, each unit in his royal retinue can immediately use the ‘Charge’ ability even if it is not your charge phase and you can use the charge roll from this ability instead of making a charge roll when it does so, but it must end the charge move within 3\" of the friendly Ushoran.",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/flesh-eater-courts/Ushoran-Mortarch-of-Delusion"
+            ]
+          },
+          {
+            "name": "THE KNIGHT’S VOW",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "declare": "Pick each friendly NEW SUMMERCOURT unit that did not charge this turn to be the targets.",
+            "effect": "Start rolling dice, one at a time and one for each target, and stop when you roll a 6. The target you rolled a 6 for can use 2 FIGHT abilities this phase. After the first is used, however, the target has STRIKE-LAST for the rest of the turn. If you rolled for each target and did not roll a 6, this ability has no effect.",
+            "unitLinks": []
+          },
+          {
+            "name": "NIGHTMARISH CHARGE",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "Subtract 1 from hit rolls for combat attacks that target friendly NEW SUMMERCOURT units that charged in the same turn.",
+            "unitLinks": []
+          },
+          {
+            "name": "RED ERRANTRY HOSTS",
+            "timing": "Once Per Turn (Army), Your Movement Phase",
+            "declare": "Pick a friendly KNIGHTS unit that has been destroyed to be the target.",
+            "effect": "Set up a replacement unit with half the number of models from the target unit (rounding up) wholly within friendly territory, wholly within 6\" of a battlefield edge and more than 9\" from all enemy units.",
+            "unitLinks": []
+          }
+        ]
+      }
+    ],
+    "battleFormations": [
+      {
+        "name": "Knightly Echelon",
+        "abilities": [
+          {
+            "name": "SOUND THE CHARGE",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "Add 1 to the Rend characteristic of melee weapons used by friendly KNIGHTS that charged in the same turn while they are wholly within 12\" of any friendly FLESH-EATER COURTS HEROES.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "name": "The Royal Hunt",
+        "abilities": [
+          {
+            "name": "LIKE SNAPPING HOUNDS",
+            "timing": "Once Per Turn (Army), End of Any Turn",
+            "declare": "Pick each friendly SERFS unit in combat to be the targets.",
+            "effect": "For each target:\n• Make a pile-in move.\n• Then, pick an enemy unit in combat with the target and roll a D3. On a 2+, inflict an amount of mortal damage on that enemy unit equal to the roll.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "name": "Lords of the Manor",
+        "abilities": [
+          {
+            "name": "RAISE THE BANNERS",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "Each time another ability returns at least 1 slain model to a friendly unit that is not in combat, after that ability has been resolved, if that unit is a SERFS unit, you can return 1 additional slain model to it, and if it is a KNIGHTS unit, roll a dice. On a 4+, you can return 1 additional slain model to it.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "name": "Royal Menagerie",
+        "abilities": [
+          {
+            "name": "INDULGE, MY PRETTIES",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "While a friendly non-HERO FLESH-EATER COURTS MONSTER or BEAST is wholly within 12\" of any friendly FLESH-EATER COURTS HEROES:\n• That non-HERO unit can use a RAMPAGE ability on its warscroll even if that ability has already been used by another friendly MONSTER in the same turn.\n• If that non-HERO unit charged in the same turn and the unmodified charge roll was 9+, it has STRIKE-FIRST for the rest of the turn.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "name": "Impassioned Serfs",
+        "abilities": [
+          {
+            "name": "OVERWHELMING HORDES",
+            "timing": "Any Combat Phase",
+            "declare": "Pick a friendly SERFS unit that did not charge this turn and is in combat to use this ability, then pick an enemy unit in combat with that SERFS unit to be the target.",
+            "effect": "The target cannot make pile-in moves for the rest of the turn.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "name": "Questing Courtiers",
+        "abilities": [
+          {
+            "name": "THE BLESSING OF THE CHALICE",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "Friendly FLESH-EATER COURTS HEROES have WARD (5+) if they have destroyed a unit this battle.",
+            "unitLinks": []
+          }
+        ]
+      }
+    ],
+    "lores": {
+      "spell": [
+        {
+          "name": "Lore of Madness",
+          "kind": "spell",
+          "points": 0,
+          "entries": [
+            {
+              "name": "CHARNEL FEAST",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly FLESH-EATER COURTS WIZARD to cast this spell and pick a visible enemy unit within 18\" of them to be the target. You can also pick a friendly SERFS unit within 6\" of the target to be the raised ranks. Then, make a casting roll of 2D6.",
+              "effect": "Inflict D3 mortal damage on the target. For each damage point allocated to the target by this ability, you can return 1 slain model to the raised ranks.",
+              "value": "6",
+              "unitLinks": []
+            },
+            {
+              "name": "DERANGED TRANSFORMATION",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly FLESH-EATER COURTS WIZARD to cast this spell, pick a visible friendly FLESH-EATER COURTS INFANTRY or CAVALRY unit wholly within 12\" of them to be the target, then make a casting roll of 2D6.",
+              "effect": "Until the start of your next turn:\n• Add 2\" to the target’s Move characteristic.\n• Add 1 to wound rolls for the target’s combat attacks.",
+              "value": "6",
+              "unitLinks": [
+                "https://wahapedia.ru/aos4/factions/flesh-eater-courts/Morbheg-Knights"
+              ]
+            },
+            {
+              "name": "MIASMA OF MADNESS",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly FLESH-EATER COURTS WIZARD to cast this spell, pick a visible enemy unit within 18\" of them to be the target, then make a casting roll of 2D6.",
+              "effect": "Until the start of your next turn, for each unmodified hit roll of 1 for a combat attack made by the target, inflict 1 mortal damage on the target after the FIGHT ability has been resolved.",
+              "value": "7",
+              "unitLinks": []
+            }
+          ]
+        }
+      ],
+      "prayer": [
+        {
+          "name": "Rites of Delusion",
+          "kind": "prayer",
+          "points": 0,
+          "entries": [
+            {
+              "name": "EXCOMMUNICATION!",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly FLESH-EATER COURTS PRIEST to chant this prayer, pick a visible enemy unit within 18\" of them to be the target, then make a chanting roll of D6.",
+              "effect": "Until the start of your next turn, ignore positive modifiers to save rolls for the target. In addition, if the chanting roll was 10+, ward rolls cannot be made for the target until the start of your next turn.",
+              "value": "4",
+              "unitLinks": [
+                "https://wahapedia.ru/aos4/factions/flesh-eater-courts/Abhorrant-Cardinal"
+              ]
+            },
+            {
+              "name": "CHARNEL CONVICTION",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly FLESH-EATER COURTS PRIEST to chant this prayer, pick a visible friendly FLESH-EATER COURTS unit wholly within 12\" of them to be the target, then make a chanting roll of D6.",
+              "effect": "Until the start of your next turn, the target has WARD (5+). If the chanting roll was 10+, you can pick another eligible unit to be a second target.",
+              "value": "4",
+              "unitLinks": [
+                "https://wahapedia.ru/aos4/factions/flesh-eater-courts/Abhorrant-Cardinal"
+              ]
+            },
+            {
+              "name": "THE SUMMERKING’S FAVOUR",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly FLESH-EATER COURTS PRIEST to chant this prayer, pick a visible friendly FLESH-EATER COURTS HERO wholly within 12\" of them to be the target, then make a chanting roll of D6. You cannot pick Nagash to be the target of this prayer.",
+              "effect": "Resolve the effect of ‘Renowned Might’ below. If the chanting roll was 10+, resolve the effect of either ‘Renowned Might’ or ‘Righteous Tenacity’ instead.\nRenowned Might: Add 1 to the Damage characteristic of the target’s melee weapons for the rest of the turn.\nRighteous Tenacity: The target can use 2 FIGHT abilities this turn. After the first is used, however, the target has STRIKE-LAST for the rest of the turn.",
+              "value": "5",
+              "unitLinks": [
+                "https://wahapedia.ru/aos4/factions/flesh-eater-courts/Abhorrant-Cardinal",
+                "https://wahapedia.ru/aos4/factions/flesh-eater-courts/Nagash-Supreme-Lord-of-the-Undead"
+              ]
+            }
+          ]
+        }
+      ],
+      "manifestation": [
+        {
+          "name": "Manifested Insanity",
+          "kind": "manifestation",
+          "points": 0,
+          "entries": [
+            {
+              "name": "SUMMON CADAVEROUS BARRICADE",
+              "timing": "Your Hero Phase",
+              "declare": "If there is not a friendly Cadaverous Barricade on the battlefield, pick a friendly FLESH-EATER COURTS WIZARD to cast this spell, then make a casting roll of 2D6.",
+              "effect": "Set up a Cadaverous Barricade wholly within 18\" of the caster and visible to them.",
+              "value": "6",
+              "unitLinks": [
+                "https://wahapedia.ru/aos4/factions/flesh-eater-courts/Cadaverous-Barricade"
+              ],
+              "manifestation": {
+                "faction": "Flesh-eater Courts",
+                "name": "Cadaverous Barricade"
+              }
+            },
+            {
+              "name": "SUMMON CORPSEMARE STAMPEDE",
+              "timing": "Your Hero Phase",
+              "declare": "If there is not a friendly Corpsemare Stampede on the battlefield, pick a friendly FLESH-EATER COURTS WIZARD to cast this spell, then make a casting roll of 2D6.",
+              "effect": "Set up a Corpsemare Stampede wholly within 12\" of the caster, visible to them and more than 9\" from all enemy units.",
+              "value": "6",
+              "unitLinks": [
+                "https://wahapedia.ru/aos4/factions/flesh-eater-courts/Corpsemare-Stampede"
+              ],
+              "manifestation": {
+                "faction": "Flesh-eater Courts",
+                "name": "Corpsemare Stampede"
+              }
+            },
+            {
+              "name": "SUMMON CHALICE OF USHORAN",
+              "timing": "Your Hero Phase",
+              "declare": "If there is not a friendly Chalice of Ushoran on the battlefield, pick a friendly FLESH-EATER COURTS WIZARD to cast this spell, then make a casting roll of 2D6.",
+              "effect": "Set up a Chalice of Ushoran wholly within 12\" of the caster and visible to them.",
+              "value": "6",
+              "unitLinks": [
+                "https://wahapedia.ru/aos4/factions/flesh-eater-courts/Chalice-of-Ushoran"
+              ],
+              "manifestation": {
+                "faction": "Flesh-eater Courts",
+                "name": "Chalice of Ushoran"
+              }
+            }
+          ],
+          "scope": "faction"
+        }
+      ]
+    }
+  },
+  "entries": [
+    {
+      "faction": "Flesh-eater Courts",
+      "name": "Abhorrant Archregent",
+      "points": 120,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "5",
+        "save": "5+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/flesh-eater-courts/Abhorrant-Archregent",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "ABHORRANT",
+          "DEATH",
+          "FLESH-EATER COURTS",
+          "HERO",
+          "INFANTRY",
+          "WARD (6+)",
+          "WIZARD (1)"
+        ],
+        "abilities": [
+          "Musicians, Play!",
+          "Countless Servants"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Musicians, Play!",
+            "timing": "Passive",
+            "effect": "Effect: While you believe this DELUSION, subtract 1 from hit rolls for shooting attacks that target friendly FLESH-EATER COURTS units while they are wholly within 12\" of a friendly FLESH-EATER COURTS HERO.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "keywords": "Delusion",
+            "phase": "Defensive reaction"
+          },
+          {
+            "name": "Countless Servants",
+            "timing": "Once Per Turn (Army), Your Hero Phase",
+            "effect": "Declare: Pick a friendly SERFS or KNIGHTS unit wholly within 12\" of this unit to be the target.\nEffect: Roll a dice. On a 3+:\n• If the target is a SERFS unit, you can return up to 3 slain models to that unit.\n• If the target is a KNIGHTS unit, you can return 1 slain model to that unit.",
+            "kind": "Ability",
+            "type": "Rallying",
+            "phase": "Hero Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Gory Talons and Fangs",
+            "5",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "An Abhorrant Archregent rules over an entire empire of crazed cannibals. These vampires, amongst the oldest and most formidable of Ushoran’s brood, are unliving beacons of madness, commanding the devotion of innumerable ghouls.",
+      "regimentOptions": "Any %000001638FLESH-EATER COURTS%, 0-1 %000017609Royal Attendant%",
+      "notes": "This HERO can join an eligible regiment as a Royal Attendant."
+    },
+    {
+      "faction": "Flesh-eater Courts",
+      "name": "Abhorrant Cardinal",
+      "points": 130,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "5",
+        "save": "6+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/flesh-eater-courts/Abhorrant-Cardinal",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "ABHORRANT",
+          "DEATH",
+          "FLESH-EATER COURTS",
+          "HERO",
+          "INFANTRY",
+          "PRIEST (1)",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Insular Contemplations",
+          "Banishing Liturgy"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Insular Contemplations",
+            "timing": "Passive",
+            "effect": "Effect: While this unit is more than 6\" from all enemy units, add 1 to chanting rolls for this unit.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Banishing Liturgy",
+            "timing": "Passive",
+            "effect": "Effect: While you believe this DELUSION:\nAdd 2 to banishment rolls for friendly FLESH-EATER COURTS units.\nFriendly FLESH-EATER COURTS units have WARD (4+) against damage points inflicted by SPELL abilities, PRAYER abilities and abilities used by MANIFESTATIONS.",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Delusion",
+            "phase": "Start of Turn"
+          }
+        ],
+        "melee": [
+          [
+            "Cursed Crosier",
+            "3",
+            "4+",
+            "3+",
+            "-",
+            "D3",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Abhorrant Cardinals seek to spread the glory of Ushoran across every land. Having drunk from the Carrion King’s chalice, they have gained a measure of unwitting control over the delusion, using bloody rites to stoke their flock’s rabid fury.",
+      "regimentOptions": "0-1 %000017609Royal Attendant%, 0-1 %000001639KNIGHTS%, Any %000001643SERFS%, 0-1 %000017587BEAST%",
+      "notes": "This HERO can join an eligible regiment as a Royal Attendant."
+    },
+    {
+      "faction": "Flesh-eater Courts",
+      "name": "Abhorrant Ghoul King",
+      "points": 100,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "5",
+        "save": "5+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/flesh-eater-courts/Abhorrant-Ghoul-King",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "ABHORRANT",
+          "DEATH",
+          "FLESH-EATER COURTS",
+          "HERO",
+          "INFANTRY",
+          "WARD (6+)",
+          "WIZARD (1)"
+        ],
+        "abilities": [
+          "Code of Honour",
+          "Vassals, to Arms!"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Code of Honour",
+            "timing": "Passive",
+            "effect": "Effect: While you believe this DELUSION, add 1 to the Damage characteristic of melee weapons used by friendly non-UNIQUE FLESH-EATER COURTS HEROES for attacks that target an enemy HERO.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Delusion",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Vassals, to Arms!",
+            "timing": "Once Per Turn (Army), Reaction: You declared a %000010870FIGHT ability% for this unit",
+            "effect": "Effect: Pick a friendly SERFS unit that has not used a FIGHT ability this turn and is within this unit’s combat range to be the target. The target can be picked to use a FIGHT ability immediately after the FIGHT ability used by this unit has been resolved. If it is picked to do so, add 1 to wound rolls for the target’s attacks for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase",
+            "reaction": true
+          }
+        ],
+        "melee": [
+          [
+            "Bloodstained Talons and Fangs",
+            "5",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            "Anti-HERO (+1 Rend)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "From ruling their subjects to serving as part of a sprawling, monstrous royal family, abhorrant vampires possess great power amongst the ghoulish courts. Many display a warped honour, hunting enemy champions to tear apart in single combat.",
+      "regimentOptions": "Any %000001638FLESH-EATER COURTS%, 0-1 %000017609Royal Attendant%",
+      "notes": "This HERO can join an eligible regiment as a Royal Attendant."
+    },
+    {
+      "faction": "Flesh-eater Courts",
+      "name": "Abhorrant Ghoul King on Royal Terrorgheist",
+      "points": 400,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "12\"",
+        "health": "16",
+        "save": "4+",
+        "control": "5",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/flesh-eater-courts/Abhorrant-Ghoul-King-on-Royal-Terrorgheist",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "ABHORRANT",
+          "DEATH",
+          "FLESH-EATER COURTS",
+          "FLY",
+          "HERO",
+          "MONSTER",
+          "WARD (6+)",
+          "WIZARD (1)"
+        ],
+        "abilities": [
+          "Necromantic Limits",
+          "Ferocious Hunger",
+          "A Majestic Menagerie",
+          "Wicked Predator"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Necromantic Limits",
+            "timing": "Passive",
+            "effect": "Effect: This unit’s Terrorgheist’s Skeletal Talons have a maximum Attacks characteristic of 10.\nWhile this unit has 10 or more damage points, the Attacks characteristic of its Terrorgheist’s Skeletal Talons is 4.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Ferocious Hunger",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Effect: Roll a dice. On a 3+, add 1 to hit rolls for attacks made with this unit’s Companion melee weapons for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Rampage",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "A Majestic Menagerie",
+            "timing": "Passive",
+            "effect": "Effect: While you believe this DELUSION, add 1 to the Attacks characteristic of Companion melee weapons used by friendly FLESH-EATER COURTS units while they are wholly within 12\" of any friendly FLESH-EATER COURTS HEROES.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Delusion",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Wicked Predator",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick an enemy unit in combat with this unit to be the target.\nEffect: For each champion, standard bearer and musician in the target unit, add 1 to the Attacks characteristic of this unit’s Terrorgheist’s Skeletal Talons, to a maximum of 10, for the rest of the phase. Those additional attacks must target that enemy unit.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Death Shriek",
+            "10\"",
+            "1",
+            "4+",
+            "2+",
+            "2",
+            "D6",
+            "Shoot in Combat, Companion"
+          ]
+        ],
+        "melee": [
+          [
+            "Gory Talons and Fangs",
+            "5",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            ""
+          ],
+          [
+            "Terrorgheist’s Fanged Maw",
+            "3",
+            "4+",
+            "2+",
+            "2",
+            "D3+3",
+            "Crit (Mortal), Companion"
+          ],
+          [
+            "Terrorgheist’s Skeletal Talons",
+            "6",
+            "4+",
+            "2+",
+            "1",
+            "2",
+            "Crit (Mortal), Companion · See battle damage rules"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "To an abhorrant vampire, their Terrorgheist steed appears as a glorious, white‑feathered lord of the sky. The reality is that these bat-like goliaths are ferocious and foul – traits that they share with their cannibal masters as they descend upon their prey.",
+      "regimentOptions": "Any %000001638FLESH-EATER COURTS%, 0-1 %000017609Royal Attendant%"
+    },
+    {
+      "faction": "Flesh-eater Courts",
+      "name": "Abhorrant Ghoul King on Royal Zombie Dragon",
+      "points": 400,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "12\"",
+        "health": "16",
+        "save": "4+",
+        "control": "5",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/flesh-eater-courts/Abhorrant-Ghoul-King-on-Royal-Zombie-Dragon",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "ABHORRANT",
+          "DEATH",
+          "FLESH-EATER COURTS",
+          "FLY",
+          "HERO",
+          "MONSTER",
+          "WARD (6+)",
+          "WIZARD (1)"
+        ],
+        "abilities": [
+          "Necromantic Limits",
+          "For The Kingdom!",
+          "Monstrous Hunger",
+          "Draconic Terror"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Necromantic Limits",
+            "timing": "Passive",
+            "effect": "Effect: This unit’s Draconic Claws have a maximum Attacks characteristic of 10.\nWhile this unit has 10 or more damage points, the Attacks characteristic of its Draconic Claws is 5.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "For The Kingdom!",
+            "timing": "Passive",
+            "effect": "Effect: While you believe this DELUSION, add 1 to charge rolls for friendly KNIGHTS units and friendly FLEASH-EATER COURTS MONSTERS while they are wholly within 12\" of any friendly FLEASH-EATER COURTS HEROES.\nAdd 2 to charge rolls for friendly KNIGHTS units and friendly",
+            "kind": "Ability",
+            "type": "Movement",
+            "keywords": "Delusion",
+            "phase": "Charge Phase"
+          },
+          {
+            "name": "Monstrous Hunger",
+            "timing": "Passive",
+            "effect": "Effect: While they are wholly within 12\" of this unit, friendly non-HERO FLESH-EATER COURTS MONSTERS can use CHARGE abilities even if they used a RUN ability in the same turn.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Charge Phase"
+          },
+          {
+            "name": "Draconic Terror",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick an enemy unit in combat with this unit to be the target.\nEffect: Roll a dice. If the roll exceeds the target’s Control characteristic, the target cannot use commands for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Rampage",
+            "phase": "Combat Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Baneful Breath",
+            "10\"",
+            "D6",
+            "2+",
+            "4+",
+            "1",
+            "3",
+            "Shoot in Combat, Companion"
+          ]
+        ],
+        "melee": [
+          [
+            "Gory Talons and Fangs",
+            "5",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            ""
+          ],
+          [
+            "Draconic Jaws",
+            "4",
+            "4+",
+            "2+",
+            "2",
+            "4",
+            "Crit (Auto-wound), Companion"
+          ],
+          [
+            "Draconic Claws",
+            "7",
+            "4+",
+            "2+",
+            "1",
+            "2",
+            "Crit (Auto-wound), Companion · See battle damage rules"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "To fly a noble drake into battle is the desire of many an abhorrant liege. Though these corpse-beasts are, in truth, rotting and pestilent, there is a certain morbid majesty to them that serves to stoke the hunger of their fellow undead beasts.",
+      "regimentOptions": "Any %000001638FLESH-EATER COURTS%, 0-1 %000017609Royal Attendant%"
+    },
+    {
+      "faction": "Flesh-eater Courts",
+      "name": "Abhorrant Gorewarden",
+      "points": 140,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "12\"",
+        "health": "7",
+        "save": "5+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/flesh-eater-courts/Abhorrant-Gorewarden",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "ABHORRANT",
+          "DEATH",
+          "FLESH-EATER COURTS",
+          "FLY",
+          "HERO",
+          "INFANTRY",
+          "WARD (6+)",
+          "WIZARD (1)"
+        ],
+        "abilities": [
+          "Lord of the Marches",
+          "Trespassers!",
+          "Defenders of the Kingdom"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Lord of the Marches",
+            "timing": "Deployment Phase",
+            "effect": "Declare: Pick this unit and up to 2 friendly FLESH-EATER COURTS units in this unit’s regiment that have not been deployed to be the targets.\nEffect: Set up the target units in reserve patrolling the borders. They have now been deployed.",
+            "kind": "Ability",
+            "type": "Movement",
+            "keywords": "Deploy",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Trespassers!",
+            "timing": "Your Movement Phase",
+            "effect": "Declare: Pick this unit if it is patrolling the borders, then pick an enemy unit to be the target.\nEffect: Set up this unit more than 6\" from the target and more than 9\" from all other enemy units. Then, set up the units that were patrolling the borders with this unit wholly within 12\" of this unit and more than 9\" from all enemy units.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Movement Phase"
+          },
+          {
+            "name": "Defenders of the Kingdom",
+            "timing": "Passive",
+            "effect": "Effect: While you believe this DELUSION and this unit is on the battlefield, add 1 to charge rolls for friendly FLESH-EATER COURTS units while they are wholly within 12\" of a friendly FLESH-EATER COURTS HERO. Add 2 to charge rolls instead if they were also set up in the same turn.\nWhen using the ‘A Kingdom Deluded’ ability, you can pick this DELUSION even if this unit is patrolling the borders.",
+            "kind": "Ability",
+            "type": "Movement",
+            "keywords": "Delusion",
+            "phase": "Charge Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Gory Talons and Fangs",
+            "5",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Gorewardens bear the keys to the kingdom and oversee the protection of their liege’s borderlands. Clad in what they perceive to be great finery, they lead flights of bloodthirsty predators to savage unwary intruders.",
+      "regimentOptions": "0-1 %000017609Royal Attendant%, 0-1 %000001643SERFS%, Any %000001639KNIGHTS%, 0-1 %000017587BEAST%",
+      "notes": "This HERO can join an eligible regiment as a Royal Attendant."
+    },
+    {
+      "faction": "Flesh-eater Courts",
+      "name": "Cadaverous Barricade",
+      "points": 0,
+      "size": 1,
+      "kind": "",
+      "category": "Manifestation",
+      "profile": {
+        "move": "-",
+        "health": "10",
+        "save": "5+",
+        "ward": "6+",
+        "banishment": "8",
+        "url": "https://wahapedia.ru/aos4/factions/flesh-eater-courts/Cadaverous-Barricade",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "FLESH-EATER COURTS",
+          "ENDLESS SPELL",
+          "MANIFESTATION",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Grasping Hands"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Grasping Hands",
+            "timing": "Passive",
+            "effect": "Effect: Enemy units cannot use RUN or RETREAT abilities while they are within this MANIFESTATION’s combat range.\nIn addition, if an enemy unit is picked to use a MOVE ability while it is within this MANIFESTATION’s combat range, halve that unit’s Move characteristic (rounding up) for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Movement Phase"
+          }
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "With a word of command, the buried dead are brought writhing to the surface. The corpses of those who once served Ushoran rise up from the grave, dragging with them the detritus of forgotten civilisation and clawing at those who draw too near."
+    },
+    {
+      "faction": "Flesh-eater Courts",
+      "name": "Chalice of Ushoran",
+      "points": 0,
+      "size": 1,
+      "kind": "",
+      "category": "Manifestation",
+      "profile": {
+        "move": "-",
+        "health": "6",
+        "save": "6+",
+        "ward": "6+",
+        "banishment": "7",
+        "url": "https://wahapedia.ru/aos4/factions/flesh-eater-courts/Chalice-of-Ushoran",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "FLESH-EATER COURTS",
+          "ENDLESS SPELL",
+          "MANIFESTATION",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Draughts of Delusion"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Draughts of Delusion",
+            "timing": "Any Combat Phase",
+            "effect": "Declare: Pick an enemy unit within 6\" of this MANIFESTATION to be the target.\nEffect: Roll a dice. On a 3+, your opponent must pick 1 of the following to apply for the rest of the turn:\nDrink Deep from the Chalice: Other than the Companion weapon ability, weapon abilities for attacks made by the target have no effect.\nTurn Aside and Suffer the Consequences: Combat attacks that target that enemy unit score critical hits on unmodified hit rolls of 5+.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Combat Phase"
+          }
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Believed to be a manifestation of the sacred cup held by Ushoran, this bone-wrought goblet is continually filled with the blood of those slain in its presence. One sip will see minds twist and reality distort, but to refuse to drink is to invoke the ghouls’ wrath."
+    },
+    {
+      "faction": "Flesh-eater Courts",
+      "name": "Charnel Throne",
+      "points": 10,
+      "size": 1,
+      "kind": "",
+      "category": "Terrain",
+      "profile": {
+        "move": "-",
+        "health": "10",
+        "save": "4+",
+        "control": "-",
+        "url": "https://wahapedia.ru/aos4/factions/flesh-eater-courts/Charnel-Throne",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "FLESH-EATER COURTS",
+          "FACTION TERRAIN"
+        ],
+        "abilities": [
+          "Reigning Champion",
+          "Duty Calls",
+          "Ruler of All They Survey",
+          "Steward of the Realm"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Reigning Champion",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: If this terrain feature does not have a Steward, pick a friendly FLESH‐EATER COURTS INFANTRY HERO within 3\" of it and not in combat to be the target.\nEffect: Place the target on this terrain feature. The target is now the Steward (see ‘Steward of the Realm’).",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Duty Calls",
+            "timing": "Your Movement Phase",
+            "effect": "Effect: If this terrain feature has a Steward that was not placed on it this turn, set up the Steward on the battlefield wholly within 6\" of this terrain feature and not in combat. That unit is no longer the Steward.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Movement Phase"
+          },
+          {
+            "name": "Ruler of All They Survey",
+            "timing": "Your Movement Phase",
+            "effect": "Declare: If this terrain feature has a Steward, pick a visible friendly non-HERO FLESH-EATER COURTS unit that is not in combat to be the target.\nEffect: The target can move D3\". If the target was set up this turn, it can move D6\" instead. It cannot move into combat during that move.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Movement Phase"
+          },
+          {
+            "name": "Steward of the Realm",
+            "timing": "Passive",
+            "effect": "Effect: While this terrain feature has a Steward:\n• The Steward cannot use MOVE abilities.\n• Instead of measuring range or visibility to the Steward, measure to this terrain feature instead.\n• All attacks that would target the Steward target this terrain feature instead.\n• If this terrain feature is destroyed, before removing it from the battlefield, inflict D3 mortal damage on the Steward. Then, set up the Steward on the battlefield within 3\" of this terrain feature and not in combat. That unit is no longer the Steward. If it is not possible to set up the Steward, it is slain.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          }
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Formed from the bones of those killed by an abhorrant, Charnel Thrones exude madness and necrotic energies. They are seats of power for Archregents and Ghoul Kings, blazing beacons to mordants and structures of abject horror for the enemies of the Flesh-eaters.",
+      "description": "The following universal terrain abilities apply to this terrain feature (Terrain, 1.2):\nCover, Impassable"
+    },
+    {
+      "faction": "Flesh-eater Courts",
+      "name": "Corpsemare Stampede",
+      "points": 0,
+      "size": 1,
+      "kind": "",
+      "category": "Manifestation",
+      "profile": {
+        "move": "12\"",
+        "health": "10",
+        "save": "5+",
+        "ward": "6+",
+        "banishment": "7",
+        "url": "https://wahapedia.ru/aos4/factions/flesh-eater-courts/Corpsemare-Stampede",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "FLESH-EATER COURTS",
+          "ENDLESS SPELL",
+          "FLY",
+          "MANIFESTATION",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Trampled Underfoot"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Trampled Underfoot",
+            "timing": "Your Charge Phase",
+            "effect": "Declare: This MANIFESTATION can use this ability even if it is in combat.\nPick a point on a battlefield edge to be the target. Then, make a stampede roll of 2D6. Add 1D6 to the roll for each battle round that this MANIFESTATION has been on the battlefield and has not been banished. For example, the stampede roll would be 2D6 in the turn in which it was summoned, 3D6 in your next turn, and so on.\nEffect: This MANIFESTATION can move a distance up to the value of the stampede roll in a straight line directly towards the target. It can move through the combat ranges of enemy units. It cannot end that move in combat unless it ends that move within ½\" of a",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Core, Move, Charge",
+            "phase": "Charge Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Corpsemare Trample",
+            "6",
+            "5+",
+            "3+",
+            "1",
+            "1",
+            "Crit (2 Hits)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Imparted with grisly vigour by the insane magics of the abhorrants, the undead beasts of a Corpsemare Stampede burst from the blood-soaked ground. Once loosed, they trample across the battlefield with reckless abandon, crushing any foolish enough to be caught in their path."
+    },
+    {
+      "faction": "Flesh-eater Courts",
+      "name": "Crypt Flayers",
+      "points": 140,
+      "size": 3,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "12\"",
+        "health": "4",
+        "save": "5+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/flesh-eater-courts/Crypt-Flayers",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "FLESH-EATER COURTS",
+          "KNIGHTS",
+          "CHAMPION",
+          "FLY",
+          "INFANTRY",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "To Our Liege!"
+        ],
+        "abilityDetails": [
+          {
+            "name": "To Our Liege!",
+            "timing": "Once Per Turn (Army), Your Movement Phase",
+            "effect": "Effect: If this unit is not in combat, remove it from the battlefield and set it up again wholly within 12\" of a friendly FLESH-EATER COURTS HERO and more than 9\" from all enemy units.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Movement Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Death Scream",
+            "10\"",
+            "4",
+            "4+",
+            "3+",
+            "2",
+            "1",
+            "Shoot in Combat"
+          ]
+        ],
+        "melee": [
+          [
+            "Piercing Talons",
+            "4",
+            "4+",
+            "3+",
+            "1",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Having gorged on the flesh of monsters and the blood of vampires, Crypt Flayers have mutated into winged abominations. Other ghouls exalt them for their boldness and the ‘purity’ of their voices – sonic screeches that can burst eardrums."
+    },
+    {
+      "faction": "Flesh-eater Courts",
+      "name": "Crypt Flayers (2 models)",
+      "points": 90,
+      "size": 2,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "12\"",
+        "health": "4",
+        "save": "5+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/flesh-eater-courts/Crypt-Flayers-2-models-",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "FLESH-EATER COURTS",
+          "KNIGHTS",
+          "CHAMPION",
+          "FLY",
+          "INFANTRY",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "To Our Liege!"
+        ],
+        "abilityDetails": [
+          {
+            "name": "To Our Liege!",
+            "timing": "Once Per Turn (Army), Your Movement Phase",
+            "effect": "Effect: If this unit is not in combat, remove it from the battlefield and set it up again wholly within 12\" of a friendly FLESH-EATER COURTS HERO and more than 9\" from all enemy units.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Movement Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Death Scream",
+            "10\"",
+            "4",
+            "4+",
+            "3+",
+            "2",
+            "1",
+            "Shoot in Combat"
+          ]
+        ],
+        "melee": [
+          [
+            "Piercing Talons",
+            "4",
+            "4+",
+            "3+",
+            "1",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Having gorged on the flesh of monsters and the blood of vampires, Crypt Flayers have mutated into winged abominations. Other ghouls exalt them for their boldness and the ‘purity’ of their voices – sonic screeches that can burst eardrums.",
+      "notes": "You can include 1 unit of this type for each Crypt Infernal Courtier in your army. This unit cannot be reinforced."
+    },
+    {
+      "faction": "Flesh-eater Courts",
+      "name": "Crypt Ghast Courtier",
+      "points": 80,
+      "size": 1,
+      "kind": "Legends",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "4",
+        "save": "5+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/flesh-eater-courts/Crypt-Ghast-Courtier",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "FLESH-EATER COURTS",
+          "HERO",
+          "INFANTRY",
+          "NOBLE",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Marshal of the Peasantry"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Marshal of the Peasantry",
+            "timing": "Reaction: You declared a %000010870FIGHT ability% for this unit",
+            "effect": "Effect: Pick a friendly Crypt Ghouls unit that has not used a FIGHT ability this turn and is within this unit’s combat range to be the target. The target can be picked to use a FIGHT ability immediately after the FIGHT ability used by this unit has been resolved. If it is picked to do so, add 1 to hit rolls for the target’s attacks for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase",
+            "reaction": true
+          }
+        ],
+        "melee": [
+          [
+            "Bone Club and Filthy Claws",
+            "5",
+            "4+",
+            "4+",
+            "-",
+            "2",
+            ""
+          ]
+        ]
+      },
+      "source": "Legends Warscrolls",
+      "canReinforce": false,
+      "flavour": "Amongst the lowliest of an abhorrant’s courtiers, Crypt Ghasts are nevertheless vicious and cunning creatures. They rally behind them great throngs of snarling cannibals, leading them into battle with howls of murderous fury.",
+      "regimentOptions": "Any %000001643SERFS%",
+      "notes": "This HERO can join an eligible regiment as a Flesh-eater Noble."
+    },
+    {
+      "faction": "Flesh-eater Courts",
+      "name": "Crypt Ghouls",
+      "points": 140,
+      "size": 20,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "6\"",
+        "health": "1",
+        "save": "6+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/flesh-eater-courts/Crypt-Ghouls",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "FLESH-EATER COURTS",
+          "SERFS",
+          "CHAMPION",
+          "INFANTRY",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Royal Approval"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Royal Approval",
+            "timing": "Passive",
+            "effect": "Effect: Add 1 to the Rend characteristic of this unit’s melee weapons while it is wholly within 12\" of any friendly NOBLES or ABHORRANTS.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Sharpened Teeth and Filthy Claws",
+            "2",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            "Crit (Auto-wound)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Crypt Ghouls form the lowly and indentured serfs of an abhorrant's domain. Though they are individually stunted and wild, their madness grants them a fiendish form of courage, and in numbers, they can overwhelm even the mightiest warriors."
+    },
+    {
+      "faction": "Flesh-eater Courts",
+      "name": "Crypt Haunter Courtier",
+      "points": 120,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "7\"",
+        "health": "6",
+        "save": "5+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/flesh-eater-courts/Crypt-Haunter-Courtier",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "FLESH-EATER COURTS",
+          "HERO",
+          "INFANTRY",
+          "NOBLE",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Blessed Blood",
+          "Knightly Exemplar"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Blessed Blood",
+            "timing": "Your Hero Phase",
+            "effect": "Effect: Heal (D3) this unit.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Knightly Exemplar",
+            "timing": "Reaction: You declared a %000010870FIGHT ability% for this unit",
+            "effect": "Effect: Pick a friendly Crypt Horrors unit that has not used a FIGHT ability this turn and is within this unit’s combat range to be the target. The target can be picked to use a FIGHT ability immediately after the FIGHT ability used by this unit has been resolved. If it is picked to do so, add 1 to hit rolls for the target’s attacks for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase",
+            "reaction": true
+          }
+        ],
+        "melee": [
+          [
+            "Massive Bone Club and Rancid Talons",
+            "5",
+            "4+",
+            "3+",
+            "2",
+            "3",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Masters of a kingdom’s knightly echelons, Crypt Haunters are amongst the most physically powerful of an abhorrant’s courtiers. They lead their misbegotten kin in bone-crunching charges and revel in tearing foes limb from bloody limb.",
+      "regimentOptions": "0-1 %000001643SERFS%, Any %000017478Crypt Horrors%, Any %000017494Crypt Horrors (2 models)%, 0-1 %000017587BEAST%",
+      "notes": "This HERO can join an eligible regiment as a Royal Attendant."
+    },
+    {
+      "faction": "Flesh-eater Courts",
+      "name": "Crypt Horrors",
+      "points": 150,
+      "size": 3,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "7\"",
+        "health": "4",
+        "save": "5+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/flesh-eater-courts/Crypt-Horrors",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "FLESH-EATER COURTS",
+          "KNIGHTS",
+          "CHAMPION",
+          "INFANTRY",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Holy Blades of Bone"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Holy Blades of Bone",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick an enemy unit in combat with this unit to be the target.\nEffect: Roll 2 dice for each model in this unit. Add 2 to each roll if the target is CAVALRY. For each 5+, inflict 1 mortal damage on the target.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Club and Septic Talons",
+            "4",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            "Anti-CAVALRY (+1 Rend), Crit (Auto-wound)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Creatures of truly imposing size and might, Crypt Horrors are formidable linebreakers. In their own minds, they are valorous knights, and their hunger to perform worthy deeds under their lord’s gaze drives them into a rabid frenzy."
+    },
+    {
+      "faction": "Flesh-eater Courts",
+      "name": "Crypt Horrors (2 models)",
+      "points": 100,
+      "size": 2,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "7\"",
+        "health": "4",
+        "save": "5+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/flesh-eater-courts/Crypt-Horrors-2-models-",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "FLESH-EATER COURTS",
+          "KNIGHTS",
+          "CHAMPION",
+          "INFANTRY",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Holy Blades of Bone"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Holy Blades of Bone",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick an enemy unit in combat with this unit to be the target.\nEffect: Roll 2 dice for each model in this unit. Add 2 to each roll if the target is CAVALRY. For each 5+, inflict 1 mortal damage on the target.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Club and Septic Talons",
+            "4",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            "Anti-CAVALRY (+1 Rend), Crit (Auto-wound)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Creatures of truly imposing size and might, Crypt Horrors are formidable linebreakers. In their own minds, they are valorous knights, and their hunger to perform worthy deeds under their lord’s gaze drives them into a rabid frenzy.",
+      "notes": "You can include 1 unit of this type for each Crypt Haunter Courtier in your army. This unit cannot be reinforced."
+    },
+    {
+      "faction": "Flesh-eater Courts",
+      "name": "Crypt Infernal Courtier",
+      "points": 140,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "12\"",
+        "health": "6",
+        "save": "5+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/flesh-eater-courts/Crypt-Infernal-Courtier",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "FLESH-EATER COURTS",
+          "FLY",
+          "HERO",
+          "INFANTRY",
+          "NOBLE",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "On Winged Steeds",
+          "Mind-shattering Cacophony"
+        ],
+        "abilityDetails": [
+          {
+            "name": "On Winged Steeds",
+            "timing": "Once Per Turn (Army), Your Movement Phase",
+            "effect": "Declare: Pick a friendly Crypt Flayers unit that used the ‘To Our Liege!’ ability this turn and is wholly within 9\" of this unit to be the target.\nEffect: The target can immediately move D3\" but cannot end that move in combat.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Movement Phase"
+          },
+          {
+            "name": "Mind-shattering Cacophony",
+            "timing": "Once Per Turn (Army), Your Shooting Phase",
+            "effect": "Declare: Pick an enemy unit that had any damage points allocated to it this turn by attacks made with this unit’s Piercing Death Screech to be the target.\nEffect: For the rest of the turn, add 1 to the Damage characteristic of ranged weapons used by friendly Crypt Flayers units for attacks that target that enemy unit.",
+            "kind": "Ability",
+            "type": "Shooting",
+            "phase": "Shooting Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Piercing Death Screech",
+            "10\"",
+            "4",
+            "4+",
+            "3+",
+            "2",
+            "D3",
+            "Shoot in Combat"
+          ]
+        ],
+        "melee": [
+          [
+            "Skewering Claws",
+            "5",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Crypt Infernals are terrors of the skies and often lead the bodyguard of an abhorrant monarch. Blessed with leathery wings, they soar upon thermals and keep watch for the enemy - upon sighting them, they let loose a sonic bombardment that blasts the mind.",
+      "regimentOptions": "Any %000017486Crypt Flayers (2 models)%, 0-1 %000001643SERFS%, Any %000017493Crypt Flayers%, 0-1 %000017587BEAST%",
+      "notes": "This HERO can join an eligible regiment as a Royal Attendant."
+    },
+    {
+      "faction": "Flesh-eater Courts",
+      "name": "Cryptguard",
+      "points": 120,
+      "size": 10,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "6\"",
+        "health": "1",
+        "save": "6+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/flesh-eater-courts/Cryptguard",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "FLESH-EATER COURTS",
+          "SERFS",
+          "CHAMPION",
+          "INFANTRY",
+          "MUSICIAN (1/10)",
+          "STANDARD BEARER (1/10)",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Royal Bodyguard",
+          "Elite Guardians"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Royal Bodyguard",
+            "timing": "Passive",
+            "effect": "Effect: While any friendly non-MONSTER FLESH-EATER COURTS HEROES are wholly within this unit’s combat range, both this unit and those HEROES have WARD (5+).",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          },
+          {
+            "name": "Elite Guardians",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Effect: If this unit is in combat with any enemy units that charged this turn, roll a dice. On a 3+, for the rest of the turn, this unit has STRIKE-FIRST but ward rolls cannot be made for it.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Cursed Weapon",
+            "3",
+            "4+",
+            "4+",
+            "1",
+            "1",
+            "Anti-charge (+1 Rend), Crit (Auto-wound)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "To join the Cryptguard, a ghoul must perform some great feat of endurance in the sight of their vampiric liege. Charged with protecting their unholy masters, they wield weapons from the monarch’s armoury – rusted blades inundated with maddening energies."
+    },
+    {
+      "faction": "Flesh-eater Courts",
+      "name": "Grand Justice Gormayne",
+      "points": 110,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "5",
+        "save": "5+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/flesh-eater-courts/Grand-Justice-Gormayne",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "ABHORRANT",
+          "DEATH",
+          "FLESH-EATER COURTS",
+          "HERO",
+          "INFANTRY",
+          "UNIQUE",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Arrest Those Miscreants!",
+          "Accusations of Regicide"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Arrest Those Miscreants!",
+            "timing": "Your Charge Phase",
+            "effect": "Declare: Pick a visible enemy unit within 18\" of this unit to be the target.\nEffect: Roll a dice. On a 3+, until the start of your next turn, the target has STRIKE-LAST while it is in combat with any friendly FLESH-EATER COURTS HEROES and any friendly SERFS or KNIGHTS units.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Charge Phase"
+          },
+          {
+            "name": "Accusations of Regicide",
+            "timing": "Passive",
+            "effect": "Effect: While you believe this DELUSION, add 1 to the Damage characteristic of melee weapons used by friendly SERFS and KNIGHTS units while they are wholly within 12\" of any friendly FLESH-EATER COURTS HEROES that had any damage points allocated to them in the same turn.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Delusion",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Gore-streaked Gavel",
+            "4",
+            "4+",
+            "3+",
+            "-",
+            "D3",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Grand Justice Gormayne ensures that the Carrion Kings insane laws are followed and those who transgress are punished. A cunning orator, he spurs his ghoulish jury' into a frothing rage, condemning foes to be bloodily torn apart.",
+      "regimentOptions": "0-1 %000001639KNIGHTS%, 0-1 %000017587BEAST%, Any %000001643SERFS%",
+      "notes": "This HERO can join an eligible regiment as a Royal Attendant."
+    },
+    {
+      "faction": "Flesh-eater Courts",
+      "name": "High Falconer Felgryn",
+      "points": 120,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "5",
+        "save": "4+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/flesh-eater-courts/High-Falconer-Felgryn",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "ABHORRANT",
+          "DEATH",
+          "FLESH‑EATER COURTS",
+          "HERO",
+          "INFANTRY",
+          "UNIQUE",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Be Mine Eyes",
+          "Winged Reconnoitrer",
+          "Sir Felgryn is Abroad!"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Be Mine Eyes",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: This unit’s Grype is a token. If this unit’s Grype is not next to an enemy unit, pick an enemy unit within 18\" of this unit and not in combat to be the target.\nEffect: Place this unit’s Grype next to the target. If the target is destroyed while this unit’s Grype is next to it, remove this unit’s Grype from the battlefield.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Winged Reconnoitrer",
+            "timing": "Passive",
+            "effect": "Effect: While this unit’s Grype is next to an enemy unit, ward rolls cannot be made for damage points inflicted on that enemy unit by combat attacks made by this unit and friendly SERFS units.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Sir Felgryn is Abroad!",
+            "timing": "Passive",
+            "effect": "Effect: While you believe this DELUSION, subtract 10 from the control scores of enemy units while they are in combat with any friendly SERFS units or any friendly non-HERO FLESH-EATER COURTS MONSTER or BEAST units.",
+            "kind": "Ability",
+            "type": "Control",
+            "keywords": "Delusion",
+            "phase": "End of Turn"
+          }
+        ],
+        "ranged": [
+          [
+            "Carrion Flock",
+            "12\"",
+            "1",
+            "4+",
+            "4+",
+            "-",
+            "D6",
+            "Shoot in Combat, Companion"
+          ]
+        ],
+        "melee": [
+          [
+            "Filthy Talons and Fangs",
+            "5",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Beloved by the serf masses and reviled by his fellow abhorrants, Felgryn is an especially beastly example of an already monstrous lineage. It is fitting that this blood-crazed vampire has a particular affinity with wild creatures; these delusion-wracked beasts heed his garbled commands, spying hidden foes and setting on them with flashing talons.",
+      "regimentOptions": "0-1 %000009022MONSTER%, Any %000017587BEAST%, Any %000001643SERFS%",
+      "notes": "This HERO can join an eligible regiment as a Royal Attendant."
+    },
+    {
+      "faction": "Flesh-eater Courts",
+      "name": "Marrowscroll Herald",
+      "points": 90,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "5",
+        "save": "5+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/flesh-eater-courts/Marrowscroll-Herald",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "FLESH-EATER COURTS",
+          "HERO",
+          "INFANTRY",
+          "NOBLE",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "The King’s Entreaty",
+          "Infected"
+        ],
+        "abilityDetails": [
+          {
+            "name": "The King’s Entreaty",
+            "timing": "Once Per Turn (Army), Enemy Charge Phase",
+            "effect": "Declare: Pick a visible enemy unit within 6\" of this unit to be the target.\nEffect: Roll a dice. On a 3+, your opponent must decide whether the target will accept or reject the entreaty offered by this unit.\nAccept: The target has the INFECTED keyword for the rest of the battle.\nReject: The target has STRIKE-LAST for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Charge Phase"
+          },
+          {
+            "name": "Infected",
+            "timing": "Reaction: Opponent declared a command, SPELL ability or PRAYER ability for an INFECTED unit",
+            "effect": "Effect: Roll a dice. On a 5+:\n• If they declared a command, that command has no effect, it still counts as having been used and the command points spent to use the command are still lost.\n• If they declared a SPELL or PRAYER ability, that spell or prayer fails.\nThis reaction can be used more than once per phase but only once per command, SPELL ability or PRAYER ability.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn",
+            "reaction": true
+          }
+        ],
+        "melee": [
+          [
+            "Bone Scythe",
+            "5",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Marrowscroll Heralds are senior delegates of the court, sent to deliver entreaties to the other nations of the realms. In doing so, they spread the curse of Ushoran far and wide, leaving desolation and madness in their wake.",
+      "regimentOptions": "Any %000001643SERFS%, 0-1 %000017587BEAST%",
+      "notes": "This HERO can join an eligible regiment as a Royal Attendant."
+    },
+    {
+      "faction": "Flesh-eater Courts",
+      "name": "Morbheg Knights",
+      "points": 150,
+      "size": 3,
+      "kind": "",
+      "category": "Cavalry",
+      "profile": {
+        "move": "12\"",
+        "health": "4",
+        "save": "4+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/flesh-eater-courts/Morbheg-Knights",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "FLESH-EATER COURTS",
+          "KNIGHTS",
+          "CAVALRY",
+          "CHAMPION",
+          "FLY",
+          "MUSICIAN (1/3)",
+          "STANDARD BEARER (1/3)",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Predator Knights"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Predator Knights",
+            "timing": "Once Per Turn (Army), End of Enemy Turn",
+            "effect": "Declare: Pick an enemy unit in combat with this unit to be the target.\nEffect: Inflict D3 mortal damage on the target. Then, this unit can use a RETREAT ability as if it were your movement phase. No mortal damage is inflicted on this unit by that RETREAT ability.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "End of Turn"
+          }
+        ],
+        "melee": [
+          [
+            "Nightshrieker’s Claws and Teeth",
+            "3",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            "Companion"
+          ],
+          [
+            "Grisly Lance",
+            "2",
+            "3+",
+            "4+",
+            "1",
+            "1",
+            "Charge (+1 Damage)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "The grisly cavaliers known as Morbheg Knights are amongst the proudest of a court’s warriors. They bound to battle atop the half-living nightshriekers, hideous spawn of the ur-bat Morbheg."
+    },
+    {
+      "faction": "Flesh-eater Courts",
+      "name": "Nagash, Supreme Lord of the Undead",
+      "points": 750,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "10\"",
+        "health": "18",
+        "save": "3+",
+        "control": "10",
+        "ward": "5+",
+        "url": "https://wahapedia.ru/aos4/factions/flesh-eater-courts/Nagash-Supreme-Lord-of-the-Undead",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "FLESH-EATER COURTS",
+          "FLY",
+          "HERO",
+          "MONSTER",
+          "UNIQUE",
+          "WARD (5+)",
+          "WARMASTER",
+          "WIZARD (9)"
+        ],
+        "abilities": [
+          "Battle Damaged",
+          "Utter Contempt",
+          "The Staff of Power",
+          "Hand of Dust",
+          "Invocation of Nagash",
+          "Supreme Lord of the Undead"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, subtract 3 from its power level.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Utter Contempt",
+            "timing": "Passive",
+            "effect": "Effect: This unit ignores the effects of DELUSION abilities.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "The Staff of Power",
+            "timing": "Passive",
+            "effect": "Effect: Add 2 to casting rolls for this unit while it has not miscast any spells this turn. If this unit miscasts a spell, ignore the restriction that would stop this unit from casting any more spells this turn.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Hand of Dust",
+            "timing": "Once Per Turn (Army), End of Any Turn",
+            "effect": "Declare: Pick a visible enemy HERO or MONSTER in combat with this unit to be the target.\nEffect: Hide a dice in one of your hands or under one of two appropriate containers. Your opponent must pick one of your hands or containers. If they pick the one hiding the dice, this ability has no effect. If they pick the empty one, the target is automatically destroyed.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Rampage",
+            "phase": "End of Turn"
+          },
+          {
+            "name": "Invocation of Nagash",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: This unit can cast this spell more than once per phase. Pick a visible unit wholly within 18\" of this unit that has not been picked to be the target of this spell this turn to be the target, then make a casting roll of 2D6.\nEffect: If the target is an enemy unit, inflict D3 mortal damage on it. If the target is a friendly DEATH unit, pick 1 of the following effects:\n• Return a number of slain models to the target unit with a combined Health characteristic of up to 3.\n• The target has WARD (5+) until the start of your next turn.",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Spell",
+            "phase": "Hero Phase",
+            "pointsType": "Spell",
+            "points": "7"
+          },
+          {
+            "name": "Supreme Lord of the Undead",
+            "timing": "Once Per Battle, Your Hero Phase",
+            "effect": "Declare: Pick a friendly non-HERO NON-UNIQUE DEATH unit that has been destroyed to be the target.\nEffect: Set up a replacement unit identical to the target wholly within 12\" of this unit and more than 9\" from all enemy units.",
+            "kind": "Ability",
+            "type": "Rallying",
+            "phase": "Hero Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Alakanash, the Staff of Power",
+            "4",
+            "3+",
+            "3+",
+            "2",
+            "D6",
+            ""
+          ],
+          [
+            "Zefet-nebtar, the Mortis Blade",
+            "4",
+            "3+",
+            "3+",
+            "2",
+            "3",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "All living beings dread the name of Nagash, the God of Undeath. Cruel and tyrannical, the overlord of Shyish intends to conquer the Mortal Realms and transform them into a lifeless Necrotopia, in which not a speck of dust moves unless it is by his will.",
+      "regimentOptions": "Any %000001638FLESH-EATER COURTS%, 0-1 %000017609Royal Attendant%"
+    },
+    {
+      "faction": "Flesh-eater Courts",
+      "name": "Royal Beastflayers",
+      "points": 120,
+      "size": 10,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "6\"",
+        "health": "1",
+        "save": "6+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/flesh-eater-courts/Royal-Beastflayers",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "FLESH-EATER COURTS",
+          "SERFS",
+          "CHAMPION (1/10)",
+          "INFANTRY",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Hunter’s Instincts"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Hunter’s Instincts",
+            "timing": "Passive",
+            "effect": "Effect: Enemy MONSTERS cannot use RAMPAGE abilities while they are in combat with this unit.\nIn addition, subtract 1 from the Damage characteristic of melee weapons used by enemy MONSTERS and BEAST units while they are in combat with this unit.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          }
+        ],
+        "melee": [
+          [
+            "Beastflayer Weapons",
+            "3",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            "Anti-BEAST (+1 Rend), Anti-MONSTER (+1 Rend)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Led by vampiric Flaymasters, the Royal Beastflayers are obsessed with hunting the monsters that lurk throughout the realms. It matters not if their prey are genuine abominations or noble beasts – all make for a fine banquet indeed."
+    },
+    {
+      "faction": "Flesh-eater Courts",
+      "name": "Royal Decapitator",
+      "points": 100,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "5",
+        "save": "5+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/flesh-eater-courts/Royal-Decapitator",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "FLESH-EATER COURTS",
+          "HERO",
+          "INFANTRY",
+          "NOBLE",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Executioner’s Entourage",
+          "Off With Their Head!"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Executioner’s Entourage",
+            "timing": "Reaction: You declared a %000010870FIGHT ability% for this unit",
+            "effect": "Effect: Pick a friendly SERFS unit that has not used a FIGHT ability this turn and is within this unit’s combat range to be the target. The target can be picked to use a FIGHT ability immediately after the FIGHT ability used by this unit has been resolved. If it is picked to do so, the target’s melee weapons have Crit (2 Hits) for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase",
+            "reaction": true
+          },
+          {
+            "name": "Off With Their Head!",
+            "timing": "Reaction: You declared a %000010870FIGHT ability% for this unit",
+            "effect": "Effect: Immediately after that FIGHT ability has been resolved, pick an enemy INFANTRY HERO in combat with this unit to be the target. Roll 2D6. If the roll exceeds the target’s Health characteristic, it is automatically destroyed.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase",
+            "reaction": true
+          }
+        ],
+        "melee": [
+          [
+            "Headsman’s Axe",
+            "3",
+            "4+",
+            "3+",
+            "2",
+            "3",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Viewed with unease even by fellow ghouls, the Royal Decapitators care only for the dealing of death. Dragging huge, tarnished axes behind them, they serve their lieges as gibbering executioners and delight in taking worthy heads.",
+      "regimentOptions": "Any %000001643SERFS%, 0-1 %000017587BEAST%",
+      "notes": "This HERO can join an eligible regiment as a Royal Attendant."
+    },
+    {
+      "faction": "Flesh-eater Courts",
+      "name": "Royal Terrorgheist",
+      "points": 240,
+      "size": 1,
+      "kind": "",
+      "category": "Monster",
+      "profile": {
+        "move": "12\"",
+        "health": "14",
+        "save": "4+",
+        "control": "5",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/flesh-eater-courts/Royal-Terrorgheist",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "FLESH-EATER COURTS",
+          "FLY",
+          "MONSTER",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Necromantic Limits",
+          "Shriek of Terror",
+          "Wicked Predator"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Necromantic Limits",
+            "timing": "Passive",
+            "effect": "Effect: This unit’s Skeletal Talons have a maximum Attacks characteristic of 10.\nWhile this unit has 10 or more damage points, the Attacks characteristic of its Skeletal Talons is 4.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Shriek of Terror",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick an enemy INFANTRY unit in combat with this unit to be the target.\nEffect: Roll a dice for each model in the target unit. For each 6, inflict 1 mortal damage on the target. If 3 or more damage points are allocated to the target by this ability, subtract 1 from hit rolls for the target’s attacks for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Rampage",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Wicked Predator",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick an enemy unit in combat with this unit to be the target.\nEffect: For each champion, standard bearer and musician in the target unit, add 1 to the Attacks characteristic of this unit’s Skeletal Talons, to a maximum of 10, for the rest of the phase. Those additional attacks must target that enemy unit.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Death Shriek",
+            "10\"",
+            "1",
+            "4+",
+            "2+",
+            "2",
+            "D6",
+            "Shoot in Combat, Companion"
+          ]
+        ],
+        "melee": [
+          [
+            "Fanged Maw",
+            "3",
+            "4+",
+            "2+",
+            "2",
+            "D3+3",
+            "Crit (Mortal), Companion"
+          ],
+          [
+            "Skeletal Talons",
+            "6",
+            "4+",
+            "2+",
+            "1",
+            "2",
+            "Crit (Mortal), Companion · See battle damage rules"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Terrorgheists are the rotten, reanimated carcasses of ancient chiropteran titans, as bitter and sinister in life as they are in death. Consumed by hunger, their screams blast free of their vile bodies, shredding the very souls of any who hear them."
+    },
+    {
+      "faction": "Flesh-eater Courts",
+      "name": "Royal Zombie Dragon",
+      "points": 260,
+      "size": 1,
+      "kind": "",
+      "category": "Monster",
+      "profile": {
+        "move": "12\"",
+        "health": "14",
+        "save": "4+",
+        "control": "5",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/flesh-eater-courts/Royal-Zombie-Dragon",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "FLESH-EATER COURTS",
+          "FLY",
+          "MONSTER",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Necromantic Limits",
+          "On Rotten Wings",
+          "Soaring Terror"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Necromantic Limits",
+            "timing": "Passive",
+            "effect": "Effect: This unit’s Draconic Claws have a maximum Attacks characteristic of 10.\nWhile this unit has 10 or more damage points, the Attacks characteristic of its Draconic Claws is 5.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "On Rotten Wings",
+            "timing": "Once Per Turn (Army), Your Movement Phase",
+            "effect": "Effect: Remove this unit from the battlefield and set up it again on the battlefield more than 9\" from all enemy units.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Movement Phase"
+          },
+          {
+            "name": "Soaring Terror",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Effect: If this unit charged this turn, roll a dice. On a 3+, this unit can move 2D6\". It can pass through the combat ranges of enemy units but must end that move in combat. Then, pick an enemy unit that this unit passed across during that move. Inflict D3 mortal damage on that enemy unit.",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Rampage",
+            "phase": "Combat Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Baneful Breath",
+            "10\"",
+            "D6",
+            "2+",
+            "4+",
+            "1",
+            "3",
+            "Shoot in Combat, Companion"
+          ]
+        ],
+        "melee": [
+          [
+            "Draconic Jaws",
+            "4",
+            "4+",
+            "2+",
+            "2",
+            "4",
+            "Crit (Auto-wound), Companion"
+          ],
+          [
+            "Draconic Claws",
+            "7",
+            "4+",
+            "2+",
+            "1",
+            "2",
+            "Crit (Auto-wound), Companion · See battle damage rules"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "A Zombie Dragon forms the crown jewel of any abhorrant’s royal menagerie, though these creatures inspire more revulsion than awe in sane folk. They circle above their prey before arrowing down into battle, a wave of charnel stink and horror stretching out before them."
+    },
+    {
+      "faction": "Flesh-eater Courts",
+      "name": "Scourge of Aqshy Royal Decapitator",
+      "points": 100,
+      "size": 1,
+      "kind": "Scourge of Aqshy",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "5",
+        "save": "5+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/flesh-eater-courts/Scourge-of-Aqshy-Royal-Decapitator",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "FLESH-EATER COURTS",
+          "HERO",
+          "INFANTRY",
+          "NOBLE",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "EXECUTIONER AND ENFORCER",
+          "HEADS ON PIKES"
+        ],
+        "abilityDetails": [
+          {
+            "name": "EXECUTIONER AND ENFORCER",
+            "timing": "Once Per Turn (Army), Your Hero Phase",
+            "effect": "Declare: Pick another friendly FLESH-EATER COURTS INFANTRY unit within this unit’s combat range to be the target.\nEffect: 1 model in the target unit is automatically slain. Then, until the start of your next turn, ignore the first damage point that would be allocated to each visible friendly FLESH-EATER COURTS unit in each phase while it is wholly within 12\" of this unit.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "HEADS ON PIKES",
+            "timing": "Once Per Turn (Army), End of Any Turn",
+            "effect": "Declare: If any damage points were allocated to an enemy HERO by this unit’s combat attacks this turn and that enemy HERO has been destroyed, pick an objective or terrain feature within 6\" of this unit to be the target.\nEffect: Spend 1 rage dice. If your opponent’s fury level is lower than yours, they must increase their fury level by 1, to a maximum of 7. Then, for the rest of the turn, subtract 5 from the control scores of enemy units while they are",
+            "kind": "Ability",
+            "type": "Control",
+            "phase": "End of Turn"
+          }
+        ],
+        "melee": [
+          [
+            "Headsman’s Axe",
+            "3",
+            "4+",
+            "3+",
+            "2",
+            "3",
+            ""
+          ]
+        ]
+      },
+      "source": "Scourge of Aqshy - Flesh-Eater Courts",
+      "canReinforce": false,
+      "flavour": "The axes wielded by the headsmen of the courts hunger for slaughter, and the Royal Decapitators are quick to satiate them, cleaving worthy heads from their bodies as they traverse the Great Parch.",
+      "regimentOptions": "0-1 %000017587BEAST%, Any %000001643SERFS%",
+      "notes": "This HERO can join an eligible regiment as a Royal Attendant.\nThis unit is legal for Matched Play for battles fought using the General’s Handbook 2026-27 battlepack."
+    },
+    {
+      "faction": "Flesh-eater Courts",
+      "name": "Scourge of Aqshy Varghulf Courtier",
+      "points": 110,
+      "size": 1,
+      "kind": "Scourge of Aqshy",
+      "category": "Other",
+      "profile": {
+        "move": "10\"",
+        "health": "8",
+        "save": "5+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/flesh-eater-courts/Scourge-of-Aqshy-Varghulf-Courtier",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "FLESH-EATER COURTS",
+          "BEAST",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Beast",
+          "The Howling Saint"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Beast",
+            "timing": "Passive",
+            "effect": "Effect: This unit has a maximum control score of 1.",
+            "kind": "Ability",
+            "type": "Control",
+            "phase": "End of Turn"
+          },
+          {
+            "name": "The Howling Saint",
+            "timing": "Once Per Turn (Army), Any Hero Phase",
+            "effect": "Declare: Pick a visible friendly FLESH-EATER COURTS PRIEST wholly within 18\" of this unit to be the target.\nEffect: The next time the target uses a PRAYER ability this phase:\n• When picking targets for that prayer, you can measure range and visibility from this unit instead of from the chanter.\n• Add 1 to the chanting roll for that prayer.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Immense Claws",
+            "7",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            "Anti-INFANTRY (+1 Rend)"
+          ],
+          [
+            "Dagger-like Fangs",
+            "1",
+            "3+",
+            "2+",
+            "2",
+            "3",
+            "Anti-INFANTRY (+1 Rend)"
+          ]
+        ]
+      },
+      "source": "Scourge of Aqshy - Flesh-Eater Courts",
+      "canReinforce": false,
+      "flavour": "Viewed as saintly champions by the ghouls in their shared delusion, in reality, Varghulfs are utterly feral vampiric monstrosities. Their bestial nature reflected in their unholy form, Varghulfs stalk the plains of Aqshy in search of fresh meat.",
+      "notes": "This unit is legal for Matched Play for battles fought using the General’s Handbook 2026-27 battlepack."
+    },
+    {
+      "faction": "Flesh-eater Courts",
+      "name": "Scourge of Ghyran Abhorrant Ghoul King",
+      "points": 110,
+      "size": 1,
+      "kind": "Scourge of Ghyran",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "5",
+        "save": "5+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/flesh-eater-courts/Scourge-of-Ghyran-Abhorrant-Ghoul-King",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "ABHORRANT",
+          "DEATH",
+          "FLESH-EATER COURTS",
+          "HERO",
+          "INFANTRY",
+          "WARD (6+)",
+          "WIZARD (1)"
+        ],
+        "abilities": [
+          "The Kings Court",
+          "Long Live the King"
+        ],
+        "abilityDetails": [
+          {
+            "name": "The Kings Court",
+            "timing": "Passive",
+            "effect": "Effect: Add 1 to the Attacks characteristic of melee weapons used by other friendly non-MONSTER FLESH-EATER COURTS HEROES while they are wholly within 12\" of this unit. In addition, add 1 to the Attacks characteristic of this unit’s melee weapons for each other friendly NON-MONSTER FLESH-EATER COURTS HERO wholly within 12\" of this unit, to a maximum of +3.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Long Live the King",
+            "timing": "Passive",
+            "effect": "Effect: If this unit would be destroyed, before removing it from play, friendly non-UNIQUE FLESH-EATER COURTS units wholly within 12\" of this unit become enraged until the start of your next turn. Melee weapons used by friendly enraged units have Crit (Auto-wound) and score critical hits on unmodied hit rolls of 5+, even if this unit has been destroyed.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Blood-stained Talons and Fangs",
+            "5",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            "Anti-HERO (+1 Rend)"
+          ]
+        ]
+      },
+      "source": "Scourge of Ghyran - Flesheater Courts",
+      "canReinforce": false,
+      "flavour": "Utterly deranged, the Abhorrant Ghoul Kings of the Everspring Swathe believe themselves to be good and just rulers of forest kingdoms, rather than the flesh-eating nightmares they truly are. Their cadaverous minions are equally deluded. Such is their devotion to their vampiric master that should the Ghoul King fall they will enter a berserk rage, ripping and tearing those responsible to shreds.",
+      "regimentOptions": "0-1 %000017609Royal Attendant%, Any %000001638FLESH-EATER COURTS%",
+      "notes": "This unit is legal for Matched Play for battles fought using the General’s Handbook 2025-26 battlepack."
+    },
+    {
+      "faction": "Flesh-eater Courts",
+      "name": "Scourge of Ghyran Abhorrant Gorewarden",
+      "points": 130,
+      "size": 1,
+      "kind": "Scourge of Ghyran",
+      "category": "Hero",
+      "profile": {
+        "move": "12\"",
+        "health": "7",
+        "save": "5+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/flesh-eater-courts/Scourge-of-Ghyran-Abhorrant-Gorewarden",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "ABHORRANT",
+          "DEATH",
+          "FLESH-EATER COURTS",
+          "FLY",
+          "HERO",
+          "INFANTRY",
+          "WARD (6+)",
+          "WIZARD (1)"
+        ],
+        "abilities": [
+          "Glorious Charge",
+          "Swooping Descent"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Glorious Charge",
+            "timing": "Passive",
+            "effect": "Effect: While this unit is within the combat range of a friendly KNIGHTS unit and has charged this turn, this unit has WARD (5+) and its Gory Talons and Fangs have Charge (+1 Damage).",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Swooping Descent",
+            "timing": "Once Per Turn (Army), End of Enemy Turn",
+            "effect": "Effect: Remove this unit from the battlefield, then set it up again more than 9\" from all enemy units and either:\n• Wholly within 6\" of the edge of the battlefield, or\n• Within 3\" of an objective you do not control.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "End of Turn"
+          }
+        ],
+        "melee": [
+          [
+            "Gory Talons and Fangs",
+            "5",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            ""
+          ]
+        ]
+      },
+      "source": "Scourge of Ghyran - Flesheater Courts",
+      "canReinforce": false,
+      "flavour": "Flying terrors on tattered wings, Abhorrant Gorewardens patrol the mordant kingdoms of Ghyran, seeking intruders or precious relics that their liege might desire. Should they spot such a target they will descend in a screeching dive, reclaiming the lands in the name of their Ghoul King and disembowelling any trespassers with raking talons.",
+      "regimentOptions": "0-1 %000017609Royal Attendant%, 0-1 %000025985BEAST%, 0-1 %000001643SERFS%, Any %000001639KNIGHTS%",
+      "notes": "This unit is legal for Matched Play for battles fought using the General’s Handbook 2025-26 battlepack."
+    },
+    {
+      "faction": "Flesh-eater Courts",
+      "name": "The Grymwatch",
+      "points": 80,
+      "size": 7,
+      "kind": "Legends",
+      "category": "Infantry",
+      "profile": {
+        "move": "6\"",
+        "health": "1",
+        "save": "6+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/flesh-eater-courts/The-Grymwatch",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "FLESH-EATER COURTS",
+          "SERFS",
+          "CHAMPION",
+          "INFANTRY",
+          "UNIQUE",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Quest to Slay the Monster"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Quest to Slay the Monster",
+            "timing": "Any Combat Phase",
+            "effect": "Effect: For the rest of the turn, while this unit is in combat with any enemy MONSTER or BEAST units, it has STRIKE-FIRST. However, for the rest of the turn, while it is in combat with any enemy MONSTER or BEAST units, all of this unit’s combat attacks must target an enemy MONSTER or BEAST unit.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Knightly Weapons",
+            "3",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            "Anti-MONSTER (+1 Rend), Crit (Auto-wound)"
+          ],
+          [
+            "Great Halberd",
+            "4",
+            "3+",
+            "4+",
+            "1",
+            "2",
+            "Anti-MONSTER (+1 Rend), Crit (Auto-wound)"
+          ]
+        ]
+      },
+      "source": "Legends Warscrolls",
+      "canReinforce": false,
+      "flavour": "Duke Crakmarrow is the liege-lord of the Grymwatch. This cadaverous creature is seen as an example of glorious gallantry by his kin and a blood-spattered, carrion-devouring monstrosity by the foes he meets in battle. Believing themselves to be heroic paladins on a mission of the utmost import, the deluded cannibals of the Grymwatch scrabble forth to tear apart their foes in a flurry of fangs and grasping claws.",
+      "notes": "This unit cannot be reinforced.",
+      "description": "The models in this unit are:\n• Duke Crakmarrow (champion, armed with a Great Halberd)\n• Gristlewel (armed with Knightly Weapons)\n• Valreek the Tracker (armed with Knightly Weapons)\n• The Royal Butcher (armed with Knightly Weapons)\n• Master Talon (armed with Knightly Weapons)\n• The Night’s Herald (armed with Knightly Weapons)\n• The Duke’s Harriers (armed with Knightly Weapons)"
+    },
+    {
+      "faction": "Flesh-eater Courts",
+      "name": "The Skinnerkin",
+      "points": 80,
+      "size": 5,
+      "kind": "Legends",
+      "category": "Infantry",
+      "profile": {
+        "move": "6\"",
+        "health": "2",
+        "save": "6+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/flesh-eater-courts/The-Skinnerkin",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "FLESH-EATER COURTS",
+          "SERFS",
+          "CHAMPION",
+          "INFANTRY",
+          "UNIQUE",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Prime Cuts",
+          "Dinner is Served"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Prime Cuts",
+            "timing": "Passive",
+            "effect": "Effect: Each time a combat attack made by this unit scores a critical hit, give 1 prime cut point to this unit, to a maximum of 6.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Dinner is Served",
+            "timing": "End of Any Turn",
+            "effect": "Declare: Pick a friendly FLESH-EATER COURTS HERO wholly within 12\" of this unit to be the target.\nEffect: Heal (X) the target, where X is the number of prime cut points this unit has. Then, reset this unit’s prime cut points to 0.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "End of Turn"
+          }
+        ],
+        "melee": [
+          [
+            "Butchering Weapons",
+            "2",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            "Crit (Auto-wound)"
+          ]
+        ]
+      },
+      "source": "Legends Warscrolls",
+      "canReinforce": false,
+      "flavour": "Foremost of the Summerking’s butchers are the Skinnerkin, who work to secure the most delicious viands for his feasts. These masters of the slaughter carry racks of meat hooks in their very flesh, intent on stringing up their prey upon these blades alive – for the sake of freshness, of course.",
+      "notes": "This unit cannot be reinforced.",
+      "description": "Each model in this unit is armed with Butchering Weapons. The models in this unit are:\n• Gristla Tenderhooke (champion)\n• The Carnskyr\n• Seddrik the Chain\n• Young Master Kretch\n• Flensemaster Pewdrig"
+    },
+    {
+      "faction": "Flesh-eater Courts",
+      "name": "Ushoran, Mortarch of Delusion",
+      "points": 450,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "10\"",
+        "health": "16",
+        "save": "4+",
+        "control": "5",
+        "ward": "5+",
+        "url": "https://wahapedia.ru/aos4/factions/flesh-eater-courts/Ushoran-Mortarch-of-Delusion",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "ABHORRANT",
+          "DEATH",
+          "FLESH-EATER COURTS",
+          "HERO",
+          "MONSTER",
+          "UNIQUE",
+          "WARD (5+)",
+          "WARMASTER",
+          "WIZARD (2)"
+        ],
+        "abilities": [
+          "Battle Damaged",
+          "The One True King",
+          "Epicentre of Delusion",
+          "Glimpse of Delusion",
+          "Shroudcage Fragment"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of its Monstrous Talons is 4.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "The One True King",
+            "timing": "Passive",
+            "effect": "Effect: While you believe this DELUSION:\n• Add 1 to run rolls and charge rolls for friendly FLESH-EATER COURTS units.\n• Subtract 1 from run rolls and charge rolls for enemy units.\n• The melee weapons used by friendly SERFS units have Anti-charge (+1 Rend) while they are wholly within friendly territory and did not charge in the same turn.",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Delusion",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Epicentre of Delusion",
+            "timing": "Passive",
+            "effect": "Effect: Each time you make a delusion roll, you can add 1 to or subtract 1 from the roll.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Glimpse of Delusion",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Pick a visible enemy model within 18\" of this unit to be the target, pick an enemy unit that is visible to the target and within the target’s combat range to be the victim, then make a casting roll of 2D6. You can only pick the target’s unit to be the victim if that unit has 2 or more models.\nEffect: Pick 1 of the target’s melee weapons. Immediately resolve combat attacks for the target made with that weapon against the victim.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Spell",
+            "phase": "Hero Phase",
+            "pointsType": "Spell",
+            "points": "7"
+          },
+          {
+            "name": "Shroudcage Fragment",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick up to 3 enemy units in combat with this unit to be the targets.\nEffect: Roll a dice for each target. If the roll exceeds the target’s Control characteristic, the target has STRIKE-LAST for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "keywords": "Rampage",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Sceptre of the Carrion King",
+            "4",
+            "3+",
+            "2+",
+            "2",
+            "D3+3",
+            ""
+          ],
+          [
+            "Monstrous Talons",
+            "8",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            "See battle damage rules"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "An ancient and monstrous lord amongst vampires, Ushoran is one of the most dreaded of Nagash’s Mortarch servants. He is a font of cursed madness, escalating the mania of his ghoul servants even as he annihilates foes with talon and gore-splattered sceptre.",
+      "regimentOptions": "Any %000001638FLESH-EATER COURTS%, Any %000017609Royal Attendant%"
+    },
+    {
+      "faction": "Flesh-eater Courts",
+      "name": "Varghulf Courtier",
+      "points": 100,
+      "size": 1,
+      "kind": "",
+      "category": "Other",
+      "profile": {
+        "move": "10\"",
+        "health": "8",
+        "save": "5+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/flesh-eater-courts/Varghulf-Courtier",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "FLESH-EATER COURTS",
+          "BEAST",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Beast",
+          "Victory Feast"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Beast",
+            "timing": "Passive",
+            "effect": "Effect: This unit has a maximum control score of 1.",
+            "kind": "Ability",
+            "type": "Control",
+            "phase": "End of Turn"
+          },
+          {
+            "name": "Victory Feast",
+            "timing": "End of Any Turn",
+            "effect": "Effect: If any models were slain by this unit this turn:\n• Heal (D6) this unit.\n• If this unit is in combat, this unit can immediately move 10\". It can move through the combat ranges of enemy units but must end that move in combat with the units it was already in combat with at the start of the move.\n• If this unit is not in combat, this unit can immediately move 10\" but cannot end that move in combat.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "End of Turn"
+          }
+        ],
+        "melee": [
+          [
+            "Immense Claws",
+            "7",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            "Anti-INFANTRY (+1 Rend)"
+          ],
+          [
+            "Dagger-like Fangs",
+            "1",
+            "3+",
+            "2+",
+            "2",
+            "3",
+            "Anti-INFANTRY (+1 Rend)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Varghulfs are the most degenerate of all Ushoran’s vampiric brood, their bestial nature reflected in their unholy form. Nevertheless, to the ghouls, the Varghulfs are saintly champions indeed, and they follow them to battle with a rapturous joy."
+    }
+  ]
+}

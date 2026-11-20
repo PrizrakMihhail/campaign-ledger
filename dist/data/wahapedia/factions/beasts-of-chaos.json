@@ -1,0 +1,1816 @@
+{
+  "edition": "Age of Sigmar 4",
+  "lastUpdate": "2026-10-22 18:12:05",
+  "faction": {
+    "id": "BoC",
+    "name": "Beasts of Chaos",
+    "slug": "beasts-of-chaos",
+    "url": "https://wahapedia.ru/aos4/factions/beasts-of-chaos",
+    "count": 26
+  },
+  "rules": {
+    "battleTraits": [
+      {
+        "name": "MASTERS OF THE WILDERNESS",
+        "timing": "Deployment Phase",
+        "declare": "Pick a friendly BEASTS OF CHAOS unit that has not been deployed.",
+        "effect": "Set up that unit in reserve in ambush. It has now been deployed.\nDesigner’s Note: Any number of friendly BEASTS OF CHAOS units can start the battle in reserve – even your entire Beasts of Chaos army!",
+        "unitLinks": []
+      },
+      {
+        "name": "BEASTHERD AMBUSH",
+        "timing": "Your Movement Phase",
+        "declare": "Pick a friendly BEASTS OF CHAOS unit that is in ambush.",
+        "effect": "Set up that unit on the battlefield wholly within 9\" of a battlefield edge and more than 9\" from all enemy units.\nFor the rest of the turn, add 1 to charge rolls for that unit.",
+        "unitLinks": []
+      },
+      {
+        "name": "RITUALS OF RUIN",
+        "timing": "Once Per Turn (Army), Your Hero Phase",
+        "declare": "",
+        "effect": "Pick 1 of the following effects:\nWarping Curse: Pick an enemy unit within 12\" of a friendly BEASTS OF CHAOS HERO or, if there is a friendly BEASTS OF CHAOS HERO in reserve, within 12\" of a battlefield edge to be the target. Then, roll a D3. On a 2+, inflict an amount of mortal damage on the target equal to the roll.\nBrand of Wild Fury: Pick a friendly BEASTS OF CHAOS unit wholly within 12\" of a friendly BEASTS OF CHAOS HERO or, if there is a friendly BEASTS OF CHAOS HERO in reserve, wholly within 12\" of a battlefield edge to be the target. Then, roll a dice. On a 2+, the target has WARD (6+) for the rest of the turn.\nBestial Instinct: Pick a friendly BEASTS OF CHAOS unit wholly within 12\" of a friendly BEASTS OF CHAOS HERO or, if there is a friendly BEASTS OF CHAOS HERO in reserve, wholly within 12\" of a battlefield edge to be the target. Then, roll a dice. On a 2+, add 1 to wound rolls for the target’s combat attacks for the rest of the turn.",
+        "unitLinks": []
+      }
+    ],
+    "armiesOfRenown": [],
+    "battleFormations": [
+      {
+        "name": "Almighty Beastherd",
+        "abilities": [
+          {
+            "name": "ARCH-DESPOILERS",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "Add 1 to hit rolls for combat attacks made by friendly BEASTS OF CHAOS units that target an enemy unit that is contesting an objective you do not control.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "name": "Hungering Warherd",
+        "abilities": [
+          {
+            "name": "BLOODGREED",
+            "timing": "End of Any Turn",
+            "declare": "Pick each friendly WARHERD unit that used a FIGHT ability this turn to be the targets.",
+            "effect": "Heal (3) each target.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "name": "Marauding Brayherd",
+        "abilities": [
+          {
+            "name": "FIENDS OF THE WILDS",
+            "timing": "Once Per Turn (Army), Reaction: You declared a CHARGE ability for a friendly BRAYHERD unit",
+            "declare": "",
+            "effect": "Change one of the dice in the charge roll to a 4.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "name": "Thunderscorn Stormherd",
+        "abilities": [
+          {
+            "name": "RAGING STORM",
+            "timing": "Your Hero Phase",
+            "declare": "Pick each friendly THUNDERSCORN unit on the battlefield to be the friendly targets, then pick each enemy unit in combat with any friendly THUNDERSCORN units to be the enemy targets.",
+            "effect": "Heal (1) each friendly target. Then, roll a D3 for each enemy target, if any. On a 2+, inflict an amount of mortal damage on the enemy target equal to the roll.",
+            "unitLinks": []
+          }
+        ]
+      }
+    ],
+    "lores": {
+      "spell": [
+        {
+          "name": "Lore of the Twisted Wilds",
+          "kind": "spell",
+          "points": 0,
+          "entries": [
+            {
+              "name": "VILETIDE",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly BEASTS OF CHAOS WIZARD to cast this spell, pick a visible enemy unit within 12\" of them to be the target, then make a casting roll of 2D6.",
+              "effect": "Inflict D3 mortal damage on the target. In addition, until the start of your next turn, the target cannot use commands.",
+              "value": "7",
+              "unitLinks": []
+            },
+            {
+              "name": "VICIOUS STRANGLETHORNS",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly BEASTS OF CHAOS WIZARD to cast this spell, pick a visible enemy unit within 12\" of them to be the target, then make a casting roll of 2D6.",
+              "effect": "Until the start of your next turn:\n• Halve the target’s Move characteristic.\n• Subtract 1 from the number of dice rolled when making charge rolls for the target, to a minimum of 1.",
+              "value": "8",
+              "unitLinks": []
+            },
+            {
+              "name": "DEVOLVE",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly BEASTS OF CHAOS WIZARD to cast this spell, pick a visible enemy non-HERO unit within 12\" of them to be the target, then make a casting roll of 2D6.",
+              "effect": "Until the start of your next turn:\n• The target unit has a maximum control score of 1.\n• The target cannot use commands.\n• Each time the target moves, if the caster is on the battlefield, the target must end that move no further from the caster than it was at the start of the move.",
+              "value": "7",
+              "unitLinks": []
+            }
+          ]
+        }
+      ],
+      "prayer": [],
+      "manifestation": [
+        {
+          "name": "Bestial Manifestations",
+          "kind": "manifestation",
+          "points": 0,
+          "entries": [
+            {
+              "name": "SUMMON WILDFIRE TAURUS",
+              "timing": "Your Hero Phase",
+              "declare": "If there is not a friendly Wildfire Taurus on the battlefield, pick a friendly BEASTS OF CHAOS WIZARD to cast this spell, then make a casting roll of 2D6.",
+              "effect": "Set up a Wildfire Taurus wholly within 18\" of the caster and more than 9\" from all enemy units.",
+              "value": "7",
+              "unitLinks": [
+                "https://wahapedia.ru/aos4/factions/beasts-of-chaos/Wildfire-Taurus"
+              ],
+              "manifestation": {
+                "faction": "Beasts of Chaos",
+                "name": "Wildfire Taurus"
+              }
+            },
+            {
+              "name": "SUMMON RAVENING DIREFLOCK",
+              "timing": "Your Hero Phase",
+              "declare": "If there is not a friendly Ravening Direflock on the battlefield, pick a friendly BEASTS OF CHAOS WIZARD to cast this spell, then make a casting roll of 2D6.",
+              "effect": "Set up a Ravening Direflock wholly within 18\" of the caster and more than 9\" from all enemy units. A Ravening Direflock has 3 parts that must each be set up within 1\" of at least 1 other part.",
+              "value": "7",
+              "unitLinks": [
+                "https://wahapedia.ru/aos4/factions/beasts-of-chaos/Ravening-Direflock"
+              ],
+              "manifestation": {
+                "faction": "Beasts of Chaos",
+                "name": "Ravening Direflock"
+              }
+            },
+            {
+              "name": "SUMMON DOOMBLAST DIRGEHORN",
+              "timing": "Your Hero Phase",
+              "declare": "If there is not a friendly Doomblast Dirgehorn on the battlefield, pick a friendly BEASTS OF CHAOS WIZARD to cast this spell, then make a casting roll of 2D6.",
+              "effect": "Set up a Doomblast Dirgehorn wholly within 18\" of the caster.",
+              "value": "6",
+              "unitLinks": [
+                "https://wahapedia.ru/aos4/factions/beasts-of-chaos/Doomblast-Dirgehorn"
+              ],
+              "manifestation": {
+                "faction": "Beasts of Chaos",
+                "name": "Doomblast Dirgehorn"
+              }
+            }
+          ],
+          "scope": "faction"
+        }
+      ]
+    }
+  },
+  "entries": [
+    {
+      "faction": "Beasts of Chaos",
+      "name": "Beastlord",
+      "points": 150,
+      "size": 1,
+      "kind": "Legends",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "6",
+        "save": "4+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/beasts-of-chaos/Beastlord",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "BEASTS OF CHAOS",
+          "BRAYHERD",
+          "CHAOS",
+          "HERO",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "Hatred of Heroes",
+          "Call of Battle"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Hatred of Heroes",
+            "timing": "Passive",
+            "effect": "Effect: While this unit is in combat with any enemy HEROES, add 1 to hit rolls and wound rolls for combat attacks made by friendly BEASTS OF CHAOS units wholly within 12\" of this unit.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Call of Battle",
+            "timing": "Reaction: You declared a Fight ability for this unit",
+            "effect": "Effect: Pick a friendly non-HERO BRAYHERD INFANTRY unit that has not used a FIGHT ability this turn and is within this unit’s combat range to be the target. The target can be picked to use a FIGHT ability immediately after the FIGHT ability used by this unit has been resolved.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase",
+            "reaction": true
+          }
+        ],
+        "melee": [
+          [
+            "Paired Man-ripper Axes",
+            "5",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            "Crit (2 Hits), Anti-HERO (+1 Rend)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "In the merciless society of the Beasts of Chaos, only the mightiest rise to power. These are the Beastlords, hulking killers who command through intimidation and brutality and delight in sinking their man-ripper axes into the skulls of their foes.",
+      "regimentOptions": "0-1 %000013865Herd Alpha%. Any %000002678Beasts of Chaos%",
+      "notes": "This HERO can join an eligible regiment as a Herd Alpha.\nThis unit will move to Warhammer Legends on 1 June 2025."
+    },
+    {
+      "faction": "Beasts of Chaos",
+      "name": "Beasts of Chaos Chaos Spawn",
+      "points": 70,
+      "size": 1,
+      "kind": "Legends",
+      "category": "Other",
+      "profile": {
+        "move": "2D6\"",
+        "health": "5",
+        "save": "5+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/beasts-of-chaos/Beasts-of-Chaos-Chaos-Spawn",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "BEASTS OF CHAOS",
+          "CHAOS",
+          "BEAST"
+        ],
+        "abilities": [
+          "Beast"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Beast",
+            "timing": "Passive",
+            "effect": "Effect: This unit has a maximum control score of 1.",
+            "kind": "Ability",
+            "type": "Control",
+            "phase": "End of Turn"
+          }
+        ],
+        "melee": [
+          [
+            "Freakish Mutations",
+            "2D6",
+            "5+",
+            "4+",
+            "-",
+            "1",
+            "Crit (2 Hits), Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Utterly devolved in both body and mind by the corrupting power of pure anarchy, the hideous creatures known as Chaos Spawn lurch into battle, lashing out with whip-like tendrils and scything talons in a maddened frenzy.",
+      "regimentOptions": "Beast",
+      "notes": "This unit will move to Warhammer Legends on 1 June 2025."
+    },
+    {
+      "faction": "Beasts of Chaos",
+      "name": "Bestigors",
+      "points": 220,
+      "size": 10,
+      "kind": "Legends",
+      "category": "Infantry",
+      "profile": {
+        "move": "6\"",
+        "health": "2",
+        "save": "4+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/beasts-of-chaos/Bestigors",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "BEASTS OF CHAOS",
+          "BRAYHERD",
+          "CHAOS",
+          "CHAMPION",
+          "INFANTRY",
+          "MUSICIAN (1/10)",
+          "STANDARD BEARER (1/10)"
+        ],
+        "abilities": [
+          "Ferocious Advance",
+          "Despoilers"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Ferocious Advance",
+            "timing": "Passive",
+            "effect": "Effect: Subtract 1 from wound rolls for shooting attacks that target this unit.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          },
+          {
+            "name": "Despoilers",
+            "timing": "Reaction: Opponent declared the ‘All-out Defence’ command for a unit within 6\" of this unit",
+            "effect": "Effect: Add 1 to the Attacks characteristic of this unit’s Despoiler Axes for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase",
+            "reaction": true
+          }
+        ],
+        "melee": [
+          [
+            "Despoiler Axe",
+            "3",
+            "4+",
+            "3+",
+            "1",
+            "1",
+            "Crit (2 Hits)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Bestigors are the strongest and fiercest of the gorkin. Clad in stolen armour and wielding two-handed axes, they charge into the thick of the fighting, ramming enemies to the ground with their horns before delivering a brutal killing blow.",
+      "regimentOptions": "Brayherd, Infantry",
+      "notes": "This unit will move to Warhammer Legends on 1 June 2025."
+    },
+    {
+      "faction": "Beasts of Chaos",
+      "name": "Bullgors",
+      "points": 170,
+      "size": 3,
+      "kind": "Legends",
+      "category": "Infantry",
+      "profile": {
+        "move": "6\"",
+        "health": "4",
+        "save": "5+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/beasts-of-chaos/Bullgors",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "BEASTS OF CHAOS",
+          "CHAOS",
+          "WARHERD",
+          "CHAMPION",
+          "INFANTRY",
+          "MUSICIAN (1/3)",
+          "STANDARD BEARER (1/3)"
+        ],
+        "abilities": [
+          "Warherd Charge"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Warherd Charge",
+            "timing": "Any Charge Phase",
+            "effect": "Declare: If this unit charged this phase, pick an enemy unit within 1\" of it to be the target.\nEffect: Roll a dice for each model in this unit. For each 2+, inflict 1 mortal damage on the target.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Charge Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Man-splitter Axes",
+            "4",
+            "4+",
+            "2+",
+            "1",
+            "2",
+            ""
+          ],
+          [
+            "Iron-capped Horns",
+            "2",
+            "5+",
+            "3+",
+            "-",
+            "2",
+            "Charge (+1 Damage)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Bullgors are hulking, taurine monstrosities consumed by the need to stuff their mouths with raw flesh and blood. They are the shock troops of the greatfrays, capable of smashing their way through almost any shieldwall or line of pikes.",
+      "regimentOptions": "Infantry",
+      "notes": "This unit will move to Warhammer Legends on 1 June 2025."
+    },
+    {
+      "faction": "Beasts of Chaos",
+      "name": "Centigors",
+      "points": 170,
+      "size": 5,
+      "kind": "Legends",
+      "category": "Cavalry",
+      "profile": {
+        "move": "10\"",
+        "health": "2",
+        "save": "5+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/beasts-of-chaos/Centigors",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "BEASTS OF CHAOS",
+          "BRAYHERD",
+          "CHAOS",
+          "CAVALRY",
+          "CHAMPION",
+          "MUSICIAN (1/5)",
+          "STANDARD BEARER (1/5)"
+        ],
+        "abilities": [
+          "Drunken Revelry"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Drunken Revelry",
+            "timing": "Once Per Turn (Army), Your Movement Phase",
+            "effect": "Effect: This unit can use this ability if it is not in combat. It has WARD (4+) for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Movement Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Gutpiercer Spear",
+            "8\"",
+            "1",
+            "4+",
+            "3+",
+            "1",
+            "D3",
+            ""
+          ]
+        ],
+        "melee": [
+          [
+            "Gutpiercer Spear",
+            "3",
+            "4+",
+            "3+",
+            "1",
+            "1",
+            "Anti-CAVALRY (+1 Rend), Charge (+1 Damage)"
+          ],
+          [
+            "Clawed Forelimbs",
+            "2",
+            "5+",
+            "3+",
+            "-",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Drunken barbarians who love nothing more than a bloody brawl, the half-equine warriors known as Centigors charge across the battlefield in search of enemies to stomp, smash and brutalise.",
+      "regimentOptions": "Brayherd, Cavalry",
+      "notes": "This unit will move to Warhammer Legends on 1 June 2025."
+    },
+    {
+      "faction": "Beasts of Chaos",
+      "name": "Chaos Gargant",
+      "points": 140,
+      "size": 1,
+      "kind": "Legends",
+      "category": "Monster",
+      "profile": {
+        "move": "8\"",
+        "health": "12",
+        "save": "5+",
+        "control": "5",
+        "url": "https://wahapedia.ru/aos4/factions/beasts-of-chaos/Chaos-Gargant",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "BEASTS OF CHAOS",
+          "CHAOS",
+          "MONSTER"
+        ],
+        "abilities": [
+          "Whipped Into A Frenzy",
+          "Timberrrrr!"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Whipped Into A Frenzy",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Effect: If this unit is within 6\" of any friendly BEASTS OF CHAOS HEROES, add 1 to the Attacks characteristic of this unit’s melee weapons for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Rampage",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Timberrrrr!",
+            "timing": "Passive",
+            "effect": "Effect: When this unit is destroyed, before removing it from play, the players must roll off. The winner picks a point on the battlefield within 3\" of this unit. Inflict D3 mortal damage on each unit (friendly and enemy) within 3\" of that point that has a lower Health characteristic than this unit.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Throwin’ Rocks",
+            "12\"",
+            "1",
+            "5+",
+            "2+",
+            "2",
+            "D3",
+            ""
+          ]
+        ],
+        "melee": [
+          [
+            "Massive Club",
+            "4",
+            "4+",
+            "2+",
+            "1",
+            "2",
+            ""
+          ],
+          [
+            "’Eadbutt",
+            "1",
+            "4+",
+            "2+",
+            "2",
+            "4",
+            ""
+          ],
+          [
+            "Mighty Kick",
+            "1",
+            "4+",
+            "2+",
+            "2",
+            "D3",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Lumbering, living totems of corruption, Chaos Gargants combine the formidable strength of their kind with all manner of gruesome mutations. Swinging crude weapons and hollering at the top of their lungs, they throw themselves into the thick of battle, stomping and crushing their foes beneath their cloven hooves.",
+      "regimentOptions": "Monster",
+      "notes": "This unit will move to Warhammer Legends on 1 June 2025."
+    },
+    {
+      "faction": "Beasts of Chaos",
+      "name": "Chaos Warhounds",
+      "points": 130,
+      "size": 10,
+      "kind": "Legends",
+      "category": "Other",
+      "profile": {
+        "move": "10\"",
+        "health": "2",
+        "save": "6+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/beasts-of-chaos/Chaos-Warhounds",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "BEASTS OF CHAOS",
+          "CHAOS",
+          "BEAST"
+        ],
+        "abilities": [
+          "Beast",
+          "Outrunners of Chaos"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Beast",
+            "timing": "Passive",
+            "effect": "Effect: This unit has a maximum control score of 1.",
+            "kind": "Ability",
+            "type": "Control",
+            "phase": "End of Turn"
+          },
+          {
+            "name": "Outrunners of Chaos",
+            "timing": "Reaction: You declared a Charge ability for this unit",
+            "effect": "Effect: Change one of the dice in the charge roll to a 4.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Charge Phase",
+            "reaction": true
+          }
+        ],
+        "melee": [
+          [
+            "Canine Jaws",
+            "2",
+            "4+",
+            "3+",
+            "-",
+            "1",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Lean, vicious and hideously mutated, Chaos Warhounds are products of the hellish environments in which they dwell. They are tireless pursuers that will chase their prey for hours before ripping them to bloody shreds.",
+      "regimentOptions": "Beast",
+      "notes": "This unit will move to Warhammer Legends on 1 June 2025."
+    },
+    {
+      "faction": "Beasts of Chaos",
+      "name": "Chimera",
+      "points": 200,
+      "size": 1,
+      "kind": "Legends",
+      "category": "Monster",
+      "profile": {
+        "move": "10\"",
+        "health": "12",
+        "save": "5+",
+        "control": "5",
+        "url": "https://wahapedia.ru/aos4/factions/beasts-of-chaos/Chimera",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "BEASTS OF CHAOS",
+          "CHAOS",
+          "FLY",
+          "MONSTER"
+        ],
+        "abilities": [
+          "Thricefold Savagery"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Thricefold Savagery",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Effect: Roll 3 dice. For each 4+, add 1 to the Attacks characteristic of this unit’s Chimeric Heads for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Rampage",
+            "phase": "Combat Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Brimstone Breath",
+            "12\"",
+            "6",
+            "2+",
+            "4+",
+            "-",
+            "1",
+            "Shoot in Combat, Companion"
+          ]
+        ],
+        "melee": [
+          [
+            "Chimeric Heads",
+            "6",
+            "4+",
+            "2+",
+            "1",
+            "D3",
+            "Companion"
+          ],
+          [
+            "Mauling Claws",
+            "6",
+            "4+",
+            "2+",
+            "-",
+            "2",
+            "Crit (2 Hits), Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Warped and ravenous alphapredators of the Chaos wilds, Chimeras are tri-headed abominations that descend from the skies to overwhelm their prey. Three monstrous heads rip, tear and spit streams of fire even as the beast’s vicious claws maul and mutilate.",
+      "regimentOptions": "Monster",
+      "notes": "This unit will move to Warhammer Legends on 1 June 2025."
+    },
+    {
+      "faction": "Beasts of Chaos",
+      "name": "Cockatrice",
+      "points": 150,
+      "size": 1,
+      "kind": "Legends",
+      "category": "Other",
+      "profile": {
+        "move": "12\"",
+        "health": "8",
+        "save": "5+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/beasts-of-chaos/Cockatrice",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "BEASTS OF CHAOS",
+          "CHAOS",
+          "BEAST",
+          "FLY"
+        ],
+        "abilities": [
+          "Beast",
+          "Petrifying Gaze"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Beast",
+            "timing": "Passive",
+            "effect": "Effect: This unit has a maximum control score of 1.",
+            "kind": "Ability",
+            "type": "Control",
+            "phase": "End of Turn"
+          },
+          {
+            "name": "Petrifying Gaze",
+            "timing": "Once Per Turn (Army,) Your Shooting Phase",
+            "effect": "Declare: Pick a visible enemy unit within 12\" of this unit to be the target.\nEffect: Roll a dice for each model in the target unit. For each 6, inflict 1 mortal damage on the target. If any damage points are allocated to the target by this ability, the target has STRIKE-LAST for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Shooting",
+            "phase": "Shooting Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Stabbing Beak and Talons",
+            "5",
+            "4+",
+            "2+",
+            "1",
+            "2",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "A Cockatrice is a fell creature that dwells in the harshest wastelands of the Mortal Realms. Its cursed gaze can transform a foe into a screaming statue, while its raking talons and cruel beak shred flesh and muscle effortlessly.",
+      "regimentOptions": "Beast",
+      "notes": "This unit will move to Warhammer Legends on 1 June 2025."
+    },
+    {
+      "faction": "Beasts of Chaos",
+      "name": "Cygor",
+      "points": 170,
+      "size": 1,
+      "kind": "Legends",
+      "category": "Monster",
+      "profile": {
+        "move": "8\"",
+        "health": "15",
+        "save": "5+",
+        "control": "5",
+        "url": "https://wahapedia.ru/aos4/factions/beasts-of-chaos/Cygor",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "BEASTS OF CHAOS",
+          "CHAOS",
+          "WARHERD",
+          "MONSTER"
+        ],
+        "abilities": [
+          "Battle Damaged",
+          "Soul-eater",
+          "Consume Endless Spell"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of its Massive Horns is 4.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Soul-eater",
+            "timing": "Passive",
+            "effect": "Effect: This unit can use UNBIND abilities as if it had WIZARD (1). Each time this unit unbinds a spell, inflict D3 mortal damage on the caster.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Consume Endless Spell",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick an ENDLESS SPELL within 9\" of this unit to be the target.\nEffect: Roll 2D6. If the roll exceeds the target’s Banishment characteristic:\n• The target is banished.\n• Heal (X) this unit, where X is an amount equal to the roll.",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Rampage",
+            "phase": "Combat Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Desecrated Boulder",
+            "15\"",
+            "1",
+            "4+",
+            "2+",
+            "2",
+            "D3+3",
+            "Shoot in Combat"
+          ]
+        ],
+        "melee": [
+          [
+            "Massive Horns",
+            "6",
+            "4+",
+            "2+",
+            "1",
+            "2",
+            "Anti-MANIFESTATION (+1 Rend) · See battle damage rules"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Cygors are blind to the physical world but can sense and follow the trails of magic that permeate reality. They seek out sorcerers, wizards and other beings rich in eldritch power, cramming these spellcasters into their slavering maws and feasting upon the raw magic that spills from their broken bodies.",
+      "regimentOptions": "Monster",
+      "notes": "This unit will move to Warhammer Legends on 1 June 2025."
+    },
+    {
+      "faction": "Beasts of Chaos",
+      "name": "Doomblast Dirgehorn",
+      "points": 0,
+      "size": 1,
+      "kind": "",
+      "category": "Manifestation",
+      "profile": {
+        "move": "-",
+        "health": "7",
+        "save": "6+",
+        "ward": "6+",
+        "banishment": "7",
+        "url": "https://wahapedia.ru/aos4/factions/beasts-of-chaos/Doomblast-Dirgehorn",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "BEASTS OF CHAOS",
+          "CHAOS",
+          "ENDLESS SPELL",
+          "MANIFESTATION",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Booming Cacophony",
+          "Louder and Louder"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Booming Cacophony",
+            "timing": "Passive",
+            "effect": "Effect: When this MANIFESTATION is set up, the range of this ability is 6\". Subtract 1 from wound rolls for attacks made by enemy units while they are within range of this MANIFESTATION’s ability.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          },
+          {
+            "name": "Louder and Louder",
+            "timing": "Start of Battle Round",
+            "effect": "Effect: Increase the range of this MANIFESTATION’s ‘Booming Cacophony’ ability by 6\". This effect can be applied multiple times to this MANIFESTATION and is cumulative. If this MANIFESTATION is removed from play, this effect no longer applies.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          }
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Wrought from coalesced Chaos energies, the Doomblast Dirgehorn emits an unending, dolorous blast that drowns out all thought. The howling cacophony strips those in earshot of their sanity and reduces skilled warriors to fumbling fools."
+    },
+    {
+      "faction": "Beasts of Chaos",
+      "name": "Doombull",
+      "points": 170,
+      "size": 1,
+      "kind": "Legends",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "8",
+        "save": "5+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/beasts-of-chaos/Doombull",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "BEASTS OF CHAOS",
+          "CHAOS",
+          "WARHERD",
+          "HERO",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "Alpha Charge",
+          "Slaughterer’s Call"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Alpha Charge",
+            "timing": "Any Charge Phase",
+            "effect": "Declare: If this unit charged this phase, pick an enemy unit within 1\" of it to be the target.\nEffect: Roll a D3. On a 2+, inflict an amount of mortal damage on the target equal to the roll.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Charge Phase"
+          },
+          {
+            "name": "Slaughterer’s Call",
+            "timing": "Once Per Turn (Army), Any Charge Phase",
+            "effect": "Declare: Pick a friendly WARHERD unit that is not in combat and is wholly within 12\" of this unit to be the target.\nEffect: For the rest of the turn, add 1 to the number of dice rolled when making charge rolls for the target, to a maximum of 3.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Charge Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Slaughterer’s Axe",
+            "4",
+            "4+",
+            "2+",
+            "1",
+            "3",
+            ""
+          ],
+          [
+            "Alphabeast Horns",
+            "2",
+            "4+",
+            "2+",
+            "-",
+            "2",
+            "Charge (+1 Damage)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Doombulls are the strongest and most ferocious of their kind, swollen with muscle and as broad as they are tall. They feast upon only the worthiest foes, sating their bloodgreed with the gore of champions and heroes.",
+      "regimentOptions": "0-1 %000013865Herd Alpha%. Any %000002678Beasts of Chaos%",
+      "notes": "This HERO can join an eligible regiment as a Herd Alpha.\nThis unit will move to Warhammer Legends on 1 June 2025."
+    },
+    {
+      "faction": "Beasts of Chaos",
+      "name": "Dragon Ogor Shaggoth",
+      "points": 220,
+      "size": 1,
+      "kind": "Legends",
+      "category": "Hero",
+      "profile": {
+        "move": "8\"",
+        "health": "10",
+        "save": "4+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/beasts-of-chaos/Dragon-Ogor-Shaggoth",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "BEASTS OF CHAOS",
+          "CHAOS",
+          "THUNDERSCORN",
+          "HERO",
+          "MONSTER",
+          "WIZARD (1)"
+        ],
+        "abilities": [
+          "Scion of the Primordial Storm",
+          "Beneath The Tempest"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Scion of the Primordial Storm",
+            "timing": "Reaction: Opponent declared a Spell ability",
+            "effect": "Effect: If this unit or a friendly Dragon Ogors unit wholly within 12\" of this unit was picked to be the target of that spell, roll a dice. On a 4+, ignore the effect of that spell on this unit or that friendly unit. This unit can use this ability more than once per phase but only once per SPELL ability.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase",
+            "reaction": true
+          },
+          {
+            "name": "Beneath The Tempest",
+            "timing": "Once Per Turn (Army), End of Any Turn",
+            "effect": "Declare: Pick each enemy unit in combat with this unit to be the targets.\nEffect: Roll a dice. On a 2+, Heal (X) this unit, where X is an amount equal to the roll. Then, roll a D3 for each target. On a 2+, inflict an amount of mortal damage on the target equal to the roll.",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Rampage",
+            "phase": "End of Turn"
+          }
+        ],
+        "ranged": [
+          [
+            "Crackling Bolts",
+            "12\"",
+            "2D6",
+            "4+",
+            "3+",
+            "1",
+            "1",
+            "Crit (2 Hits), Shoot in Combat"
+          ]
+        ],
+        "melee": [
+          [
+            "Storm-forged Axe",
+            "6",
+            "3+",
+            "2+",
+            "1",
+            "3",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Dragon Ogor Shaggoths are ancient and powerful beings imbued with the coruscating power of the storm. When they go to war, the mountains themselves tremble and foes are hewn apart by the score.",
+      "regimentOptions": "0-1 %000013865Herd Alpha%. Any %000002678Beasts of Chaos%",
+      "notes": "This unit will move to Warhammer Legends on 1 June 2025."
+    },
+    {
+      "faction": "Beasts of Chaos",
+      "name": "Dragon Ogors",
+      "points": 200,
+      "size": 3,
+      "kind": "Legends",
+      "category": "Cavalry",
+      "profile": {
+        "move": "8\"",
+        "health": "5",
+        "save": "4+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/beasts-of-chaos/Dragon-Ogors",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "BEASTS OF CHAOS",
+          "CHAOS",
+          "THUNDERSCORN",
+          "CAVALRY"
+        ],
+        "abilities": [
+          "Speed Of An Avalanche"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Speed Of An Avalanche",
+            "timing": "Any Combat Phase",
+            "effect": "Effect: If this unit did not charge this turn and is in combat with an enemy unit that charged this turn, roll a dice. On a 4+, this unit has STRIKE-FIRST for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Storm-forged Weapons",
+            "4",
+            "4+",
+            "2+",
+            "1",
+            "2",
+            "Crit (Mortal)"
+          ],
+          [
+            "Raking Foreclaws",
+            "2",
+            "5+",
+            "3+",
+            "-",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Imposing creatures with muscular, humanoid torsos and the lower bodies of draconids, Dragon Ogors are formidable warriors. They overrun their foes with a headlong charge, lashing out with crackling storm-weapons and obliterating their enemies in a tempestuous rage.",
+      "regimentOptions": "Cavalry",
+      "notes": "This unit will move to Warhammer Legends on 1 June 2025."
+    },
+    {
+      "faction": "Beasts of Chaos",
+      "name": "Ghorgon",
+      "points": 180,
+      "size": 1,
+      "kind": "Legends",
+      "category": "Monster",
+      "profile": {
+        "move": "8\"",
+        "health": "15",
+        "save": "5+",
+        "control": "5",
+        "url": "https://wahapedia.ru/aos4/factions/beasts-of-chaos/Ghorgon",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "BEASTS OF CHAOS",
+          "CHAOS",
+          "WARHERD",
+          "MONSTER"
+        ],
+        "abilities": [
+          "Battle Damaged",
+          "Swallow Whole"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of its Butchering Blades is 4.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Swallow Whole",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick an enemy unit in combat with this unit to be the target.\nEffect: Roll a dice. If the roll exceeds the target’s Health characteristic:\n• 1 model in the target unit is slain.\n• Heal (X) this unit, where X is an amount equal to the roll.",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Rampage",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Butchering Blades",
+            "7",
+            "4+",
+            "2+",
+            "1",
+            "3",
+            "Anti-INFANTRY (+1 Rend) · See battle damage rules"
+          ],
+          [
+            "Huge Slavering Maw",
+            "2",
+            "4+",
+            "2+",
+            "1",
+            "D6",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "The terrifying, four-armed colossi known as Ghorgons are cursed with an unquenchable desire for raw meat. Even as they hack and kill with bladed forelimbs, a second pair of arms stuffs ruptured corpses and strips of flesh into the Ghorgon’s drooling maw.",
+      "regimentOptions": "Monster",
+      "notes": "This unit will move to Warhammer Legends on 1 June 2025."
+    },
+    {
+      "faction": "Beasts of Chaos",
+      "name": "Gors",
+      "points": 100,
+      "size": 10,
+      "kind": "Legends",
+      "category": "Infantry",
+      "profile": {
+        "move": "6\"",
+        "health": "1",
+        "save": "5+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/beasts-of-chaos/Gors",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "BEASTS OF CHAOS",
+          "BRAYHERD",
+          "CHAOS",
+          "CHAMPION",
+          "INFANTRY",
+          "MUSICIAN (1/10)",
+          "STANDARD BEARER (1/10)"
+        ],
+        "abilities": [
+          "Gor Stampede"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Gor Stampede",
+            "timing": "Your Charge Phase",
+            "effect": "Declare: If this unit charged this phase, pick an enemy non-HERO INFANTRY unit that has fewer models than this unit and is within 1\" of it to be the target.\nEffect: Roll a dice. On a 3+, the target has STRIKE-LAST for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Charge Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Hacking Blades",
+            "2",
+            "4+",
+            "3+",
+            "-",
+            "1",
+            "Crit (2 Hits)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Gors form the greater mass of a beastherd’s fighting force. Taller and more robust than humans, these vicious warriors wield axes and pitted swords. They rely upon superior numbers and the element of surprise to overcome their foes, crushing their will to fight with sudden, devastating stampedes.",
+      "regimentOptions": "Brayherd, Infantry",
+      "notes": "This unit will move to Warhammer Legends on 1 June 2025."
+    },
+    {
+      "faction": "Beasts of Chaos",
+      "name": "Grashrak’s Despoilers",
+      "points": 100,
+      "size": 6,
+      "kind": "Legends",
+      "category": "Infantry",
+      "profile": {
+        "move": "8\"",
+        "health": "2",
+        "save": "6+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/beasts-of-chaos/Grashrak-s-Despoilers-1",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "BEASTS OF CHAOS",
+          "BRAYHERD",
+          "CHAOS",
+          "CHAMPION",
+          "INFANTRY",
+          "UNIQUE"
+        ],
+        "abilities": [
+          "Violent Despoilers",
+          "Grashrak Fellhoof"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Violent Despoilers",
+            "timing": "Passive",
+            "effect": "Effect: Add 1 to hit rolls for this unit’s attacks while it is wholly outside friendly territory.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Grashrak Fellhoof",
+            "timing": "Passive",
+            "effect": "Effect: While this unit’s Grashrak Fellhoof is on the battlefield, it has WIZARD (1).",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Despoiler Shortbow",
+            "15\"",
+            "2",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            ""
+          ]
+        ],
+        "melee": [
+          [
+            "Despoiler Weapons",
+            "2",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "Legends Warscrolls",
+      "canReinforce": false,
+      "flavour": "A prophet of ruin and the leader of the Despoilers, an infamous pack of cruel-hearted raiders, the Great Bray-Shaman known as Grashrak Fellhoof wields the savage power of Chaos to lay waste to his enemies. Grashrak’s Despoilers are a motley collection of gor- kin, hand-picked by the Bray-Shaman for their cruel cunning. They fear Fellhoof more than any foe and will sacrifice life and limb to protect their master.",
+      "notes": "This unit cannot be reinforced.",
+      "description": "Each model in this unit is armed with Despoiler Weapons. The models in this unit are:\n• Grashrak Fellhoof (champion)\n• Draknar\n• Murghoth Half-horn\n• Korsh ‘the Sneak’\n• Ushkor (also armed with a Despoiler Shortbow)\n• Gnarl (also armed with a Despoiler Shortbow)"
+    },
+    {
+      "faction": "Beasts of Chaos",
+      "name": "Great Bray-Shaman",
+      "points": 140,
+      "size": 1,
+      "kind": "Legends",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "5",
+        "save": "5+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/beasts-of-chaos/Great-Bray-Shaman",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "BEASTS OF CHAOS",
+          "BRAYHERD",
+          "CHAOS",
+          "HERO",
+          "INFANTRY",
+          "WIZARD (1)"
+        ],
+        "abilities": [
+          "Infuse With Bestial Vigour"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Infuse With Bestial Vigour",
+            "timing": "Once Per Turn (Army), Your Movement Phase",
+            "effect": "Declare: Pick a friendly BEASTS OF CHAOS unit wholly within 12\" of this unit to be the target.\nEffect: For the rest of the turn, the target can use a RUN ability and still use CHARGE abilities later in the turn.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Movement Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Fetish Staff",
+            "3",
+            "4+",
+            "3+",
+            "-",
+            "D3",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "The Great Bray-Shamans are the soothsayers and mystics of the beastherds. What they lack in raw strength, they make up for with a mastery of Chaos magic that can reduce a foe to a writhing mass of corrupted flesh.",
+      "regimentOptions": "0-1 %000013865Herd Alpha%, 0-1 %000010815Beast%, Any %000002677Brayherd%",
+      "notes": "This unit will move to Warhammer Legends on 1 June 2025."
+    },
+    {
+      "faction": "Beasts of Chaos",
+      "name": "Herdstone",
+      "points": 0,
+      "size": 1,
+      "kind": "",
+      "category": "Terrain",
+      "profile": {
+        "move": "-",
+        "health": "14",
+        "save": "4+",
+        "control": "0",
+        "url": "https://wahapedia.ru/aos4/factions/beasts-of-chaos/Herdstone",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "BEASTS OF CHAOS",
+          "CHAOS",
+          "FACTION TERRAIN"
+        ],
+        "abilities": [
+          "Entropic Lodestone"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Entropic Lodestone",
+            "timing": "Passive",
+            "effect": "Effect: From the second battle round onwards, add 1 to the Rend characteristic of melee weapons used by friendly BEASTS OF CHAOS units while they are wholly within 24\" of this terrain feature.\nIf this terrain feature is wholly within 18\" of the centre of the battlefield, this ability affects all friendly BEASTS OF CHAOS units on the battlefield instead of those wholly within 24\" of it.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Herdstones are the sites at which the Beasts of Chaos carry out their savage rituals. Wrought from the Chaos-infused substance of the realms, from them spills the corruptive taint of the anarchic wilds to bleed freely into the land.",
+      "description": "The following universal terrain abilities apply to this terrain feature (Terrain, 1.2):\nCover, Unstable"
+    },
+    {
+      "faction": "Beasts of Chaos",
+      "name": "Jabberslythe",
+      "points": 190,
+      "size": 1,
+      "kind": "Legends",
+      "category": "Monster",
+      "profile": {
+        "move": "10\"",
+        "health": "12",
+        "save": "4+",
+        "control": "5",
+        "url": "https://wahapedia.ru/aos4/factions/beasts-of-chaos/Jabberslythe",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "BEASTS OF CHAOS",
+          "CHAOS",
+          "FLY",
+          "MONSTER"
+        ],
+        "abilities": [
+          "Aura of Madness"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Aura of Madness",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Roll a D3. On a 2+, pick up to a number of enemy units equal to the roll that are within 9\" of this unit to be the targets.\nEffect: For the rest of the turn, each time the unmodified hit roll for a combat attack made by the target is 1, inflict 1 mortal damage on the target after the FIGHT ability has been resolved.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Rampage",
+            "phase": "Combat Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Slythey Tongue",
+            "8\"",
+            "3",
+            "4+",
+            "2+",
+            "1",
+            "D3",
+            "Shoot in Combat, Companion"
+          ]
+        ],
+        "melee": [
+          [
+            "Vorpal Claws and Tail",
+            "6",
+            "4+",
+            "2+",
+            "1",
+            "2",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Jabberslythes are nightmarish fusions of reptile, amphibian and insect, with sharp claws and a spiked tail that can punch through solid steel. They are so unearthly in their hideousness that to merely look upon one is to risk insanity.",
+      "regimentOptions": "Monster",
+      "notes": "This unit will move to Warhammer Legends on 1 June 2025."
+    },
+    {
+      "faction": "Beasts of Chaos",
+      "name": "Ravening Direflock",
+      "points": 0,
+      "size": 3,
+      "kind": "",
+      "category": "Manifestation",
+      "profile": {
+        "move": "16\"",
+        "health": "6",
+        "save": "6+",
+        "ward": "6+",
+        "banishment": "7",
+        "url": "https://wahapedia.ru/aos4/factions/beasts-of-chaos/Ravening-Direflock",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "BEASTS OF CHAOS",
+          "CHAOS",
+          "ENDLESS SPELL",
+          "FLY",
+          "MANIFESTATION",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Multiple Parts",
+          "Harbingers of Dark Omens"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Multiple Parts",
+            "timing": "Passive",
+            "effect": "Effect: When a number of damage points equal to this MANIFESTATION’s Health characteristic are allocated to it, this MANIFESTATION is destroyed and all of its parts are removed from play.\nEach time this MANIFESTATION moves, each of its parts must end within 1\" of at least 1 other part.\nEach part of this MANIFESTATION is armed with Murderous Beaks.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Harbingers of Dark Omens",
+            "timing": "Passive",
+            "effect": "Effect: Subtract 5 from the control scores of enemy units while they are within 12\" of this unit.",
+            "kind": "Ability",
+            "type": "Control",
+            "phase": "End of Turn"
+          }
+        ],
+        "melee": [
+          [
+            "Murderous Beaks",
+            "6",
+            "4+",
+            "5+",
+            "1",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "The spectral crows of a Ravening Direflock are harbingers of doom, filling the minds of those who hear their piercing caws with an inescapable sense of dread. They circle over the battlefield, harrying those who try to flee the carnage."
+    },
+    {
+      "faction": "Beasts of Chaos",
+      "name": "Razorgor",
+      "points": 70,
+      "size": 1,
+      "kind": "Legends",
+      "category": "Other",
+      "profile": {
+        "move": "10\"",
+        "health": "4",
+        "save": "5+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/beasts-of-chaos/Razorgor",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "BEASTS OF CHAOS",
+          "CHAOS",
+          "BEAST"
+        ],
+        "abilities": [
+          "Beast",
+          "Feed On Mangled Remains"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Beast",
+            "timing": "Passive",
+            "effect": "Effect: This unit has a maximum control score of 1.",
+            "kind": "Ability",
+            "type": "Control",
+            "phase": "End of Turn"
+          },
+          {
+            "name": "Feed On Mangled Remains",
+            "timing": "Passive",
+            "effect": "Effect: Each time this unit uses a FIGHT ability, after that FIGHT ability has been resolved, Heal (D3) this unit.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          }
+        ],
+        "melee": [
+          [
+            "Large Tusks and Hooves",
+            "5",
+            "4+",
+            "2+",
+            "-",
+            "2",
+            "Charge (+1 Damage)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Razorgors are mountains of twisted flesh and wiry hair possessed of a vicious fury and a bottomless appetite. They gobble their prey down in a few gulping bites, consuming flesh, metal, wood and stone alike.",
+      "regimentOptions": "Beast",
+      "notes": "This unit will move to Warhammer Legends on 1 June 2025."
+    },
+    {
+      "faction": "Beasts of Chaos",
+      "name": "Tuskgor Chariots",
+      "points": 110,
+      "size": 1,
+      "kind": "Legends",
+      "category": "War Machine",
+      "profile": {
+        "move": "10\"",
+        "health": "7",
+        "save": "4+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/beasts-of-chaos/Tuskgor-Chariots",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "BEASTS OF CHAOS",
+          "BRAYHERD",
+          "CHAOS",
+          "WAR MACHINE"
+        ],
+        "abilities": [
+          "Tuskgor Charge"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Tuskgor Charge",
+            "timing": "Any Charge Phase",
+            "effect": "Declare: If this unit charged this phase, pick an enemy unit within 1\" of it to be the target.\nEffect: Roll a D3. On a 2+, inflict an amount of mortal damage on the target equal to the roll.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Charge Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Despoiler Weapons",
+            "4",
+            "4+",
+            "3+",
+            "1",
+            "1",
+            "Crit (2 Hits)"
+          ],
+          [
+            "Tuskgors’ Iron-hard Tusks",
+            "4",
+            "5+",
+            "3+",
+            "1",
+            "1",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Tuskgor Chariots are crude but fearsomely powerful war machines. Though they appear ramshackle in construction, the snorting, porcine brutes that haul them into battle are capable of wreaking terrible damage as they smash into the foe.",
+      "regimentOptions": "Brayherd, War Machine",
+      "notes": "This unit will move to Warhammer Legends on 1 June 2025."
+    },
+    {
+      "faction": "Beasts of Chaos",
+      "name": "Ungor Raiders",
+      "points": 90,
+      "size": 10,
+      "kind": "Legends",
+      "category": "Infantry",
+      "profile": {
+        "move": "6\"",
+        "health": "1",
+        "save": "6+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/beasts-of-chaos/Ungor-Raiders",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "BEASTS OF CHAOS",
+          "BRAYHERD",
+          "CHAOS",
+          "CHAMPION",
+          "INFANTRY",
+          "MUSICIAN (1/10)",
+          "STANDARD BEARER (1/10)"
+        ],
+        "abilities": [
+          "Hidden Volley"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Hidden Volley",
+            "timing": "Once Per Turn (Army), Your Hero Phase",
+            "effect": "Declare: If this unit is in reserve in ambush, pick a non-HERO enemy unit within 12\" of a battlefield edge to be the target.\nEffect: Roll a number of dice equal to the number of models in this unit. For each 6, inflict 1 mortal damage on the target. Then, in your next movement phase, set up this unit on the battlefield using the ‘Beastherd Ambush’ ability. If it is not possible to do so, it is destroyed.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Hero Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Raider Bow",
+            "18\"",
+            "2",
+            "4+",
+            "5+",
+            "-",
+            "1",
+            ""
+          ]
+        ],
+        "melee": [
+          [
+            "Jagged Shank",
+            "1",
+            "4+",
+            "5+",
+            "-",
+            "1",
+            "Crit (2 Hits)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Many Ungors prefer to fight with shortbows, for this allows them to keep their foes at a safe distance. Skulking about on the edges of the battlefield, they riddle their quarry with hails of arrows before fading away into the wilds in search of new victims.",
+      "regimentOptions": "Brayherd, Infantry",
+      "notes": "This unit will move to Warhammer Legends on 1 June 2025."
+    },
+    {
+      "faction": "Beasts of Chaos",
+      "name": "Ungors",
+      "points": 90,
+      "size": 10,
+      "kind": "Legends",
+      "category": "Infantry",
+      "profile": {
+        "move": "6\"",
+        "health": "1",
+        "save": "5+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/beasts-of-chaos/Ungors",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "BEASTS OF CHAOS",
+          "BRAYHERD",
+          "CHAOS",
+          "CHAMPION",
+          "INFANTRY",
+          "MUSICIAN (1/10)",
+          "STANDARD BEARER (1/10)"
+        ],
+        "abilities": [
+          "Fleet of Hoof"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Fleet of Hoof",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Effect: If this unit is in combat, roll a dice. On a 3+, this unit can immediately use the ‘Retreat’ ability as if it were your movement phase without any mortal damage being inflicted on it.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Gnarled Weapon",
+            "2",
+            "4+",
+            "5+",
+            "-",
+            "1",
+            "Crit (2 Hits)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "The most man-like of the gor-kin, Ungors are tormented and despised by their stronger cousins. They take out their bitterness on their enemies, spitefully thrusting their shortspears into throats and bellies and darting away before the foe can retaliate.",
+      "regimentOptions": "Brayherd, Infantry",
+      "notes": "This unit will move to Warhammer Legends on 1 June 2025."
+    },
+    {
+      "faction": "Beasts of Chaos",
+      "name": "Wildfire Taurus",
+      "points": 0,
+      "size": 1,
+      "kind": "",
+      "category": "Manifestation",
+      "profile": {
+        "move": "12\"",
+        "health": "10",
+        "save": "6+",
+        "ward": "6+",
+        "banishment": "8",
+        "url": "https://wahapedia.ru/aos4/factions/beasts-of-chaos/Wildfire-Taurus",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "BEASTS OF CHAOS",
+          "CHAOS",
+          "ENDLESS SPELL",
+          "FLY",
+          "MANIFESTATION",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Trail of Destruction"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Trail of Destruction",
+            "timing": "Any Charge Phase",
+            "effect": "Declare: If this unit charged this phase, pick an enemy unit within 1\" of it to be the target.\nEffect: Roll a number of dice equal to the unmodified charge roll. For each 4+, inflict 1 mortal damage on the target. If any damage points are allocated to the target by this ability, the target has STRIKE-LAST for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Charge Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Taurine Horns",
+            "6",
+            "4+",
+            "2+",
+            "2",
+            "D3",
+            "Charge (+1 Damage)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Wildfire Tauruses are summoned from the fires of the largest herdstones. They take the shape of gargantuan flaming bulls, stampeding through massed ranks of armoured warriors, setting flesh ablaze and flattening those not consumed in the conflagration."
+    }
+  ]
+}

@@ -1,5 +1,28 @@
 'use strict';
 
+function importedChoiceFields(choices, label = 'Faction reference') {
+  if (!choices.length) return '';
+  return `<div class="full">${select(label, 'importedChoice', [['', 'Choose an imported item'], ...choices.map((item, index) => [String(index), item.name])], '')}
+    <div class="actions"><button class="button secondary" type="button" id="apply-imported-choice">Use selected item</button></div>
+    <p class="meta" id="imported-choice-status" aria-live="polite">Apply a reference to fill the editor, then customize any field before saving.</p></div>`;
+}
+
+function mountImportedChoice(form, choices, apply) {
+  const control = form.elements?.importedChoice;
+  const button = form.querySelector?.('#apply-imported-choice');
+  if (!control || !button) return;
+  button.disabled = true;
+  control.addEventListener('change', () => { button.disabled = control.value === ''; });
+  button.addEventListener('click', () => {
+    if (control.value === '') return;
+    const item = choices[Number(control.value)];
+    if (!item) return;
+    apply(item);
+    form.querySelector('#imported-choice-status').textContent = `Loaded ${item.name}. Review your copy below before saving.`;
+    form.dispatchEvent(new Event('input', { bubbles: true }));
+  });
+}
+
 function textPicker(label, key, value, { full = false, required = false } = {}) {
   return `<div class="field${full ? ' full' : ''}">
     <label for="field-${key}">${escape(label)}</label>
@@ -42,7 +65,7 @@ function mountTextPicker(form, key, entries) {
     list.innerHTML = options.map((entry, index) => {
       const detail = entry.custom ? `Use as a custom ${key}` : entry.detail;
       return `<li id="${key}-option-${index}" role="option" aria-selected="false" data-option-index="${index}">
-        <strong>${escape(entry.name)}</strong>${detail ? `<span class="meta">${escape(detail)}</span>` : ''}</li>`;
+        <strong>${escape(optionTitle(entry.name))}</strong>${detail ? `<span class="meta">${escape(detail)}</span>` : ''}</li>`;
     }).join('') || `<li class="text-picker-empty" role="presentation">Type a custom ${key} name.</li>`;
     list.scrollTop = 0;
     setOpen(true);
@@ -93,4 +116,10 @@ function mountTextPicker(form, key, entries) {
       setOpen(false);
     }
   });
+  return {
+    setEntries(next) {
+      entries = next;
+      if (!list.hidden) show(input.value);
+    },
+  };
 }

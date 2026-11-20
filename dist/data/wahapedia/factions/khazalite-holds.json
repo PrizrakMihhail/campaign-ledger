@@ -1,0 +1,2985 @@
+{
+  "edition": "Age of Sigmar 4",
+  "lastUpdate": "2026-10-22 18:12:05",
+  "faction": {
+    "id": "bundled:khazalite-holds",
+    "name": "Khazalite Holds",
+    "slug": "khazalite-holds",
+    "url": "https://wahapedia.ru/aos4/factions/khazalite-holds",
+    "count": 38,
+    "warscrollSource": "bundled catalogue"
+  },
+  "rules": {
+    "battleTraits": [
+      {
+        "name": "THORGRIM’S BEARD! THERE ARE GRUDGES TO BE SETTLED!",
+        "timing": "Once Per Turn (Army), End of Any Turn",
+        "declare": "",
+        "effect": "If your general was destroyed this turn, you can give up to 3 friendly KHAZALITE HOLDS units 1 grudge mark.\nOtherwise, pick up to 3 of the following effects:\n• If any friendly KHAZALITE HOLDS units were destroyed this turn, give 1 grudge mark to a friendly KHAZALITE HOLDS unit.\n• If any friendly KROMDRON units are contesting an objective that is being contested by any enemy units, give 1 grudge mark to a friendly KHAZALITE HOLDS unit.\n• If any friendly GRIMMDRON units charged this turn, are in combat, have not been destroyed and did not destroy an enemy unit this turn, give 1 grudge mark to a friendly KHAZALITE HOLDS unit.\n• If any damage points were allocated to your general this turn, give 1 grudge mark to a friendly KHAZALITE HOLDS unit that is not your general.",
+        "unitLinks": []
+      },
+      {
+        "name": "RECLAIM THE KARAKS",
+        "timing": "Passive",
+        "declare": "",
+        "effect": "Immediately after your opponent gains control of an objective within your territory, you can give 1 grudge mark to a friendly KHAZALITE HOLDS unit.\nEach time a friendly KHAZALITE HOLDS unit uses the ‘Retreat’ ability, after that ability has been resolved, you must remove 1 grudge mark from that unit (if it has one).",
+        "unitLinks": []
+      },
+      {
+        "name": "LET IT BE KNOWN!",
+        "timing": "Once Per Turn (Army), Your Hero Phase",
+        "declare": "Pick a friendly KHAZALITE HOLDS HERO to use this ability, then pick a visible friendly non-HERO KHAZALITE HOLDS unit wholly within 12\" of that HERO to be the target.",
+        "effect": "Until the start of your next turn, the target has 1 additional grudge mark.",
+        "unitLinks": []
+      },
+      {
+        "name": "GAZUL, REMEMBER THE FALLEN!",
+        "timing": "Passive",
+        "declare": "",
+        "effect": "While at least half the models in a DUARDIN KHAZALITE HOLDS unit have been slain, add 1 to the Attacks characteristic of its melee weapons.\nDesigner’s Note: Models that have been slain and returned to the unit do not count as having been slain for the purposes of this ability.",
+        "unitLinks": []
+      },
+      {
+        "name": "WE HONOUR VALAYA!",
+        "timing": "Once Per Battle (Army), Any Hero Phase",
+        "declare": "Pick up to 3 friendly DUARDIN KHAZALITE HOLDS units in combat to be blessed by Valaya. Then, for each unit blessed by Valaya this turn, pick an enemy unit in combat with it to be its target.",
+        "effect": "Roll a D3 for each unit blessed by Valaya this turn. If that unit is VALAYAN, use a value of 3 instead. Inflict an amount of mortal damage on its target equal to the roll. Then, you can pick 1 of the following:\n• Heal (X) the unit blessed by Valaya, where X is equal to the value of the roll.\n• Return a number of slain models to the unit blessed by Valaya with a combined Health characteristic of up to the value of the roll.\nYou cannot use any other ANCESTRAL VOW abilities for the rest of the battle round.",
+        "unitLinks": []
+      },
+      {
+        "name": "INGHILDE, OUR LIGHT IN THE DARKNESS",
+        "timing": "Once Per Battle (Army), Any Hero Phase",
+        "declare": "Pick up to 1 friendly non-HERO KHAZALITE HOLDS INFANTRY unit and up to 1 friendly KHAZALITE HOLDS INFANTRY HERO that are wholly within 6\" of the same terrain feature and not in combat to be the targets.",
+        "effect": "Remove the targets from the battlefield and set them up again wholly within 6\" of a terrain feature and more than 9\" from all enemy units. If there are 2 targets, you must set them up within 3\" of each other.\nYou cannot use any other ANCESTRAL VOW abilities for the rest of the battle round.",
+        "unitLinks": []
+      },
+      {
+        "name": "GRIMNIR’S WRATH WILL BURN BRIGHT!",
+        "timing": "Once Per Battle (Army), Any Hero Phase",
+        "declare": "Pick up to 3 friendly DUARDIN KHAZALITE HOLDS units to be the targets.",
+        "effect": "For the rest of the battle round:\n• Add 1 to wound rolls for the targets’ combat attacks.\n• If a target is GRIMMDRON INFANTRY, it has STRIKE-FIRST if it charged in the same turn.\nYou cannot use any other ANCESTRAL VOW abilities for the rest of the battle round.",
+        "unitLinks": []
+      },
+      {
+        "name": "BY GRUNGNI, STAND FIRM!",
+        "timing": "Once Per Battle (Army), Any Hero Phase",
+        "declare": "Pick up to 3 friendly DUARDIN KHAZALITE HOLDS units to be the targets.",
+        "effect": "For the rest of the battle round, while a target has not used a CHARGE ability this battle round, subtract 1 from the Rend characteristic of melee weapons used for attacks that target that unit.\nYou cannot use any other ANCESTRAL VOW abilities for the rest of the battle round.",
+        "unitLinks": []
+      },
+      {
+        "name": "ENLIGHTEN US WITH YOUR WISDOM, GROMBRINDAL!",
+        "timing": "Once Per Battle (Army), Any Hero Phase",
+        "declare": "",
+        "effect": "For the rest of the battle round:\n• Add 1 to casting rolls and chanting rolls for friendly KHAZALITE HOLDS units.\n• While they are wholly within 12\" of a friendly KHAZALITE HOLDS WIZARD or PRIEST, friendly KHAZALITE HOLDS units have WARD (4+) against damage points inflicted by SPELL abilities, PRAYER abilities and abilities used by MANIFESTATIONS.\nYou cannot use any other ANCESTRAL VOW abilities for the rest of the battle round.",
+        "unitLinks": [
+          "https://wahapedia.ru/aos4/factions/khazalite-holds/Runewright"
+        ]
+      }
+    ],
+    "armiesOfRenown": [
+      {
+        "id": "lofnir-drothkeepers",
+        "name": "Lofnir Drothkeepers",
+        "battleTraits": [
+          {
+            "name": "REARING STRIKE",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "declare": "Pick a friendly DROTHKEEPERS MONSTER that has not used a RAMPAGE ability this turn to use this ability, then pick an enemy unit in combat with it to be the target.",
+            "effect": "Roll 2 dice. Add 2 to each roll if the target is a MONSTER. For each 5+, inflict D3 mortal damage on the target.",
+            "unitLinks": []
+          },
+          {
+            "name": "DARING TAMERS",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "Enemy MONSTERS have STRIKE-LAST while they are in combat with 2 or more friendly DROTHKEEPERS Vulkyn Flameseekers units.",
+            "unitLinks": []
+          },
+          {
+            "name": "SKILLED DROTHWRANGLERS",
+            "timing": "Reaction: You declared a non-CHARGE MOVE ability for a friendly MAGMADROTH",
+            "declare": "",
+            "effect": "The timing of friendly Auric Runeson on Magmadroth units’ ‘Packdroth’ ability is ‘Reaction: You declared a non-CHARGE MOVE ability for this unit’ instead of ‘Once Per Turn (Army), Reaction: You declared a MOVE ability for this unit in your movement phase’.",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/khazalite-holds/Auric-Runeson-on-Magmadroth"
+            ]
+          },
+          {
+            "name": "SEARING CLAWS",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "declare": "Pick a friendly DROTHKEEPERS MONSTER that has not used a RAMPAGE ability this turn to use this ability, then pick an enemy unit in combat with it to be the target.",
+            "effect": "Roll a dice. On a 3+, for the rest of the turn, add 1 to the Rend characteristic of melee weapons used for attacks that target that enemy unit.",
+            "unitLinks": []
+          },
+          {
+            "name": "FEROCIOUS HEAT",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "declare": "Pick a friendly DROTHKEEPERS MONSTER that has not used a RAMPAGE ability this turn to use this ability, then pick an enemy unit in combat with it to be the target.",
+            "effect": "Roll a dice. On a 3+, ward rolls cannot be made for the target for the rest of the turn.",
+            "unitLinks": []
+          },
+          {
+            "name": "BLAZING VENGEANCE",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "Each time a friendly DROTHKEEPERS MONSTER is slain, give 1 grudge mark to each friendly DROTHKEEPERS unit within 6\" of it.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "id": "throngankor-alliance",
+        "name": "Throngankor Alliance",
+        "battleTraits": [
+          {
+            "name": "STONE AND SKY",
+            "timing": "Once Per Turn (Army), Start of Battle Round",
+            "declare": "Pick a friendly non-HERO KHAZALITE HOLDS INFANTRY unit and a friendly non-HERO KHARADRON OVERLORDS INFANTRY unit that are within ½\" of each other to be the targets.",
+            "effect": "For the rest of the battle round, while the targets are within ½\" of each other:\n• The targets have the STONE AND SKY keyword.\n• Subtract 1 from wound rolls for attacks that target those friendly units.",
+            "unitLinks": []
+          },
+          {
+            "name": "TRANSPORT DUARDIN",
+            "timing": "Once Per Turn (Army), Reaction: You declared a MOVE ability for a friendly Skyvessel in your movement phase",
+            "declare": "Pick a number of THRONGANKOR ALLIANCE INFANTRY units up to that SKYVESSEL’S Transport Capacity (see its warscroll) that are wholly within 6\" of it, visible to it and not in combat to be the targets. Units that have been transported this turn cannot be targets.",
+            "effect": "Remove the targets from the battlefield. After the SKYVESSEL ends its move, you must set up each target unit on the battlefield, wholly within 6\" of that SKYVESSEL and not in combat. Those units have been transported. A unit cannot use CHARGE abilities if it was transported in the same turn. For this ability, treat that SKYVESSEL’s Transport Capacity as referring to THRONGANKOR ALLIANCE instead of KHARADRON OVERLORDS.",
+            "unitLinks": []
+          },
+          {
+            "name": "DUARDIN PRIDE",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "Add 10 to the control scores of friendly THRONGANKOR ALLIANCE units while they are wholly within 12\" of and visible to any friendly STONE AND SKY units.",
+            "unitLinks": []
+          },
+          {
+            "name": "THE VICE",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "declare": "Pick a friendly non-STONE AND SKY KHAZALITE HOLDS unit and a friendly non-STONE AND SKY KHARADRON OVERLORDS unit that are in combat with the same enemy unit to be the friendly targets. Then, pick an enemy unit in combat with both friendly targets to be the enemy target.",
+            "effect": "For the rest of the turn, the friendly targets’ melee weapons have Crit (Mortal) for combat attacks that target the enemy target.",
+            "unitLinks": []
+          },
+          {
+            "name": "HAMMER AND ANVIL",
+            "timing": "Once Per Turn (Army), Your Shooting Phase",
+            "declare": "Pick a friendly non-STONE AND SKY THRONGANKOR ALLIANCE unit that is in combat to be the anvil. Then, pick an enemy unit in combat with the anvil to be the workpiece. Finally, pick a friendly THRONGANKOR ALLIANCE unit that is not in combat and does not have the same faction keyword (i.e. KHAZALITE HOLDS or KHARADRON OVERLORDS) as the anvil to be the hammer.",
+            "effect": "For the rest of the turn, the hammer’s ranged weapons have Crit (2 Hits) for shooting attacks that target the workpiece.",
+            "unitLinks": []
+          },
+          {
+            "name": "ALLIED GRUDGEMENT",
+            "timing": "Once Per Battle Round (Army), Reaction: Opponent declared a command for a unit within 12\" of and visible to a STONE AND SKY unit in your army",
+            "declare": "",
+            "effect": "Pick a friendly THRONGANKOR ALLIANCE unit and give it 1 grudge mark.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "id": "valankrom-s-war-throng",
+        "name": "Valankrom’s War Throng",
+        "battleTraits": [
+          {
+            "name": "VENERATED SENTINELS",
+            "timing": "Once Per Battle (Army), Deployment Phase",
+            "declare": "Pick a visible friendly GHOLEM unit within 3\" of the friendly High Kyng Valankrom to be the venerated sentinels.",
+            "effect": "For the rest of the battle:\n• While the friendly venerated sentinels are within the friendly High Kyng Valankrom’s combat range, both those units have WARD (5+).\n• Add 1 to hit rolls for the friendly venerated sentinels’ attacks that target an enemy unit in combat with the friendly High Kyng Valankrom.",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/khazalite-holds/High-Kyng-Valankrom"
+            ]
+          },
+          {
+            "name": "THE AUDACITY!",
+            "timing": "Once Per Turn (Army), End of Any Turn",
+            "declare": "Pick each enemy unit that used an ability that inflicted any damage on the friendly High Kyng Valankrom this turn to be the targets.",
+            "effect": "Each target is a wrongdoer for the rest of the battle.",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/khazalite-holds/High-Kyng-Valankrom"
+            ]
+          },
+          {
+            "name": "GRUDGEBEARING HIGH KYNG",
+            "timing": "Deployment Phase",
+            "declare": "Pick up to D3 enemy units that are visible to the friendly High Kyng Valankrom to be the targets.",
+            "effect": "Each target is a wrongdoer for the rest of the battle.",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/khazalite-holds/High-Kyng-Valankrom"
+            ]
+          },
+          {
+            "name": "REMEMBER THEIR PERFIDY",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "Friendly VALANKROM’S WAR THRONG units are treated as having 1 grudge mark while they are in combat with an enemy wrongdoer.",
+            "unitLinks": []
+          },
+          {
+            "name": "DRENG TROMM!",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "If the friendly High Kyng Valankrom has been destroyed, add 1 to the Attacks characteristic of friendly VALANKROM’S WAR THRONG units’ melee weapons for the rest of the battle.",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/khazalite-holds/High-Kyng-Valankrom"
+            ]
+          },
+          {
+            "name": "HOLD THEM TO ACCOUNT FOR THEIR MISDEEDS",
+            "timing": "Once Per Turn (Army), Your Hero Phase",
+            "declare": "Pick an enemy unit within 12\" of and visible to the friendly High Kyng Valankrom to be the target.",
+            "effect": "The target is a wrongdoer for the rest of the battle.",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/khazalite-holds/High-Kyng-Valankrom"
+            ]
+          },
+          {
+            "name": "TIME FOR A RECKONING",
+            "timing": "Once Per Battle (Army), Your Shooting Phase",
+            "declare": "Pick a friendly VALANKROM’S WAR THRONG unit to be the target.",
+            "effect": "For the rest of the phase, the target is treated as having 1 grudge mark but can only pick enemy wrongdoer units to be the targets of its shooting attacks.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "id": "fyrd-of-fyrepeak",
+        "name": "Fyrd of Fyrepeak",
+        "battleTraits": [
+          {
+            "name": "GRIMMDRON GRUDGES",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "Each time a friendly FYRD OF FYREPEAK unit destroys an enemy unit, give that friendly unit 1 grudge mark.",
+            "unitLinks": []
+          },
+          {
+            "name": "RUNE OF GUARDING",
+            "timing": "Once Per Battle (Army), Any Hero Phase",
+            "declare": "",
+            "effect": "You can only use this ability if you have not used any UR-GOLD RUNE abilities this battle round.\nFor the rest of the battle round, ignore the first damage point that would be allocated to each friendly FYRD OF FYREPEAK unit in each phase.",
+            "unitLinks": []
+          },
+          {
+            "name": "RUNE OF FORTUNE",
+            "timing": "Once Per Battle (Army), Any Hero Phase",
+            "declare": "",
+            "effect": "You can only use this ability if you have not used any UR-GOLD RUNE abilities this battle round.\nFor the rest of the battle round, if the unmodified hit roll for a shooting attack that targets a friendly FYRD OF FYREPEAK unit is 1-4, the attack fails and the attack sequence ends.",
+            "unitLinks": []
+          },
+          {
+            "name": "RUNE OF SPEED",
+            "timing": "Once Per Battle (Army), Any Hero Phase",
+            "declare": "",
+            "effect": "You can only use this ability if you have not used any UR-GOLD RUNE abilities this battle round.\nFor the rest of the battle round, you can re-roll run rolls and charge rolls for friendly FYRD OF FYREPEAK units.",
+            "unitLinks": []
+          },
+          {
+            "name": "RUNE OF SPELLBREAKING",
+            "timing": "Once Per Battle (Army), Any Hero Phase",
+            "declare": "",
+            "effect": "You can only use this ability if you have not used any UR-GOLD RUNE abilities this battle round. For the rest of the battle round:\n• Subtract 2 from casting rolls and chanting rolls for enemy units.\n• Add 1 to chanting rolls for friendly FYRD OF FYREPEAK units.",
+            "unitLinks": []
+          },
+          {
+            "name": "RUNE OF STRIKING",
+            "timing": "Once Per Battle (Army), Any Hero Phase",
+            "declare": "",
+            "effect": "You can only use this ability if you have not used any UR-GOLD RUNE abilities this battle round.\nFor the rest of the battle round, add 1 to hit rolls and wound rolls for attacks made by friendly FYRD OF FYREPEAK units.",
+            "unitLinks": []
+          }
+        ]
+      }
+    ],
+    "battleFormations": [
+      {
+        "name": "War Callers",
+        "abilities": [
+          {
+            "name": "BELLICOSE BELLIGERENTS",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "Subtract 3 from the control scores of enemy units while they are in combat with any friendly KHAZALITE HOLDS units.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "name": "Unyielding Anvil",
+        "abilities": [
+          {
+            "name": "STALWART RESOLVE",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "While an enemy unit is in combat with a friendly KHAZALITE HOLDS unit, subtract 1 from the number of inches that enemy unit can move when it makes a pile in move, to a minimum of 1\".",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "name": "Hearthsworn Defenders",
+        "abilities": [
+          {
+            "name": "LOCK SHIELDS!",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "Subtract 1 from hit rolls for shooting attacks that target friendly KHAZALITE HOLDS units while they are wholly within friendly territory or while every model in the unit is contesting an objective you control.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "name": "Wayfarer Nomads",
+        "abilities": [
+          {
+            "name": "WELL-TRAVELLED ROAMERS",
+            "timing": "Once Per Turn (Army), Reaction: You declared a RUN or CHARGE ability for a KHAZALITE HOLDS unit",
+            "declare": "",
+            "effect": "If that unit is more than 6\" from all other friendly units, you can re-roll the dice that determines how far it can move.",
+            "unitLinks": []
+          }
+        ]
+      }
+    ],
+    "lores": {
+      "spell": [
+        {
+          "name": "Resonance Of The Runes",
+          "kind": "spell",
+          "points": 0,
+          "entries": [
+            {
+              "name": "RUNE OF MIGHT",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly KHAZALITE HOLDS WIZARD to cast this spell, then make a casting roll of 2D6.",
+              "effect": "Until the start of your next turn, add 1 to the Rend characteristic of melee weapons used by friendly KHAZALITE HOLDS units while they are within 3\" of the caster.",
+              "value": "6",
+              "unitLinks": [
+                "https://wahapedia.ru/aos4/factions/khazalite-holds/Runewright"
+              ]
+            },
+            {
+              "name": "RUNE OF SANCTUARY",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly KHAZALITE HOLDS WIZARD to cast this spell, then make a casting roll of 2D6.",
+              "effect": "Until the start of your next turn, while they are wholly within 12\" of the caster, friendly KHAZALITE HOLDS units are not visible to enemy units more than 12\" from them.",
+              "value": "7",
+              "unitLinks": [
+                "https://wahapedia.ru/aos4/factions/khazalite-holds/Runewright"
+              ]
+            },
+            {
+              "name": "RUNE OF WARDING",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly KHAZALITE HOLDS WIZARD to cast this spell, then make a casting roll of 2D6.",
+              "effect": "Until the start of your next turn, while they are within 12\" of the caster, attacks made by enemy units cannot score critical hits (treat them as regular hits instead).",
+              "value": "7",
+              "unitLinks": [
+                "https://wahapedia.ru/aos4/factions/khazalite-holds/Runewright"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Reverberations Of The Runes",
+          "kind": "spell",
+          "points": 0,
+          "entries": [
+            {
+              "name": "RUNE OF DISMAY",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly KHAZALITE HOLDS WIZARD to cast this spell, then make a casting roll of 2D6.",
+              "effect": "Until the start of your next turn, subtract 1 from the Attacks characteristic of melee weapons used by enemy units while they are within 6\" of the caster.",
+              "value": "6",
+              "unitLinks": [
+                "https://wahapedia.ru/aos4/factions/khazalite-holds/Runewright"
+              ]
+            },
+            {
+              "name": "RUNE OF COURAGE",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly KHAZALITE HOLDS WIZARD to cast this spell, then make a casting roll of 2D6.",
+              "effect": "Until the start of your next turn, you can re-roll charge rolls for friendly KHAZALITE HOLDS units while they are wholly within 12\" of the caster.",
+              "value": "6",
+              "unitLinks": [
+                "https://wahapedia.ru/aos4/factions/khazalite-holds/Runewright"
+              ]
+            },
+            {
+              "name": "RUNE OF THE FURNACE",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly KHAZALITE HOLDS WIZARD to cast this spell, then make a casting roll of 2D6.",
+              "effect": "Inflict D3 mortal damage on each visible enemy unit within 12\" of the caster.",
+              "value": "8",
+              "unitLinks": [
+                "https://wahapedia.ru/aos4/factions/khazalite-holds/Runewright"
+              ]
+            }
+          ]
+        }
+      ],
+      "prayer": [
+        {
+          "name": "Ancestor God Recitations",
+          "kind": "prayer",
+          "points": 0,
+          "entries": [
+            {
+              "name": "RECITATION TO VALAYA",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly KHAZALITE HOLDS PRIEST to chant this prayer, pick a visible friendly KHAZALITE HOLDS unit wholly within 12\" of them to be the target, then make a chanting roll of D6.",
+              "effect": "If the chanting roll was 8+, you can pick another eligible unit to be a second target. Subtract 1 from wound rolls for attacks that target those friendly units until the start of your next turn.",
+              "value": "4",
+              "unitLinks": []
+            },
+            {
+              "name": "RECITATION TO GAZUL",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly KHAZALITE HOLDS PRIEST to chant this prayer, then make a chanting roll of D6.",
+              "effect": "Until the start of your next turn, enemy units and enemy MANIFESTATIONS cannot be set up within 12\" of the chanter. If the chanting roll was 9+, enemy units and enemy MANIFESTATIONS cannot be set up within 18\" of the chanter instead.",
+              "value": "4",
+              "unitLinks": []
+            },
+            {
+              "name": "RECITATION TO GRIMNIR",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly KHAZALITE HOLDS PRIEST to chant this prayer, pick a visible enemy unit within 18\" of them to be the target, then make a chanting roll of D6.",
+              "effect": "Until the start of your next turn, each time the target uses a CORE ability, after that ability has been resolved, inflict 1 mortal damage on the target or, if the chanting roll was 10+, inflict D3 mortal damage on the target instead.",
+              "value": "5",
+              "unitLinks": []
+            }
+          ]
+        },
+        {
+          "name": "Vulkyn Gifts",
+          "kind": "prayer",
+          "points": 0,
+          "entries": [
+            {
+              "name": "ICHOR OF THE UR-SALAMANDER",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly FYRESLAYERS PRIEST to chant this prayer, pick a visible friendly FYRESLAYERS MONSTER wholly within 12\" of them to be the target, then make a chanting roll of D6.",
+              "effect": "Until the start of your next turn, if any damage points were inflicted on an enemy unit by the target’s ‘Volcanic Blood’ ability, after the damage sequence has been resolved, inflict 3 mortal damage on that enemy unit. If the chanting roll was 6+, inflict D3+3 mortal damage instead.",
+              "value": "3",
+              "unitLinks": []
+            },
+            {
+              "name": "BLAZING IMPETUS",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly FYRESLAYERS PRIEST to chant this prayer, pick a visible friendly FYRESLAYERS unit wholly within 12\" of them and that was not set up this turn to be the target, then make a chanting roll of D6.",
+              "effect": "The target can use the ‘Normal Move’ ability as if it were your movement phase. If the chanting roll was 10+, you can pick another eligible unit to be a second target.",
+              "value": "5",
+              "unitLinks": []
+            },
+            {
+              "name": "FURY OF VULCATRIX",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly FYRESLAYERS PRIEST to chant this prayer, pick a visible friendly FYRESLAYERS unit wholly within 12\" of them to be the target, then make a chanting roll of D6.",
+              "effect": "Add 1 to hit rolls for the target’s combat attacks, including those made with Companion weapons, until the start of your next turn.\nIn addition, if the chanting roll was 8+, add 2 to the Attacks characteristic of the target’s Companion weapons until the start of your next turn.",
+              "value": "4",
+              "unitLinks": []
+            },
+            {
+              "name": "ICHOR OF THE UR-SALAMANDER",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly GRIMMDRON PRIEST to chant this prayer, pick a visible friendly GRIMMDRON unit wholly within 12\" of them to be the target, then make a chanting roll of D6.",
+              "effect": "If the chanting roll was 6+, you can pick another eligible unit to be a second target. Until the start of your next turn:\n• If the target is a MONSTER, each time its ‘Volcanic Blood’ ability would inflict 1 mortal damage on an enemy unit, inflict D3 mortal damage instead.\n• If the target is a non‐MONSTER unit, each time you make an unmodified save roll of 1 for a combat attack that targets that unit, inflict 1 mortal damage on the attacking unit after the FIGHT ability has been resolved.",
+              "value": "3",
+              "unitLinks": []
+            },
+            {
+              "name": "FURY OF VULCATRIX",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly GRIMMDRON PRIEST to chant this prayer, pick a visible friendly GRIMMDRON unit wholly within 12\" of them to be the target, then make a chanting roll of D6.",
+              "effect": "Add 1 to hit rolls for the target’s combat attacks, including those made with Companion weapons, until the start of your next turn.\nIn addition, if the chanting roll was 8+, add 1 to the Attacks characteristic of the target’s melee weapons, including Companion weapons, until the start of your next turn.",
+              "value": "4",
+              "unitLinks": []
+            },
+            {
+              "name": "BLAZING IMPETUS",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly GRIMMDRON PRIEST to chant this prayer, pick a visible friendly GRIMMDRON unit that was not set up this turn and that is wholly within 12\" of them to be the target, then make a chanting roll of D6.",
+              "effect": "If the chanting roll was 10+, you can pick another eligible unit to be a second target. Each target can use the ‘Normal Move’ or ‘Retreat’ ability as if it were your movement phase.",
+              "value": "5",
+              "unitLinks": []
+            }
+          ]
+        }
+      ],
+      "manifestation": [
+        {
+          "name": "Magmic Invocations",
+          "kind": "manifestation",
+          "points": 0,
+          "entries": [
+            {
+              "name": "SUMMON RUNIC FYREWALL",
+              "timing": "Your Hero Phase",
+              "declare": "If there is not a friendly Runic Fyrewall on the battlefield, pick a friendly GRIMMDRON PRIEST to chant this prayer, then make a chanting roll of D6.",
+              "effect": "Set up a Runic Fyrewall wholly within 12\" of the chanter and visible to them.",
+              "value": "4",
+              "unitLinks": [
+                "https://wahapedia.ru/aos4/factions/khazalite-holds/Runic-Fyrewall"
+              ],
+              "manifestation": {
+                "faction": "Khazalite Holds",
+                "name": "Runic Fyrewall"
+              }
+            },
+            {
+              "name": "SUMMON MOLTEN INFERNOTH",
+              "timing": "Your Hero Phase",
+              "declare": "If there is not a friendly Molten Infernoth on the battlefield, pick a friendly GRIMMDRON PRIEST to chant this prayer, then make a chanting roll of D6.",
+              "effect": "Set up a Molten Infernoth wholly within 12\" of the chanter, visible to them and more than 9\" from all enemy units.",
+              "value": "6",
+              "unitLinks": [
+                "https://wahapedia.ru/aos4/factions/khazalite-holds/Molten-Infernoth"
+              ],
+              "manifestation": {
+                "faction": "Khazalite Holds",
+                "name": "Molten Infernoth"
+              }
+            },
+            {
+              "name": "SUMMON ZHARRGRON FLAME-SPITTER",
+              "timing": "Your Hero Phase",
+              "declare": "If there is not a friendly Zharrgron Flame-spitter on the battlefield, pick a friendly GRIMMDRON PRIEST to chant this prayer, then make a chanting roll of D6.",
+              "effect": "Set up a Zharrgron Flame-spitter wholly within 12\" of the chanter and visible to them.",
+              "value": "4",
+              "unitLinks": [
+                "https://wahapedia.ru/aos4/factions/khazalite-holds/Zharrgron-Flame-spitter"
+              ],
+              "manifestation": {
+                "faction": "Khazalite Holds",
+                "name": "Zharrgron Flame-spitter"
+              }
+            }
+          ],
+          "scope": "faction"
+        }
+      ]
+    }
+  },
+  "entries": [
+    {
+      "faction": "Khazalite Holds",
+      "name": "Auric Flamekeeper",
+      "points": 110,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "page": 14,
+      "profile": {
+        "move": "4\"",
+        "health": "5",
+        "save": "5+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/khazalite-holds/warscrolls.html#Auric-Flamekeeper",
+        "retrieved": "2026-11-19",
+        "keywords": [
+          "HERO",
+          "INFANTRY",
+          "WARD (6+)",
+          "ORDER",
+          "KHAZALITE HOLDS",
+          "DUARDIN",
+          "GRIMMDRON"
+        ],
+        "abilities": [
+          "MASTERFLAME RUNE",
+          "FIRE-FUELLED ANGER",
+          "RELIGHT THE FIRE"
+        ],
+        "melee": [
+          [
+            "Brazier Axe",
+            "5",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            ""
+          ]
+        ],
+        "abilityDetails": [
+          {
+            "name": "MASTERFLAME RUNE",
+            "timing": "Once Per Turn (Army), Your Hero Phase",
+            "effect": "Declare: Pick a visible friendly GRIMMDRON INFANTRY unit wholly within 12\" of this unit to be the target. Then, make a Masterflame rune roll by rolling a dice.\nEffect: On a 1, or if the roll is equal to or less than the number of friendly KHAZALITE HOLDS units that have been destroyed during the battle, pick 1 of the following effects to apply until the start of your next turn:\nGrimnir’s Grit: The target has WARD (5+).\nGrimnir’s Resolve: You can re-roll charge rolls for the target.\nGrimnir’s Vengeance: Add 1 to the Damage characteristic of the target’s melee weapons.",
+            "kind": "Ability"
+          },
+          {
+            "name": "FIRE-FUELLED ANGER",
+            "timing": "Passive",
+            "effect": "Effect: Subtract 2 from Masterflame rune rolls for this unit while it has any grudge marks.",
+            "kind": "Ability"
+          },
+          {
+            "name": "RELIGHT THE FIRE",
+            "timing": "Passive",
+            "effect": "Effect: If this unit is destroyed, before removing it from play, give each visible friendly GRIMMDRON unit within 6\" of it 1 grudge mark.",
+            "kind": "Ability"
+          }
+        ]
+      }
+    },
+    {
+      "faction": "Khazalite Holds",
+      "name": "Auric Hearthguard",
+      "points": 110,
+      "size": 5,
+      "kind": "",
+      "category": "Infantry",
+      "page": 15,
+      "profile": {
+        "move": "4\"",
+        "health": "2",
+        "save": "6+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/khazalite-holds/warscrolls.html#Auric-Hearthguard",
+        "retrieved": "2026-11-19",
+        "keywords": [
+          "INFANTRY",
+          "CHAMPION",
+          "WARD (6+)",
+          "ORDER",
+          "KHAZALITE HOLDS",
+          "DUARDIN",
+          "GRIMMDRON"
+        ],
+        "abilities": [
+          "MOLTEN ROCKBOLTS",
+          "FOCUSED IRE"
+        ],
+        "ranged": [
+          [
+            "Magmapike",
+            "12\"",
+            "2",
+            "4+",
+            "3+",
+            "1",
+            "1",
+            "Shoot in Combat, Crit (2 Hits)"
+          ]
+        ],
+        "melee": [
+          [
+            "Magmapike",
+            "1",
+            "3+",
+            "3+",
+            "1",
+            "1",
+            "Crit (2 Hits)"
+          ]
+        ],
+        "abilityDetails": [
+          {
+            "name": "MOLTEN ROCKBOLTS",
+            "timing": "Once Per Turn (Army), Any Shooting Phase",
+            "effect": "Declare: Pick an enemy unit that had any damage points allocated to it this turn by this unit’s shooting attacks to be the target.\nEffect: Subtract 1 from hit rolls for the target’s attacks until the start of your next turn.",
+            "kind": "Ability"
+          },
+          {
+            "name": "FOCUSED IRE",
+            "timing": "Passive",
+            "effect": "Effect: Add 1 to hit rolls for this unit’s shooting attacks while it has any grudge marks.",
+            "kind": "Ability"
+          }
+        ]
+      }
+    },
+    {
+      "faction": "Khazalite Holds",
+      "name": "Auric Runefather",
+      "points": 130,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "page": 14,
+      "profile": {
+        "move": "4\"",
+        "health": "5",
+        "save": "5+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/khazalite-holds/warscrolls.html#Auric-Runefather",
+        "retrieved": "2026-11-19",
+        "keywords": [
+          "HERO",
+          "INFANTRY",
+          "WARD (6+)",
+          "ORDER",
+          "KHAZALITE HOLDS",
+          "DUARDIN",
+          "GRIMMDRON"
+        ],
+        "abilities": [
+          "COMMANDING PRESENCE",
+          "ROYAL RETINUE"
+        ],
+        "melee": [
+          [
+            "Latchkey Grandaxe",
+            "4",
+            "3+",
+            "3+",
+            "2",
+            "3",
+            ""
+          ]
+        ],
+        "abilityDetails": [
+          {
+            "name": "COMMANDING PRESENCE",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has any grudge marks, the royal retinue has WARD (4+) while it is wholly within 6\" of this unit.",
+            "kind": "Ability"
+          },
+          {
+            "name": "ROYAL RETINUE",
+            "timing": "Once Per Battle (Army), Deployment Phase",
+            "effect": "Declare: Pick a friendly non-HERO GRIMMDRON INFANTRY unit within this unit’s combat range to be the royal retinue.\nEffect: For the rest of the battle, while the royal retinue is wholly within 6\" of and visible to this unit:\n• Add 1 to hit rolls for the royal retinue’s attacks.\n• This unit has WARD (4+).",
+            "kind": "Ability"
+          }
+        ]
+      }
+    },
+    {
+      "faction": "Khazalite Holds",
+      "name": "Auric Runefather on Magmadroth",
+      "points": 320,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "page": 14,
+      "profile": {
+        "move": "10\"",
+        "health": "14",
+        "save": "4+",
+        "control": "5",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/khazalite-holds/warscrolls.html#Auric-Runefather-on-Magmadroth",
+        "retrieved": "2026-11-19",
+        "keywords": [
+          "HERO",
+          "MONSTER",
+          "WARD (6+)",
+          "ORDER",
+          "KHAZALITE HOLDS",
+          "DUARDIN",
+          "GRIMMDRON"
+        ],
+        "abilities": [
+          "BATTLE DAMAGED",
+          "VOLCANIC BLOOD",
+          "RAGING INFERNO",
+          "WARRIOR-KINGS"
+        ],
+        "ranged": [
+          [
+            "Roaring Fyrestream",
+            "10\"",
+            "4",
+            "3+",
+            "3+",
+            "1",
+            "D3",
+            "Anti-INFANTRY (+1 Rend), Companion"
+          ]
+        ],
+        "melee": [
+          [
+            "Latchkey Grandaxe",
+            "4",
+            "3+",
+            "3+",
+            "2",
+            "3",
+            ""
+          ],
+          [
+            "Magmadroth’s Maw, Claws and Horns",
+            "6",
+            "4+",
+            "2+",
+            "2",
+            "3",
+            "Companion · See battle damage rules"
+          ]
+        ],
+        "abilityDetails": [
+          {
+            "name": "BATTLE DAMAGED",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of its Magmadroth’s Maw, Claws and Horns is 4.",
+            "kind": "Ability"
+          },
+          {
+            "name": "VOLCANIC BLOOD",
+            "timing": "Passive",
+            "effect": "Effect: Each time you make an unmodified save roll of 1 for a combat attack that targets this unit, inflict 1 mortal damage on the attacking unit after the FIGHT ability has been resolved.",
+            "kind": "Ability"
+          },
+          {
+            "name": "RAGING INFERNO",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick an enemy unit in combat with this unit to be the target.\nEffect: Roll a dice. On a 3+, subtract 1 from save rolls for the target for the rest of the turn.",
+            "kind": "Ability"
+          },
+          {
+            "name": "WARRIOR-KINGS",
+            "timing": "Once Per Battle (Army), Your Combat Phase",
+            "effect": "Effect: For the rest of the turn, add 1 to the Attacks characteristic of melee weapons used by friendly GRIMMDRON units while they are wholly within 12\" of this unit.\nIf this unit has any grudge marks, for the rest of the turn, add 1 to the Attacks characteristic of melee weapons used by the following visible friendly units while they are wholly within 12\" of this unit instead:\n• GRIMMDRON units\n• KROMDRON INFANTRY units",
+            "kind": "Ability"
+          }
+        ]
+      }
+    },
+    {
+      "faction": "Khazalite Holds",
+      "name": "Auric Runemaster",
+      "points": 160,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "page": 14,
+      "profile": {
+        "move": "4\"",
+        "health": "5",
+        "save": "5+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/khazalite-holds/warscrolls.html#Auric-Runemaster",
+        "retrieved": "2026-11-19",
+        "keywords": [
+          "HERO",
+          "PRIEST (1)",
+          "INFANTRY",
+          "WARD (6+)",
+          "ORDER",
+          "KHAZALITE HOLDS",
+          "DUARDIN",
+          "GRIMMDRON"
+        ],
+        "abilities": [
+          "HIGH PRIEST OF THE ZHARRGRIM",
+          "MASTER OF THE RUNES"
+        ],
+        "melee": [
+          [
+            "Brazier Staff",
+            "3",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            ""
+          ]
+        ],
+        "abilityDetails": [
+          {
+            "name": "HIGH PRIEST OF THE ZHARRGRIM",
+            "timing": "Passive",
+            "effect": "Effect: Each time a prayer chanted by this unit is answered, after that ability has been resolved, roll a dice. On a 5+, give this unit 1 grudge mark.",
+            "kind": "Ability"
+          },
+          {
+            "name": "MASTER OF THE RUNES",
+            "timing": "Your Hero Phase",
+            "effect": "Effect: Remove 1 grudge mark from this unit. If you do so, for the rest of the turn, add 1 to save rolls for friendly GRIMMDRON INFANTRY units while they are wholly within 12\" of and visible to this unit.",
+            "kind": "Ability"
+          }
+        ]
+      }
+    },
+    {
+      "faction": "Khazalite Holds",
+      "name": "Auric Runesmiter",
+      "points": 110,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "page": 14,
+      "profile": {
+        "move": "4\"",
+        "health": "5",
+        "save": "5+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/khazalite-holds/warscrolls.html#Auric-Runesmiter",
+        "retrieved": "2026-11-19",
+        "keywords": [
+          "HERO",
+          "PRIEST (1)",
+          "INFANTRY",
+          "WARD (6+)",
+          "ORDER",
+          "KHAZALITE HOLDS",
+          "DUARDIN",
+          "GRIMMDRON"
+        ],
+        "abilities": [
+          "MAGMIC PASSAGE",
+          "RIGHTEOUS WRATH"
+        ],
+        "melee": [
+          [
+            "Latch-axe",
+            "4",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            ""
+          ]
+        ],
+        "abilityDetails": [
+          {
+            "name": "MAGMIC PASSAGE",
+            "timing": "Once Per Turn (Army), Your Movement Phase",
+            "effect": "Declare: Pick a visible friendly GRIMMDRON INFANTRY unit wholly within 12\" of this unit to be the target.\nEffect: Roll a dice. On a 3+, add 2\" to the target’s Move characteristic until the start of your next turn.",
+            "kind": "Ability"
+          },
+          {
+            "name": "RIGHTEOUS WRATH",
+            "timing": "Passive",
+            "effect": "Effect: Add 1 to chanting rolls for this unit while it has any grudge marks.",
+            "kind": "Ability"
+          }
+        ]
+      }
+    },
+    {
+      "faction": "Khazalite Holds",
+      "name": "Auric Runesmiter on Magmadroth",
+      "points": 290,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "page": 14,
+      "profile": {
+        "move": "10\"",
+        "health": "14",
+        "save": "4+",
+        "control": "5",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/khazalite-holds/warscrolls.html#Auric-Runesmiter-on-Magmadroth",
+        "retrieved": "2026-11-19",
+        "keywords": [
+          "HERO",
+          "MONSTER",
+          "PRIEST (1)",
+          "WARD (6+)",
+          "ORDER",
+          "KHAZALITE HOLDS",
+          "DUARDIN",
+          "GRIMMDRON"
+        ],
+        "abilities": [
+          "BATTLE DAMAGED",
+          "LASHING TAIL",
+          "RUNIC EMPOWERMENT",
+          "VOLCANIC BLOOD"
+        ],
+        "ranged": [
+          [
+            "Roaring Fyrestream",
+            "10\"",
+            "4",
+            "3+",
+            "3+",
+            "1",
+            "D3",
+            "Anti-INFANTRY (+1 Rend), Companion"
+          ]
+        ],
+        "melee": [
+          [
+            "Latch-axe",
+            "4",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            ""
+          ],
+          [
+            "Magmadroth’s Maw, Claws and Horns",
+            "6",
+            "4+",
+            "2+",
+            "2",
+            "3",
+            "Companion · See battle damage rules"
+          ]
+        ],
+        "abilityDetails": [
+          {
+            "name": "BATTLE DAMAGED",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of its Magmadroth’s Maw, Claws and Horns is 4.",
+            "kind": "Ability"
+          },
+          {
+            "name": "LASHING TAIL",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick an enemy unit in combat with this unit to be the target.\nEffect: Roll 2D6. If the roll is equal to or less than the number of models in the target unit, inflict D3+3 mortal damage on the target.",
+            "kind": "Ability"
+          },
+          {
+            "name": "RUNIC EMPOWERMENT",
+            "timing": "Once Per Turn (Army), Your Hero Phase",
+            "effect": "Declare: Pick a visible friendly GRIMMDRON unit wholly within 12\" of this unit to be the target. If this unit has any grudge marks, pick a visible friendly KHAZALITE HOLDS unit wholly within 12\" of this unit to be the target instead.\nEffect: Roll a dice. On a 3+, add 1 to wound rolls for the target’s combat attacks for the rest of the turn.",
+            "kind": "Ability"
+          },
+          {
+            "name": "VOLCANIC BLOOD",
+            "timing": "Passive",
+            "effect": "Effect: Each time you make an unmodified save roll of 1 for a combat attack that targets this unit, inflict 1 mortal damage on the attacking unit after the FIGHT ability has been resolved.",
+            "kind": "Ability"
+          }
+        ]
+      }
+    },
+    {
+      "faction": "Khazalite Holds",
+      "name": "Auric Runeson",
+      "points": 100,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "page": 14,
+      "profile": {
+        "move": "4\"",
+        "health": "5",
+        "save": "5+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/khazalite-holds/warscrolls.html#Auric-Runeson",
+        "retrieved": "2026-11-19",
+        "keywords": [
+          "HERO",
+          "INFANTRY",
+          "WARD (6+)",
+          "ORDER",
+          "KHAZALITE HOLDS",
+          "DUARDIN",
+          "GRIMMDRON"
+        ],
+        "abilities": [
+          "DAUNTLESS ASSAULT",
+          "FEARLESS CHARGE"
+        ],
+        "melee": [
+          [
+            "Ancestral Weapons",
+            "5",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            "Anti-MONSTER (+1 Rend)"
+          ]
+        ],
+        "abilityDetails": [
+          {
+            "name": "DAUNTLESS ASSAULT",
+            "timing": "Reaction: You declared a FIGHT ability for this unit or a non-HERO GRIMMDRON INFANTRY unit within 3\" of this unit",
+            "effect": "Effect: If you declared a FIGHT ability for this unit, pick a friendly non-HERO GRIMMDRON INFANTRY unit that has not used a FIGHT ability this turn, is within this unit’s combat range and is visible to this unit to be the target. The target can be picked to use a FIGHT ability immediately after the FIGHT ability used by this unit has been resolved. If it is picked to do so, add 1 to hit rolls for the target’s attacks for the rest of the turn.\nIf you declared a FIGHT ability for a friendly non-HERO GRIMMDRON INFANTRY unit, if this unit has not used a FIGHT ability this turn, it can be picked to use a FIGHT ability immediately after the FIGHT ability used by the friendly non-HERO GRIMMDRON INFANTRY unit has been resolved. If it is picked to do so, add 1 to hit rolls for this unit’s attacks for the rest of the turn.\nDesigner’s Note: This ability lets another friendly unit fight immediately after this unit or lets this unit fight immediately after that other friendly unit. Add 1 to hit rolls for whichever of those two units fights after the first.",
+            "kind": "Ability"
+          },
+          {
+            "name": "FEARLESS CHARGE",
+            "timing": "Passive",
+            "effect": "Effect: Add 1 to charge rolls for visible friendly KHAZALITE HOLDS INFANTRY units while they are wholly within 12\" of this unit. While this unit has any grudge marks, add 2 to charge rolls for visible friendly KHAZALITE HOLDS INFANTRY units while they are wholly within 12\" of this unit instead.",
+            "kind": "Ability"
+          }
+        ]
+      }
+    },
+    {
+      "faction": "Khazalite Holds",
+      "name": "Auric Runeson on Magmadroth",
+      "points": 290,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "page": 14,
+      "profile": {
+        "move": "10\"",
+        "health": "14",
+        "save": "4+",
+        "control": "5",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/khazalite-holds/warscrolls.html#Auric-Runeson-on-Magmadroth",
+        "retrieved": "2026-11-19",
+        "keywords": [
+          "HERO",
+          "MONSTER",
+          "WARD (6+)",
+          "ORDER",
+          "KHAZALITE HOLDS",
+          "DUARDIN",
+          "GRIMMDRON"
+        ],
+        "abilities": [
+          "BATTLE DAMAGED",
+          "VOLCANIC BLOOD",
+          "CALAMITOUS CRASH",
+          "PACKDROTH"
+        ],
+        "ranged": [
+          [
+            "Roaring Fyrestream",
+            "10\"",
+            "4",
+            "3+",
+            "3+",
+            "1",
+            "D3",
+            "Anti-INFANTRY (+1 Rend), Companion"
+          ]
+        ],
+        "melee": [
+          [
+            "Magmadroth’s Maw, Claws and Horns",
+            "6",
+            "4+",
+            "2+",
+            "2",
+            "3",
+            "Companion · See battle damage rules"
+          ],
+          [
+            "Ancestral Weapons",
+            "5",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            "Anti-MONSTER (+1 Rend)"
+          ]
+        ],
+        "abilityDetails": [
+          {
+            "name": "BATTLE DAMAGED",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of its Magmadroth’s Maw, Claws and Horns is 4.",
+            "kind": "Ability"
+          },
+          {
+            "name": "VOLCANIC BLOOD",
+            "timing": "Passive",
+            "effect": "Effect: Each time you make an unmodified save roll of 1 for a combat attack that targets this unit, inflict 1 mortal damage on the attacking unit after the FIGHT ability has been resolved.",
+            "kind": "Ability"
+          },
+          {
+            "name": "CALAMITOUS CRASH",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick an enemy unit in combat with this unit to be the target.\nEffect: Roll a dice. On a 3+, roll a dice for each model in the target unit. For each 5+, inflict 1 mortal damage on that unit.",
+            "kind": "Ability"
+          },
+          {
+            "name": "PACKDROTH",
+            "timing": "Once Per Turn (Army), Reaction: You declared a MOVE ability for this unit in your movement phase",
+            "effect": "Effect: Pick a visible friendly GRIMMDRON INFANTRY unit that is wholly within 6\" of this unit, is not in combat and has not been set up this turn to be the target. Remove the target from the battlefield. After this unit ends its move, you must set up the target wholly within 6\" of this unit and not in combat. Unless this unit has any grudge marks, the target cannot use CHARGE abilities for the rest of the turn.",
+            "kind": "Ability"
+          }
+        ]
+      }
+    },
+    {
+      "faction": "Khazalite Holds",
+      "name": "Battlesmith",
+      "points": 110,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "page": 14,
+      "profile": {
+        "move": "4\"",
+        "health": "5",
+        "save": "5+",
+        "control": "5",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/khazalite-holds/warscrolls.html#Battlesmith",
+        "retrieved": "2026-11-19",
+        "keywords": [
+          "HERO",
+          "INFANTRY",
+          "WARD (6+)",
+          "ORDER",
+          "KHAZALITE HOLDS",
+          "DUARDIN",
+          "GRIMMDRON"
+        ],
+        "abilities": [
+          "BARD OF THE LODGE",
+          "ICON OF GRIMNIR"
+        ],
+        "melee": [
+          [
+            "Ancestral Battle-axe",
+            "5",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            ""
+          ]
+        ],
+        "abilityDetails": [
+          {
+            "name": "BARD OF THE LODGE",
+            "timing": "Passive",
+            "effect": "Effect: Each time a friendly GRIMMDRON unit wholly within 12\" of this unit uses the ‘Rally’ command, you can make 3 additional rally rolls of D6.",
+            "kind": "Ability"
+          },
+          {
+            "name": "ICON OF GRIMNIR",
+            "timing": "Passive",
+            "effect": "Effect:\n• Ignore negative modifiers to the control scores of visible friendly GRIMMDRON units while they are wholly within 12\" of this unit.\n• While this unit has any grudge marks, add 3 to the control scores of visible friendly GRIMMDRON units while they are wholly within 12\" of this unit.",
+            "kind": "Ability"
+          }
+        ]
+      }
+    },
+    {
+      "faction": "Khazalite Holds",
+      "name": "Clangunners with Thrundok Rifles",
+      "points": 140,
+      "size": 10,
+      "kind": "",
+      "category": "Infantry",
+      "page": 15,
+      "profile": {
+        "move": "4\"",
+        "health": "1",
+        "save": "4+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/khazalite-holds/warscrolls.html#Clangunners-with-Thrundok-Rifles",
+        "retrieved": "2026-11-19",
+        "keywords": [
+          "INFANTRY",
+          "CHAMPION",
+          "MUSICIAN (1/10)",
+          "STANDARD BEARER (1/10)",
+          "ORDER",
+          "KHAZALITE HOLDS",
+          "DUARDIN",
+          "KROMDRON"
+        ],
+        "abilities": [
+          "THRUNDOK HAIL",
+          "SETTLED WITH A BULLET"
+        ],
+        "ranged": [
+          [
+            "Thrundok Rifle",
+            "18\"",
+            "2",
+            "3+",
+            "4+",
+            "1",
+            "1",
+            ""
+          ]
+        ],
+        "melee": [
+          [
+            "Rifle Butt",
+            "1",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            ""
+          ]
+        ],
+        "abilityDetails": [
+          {
+            "name": "THRUNDOK HAIL",
+            "timing": "Once Per Turn (Army), Any Shooting Phase",
+            "effect": "Declare: Pick an enemy unit that had any damage points allocated to it this turn by this unit’s shooting attacks to be the target.\nEffect: Roll a dice. Add 1 to the roll if the target is CAVALRY or has FLY. Add 2 to the roll instead if the target is a MONSTER. On a 4+, halve the target’s Move characteristic until the start of your next turn.",
+            "kind": "Ability"
+          },
+          {
+            "name": "SETTLED WITH A BULLET",
+            "timing": "Passive",
+            "effect": "Effect: Add 1 to wound rolls for this unit’s shooting attacks while it has any grudge marks.",
+            "kind": "Ability"
+          }
+        ]
+      }
+    },
+    {
+      "faction": "Khazalite Holds",
+      "name": "Clangunners with Thrundrin Shotcannons",
+      "points": 130,
+      "size": 10,
+      "kind": "",
+      "category": "Infantry",
+      "page": 15,
+      "profile": {
+        "move": "4\"",
+        "health": "1",
+        "save": "4+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/khazalite-holds/warscrolls.html#Clangunners-with-Thrundrin-Shotcannons",
+        "retrieved": "2026-11-19",
+        "keywords": [
+          "INFANTRY",
+          "CHAMPION",
+          "MUSICIAN (1/10)",
+          "STANDARD BEARER (1/10)",
+          "ORDER",
+          "KHAZALITE HOLDS",
+          "DUARDIN",
+          "KROMDRON"
+        ],
+        "abilities": [
+          "BLASTED AND DAZED",
+          "GRIM RETALIATION"
+        ],
+        "ranged": [
+          [
+            "Thrundrin Shotcannon",
+            "12\"",
+            "2",
+            "3+",
+            "3+",
+            "-",
+            "1",
+            "Crit (Auto-wound)"
+          ]
+        ],
+        "melee": [
+          [
+            "Shotcannon Butt",
+            "1",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            ""
+          ]
+        ],
+        "abilityDetails": [
+          {
+            "name": "BLASTED AND DAZED",
+            "timing": "Once Per Turn (Army), Any Shooting Phase",
+            "effect": "Declare: Pick an enemy unit that had any damage points allocated to it this turn by this unit’s shooting attacks to be the target.\nEffect: Roll a dice. Add 1 to the roll if the target does not have FLY. On a 4+, until the start of your next turn, subtract 1 from the number of dice rolled when making charge rolls for the target, to a minimum of 1.",
+            "kind": "Ability"
+          },
+          {
+            "name": "GRIM RETALIATION",
+            "timing": "Passive",
+            "effect": "Effect: Add 1 to the Attacks characteristic of this unit’s ranged weapons while it has any grudge marks.",
+            "kind": "Ability"
+          }
+        ]
+      }
+    },
+    {
+      "faction": "Khazalite Holds",
+      "name": "Clanshields",
+      "points": 110,
+      "size": 10,
+      "kind": "",
+      "category": "Infantry",
+      "page": 15,
+      "profile": {
+        "move": "4\"",
+        "health": "1",
+        "save": "3+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/khazalite-holds/warscrolls.html#Clanshields",
+        "retrieved": "2026-11-19",
+        "keywords": [
+          "INFANTRY",
+          "CHAMPION",
+          "MUSICIAN (1/10)",
+          "STANDARD BEARER (1/10)",
+          "ORDER",
+          "KHAZALITE HOLDS",
+          "DUARDIN",
+          "KROMDRON"
+        ],
+        "abilities": [
+          "TOUGH AS STONE",
+          "REMEMBER THEIR NAMES"
+        ],
+        "melee": [
+          [
+            "Kromdron Weapon",
+            "2",
+            "3+",
+            "4+",
+            "-",
+            "1",
+            "Anti-INFANTRY (+1 Rend)"
+          ]
+        ],
+        "abilityDetails": [
+          {
+            "name": "TOUGH AS STONE",
+            "timing": "Passive",
+            "effect": "Effect: Subtract 1 from the Rend characteristic of weapons used for combat attacks that target this unit while every model in this unit is within 3\" of an objective you control.",
+            "kind": "Ability"
+          },
+          {
+            "name": "REMEMBER THEIR NAMES",
+            "timing": "Passive",
+            "effect": "Effect: Add 1 to wound rolls for this unit’s attacks while it has any grudge marks.",
+            "kind": "Ability"
+          }
+        ]
+      }
+    },
+    {
+      "faction": "Khazalite Holds",
+      "name": "Doomseeker",
+      "points": 100,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "page": 14,
+      "profile": {
+        "move": "4\"",
+        "health": "5",
+        "save": "5+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/khazalite-holds/warscrolls.html#Doomseeker",
+        "retrieved": "2026-11-19",
+        "keywords": [
+          "HERO",
+          "INFANTRY",
+          "WARD (6+)",
+          "ORDER",
+          "KHAZALITE HOLDS",
+          "DUARDIN",
+          "GRIMMDRON"
+        ],
+        "abilities": [
+          "OATHBOUND",
+          "RUNIC POWER"
+        ],
+        "melee": [
+          [
+            "Doomseeker Weapons",
+            "5",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            ""
+          ]
+        ],
+        "abilityDetails": [
+          {
+            "name": "OATHBOUND",
+            "timing": "Once Per Battle (Army), Deployment Phase",
+            "effect": "Declare: Pick an enemy unit to be this unit’s quarry. You can pick a unit that has been deployed in reserve.\nEffect: Add 1 to hit rolls and wound rolls for this unit’s attacks that target its quarry.\nIf this unit is destroyed while it is in combat with its quarry, give 1 grudge mark to each friendly GRIMMDRON unit within 12\" of this unit’s quarry immediately after the ability that destroyed this unit has been resolved.",
+            "kind": "Ability"
+          },
+          {
+            "name": "RUNIC POWER",
+            "timing": "Passive",
+            "effect": "Effect: Add 1 to the Damage characteristic of this unit’s melee weapons while this unit has 1 damage point.\nAdd 2 to the Damage characteristic of this unit’s melee weapons instead while this unit has 2 or more damage points.",
+            "kind": "Ability"
+          }
+        ]
+      }
+    },
+    {
+      "faction": "Khazalite Holds",
+      "name": "Gholems of Gazul",
+      "points": 210,
+      "size": 3,
+      "kind": "",
+      "category": "War Machine",
+      "page": 15,
+      "profile": {
+        "move": "6\"",
+        "health": "5",
+        "save": "3+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/khazalite-holds/warscrolls.html#Gholems-of-Gazul",
+        "retrieved": "2026-11-19",
+        "keywords": [
+          "WAR MACHINE",
+          "ORDER",
+          "KHAZALITE HOLDS",
+          "GHOLEM"
+        ],
+        "abilities": [
+          "RUNES OF GAZUL",
+          "ARMOUR-CRUSHING SWINGS"
+        ],
+        "melee": [
+          [
+            "Gazulite Great Hammer",
+            "3",
+            "4+",
+            "2+",
+            "2",
+            "3",
+            ""
+          ]
+        ],
+        "abilityDetails": [
+          {
+            "name": "RUNES OF GAZUL",
+            "timing": "Passive",
+            "effect": "Effect: Subtract 1 from ward rolls for damage points inflicted by this unit’s combat attacks.",
+            "kind": "Ability"
+          },
+          {
+            "name": "ARMOUR-CRUSHING SWINGS",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick an enemy unit in combat with this unit to be the target.\nEffect: Your opponent can pick whether the target will attempt to sidestep or not. If they do, subtract 1 from hit rolls for the target’s attacks for the rest of the turn.\nThen, roll a dice. Subtract 1 from the roll if the target attempted to sidestep. If the roll equals or exceeds the target’s Save characteristic, subtract 1 from save rolls for the target for the rest of the turn.",
+            "kind": "Ability"
+          }
+        ]
+      }
+    },
+    {
+      "faction": "Khazalite Holds",
+      "name": "Gholems of Valaya",
+      "points": 200,
+      "size": 3,
+      "kind": "",
+      "category": "War Machine",
+      "page": 15,
+      "profile": {
+        "move": "6\"",
+        "health": "5",
+        "save": "3+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/khazalite-holds/warscrolls.html#Gholems-of-Valaya",
+        "retrieved": "2026-11-19",
+        "keywords": [
+          "WAR MACHINE",
+          "ORDER",
+          "KHAZALITE HOLDS",
+          "GHOLEM",
+          "VALAYAN"
+        ],
+        "abilities": [
+          "ICONS OF VALAYA",
+          "SHIELD STRIKE"
+        ],
+        "melee": [
+          [
+            "Valayan Great Axe",
+            "4",
+            "4+",
+            "2+",
+            "2",
+            "2",
+            ""
+          ]
+        ],
+        "abilityDetails": [
+          {
+            "name": "ICONS OF VALAYA",
+            "timing": "Passive",
+            "effect": "Effect: If this unit is destroyed, before removing it from play, give each visible friendly non-GHOLEM VALAYAN unit 1 grudge mark.",
+            "kind": "Ability"
+          },
+          {
+            "name": "SHIELD STRIKE",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: If this unit charged this turn, pick a visible enemy unit within 1\" of it to be the target.\nEffect: Roll a dice. On a 3+, the target has STRIKE-LAST for the rest of the turn.",
+            "kind": "Ability"
+          }
+        ]
+      }
+    },
+    {
+      "faction": "Khazalite Holds",
+      "name": "Gotrek Gurnisson",
+      "points": 220,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "page": 14,
+      "profile": {
+        "move": "4\"",
+        "health": "8",
+        "save": "5+",
+        "control": "2",
+        "ward": "3+",
+        "url": "https://wahapedia.ru/aos4/factions/khazalite-holds/warscrolls.html#Gotrek-Gurnisson",
+        "retrieved": "2026-11-19",
+        "keywords": [
+          "UNIQUE",
+          "HERO",
+          "INFANTRY",
+          "WARD (3+)",
+          "ORDER",
+          "KHAZALITE HOLDS",
+          "DUARDIN"
+        ],
+        "abilities": [
+          "INDIFFERENT AND PRAGMATIC",
+          "TOO STUBBORN TO DIE",
+          "A GLORIOUS DOOM"
+        ],
+        "melee": [
+          [
+            "Zangrom-Thaz",
+            "8",
+            "2+",
+            "2+",
+            "2",
+            "3",
+            "Crit (Mortal)"
+          ]
+        ],
+        "abilityDetails": [
+          {
+            "name": "INDIFFERENT AND PRAGMATIC",
+            "timing": "Passive",
+            "effect": "Effect: This unit cannot have grudge marks and cannot be affected by ANCESTRAL VOW abilities.",
+            "kind": "Ability"
+          },
+          {
+            "name": "TOO STUBBORN TO DIE",
+            "timing": "Passive",
+            "effect": "Effect: The first time this unit would be destroyed, before removing it from play, roll a dice. On a 3+, this unit is not destroyed and any remaining damage points inflicted on it have no effect. Then, Heal (D3) this unit.",
+            "kind": "Ability"
+          },
+          {
+            "name": "A GLORIOUS DOOM",
+            "timing": "Passive",
+            "effect": "Effect: While this unit is in combat with any enemy HEROES or MONSTERS:\n• It can only pick those enemy units to be the targets of its combat attacks.\n• Add 2 to the Attacks characteristic of this unit’s melee weapons for each enemy HERO or MONSTER unit in combat with it.\nDesigner’s Note: A unit with both the HERO and MONSTER keywords only adds 2 to the Attacks characteristic of this unit’s melee weapons.",
+            "kind": "Ability"
+          }
+        ]
+      }
+    },
+    {
+      "faction": "Khazalite Holds",
+      "name": "Grimhold Exile",
+      "points": 110,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "page": 14,
+      "profile": {
+        "move": "4\"",
+        "health": "5",
+        "save": "5+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/khazalite-holds/warscrolls.html#Grimhold-Exile",
+        "retrieved": "2026-11-19",
+        "keywords": [
+          "HERO",
+          "INFANTRY",
+          "WARD (6+)",
+          "ORDER",
+          "KHAZALITE HOLDS",
+          "DUARDIN",
+          "GRIMMDRON"
+        ],
+        "abilities": [
+          "WRATHFUL WANDERER",
+          "ALONE BUT NEVER OUTNUMBERED",
+          "RELENTLESS WRATH"
+        ],
+        "melee": [
+          [
+            "Fyre-rune Hammers",
+            "5",
+            "3+",
+            "3+",
+            "2",
+            "2",
+            "Charge (+1 Damage)"
+          ]
+        ],
+        "abilityDetails": [
+          {
+            "name": "WRATHFUL WANDERER",
+            "timing": "Once Per Battle (Army), Deployment Phase",
+            "effect": "Effect: Remove this unit from the battlefield, then set it up again on the battlefield wholly within 6\" of a battlefield edge and more than 9\" from all enemy units.",
+            "kind": "Ability"
+          },
+          {
+            "name": "ALONE BUT NEVER OUTNUMBERED",
+            "timing": "Passive",
+            "effect": "Effect: This unit has STRIKE-FIRST while there are no other friendly units within 6\" of it.",
+            "kind": "Ability"
+          },
+          {
+            "name": "RELENTLESS WRATH",
+            "timing": "Once Per Turn (Army), Enemy Movement Phase",
+            "effect": "Effect: If this unit has any grudge marks and is not in combat, it can move D6\". It can move through the combat ranges of enemy units but cannot end that move in combat and cannot end that move any further from the closest enemy unit.",
+            "kind": "Ability"
+          }
+        ]
+      }
+    },
+    {
+      "faction": "Khazalite Holds",
+      "name": "Grimwrath Berzerker",
+      "points": 110,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "page": 14,
+      "profile": {
+        "move": "4\"",
+        "health": "5",
+        "save": "5+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/khazalite-holds/warscrolls.html#Grimwrath-Berzerker",
+        "retrieved": "2026-11-19",
+        "keywords": [
+          "HERO",
+          "INFANTRY",
+          "WARD (6+)",
+          "ORDER",
+          "KHAZALITE HOLDS",
+          "DUARDIN",
+          "GRIMMDRON"
+        ],
+        "abilities": [
+          "GRIMWRATH OATHS",
+          "BATTLE-FURY"
+        ],
+        "melee": [
+          [
+            "Fyrestorm Greataxe",
+            "5",
+            "3+",
+            "3+",
+            "2",
+            "2",
+            ""
+          ]
+        ],
+        "abilityDetails": [
+          {
+            "name": "GRIMWRATH OATHS",
+            "timing": "Once Per Turn (Army), End of Any Turn",
+            "effect": "Effect: If a friendly GRIMMDRON unit was within 6\" of and visible to this unit when it was destroyed this turn, you can give this unit 1 grudge mark.",
+            "kind": "Ability"
+          },
+          {
+            "name": "BATTLE-FURY",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Effect: If this unit has any grudge marks and is in combat, you can remove 1 grudge mark from this unit. If you do so, this unit can use 2 FIGHT abilities this phase. After the first is used, however, this unit has STRIKE-LAST for the rest of the phase.",
+            "kind": "Ability"
+          }
+        ]
+      }
+    },
+    {
+      "faction": "Khazalite Holds",
+      "name": "Hearthguard Berzerkers",
+      "points": 110,
+      "size": 5,
+      "kind": "",
+      "category": "Infantry",
+      "page": 15,
+      "profile": {
+        "move": "4\"",
+        "health": "2",
+        "save": "6+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/khazalite-holds/warscrolls.html#Hearthguard-Berzerkers",
+        "retrieved": "2026-11-19",
+        "keywords": [
+          "INFANTRY",
+          "CHAMPION",
+          "WARD (6+)",
+          "ORDER",
+          "KHAZALITE HOLDS",
+          "DUARDIN",
+          "GRIMMDRON"
+        ],
+        "abilities": [
+          "FURY OF GRIMNIR",
+          "DUTY UNTO DEATH"
+        ],
+        "melee": [
+          [
+            "Broadaxe or Flamestrike Poleaxe",
+            "2",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            ""
+          ]
+        ],
+        "abilityDetails": [
+          {
+            "name": "FURY OF GRIMNIR",
+            "timing": "Once Per Turn (Army), Enemy Movement Phase",
+            "effect": "Effect: If this unit has any grudge marks and is not in combat, it can move D6\". It can move through the combat ranges of enemy units but cannot end that move in combat and cannot end that move any further from the closest enemy unit.",
+            "kind": "Ability"
+          },
+          {
+            "name": "DUTY UNTO DEATH",
+            "timing": "Passive",
+            "effect": "Effect: While any friendly GRIMMDRON INFANTRY HEROES are wholly within this unit’s combat range, both this unit and those friendly units have WARD (5+).",
+            "kind": "Ability"
+          }
+        ]
+      }
+    },
+    {
+      "faction": "Khazalite Holds",
+      "name": "High Kyng Valankrom",
+      "points": 390,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "page": 14,
+      "profile": {
+        "move": "10\"",
+        "health": "16",
+        "save": "3+",
+        "control": "5",
+        "url": "https://wahapedia.ru/aos4/factions/khazalite-holds/warscrolls.html#High-Kyng-Valankrom",
+        "retrieved": "2026-11-19",
+        "keywords": [
+          "WARMASTER",
+          "UNIQUE",
+          "HERO",
+          "WAR MACHINE",
+          "ORDER",
+          "KHAZALITE HOLDS",
+          "DUARDIN",
+          "KROMDRON"
+        ],
+        "abilities": [
+          "BATTLE DAMAGED",
+          "DEFEND THE HIGH THRONE!",
+          "HIGH KYNG’S WAR COUNCIL",
+          "STIRRING THE HIGH KYNG’S IRE",
+          "TIDE OF STONE"
+        ],
+        "ranged": [
+          [
+            "Forge-spark Lightning",
+            "12\"",
+            "6",
+            "4+",
+            "2+",
+            "2",
+            "1",
+            "Crit (2 Hits), Companion"
+          ]
+        ],
+        "melee": [
+          [
+            "Bharadreng",
+            "6",
+            "3+",
+            "3+",
+            "2",
+            "3",
+            "Anti-MONSTER (+1 Rend), Crit (Mortal)"
+          ],
+          [
+            "Karak War Council’s Armoury",
+            "6",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            "See battle damage rules"
+          ]
+        ],
+        "abilityDetails": [
+          {
+            "name": "BATTLE DAMAGED",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of its Karak War Council’s Armoury is 4.",
+            "kind": "Ability"
+          },
+          {
+            "name": "DEFEND THE HIGH THRONE!",
+            "timing": "Start of Any Turn",
+            "effect": "Declare: Pick another visible friendly KHAZALITE HOLDS unit wholly within 12\" of this unit to be the target. For each grudge mark this unit has, you can pick another eligible unit to be an additional target.\nEffect: For the rest of the turn, the following effects apply to the targets while they are wholly within 6\" of this unit. Add 3\" to this range for each grudge mark this unit has.\n• The target’s melee weapons have Anti-charge (+1 Rend).\n• If the target has no grudge marks, it counts as having 1 grudge mark.",
+            "kind": "Ability"
+          },
+          {
+            "name": "HIGH KYNG’S WAR COUNCIL",
+            "timing": "Your Hero Phase",
+            "effect": "Effect: Pick 1 of the following effects to apply until the start of your next turn:\nStonesmith’s Disruption: The stonesmith causes the ground under a group of enemies to tremble violently, disrupting their cohesion.\nPick a visible enemy unit within 12\" of this unit to be the target. The target has a maximum control score of 1.\nGrudgebearer’s Denunciation: The exhortations of the grudgebearer instil in the duardin a relentless drive to enact vengeance on the foe.\nWhile they are wholly within 12\" of this unit, visible friendly KHAZALITE HOLDS units can use CHARGE abilities even if they used a RETREAT ability in the same turn. In addition, no mortal damage is inflicted on those friendly units by RETREAT abilities.\nHoldseeker’s Guidance: The holdseeker reveals magically resonant areas of the battlefield to aid the efforts of those working the runes.\nAdd 1 to casting rolls, chanting rolls and banishment rolls for friendly KHAZALITE HOLDS units while they are wholly within 12\" of this unit.",
+            "kind": "Ability"
+          },
+          {
+            "name": "STIRRING THE HIGH KYNG’S IRE",
+            "timing": "Start of Battle Round",
+            "effect": "Declare: Pick a visible enemy HERO within 18\" of this unit that has not been picked to be the target of this ability this battle to be the target.\nEffect: Your opponent must decide whether the target will accept the accusation or reject the accusation.\nIf they accept the accusation, for the rest of the battle round, add 1 to hit rolls for combat attacks made by friendly KHAZALITE HOLDS units that target that enemy unit.\nIf they reject the accusation, the target cannot use commands for the rest of the battle round.",
+            "kind": "Ability"
+          },
+          {
+            "name": "TIDE OF STONE",
+            "timing": "Once Per Turn (Army), Any Movement Phase",
+            "effect": "Effect: This unit can move D6\" or, if it is your movement phase, it can move 2D6\". It can pass through other models and the combat ranges of enemy units, but it cannot end that move in combat. Then, pick an enemy unit that this unit passed across during that move to be the target and roll a dice. On a 3+, inflict an amount of mortal damage on the target equal to the roll.",
+            "kind": "Ability"
+          }
+        ]
+      }
+    },
+    {
+      "faction": "Khazalite Holds",
+      "name": "Hjulda Drakkblud",
+      "points": 140,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "page": 14,
+      "profile": {
+        "move": "4\"",
+        "health": "5",
+        "save": "3+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/khazalite-holds/warscrolls.html#Hjulda-Drakkblud",
+        "retrieved": "2026-11-19",
+        "keywords": [
+          "UNIQUE",
+          "HERO",
+          "INFANTRY",
+          "ORDER",
+          "KHAZALITE HOLDS",
+          "DUARDIN",
+          "KROMDRON"
+        ],
+        "abilities": [
+          "BOOK OF FALLEN HOLDS",
+          "TALISMAN OF THE LOST KARAK",
+          "LAST OF HER CLAN"
+        ],
+        "melee": [
+          [
+            "Azangrom",
+            "6",
+            "3+",
+            "3+",
+            "2",
+            "2",
+            "Crit (Mortal)"
+          ]
+        ],
+        "abilityDetails": [
+          {
+            "name": "BOOK OF FALLEN HOLDS",
+            "timing": "Once Per Battle (Army), Start of First Battle Round",
+            "effect": "Declare: You must use this ability. Pick an enemy unit to be grudged. You can pick an enemy unit in reserve.\nEffect: For the rest of the battle:\n• While the grudged enemy unit is within 12\" of and visible to this unit, you can re-roll charge rolls for friendly KHAZALITE HOLDS units while they are wholly within 12\" of this unit.\n• While there is no grudged enemy unit on the battlefield, add 3 to the control scores of friendly KHAZALITE HOLDS units while they are wholly within 12\" of this unit.",
+            "kind": "Ability"
+          },
+          {
+            "name": "TALISMAN OF THE LOST KARAK",
+            "timing": "Passive",
+            "effect": "Effect: While this unit is in combat, add 1 to hit rolls for combat attacks made by friendly non-HERO KHAZALITE HOLDS INFANTRY units while they are within 3\" of and visible to this unit.",
+            "kind": "Ability"
+          },
+          {
+            "name": "LAST OF HER CLAN",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Pick this unit and up to 2 other visible friendly non-HERO KHAZALITE HOLDS units wholly within 12\" of this unit to be the targets.\nEffect: If this unit has any grudge marks, apply this effect automatically. Otherwise, roll a dice for each target. On a 3+, until the start of your next turn, ignore the first damage point that would be allocated to that target in each phase.",
+            "kind": "Ability"
+          }
+        ]
+      }
+    },
+    {
+      "faction": "Khazalite Holds",
+      "name": "Molten Infernoth",
+      "points": 0,
+      "size": 1,
+      "kind": "",
+      "category": "Manifestation",
+      "profile": {
+        "move": "8\"",
+        "health": "10",
+        "save": "5+",
+        "banishment": "7+",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/khazalite-holds/Molten-Infernoth",
+        "keywords": [
+          "MANIFESTATION",
+          "INVOCATION",
+          "FLY",
+          "WARD (6+)",
+          "ORDER",
+          "KHAZALITE HOLDS"
+        ],
+        "abilityDetails": [
+          {
+            "name": "FLAMESCARRED",
+            "timing": "End of Any Turn",
+            "declare": "Pick an enemy unit that had any damage points allocated to it this turn by this MANIFESTATION’S attacks to be the target. If the unit that summoned this MANIFESTATION has any grudge marks, you can pick another eligible unit to be a second target.",
+            "effect": "Subtract 1 from wound rolls for each target’s combat attacks until the end of your next turn.",
+            "unitLinks": []
+          }
+        ],
+        "abilities": [
+          "FLAMESCARRED"
+        ],
+        "ranged": [
+          [
+            "Raging Torrents of Lava",
+            "8\"",
+            "2",
+            "4+",
+            "3+",
+            "2",
+            "D3",
+            "Shoot in Combat"
+          ]
+        ],
+        "melee": [
+          [
+            "Molten Claws",
+            "6",
+            "4+",
+            "2+",
+            "1",
+            "D3",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "canReinforce": false
+    },
+    {
+      "faction": "Khazalite Holds",
+      "name": "Oathkeeper Cannon",
+      "points": 150,
+      "size": 1,
+      "kind": "",
+      "category": "War Machine",
+      "page": 15,
+      "profile": {
+        "move": "4\"",
+        "health": "6",
+        "save": "3+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/khazalite-holds/warscrolls.html#Oathkeeper-Cannon",
+        "retrieved": "2026-11-19",
+        "keywords": [
+          "WAR MACHINE",
+          "ORDER",
+          "KHAZALITE HOLDS",
+          "KROMDRON"
+        ],
+        "abilities": [
+          "ARTILLERIST’S REVENGE",
+          "OATHKEEPER APPRENTICE RUNESTRIKER"
+        ],
+        "ranged": [
+          [
+            "Oathkeeper Shot",
+            "24\"",
+            "3",
+            "4+",
+            "2+",
+            "2",
+            "D3+2",
+            ""
+          ]
+        ],
+        "melee": [
+          [
+            "Oathkeeper Crew Tools",
+            "3",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            ""
+          ]
+        ],
+        "abilityDetails": [
+          {
+            "name": "ARTILLERIST’S REVENGE",
+            "timing": "Passive",
+            "effect": "Effect: This unit’s ranged weapons have Crit (2 Hits) while it has any grudge marks.",
+            "kind": "Ability"
+          },
+          {
+            "name": "OATHKEEPER APPRENTICE RUNESTRIKER",
+            "timing": "Once Per Turn (Army), Your Shooting Phase",
+            "effect": "Declare: Pick an enemy unit that had any damage points allocated to it this turn by this unit’s shooting attacks to be the target.\nEffect: Roll a dice. On a 3+, pick 1 of the following effects:\nRune of Sundering: Until the start of your next turn, subtract 1 from the Rend characteristic of the target’s melee weapons.\nRune of Burning: For the rest of the turn, combat attacks that target that enemy unit score critical hits on unmodified hit rolls of 5+.\nRune of Shock: The target has STRIKE-LAST until the start of your next turn.",
+            "kind": "Ability"
+          }
+        ]
+      }
+    },
+    {
+      "faction": "Khazalite Holds",
+      "name": "Ormyr and Ashtongue",
+      "points": 140,
+      "size": 2,
+      "kind": "",
+      "category": "Hero",
+      "page": 14,
+      "profile": {
+        "move": "4\"",
+        "health": "5",
+        "save": "5+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/khazalite-holds/warscrolls.html#Ormyr-and-Ashtongue",
+        "retrieved": "2026-11-19",
+        "keywords": [
+          "UNIQUE",
+          "HERO",
+          "INFANTRY",
+          "WARD (6+)",
+          "ORDER",
+          "KHAZALITE HOLDS",
+          "DUARDIN",
+          "GRIMMDRON"
+        ],
+        "abilities": [
+          "VULCATRIX’S FURY",
+          "DROTHMASTER AT HEART",
+          "SMOKE AND ASH"
+        ],
+        "melee": [
+          [
+            "Ormyr’s Double-bladed Axe and Punchblade",
+            "5",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            "Anti-MONSTER (+1 Rend)"
+          ],
+          [
+            "Ashtongue’s Maw and Claws",
+            "3",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            "Crit (Mortal), Companion"
+          ]
+        ],
+        "abilityDetails": [
+          {
+            "name": "VULCATRIX’S FURY",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has any grudge marks, add 1 to the Attacks characteristic of Companion weapons used by visible friendly KHAZALITE HOLDS units while they are wholly within 12\" of this unit.",
+            "kind": "Ability"
+          },
+          {
+            "name": "DROTHMASTER AT HEART",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Pick a visible friendly Vulkyn Flameseekers or GRIMMDRON MONSTER unit wholly within 12\" of this unit to be the target.\nEffect: Pick 1 of the following effects:\n• If you picked a friendly Vulkyn Flameseekers unit to be the target, until the start of your next turn, ignore negative modifiers to hit rolls and wound rolls for the target’s combat attacks and ignore negative modifiers to the target’s control score.\n• If you picked a friendly GRIMMDRON MONSTER unit to be the target, add 1 to hit rolls for attacks made with the target’s Companion weapons until the start of your next turn.",
+            "kind": "Ability"
+          },
+          {
+            "name": "SMOKE AND ASH",
+            "timing": "Your Shooting Phase",
+            "effect": "Declare: If this unit contains Ashtongue, pick a visible enemy unit within 9\" of this unit to be the target.\nEffect: Roll a dice. On a 3+, until the start of your next turn, units (friendly and enemy), terrain features and MANIFESTATIONS are not visible to the target while they are more than 6\" from it.",
+            "kind": "Ability"
+          }
+        ]
+      }
+    },
+    {
+      "faction": "Khazalite Holds",
+      "name": "Runewright",
+      "points": 110,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "page": 14,
+      "profile": {
+        "move": "4\"",
+        "health": "5",
+        "save": "4+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/khazalite-holds/warscrolls.html#Runewright",
+        "retrieved": "2026-11-19",
+        "keywords": [
+          "HERO",
+          "WIZARD (1)",
+          "INFANTRY",
+          "ORDER",
+          "KHAZALITE HOLDS",
+          "DUARDIN",
+          "KROMDRON"
+        ],
+        "abilities": [
+          "GRUDGEMENT OF THE FORGE",
+          "RHYTHMIC HAMMERING"
+        ],
+        "melee": [
+          [
+            "Runic Forgehammers",
+            "3",
+            "3+",
+            "4+",
+            "1",
+            "2",
+            ""
+          ]
+        ],
+        "abilityDetails": [
+          {
+            "name": "GRUDGEMENT OF THE FORGE",
+            "timing": "Passive",
+            "effect": "Effect: Add 1 to unbinding rolls, banishment rolls and rhythmic hammering rolls for this unit while it has any grudge marks.",
+            "kind": "Ability"
+          },
+          {
+            "name": "RHYTHMIC HAMMERING",
+            "timing": "Reaction: You declared a SPELL ability from the ‘Reverberations of the Runes’ or the ‘Resonance of the Runes’ for this unit",
+            "effect": "Effect: If the casting roll for that spell equals or exceeds its casting value, make a rhythmic hammering roll of 2D6.\nIf a rhythmic hammering roll is lower than that spell’s casting value, the spell fails and its effect is not resolved.\nIf a rhythmic hammering roll equals or exceeds that spell’s casting value, increase the range of that spell by 3\". You can keep making rhythmic hammering rolls for that spell until you roll lower than its casting value. The effects of this ability are cumulative.",
+            "kind": "Ability"
+          }
+        ]
+      }
+    },
+    {
+      "faction": "Khazalite Holds",
+      "name": "Runic Fyrewall",
+      "points": 0,
+      "size": 1,
+      "kind": "",
+      "category": "Manifestation",
+      "profile": {
+        "move": "-",
+        "health": "8",
+        "save": "3+",
+        "banishment": "7+",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/khazalite-holds/Runic-Fyrewall",
+        "keywords": [
+          "MANIFESTATION",
+          "INVOCATION",
+          "WARD (6+)",
+          "ORDER",
+          "KHAZALITE HOLDS"
+        ],
+        "abilityDetails": [
+          {
+            "name": "ROARING RUNE-FIRE",
+            "timing": "Enemy Movement Phase",
+            "declare": "Pick up to 3 enemy units within 6\" of this MANIFESTATION to be the targets.",
+            "effect": "Roll a dice for each target. If the unit that summoned this MANIFESTATION has any grudge marks, you can add or subtract 1 from the roll.\n• On a 1‑3, subtract 3 from the target’s control score for the rest of the turn.\n• On a 4‑6, inflict 2 mortal damage on the target.",
+            "unitLinks": []
+          }
+        ],
+        "abilities": [
+          "ROARING RUNE-FIRE"
+        ]
+      },
+      "canReinforce": false
+    },
+    {
+      "faction": "Khazalite Holds",
+      "name": "Scourge of Aqshy Auric Runeson on Magmadroth",
+      "points": 300,
+      "size": 1,
+      "kind": "Scourge of Aqshy",
+      "category": "Hero",
+      "page": 14,
+      "profile": {
+        "move": "10\"",
+        "health": "14",
+        "save": "4+",
+        "control": "5",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/khazalite-holds/warscrolls.html#Scourge-of-Aqshy-Auric-Runeson-on-Magmadroth",
+        "retrieved": "2026-11-19",
+        "keywords": [
+          "HERO",
+          "MONSTER",
+          "WARD (6+)",
+          "ORDER",
+          "KHAZALITE HOLDS",
+          "DUARDIN",
+          "GRIMMDRON"
+        ],
+        "abilities": [
+          "BATTLE DAMAGED",
+          "VOLCANIC BLOOD",
+          "SEEING RED",
+          "FIRE, BLOOD AND VENGEANCE"
+        ],
+        "ranged": [
+          [
+            "Roaring Fyrestream",
+            "10\"",
+            "4",
+            "3+",
+            "3+",
+            "1",
+            "D3",
+            "Anti-INFANTRY (+1 Rend), Companion"
+          ]
+        ],
+        "melee": [
+          [
+            "Magmadroth’s Blazing Maw",
+            "2",
+            "4+",
+            "2+",
+            "2",
+            "3",
+            "Companion"
+          ],
+          [
+            "Magmadroth’s Claws and Horns",
+            "6",
+            "4+",
+            "2+",
+            "1",
+            "2",
+            "Companion · See battle damage rules"
+          ],
+          [
+            "Ancestral Weapons",
+            "5",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            "Anti-MONSTER (+1 Rend)"
+          ]
+        ],
+        "abilityDetails": [
+          {
+            "name": "BATTLE DAMAGED",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of its Magmadroth’s Claws and Horns is 4.",
+            "kind": "Ability"
+          },
+          {
+            "name": "VOLCANIC BLOOD",
+            "timing": "Passive",
+            "effect": "Effect: Each time you make an unmodified save roll of 1 for a combat attack that targets this unit, inflict 1 mortal damage on the attacking unit after the FIGHT ability has been resolved.",
+            "kind": "Ability"
+          },
+          {
+            "name": "SEEING RED",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Effect: Spend 1 rage dice. If your opponent’s fury level is lower than yours, they must increase their fury level by 1, to a maximum of 7. Then, pick 1 of the following effects:\nChannelled Ire: Add 1 to the Attacks characteristic of this unit’s Companion melee weapons for the rest of the turn.\nCathartic Release: Roll a number of dice equal to your fury level. For each 4+, Heal (1) this unit.\nShield of Anger: This unit has WARD (5+) for the rest of the turn.",
+            "kind": "Ability"
+          },
+          {
+            "name": "FIRE, BLOOD AND VENGEANCE",
+            "timing": "Deployment Phase",
+            "effect": "Declare: Pick a friendly Auric Runefather on Magmadroth on the battlefield to be the target.\nEffect: Add 1 to the Damage characteristic of this unit’s melee weapons, including Companion weapons, while the target is in combat, damaged or destroyed.",
+            "kind": "Ability"
+          }
+        ]
+      }
+    },
+    {
+      "faction": "Khazalite Holds",
+      "name": "Scourge of Aqshy Vulkyn Flameseekers",
+      "points": 190,
+      "size": 9,
+      "kind": "Scourge of Aqshy",
+      "category": "Infantry",
+      "page": 15,
+      "profile": {
+        "move": "4\"",
+        "health": "2",
+        "save": "5+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/khazalite-holds/warscrolls.html#Scourge-of-Aqshy-Vulkyn-Flameseekers",
+        "retrieved": "2026-11-19",
+        "keywords": [
+          "INFANTRY",
+          "CHAMPION (1/9)",
+          "WARD (6+)",
+          "ORDER",
+          "KHAZALITE HOLDS",
+          "GRIMMDRON",
+          "DUARDIN"
+        ],
+        "abilities": [
+          "FIERY DISPOSITION"
+        ],
+        "melee": [
+          [
+            "Vulkyn Weapons",
+            "3",
+            "3+",
+            "3+",
+            "1",
+            "1",
+            "Anti-MONSTER (+1 Rend)"
+          ],
+          [
+            "Emberteeth",
+            "1",
+            "3+",
+            "3+",
+            "-",
+            "2",
+            "Crit (Mortal), Companion"
+          ]
+        ],
+        "abilityDetails": [
+          {
+            "name": "FIERY DISPOSITION",
+            "timing": "Once Per Turn (Army), Your Hero Phase",
+            "effect": "Effect: Spend 1 rage dice. If your opponent’s fury level is lower than yours, they must increase their fury level by 1, to a maximum of 7. Then, pick 1 of the following effects to apply until the start of your next turn, where X is equal to your fury level.\nVigour of the Ur-Salamander: Add X\" to this unit’s Move characteristic.\nFiery Determination: Add X to this unit’s control score.\nKyndlewrath: Add X to the Attacks characteristic of this unit’s Emberteeth.",
+            "kind": "Ability"
+          }
+        ]
+      }
+    },
+    {
+      "faction": "Khazalite Holds",
+      "name": "Stonebreaker Mortar",
+      "points": 140,
+      "size": 1,
+      "kind": "",
+      "category": "War Machine",
+      "page": 15,
+      "profile": {
+        "move": "4\"",
+        "health": "6",
+        "save": "3+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/khazalite-holds/warscrolls.html#Stonebreaker-Mortar",
+        "retrieved": "2026-11-19",
+        "keywords": [
+          "WAR MACHINE",
+          "ORDER",
+          "KHAZALITE HOLDS",
+          "KROMDRON"
+        ],
+        "abilities": [
+          "ARTILLERIST’S REVENGE",
+          "STONEBREAKER APPRENTICE RUNESTRIKER"
+        ],
+        "ranged": [
+          [
+            "Stonebreaker Shot",
+            "30\"",
+            "5",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            "Anti-INFANTRY (+1 Rend)"
+          ]
+        ],
+        "melee": [
+          [
+            "Stonebreaker Crew Tools",
+            "3",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            ""
+          ]
+        ],
+        "abilityDetails": [
+          {
+            "name": "ARTILLERIST’S REVENGE",
+            "timing": "Passive",
+            "effect": "Effect: This unit’s ranged weapons have Crit (2 Hits) while it has any grudge marks.",
+            "kind": "Ability"
+          },
+          {
+            "name": "STONEBREAKER APPRENTICE RUNESTRIKER",
+            "timing": "Once Per Turn (Army), Your Shooting Phase",
+            "effect": "Declare: Pick an enemy unit that had any damage points allocated to it this turn by this unit’s shooting attacks to be the target.\nEffect: Roll a dice. On a 3+, pick 1 of the following effects:\nRune of Detonation: Roll a D3 for each enemy unit within 3\" of the target. On a 2+, inflict an amount of mortal damage on that enemy unit equal to the roll.\nRune of Thunder: Until the start of your next turn, the target has a maximum control score of 1.\nRune of Earthshaking: The target cannot use RUN abilities until the start of your next turn.",
+            "kind": "Ability"
+          }
+        ]
+      }
+    },
+    {
+      "faction": "Khazalite Holds",
+      "name": "Thrynn",
+      "points": 120,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "page": 14,
+      "profile": {
+        "move": "4\"",
+        "health": "5",
+        "save": "3+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/khazalite-holds/warscrolls.html#Thrynn",
+        "retrieved": "2026-11-19",
+        "keywords": [
+          "HERO",
+          "INFANTRY",
+          "ORDER",
+          "KHAZALITE HOLDS",
+          "DUARDIN",
+          "KROMDRON"
+        ],
+        "abilities": [
+          "STEADFAST RETRIBUTION",
+          "FIGHT SHOULDER TO SHOULDER"
+        ],
+        "melee": [
+          [
+            "Grudgehammer and Runic Axe",
+            "5",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            "Crit (Mortal)"
+          ]
+        ],
+        "abilityDetails": [
+          {
+            "name": "STEADFAST RETRIBUTION",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Effect: Add 1 to the Attacks characteristic of this unit’s melee weapons, to a maximum of +3, for each other visible friendly unit wholly within 6\" of this unit that has any grudge marks.",
+            "kind": "Ability"
+          },
+          {
+            "name": "FIGHT SHOULDER TO SHOULDER",
+            "timing": "Once Per Turn (Army), Reaction: You declared a FIGHT ability for this unit or a non-HERO KROMDRON INFANTRY unit within 3\" of and visible to this unit",
+            "effect": "Effect: If you declared a FIGHT ability for this unit, pick a friendly non-HERO KROMDRON INFANTRY unit that has not used a FIGHT ability this turn, is within this unit’s combat range and is visible to this unit to be the target. The target can be picked to use a FIGHT ability immediately after the FIGHT ability used by this unit has been resolved. If it is picked to do so, add 1 to hit rolls for the target’s attacks for the rest of the turn.\nIf you declared a FIGHT ability for a friendly non-HERO KROMDRON INFANTRY unit, if this unit has not used a FIGHT ability this turn, it can be picked to use a FIGHT ability immediately after the FIGHT ability used by the friendly non-HERO KROMDRON INFANTRY unit has been resolved. If it is picked to do so, add 1 to hit rolls for this unit’s attacks for the rest of the turn.\nDesigner’s Note: This ability lets another friendly unit fight immediately after this unit or lets this unit fight immediately after that other friendly unit. Add 1 to hit rolls for whichever of those two units fights after the first.",
+            "kind": "Ability"
+          }
+        ]
+      }
+    },
+    {
+      "faction": "Khazalite Holds",
+      "name": "Thrynn on War Throne",
+      "points": 340,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "page": 14,
+      "profile": {
+        "move": "10\"",
+        "health": "16",
+        "save": "3+",
+        "control": "5",
+        "url": "https://wahapedia.ru/aos4/factions/khazalite-holds/warscrolls.html#Thrynn-On-War-Throne",
+        "retrieved": "2026-11-19",
+        "keywords": [
+          "HERO",
+          "WAR MACHINE",
+          "ORDER",
+          "KHAZALITE HOLDS",
+          "DUARDIN",
+          "KROMDRON"
+        ],
+        "abilities": [
+          "BATTLE DAMAGED",
+          "DEFEND THE THRONE!",
+          "KARAK WAR COUNCIL",
+          "FORGE A PATH",
+          "TECTONIC IMPACT"
+        ],
+        "ranged": [
+          [
+            "Forge-spark Lightning",
+            "12\"",
+            "6",
+            "4+",
+            "2+",
+            "2",
+            "1",
+            "Crit (2 Hits), Companion"
+          ]
+        ],
+        "melee": [
+          [
+            "Thrynn’s Runeweapons",
+            "6",
+            "3+",
+            "3+",
+            "2",
+            "2",
+            "Crit (Mortal)"
+          ],
+          [
+            "Karak War Council’s Armoury",
+            "6",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            "See battle damage rules"
+          ]
+        ],
+        "abilityDetails": [
+          {
+            "name": "BATTLE DAMAGED",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of Karak War Council’s Armoury is 4.",
+            "kind": "Ability"
+          },
+          {
+            "name": "DEFEND THE THRONE!",
+            "timing": "Once Per Turn (Army), Start of Any Turn",
+            "effect": "Declare: Pick another visible friendly KHAZALITE HOLDS unit wholly within 12\" of this unit to be a target. For each grudge mark this unit has, you can pick another eligible unit to be an additional target.\nEffect: For the rest of the turn, the targets’ melee weapons have Anti-charge (+1 Rend) while they are wholly within 6\" of this unit. Add 3\" to this range for each grudge mark this unit has.",
+            "kind": "Ability"
+          },
+          {
+            "name": "KARAK WAR COUNCIL",
+            "timing": "Once Per Turn (Army), Your Hero Phase",
+            "effect": "Effect: Pick 1 of the following effects to apply until the start of your next turn:\nStonesmith’s Passage: The Stonesmith shifts rock and earth to aid the manoeuvres of nearby duardin.\nAdd 2\" to the Move characteristic of visible friendly KHAZALITE HOLDS INFANTRY units while they are wholly within 12\" of this unit. In addition, no mortal damage is inflicted on those friendly units by RETREAT abilities.\nGrudgebearer’s Accusation: The grudgebearer singles out an enemy champion to be the target of the duardin’s vengeance.\nPick a visible enemy HERO within 18\" of this unit to be the target. Friendly KHAZALITE HOLDS INFANTRY units can ignore the effects of the ‘Guarded Hero’ ability on the target when picking targets for their shooting attacks.\nHoldseeker’s Protection: Awakening the runes on their staff, the holdseeker imbues nearby duardin with an aura that repels the attacks of the foe.\nPick a visible friendly KHAZALITE HOLDS unit wholly within 12\" of this unit to be the target. Roll a dice. On a 3+, other than the Companion weapon ability, weapon abilities for attacks that target that friendly unit have no effect.",
+            "kind": "Ability"
+          },
+          {
+            "name": "FORGE A PATH",
+            "timing": "Once Per Turn (Army), Reaction: You declared a MOVE ability for this unit in your movement phase",
+            "effect": "Effect: Pick a visible friendly KROMDRON INFANTRY unit that is wholly within 6\" of this unit, is not in combat and has not been set up this turn to be the target.\nRemove the target from the battlefield. After this unit ends its move, you must set up the target wholly within 6\" of this unit and more than 9\" from all enemy units.",
+            "kind": "Ability"
+          },
+          {
+            "name": "TECTONIC IMPACT",
+            "timing": "Once Per Turn (Army), Any Charge Phase",
+            "effect": "Declare: If this unit charged this turn, pick a visible enemy unit within 1\" of it to be the target.\nEffect: Roll a dice. On a 3+, inflict an amount of mortal damage on the target equal to the roll.",
+            "kind": "Ability"
+          }
+        ]
+      }
+    },
+    {
+      "faction": "Khazalite Holds",
+      "name": "Valayan Guardians with Rune Axes and Shields",
+      "points": 110,
+      "size": 5,
+      "kind": "",
+      "category": "Infantry",
+      "page": 15,
+      "profile": {
+        "move": "4\"",
+        "health": "1",
+        "save": "3+",
+        "control": "1",
+        "ward": "4+",
+        "url": "https://wahapedia.ru/aos4/factions/khazalite-holds/warscrolls.html#Valayan-Guardians-with-Rune-Axe-and-Shields",
+        "retrieved": "2026-11-19",
+        "keywords": [
+          "INFANTRY",
+          "CHAMPION",
+          "WARD (4+)",
+          "ORDER",
+          "KHAZALITE HOLDS",
+          "DUARDIN",
+          "KROMDRON",
+          "VALAYAN"
+        ],
+        "abilities": [
+          "SHIELD MAIDENS",
+          "PROTECTION OF VALAYA"
+        ],
+        "melee": [
+          [
+            "Valayan Rune Axe",
+            "3",
+            "3+",
+            "4+",
+            "1",
+            "1",
+            ""
+          ]
+        ],
+        "abilityDetails": [
+          {
+            "name": "SHIELD MAIDENS",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick an enemy unit that charged this turn and is in combat with this unit to be the target.\nEffect: Roll a dice for each enemy model in combat with this unit. For each 4+, inflict 1 mortal damage on the target.",
+            "kind": "Ability"
+          },
+          {
+            "name": "PROTECTION OF VALAYA",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has any grudge marks, visible friendly KHAZALITE HOLDS INFANTRY and non-GHOLEM WAR MACHINE units have WARD (5+) while they are wholly within 6\" of this unit.",
+            "kind": "Ability"
+          }
+        ]
+      },
+      "aliases": [
+        "Valayan Guardians with Rune Axe and Shields"
+      ]
+    },
+    {
+      "faction": "Khazalite Holds",
+      "name": "Valayan Guardians with Runic Halberds",
+      "points": 110,
+      "size": 5,
+      "kind": "",
+      "category": "Infantry",
+      "page": 15,
+      "profile": {
+        "move": "4\"",
+        "health": "1",
+        "save": "4+",
+        "control": "1",
+        "ward": "4+",
+        "url": "https://wahapedia.ru/aos4/factions/khazalite-holds/warscrolls.html#Valayan-Guardians-with-Runic-Halberds",
+        "retrieved": "2026-11-19",
+        "keywords": [
+          "INFANTRY",
+          "CHAMPION",
+          "WARD (4+)",
+          "ORDER",
+          "KHAZALITE HOLDS",
+          "DUARDIN",
+          "KROMDRON",
+          "VALAYAN"
+        ],
+        "abilities": [
+          "WARRIORS OF THE HEARTH"
+        ],
+        "melee": [
+          [
+            "Valayan Runic Halberd",
+            "2",
+            "3+",
+            "4+",
+            "2",
+            "2",
+            "Crit (2 Hits)"
+          ]
+        ],
+        "abilityDetails": [
+          {
+            "name": "WARRIORS OF THE HEARTH",
+            "timing": "Once Per Turn (Army), Your Charge Phase",
+            "effect": "Declare: If this unit is not in combat and has not used a RUN or RETREAT ability this turn, make a charge roll of 2D6. While this unit has any grudge marks, you can re-roll that charge roll.\nEffect: This unit can move a distance up to the value of the charge roll. It can move through the combat ranges of enemy units, pass across enemy models and must end that move within ½\" of a visible enemy unit. If it does so, it has charged. Then, if this unit charged this turn, pick an enemy unit it passed across this turn. Inflict D3 mortal damage on that enemy unit.",
+            "kind": "Ability"
+          }
+        ]
+      }
+    },
+    {
+      "faction": "Khazalite Holds",
+      "name": "Vulkite Berzerkers with Bladed Slingshields",
+      "points": 150,
+      "size": 10,
+      "kind": "",
+      "category": "Infantry",
+      "page": 15,
+      "profile": {
+        "move": "4\"",
+        "health": "2",
+        "save": "5+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/khazalite-holds/warscrolls.html#Vulkite-Berzerkers-with-Bladed-Slingshields",
+        "retrieved": "2026-11-19",
+        "keywords": [
+          "INFANTRY",
+          "CHAMPION",
+          "MUSICIAN (1/10)",
+          "WARD (6+)",
+          "ORDER",
+          "KHAZALITE HOLDS",
+          "DUARDIN",
+          "GRIMMDRON"
+        ],
+        "abilities": [
+          "BERSERK FURY"
+        ],
+        "melee": [
+          [
+            "Fyresteel Weapons",
+            "2",
+            "4+",
+            "3+",
+            "1",
+            "1",
+            ""
+          ]
+        ],
+        "abilityDetails": [
+          {
+            "name": "BERSERK FURY",
+            "timing": "Passive",
+            "effect": "Effect: Each time a model in this unit is slain by a combat attack and that model was in combat with the attacking unit, roll a dice. If this unit has any grudge marks, add 1 to the roll. On a 6+, inflict 1 mortal damage on the attacking unit after the FIGHT ability has been resolved.",
+            "kind": "Ability"
+          }
+        ]
+      }
+    },
+    {
+      "faction": "Khazalite Holds",
+      "name": "Vulkite Berzerkers with Fyresteel Weapons",
+      "points": 130,
+      "size": 10,
+      "kind": "",
+      "category": "Infantry",
+      "page": 15,
+      "profile": {
+        "move": "4\"",
+        "health": "2",
+        "save": "6+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/khazalite-holds/warscrolls.html#Vulkite-Berzerkers-with-Fyresteel-Weapons",
+        "retrieved": "2026-11-19",
+        "keywords": [
+          "INFANTRY",
+          "CHAMPION",
+          "MUSICIAN (1/10)",
+          "WARD (6+)",
+          "ORDER",
+          "KHAZALITE HOLDS",
+          "DUARDIN",
+          "GRIMMDRON"
+        ],
+        "abilities": [
+          "WHIRLWIND OF DESTRUCTION"
+        ],
+        "melee": [
+          [
+            "Fyresteel Weapons",
+            "2",
+            "4+",
+            "3+",
+            "1",
+            "1",
+            ""
+          ]
+        ],
+        "abilityDetails": [
+          {
+            "name": "WHIRLWIND OF DESTRUCTION",
+            "timing": "Passive",
+            "effect": "Effect: Add 1 to the Attacks characteristic of this unit’s melee weapons while this unit has any grudge marks.",
+            "kind": "Ability"
+          }
+        ]
+      }
+    },
+    {
+      "faction": "Khazalite Holds",
+      "name": "Vulkyn Flameseekers",
+      "points": 160,
+      "size": 9,
+      "kind": "",
+      "category": "Infantry",
+      "page": 15,
+      "profile": {
+        "move": "4\"",
+        "health": "2",
+        "save": "5+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/khazalite-holds/warscrolls.html#Vulkyn-Flameseekers",
+        "retrieved": "2026-11-19",
+        "keywords": [
+          "INFANTRY",
+          "CHAMPION (1/9)",
+          "WARD (6+)",
+          "ORDER",
+          "KHAZALITE HOLDS",
+          "DUARDIN",
+          "GRIMMDRON"
+        ],
+        "abilities": [
+          "DROTHMASTERS",
+          "BLUNT THEIR HORNS AND FANGS!"
+        ],
+        "melee": [
+          [
+            "Vulkyn Weapons",
+            "3",
+            "3+",
+            "3+",
+            "1",
+            "1",
+            "Anti-MONSTER (+1 Rend)"
+          ],
+          [
+            "Kyndledroth’s Fangs",
+            "1",
+            "3+",
+            "3+",
+            "-",
+            "2",
+            "Crit (Mortal), Companion"
+          ]
+        ],
+        "abilityDetails": [
+          {
+            "name": "DROTHMASTERS",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick an enemy MONSTER in combat with this unit to be the target.\nEffect: Roll a dice. On a 3+, subtract 2 from the Damage characteristic of the target’s COMPANION melee weapons for the rest of the turn.",
+            "kind": "Ability"
+          },
+          {
+            "name": "BLUNT THEIR HORNS AND FANGS!",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has any grudge marks:\n• Subtract 2 from the Attacks characteristic of Companion melee weapons used by enemy MONSTERS while they are in combat with this unit.\n• Enemy MONSTERS cannot use RAMPAGE abilities while they are in combat with this unit.",
+            "kind": "Ability"
+          }
+        ]
+      }
+    },
+    {
+      "faction": "Khazalite Holds",
+      "name": "Zharrgron Flame-spitter",
+      "points": 0,
+      "size": 1,
+      "kind": "",
+      "category": "Manifestation",
+      "profile": {
+        "move": "-",
+        "health": "5",
+        "save": "6+",
+        "banishment": "7+",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/khazalite-holds/Zharrgron-Flame-spitter",
+        "keywords": [
+          "MANIFESTATION",
+          "INVOCATION",
+          "WARD (6+)",
+          "ORDER",
+          "KHAZALITE HOLDS"
+        ],
+        "abilityDetails": [
+          {
+            "name": "MAGMA BLAST",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "Add 1 to hit rolls for this MANIFESTATION’S shooting attacks while the unit that summoned this MANIFESTATION has any grudge marks.",
+            "unitLinks": []
+          }
+        ],
+        "abilities": [
+          "MAGMA BLAST"
+        ],
+        "ranged": [
+          [
+            "Magma Blast",
+            "12\"",
+            "4",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            "Crit (2 Hits)"
+          ]
+        ]
+      },
+      "canReinforce": false
+    }
+  ]
+}

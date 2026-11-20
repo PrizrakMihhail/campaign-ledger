@@ -1,0 +1,2131 @@
+{
+  "edition": "Age of Sigmar 4",
+  "lastUpdate": "2026-10-22 18:12:05",
+  "faction": {
+    "id": "KB",
+    "name": "Kruleboyz",
+    "slug": "kruleboyz",
+    "url": "https://wahapedia.ru/aos4/factions/kruleboyz",
+    "count": 26
+  },
+  "rules": {
+    "battleTraits": [
+      {
+        "name": "DIRTY TRICKS",
+        "timing": "Passive",
+        "declare": "",
+        "effect": "The effect of a DIRTY TRICK ability is only applied if you make a successful dirty trick roll. The success of a dirty trick roll depends on the number of DIRTY TRICK abilities your army has already used this battle round.\nDirty TrickDirty Trick RollFirst2+Second3+Third4+Fourth or subsequent5+",
+        "unitLinks": []
+      },
+      {
+        "name": "LETHAL SURPRISE",
+        "timing": "Once Per Turn (Army), Any Charge Phase",
+        "declare": "Pick an enemy unit that charged this turn and is in combat with any friendly KRULEBOYZ units to be the target, then make a dirty trick roll.",
+        "effect": "Inflict D3 mortal damage on the target. In addition, for the rest of the turn, the target’s weapons cannot be affected by the Charge (+1 Damage) weapon ability.",
+        "unitLinks": []
+      },
+      {
+        "name": "VENOM-ENCRUSTED WEAPONS",
+        "timing": "Once Per Turn (Army), Any Hero Phase",
+        "declare": "Pick a friendly KRULEBOYZ INFANTRY unit to be the target, then make a dirty trick roll.",
+        "effect": "Until the start of your next turn, the target’s attacks score critical hits on unmodified hit rolls of 5+.",
+        "unitLinks": []
+      },
+      {
+        "name": "SNEAKY SNEAKIN’",
+        "timing": "Once Per Turn (Army), Any Hero Phase",
+        "declare": "Pick a friendly KRULEBOYZ INFANTRY unit that has 10 or fewer models, is not in combat and has not been the target of a DIRTY TRICK ability this turn to be the target, then make a dirty trick roll.",
+        "effect": "Remove the target from the battlefield and set it up again wholly within 3\" of a terrain feature and more than 9\" from all enemy units.",
+        "unitLinks": []
+      },
+      {
+        "name": "NOISY RACKET",
+        "timing": "Once Per Turn (Army), Any Combat Phase",
+        "declare": "Pick an enemy unit in combat with any friendly KRULEBOYZ units to be the target, then make a dirty trick roll.",
+        "effect": "The target has STRIKE-LAST for the rest of the turn.",
+        "unitLinks": []
+      }
+    ],
+    "armiesOfRenown": [
+      {
+        "id": "big-waaagh",
+        "name": "Big Waaagh!",
+        "battleTraits": [
+          {
+            "name": "NOTORIOUS BOSSES",
+            "timing": "Once Per Battle, Deployment Phase",
+            "declare": "Pick up to 1 friendly non-UNIQUE BIG WAAAGH! IRONJAWZ HERO and up to 1 friendly non-UNIQUE BIG WAAAGH! KRULEBOYZ HERO that do not have a heroic trait to be the targets.",
+            "effect": "Give each target 1 heroic trait from the Big Waaagh! heroic traits.\nDesigner’s Note: These heroic traits are given to the targets during the deployment phase, not during army composition.",
+            "unitLinks": []
+          },
+          {
+            "name": "THE POWER OF THE WAAAGH!",
+            "timing": "Once Per Turn, Your Hero Phase",
+            "declare": "Pick up to 1 friendly BIG WAAAGH! IRONJAWZ unit and up to 1 friendly BIG WAAAGH! KRULEBOYZ unit to be the targets.",
+            "effect": "The targets have the POWER OF THE WAAAGH! keyword for the rest of the battle round.",
+            "unitLinks": []
+          },
+          {
+            "name": "POSSESSED BY THE POWER OF THE WAAAGH!",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "While a friendly unit has the POWER OF THE WAAAGH! keyword:\n• If that unit has the IRONJAWZ keyword, add 1 to run rolls and charge rolls for that unit.\n• If that unit has the KRULEBOYZ keyword, that unit’s attacks score critical hits on unmodified hit rolls of 5+.",
+            "unitLinks": []
+          },
+          {
+            "name": "RALLY THE WARCLANS",
+            "timing": "Once Per Turn, Your Movement Phase",
+            "declare": "If your general is on the battlefield, pick a friendly BIG WAAAGH! unit that started the battle with 3 or more models and that has been destroyed to be the target.",
+            "effect": "Set up a replacement unit with half the number of models from the target unit (rounding up) wholly within 12\" of your general and more than 9\" from all enemy units.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "id": "murkvast-menagerie",
+        "name": "Murkvast Menagerie",
+        "battleTraits": [
+          {
+            "name": "CRAWLY SWARM",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "Subtract 1 from hit rolls for combat attacks that target friendly MURKVAST MENAGERIE units while they are wholly within 12\" of a friendly MURKVAST MENAGERIE MONSTER that has not charged this turn.",
+            "unitLinks": []
+          },
+          {
+            "name": "PROPA GRISLY",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "declare": "Pick a friendly MURKVAST MENAGERIE MONSTER unit that has not used any RAMPAGE abilities this turn to use this ability. Then, pick an enemy unit in combat with it to be the target.",
+            "effect": "Roll a number of dice equal to the Health characteristic of that MURKVAST MENAGERIE MONSTER. For each 6+, inflict 1 mortal damage on the target.\nAfter this ability has been resolved, this unit cannot use any other RAMPAGE abilities for the rest of the turn.",
+            "unitLinks": []
+          },
+          {
+            "name": "AFTER IT, LADZ!",
+            "timing": "Once Per Turn (Army), Your Movement Phase",
+            "declare": "Pick a friendly MURKVAST MENAGERIE MONSTER unit that was not set up this turn to be the target.",
+            "effect": "The target can move up to 3\". It can move into combat. If it was in combat at the start of the move, it must end that move in combat.",
+            "unitLinks": []
+          }
+        ]
+      }
+    ],
+    "battleFormations": [
+      {
+        "name": "Kruleboyz Klaw",
+        "abilities": [
+          {
+            "name": "SWAMP SHROUD",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "Friendly KRULEBOYZ units that are wholly within 3\" of a terrain feature are not visible to enemy units that are more than 12\" away from them.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "name": "Light Finga",
+        "abilities": [
+          {
+            "name": "DED SNEAKY",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "You can use the ‘Sneaky Sneakin’’ DIRTY TRICK ability twice per turn instead of only once per turn.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "name": "Middul Finga",
+        "abilities": [
+          {
+            "name": "FAR-KILLA BOLTS",
+            "timing": "Your Shooting Phase",
+            "declare": "Pick up to 3 friendly Man-skewer Boltboyz or Beast-skewer Killbow units to be the targets.",
+            "effect": "For the rest of the turn, add 3\" to the Range characteristic of the targets’ ranged weapons.",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/kruleboyz/Man-skewer-Boltboyz",
+              "https://wahapedia.ru/aos4/factions/kruleboyz/Beast-skewer-Killbow"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Trophy Finga",
+        "abilities": [
+          {
+            "name": "MEANEST BEASTS",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "Companion weapons used by friendly KRULEBOYZ units have Crit (2 Hits).",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "name": "Swamphorde Bullies",
+        "abilities": [
+          {
+            "name": "GANGIN’ UP",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "declare": "Pick a friendly KRULEBOYZ unit to be the target. That unit must be in combat with an enemy unit that is in combat with another friendly KRULEBOYZ unit. Kragnos cannot be picked to be the target.",
+            "effect": "For the rest of the turn, add 1 to the Attacks characteristic of the target’s melee weapons.",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/kruleboyz/Kragnos-the-End-of-Empires-1"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Badmouthing Baiterz",
+        "abilities": [
+          {
+            "name": "KRULE MOCKERY",
+            "timing": "Once Per Turn (Army), Your Shooting Phase",
+            "declare": "Pick a friendly KRULEBOYZ unit to be the Insult Hurla, pick a visible enemy unit within 18\" of it to be the target, then make a dirty trick roll.",
+            "effect": "Until the start of your next turn, each time the target uses a MOVE ability and does not end that move closer to the Insult Hurla than it was at the start of that move, inflict D6 mortal damage on the target after that MOVE ability has been resolved.",
+            "unitLinks": []
+          }
+        ]
+      }
+    ],
+    "lores": {
+      "spell": [
+        {
+          "name": "Lore of the Swamp",
+          "kind": "spell",
+          "points": 0,
+          "entries": [
+            {
+              "name": "DA BLACK PIT",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly KRULEBOYZ WIZARD to cast this spell, pick a visible enemy unit within 18\" of them to be the target, then make a casting roll of 2D6.",
+              "effect": "Roll a dice for each model in the target unit. For each 6, inflict 1 mortal damage on the target.",
+              "value": "5",
+              "unitLinks": []
+            },
+            {
+              "name": "CHOKING MIST",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly KRULEBOYZ WIZARD to cast this spell, pick a visible enemy unit within 12\" of them to be the target, then make a casting roll of 2D6.",
+              "effect": "Subtract 1 from the Attacks characteristic of the target’s weapons until the start of your next turn.",
+              "value": "7",
+              "unitLinks": []
+            },
+            {
+              "name": "MORK’S KUNNIN’",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly KRULEBOYZ WIZARD to cast this spell, pick a visible friendly KRULEBOYZ unit wholly within 12\" of them, then make a casting roll of 2D6.",
+              "effect": "Until the start of your next turn, add 1 to save rolls for the target.",
+              "value": "6",
+              "unitLinks": []
+            }
+          ]
+        }
+      ],
+      "prayer": [],
+      "manifestation": [
+        {
+          "name": "Manifestations of Gorkamorka",
+          "kind": "manifestation",
+          "points": 0,
+          "entries": [
+            {
+              "name": "SUMMON FOOT OF GORK",
+              "timing": "Your Hero Phase",
+              "declare": "If there is not a friendly Foot of Gork on the battlefield, pick a friendly KRULEBOYZ WIZARD to cast this spell, then make a casting roll of 2D6.",
+              "effect": "Set up a Foot of Gork wholly within 12\" of the caster, visible to them and more than 9\" from all enemy units. A Foot of Gork has 2 parts that must be set up within 9\" of each other.",
+              "value": "7",
+              "unitLinks": [
+                "https://wahapedia.ru/aos4/factions/kruleboyz/Foot-of-Gork"
+              ],
+              "manifestation": {
+                "faction": "Kruleboyz",
+                "name": "Foot of Gork"
+              }
+            },
+            {
+              "name": "SUMMON GORK-ROARA",
+              "timing": "Your Hero Phase",
+              "declare": "If there is not a friendly Gork-Roara on the battlefield, pick a friendly KRULEBOYZ WIZARD to cast this spell, then make a casting roll of 2D6.",
+              "effect": "Set up a Gork-Roara wholly within 12\" of the caster, visible to them and more than 9\" from all enemy units.",
+              "value": "5",
+              "unitLinks": [
+                "https://wahapedia.ru/aos4/factions/kruleboyz/Gork-Roara"
+              ],
+              "manifestation": {
+                "faction": "Kruleboyz",
+                "name": "Gork-Roara"
+              }
+            },
+            {
+              "name": "SUMMON MORKSPIT MARSH",
+              "timing": "Your Hero Phase",
+              "declare": "If there is not a friendly Morkspit Marsh on the battlefield, pick a friendly KRULEBOYZ WIZARD to cast this spell, then make a casting roll of 2D6.",
+              "effect": "Set up a Morkspit Marsh wholly within 18\" of the caster and visible to them.",
+              "value": "5",
+              "unitLinks": [
+                "https://wahapedia.ru/aos4/factions/kruleboyz/Morkspit-Marsh"
+              ],
+              "manifestation": {
+                "faction": "Kruleboyz",
+                "name": "Morkspit Marsh"
+              }
+            }
+          ],
+          "scope": "faction"
+        }
+      ]
+    }
+  },
+  "entries": [
+    {
+      "faction": "Kruleboyz",
+      "name": "Beast-skewer Killbow",
+      "points": 130,
+      "size": 1,
+      "kind": "",
+      "category": "War Machine",
+      "profile": {
+        "move": "5\"",
+        "health": "5",
+        "save": "5+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/kruleboyz/Beast-skewer-Killbow",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "KRULEBOYZ",
+          "WAR MACHINE"
+        ],
+        "abilities": [
+          "Skewering Bolts",
+          "Pick ’Em Off"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Skewering Bolts",
+            "timing": "Once Per Turn (Army), Your Shooting Phase",
+            "effect": "Effect: For the rest of the turn, the Damage characteristic of this unit’s Beast-skewer Bolts is 6 if the target is a MONSTER.",
+            "kind": "Ability",
+            "type": "Shooting",
+            "phase": "Shooting Phase"
+          },
+          {
+            "name": "Pick ’Em Off",
+            "timing": "Your Shooting Phase",
+            "effect": "Effect: If this unit has not used a MOVE ability this turn and was not set up this turn, add 1 to hit rolls for this unit’s shooting attacks for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Shooting",
+            "phase": "Shooting Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Beast-skewer Bolts",
+            "24\"",
+            "2",
+            "4+",
+            "2+",
+            "2",
+            "D6",
+            "Anti-MONSTER (+1 Rend), Crit (Auto-wound)"
+          ]
+        ],
+        "melee": [
+          [
+            "Jaggedy Blades",
+            "3",
+            "4+",
+            "3+",
+            "-",
+            "1",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "The idea of an orruk that can shoot straight seems like a contradiction, but they do exist – those who operate the portable ballistas known as Beast-skewer Killbows can not only bullseye a target but also slay several smaller enemies with a single shot.",
+      "regimentOptions": "War Machine"
+    },
+    {
+      "faction": "Kruleboyz",
+      "name": "Breaka-boss on Mirebrute Troggoth",
+      "points": 180,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "5\"",
+        "health": "12",
+        "save": "4+",
+        "control": "5",
+        "url": "https://wahapedia.ru/aos4/factions/kruleboyz/Breaka-boss-on-Mirebrute-Troggoth",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "KRULEBOYZ",
+          "HERO",
+          "MONSTER"
+        ],
+        "abilities": [
+          "Tear Limb From Limb",
+          "Regeneration",
+          "Breaka-harness"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Tear Limb From Limb",
+            "timing": "Once Per Turn (Army), End of Any Turn",
+            "effect": "Declare: Pick an enemy INFANTRY unit within 1\" of this unit to be the target.\nEffect: Roll a dice. If the roll exceeds the target’s Health characteristic, 1 model in the target unit is slain.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Rampage",
+            "phase": "End of Turn"
+          },
+          {
+            "name": "Regeneration",
+            "timing": "Start of Any Turn",
+            "effect": "Effect: Heal (D3) this unit.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Breaka-harness",
+            "timing": "Any Combat Phase",
+            "effect": "Effect: Make a breaka-roll of D3.\n• Inflict an amount of mortal damage on this unit equal to the breaka-roll.\n• Double the breaka-roll and add that value to the Attacks characteristic of this unit’s Mirebrute’s Clubs for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Bident-goad",
+            "5",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            "Crit (Mortal)"
+          ],
+          [
+            "Mirebrute’s Clubs",
+            "4",
+            "4+",
+            "2+",
+            "2",
+            "3",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "The Breaka-boss towers over their minions, largely because they ride upon the shoulders of a massive Mirebrute Troggoth. By goading this dim-witted beast, they can drive it into a frenzy – though it is the enemy that feels its wrath.",
+      "regimentOptions": "0-1 %000011661Mob Wrangler%, Any %000005564Kruleboyz%",
+      "notes": "This HERO can join an eligible regiment as a Swamp Beast."
+    },
+    {
+      "faction": "Kruleboyz",
+      "name": "Da Kunnin’ Krew",
+      "points": 120,
+      "size": 5,
+      "kind": "Legends",
+      "category": "Infantry",
+      "profile": {
+        "move": "5\"",
+        "health": "3",
+        "save": "5+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/kruleboyz/Da-Kunnin-Krew",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "KRULEBOYZ",
+          "CHAMPION",
+          "INFANTRY",
+          "UNIQUE"
+        ],
+        "abilities": [
+          "Easy Meat"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Easy Meat",
+            "timing": "Once Per Turn (Army), Enemy Hero Phase",
+            "effect": "Declare: Pick an enemy unit in combat with this unit to be the target.\nEffect: Roll a dice. If the roll is at least double the target’s Health characteristic, 1 model in the target unit is slain.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Hero Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Krew Weapons",
+            "3",
+            "4+",
+            "3+",
+            "1",
+            "1",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "Legends Warscrolls",
+      "canReinforce": false,
+      "flavour": "Mannok da Kunnin’ is a member of the Beastbreakaz tribe; with his envenomed tri-prodda and cruel lash, he can reduce even the toughest opponents to spasming wrecks. Da Kunnin’ Krew is a ragtag collection of orruks, hobgrots and grots. It is led by the armoured Torka Tuffskul, an expert at corralling foes with his spiked mansnappa. He is backed up by two grots, Gikkit and Shank, who are kept in line by a malicious paymaster known as Krookgrin.",
+      "notes": "This unit cannot be reinforced.",
+      "description": "Each model in this unit is armed with Krew Weapons. The models in this unit are:\n• Mannok da Kunnin’ (champion)\n• Torka Tuffskul\n• Gikkit\n• Shank\n• Krookgrin"
+    },
+    {
+      "faction": "Kruleboyz",
+      "name": "Daggok’s Stab-ladz",
+      "points": 120,
+      "size": 4,
+      "kind": "Legends",
+      "category": "Infantry",
+      "profile": {
+        "move": "5\"",
+        "health": "3",
+        "save": "5+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/kruleboyz/Daggok-s-Stab-ladz",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "KRULEBOYZ",
+          "CHAMPION",
+          "INFANTRY",
+          "MUSICIAN (1/4)",
+          "UNIQUE"
+        ],
+        "abilities": [
+          "Roar of Kragnos"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Roar of Kragnos",
+            "timing": "Any Combat Phase",
+            "effect": "Declare: If this unit’s Hurrk da Howla is on the battlefield, pick an enemy unit in combat with this unit to be the target.\nEffect: Roll a dice. On a 3+, subtract 1 from the Attacks characteristic of the target’s melee weapons for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Wicked Weapons",
+            "3",
+            "4+",
+            "3+",
+            "1",
+            "1",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "Legends Warscrolls",
+      "canReinforce": false,
+      "flavour": "Daggok and his ladz are on a murderous mission to decapitate the realms’ brightest fighters. With each head Daggok takes, his kunnin’ increases – or so he believes – and he means to gather enough smarts to make him a Killaboss.",
+      "notes": "This unit cannot be reinforced.",
+      "description": "Each model in this unit is armed with Wicked Weapons. The models in this unit are:\n• Daggok Finksteala (champion)\n• Hurrk da Howla (musician)\n• Jagz da Bleeda\n• Grakk da Hook"
+    },
+    {
+      "faction": "Kruleboyz",
+      "name": "Foot of Gork",
+      "points": 0,
+      "size": 2,
+      "kind": "",
+      "category": "Manifestation",
+      "profile": {
+        "move": "-",
+        "health": "8",
+        "save": "4+",
+        "ward": "6+",
+        "banishment": "7",
+        "url": "https://wahapedia.ru/aos4/factions/kruleboyz/Foot-of-Gork",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "IRONJAWZ",
+          "KRULEBOYZ",
+          "ENDLESS SPELL",
+          "MANIFESTATION",
+          "WARD (6+ Destruction)"
+        ],
+        "abilities": [
+          "Multiple Parts",
+          "Wandering Destruction"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Multiple Parts",
+            "timing": "Passive",
+            "effect": "Effect: When a number of damage points equal to this MANIFESTATION’s Health characteristic are allocated to it, this MANIFESTATION is destroyed and all its parts are removed from play.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Wandering Destruction",
+            "timing": "Once Per Turn, Your Movement Phase",
+            "effect": "Declare: Pick a part of this MANIFESTATION to be the target.\nEffect: Remove the target from the battlefield and set it up again on the battlefield wholly within 9\" of the other part of this MANIFESTATION.\nThen, roll a D3 for each enemy unit within 3\" of the target. On a 2+:\n• Inflict an amount of mortal damage on that unit equal to the roll.\n• That unit has the STOMPED keyword until the start of your next turn.\n• Subtract 1 from the number of dice rolled when making charge rolls for STOMPED units, to a minimum of 1.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Movement Phase"
+          }
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "No spell is as beloved of orruk-kind as the Foot of Gork. It is brutality made manifest: a huge, warty green foot formed of riotous magic that descends from the sky and squashes anything beneath it flat. One foot follows the descent of the other, smashing colossal craters in the earth that glow with a weird Waaagh!-light. The fact that the Foot of Gork is almost impossible to direct once it has landed doesn’t much bother the orruks, for wherever it stomps, it’s bound to result in a good time."
+    },
+    {
+      "faction": "Kruleboyz",
+      "name": "Gobsprakk, the Mouth of Mork",
+      "points": 240,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "12\"",
+        "health": "14",
+        "save": "5+",
+        "control": "5",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/kruleboyz/Gobsprakk-the-Mouth-of-Mork",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "KRULEBOYZ",
+          "FLY",
+          "HERO",
+          "MONSTER",
+          "UNIQUE",
+          "WARD (6+)",
+          "WARMASTER",
+          "WIZARD (2)"
+        ],
+        "abilities": [
+          "Battle Damaged",
+          "Strangle Hex",
+          "Crush to Death",
+          "Mork Sez No!",
+          "Screamin’ Mandrakk"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of Killabeak’s Talons and Beak is 5.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Strangle Hex",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Pick a visible enemy unit within 18\" of this unit to be the target, then make a casting roll of 2D6.\nEffect: Roll a number of dice equal to the target’s Health characteristic, to a maximum of 10. For each 4+, inflict 1 mortal damage on the target.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Spell",
+            "phase": "Hero Phase",
+            "pointsType": "Spell",
+            "points": "6"
+          },
+          {
+            "name": "Crush to Death",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick an enemy unit in combat with this unit to be the target.\nEffect: Roll a dice. If the roll exceeds the target’s Health characteristic, 1 model in the target unit is slain.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Rampage",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Mork Sez No!",
+            "timing": "Passive",
+            "effect": "Effect: Each time this unit unbinds a spell, inflict D3 mortal damage on the caster. If the unbinding roll was 10+, inflict D6 mortal damage on the caster instead.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Screamin’ Mandrakk",
+            "timing": "Reaction: Opponent declared a SPELL ability",
+            "effect": "Effect: This unit uses the ‘Unbind’ ability but the unbinding roll is 3D6 instead of 2D6.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase",
+            "reaction": true
+          }
+        ],
+        "melee": [
+          [
+            "Killabeak’s Stinger",
+            "1",
+            "3+",
+            "2+",
+            "1",
+            "D6",
+            "Crit (Mortal), Companion"
+          ],
+          [
+            "Bogbark Staff",
+            "3",
+            "4+",
+            "3+",
+            "-",
+            "D3",
+            "Anti-WIZARD (+1 Rend), Crit (Mortal)"
+          ],
+          [
+            "Killabeak’s Talons and Beak",
+            "7",
+            "4+",
+            "2+",
+            "1",
+            "2",
+            "Anti-WIZARD (+1 Rend), Companion · See battle damage rules"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Most infamous of all Swampcalla Shamans is Gobsprakk. He is the greatest prophet of orruk-kind, the Mouth of Mork, and it is clear the favour of the kunnin’ god is upon him. Green energy crackles around Gobsprakk when his ire is raised, and even the biggest orruks have learnt to fear the narrowing of the shaman’s eyes, for someone’s sudden demise follows soon after. Those who cross him have a strange habit of choking to death as their lungs fill with swamp water, even if they are standing upon an arid plain. Should an enemy survive his perfidious spells, they are snatched up in the talons of his beloved Corpse-rippa Vulcha, Killabeak.",
+      "regimentOptions": "0-1 %000011661Mob Wrangler%, 0-1 %000013870Swamp Beast%, Any %000005564Kruleboyz%"
+    },
+    {
+      "faction": "Kruleboyz",
+      "name": "Gork-Roara",
+      "points": 0,
+      "size": 1,
+      "kind": "",
+      "category": "Manifestation",
+      "profile": {
+        "move": "6\"",
+        "health": "6",
+        "save": "5+",
+        "ward": "6+",
+        "banishment": "7",
+        "url": "https://wahapedia.ru/aos4/factions/kruleboyz/Gork-Roara",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "IRONJAWZ",
+          "KRULEBOYZ",
+          "ENDLESS SPELL",
+          "MANIFESTATION",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Bellowing Waaagh!-Cries"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Bellowing Waaagh!-Cries",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Pick a friendly IRONJAWZ or KRULEBOYZ WIZARD or PRIEST within 3\" of this MANIFESTATION to be the target.\nEffect: Pick either 1 or 2 to add to casting rolls or chanting rolls for the target until the start of your next turn. Then, roll a number of dice equal to the number picked. For each 1-2, allocate 1 damage point to the target (ward rolls cannot be made for those damage points). For each 5+, until the start of your next turn, add 1 to charge rolls fo",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Toxic Gas",
+            "5",
+            "2+",
+            "4+",
+            "1",
+            "D3",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "From the jaws of a Gork-Roara spews forth the destructive magic of the Waaagh!. Shamans who breathe in this glowing mist find their connection to that primal energy heightened – all for the measly risk of being driven entirely out of their minds. Gork-Roaras share the orruks’ exuberance in battle, howling bloodthirsty invective and jeering battle cries. Should they linger after the din of combat has faded, they will bellow and howl in indignation. Given that the same is true of especially warlike bosses, no orruk really seems to mind."
+    },
+    {
+      "faction": "Kruleboyz",
+      "name": "Gutrippaz",
+      "points": 150,
+      "size": 10,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "5\"",
+        "health": "2",
+        "save": "5+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/kruleboyz/Gutrippaz",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "KRULEBOYZ",
+          "CHAMPION",
+          "INFANTRY",
+          "MUSICIAN (1/10)",
+          "STANDARD BEARER (1/10)"
+        ],
+        "abilities": [
+          "Scare Taktikz"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Scare Taktikz",
+            "timing": "Any Combat Phase",
+            "effect": "Effect: Roll a dice. On a 3+, subtract 1 from hit rolls for attacks made by non-HERO units that target this unit for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Stikka or Hacka",
+            "2",
+            "4+",
+            "3+",
+            "-",
+            "1",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Gutrippaz form the slimy heart of the Kruleboyz. These mobs of sadistic greenskins are known for their vicious kunnin’ and the spiteful amusement they find in laying low the enemy with their wicked, poisoned weapons.",
+      "regimentOptions": "Infantry"
+    },
+    {
+      "faction": "Kruleboyz",
+      "name": "Hobgrot Slittaboss",
+      "points": 60,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "5\"",
+        "health": "5",
+        "save": "6+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/kruleboyz/Hobgrot-Slittaboss",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "KRULEBOYZ",
+          "HERO",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "Kompany Taktikz",
+          "Toxic Stash"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Kompany Taktikz",
+            "timing": "Reaction: You declared a %000010870FIGHT ability% for this unit",
+            "effect": "Effect: Pick a friendly Hobgrot Slittaz unit that has not used a FIGHT ability this turn and is within this unit’s combat range to be the target. The target can be picked to use a FIGHT ability immediately after the FIGHT ability used by this unit has been resolved. If it is picked to do so, add 1 to wound rolls for the target’s attacks for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase",
+            "reaction": true
+          },
+          {
+            "name": "Toxic Stash",
+            "timing": "Once Per Battle, Any Combat Phase",
+            "effect": "Declare: Pick an enemy INFANTRY HERO in combat with this unit to be the target.\nEffect: Roll 2D6. If the roll exceeds the target’s Health characteristic, it is automatically destroyed.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Toxin-smeared Slitta-sword",
+            "4",
+            "4+",
+            "4+",
+            "1",
+            "D3",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Slittabosses command the hobgrot kompanies that maraud across the realms in search of plunder. They are not only the most physically imposing and dark-hearted of their kind but also the canniest. Each is a master swindler and murderous in ripping loot from the battlefield, no matter who currently possesses it.",
+      "regimentOptions": "Any %000011262Infantry%, 0-1 %000005896Monster%, 0-1 %000015003War Machine%",
+      "notes": "This HERO can join an eligible regiment as a Mob Wrangler."
+    },
+    {
+      "faction": "Kruleboyz",
+      "name": "Hobgrot Slittaz",
+      "points": 70,
+      "size": 10,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "5\"",
+        "health": "1",
+        "save": "6+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/kruleboyz/Hobgrot-Slittaz",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "KRULEBOYZ",
+          "CHAMPION",
+          "INFANTRY",
+          "MUSICIAN (1/10)",
+          "STANDARD BEARER (1/10)"
+        ],
+        "abilities": [
+          "Scrap-bang"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Scrap-bang",
+            "timing": "End of Any Turn",
+            "effect": "Declare: Pick an enemy unit in combat with this unit to be the target.\nEffect: Roll a dice. On a 3+:\n• Inflict 1 mortal damage on the target.\n• This unit can immediately use the ‘Retreat’ ability as if it were your movement phase without any mortal damage being inflicted on it.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "End of Turn"
+          }
+        ],
+        "ranged": [
+          [
+            "Scrap-grenades",
+            "8\"",
+            "1",
+            "4+",
+            "3+",
+            "1",
+            "1",
+            "Shoot in Combat"
+          ]
+        ],
+        "melee": [
+          [
+            "Slitta-knives",
+            "2",
+            "4+",
+            "5+",
+            "-",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Mobs of Hobgrot Slittaz have often been witnessed accompanying the Kruleboyz orruks to war. These malicious little brutes delight in eviscerating the foe with their slitta-knives and employing explosive devices pilfered from their duardin paymasters to blow unlucky enemies apart.",
+      "regimentOptions": "Infantry"
+    },
+    {
+      "faction": "Kruleboyz",
+      "name": "Killaboss on Corpse-rippa Vulcha",
+      "points": 240,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "12\"",
+        "health": "14",
+        "save": "4+",
+        "control": "5",
+        "url": "https://wahapedia.ru/aos4/factions/kruleboyz/Killaboss-on-Corpse-rippa-Vulcha",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "KRULEBOYZ",
+          "FLY",
+          "HERO",
+          "MONSTER"
+        ],
+        "abilities": [
+          "Battle Damage",
+          "Vulcha Dive",
+          "Commanding View"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damage",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of its Vulcha’s Talons and Beak is 5.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Vulcha Dive",
+            "timing": "Once Per Turn (Army), Any Charge Phase",
+            "effect": "Declare: If this unit charged this phase, pick an enemy unit in combat with it to be the target.\nEffect: Roll a number of dice equal to the unmodified charge roll. For each 4+, inflict 1 mortal damage on the target.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Rampage",
+            "phase": "Charge Phase"
+          },
+          {
+            "name": "Commanding View",
+            "timing": "Reaction: You declared the ‘%000009837Redeploy%’ command for a friendly %000014827Gutrippaz% unit wholly within 12\" of this unit",
+            "effect": "Effect: If you roll a 1-3 when determining the distance that unit can move, you can use a value of 4 instead.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Movement Phase",
+            "reaction": true
+          }
+        ],
+        "melee": [
+          [
+            "Boss-stikka or Boss-hacka",
+            "5",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            "Crit (Mortal)"
+          ],
+          [
+            "Vulcha’s Stinger",
+            "1",
+            "3+",
+            "2+",
+            "1",
+            "D6",
+            "Crit (Mortal), Companion"
+          ],
+          [
+            "Vulcha’s Talons and Beak",
+            "7",
+            "4+",
+            "2+",
+            "1",
+            "2",
+            "Companion · See battle damage rules"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "The Killaboss rules through strength as well as cunning, for they have an expert eye for picking out an enemy’s weak spot and driving a blade into it. In battle, those who ride the immense raptor-like creatures known as Corpse-rippa Vulchas dive out of the mists without warning, striking from nowhere to gut the enemy force.",
+      "regimentOptions": "0-1 %000011661Mob Wrangler%, Any %000005564Kruleboyz%",
+      "notes": "This HERO can join an eligible regiment as a Swamp Beast."
+    },
+    {
+      "faction": "Kruleboyz",
+      "name": "Killaboss on Great Gnashtoof",
+      "points": 130,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "10\"",
+        "health": "10",
+        "save": "3+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/kruleboyz/Killaboss-on-Great-Gnashtoof",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "KRULEBOYZ",
+          "CAVALRY",
+          "HERO"
+        ],
+        "abilities": [
+          "All Part of Da Plan",
+          "That’s Ours, Ya Gitz!"
+        ],
+        "abilityDetails": [
+          {
+            "name": "All Part of Da Plan",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Pick another friendly KRULEBOYZ unit wholly within 9\" of this unit to be the target.\nEffect: Add 3 to the target’s control score until the start of your next turn.",
+            "kind": "Ability",
+            "type": "Control",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "That’s Ours, Ya Gitz!",
+            "timing": "Passive",
+            "effect": "Effect: While this unit is contesting an objective you do not control, add 1 to hit rolls for combat attacks made by friendly KRULEBOYZ units wholly within 12\" of this unit.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Great Gnashtoof’s Jaws",
+            "5",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            "Companion"
+          ],
+          [
+            "Boss-stikka",
+            "5",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Particularly storied Killabosses are able to procure all manner of terrifying, swamp-dwelling mounts from the Beast-breakaz to show off their status. Great Gnashtoofs are one such monster, huge and vicious hounds whose swiftness is matched only by their ferocity.",
+      "regimentOptions": "0-1 %000011661Mob Wrangler%, Any %000005564Kruleboyz%",
+      "notes": "This HERO can join an eligible regiment as a Swamp Beast."
+    },
+    {
+      "faction": "Kruleboyz",
+      "name": "Killaboss with Stab-grot",
+      "points": 70,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "5\"",
+        "health": "6",
+        "save": "4+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/kruleboyz/Killaboss-with-Stab-grot",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "KRULEBOYZ",
+          "HERO",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "Stab-grot",
+          "Unleash the Stab-grot!",
+          "Keep ’Em In Line"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Stab-grot",
+            "timing": "Passive",
+            "effect": "Effect: This unit’s Stab-grot is a token. If this unit’s Stab-grot has been removed, it can no longer attack with its Stab-grot’s Shiv and it cannot use the ‘Unleash the Stab-grot!’ ability.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Unleash the Stab-grot!",
+            "timing": "Once Per Battle, Any Combat Phase",
+            "effect": "Effect: Pick 1 of the following effects:\n• Pick an enemy unit in combat with this unit to be the target. Inflict D3 mortal damage on the target.\n• This unit has WARD (5+) for the rest of the turn.\nAfter resolving either effect, remove this unit’s Stab-grot from the battlefield.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Keep ’Em In Line",
+            "timing": "Reaction: You declared the ‘%000009661All-out Attack%’ command for a friendly %000011275KRULEBOYZ INFANTRY% unit",
+            "effect": "Effect: If this unit is wholly within 12\" of the unit using the ‘All-out Attack’ command, add 1 to wound rolls for combat attacks made by that unit for the rest of the phase.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase",
+            "reaction": true
+          }
+        ],
+        "melee": [
+          [
+            "Stab-grot’s Shiv",
+            "2",
+            "4+",
+            "5+",
+            "-",
+            "1",
+            "Crit (Mortal), Companion"
+          ],
+          [
+            "Boss-hacka",
+            "5",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Killabosses are the warlords of the Kruleboyz. Each has wrested their position from rivals by being not only a potent warrior but also possessed of true Morkish kunnin’, willing to use anyone or anything to garner an advantage.",
+      "regimentOptions": "Any %000005564Kruleboyz%",
+      "notes": "This HERO can join an eligible regiment as a Mob Wrangler."
+    },
+    {
+      "faction": "Kruleboyz",
+      "name": "Kragnos, the End of Empires",
+      "points": 580,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "10\"",
+        "health": "18",
+        "save": "4+",
+        "control": "15",
+        "ward": "5+",
+        "url": "https://wahapedia.ru/aos4/factions/kruleboyz/Kragnos-the-End-of-Empires-1",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "IRONJAWZ",
+          "KRULEBOYZ",
+          "HERO",
+          "MONSTER",
+          "UNIQUE",
+          "WARD (5+)",
+          "WARMASTER"
+        ],
+        "abilities": [
+          "Battle Damaged",
+          "Avatar of Destruction",
+          "The Shield Inviolate",
+          "Rampaging Destruction",
+          "The End of Empires"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of The Dread Mace is 4 and this unit has a Control characteristic of 10.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Avatar of Destruction",
+            "timing": "Passive",
+            "effect": "Effect: If this unit would be automatically destroyed, it is not automatically destroyed. Instead, allocate 6 damage points to it (ward rolls cannot be made for those damage points).",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          },
+          {
+            "name": "The Shield Inviolate",
+            "timing": "Reaction: Opponent declared a SPELL ability",
+            "effect": "Effect: If this unit was picked to be the target of that spell, roll a dice. On a 3+, ignore the effect of that spell on this unit. This unit can use this ability more than once per phase but only once per SPELL ability.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Hero Phase",
+            "reaction": true
+          },
+          {
+            "name": "Rampaging Destruction",
+            "timing": "Once Per Turn (Army), Any Charge Phase",
+            "effect": "Effect: If this unit charged this phase, pick 1 of the following effects:\n• Roll a dice for each enemy unit within 1\" of this unit. On a 2+, inflict an amount of mortal damage on that unit equal to the roll.\n• Pick an enemy MONSTER in combat with this unit and roll 2D6. On a 7, this ability has no effect. Otherwise, inflict an amount of mortal damage on that unit equal to the results on the dice used for the 2D6 roll multiplied together. For example, a 2D6 roll of 2 and 6 would inflict 12 mortal damage (2 × 6).",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Rampage",
+            "phase": "Charge Phase"
+          },
+          {
+            "name": "The End of Empires",
+            "timing": "Your Charge Phase",
+            "effect": "Effect: For the rest of the turn, add 1 to the number of dice rolled when making charge rolls for friendly DESTRUCTION units while they are wholly within 12\" of this unit, to a maximum of 3.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Charge Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Tuskbreaker",
+            "3",
+            "4+",
+            "2+",
+            "2",
+            "D3",
+            "Crit (2 Hits)"
+          ],
+          [
+            "Hooves of Wrack and Ruin",
+            "6",
+            "3+",
+            "2+",
+            "1",
+            "2",
+            ""
+          ],
+          [
+            "The Dread Mace",
+            "6",
+            "3+",
+            "2+",
+            "3",
+            "4",
+            "See battle damage rules"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "One of the most destructive races to have ever lived, the Drogrukh were centauroid warriors who built a great nation in the Realm of Beasts. From their number rose a champion so powerful that he ascended to godhood: Kragnos, the End of Empires. Having led his people in warfare against a draconic empire that left the Drogrukh all but extinct, Kragnos was sealed away for the protection of the realms – only to be freed centuries later.",
+      "regimentOptions": "0-1 %000011661Mob Wrangler%, 0-1 %000013870Swamp Beast%, Any %000005564Kruleboyz%"
+    },
+    {
+      "faction": "Kruleboyz",
+      "name": "Man-skewer Boltboyz",
+      "points": 100,
+      "size": 3,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "5\"",
+        "health": "2",
+        "save": "5+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/kruleboyz/Man-skewer-Boltboyz",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "KRULEBOYZ",
+          "CHAMPION",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "Man-skewer Crossbows",
+          "Pick ’Em Off"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Man-skewer Crossbows",
+            "timing": "Passive",
+            "effect": "Effect: Each time this unit uses a SHOOT ability, pick either the Hasty Shot or Aimed Shot weapon characteristics for all the attacks it makes with its Man-skewer Crossbows.",
+            "kind": "Ability",
+            "type": "Shooting",
+            "phase": "Shooting Phase"
+          },
+          {
+            "name": "Pick ’Em Off",
+            "timing": "Your Shooting Phase",
+            "effect": "Effect: If this unit has not used a MOVE ability this turn and was not set up this turn, add 1 to hit rolls for this unit’s shooting attacks for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Shooting",
+            "phase": "Shooting Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Man-skewer Crossbow: Aimed Shot",
+            "18\"",
+            "1",
+            "3+",
+            "3+",
+            "2",
+            "2",
+            "Crit (Auto-wound)"
+          ],
+          [
+            "Man-skewer Crossbow: Hasty Shot",
+            "12\"",
+            "2",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            "Crit (Auto-wound)"
+          ]
+        ],
+        "melee": [
+          [
+            "Jaggedy Blades",
+            "1",
+            "4+",
+            "3+",
+            "-",
+            "1",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "The fiendish crossbows wielded by the Man-skewer Boltboyz are powerful enough to take down a charging grunta with one shot, while the poisons coating their projectiles induce spasming deaths that are highly entertaining to these cruel orruks.",
+      "regimentOptions": "Infantry"
+    },
+    {
+      "faction": "Kruleboyz",
+      "name": "Marshcrawla Sloggoth",
+      "points": 130,
+      "size": 1,
+      "kind": "",
+      "category": "War Machine",
+      "profile": {
+        "move": "6\"",
+        "health": "10",
+        "save": "4+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/kruleboyz/Marshcrawla-Sloggoth",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "KRULEBOYZ",
+          "WAR MACHINE"
+        ],
+        "abilities": [
+          "On Da March",
+          "Regeneration"
+        ],
+        "abilityDetails": [
+          {
+            "name": "On Da March",
+            "timing": "Passive",
+            "effect": "Effect: While they are wholly within 12\" of this unit, friendly KRULEBOYZ INFANTRY units can use CHARGE abilities even if they used a RUN ability in the same turn.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Charge Phase"
+          },
+          {
+            "name": "Regeneration",
+            "timing": "Start of Any Turn",
+            "effect": "Effect: Heal (D3) this unit.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Start of Turn"
+          }
+        ],
+        "melee": [
+          [
+            "Sloggoth’s Claws",
+            "6",
+            "4+",
+            "2+",
+            "1",
+            "2",
+            "Companion"
+          ],
+          [
+            "Nets and Snatcha‑stikks",
+            "4",
+            "4+",
+            "5+",
+            "-",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Creeping along on all fours come the Marshcrawla Sloggoths, sniffing the air to home in on fresh prey. On their backs are howdahs full of sneaky grots, banging war-drums and cackling as their vile beasts catch and squish the foe.",
+      "regimentOptions": "War Machine"
+    },
+    {
+      "faction": "Kruleboyz",
+      "name": "Monsta-killaz",
+      "points": 140,
+      "size": 7,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "5\"",
+        "health": "2",
+        "save": "5+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/kruleboyz/Monsta-killaz",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "KRULEBOYZ",
+          "CHAMPION (1/7)",
+          "INFANTRY",
+          "MUSICIAN (1/7)"
+        ],
+        "abilities": [
+          "Klutcha-grot",
+          "Bait and Trap",
+          "A Tough Grot To Swallow"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Klutcha-grot",
+            "timing": "Passive",
+            "effect": "Effect: This unit’s Klutcha-grot is a token. If it is removed from the battlefield, this unit cannot use the ‘A Tough Grot to Swallow’ ability.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Bait and Trap",
+            "timing": "Any Combat Phase",
+            "effect": "Declare: Pick an enemy MONSTER in combat with this unit to be the target.\nEffect: Roll a dice. Add 1 to the roll if the target is damaged. On a 3+, the target has STRIKE-LAST for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "A Tough Grot To Swallow",
+            "timing": "Once Per Turn, Reaction: Opponent declared a RAMPAGE ability for an enemy MONSTER within 6\" of this unit",
+            "effect": "Effect: Roll a dice. On a 2+, that RAMPAGE ability has no effect. On a 1, remove this unit’s Klutcha-grot from the battlefield.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction",
+            "reaction": true
+          }
+        ],
+        "melee": [
+          [
+            "Monsta-killa Weapons",
+            "3",
+            "4+",
+            "3+",
+            "1",
+            "1",
+            "Crit (Mortal), Anti-MONSTER (+1 Rend)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Masters of the sudden ambush and the devious ruse, the Kruleboyz known as Monsta-killaz are sadistic, underhanded beast-hunters who eagerly employ every kunnin’ trick in the book to capture their quarry and defeat those who would stand in their way.",
+      "regimentOptions": "Infantry"
+    },
+    {
+      "faction": "Kruleboyz",
+      "name": "Morkspit Marsh",
+      "points": 0,
+      "size": 1,
+      "kind": "",
+      "category": "Manifestation",
+      "profile": {
+        "move": "-",
+        "health": "8",
+        "save": "5+",
+        "ward": "6+",
+        "banishment": "7",
+        "url": "https://wahapedia.ru/aos4/factions/kruleboyz/Morkspit-Marsh",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "IRONJAWZ",
+          "KRULEBOYZ",
+          "ENDLESS SPELL",
+          "MANIFESTATION",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Tricksy Footing",
+          "Grasping Gunge"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Tricksy Footing",
+            "timing": "Passive",
+            "effect": "Effect: Subtract 3 from the control scores of enemy units while they are within 6\" of this MANIFESTATION.",
+            "kind": "Ability",
+            "type": "Control",
+            "phase": "End of Turn"
+          },
+          {
+            "name": "Grasping Gunge",
+            "timing": "Passive",
+            "effect": "Effect: Enemy units cannot use RUN abilities while they are within 6\" of this MANIFESTATION.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Movement Phase"
+          }
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Morkspit Marshes are amongst the most grisly examples of orruk kunnin’. These squelchy spells transform hard earth into bogland formed of brackish waters, stinking tar, or any other disgusting substance they can think of. From them emerge tendrils of glowing protoplasm that grasp an enemies’ limbs and drag them towards their doom. With their victims otherwise occupied, the orruks can easily move in behind them and bash them across the back of the head."
+    },
+    {
+      "faction": "Kruleboyz",
+      "name": "Murknob with Belcha-banna",
+      "points": 80,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "5\"",
+        "health": "6",
+        "save": "4+",
+        "control": "5",
+        "url": "https://wahapedia.ru/aos4/factions/kruleboyz/Murknob-with-Belcha-banna",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "KRULEBOYZ",
+          "HERO",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "Power of Kragnos",
+          "Breath of the Mire-drakes"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Power of Kragnos",
+            "timing": "Passive",
+            "effect": "Effect: Friendly KRULEBOYZ units have WARD (6+) while they are wholly within 12\" of this unit.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          },
+          {
+            "name": "Breath of the Mire-drakes",
+            "timing": "Any Combat Phase",
+            "effect": "Declare: Pick each enemy unit in combat with this unit to be the targets.\nEffect: Roll a dice for each target. On a 1, this ability has no effect. On a 2-5, inflict 1 mortal damage on the target. On a 6, inflict D3 mortal damage on the target.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Murknob Cleaver",
+            "4",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Murknobs are champion warriors amongst the Kruleboyz, and they revel in taking the heads of their adversaries – honestly or otherwise. They alone are granted the honour of carrying the Belcha-bannas into battle, each a foul relic with all manner of strange powers.",
+      "regimentOptions": "Any %000005564Kruleboyz%",
+      "notes": "This HERO can join an eligible regiment as a Mob Wrangler."
+    },
+    {
+      "faction": "Kruleboyz",
+      "name": "Scourge of Aqshy Killaboss on Great Gnashtoof",
+      "points": 150,
+      "size": 1,
+      "kind": "Scourge of Aqshy",
+      "category": "Hero",
+      "profile": {
+        "move": "10\"",
+        "health": "10",
+        "save": "3+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/kruleboyz/Scourge-of-Aqshy-Killaboss-on-Great-Gnashtoof",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "KRULEBOYZ",
+          "CAVALRY",
+          "HERO"
+        ],
+        "abilities": [
+          "PROWLING THE FLANKS",
+          "DR AG ’EM OUT"
+        ],
+        "abilityDetails": [
+          {
+            "name": "PROWLING THE FLANKS",
+            "timing": "Once Per Turn (Army), Your Movement Phase",
+            "effect": "Effect: If this unit is wholly within 6\" of the battlefield edge, remove it from the battlefield and set it up again wholly within 6\" of the battlefield edge and more than 9\" from all enemy units.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Movement Phase"
+          },
+          {
+            "name": "DR AG ’EM OUT",
+            "timing": "Once Per Turn (Army), Your Combat Phase",
+            "effect": "Declare: Pick an enemy INFANTRY HERO in combat with this unit to be the target.\nEffect: Roll 2D6. This unit can move a distance in inches up to the value of the roll. Then, if possible, your opponent must remove the target from the battlefield and set it up again within 1\" of this unit.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Boss-skewa",
+            "5",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            "Anti-HERO (+1 Rend), Crit (Mortal)"
+          ],
+          [
+            "Great Gnashtoof’s Jaws",
+            "5",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "Scourge of Aqshy - Kruleboyz",
+      "canReinforce": false,
+      "flavour": "Killabosses bound for Aqshy often ride Great Gnashtoofs; already foul tempered and hot headed, these beasts are quick to adjust to the battlegrounds of the Bright Realm, ready to snatch up unsuspecting prey in their powerful jaws.",
+      "regimentOptions": "0-1 %000011661Mob Wrangler%, Any %000005564Kruleboyz%",
+      "notes": "This HERO can join an eligible regiment as a Swamp Beast.\nThis unit is legal for Matched Play for battles fought using the General’s Handbook 2026-27 battlepack."
+    },
+    {
+      "faction": "Kruleboyz",
+      "name": "Scourge of Aqshy Killaboss with Stab-grot",
+      "points": 130,
+      "size": 1,
+      "kind": "Scourge of Aqshy",
+      "category": "Hero",
+      "profile": {
+        "move": "5\"",
+        "health": "6",
+        "save": "4+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/kruleboyz/Scourge-of-Aqshy-Killaboss-with-Stab-grot",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "KRULEBOYZ",
+          "HERO",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "Just Keep Stabbin’",
+          "Jump ’em, Ladz, or Else!"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Just Keep Stabbin’",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick an enemy unit in combat with this unit to be the target.\nEffect: Roll a number of dice equal to your fury level. You can spend 1 rage dice. If you do:\n• Add 1 to each roll.\n• If your opponent’s fury level is lower than yours, they must increase their fury level by 1, to a maximum of 7.\nThen, for each 3+, inflict 1 mortal damage on the target.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Jump ’em, Ladz, or Else!",
+            "timing": "Once Per Turn (Army), Reaction: You declared a %000010870Fight ability% for this unit",
+            "effect": "Effect: Pick a friendly Gutrippaz or Hobgrot Slittaz unit that has not used a FIGHT ability this turn and is within this unit’s combat range to be the target.\nThe target can be picked to use a FIGHT ability immediately after the FIGHT ability used by this unit has been resolved. If it is picked to do so, add 1 to the Attacks characteristic of the target’s melee weapons for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase",
+            "reaction": true
+          }
+        ],
+        "melee": [
+          [
+            "Boss-hacka",
+            "5",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "Scourge of Aqshy - Kruleboyz",
+      "canReinforce": false,
+      "flavour": "The warlords of the Kruleboyz, Killabosses lead their ladz across the Great Parch, keeping them in line using violence and intimidation. Some Killabosses are accompanied by vicious Stab‐grots that they punt at nearby foes to slash at ankles and slice tendons.",
+      "regimentOptions": "0-1 %000011661Mob Wrangler%, Any %000005564Kruleboyz%",
+      "notes": "This Hero can join an eligible regiment as a Mob Wrangler.\nThis unit is legal for Matched Play for battles fought using the General’s Handbook 2026-27 battlepack."
+    },
+    {
+      "faction": "Kruleboyz",
+      "name": "Scourge of Ghyran Killaboss on Great Gnashtoof",
+      "points": 150,
+      "size": 1,
+      "kind": "Scourge of Ghyran",
+      "category": "Hero",
+      "profile": {
+        "move": "10\"",
+        "health": "10",
+        "save": "3+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/kruleboyz/Scourge-of-Ghyran-Killaboss-on-Great-Gnashtoof",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "KRULEBOYZ",
+          "CAVALRY",
+          "HERO"
+        ],
+        "abilities": [
+          "Prowling the Flanks",
+          "Drag ’Em Out"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Prowling the Flanks",
+            "timing": "Once Per Turn (Army), Your Movement Phase",
+            "effect": "Effect: If this unit is wholly within 6\" of the battlefield edge, remove this unit from the battlefield and set it up again wholly within 6\" of the battlefield edge and more than 9\" from all enemy units.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Movement Phase"
+          },
+          {
+            "name": "Drag ’Em Out",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick an enemy INFANTRY HERO in combat with this unit to be the target.\nEffect: Roll 2D6. This unit can move a distance in inches up to the value of the roll. Then, if possible, your opponent must remove the target from the battlefield and set it up again within 1\" of this unit.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Boss-skewa",
+            "5",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            "Anti-HERO (+1 Rend), Crit (Mortal)"
+          ],
+          [
+            "Great Gnashtoof’s Jaws",
+            "5",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "Scourge of Ghyran - Kruleboyz",
+      "canReinforce": false,
+      "flavour": "Mounted atop a tireless and tremendously foul-tempered Gnashtoof, a Killaboss can more easily run down and impale his victims. These beasts are perfectly suited for the deadly terrain of Ghyran’s battlegrounds, prowling amidst the undergrowth and searching for unworthy prey to drag down and disembowel.",
+      "regimentOptions": "0-1 %000011661Mob Wrangler%, Any %000005564KRULEBOYZ%",
+      "notes": "This HERO can join an eligible regiment as a Swamp Beast.\nThis unit is legal for Matched Play for battles fought using the General’s Handbook 2025-26 battlepack."
+    },
+    {
+      "faction": "Kruleboyz",
+      "name": "Scourge of Ghyran Swampboss Skumdrekk",
+      "points": 210,
+      "size": 1,
+      "kind": "Scourge of Ghyran",
+      "category": "Hero",
+      "profile": {
+        "move": "8\"",
+        "health": "15",
+        "save": "4+",
+        "control": "5",
+        "url": "https://wahapedia.ru/aos4/factions/kruleboyz/Scourge-of-Ghyran-Swampboss-Skumdrekk",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "KRULEBOYZ",
+          "HERO",
+          "MONSTER",
+          "UNIQUE"
+        ],
+        "abilities": [
+          "Battle Damaged",
+          "Rigged Odds",
+          "Thrashing Tail"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of Sloppklaw’s Bite and Talons is 4.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Rigged Odds",
+            "timing": "Passive",
+            "effect": "Effect: The first time you fail a dirty trick roll each turn, give this unit 1 betting chip.\nEach time you make a dirty trick roll for an ability that targets a unit wholly within 12\" of this unit, you can spend any number of betting chips after seeing the result of the roll. For each betting chip you spend, add 1 to that dirty trick roll.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Thrashing Tail",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick an enemy unit in combat with this unit to be the target.\nEffect: Roll a dice. If the roll is less than or equal to the number of models in the target unit, for the rest of the turn, each time this unit uses an ATTACK ability, if all of the attacks target that enemy unit, those attacks score critical hits on unmodified hit rolls of 5+. This ability also affects Companion weapons.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Rampage",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Snatcha-stikk",
+            "5",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            "Crit (Mortal)"
+          ],
+          [
+            "Sloppklaw’s Bite and Talons",
+            "6",
+            "4+",
+            "2+",
+            "1",
+            "3",
+            "Crit (Mortal), Companion · See battle damage rules"
+          ]
+        ]
+      },
+      "source": "Scourge of Ghyran - Kruleboyz",
+      "canReinforce": false,
+      "flavour": "Always eager to take advantage of death and mayhem, the sadistic Swampboss Skumdrekk travels to Ghyran in search of beasts and prisoners for his monster pits. Mounted atop his repulsive mount Sloppklaw, Skumdrekk doles out pain wherever he roams, gambling with the lives of his minions and enemies alike.",
+      "regimentOptions": "0-1 %000011661Mob Wrangler%, Any %000005564KRULEBOYZ%, 0-1 %000013870Swamp Beast%",
+      "notes": "This unit is legal for Matched Play for battles fought using the General’s Handbook 2025-26 battlepack."
+    },
+    {
+      "faction": "Kruleboyz",
+      "name": "Snatchaboss on Sludgeraker Beast",
+      "points": 180,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "8\"",
+        "health": "14",
+        "save": "4+",
+        "control": "5",
+        "url": "https://wahapedia.ru/aos4/factions/kruleboyz/Snatchaboss-on-Sludgeraker-Beast",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "KRULEBOYZ",
+          "HERO",
+          "MONSTER"
+        ],
+        "abilities": [
+          "Battle Damaged",
+          "Sludgeraker Venom",
+          "Festering Wounds"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of its Sludgeraker’s Talons is 4.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Sludgeraker Venom",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Pick a friendly KRULEBOYZ unit wholly within 12\" of this unit to be the target.\nEffect: That unit has the SLUDGERAKER VENOM keyword for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Festering Wounds",
+            "timing": "Once Per Turn (Army), End of Any Turn",
+            "effect": "Declare: Pick up to 3 enemy units that had any damage points allocated to them this turn by attacks made by this unit or a friendly unit with the SLUDGERAKER VENOM keyword to be the targets.\nEffect: Roll a D3 for each target. On a 2+:\n• Inflict an amount of mortal damage on the target equal to the roll.\n• Subtract 1 from wound rolls for the target’s attacks until the end of the next turn.",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Rampage",
+            "phase": "End of Turn"
+          }
+        ],
+        "melee": [
+          [
+            "Sludgeraker’s Bite",
+            "1",
+            "3+",
+            "2+",
+            "1",
+            "D3+3",
+            "Companion"
+          ],
+          [
+            "Grappling Hook",
+            "3",
+            "3+",
+            "3+",
+            "1",
+            "3",
+            "Crit (Mortal)"
+          ],
+          [
+            "Sludgeraker’s Talons",
+            "6",
+            "4+",
+            "2+",
+            "1",
+            "2",
+            "Companion · See battle damage rules"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Experts at capturing prisoners in the mayhem of battle, Snatchabosses regard war as an opportunity to scoop up some prize captives. The Sludgeraker Beasts that bear them into the fighting smell so appalling their scent alone can unman a prospective target.",
+      "regimentOptions": "0-1 %000011661Mob Wrangler%, Any %000005564Kruleboyz%",
+      "notes": "This HERO can join an eligible regiment as a Swamp Beast."
+    },
+    {
+      "faction": "Kruleboyz",
+      "name": "Swampboss Skumdrekk",
+      "points": 150,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "8\"",
+        "health": "15",
+        "save": "4+",
+        "control": "5",
+        "url": "https://wahapedia.ru/aos4/factions/kruleboyz/Swampboss-Skumdrekk",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "KRULEBOYZ",
+          "HERO",
+          "MONSTER",
+          "UNIQUE"
+        ],
+        "abilities": [
+          "Battle Damaged",
+          "Bet-master",
+          "Kountin’ Krew",
+          "Aggravate Wounds"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of Sloppklaw’s Talons is 4.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Bet-master",
+            "timing": "Deployment Phase",
+            "effect": "Declare: Pick an enemy unit on the battlefield to be the bet.\nEffect: Add 1 to wound rolls for attacks made by this unit and friendly Hobgrot Slittaz units that target the bet.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Kountin’ Krew",
+            "timing": "Deployment Phase",
+            "effect": "Declare: Pick a friendly Hobgrot Slittaz unit within this unit’s combat range to be the target.\nEffect: For the rest of the battle, the target’s Slitta-knives have Crit (Mortal) while they are wholly within 12\" of this unit.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Aggravate Wounds",
+            "timing": "Once Per Turn (Army), End of Any Turn",
+            "effect": "Declare: Pick an enemy MONSTER in combat with this unit to be the target.\nEffect: Roll a number of dice equal to the number of damage points the target has. For each 5+, inflict 1 mortal damage on the target.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Rampage",
+            "phase": "End of Turn"
+          }
+        ],
+        "melee": [
+          [
+            "Sloppklaw’s Talons",
+            "6",
+            "4+",
+            "2+",
+            "1",
+            "2",
+            "Companion · See battle damage rules"
+          ],
+          [
+            "Snatcha-stikk",
+            "5",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            "Crit (Mortal)"
+          ],
+          [
+            "Sloppklaw’s Bite",
+            "1",
+            "4+",
+            "2+",
+            "1",
+            "D3+3",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Swampboss Skumdrekk is something of a legend amongst the Gitsnatchaz, for not only does he excel in the shifting tides of battle, he makes a fortune out of bidding on the outcome. He and his hobgrot Kountin’ Krew are the bane of enemies and treasuries alike.",
+      "regimentOptions": "0-1 %000011661Mob Wrangler%, 0-1 %000013870Swamp Beast%, Any %000005564Kruleboyz%"
+    },
+    {
+      "faction": "Kruleboyz",
+      "name": "Swampcalla Shaman with Pot-grot",
+      "points": 120,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "5\"",
+        "health": "6",
+        "save": "6+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/kruleboyz/Swampcalla-Shaman-with-Pot-grot",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "KRULEBOYZ",
+          "HERO",
+          "INFANTRY",
+          "WIZARD (1)"
+        ],
+        "abilities": [
+          "Foul Elixirs",
+          "Pot-grot"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Foul Elixirs",
+            "timing": "Once Per Turn (Army), Your Hero Phase",
+            "effect": "Declare: Pick a friendly KRULEBOYZ INFANTRY unit wholly within 12\" of this unit to be the target.\nEffect: Roll a dice. On a 2+, add 1 to save rolls for the target for the rest of the turn. On a 1, inflict D3 mortal damage on the target.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Pot-grot",
+            "timing": "Passive",
+            "effect": "Effect: This unit’s Pot-grot is a token. Add 1 to casting rolls for this unit while its Pot-grot is on the battlefield. If you make an unmodified casting roll of 4 or less for this unit, remove its Pot-grot from the battlefield.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Bogbark Staff",
+            "3",
+            "4+",
+            "3+",
+            "-",
+            "D3",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Even for Kruleboyz, Swampcalla Shamans are foul creatures. These spell-flingers have an innate connection to the mires they inhabit, which they channel into noisome spells of debilitation while brewing up vile elixirs to aid their green- skinned kin.",
+      "regimentOptions": "Any %000005564Kruleboyz%",
+      "notes": "This HERO can join an eligible regiment as a Mob Wrangler."
+    }
+  ]
+}

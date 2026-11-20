@@ -1,0 +1,3263 @@
+{
+  "edition": "Age of Sigmar 4",
+  "lastUpdate": "2026-10-22 18:12:05",
+  "faction": {
+    "id": "MoN",
+    "name": "Maggotkin of Nurgle",
+    "slug": "maggotkin-of-nurgle",
+    "url": "https://wahapedia.ru/aos4/factions/maggotkin-of-nurgle",
+    "count": 40
+  },
+  "rules": {
+    "battleTraits": [
+      {
+        "name": "BLIGHTED REGROWTH",
+        "timing": "Your Hero Phase",
+        "declare": "You can use this ability if there are no friendly Feculent Gnarlmaws on the battlefield.",
+        "effect": "Set up a Feculent Gnarlmaw on the battlefield wholly within 12\" of an objective you control and more than 3\" from all enemy units, objectives and other terrain features.",
+        "unitLinks": [
+          "https://wahapedia.ru/aos4/factions/maggotkin-of-nurgle/Feculent-Gnarlmaw"
+        ]
+      },
+      {
+        "name": "BLESSED BY THE PLAGUEFATHER",
+        "timing": "Once Per Turn (Army), End of Any Turn",
+        "declare": "",
+        "effect": "Pick 1 of the following effects:\nInfect: Pick an enemy unit within 7\" of any friendly MAGGOTKIN OF NURGLE units to be the target. You cannot pick a MANIFESTATION or terrain feature.\n• If the target is in combat with any friendly MAGGOTKIN OF NURGLE units, it has the DISEASED keyword.\n• If the target is not in combat with any friendly MAGGOTKIN OF NURGLE units, roll a dice. On a 4+, the target has the DISEASED keyword.\nSpread: Pick a DISEASED enemy unit to be the target. Each other enemy unit within the target’s combat range, excluding MANIFESTATIONS and terrain features, has the DISEASED keyword.\nMutate: If all enemy units on the battlefield, excluding MANIFESTATIONS and terrain features, have the DISEASED keyword, inflict 1 mortal damage on each of them.",
+        "unitLinks": []
+      },
+      {
+        "name": "WRACKED WITH DISEASE",
+        "timing": "Once Per Turn (Army), End of Any Turn",
+        "declare": "Pick each DISEASED enemy unit to be the targets.",
+        "effect": "Inflict D3 mortal damage on each target.",
+        "unitLinks": []
+      },
+      {
+        "name": "CEASELESS INFECTORS",
+        "timing": "Once Per Turn (Army), End of Any Turn",
+        "declare": "Pick an enemy unit that was in combat with a friendly ROTBRINGERS unit that was destroyed this turn to be the target. You cannot pick a MANIFESTATION or terrain feature.",
+        "effect": "Roll a dice. On a 3+, the target has the DISEASED keyword.",
+        "unitLinks": []
+      },
+      {
+        "name": "BURST PUSTULES",
+        "timing": "Passive",
+        "declare": "",
+        "effect": "Each time a DISEASED enemy unit is destroyed, before the last model in the unit is removed from play, roll a dice. On a 3+, pick another enemy unit within 9\" of that model to be the target. You cannot pick a MANIFESTATION or terrain feature. The target has the DISEASED keyword.",
+        "unitLinks": []
+      },
+      {
+        "name": "DESPERATE REMEDIES",
+        "timing": "Passive",
+        "declare": "",
+        "effect": "If an ability would heal or return slain models to a DISEASED enemy unit, that ability does not heal or return any slain models to it. Instead, it no longer has the DISEASED keyword.",
+        "unitLinks": []
+      }
+    ],
+    "armiesOfRenown": [
+      {
+        "id": "cycle-of-corruption",
+        "name": "Cycle of Corruption",
+        "battleTraits": [
+          {
+            "name": "REVOLUTION AND REVULSION",
+            "timing": "Once Per Battle Round (Army), Start of Battle Round",
+            "declare": "You must use this ability at the start of each battle round.",
+            "effect": "If it is the first battle round, roll a dice to determine which CYCLE ability is ripe for the rest of the battle round.\n1 ‘Unnatural Vitality’\n2 ‘Fecund Vigour’\n3 ‘Burgeoning Filth’\n4 ‘Plague of Misery’\n5 ‘Nauseous Revulsion’\n6 ‘Rampant Disease’\n7 ‘Corrupted Regrowth’\nIf it is not the first battle round, the next CYCLE ability in the sequence is ripe for the rest of the battle round. If the 'Corrupted Regrowth' ability was ripe last battle round, the 'Unnatural Vitality' ability is ripe this battle round.\nYou can only use a CYCLE ability if it is ripe. Only 1 CYCLE ability is ripe each battle round.",
+            "unitLinks": []
+          },
+          {
+            "name": "UNNATURAL VITALITY",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "Friendly non-MONSTER CYCLE OF CORRUPTION HEROES have WARD (4+).",
+            "unitLinks": []
+          },
+          {
+            "name": "FECUND VIGOUR",
+            "timing": "Once Per Turn (Army), Your Hero Phase",
+            "declare": "",
+            "effect": "Heal (D3) each friendly CYCLE OF CORRUPTION unit.",
+            "unitLinks": []
+          },
+          {
+            "name": "BURGEONING FILTH",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "Subtract 3 from the control scores of enemy units while they are in combat with any friendly CYCLE OF CORRUPTION units.",
+            "unitLinks": []
+          },
+          {
+            "name": "PLAGUE OF MISERY",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "While enemy units are within 12\" of any friendly CYCLE OF CORRUPTION units, they cannot use abilities that heal or return slain models to a unit.",
+            "unitLinks": []
+          },
+          {
+            "name": "NAUSEOUS REVULSION",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "Subtract 1 from charge rolls for enemy units.",
+            "unitLinks": []
+          },
+          {
+            "name": "RAMPANT DISEASE",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "Melee weapons used by friendly non-HERO CYCLE OF CORRUPTION units have Crit (2 Hits).",
+            "unitLinks": []
+          },
+          {
+            "name": "CORRUPTED REGROWTH",
+            "timing": "Once Per Turn (Army), Your Hero Phase",
+            "declare": "",
+            "effect": "Heal (7) each friendly Feculent Gnarlmaw.\nIf there are no friendly Feculent Gnarlmaws on the battlefield, you can set up a Feculent Gnarlmaw on the battlefield more than 9\" from all enemy units and more than 3\" from all objectives and other terrain features.",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/maggotkin-of-nurgle/Feculent-Gnarlmaw"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "the-gardeners-of-nurgle",
+        "name": "The Gardeners of Nurgle",
+        "battleTraits": [
+          {
+            "name": "THE GARDEN GROWS",
+            "timing": "Once Per Turn (Army), Your Hero Phase",
+            "declare": "",
+            "effect": "Set up a Feculent Gnarlmaw on the battlefield more than 3\" from all enemy units, objectives and other terrain features.",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/maggotkin-of-nurgle/Feculent-Gnarlmaw"
+            ]
+          },
+          {
+            "name": "TRANSPLANTING",
+            "timing": "Once Per Turn (Army), Your Movement Phase",
+            "declare": "Pick a friendly Feculent Gnarlmaw to be the target.",
+            "effect": "Remove the target from the battlefield and set it up again within 3\" of a friendly GARDENERS OF NURGLE HERO and more than 3\" from all enemy units, objectives and other terrain features.",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/maggotkin-of-nurgle/Feculent-Gnarlmaw"
+            ]
+          },
+          {
+            "name": "HEAD GARDENER",
+            "timing": "Once Per Battle (Army), Your Movement Phase",
+            "declare": "",
+            "effect": "The friendly Horticulous Slimux can use his ‘Cultivating the Garden of Nurgle’ ability this phase even if there are 1 or more friendly Feculent Gnarlmaws on the battlefield.",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/maggotkin-of-nurgle/Horticulous-Slimux",
+              "https://wahapedia.ru/aos4/factions/maggotkin-of-nurgle/Feculent-Gnarlmaw"
+            ]
+          },
+          {
+            "name": "PUTRESCENT SAP",
+            "timing": "Once Per Turn (Army), Your Combat Phase",
+            "declare": "Pick each enemy unit within 3\" of any friendly Feculent Gnarlmaws to be the targets.",
+            "effect": "Roll a D3 for each target. On a 2+, inflict an amount of mortal damage on the target equal to the roll.",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/maggotkin-of-nurgle/Feculent-Gnarlmaw"
+            ]
+          },
+          {
+            "name": "FOUL FAUNA",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "Add 2\" to the Move characteristic of friendly GARDENERS OF NURGLE Beasts of Nurgle and Plague Drones units while they are wholly within 6\" of any friendly Feculent Gnarlmaw.",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/maggotkin-of-nurgle/Beast-of-Nurgle",
+              "https://wahapedia.ru/aos4/factions/maggotkin-of-nurgle/Plague-Drones",
+              "https://wahapedia.ru/aos4/factions/maggotkin-of-nurgle/Feculent-Gnarlmaw"
+            ]
+          },
+          {
+            "name": "SICKLY SORES",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "While a friendly GARDENERS OF NURGLE INFANTRY unit is wholly within 12\" of a friendly Feculent Gnarlmaw, ignore the first damage point that would be allocated to it in each phase.",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/maggotkin-of-nurgle/Feculent-Gnarlmaw"
+            ]
+          }
+        ]
+      }
+    ],
+    "battleFormations": [
+      {
+        "name": "Tallyband of Nurgle",
+        "abilities": [
+          {
+            "name": "PLAGUE PROGENITOR",
+            "timing": "Once Per Battle (Army), Deployment Phase",
+            "declare": "Pick an enemy unit on the battlefield to be the plague progenitor for the rest of the battle. You cannot pick a MANIFESTATION or terrain feature.",
+            "effect": "Roll 2D3. On a 6, or if the roll equals or exceeds the plague progenitor’s Health characteristic, it has the DISEASED keyword.\nIn the first battle round, if an ability would heal or return any slain models to a DISEASED plague progenitor, that ability does not heal any damage points or return any slain models to it.\nEach time the plague progenitor is picked to be the target of the ’Spread’ effect of the ‘Blessed by the Plaguefather’ ability, inflict D3 mortal damage on each other enemy unit within its combat range, excluding MANIFESTATIONS and terrain features, in addition to the effect of that ability.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "name": "Plague Cyst",
+        "abilities": [
+          {
+            "name": "VECTORS OF CONTAGION",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "Add 5 to the control scores of friendly non-HERO ROTBRINGERS units while they are wholly within 12\" of any friendly MAGGOTKIN OF NURGLE DAEMON units.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "name": "Nurgle’s Menagerie",
+        "abilities": [
+          {
+            "name": "DENIZENS OF THE GARDEN",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "Companion weapons used by friendly MAGGOTKIN OF NURGLE units have Crit (2 Hits).",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "name": "Affliction Cyst",
+        "abilities": [
+          {
+            "name": "FILTH-LADEN DAEMONIC BLOOMS",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "Each time you make a run roll for a friendly non-MONSTER MAGGOTKIN OF NURGLE DAEMON unit, you can change that roll to a 4.",
+            "unitLinks": []
+          }
+        ]
+      }
+    ],
+    "lores": {
+      "spell": [
+        {
+          "name": "Lore of Malignance",
+          "kind": "spell",
+          "points": 0,
+          "entries": [
+            {
+              "name": "FLESHY ABUNDANCE",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly MAGGOTKIN OF NURGLE WIZARD to cast this spell, pick a visible friendly MAGGOTKIN OF NURGLE unit wholly within 12\" of them to be the target, then make a casting roll of 2D6.",
+              "effect": "Pick 1 of the following effects:\n• Heal (D3) the target.\n• Subtract 1 from wound rolls for attacks that target that friendly unit until the start of your next turn.",
+              "value": "6",
+              "unitLinks": []
+            },
+            {
+              "name": "CRIPPLING DESPAIR",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly MAGGOTKIN OF NURGLE WIZARD to cast this spell, pick a visible enemy unit within 18\" of them to be the target, then make a casting roll of 2D6.",
+              "effect": "The target cannot use commands for the rest of the turn.",
+              "value": "6",
+              "unitLinks": []
+            },
+            {
+              "name": "CLOYING QUAGMIRE",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly MAGGOTKIN OF NURGLE WIZARD to cast this spell, pick a visible enemy unit within 18\" of them to be the target, then make a casting roll of 2D6.",
+              "effect": "Until the start of your next turn:\n• Halve the target’s Move characteristic.\n• If the target’s Save characteristic is 3+ or better, subtract 1 from run rolls and charge rolls for the target.",
+              "value": "7",
+              "unitLinks": []
+            }
+          ]
+        }
+      ],
+      "prayer": [
+        {
+          "name": "Lore of Virulence",
+          "kind": "prayer",
+          "points": 0,
+          "entries": [
+            {
+              "name": "GIFT OF DISEASE",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly MAGGOTKIN OF NURGLE PRIEST to chant this prayer, then make a chanting roll of D6.",
+              "effect": "Until the start of your next turn, subtract 1 from wound rolls for attacks made by enemy units while they are in combat with the chanter. In addition, if the chanting roll was 10+, each enemy unit in combat with the chanter, excluding MANIFESTATIONS and terrain features, has the DISEASED keyword.",
+              "value": "3",
+              "unitLinks": []
+            },
+            {
+              "name": "FAVOURED POXES",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly MAGGOTKIN OF NURGLE PRIEST to chant this prayer, pick a visible enemy unit within 18\" of the chanter to be the target, then make a chanting roll of D6.",
+              "effect": "Until the start of your next turn, subtract 2 from charge rolls for the target. If the chanting roll was 10+, until the start of your next turn, subtract 1 from the number of dice rolled when making charge rolls for the target, to a minimum of 1, instead.",
+              "value": "4",
+              "unitLinks": []
+            },
+            {
+              "name": "BLOATED WITH SICKNESS",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly MAGGOTKIN OF NURGLE PRIEST to chant this prayer, pick a visible friendly non-MONSTER MAGGOTKIN OF NURGLE unit wholly within 12\" of the chanter to be the target, then make a chanting roll of D6.",
+              "effect": "Until the start of your next turn, ignore the first damage point that would be allocated to the target in each phase. If the chanting roll was 10+, you can pick another eligible unit to be a second target.",
+              "value": "4",
+              "unitLinks": []
+            }
+          ]
+        },
+        {
+          "name": "Bendictions of Sickness",
+          "kind": "prayer",
+          "points": 0,
+          "entries": [
+            {
+              "name": "INFECTIOUS SURGE",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly MAGGOTKIN OF NURGLE PRIEST to chant this prayer, pick a visible friendly MAGGOTKIN OF NURGLE unit wholly within 12\" of them to be the target, then make a chanting roll of D6.",
+              "effect": "Add 2\" to the target’s Move characteristic for the rest of the turn. In addition, if the chanting roll was 6+, for the rest of the turn, the target can use CHARGE abilities even if it used a RETREAT ability in the same turn.",
+              "value": "3",
+              "unitLinks": []
+            },
+            {
+              "name": "AGONISING VOMITING",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly MAGGOTKIN OF NURGLE PRIEST to chant this prayer, pick a visible enemy unit within 18\" of them to be the target, then make a chanting roll of D6.",
+              "effect": "Roll 7 dice. If the chanting roll was 6+, add 2 to each roll. For each 5+, inflict 1 mortal damage on the target.",
+              "value": "3",
+              "unitLinks": []
+            },
+            {
+              "name": "FROTHING MUCUS",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly MAGGOTKIN OF NURGLE PRIEST to chant this prayer, pick a visible friendly MAGGOTKIN OF NURGLE unit wholly within 12\" of them to be the target, then make a chanting roll of D6.",
+              "effect": "Until the start of your next turn, the Charge (+1 Damage) weapon ability has no effect on combat attacks that target the target. If the chanting roll was 6+, weapon abilities other than the Companion weapon ability have no effect instead.",
+              "value": "3",
+              "unitLinks": []
+            }
+          ]
+        },
+        {
+          "name": "Benedictions of Sickness",
+          "kind": "prayer",
+          "points": 0,
+          "entries": [
+            {
+              "name": "FEBRILE ADVANCE",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly MAGGOTKIN OF NURGLE PRIEST to chant this prayer, pick a visible friendly MAGGOTKIN OF NURGLE unit wholly within 12\" of them to be the target, then make a chanting roll of D6.",
+              "effect": "If the chanting roll was 6+, you can pick another eligible unit to be a second target. Until the start of your next turn, add 3\" to the distance each target can move when making pile-in moves.",
+              "value": "3",
+              "unitLinks": []
+            },
+            {
+              "name": "BLUNTING BLIGHT",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly MAGGOTKIN OF NURGLE PRIEST to chant this prayer, pick a visible enemy unit within 18\" of them to be the target, then make a chanting roll of D6.",
+              "effect": "If the chanting roll was 10+, you can pick another eligible unit to be a second target. Until the start of your next turn, the targets’ attacks cannot score critical hits (treat them as regular hits instead).",
+              "value": "5",
+              "unitLinks": []
+            },
+            {
+              "name": "AGONISING VOMITING",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly MAGGOTKIN OF NURGLE PRIEST to chant this prayer, pick a visible enemy unit within 18\" of them to be the target, then make a chanting roll of D6.",
+              "effect": "Roll 7 dice. If the target is DISEASED, add 1 to each roll. If the chanting roll was 7+, add 1 to each roll. For each 5+, inflict 1 mortal damage on the target.",
+              "value": "4",
+              "unitLinks": []
+            }
+          ]
+        }
+      ],
+      "manifestation": []
+    }
+  },
+  "entries": [
+    {
+      "faction": "Maggotkin of Nurgle",
+      "name": "Beast of Nurgle",
+      "points": 100,
+      "size": 1,
+      "kind": "",
+      "category": "Other",
+      "profile": {
+        "move": "7\"",
+        "health": "8",
+        "save": "5+",
+        "control": "1",
+        "ward": "5+",
+        "url": "https://wahapedia.ru/aos4/factions/maggotkin-of-nurgle/Beast-of-Nurgle",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "DAEMON",
+          "MAGGOTKIN OF NURGLE",
+          "BEAST",
+          "WARD (5+)"
+        ],
+        "abilities": [
+          "Beast",
+          "Attention Seekers"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Beast",
+            "timing": "Passive",
+            "effect": "Effect: This unit has a maximum control score of 1.",
+            "kind": "Ability",
+            "type": "Control",
+            "phase": "End of Turn"
+          },
+          {
+            "name": "Attention Seekers",
+            "timing": "Once Per Turn (Army), Any Charge Phase",
+            "effect": "Declare: If this unit is not in combat, pick the closest enemy unit to it to be the target. If 2 or more enemy units are tied to be the closest, you can pick which is the target. Then, make a charge roll of 2D6.\nEffect: This unit can move a distance up to the value of the charge roll. It can move through the combat ranges of enemy units and must end that move within 1/2\" of the target. Then, inflict D3 mortal damage on the target. If it does so, this unit has charged.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Core, Move, Charge",
+            "phase": "Charge Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Filthy Claws and Slobbering Maw",
+            "5",
+            "4+",
+            "3+",
+            "1",
+            "D3",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "As stupid as they are enthusiastic, Beasts of Nurgle bound forth with burbles of joy. Huge, slug-like abominations, they gleefully assail their luckless playmates until their joy proves lethal and then bounce off after new victims."
+    },
+    {
+      "faction": "Maggotkin of Nurgle",
+      "name": "Belga the Cystwitch",
+      "points": 130,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "4\"",
+        "health": "7",
+        "save": "5+",
+        "control": "3",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/maggotkin-of-nurgle/Belga-the-Cystwitch",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "MAGGOTKIN OF NURGLE",
+          "ROTBRINGERS",
+          "HERO",
+          "INFANTRY",
+          "PRIEST (1)",
+          "UNIQUE",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Ruptured Cysts",
+          "Scry the Filth"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Ruptured Cysts",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Pick a visible DISEASED enemy unit within 18\" of this unit to be the target, then make a chanting roll of D6.\nEffect: Inflict D3 mortal damage on the target. Then, inflict 1 mortal damage on each other DISEASED enemy unit within 3\" of the target. If the chanting roll was 9+, you can also pick a friendly Plaguebearers unit within 12\" of the target. For each enemy INFANTRY model slain by this ability this turn, you can return 1 slain model to that friendly unit.",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Prayer",
+            "phase": "Hero Phase",
+            "pointsType": "Prayer",
+            "points": "4"
+          },
+          {
+            "name": "Scry the Filth",
+            "timing": "Your Hero Phase",
+            "effect": "Effect: Pick 1 of the following effects to apply for the rest of the turn:\n• Add 1 to casting rolls for friendly MAGGOTKIN OF NURGLE WIZARDS while they are within 3\" of this unit.\n• Add 1 to chanting rolls for friendly MAGGOTKIN OF NURGLE PRIESTS while they are within 3\" of this unit.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Thrice-tainted Staff",
+            "3",
+            "4+",
+            "4+",
+            "1",
+            "D3",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Once a servant of a holy order, Belga succumbed to the whispers of Nurgle and devolved into a maggot- bodied horror, her former sisters melded with her flesh. As the Cystwitch, she bestows potent plagues upon her enemies from her cauldron, and she can scry the will of her deity in its noxious slurry.",
+      "regimentOptions": "0-1 %000019658Plaguebearers%, 0-1 %000019684Cankerborn%, 0-1 %000012253Rotbringer Lord%, Any %000012255Rotbringers%"
+    },
+    {
+      "faction": "Maggotkin of Nurgle",
+      "name": "Bloab Rotspawned",
+      "points": 260,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "8\"",
+        "health": "14",
+        "save": "4+",
+        "control": "5",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/maggotkin-of-nurgle/Bloab-Rotspawned",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "MAGGOTKIN OF NURGLE",
+          "ROTBRINGERS",
+          "HERO",
+          "MONSTER",
+          "UNIQUE",
+          "WARD (6+)",
+          "WIZARD (1)"
+        ],
+        "abilities": [
+          "Battle Damaged",
+          "Miasma of Pestilence",
+          "Daemon Flies"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of Bilespurter’s Claws is 3.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Miasma of Pestilence",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Pick a visible friendly unit within 12\" of this unit to be the target, then make a casting roll of 2D6.\nEffect: Until the start of your next turn, other than the Companion weapon ability, weapon abilities for attacks that target that friendly unit have no effect.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "keywords": "Spell",
+            "phase": "Hero Phase",
+            "pointsType": "Spell",
+            "points": "6"
+          },
+          {
+            "name": "Daemon Flies",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick an enemy MONSTER in combat with this unit to be the target.\nEffect: Roll a dice. On a 3+, subtract 1 from the Attacks characteristic of the target’s melee weapons for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "keywords": "Rampage",
+            "phase": "Combat Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Bilespurter’s Vile Bile",
+            "7\"",
+            "7",
+            "2+",
+            "4+",
+            "1",
+            "D3",
+            "Shoot in Combat, Companion"
+          ]
+        ],
+        "melee": [
+          [
+            "Harvestman’s Scythe",
+            "3",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            "Anti-MONSTER (+1 Rend)"
+          ],
+          [
+            "Bilespurter’s Claws",
+            "5",
+            "4+",
+            "2+",
+            "2",
+            "3",
+            "Companion · See battle damage rules"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "One of Nurgle’s most favoured sorcerers, Bloab Rotspawned is accompanied at all times by a swarm of daemonic flies that emerge from his bubotic flesh, to the detriment of any who dare draw too close.",
+      "regimentOptions": "0-1 %000012253Rotbringer Lord%, Any %000006197MAGGOTKIN OF NURGLE%"
+    },
+    {
+      "faction": "Maggotkin of Nurgle",
+      "name": "Cankerborn",
+      "points": 170,
+      "size": 2,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "4\"",
+        "health": "6",
+        "save": "5+",
+        "control": "2",
+        "ward": "5+",
+        "url": "https://wahapedia.ru/aos4/factions/maggotkin-of-nurgle/Cankerborn",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "DAEMON",
+          "MAGGOTKIN OF NURGLE",
+          "HERO",
+          "INFANTRY",
+          "UNIQUE",
+          "WARD (5+)"
+        ],
+        "abilities": [
+          "Utter Defilement",
+          "From the Tainted Earth",
+          "Entropy Endures"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Utter Defilement",
+            "timing": "End of Any Turn",
+            "effect": "Declare: This unit’s Pestilent Pollutants are tokens. This unit has 2 Pestilent Pollutants. Pick an objective or terrain feature within 12\" of this unit to be the target.\nEffect: Place 1 of this unit’s Pestilent Pollutants next to the target. If both of this unit’s Pestilent Pollutants are already on the battlefield, pick 1 of them, remove it from the battlefield and place it next to the target instead.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "End of Turn"
+          },
+          {
+            "name": "From the Tainted Earth",
+            "timing": "Your Movement Phase",
+            "effect": "Effect: Remove this unit from the battlefield and set it up again more than 9\" from all enemy units and wholly within 3\" of:\n• An objective or terrain feature that has a friendly Pestilent Pollutant, or\n• A POLLUTED terrain feature (see Gelgus Pust’s warscroll), or\n• An objective you control.",
+            "kind": "Ability",
+            "type": "Movement",
+            "keywords": "Core, Move",
+            "phase": "Movement Phase"
+          },
+          {
+            "name": "Entropy Endures",
+            "timing": "Passive",
+            "effect": "Effect: If this unit has 2 models and would be automatically destroyed, it is not automatically destroyed. Instead, 1 model in this unit is slain.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          }
+        ],
+        "melee": [
+          [
+            "Blightblades",
+            "4",
+            "3+",
+            "3+",
+            "1",
+            "3",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "The Cankerborn are summoned through the desecration of the land itself. Born from corrupted realm-spirits, they blight the earth much like Nurgle’s Rot ravages flesh. This foetid pair of daemons are horrendously resilient, tainting the very soil around them with their contagion.",
+      "regimentOptions": "Any %000003796DAEMON%",
+      "notes": "This HERO can join an eligible regiment as a Plague Scion."
+    },
+    {
+      "faction": "Maggotkin of Nurgle",
+      "name": "Doktor Festus",
+      "points": 100,
+      "size": 1,
+      "kind": "Legends",
+      "category": "Hero",
+      "profile": {
+        "move": "4\"",
+        "health": "6",
+        "save": "5+",
+        "control": "2",
+        "ward": "5+",
+        "url": "https://wahapedia.ru/aos4/factions/maggotkin-of-nurgle/Doktor-Festus",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "MAGGOTKIN OF NURGLE",
+          "ROTBRINGERS",
+          "HERO",
+          "INFANTRY",
+          "UNIQUE",
+          "WARD (5+)",
+          "WIZARD (1)"
+        ],
+        "abilities": [
+          "Delightful Brews, Splendid Restoratives",
+          "Scumboil Pox"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Delightful Brews, Splendid Restoratives",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Pick a visible unit within this unit’s combat range to be the target.\nEffect: If the target is a friendly MAGGOTKIN OF NURGLE unit, Heal (D3) the target. If the target is an enemy unit, roll a dice. On a 3+, inflict an amount of mortal damage on the target equal to the roll.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Scumboil Pox",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Pick a visible enemy WIZARD or PRIEST within 12\" of this unit to be the target, then make a casting roll of 2D6.\nEffect: Subtract 1 from the target’s power level, to a minimum of 0, until the start of your next turn.",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Spell",
+            "phase": "Hero Phase",
+            "pointsType": "Spell",
+            "points": "7"
+          }
+        ],
+        "melee": [
+          [
+            "Plague Staf",
+            "3",
+            "4+",
+            "3+",
+            "-",
+            "D3",
+            ""
+          ]
+        ]
+      },
+      "source": "Legends Warscrolls",
+      "canReinforce": false,
+      "flavour": "Festus is a heartless maniac, a former plague doctor transformed into a twisted alchemist of disease. He leads Nurgle’s armies with infectious ebullience, relishing the chance to try out new delightful brews upon unwilling foes.",
+      "regimentOptions": "0-1 %000012253Rotbringer Lord%, Any %000012255Rotbringers%",
+      "notes": "You cannot include this unit and Festus the Leechlord in the same army"
+    },
+    {
+      "faction": "Maggotkin of Nurgle",
+      "name": "Epidemius, Tallyman of Nurgle",
+      "points": 130,
+      "size": 1,
+      "kind": "Legends",
+      "category": "Hero",
+      "profile": {
+        "move": "4\"",
+        "health": "7",
+        "save": "4+",
+        "control": "2",
+        "ward": "5+",
+        "url": "https://wahapedia.ru/aos4/factions/maggotkin-of-nurgle/Epidemius-Tallyman-of-Nurgle",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "DAEMON",
+          "MAGGOTKIN OF NURGLE",
+          "HERO",
+          "INFANTRY",
+          "UNIQUE",
+          "WARD (5+)"
+        ],
+        "abilities": [
+          "Tallyman of Nurgle"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Tallyman of Nurgle",
+            "timing": "Your Hero Phase",
+            "effect": "Effect: You gain a number of tally points equal to the current battle round number.\nDuring the battle round, you can spend your tally points. For each tally point you spend, you can re-roll 1 hit roll, 1 wound roll, 1 save roll or 1 ward roll for a friendly MAGGOTKIN OF NURGLE unit wholly within 12\" of this unit.\nAt the end of the battle round, any unspent tally points are lost.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Mound of Nurglings",
+            "10",
+            "5+",
+            "5+",
+            "-",
+            "1",
+            "Companion"
+          ],
+          [
+            "Epidemius’s Balesword",
+            "3",
+            "4+",
+            "3+",
+            "1",
+            "D3",
+            ""
+          ]
+        ]
+      },
+      "source": "Legends Warscrolls",
+      "canReinforce": false,
+      "flavour": "Sat upon his mouldering palanquin, borne aloft by a mound of Nurglings, Epidemius gazes across the battlefield with jaded contempt. As his endless tally of Nurgle’s diseases rises, so do the Plague God’s minions become empowered.",
+      "regimentOptions": "Any %000003796DAEMON%, 0-1 %000012254Plague Scion%"
+    },
+    {
+      "faction": "Maggotkin of Nurgle",
+      "name": "Festus the Leechlord",
+      "points": 290,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "5\"",
+        "health": "14",
+        "save": "4+",
+        "control": "5",
+        "ward": "5+",
+        "url": "https://wahapedia.ru/aos4/factions/maggotkin-of-nurgle/Festus-the-Leechlord",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "DAEMON",
+          "MAGGOTKIN OF NURGLE",
+          "HERO",
+          "MONSTER",
+          "UNIQUE",
+          "WARD (5+)",
+          "WIZARD (2)"
+        ],
+        "abilities": [
+          "Battle Damaged",
+          "The Leechlord's Curse",
+          "Vile Poisons and Debilitating Toxins",
+          "Annelid Engorgement"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of Gathoblyt’s Fanged Maw is 3.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "The Leechlord's Curse",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Pick a visible enemy unit within 18\" of this unit to be the target, then make a casting roll of 2D6.\nEffect: This unit gains 1 leech point for the rest of the battle. Until the start of your next turn, each time the target uses a CORE ability or command, after that ability has been resolved, roll a dice. On a 3+, inflict 1 mortal damage on the target. Then, if any damage points were allocated to the target by this ability, Heal (1) this unit.",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Spell",
+            "phase": "Hero Phase",
+            "pointsType": "Spell",
+            "points": "6"
+          },
+          {
+            "name": "Vile Poisons and Debilitating Toxins",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: If this unit did not charge this turn, pick an enemy unit in combat with it to be the target. You cannot pick a MANIFESTATION or terrain feature.\nEffect: You and your opponent must roll off. Add this unit’s Control characteristic to your roll and the target’s Control characteristic to your opponent’s roll. If your roll is higher, apply the corresponding effect:\n• If the target is a HERO or MONSTER, inflict an amount of mortal damage on the target equal to the difference between your roll and your opponent’s roll.\n• If the target is a non-HERO non-MONSTER unit, 1 model in",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Annelid Engorgement",
+            "timing": "End of Any Turn",
+            "effect": "Effect: For each enemy unit that was in combat with this unit this turn and was destroyed this turn, this unit gains D3 leech points for the rest of the battle. Until the end of the next turn, add 1 to this unit’s Control characteristic for each leech point it currently has.",
+            "kind": "Ability",
+            "type": "Control",
+            "phase": "End of Turn"
+          }
+        ],
+        "melee": [
+          [
+            "Gnarled Plague Staff",
+            "3",
+            "3+",
+            "3+",
+            "1",
+            "D3",
+            "Crit (Auto-wound)"
+          ],
+          [
+            "Gathoblyt’s Fanged Maw",
+            "4",
+            "4+",
+            "2+",
+            "2",
+            "3",
+            "Crit (Mortal), Companion · See battle damage rules"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Festus is a heartless maniac, a former plague doctor transformed into a twisted alchemist of disease. His devotion to the Grandfather has seen him swell into a foul Daemon Prince. He leads Nurgle’s armies with infectious ebullience on the back of Gathoblyt, relishing the chance to try out new delightful brews on unwilling foes.",
+      "regimentOptions": "0-1 %000012254Plague Scion%, Any %000006197Maggotkin of Nurgle%"
+    },
+    {
+      "faction": "Maggotkin of Nurgle",
+      "name": "Gelgus Pust, the Prince of Sores",
+      "points": 190,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "8\"",
+        "health": "8",
+        "save": "3+",
+        "control": "5",
+        "ward": "5+",
+        "url": "https://wahapedia.ru/aos4/factions/maggotkin-of-nurgle/Gelgus-Pust-the-Prince-of-Sores",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "DAEMON",
+          "MAGGOTKIN OF NURGLE",
+          "FLY",
+          "HERO",
+          "INFANTRY",
+          "UNIQUE",
+          "WARD (5+)"
+        ],
+        "abilities": [
+          "Master Contaminator",
+          "Polluting Aura",
+          "Grin of the Grandfather",
+          "Parasitic Infestation"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Master Contaminator",
+            "timing": "Once Per Battle, Your Hero Phase",
+            "effect": "Declare: Pick a terrain feature within 6\" of this unit to be the target.\nEffect: The target is considered by you to be POLLUTED for the rest of the battle.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Polluting Aura",
+            "timing": "Passive",
+            "effect": "Effect: While a friendly MAGGOTKIN OF NURGLE unit is wholly within 6\" of a POLLUTED terrain feature, each time that unit uses or is the target of an ability that would heal 1 or more damage points, add 1 to the number of damage points healed.\nWhile an enemy unit is within 6\" of a POLLUTED terrain feature, each time that unit uses or is the target of an ability that would heal 1 or more damage points, subtract 1 from the number of damage points healed, to a minimum of 0.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          },
+          {
+            "name": "Grin of the Grandfather",
+            "timing": "Any Combat Phase",
+            "effect": "Declare: Pick each enemy unit in combat with this unit to be the targets.\nEffect: Roll a dice for each target. If the roll equals or exceeds the target’s Control characteristic, pick 1 of the following to apply for the rest of the turn:\n• Subtract 1 from hit rolls for the target’s combat attacks.\n• Subtract 1 from wound rolls for the target’s combat attacks.\n• Subtract 1 from the target’s Control characteristic.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Parasitic Infestation",
+            "timing": "Any Charge Phase",
+            "effect": "Declare: Pick each enemy unit that charged this turn and is in combat with this unit to be the targets.\nEffect: Roll a D3 for each target. On a 2+, inflict an amount of mortal damage on the target equal to the roll.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Charge Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Malady and Contagion",
+            "7",
+            "3+",
+            "3+",
+            "1",
+            "3",
+            "Crit (Auto-wound)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "The Daemon Prince Gelgus Pust is a grotesque and monstrous creature whose corpulent body is riddled with parasites. Once a pious man, his ambition saw him fall into Nurgle's clutches. He relishes despoiling the land, particularly the pure waters of Ghyran, where he makes his lair.",
+      "regimentOptions": "0-1 %000012254Plague Scion%, Any %000006197MAGGOTKIN OF NURGLE%"
+    },
+    {
+      "faction": "Maggotkin of Nurgle",
+      "name": "Grandfather’s Gardeners",
+      "points": 110,
+      "size": 5,
+      "kind": "Legends",
+      "category": "Infantry",
+      "profile": {
+        "move": "4\"",
+        "health": "3",
+        "save": "6+",
+        "control": "1",
+        "ward": "5+",
+        "url": "https://wahapedia.ru/aos4/factions/maggotkin-of-nurgle/Grandfather-s-Gardeners",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "DAEMON",
+          "MAGGOTKIN OF NURGLE",
+          "CHAMPION",
+          "INFANTRY",
+          "STANDARD BEARER",
+          "UNIQUE",
+          "WARD (5+)"
+        ],
+        "abilities": [
+          "Seeds of Rot",
+          "Blooming Plague"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Seeds of Rot",
+            "timing": "Passive",
+            "effect": "Effect: When using the ‘Blessed by the Plaguefather’ ability, if you choose to infect an enemy unit, you can pick an enemy unit that is contesting an objective that is seeded with rot.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Blooming Plague",
+            "timing": "End of Any Turn",
+            "effect": "Declare: Pick an objective that is contested by this unit to be the target.\nEffect: The target is seeded with rot for the rest of the battle.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "End of Turn"
+          }
+        ],
+        "melee": [
+          [
+            "Gardening Tools",
+            "1",
+            "4+",
+            "3+",
+            "-",
+            "1",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "Legends Warscrolls",
+      "canReinforce": false,
+      "flavour": "Phleghmus Potbelly sees his duty as a satisfying if simple one: to spread the maggots and seepages of Nurgle across the realms, allowing his festering Garden to sprout. Helping him cultivate these gruesome cycles are not only fellow Plaguebearers but daemon-flies and ticks who inject their vileness directly into living bodies. Embergard’s sweltering innards are, to Phleghmus’s mind, ripe for transformation into a seething cauldron of plagues – especially with emberstone drawing in so many living, virile hosts...",
+      "notes": "This unit cannot be reinforced.",
+      "description": "Each model in this unit is armed with Gardening Tools. The models in this unit are:\n• Phleghmus Potbelly (champion)\n• Bug-Eyed Dripterus (standard bearer)\n• Slunge\n• Maggoty Strewg\n• Squort"
+    },
+    {
+      "faction": "Maggotkin of Nurgle",
+      "name": "Great Unclean One",
+      "points": 380,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "20",
+        "save": "4+",
+        "control": "5",
+        "ward": "5+",
+        "url": "https://wahapedia.ru/aos4/factions/maggotkin-of-nurgle/Great-Unclean-One",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "DAEMON",
+          "MAGGOTKIN OF NURGLE",
+          "HERO",
+          "MONSTER",
+          "WARD (5+)",
+          "WIZARD (2)"
+        ],
+        "abilities": [
+          "Battle Damaged",
+          "Plague Wind",
+          "Locus of Nurgle",
+          "Bloated with Corruption"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of its Colossal Blight Weapons is 3.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Plague Wind",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Pick a visible enemy unit within 12\" of this unit to be the target. You cannot pick a MANIFESTATION or terrain feature. Then, make a casting roll of 2D6.\nEffect: The target has the DISEASED keyword.",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Spell",
+            "phase": "Hero Phase",
+            "pointsType": "Spell",
+            "points": "7"
+          },
+          {
+            "name": "Locus of Nurgle",
+            "timing": "Once Per Turn (Army), Your Movement Phase",
+            "effect": "Declare: Pick a friendly MAGGOTKIN OF NURGLE DAEMON unit that started the battle with 3 or more models and that has been destroyed to be the target.\nEffect: Set up a replacement unit with half the number of models from the target unit (rounding up) wholly within 6\" of this unit or a friendly Feculent Gnarlmaw and more than 9\" from all enemy units.",
+            "kind": "Ability",
+            "type": "Rallying",
+            "phase": "Movement Phase",
+            "pointsType": "Command",
+            "points": "1"
+          },
+          {
+            "name": "Bloated with Corruption",
+            "timing": "Once Per Turn (Army), End of Any Turn",
+            "effect": "Declare: If this unit is damaged, pick up to 3 enemy units in combat with this unit to be the targets.\nEffect: Roll a D3 for each target. On a 2+, inflict an amount of mortal damage on the target equal to the roll.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Rampage",
+            "phase": "End of Turn"
+          }
+        ],
+        "ranged": [
+          [
+            "Noxious Bile",
+            "7\"",
+            "D3+3",
+            "3+",
+            "2+",
+            "2",
+            "2",
+            "Shoot in Combat"
+          ]
+        ],
+        "melee": [
+          [
+            "Colossal Blight Weapons",
+            "4",
+            "3+",
+            "2+",
+            "2",
+            "4",
+            "See battle damage rules"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "The Great Unclean Ones are immensely resilient and frighteningly strong. Able to barge down fortress gates and crush monstrous beasts with their sheer bulk, these greater daemons are infernal icons of Nurgle’s malign power.",
+      "regimentOptions": "0-1 %000012254Plague Scion%, Any %000006197MAGGOTKIN OF NURGLE%"
+    },
+    {
+      "faction": "Maggotkin of Nurgle",
+      "name": "Gutrot Spume",
+      "points": 100,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "4\"",
+        "health": "7",
+        "save": "4+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/maggotkin-of-nurgle/Gutrot-Spume",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "MAGGOTKIN OF NURGLE",
+          "ROTBRINGERS",
+          "HERO",
+          "INFANTRY",
+          "UNIQUE",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Master of the Slime Fleet",
+          "Pestilential Beachhead",
+          "Flailing Tentacles"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Master of the Slime Fleet",
+            "timing": "Deployment Phase",
+            "effect": "Declare: Pick a regiment led by this unit to be the target if no units from that regiment have been deployed.\nEffect: Each unit in the target regiment is set up in reserve aboard the Slime Fleet. Those units have now been deployed.",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Deploy",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Pestilential Beachhead",
+            "timing": "Your Movement Phase",
+            "effect": "Declare: Pick this unit if it is aboard the Slime Fleet.\nEffect: Set up this unit on the battlefield, wholly within 7\" of a battlefield edge and more than 9\" from all enemy units. Then set up every other friendly unit that is aboard the Slime Fleet on the battlefield wholly within 7\" of a battlefield edge, wholly within 7\" of this unit and more than 9\" from all enemy units.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Movement Phase"
+          },
+          {
+            "name": "Flailing Tentacles",
+            "timing": "Any Combat Phase",
+            "effect": "Declare: Pick an enemy INFANTRY HERO in combat with this unit to be the target.\nEffect: Roll a dice. On a 3+, the target has STRIKE-LAST for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Rot-pocked Axe",
+            "5",
+            "3+",
+            "2+",
+            "1",
+            "2",
+            "Anti-HERO (+1 Rend), Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Gutrot Spume is the feared master of Nurgle’s Slime Fleets. His towering ego is such that he will never back down from a rival’s challenge, while so mighty is he that he has never lost a duel.",
+      "regimentOptions": "0-1 %000012253Rotbringer Lord%, Any %000012255ROTBRINGERS%"
+    },
+    {
+      "faction": "Maggotkin of Nurgle",
+      "name": "Harbinger of Decay",
+      "points": 140,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "8\"",
+        "health": "7",
+        "save": "3+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/maggotkin-of-nurgle/Harbinger-of-Decay",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "MAGGOTKIN OF NURGLE",
+          "ROTBRINGERS",
+          "CAVALRY",
+          "HERO",
+          "PRIEST (1)",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Knell of Doom",
+          "Omens of Decay"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Knell of Doom",
+            "timing": "Once Per Turn (Army), Enemy Hero Phase",
+            "effect": "Declare: Pick an enemy unit within 18\" of this unit to be the target.\nEffect: Roll a D3. If the target is within 6\" of a friendly Sloven Knights unit, you can roll a D6 instead. If the roll equals or exceeds the target’s Control characteristic, subtract 1 from wound rolls for the target’s attacks until the start of your next turn.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Omens of Decay",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Pick a visible enemy unit within 12\" of this unit to be the target, then make a chanting roll of D6.\nEffect: Subtract twice the current battle round number from the target’s control score for the rest of the turn. If the chanting roll was 10+, this ability affects all enemy units within 12\" of this unit.",
+            "kind": "Ability",
+            "type": "Control",
+            "keywords": "Prayer",
+            "phase": "Hero Phase",
+            "pointsType": "Prayer",
+            "points": "4"
+          }
+        ],
+        "melee": [
+          [
+            "Grim Rotsword or Plague Scythe",
+            "3",
+            "3+",
+            "3+",
+            "1",
+            "3",
+            "Crit (Mortal)"
+          ],
+          [
+            "Daemonic Mount’s Flyblown Bite",
+            "2",
+            "5+",
+            "3+",
+            "-",
+            "1",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "The Harbingers of Decay trot into battle atop vile steeds more dead than alive. These champions draw the gaze of Nurgle himself, and where they ride, the Plague God’s sinister will is soon made manifest.",
+      "regimentOptions": "0-1 %000012253Rotbringer Lord%, Any %000012255ROTBRINGERS%"
+    },
+    {
+      "faction": "Maggotkin of Nurgle",
+      "name": "Horticulous Slimux",
+      "points": 140,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "4\"",
+        "health": "8",
+        "save": "4+",
+        "control": "2",
+        "ward": "5+",
+        "url": "https://wahapedia.ru/aos4/factions/maggotkin-of-nurgle/Horticulous-Slimux",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "DAEMON",
+          "MAGGOTKIN OF NURGLE",
+          "CAVALRY",
+          "HERO",
+          "UNIQUE",
+          "WARD (5+)"
+        ],
+        "abilities": [
+          "Cultivating the Garden of Nurgle",
+          "Beast Handler",
+          "Gnarlmaw Whisperer"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Cultivating the Garden of Nurgle",
+            "timing": "Your Movement Phase",
+            "effect": "Effect: If there is no more than 1 friendly Feculent Gnarlmaw on the battlefield, you can set up a Feculent Gnarlmaw wholly within 12\" of this unit and more than 3\" from all enemy units, objectives and other terrain features.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Movement Phase"
+          },
+          {
+            "name": "Beast Handler",
+            "timing": "Your Movement Phase",
+            "effect": "Declare: Pick a friendly Beast of Nurgle unit that has been destroyed.\nEffect: Roll a dice. On a 3+, set up a replacement unit wholly within 12\" of this unit and more than 9\" from all enemy units.",
+            "kind": "Ability",
+            "type": "Rallying",
+            "phase": "Movement Phase"
+          },
+          {
+            "name": "Gnarlmaw Whisperer",
+            "timing": "End of Your Turn",
+            "effect": "Declare: Pick a friendly Feculent Gnarlmaw to be the target.\nEffect: Remove the target from the battlefield and set it up again wholly within 12\" of this unit and more than 3\" from all enemy units, objectives and other terrain features.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "End of Turn"
+          }
+        ],
+        "melee": [
+          [
+            "Lopping Shears",
+            "3",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            ""
+          ],
+          [
+            "Mulch’s Slime-encrusted Jaws",
+            "4",
+            "4+",
+            "3+",
+            "1",
+            "D3",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "As Nurgle’s head horticulturist, Slimux has the power to seed his master’s Garden in reality. Surrounded by packs of Beasts of Nurgle and wielding his lethal lopping shears, he is a being to be rightly feared.",
+      "regimentOptions": "Any %000003796DAEMON%"
+    },
+    {
+      "faction": "Maggotkin of Nurgle",
+      "name": "Lord of Afflictions",
+      "points": 170,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "8\"",
+        "health": "8",
+        "save": "3+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/maggotkin-of-nurgle/Lord-of-Afflictions",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "MAGGOTKIN OF NURGLE",
+          "ROTBRINGERS",
+          "CAVALRY",
+          "FLY",
+          "HERO",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Vectors of Foulest Contagion",
+          "Master of Rot Flies"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Vectors of Foulest Contagion",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick up to 3 enemy units in combat with this unit to be the targets.\nEffect: Roll a D3 for each target. On a 2+, inflict an amount of mortal damage on the target equal to the roll.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Master of Rot Flies",
+            "timing": "Any Combat Phase",
+            "effect": "Declare: If this unit charged this turn, pick this unit and up to 2 friendly Pusgoyle Blightlords units wholly within 12\" of this unit to be the targets.\nEffect: Add 1 to the Rend characteristic of the targets’ Rot Fly’s Mouthparts and Sting for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Festerspike",
+            "4",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            "Charge (+1 Damage)"
+          ],
+          [
+            "Rot Fly’s Mouthparts and Sting",
+            "6",
+            "4+",
+            "3+",
+            "-",
+            "1",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Mounted atop bloated Rot Flies, the Lords of Affliction lead Nurgle’s vanguards to war. They and their droning brethren strike directly from the curdled skies, skewering the enemy on their filth-encrusted tridents.",
+      "regimentOptions": "Any %000012255ROTBRINGERS%"
+    },
+    {
+      "faction": "Maggotkin of Nurgle",
+      "name": "Lord of Blights",
+      "points": 140,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "4\"",
+        "health": "7",
+        "save": "3+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/maggotkin-of-nurgle/Lord-of-Blights",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "MAGGOTKIN OF NURGLE",
+          "ROTBRINGERS",
+          "HERO",
+          "INFANTRY",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Thrice-ripened Death’s Heads",
+          "Festering Bulwark"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Thrice-ripened Death’s Heads",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick an enemy unit that charged this turn and is in combat with this unit or with a friendly Plague Drones unit wholly within 12\" of this unit to be the target.\nEffect: Roll D3. On 2+, inflict an amount of mortal damage on the target equal to the roll.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Festering Bulwark",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick this unit and a friendly Putrid Blightkings unit within 3\" of this unit to be the targets.\nEffect: Roll a dice. On a 3+, ignore negative modifiers to save rolls for the targets for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Bubotic Hammer",
+            "4",
+            "3+",
+            "3+",
+            "1",
+            "3",
+            "Anti-charge (+1 Rend)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Masters of the corpse orchards, the Lords of Blights are responsible for creating the blessed death’s heads. These projectiles are doled out to Plague Drones and hurled at the foe to spread the plagues festering within.",
+      "regimentOptions": "Any %000012255ROTBRINGERS%",
+      "notes": "This HERO can join an eligible regiment as a Rotbringer Lord."
+    },
+    {
+      "faction": "Maggotkin of Nurgle",
+      "name": "Lord of Plagues",
+      "points": 120,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "4\"",
+        "health": "7",
+        "save": "4+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/maggotkin-of-nurgle/Lord-of-Plagues",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "MAGGOTKIN OF NURGLE",
+          "ROTBRINGERS",
+          "HERO",
+          "INFANTRY",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Lord of the Infected Legions",
+          "Sevenfold Slaughter"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Lord of the Infected Legions",
+            "timing": "Passive",
+            "effect": "Effect: Add 1 to wound rolls for combat attacks made by friendly Rotswords units that did not charge this turn while they are wholly within 12\" of this unit.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Sevenfold Slaughter",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick a friendly Rotswords unit that did not charge this turn and is wholly within 12\" of this unit to be the target.\nEffect: Roll a dice. On a 2+, add 1 to the Attacks characteristic of the target’s Ruined Master-crafted Weapons for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Plague-ridden Great Blade",
+            "5",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "The Lords of Plagues storm forth with rusted axes swinging. These revolting warlords urge their followers on to ever greater acts of carnage, fertilising the realms with the filth-ridden mulch they make of their enemies.",
+      "regimentOptions": "Any %000012255ROTBRINGERS%",
+      "notes": "This HERO can join an eligible regiment as a Rotbringer Lord."
+    },
+    {
+      "faction": "Maggotkin of Nurgle",
+      "name": "Morbidex Twiceborn",
+      "points": 230,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "8\"",
+        "health": "14",
+        "save": "4+",
+        "control": "5",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/maggotkin-of-nurgle/Morbidex-Twiceborn",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "MAGGOTKIN OF NURGLE",
+          "ROTBRINGERS",
+          "HERO",
+          "MONSTER",
+          "UNIQUE",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Battle Damaged",
+          "Lord of Nurglings",
+          "Tide of Nurglings",
+          "Gigantic Nurgling-kin"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of Tripletongue’s Claws is 3.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Lord of Nurglings",
+            "timing": "Passive",
+            "effect": "Effect: While any friendly Nurglings units are wholly within 12\" of this unit:\n• Ignore the first damage point that would be allocated to that Nurglings unit each phase.\n• That Nurglings unit can ignore the effect of the ‘Beast’ ability.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Tide of Nurglings",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick up to 2 friendly Nurglings units wholly within 12\" of this unit to be the targets.\nEffect: Roll a dice for each target. On a 2+:\n• If the target is not in combat, it can move a number of inches equal to the roll but cannot end that move in combat.\n• If the target is in combat, it can make a pile-in move.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Rampage",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Gigantic Nurgling-kin",
+            "timing": "End of Any Turn",
+            "effect": "Effect: Heal (X) this unit, where X is half the number of damage points this unit has (rounding up).",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "End of Turn"
+          }
+        ],
+        "ranged": [
+          [
+            "Tripletongue’s Slabrous Tongues",
+            "7\"",
+            "3",
+            "3+",
+            "3+",
+            "1",
+            "1",
+            "Shoot in Combat, Companion"
+          ]
+        ],
+        "melee": [
+          [
+            "Fleshreaper Scythe",
+            "5",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            ""
+          ],
+          [
+            "Tripletongue’s Claws",
+            "5",
+            "4+",
+            "2+",
+            "2",
+            "3",
+            "Companion · See battle damage rules"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Morbidex Twiceborn is the champion of the Nurglings and has gained much of their unnatural resilience. In battle, swarms of the impish daemons trail after their idol, drowning enemies in a filthy living tide.",
+      "regimentOptions": "0-1 %000012253Rotbringer Lord%, Any %000006197MAGGOTKIN OF NURGLE%"
+    },
+    {
+      "faction": "Maggotkin of Nurgle",
+      "name": "Nurglings",
+      "points": 100,
+      "size": 3,
+      "kind": "",
+      "category": "Other",
+      "profile": {
+        "move": "4\"",
+        "health": "4",
+        "save": "6+",
+        "control": "1",
+        "ward": "5+",
+        "url": "https://wahapedia.ru/aos4/factions/maggotkin-of-nurgle/Nurglings",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "DAEMON",
+          "MAGGOTKIN OF NURGLE",
+          "BEAST",
+          "WARD (5+)"
+        ],
+        "abilities": [
+          "Beast",
+          "Endless Swarm"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Beast",
+            "timing": "Passive",
+            "effect": "Effect: This unit has a maximum control score of 1.",
+            "kind": "Ability",
+            "type": "Control",
+            "phase": "End of Turn"
+          },
+          {
+            "name": "Endless Swarm",
+            "timing": "Once Per Turn (Army), End of Any Turn",
+            "effect": "Declare: This unit can only use this ability if it has been destroyed.\nEffect: Set up a replacement unit wholly within 6\" of a friendly Feculent Gnarlmaw and more than 9\" from all enemy units.",
+            "kind": "Ability",
+            "type": "Rallying",
+            "phase": "End of Turn"
+          }
+        ],
+        "melee": [
+          [
+            "Tiny Razor-sharp Teeth",
+            "5",
+            "5+",
+            "5+",
+            "-",
+            "1",
+            "Crit (Auto-wound)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Nurglings are daemonic mites that tumble from the innards of larger daemons or spill up from sewers and fissures in reality. They pour across the battlefield in a stinking tide, burying the foe beneath waves of infectious foulness."
+    },
+    {
+      "faction": "Maggotkin of Nurgle",
+      "name": "Orghotts Daemonspew",
+      "points": 250,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "8\"",
+        "health": "14",
+        "save": "3+",
+        "control": "5",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/maggotkin-of-nurgle/Orghotts-Daemonspew",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "MAGGOTKIN OF NURGLE",
+          "ROTBRINGERS",
+          "HERO",
+          "MONSTER",
+          "UNIQUE",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Battle Damaged",
+          "Acid Ichor",
+          "Grasping Tongue"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of Whippermaw’s Claws is 3.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Acid Ichor",
+            "timing": "Passive",
+            "effect": "Effect: Each time you make an unmodified save roll of 1 for a combat attack that targets this unit, inflict 1 mortal damage on the attacking unit after the FIGHT ability has been resolved.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Defensive reaction"
+          },
+          {
+            "name": "Grasping Tongue",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick an enemy unit in combat with this unit to be the target.\nEffect: Roll a dice. On a 3+, add 1 to wound rolls for combat attacks made by friendly MAGGOTKIN OF NURGLE units that target that enemy unit for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Rampage",
+            "phase": "Combat Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Whippermaw’s Grasping Tongue",
+            "7\"",
+            "1",
+            "3+",
+            "3+",
+            "-",
+            "D6",
+            "Shoot in Combat, Companion"
+          ]
+        ],
+        "melee": [
+          [
+            "The Rotaxes",
+            "7",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            ""
+          ],
+          [
+            "Whippermaw’s Claws",
+            "5",
+            "4+",
+            "2+",
+            "2",
+            "3",
+            "Companion · See battle damage rules"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Orghotts Daemonspew is a driven warlord determined to earn Nurgle’s ultimate favour. In battle, he fights as a merciless reaper, the Rotaxes striking down foe after foe like wheat before the scythe.",
+      "regimentOptions": "0-1 %000012253Rotbringer Lord%, Any %000006197MAGGOTKIN OF NURGLE%"
+    },
+    {
+      "faction": "Maggotkin of Nurgle",
+      "name": "Pestigors",
+      "points": 140,
+      "size": 10,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "6\"",
+        "health": "2",
+        "save": "5+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/maggotkin-of-nurgle/Pestigors",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "MAGGOTKIN OF NURGLE",
+          "ROTBRINGERS",
+          "CHAMPION",
+          "INFANTRY",
+          "MUSICIAN (1/10)",
+          "STANDARD BEARER (1/10)",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Bestial Desecration"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Bestial Desecration",
+            "timing": "Passive",
+            "effect": "Effect: Add 1 to the Rend characteristic of this unit’s melee weapons while it is not within enemy territory.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Corroded Weapons",
+            "2",
+            "4+",
+            "3+",
+            "-",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Bestial Pestigors have a deep, abiding hatred of civilisation, and their only desire is to see it utterly destroyed. They spread filth and disease wherever they go, seeding corruption until the lands are saturated before moving on to find the next place to contaminate."
+    },
+    {
+      "faction": "Maggotkin of Nurgle",
+      "name": "Plague Drones",
+      "points": 150,
+      "size": 3,
+      "kind": "",
+      "category": "Cavalry",
+      "profile": {
+        "move": "8\"",
+        "health": "5",
+        "save": "5+",
+        "control": "2",
+        "ward": "5+",
+        "url": "https://wahapedia.ru/aos4/factions/maggotkin-of-nurgle/Plague-Drones",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "DAEMON",
+          "MAGGOTKIN OF NURGLE",
+          "CAVALRY",
+          "CHAMPION",
+          "FLY",
+          "MUSICIAN (1/3)",
+          "STANDARD BEARER (1/3)",
+          "WARD (5+)"
+        ],
+        "abilities": [
+          "Dispersed Formation",
+          "Ripe Pastures"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Dispersed Formation",
+            "timing": "Passive",
+            "effect": "Effect: This unit has a coherency range of 2\".",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Ripe Pastures",
+            "timing": "Passive",
+            "effect": "Effect: This unit can use CHARGE abilities even if it used a RETREAT ability in the same turn. In addition, no mortal damage is inflicted on this unit by RETREAT abilities.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Movement Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Noxious Plaguesword",
+            "2",
+            "4+",
+            "3+",
+            "-",
+            "1",
+            "Crit (Mortal)"
+          ],
+          [
+            "Rot Fly’s Mouthparts and Sting",
+            "6",
+            "4+",
+            "3+",
+            "-",
+            "1",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Plague Drones are high-ranking Plaguebearers who travel atop Rot Flies. These daemonic mounts attack with their toxic stingers and foul mouthparts, eager to exact vengeance on those who spurned them in their previous incarnations."
+    },
+    {
+      "faction": "Maggotkin of Nurgle",
+      "name": "Plaguebearers",
+      "points": 130,
+      "size": 10,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "4\"",
+        "health": "2",
+        "save": "6+",
+        "control": "1",
+        "ward": "5+",
+        "url": "https://wahapedia.ru/aos4/factions/maggotkin-of-nurgle/Plaguebearers",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "DAEMON",
+          "MAGGOTKIN OF NURGLE",
+          "CHAMPION",
+          "INFANTRY",
+          "MUSICIAN (1/10)",
+          "STANDARD BEARER (1/10)",
+          "WARD (5+)"
+        ],
+        "abilities": [
+          "Cloud of Flies"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Cloud of Flies",
+            "timing": "Passive",
+            "effect": "Effect: Subtract 1 from hit rolls for attacks that target this unit while it is contesting an objective you control.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          }
+        ],
+        "melee": [
+          [
+            "Plaguesword",
+            "1",
+            "4+",
+            "3+",
+            "-",
+            "1",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Plaguebearers trudge to battle amidst the drone of flies' wings and endless counting. These daemons tally the diseases unleashed upon the realms, all the while stabbing and hacking at their enemies with filthy plagueswords."
+    },
+    {
+      "faction": "Maggotkin of Nurgle",
+      "name": "Pox-Wretches",
+      "points": 110,
+      "size": 14,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "5\"",
+        "health": "1",
+        "save": "6+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/maggotkin-of-nurgle/Pox-Wretches",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "MAGGOTKIN OF NURGLE",
+          "ROTBRINGERS",
+          "CHAMPION",
+          "INFANTRY",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Mire Kelpies",
+          "Contagious Catarrh"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Mire Kelpies",
+            "timing": "Passive",
+            "effect": "Effect: This unit’s Mire Kelpies are tokens. There are 6 Mire Kelpies for every 14 models in this unit.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Contagious Catarrh",
+            "timing": "Once Per Turn (Army), End of Any Turn",
+            "effect": "Declare: If this unit has any Mire Kelpies, pick an enemy unit in combat with this unit to be the target. You cannot pick a MANIFESTATION or terrain feature.\nEffect: Pick any number of this unit’s Mire Kelpies and remove them from the battlefield. Then, roll a dice, adding 1 to the roll for each Mire Kelpie you removed this phase. On an unmodified roll of 1, this ability has no effect. On a 6+, the target has the DISEASED keyword.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "End of Turn"
+          }
+        ],
+        "melee": [
+          [
+            "Decaying Weapons",
+            "2",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            "Crit (Auto-wound)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Mutants and outcasts from society, Pox-Wretches are among the lowliest of Nurgle's followers. Desperate for their patron's regard, they embrace filth and disease wholly and utterly. So thoroughly vile are they that they attract the presence of Mire Kelpies, phlegm-like creatures who shuffle in their wake, enhancing the virulence of the Pox-Wretches' infections."
+    },
+    {
+      "faction": "Maggotkin of Nurgle",
+      "name": "Poxbringer, Herald of Nurgle",
+      "points": 90,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "4\"",
+        "health": "5",
+        "save": "5+",
+        "control": "2",
+        "ward": "5+",
+        "url": "https://wahapedia.ru/aos4/factions/maggotkin-of-nurgle/Poxbringer-Herald-of-Nurgle",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "DAEMON",
+          "MAGGOTKIN OF NURGLE",
+          "HERO",
+          "INFANTRY",
+          "WARD (5+)",
+          "WIZARD (1)"
+        ],
+        "abilities": [
+          "Captain of the Plague Legions"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Captain of the Plague Legions",
+            "timing": "Reaction: You declared a %000010870FIGHT ability% for this unit",
+            "effect": "Effect: Pick a friendly Plaguebearers unit that has not used a FIGHT ability this turn and is within this unit’s combat range to be the target. The target can be picked to use a FIGHT ability immediately after the FIGHT ability used by this unit has been resolved. If it is picked to do so, add 1 to the Attacks characteristic of the target’s melee weapons for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase",
+            "reaction": true
+          }
+        ],
+        "melee": [
+          [
+            "Corrupted Balesword",
+            "3",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Poxbringers are veteran daemons amongst the Plaguebearer ranks who lead the tallybands into war. Doleful and relentless, they command their charges with a grim determination and wield the magics of plague as well as a corrupted balesword of dire virulence.",
+      "regimentOptions": "Any %000003796DAEMON%",
+      "notes": "This HERO can join an eligible regiment as a Plague Scion."
+    },
+    {
+      "faction": "Maggotkin of Nurgle",
+      "name": "Pusgoyle Blightlords",
+      "points": 190,
+      "size": 2,
+      "kind": "",
+      "category": "Cavalry",
+      "profile": {
+        "move": "8\"",
+        "health": "8",
+        "save": "4+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/maggotkin-of-nurgle/Pusgoyle-Blightlords",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "MAGGOTKIN OF NURGLE",
+          "ROTBRINGERS",
+          "CAVALRY",
+          "FLY",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Dispersed Formation",
+          "Relentless Attackers"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Dispersed Formation",
+            "timing": "Passive",
+            "effect": "Effect: This unit has a coherency range of 2\".",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Relentless Attackers",
+            "timing": "Passive",
+            "effect": "Effect: Add 1 to the Rend characteristic of this unit’s FLYRIDER’S ARSENAL for attacks that target units contesting an objective.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Flyrider’s Arsenal",
+            "4",
+            "3+",
+            "3+",
+            "1",
+            "1",
+            "Charge (+1 Damage)"
+          ],
+          [
+            "Rot Fly’s Mouthparts and Sting",
+            "6",
+            "4+",
+            "3+",
+            "-",
+            "1",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Elite Rotbringers mounted atop Rot Flies, Pusgoyle Blightlords thrum ahead of their kindred to sow panic and death. Their crushing tocsins and whistling scythes make short work of any who would slow the spread of decay."
+    },
+    {
+      "faction": "Maggotkin of Nurgle",
+      "name": "Pusgoyle Blightlords (1 model)",
+      "points": 110,
+      "size": 1,
+      "kind": "",
+      "category": "Cavalry",
+      "profile": {
+        "move": "8\"",
+        "health": "8",
+        "save": "4+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/maggotkin-of-nurgle/Pusgoyle-Blightlords-1-model-",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "MAGGOTKIN OF NURGLE",
+          "ROTBRINGERS",
+          "CAVALRY",
+          "FLY",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Dispersed Formation",
+          "Relentless Attackers"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Dispersed Formation",
+            "timing": "Passive",
+            "effect": "Effect: This unit has a coherency range of 2\".",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Relentless Attackers",
+            "timing": "Passive",
+            "effect": "Effect: Add 1 to the Rend characteristic of this unit’s Flyrider’s Arsenal for attacks that target units contesting an objective.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Rot Fly’s Mouthparts and Sting",
+            "6",
+            "4+",
+            "3+",
+            "-",
+            "1",
+            "Companion"
+          ],
+          [
+            "Flyrider’s Arsenal",
+            "4",
+            "3+",
+            "3+",
+            "1",
+            "1",
+            "Charge (+1 Damage)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Elite Rotbringers mounted atop Rot Flies, Pusgoyle Blightlords thrum ahead of their kindred to sow panic and death. Their crushing tocsins and whistling scythes make short work of any who would slow the spread of decay.",
+      "notes": "You can include 1 unit of this type for each Lord of Afflictions in your army."
+    },
+    {
+      "faction": "Maggotkin of Nurgle",
+      "name": "Putrid Blightkings",
+      "points": 130,
+      "size": 5,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "4\"",
+        "health": "3",
+        "save": "5+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/maggotkin-of-nurgle/Putrid-Blightkings",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "MAGGOTKIN OF NURGLE",
+          "ROTBRINGERS",
+          "CHAMPION",
+          "INFANTRY",
+          "STANDARD BEARER (1/5)",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Discomfiting Stench"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Discomfiting Stench",
+            "timing": "Once Per Turn (Army), End of Any Turn",
+            "effect": "Declare: Pick a visible enemy WIZARD or PRIEST within 12\" of this unit to be the target.\nEffect: Roll a dice.\n• If the target is a WIZARD and the roll exceeds the target’s power level, until the start of your next turn, each time a casting roll for the target includes 2 or more rolls of 1, 2 or more rolls of 2 or 2 or more rolls of 3, the spell is miscast.\n• If the target is a PRIEST and the roll exceeds the target’s power level, until the start of your next turn, each time your opponent makes an unmodified chanting roll of 1 or 2 for the target, the prayer fails, its effect is not resolved and your oppone",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "End of Turn"
+          }
+        ],
+        "melee": [
+          [
+            "Pox-blighted Weapons",
+            "4",
+            "3+",
+            "3+",
+            "1",
+            "1",
+            "Anti-PRIEST (+1 Rend), Anti-WIZARD (+1 Rend)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Putrid Blightkings carve their way forwards with slime-encrusted blades, hammers and axes. Their rotting bodies emanate an unnaturally noisome odour that impedes the concentration of nearby priests and wizards."
+    },
+    {
+      "faction": "Maggotkin of Nurgle",
+      "name": "Rotbringer Sorcerer",
+      "points": 100,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "4\"",
+        "health": "6",
+        "save": "5+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/maggotkin-of-nurgle/Rotbringer-Sorcerer",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "MAGGOTKIN OF NURGLE",
+          "ROTBRINGERS",
+          "HERO",
+          "INFANTRY",
+          "WARD (6+)",
+          "WIZARD (1)"
+        ],
+        "abilities": [
+          "Tainted Sorceries"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Tainted Sorceries",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Pick an enemy unit that was picked to be the target of a spell that was successfully cast by this unit this phase to be the target.\nEffect: Roll a dice. On a 2+, subtract 1 from ward rolls for the target for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Hero Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Rotwood Staff",
+            "3",
+            "4+",
+            "3+",
+            "1",
+            "D3",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Rotbringer Sorcerers are masters of unclean magics, capable of afflicting enemies with glistening boils or transforming earth into sucking quagmires. They revel in acts of corruption and are even able to infect the magic cast by their foes.",
+      "regimentOptions": "Any %000012255ROTBRINGERS%, 0-1 %000012253Rotbringer Lord%",
+      "notes": "This HERO can join an eligible regiment as a Rotbringer Lord"
+    },
+    {
+      "faction": "Maggotkin of Nurgle",
+      "name": "Rotigus",
+      "points": 420,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "22",
+        "save": "4+",
+        "control": "10",
+        "ward": "5+",
+        "url": "https://wahapedia.ru/aos4/factions/maggotkin-of-nurgle/Rotigus",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "DAEMON",
+          "MAGGOTKIN OF NURGLE",
+          "HERO",
+          "MONSTER",
+          "UNIQUE",
+          "WARD (5+)",
+          "WARMASTER",
+          "WIZARD (2)"
+        ],
+        "abilities": [
+          "Battle Damaged",
+          "Bringer of Plenty",
+          "Mountain of Loathsome Flesh",
+          "Deluge of Nurgle"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of its Gnarlrod is 3.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Bringer of Plenty",
+            "timing": "Passive",
+            "effect": "Effect: Add 1 to casting rolls for friendly MAGGOTKIN OF NURGLE units while they are wholly within 12\" of this unit.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Mountain of Loathsome Flesh",
+            "timing": "Once Per Turn (Army), Any Charge Phase",
+            "effect": "Declare: If this unit charged this phase, roll a dice. On a 3+, pick a visible enemy unit within 1\" of it to be the target.\nEffect: Roll a number of dice equal to the number of models in the target unit. For each 5+, inflict 1 mortal damage on the target.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Rampage",
+            "phase": "Charge Phase"
+          },
+          {
+            "name": "Deluge of Nurgle",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Pick each enemy unit within 18\" of this unit to be the enemy targets, then pick each friendly MAGGOTKIN OF NURGLE unit within 18\" of this unit to be the friendly targets. Then, make a casting roll of 2D6.\nEffect: Inflict 1 mortal damage on each enemy target and Heal (1) each friendly target.\nThen, until the start of your next turn, if an ability would heal or return any slain models to an enemy unit while they are within 18\" of this unit, that ability does not heal any damage points or return any slain models to it.",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Spell",
+            "phase": "Hero Phase",
+            "pointsType": "Spell",
+            "points": "8"
+          }
+        ],
+        "melee": [
+          [
+            "Fanged Maws",
+            "4",
+            "3+",
+            "2+",
+            "2",
+            "2",
+            ""
+          ],
+          [
+            "Gnarlrod",
+            "5",
+            "3+",
+            "2+",
+            "1",
+            "3",
+            "See battle damage rules"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Brandishing his mouldy gnarlrod at the skies, Rotigus Rainfather calls down the inundating Deluge of Nurgle, even as the fanged maws that split his flesh vomit streams of diseased bile, drowning the enemy in torrents of noxious filth.",
+      "regimentOptions": "0-1 %000012254Plague Scion%, Any %000006197MAGGOTKIN OF NURGLE%"
+    },
+    {
+      "faction": "Maggotkin of Nurgle",
+      "name": "Rotmire Creed",
+      "points": 110,
+      "size": 10,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "5\"",
+        "health": "1",
+        "save": "6+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/maggotkin-of-nurgle/Rotmire-Creed",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "MAGGOTKIN OF NURGLE",
+          "ROTBRINGERS",
+          "CHAMPION (1/10)",
+          "INFANTRY",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Virulent Concoctions"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Virulent Concoctions",
+            "timing": "Passive",
+            "effect": "Effect: When picking an enemy unit to be the target of the 'Infect' effect of the 'Blessed by the Plaguefather' ability, you can pick an enemy unit that had any damage points allocated to it by this unit’s shooting attacks this turn to be the target, even if that unit is not within 7\" of any friendly MAGGOTKIN OF NURGLE units. You cannot pick a MANIFESTATION or terrain feature.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "End of Turn"
+          }
+        ],
+        "ranged": [
+          [
+            "Contagion Blowpipes",
+            "12\"",
+            "2",
+            "4+",
+            "3+",
+            "-",
+            "1",
+            "Crit (Auto-wound)"
+          ]
+        ],
+        "melee": [
+          [
+            "Bilewood Weapons",
+            "2",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "The Rotmire Creed are mortal swamp-dwellers who fanatically spread their deity’s vile gifts. Brewers of disease-ridden toxins, they wield blowpipes armed with poisoned darts that can inflict crippling agony on their foes. Lurching into battle on bilewood stilts, they are surprisingly swift, retreating from the melee to find a fresh vantage point from which to launch another volley of tainted missiles."
+    },
+    {
+      "faction": "Maggotkin of Nurgle",
+      "name": "Rotswords",
+      "points": 210,
+      "size": 10,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "4\"",
+        "health": "2",
+        "save": "3+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/maggotkin-of-nurgle/Rotswords",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "MAGGOTKIN OF NURGLE",
+          "ROTBRINGERS",
+          "CHAMPION",
+          "INFANTRY",
+          "MUSICIAN (1/10)",
+          "STANDARD BEARER (1/10)",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Sweat-Soaked and Reeking"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Sweat-Soaked and Reeking",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick an enemy unit that charged this turn and is in combat with this unit to be the target.\nEffect: Roll a dice. On a 3+, the target cannot use commands for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Ruined Master-crafted Weapons",
+            "2",
+            "3+",
+            "3+",
+            "1",
+            "1",
+            "Crit (2 Hits)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Wracked with fever are the deadly Rotswords. These Nurglite footsoldiers exude an acrid stink that causes even the most stalwart of foes to baulk in disgust. Febrile and eager, they wield their ruined but lethal blades with terrifying vigour and abandon."
+    },
+    {
+      "faction": "Maggotkin of Nurgle",
+      "name": "Scourge of Aqshy Putrid Blightkings",
+      "points": 140,
+      "size": 5,
+      "kind": "Scourge of Aqshy",
+      "category": "Infantry",
+      "profile": {
+        "move": "4\"",
+        "health": "3",
+        "save": "5+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/maggotkin-of-nurgle/Scourge-of-Aqshy-Putrid-Blightkings",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "MAGGOTKIN OF NURGLE",
+          "ROTBRINGERS",
+          "CHAMPION",
+          "INFANTRY",
+          "STANDARD BEARER (1/5)",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Putrescent Piety",
+          "Disgustingly Devoted"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Putrescent Piety",
+            "timing": "Once Per Battle (Army), Deployment Phase",
+            "effect": "Effect: This unit has PRIEST (1) for the rest of the battle",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Disgustingly Devoted",
+            "timing": "Once Per Turn (Army), Your Hero Phase",
+            "effect": "Effect: Spend 1 rage dice. If your opponent’s fury level is lower than yours, they must increase their fury level by 1, to a maximum of 7. Then, give this unit D3 ritual points.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Pox-blighted Weapons",
+            "4",
+            "3+",
+            "3+",
+            "1",
+            "1",
+            "Anti-PRIEST (+1 Rend), Anti-WIZARD (+1 Rend)"
+          ]
+        ]
+      },
+      "source": "Scourge of Aqshy - Maggotkin of Nurgle",
+      "canReinforce": true,
+      "flavour": "Their ungodly stench only exacerbated by the oppressive heat of the Great Parch, Putrid Blightkings relentlessly trudge their way across the arid landscape. Utterly devoted to Nurgle, they propagate his Garden with every swing of their slime-covered weapons.",
+      "notes": "This unit is legal for Matched Play for battles fought using the General’s Handbook 2026-27 battlepack."
+    },
+    {
+      "faction": "Maggotkin of Nurgle",
+      "name": "Scourge of Aqshy Sloven Knights",
+      "points": 180,
+      "size": 3,
+      "kind": "Scourge of Aqshy",
+      "category": "Cavalry",
+      "profile": {
+        "move": "8\"",
+        "health": "4",
+        "save": "3+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/maggotkin-of-nurgle/Scourge-of-Aqshy-Sloven-Knights",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "MAGGOTKIN OF NURGLE",
+          "ROTBRINGERS",
+          "CAVALRY",
+          "CHAMPION",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Indolent Bludgeoning"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Indolent Bludgeoning",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick an enemy unit in combat with this unit to be the target.\nEffect: For the rest of the turn, while the target is in combat with both this unit and another friendly MAGGOTKIN OF NURGLE unit, add 1 to the Damage characteristic of this unit’s melee weapons for attacks that target that enemy unit",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Entropic Bludgeons",
+            "2",
+            "4+",
+            "3+",
+            "2",
+            "2",
+            "Charge (+1 Damage)"
+          ],
+          [
+            "Foetid Nag’s Hooves",
+            "2",
+            "5+",
+            "3+",
+            "-",
+            "1",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "Scourge of Aqshy - Maggotkin of Nurgle",
+      "canReinforce": true,
+      "flavour": "Though many of them are still attired in the mouldering panoply of their former Freeguild regiments, Sloven Knights are a far cry from the defenders of the Great Parch they once were. Resentful, disconsolate and filled with a profound ennui, these rotting warriors languidly bludgeon the foe into a pulp.",
+      "notes": "This unit is legal for Matched Play for battles fought using the General’s Handbook 2026-27 battlepack."
+    },
+    {
+      "faction": "Maggotkin of Nurgle",
+      "name": "Scourge of Ghyran Rotigus",
+      "points": 430,
+      "size": 1,
+      "kind": "Scourge of Ghyran",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "22",
+        "save": "4+",
+        "control": "10",
+        "ward": "5+",
+        "url": "https://wahapedia.ru/aos4/factions/maggotkin-of-nurgle/Scourge-of-Ghyran-Rotigus",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "DAEMON",
+          "MAGGOTKIN OF NURGLE",
+          "HERO",
+          "MONSTER",
+          "UNIQUE",
+          "WARD (5+)",
+          "WARMASTER",
+          "WIZARD (2)"
+        ],
+        "abilities": [
+          "Battle Damaged",
+          "Befouled Rainfall",
+          "Virulent Downpour",
+          "Bringer of Plenty",
+          "Tentacular Grip"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of its Gnarlrod is 3.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Befouled Rainfall",
+            "timing": "Passive",
+            "effect": "Effect: Subtract 1 from save rolls for enemy units while they are within 6\" of this unit.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Virulent Downpour",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Make a casting roll of 2D6.\nEffect: Add 3\" to the range of this unit’s ‘Befouled Rainfall’ ability for the rest of the battle. This unit can be affected by this ability multiple times and the effects are cumulative.\nThen, inflict 1 mortal damage on each enemy unit within range of that ability.",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Spell",
+            "phase": "Hero Phase",
+            "pointsType": "Spell",
+            "points": "7"
+          },
+          {
+            "name": "Bringer of Plenty",
+            "timing": "Passive",
+            "effect": "Effect: Add 1 to casting rolls for this unit.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Tentacular Grip",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick an enemy unit in combat with this unit to be the target.\nEffect: Roll a dice. If the roll exceeds the target’s Save characteristic, inflict an amount of mortal damage on the target equal to the roll.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Rampage",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Gnarlrod",
+            "5",
+            "3+",
+            "2+",
+            "1",
+            "3",
+            "See battle damage rules"
+          ],
+          [
+            "Fanged Maw",
+            "2",
+            "3+",
+            "2+",
+            "2",
+            "2",
+            ""
+          ],
+          [
+            "Host of Nurglings",
+            "10",
+            "5+",
+            "5+",
+            "-",
+            "1",
+            "Crit (Auto-wound), Companion"
+          ]
+        ]
+      },
+      "source": "Scourge of Ghyran - Maggotkin of Nurgle",
+      "canReinforce": false,
+      "flavour": "The Realm of Life belongs to Nurgle, and the infamous greater daemon Rotigus Rainfather will drive all trespassers from his beloved Grandfather’s lands with feculent floods and cursed rains. Those foolish enough to land a blow on his blubberous mass are seized by tentacles that sprout from his arms and stuffed, screaming, into the seeping maw in his belly.",
+      "regimentOptions": "0-1 %000012254Plague Scion%, Any %000006197MAGGOTKIN OF NURGLE%",
+      "notes": "This unit is legal for Matched Play for battles fought using the General’s Handbook 2025-26 battlepack."
+    },
+    {
+      "faction": "Maggotkin of Nurgle",
+      "name": "Shaman Foulhoof",
+      "points": 110,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "5",
+        "save": "5+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/maggotkin-of-nurgle/Shaman-Foulhoof",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "MAGGOTKIN OF NURGLE",
+          "ROTBRINGERS",
+          "HERO",
+          "INFANTRY",
+          "UNIQUE",
+          "WARD (6+)",
+          "WIZARD (1)"
+        ],
+        "abilities": [
+          "Purulent Profusion",
+          "Rampant Defilement"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Purulent Profusion",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Pick a visible enemy unit within 18\" of this unit to be the target, then make a casting roll of 2D6.\nEffect: Subtract 1 from the Rend characteristic of the target’s melee weapons until the start of your next turn.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "keywords": "Spell",
+            "phase": "Hero Phase",
+            "pointsType": "Spell",
+            "points": "7"
+          },
+          {
+            "name": "Rampant Defilement",
+            "timing": "Any Combat Phase",
+            "effect": "Declare: Pick a friendly Pestigors unit wholly within 12\" of this unit to be the target.\nEffect: Roll a dice. On a 3+, add 1 to the Attacks characteristic of the target’s melee weapons for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Rotstave",
+            "3",
+            "4+",
+            "3+",
+            "1",
+            "D3",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "A shaman of vile renown, Foulhoof shares his curdling blights with the merest gesture towards his foes. Regarded as a prophet by his bestial kind, his braying, phlegmatic pronouncements spur his fellow Pestigors into throws of apoplexy and desecration.",
+      "regimentOptions": "0-1 %000012253Rotbringer Lord%, Any %000012255ROTBRINGERS%"
+    },
+    {
+      "faction": "Maggotkin of Nurgle",
+      "name": "Sloppity Bilepiper, Herald of Nurgle",
+      "points": 90,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "4\"",
+        "health": "5",
+        "save": "5+",
+        "control": "2",
+        "ward": "5+",
+        "url": "https://wahapedia.ru/aos4/factions/maggotkin-of-nurgle/Sloppity-Bilepiper-Herald-of-Nurgle",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "DAEMON",
+          "MAGGOTKIN OF NURGLE",
+          "HERO",
+          "INFANTRY",
+          "WARD (5+)"
+        ],
+        "abilities": [
+          "Jolly Gutpipes"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Jolly Gutpipes",
+            "timing": "Once Per Turn (Army), Your Hero Phase",
+            "effect": "Declare: Pick a visible friendly MAGGOTKIN OF NURGLE DAEMON unit wholly within 12\" of this unit or a visible enemy unit within 12\" of this unit to be the target.\nEffect: If you picked a friendly unit to be the target, roll a dice. If the roll equals or exceeds the target’s Control characteristic, add 2 to run rolls and charge rolls for the target until the start of your next turn.\nIf you picked an enemy unit to be the target, roll a dice. If the roll equals or exceeds the target’s Control characteristic, until the start of your next turn, while this unit is on the battlefi",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Hero Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Marotter",
+            "3",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Sloppity Bilepipers caper through the ranks of Nurgle’s legions as they advance. Infected with a plague of mirth, they prance and quip, entertaining their fellow daemons even as they cause the enemy to literally die laughing.",
+      "regimentOptions": "Any %000003796DAEMON%",
+      "notes": "This HERO can join an eligible regiment as a Plague Scion."
+    },
+    {
+      "faction": "Maggotkin of Nurgle",
+      "name": "Sloven Knights",
+      "points": 180,
+      "size": 3,
+      "kind": "",
+      "category": "Cavalry",
+      "profile": {
+        "move": "8\"",
+        "health": "4",
+        "save": "3+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/maggotkin-of-nurgle/Sloven-Knights",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "MAGGOTKIN OF NURGLE",
+          "ROTBRINGERS",
+          "CAVALRY",
+          "CHAMPION",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Pall of Exhaustion"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Pall of Exhaustion",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick an enemy unit in combat with this unit to be the target.\nEffect: Roll a dice. Add 1 to the roll if the target is in combat with any other friendly ROTBRINGERS units. On a 3+, the target has STRIKE-LAST for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Entropic Bludgeons",
+            "2",
+            "4+",
+            "3+",
+            "2",
+            "2",
+            "Charge (+1 Damage)"
+          ],
+          [
+            "Foetid Nag’s Hooves",
+            "2",
+            "5+",
+            "3+",
+            "-",
+            "1",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Clad in rotting panoply, the Sloven Knights have turned their backs on whatever honour they might once have possessed. Now diseased cavaliers sworn to the Grandfather, they are imposing figures atop their plague-ridden steeds, their very presence exuding a palpable and debilitating aura of despair."
+    },
+    {
+      "faction": "Maggotkin of Nurgle",
+      "name": "Spoilpox Scrivener, Herald of Nurgle",
+      "points": 80,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "4\"",
+        "health": "5",
+        "save": "5+",
+        "control": "2",
+        "ward": "5+",
+        "url": "https://wahapedia.ru/aos4/factions/maggotkin-of-nurgle/Spoilpox-Scrivener-Herald-of-Nurgle",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "DAEMON",
+          "MAGGOTKIN OF NURGLE",
+          "HERO",
+          "INFANTRY",
+          "WARD (5+)"
+        ],
+        "abilities": [
+          "Keep Counting, I’m Watching You",
+          "Stupefying Sneezes"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Keep Counting, I’m Watching You",
+            "timing": "Once Per Turn (Army), Your Hero Phase",
+            "effect": "Declare: Pick a friendly Plaguebearers unit wholly within 12\" of this unit to be the target.\nEffect: Roll a D6. On a 2+, pick 1 of the following effects to apply until the start of your next turn:\nTally of Blows: Add 1 to wound rolls for the target’s combat attacks.\nRecorded Stamina: Add 5 to the target’s control score.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Stupefying Sneezes",
+            "timing": "Once Per Turn (Army), Any Shooting Phase",
+            "effect": "Declare: Pick an enemy MONSTER that had any damage points allocated to it this phase by this unit’s shooting attacks to be the target.\nEffect: The target cannot use RAMPAGE abilities until the start of your next turn.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Shooting Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Disgusting Sneezes",
+            "7\"",
+            "D6",
+            "2+",
+            "4+",
+            "-",
+            "1",
+            "Shoot in Combat"
+          ]
+        ],
+        "melee": [
+          [
+            "Distended Maw",
+            "3",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Spoilpox Scriveners keep a strict watch over the tallying of the Plaguebearers. Should an enemy stray too close, they bite off heads and limbs with their trunk-like maws or they blanket the foe in foul mucus with almighty sneezes.",
+      "regimentOptions": "Any %000003796DAEMON%",
+      "notes": "This HERO can join an eligible regiment as a Plague Scion."
+    },
+    {
+      "faction": "Maggotkin of Nurgle",
+      "name": "The Glottkin",
+      "points": 470,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "24",
+        "save": "4+",
+        "control": "10",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/maggotkin-of-nurgle/The-Glottkin",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "MAGGOTKIN OF NURGLE",
+          "ROTBRINGERS",
+          "HERO",
+          "MONSTER",
+          "UNIQUE",
+          "WARD (6+)",
+          "WARMASTER",
+          "WIZARD (1)"
+        ],
+        "abilities": [
+          "Battle Damaged",
+          "Overgrowth of Flesh",
+          "Horrific Opponent",
+          "Blighted Stampede",
+          "Tentacle Trap"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of Ghurk’s Tentacle is 3.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Overgrowth of Flesh",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Pick a visible enemy unit within 12\" of this unit to be the target, then make a casting roll of 2D6.\nEffect: Roll a number of dice equal to the target’s Health characteristic. For each 5+, inflict 1 mortal damage on the target, to a maximum of 7 mortal damage. If any mortal damage was inflicted on the target, and the target was not a MANIFESTATION or terrain feature, it has the DISEASED keyword.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Spell",
+            "phase": "Hero Phase",
+            "pointsType": "Spell",
+            "points": "6"
+          },
+          {
+            "name": "Horrific Opponent",
+            "timing": "Passive",
+            "effect": "Effect: Subtract 5 from the control scores of enemy units while they are in combat with this unit.",
+            "kind": "Ability",
+            "type": "Control",
+            "phase": "End of Turn"
+          },
+          {
+            "name": "Blighted Stampede",
+            "timing": "Once Per Turn (Army), Reaction: You declared the ‘%000009844Counter-charge%’ command for this unit",
+            "effect": "Effect: Pick up to 2 friendly MAGGOTKIN OF NURGLE units wholly within 12\" of this unit to be the targets. After the ‘Counter-charge’ command for this unit has been resolved, if this unit charged, each of the targets can immediately use the ‘Counter-charge’ command in an order of your choosing without any command points being spent.",
+            "kind": "Ability",
+            "type": "Movement",
+            "keywords": "Rampage",
+            "phase": "Charge Phase",
+            "reaction": true
+          },
+          {
+            "name": "Tentacle Trap",
+            "timing": "Any Combat Phase",
+            "effect": "Declare: Pick an enemy HERO or MONSTER in combat with this unit to be the target\nEffect: Roll a dice. On a 4+, for the rest of the turn:\n• The target cannot move and cannot be removed from the battlefield by an ability that would allow it to be set up elsewhere on the battlefield.\n• Add 1 to hit rolls for combat attacks that target that enemy unit.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Ghurk’s Tentacle",
+            "4",
+            "3+",
+            "2+",
+            "2",
+            "5",
+            "See battle damage rules"
+          ],
+          [
+            "Ghurk’s Lamprey Maw",
+            "3",
+            "3+",
+            "2+",
+            "2",
+            "3",
+            ""
+          ],
+          [
+            "Otto’s Scythe",
+            "4",
+            "3+",
+            "3+",
+            "1",
+            "3",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Plague-cursed triplets of immense age and power, the Glottkin are Nurgle’s greatest mortal champions. When the warrior Otto, sorcerous Ethrac and monstrous Ghurk combine their unnatural power, all who stand against them are soon crushed…",
+      "regimentOptions": "0-1 %000012253Rotbringer Lord%, Any %000006197MAGGOTKIN OF NURGLE%"
+    },
+    {
+      "faction": "Maggotkin of Nurgle",
+      "name": "The Wurmspat",
+      "points": 160,
+      "size": 3,
+      "kind": "Legends",
+      "category": "Infantry",
+      "profile": {
+        "move": "4\"",
+        "health": "4",
+        "save": "4+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/maggotkin-of-nurgle/The-Wurmspat",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "MAGGOTKIN OF NURGLE",
+          "ROTBRINGERS",
+          "CHAMPION",
+          "INFANTRY",
+          "UNIQUE",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Retchling",
+          "Fecula Flyblown"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Retchling",
+            "timing": "Once Per Battle, Your Hero Phase",
+            "effect": "Effect: If this unit’s Fecula Flyblown is on the battlefield, add 1 to its power level for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Fecula Flyblown",
+            "timing": "Passive",
+            "effect": "Effect: While this unit’s Fecula Flyblown is on the battlefield, it has WIZARD (1).",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Blighted Weapons",
+            "4",
+            "3+",
+            "3+",
+            "1",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "Legends Warscrolls",
+      "canReinforce": false,
+      "flavour": "A bloated and spectacularly foul-smelling sorcerer of formidable power, Fecula Flyblown has sworn to spread the sickening gifts of Grandfather Nurgle as far and wide as possible. The Blightkings Sepsimus and Ghulgoch have sworn themselves to the service of Fecula. They form a shield of flabby putrescence and rusted weapons between the sorcerer and any who may threaten her.",
+      "notes": "This unit cannot be reinforced.",
+      "description": "Each model in this unit is armed with Blighted Weapons. The models in this unit are:\n• Fecula Flyblown (champion)\n• Ghulgoch the Butcher\n• Sepsimus, Plaguesworn"
+    }
+  ]
+}

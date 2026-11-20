@@ -1,0 +1,4381 @@
+{
+  "edition": "Age of Sigmar 4",
+  "lastUpdate": "2026-10-22 18:12:05",
+  "faction": {
+    "id": "ST",
+    "name": "Skaven",
+    "slug": "skaven",
+    "url": "https://wahapedia.ru/aos4/factions/skaven",
+    "count": 55
+  },
+  "rules": {
+    "battleTraits": [
+      {
+        "name": "THE LURKING VERMINTIDE",
+        "timing": "Deployment Phase",
+        "declare": "Pick a friendly SKAVEN unit that has not been deployed.",
+        "effect": "Set up that unit in reserve in the tunnels below. It has now been deployed.",
+        "unitLinks": []
+      },
+      {
+        "name": "ALWAYS THREE CLAWSTEPS AHEAD",
+        "timing": "Once Per Turn (Army), Enemy Hero Phase",
+        "declare": "Pick a friendly non-MONSTER SKAVEN unit that is not in combat and was not set up this turn to use this ability.",
+        "effect": "That unit can use the ’Normal Move’ ability as if it were your movement phase.",
+        "unitLinks": []
+      },
+      {
+        "name": "TOO QUICK TO HIT-HIT",
+        "timing": "Passive",
+        "declare": "",
+        "effect": "No mortal damage is inflicted on friendly SKAVEN INFANTRY and CAVALRY units by RETREAT abilities.",
+        "unitLinks": [
+          "https://wahapedia.ru/aos4/factions/skaven/Clawlord-on-Gnaw-beast"
+        ]
+      },
+      {
+        "name": "SPLINTERS OF THE VERMINDOOM",
+        "timing": "Once Per Battle Round (Army), Start of Battle Round",
+        "declare": "You can use this ability if there are fewer than 3 friendly Gnawholes on the battlefield.",
+        "effect": "Set up a Gnawhole on the battlefield more than 9\" from all enemy units, more than 3\" from all objectives and more than 1\" from all other terrain features.",
+        "unitLinks": [
+          "https://wahapedia.ru/aos4/factions/skaven/Gnawhole"
+        ]
+      },
+      {
+        "name": "GNAWHOLE AMBUSH",
+        "timing": "Your Movement Phase",
+        "declare": "Pick a friendly SKAVEN unit that is in the tunnels below to use this ability.",
+        "effect": "Set up that unit wholly within 6\" of a friendly Gnawhole and more than 9\" from all enemy units.",
+        "unitLinks": [
+          "https://wahapedia.ru/aos4/factions/skaven/Gnawhole"
+        ]
+      }
+    ],
+    "armiesOfRenown": [
+      {
+        "id": "the-great-grand-gnawhorde",
+        "name": "The Great-Grand Gnawhorde",
+        "battleTraits": [
+          {
+            "name": "DISCIPLES OF VIZZIK",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "While a friendly Vizzik Skour is within the combat range of another friendly GNAWHORDE unit:\n• That Vizzik Skour has WARD (4+).\n• Each time you make a successful ward roll for that Vizzik Skour, allocate 1 damage point to a friendly GNAWHORDE unit within its combat range after the damage sequence has been resolved.",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/skaven/Vizzik-Skour-Prophet-of-the-Horned-Rat"
+            ]
+          },
+          {
+            "name": "UNSTOPPABLE WARP-VOLLEY",
+            "timing": "Once Per Turn (Army), Any Shooting Phase",
+            "declare": "You can only use this ability if you have not used any WARPSHATTER THROES abilities this turn. Pick up to 3 friendly GNAWHORDE units to be the targets.",
+            "effect": "For the rest of the turn:\n• Add 3\" to the Range characteristic of the targets’ ranged weapons.\n• The targets cannot use commands.",
+            "unitLinks": []
+          },
+          {
+            "name": "FRENZIED MOMENTUM",
+            "timing": "Once Per Turn (Army), Your Movement Phase",
+            "declare": "You can only use this ability if you have not used any WARPSHATTER THROES abilities this turn. Pick up to 3 friendly GNAWHORDE units to be the targets.",
+            "effect": "For the rest of the turn:\n• Add 2 to run rolls and charge rolls for the targets.\n• Subtract 1 from the targets’ control scores.",
+            "unitLinks": []
+          },
+          {
+            "name": "RECKLESS ABANDON",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "declare": "You can only use this ability if you have not used any WARPSHATTER THROES abilities this turn. Pick up to 3 friendly GNAWHORDE units to be the targets.",
+            "effect": "For the rest of the turn:\n• Add 1 to the Attacks characteristic of the targets’ melee weapons.\n• Add 1 to hit rolls for combat attacks that target those friendly units.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "id": "thanquol-s-mutated-menagerie",
+        "name": "Thanquol’s Mutated Menagerie",
+        "battleTraits": [
+          {
+            "name": "MONSTROUS ENTOURAGE",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "The Companion weapon ability has no effect on MUTATED MENAGERIE units. While a friendly Thanquol is within the combat range of another friendly MUTATED MENAGERIE unit:\n• That Thanquol has WARD (4+).\n• Each time you make a successful ward roll for that Thanquol, allocate 1 damage point to a friendly MUTATED MENAGERIE unit within its combat range after the damage sequence has been resolved.",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/skaven/Thanquol-on-Boneripper"
+            ]
+          },
+          {
+            "name": "SPITEFUL SWARMS",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "declare": "Pick a friendly non-HERO MUTATED MENAGERIE MONSTER unit that has not used any RAMPAGE abilities this turn to use this ability.",
+            "effect": "This unit has STRIKE-FIRST for the rest of the turn. However, at the end of the turn, this unit is destroyed. When this unit would be destroyed, before it is removed from play, roll a dice for each enemy unit within 6\" of this unit. On a 3+, subtract 1 from the Attacks characteristic of that enemy unit’s melee weapons for the rest of the battle.\nAfter this ability has been resolved, this unit cannot use any other RAMPAGE abilities for the rest of the turn.",
+            "unitLinks": []
+          },
+          {
+            "name": "MORE-MORE MUTATION!",
+            "timing": "Once Per Turn (Army), Your Hero Phase",
+            "declare": "Pick a friendly non-HERO MUTATED MENAGERIE unit to be the target. You cannot pick the same unit to be the target of this ability more than once per battle.",
+            "effect": "For the rest of the battle:\n• Add 2 to the target’s Health characteristic.\n• Add 2\" to the target’s Move characteristic.\n• Add 1 to the Attacks characteristic of the target’s melee weapons.\n• The target has WARD (5+).\n• At the end of each turn, allocate D3+2 damage points to the target.",
+            "unitLinks": []
+          },
+          {
+            "name": "RAMPAGING DEMISE",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "declare": "Pick a friendly non-HERO MUTATED MENAGERIE MONSTER unit that has not used any RAMPAGE abilities this turn to use this ability.",
+            "effect": "This unit has STRIKE-FIRST for the rest of the turn. However, at the end of the turn, this unit is destroyed. When this unit would be destroyed, before it is removed from play, roll a D3 for each enemy unit within 6\" of this unit. On a 2+, inflict an amount of mortal damage on that enemy unit equal to the roll.\nAfter this ability has been resolved, this unit cannot use any other RAMPAGE abilities for the rest of the turn.",
+            "unitLinks": []
+          }
+        ]
+      }
+    ],
+    "battleFormations": [
+      {
+        "name": "Virulent Procession",
+        "abilities": [
+          {
+            "name": "CORRUPTED EARTH",
+            "timing": "Once Per Turn (Army), End of Any Turn",
+            "declare": "Pick up to 3 friendly PESTILENS units that are in combat to be the targets.",
+            "effect": "For each target:\n• Make a pile-in move.\n• Then, pick an enemy unit in combat with the target and roll a D3. On a 2+, inflict an amount of mortal damage on that enemy unit equal to the roll.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "name": "Fleshmeld Menagerie",
+        "abilities": [
+          {
+            "name": "PRIZED CREATIONS",
+            "timing": "Once Per Turn (Army), Your Hero Phase",
+            "declare": "Pick up to 3 friendly non-HERO MOULDER units to be the targets.",
+            "effect": "Roll a dice for each target and apply the corresponding effect:\n1-2Self-destructive Fury: Inflict D3 mortal damage on the target.3-4Rabid Infusion: Add 1 to the Attacks characteristic of the target’s melee weapons until the start of your next turn.5-6Blinded by Frenzy: In addition to the effect of ‘Rabid Infusion’, the target has WARD (5+) until the start of your next turn.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "name": "Claw-horde",
+        "abilities": [
+          {
+            "name": "CLAW-PICKED",
+            "timing": "Once Per Turn (Army), Your Combat Phase",
+            "declare": "Pick up to 3 friendly VERMINUS units that charged this turn to be the targets.",
+            "effect": "Add 1 to the Rend characteristic of the targets’ melee weapons for the rest of the turn.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "name": "Warpcog Convocation",
+        "abilities": [
+          {
+            "name": "SKRYRE PROTOTYPES",
+            "timing": "Once Per Turn (Army), Your Shooting Phase",
+            "declare": "Pick up to 3 friendly SKRYRE units to be the targets.",
+            "effect": "Roll a dice for each target and apply the corresponding effect:\n1Kaboom!: Inflict D3 mortal damage on the target.2-5More Power!: Add 1 to wound rolls for the target’s shooting attacks for the rest of the turn.6More-more Power!: In addition to the effect of ‘More Power!’, add 1 to the Rend characteristic of the target’s ranged weapons for the rest of the turn.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "name": "Kill‑Pack",
+        "abilities": [
+          {
+            "name": "KILL-KILL! SCURRY-FLEE!",
+            "timing": "Once Per Turn (Army), Deployment Phase",
+            "declare": "Pick an enemy HERO to be the target.",
+            "effect": "For the rest of the battle, if the target has been destroyed, add 2\" to the Move characteristic of friendly ESHIN units",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "name": "Envoys of the Deepengnaw",
+        "abilities": [
+          {
+            "name": "WILL OF THE HORNED RAT",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "While a friendly SKAVEN DAEMON is within the combat range of a friendly non-HERO SKAVEN INFANTRY unit:\n• That SKAVEN DAEMON has WARD (4+).\n• Each time you make a successful ward roll for that SKAVEN DAEMON, allocate 1 mortal damage on a friendly non-HERO SKAVEN INFANTRY unit within that unit’s combat range after the damage sequence for that unit has been resolved (ward rolls cannot be made for these damage points).",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "name": "Gathering of the Clans",
+        "abilities": [
+          {
+            "name": "BACKSTABBING ALLIES",
+            "timing": "Once Per Turn (Army), Reaction: You declared the ‘Redeploy’ command for a friendly SKAVEN unit",
+            "declare": "",
+            "effect": "Pick up to 2 other friendly SKAVEN units that are not in combat and are wholly within 13\" of the unit using the ‘Redeploy’ command to be the targets. Each target must have at least one of the following keywords: VERMINUS, SKRYRE, MOULDER, PESTILENS, ESHIN. After that ‘Redeploy’ command has been resolved, each of the targets can immediately use the ‘Redeploy’ command in an order of your choice without any command points being spent.",
+            "unitLinks": []
+          }
+        ]
+      }
+    ],
+    "lores": {
+      "spell": [
+        {
+          "name": "Lore of Ruin",
+          "kind": "spell",
+          "points": 0,
+          "entries": [
+            {
+              "name": "SKITTERLEAP",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly SKAVEN WIZARD to cast this spell, pick a visible friendly SKAVEN HERO wholly within 13\" of them to be the target, then make a casting roll of 2D6.",
+              "effect": "Remove the target from the battlefield and set it up again on the battlefield more than 9\" from all enemy units.",
+              "value": "6",
+              "unitLinks": []
+            },
+            {
+              "name": "WITHER",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly SKAVEN WIZARD to cast this spell, pick a visible enemy unit within 13\" of them to be the target, then make a casting roll of 2D6.",
+              "effect": "Inflict D3 mortal damage on the target.",
+              "value": "6",
+              "unitLinks": []
+            },
+            {
+              "name": "WARPGALE",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly SKAVEN WIZARD to cast this spell, pick a visible enemy unit within 18\" of them to be the target, then make a casting roll of 2D6.",
+              "effect": "The target has STRIKE-LAST for the rest of the turn.",
+              "value": "6",
+              "unitLinks": []
+            }
+          ]
+        }
+      ],
+      "prayer": [
+        {
+          "name": "Noxious Prayers",
+          "kind": "prayer",
+          "points": 0,
+          "entries": [
+            {
+              "name": "FILTH-CRUST",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly SKAVEN PRIEST to chant this prayer, pick a visible friendly SKAVEN INFANTRY unit wholly within 13\" of them to be the target, then make a chanting roll of D6.",
+              "effect": "Add 1 to wound rolls for the target’s combat attacks until the start of your next turn. In addition, if the chanting roll was 8+, the target’s melee weapons have Crit (Mortal) until the start of your next turn.",
+              "value": "4",
+              "unitLinks": []
+            },
+            {
+              "name": "BILE-TORRENT",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly SKAVEN PRIEST to chant this prayer, pick a visible enemy unit within 13\" of them to be the target, then make a chanting roll of D6.",
+              "effect": "Roll a number of dice equal to the number of models in the target unit. For each 5+, inflict 1 mortal damage on the target. If the chanting roll was 8+, inflict 1 mortal damage on the target for each 4+ instead.",
+              "value": "4",
+              "unitLinks": []
+            },
+            {
+              "name": "RABID-TOUGH",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly SKAVEN PRIEST to chant this prayer, pick a visible friendly SKAVEN INFANTRY unit wholly within 13\" of them to be the target, then make a chanting roll of D6.",
+              "effect": "Subtract 1 from wound rolls for attacks that target that unit until the start of your next turn. In addition, if the chanting roll was 8+, add 1 to save rolls for the target until the start of your next turn.",
+              "value": "5",
+              "unitLinks": []
+            }
+          ]
+        }
+      ],
+      "manifestation": [
+        {
+          "name": "Manifestations of Doom",
+          "kind": "manifestation",
+          "points": 0,
+          "entries": [
+            {
+              "name": "SUMMON WARP LIGHTNING VORTEX",
+              "timing": "Your Hero Phase",
+              "declare": "If there is not a friendly Warp Lightning Vortex on the battlefield, pick a friendly SKAVEN WIZARD to cast this spell, then make a casting roll of 2D6.",
+              "effect": "Set up the first part of the Warp Lightning Vortex within 18\" of the caster and visible to them, then set up the second and third parts exactly 7\" from the first part and exactly 7\" from each other so that they form a triangle.",
+              "value": "7",
+              "unitLinks": [
+                "https://wahapedia.ru/aos4/factions/skaven/Warp-Lightning-Vortex"
+              ],
+              "manifestation": {
+                "faction": "Skaven",
+                "name": "Warp Lightning Vortex"
+              }
+            },
+            {
+              "name": "SUMMON VERMINTIDE",
+              "timing": "Your Hero Phase",
+              "declare": "If there is not a friendly Vermintide on the battlefield, pick a friendly SKAVEN WIZARD to cast this spell, then make a casting roll of 2D6.",
+              "effect": "Set up a Vermintide wholly within 13\" of the caster, visible to them and more than 9\" from all enemy units.",
+              "value": "7",
+              "unitLinks": [
+                "https://wahapedia.ru/aos4/factions/skaven/Vermintide"
+              ],
+              "manifestation": {
+                "faction": "Skaven",
+                "name": "Vermintide"
+              }
+            },
+            {
+              "name": "SUMMON BELL OF DOOM",
+              "timing": "Your Hero Phase",
+              "declare": "If there is not a friendly Bell of Doom on the battlefield, pick a friendly SKAVEN WIZARD to cast this spell, then make a casting roll of 2D6.",
+              "effect": "Set up a Bell of Doom wholly within 13\" of the caster, visible to them and more than 9\" from all enemy units.",
+              "value": "7",
+              "unitLinks": [
+                "https://wahapedia.ru/aos4/factions/skaven/Bell-of-Doom"
+              ],
+              "manifestation": {
+                "faction": "Skaven",
+                "name": "Bell of Doom"
+              }
+            }
+          ],
+          "scope": "faction"
+        }
+      ]
+    }
+  },
+  "entries": [
+    {
+      "faction": "Skaven",
+      "name": "Acolyte Globadiers",
+      "points": 90,
+      "size": 5,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "6\"",
+        "health": "2",
+        "save": "6+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/skaven/Acolyte-Globadiers",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SKAVEN",
+          "SKRYRE",
+          "CHAMPION",
+          "INFANTRY",
+          "WEAPON TEAM"
+        ],
+        "abilities": [
+          "Gas Clouds",
+          "Hidden Weapon Team"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Gas Clouds",
+            "timing": "Passive",
+            "effect": "Effect: Add 1 to the Damage characteristic of this unit’s Poisoned Wind Globes for attacks that target an enemy unit that has 10 or more models.",
+            "kind": "Ability",
+            "type": "Shooting",
+            "phase": "Shooting Phase"
+          },
+          {
+            "name": "Hidden Weapon Team",
+            "timing": "Passive",
+            "effect": "Effect: While this unit is within the combat range of a friendly Clanrats unit that has 5 or more models, and there are no other friendly WEAPON TEAM units within that unit’s combat range, this unit is not visible to enemy units more than 13\" away.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          }
+        ],
+        "ranged": [
+          [
+            "Poisoned Wind Globes",
+            "10\"",
+            "1",
+            "3+",
+            "3+",
+            "1",
+            "D3",
+            "Anti-INFANTRY (+1 Rend), Shoot in Combat"
+          ]
+        ],
+        "melee": [
+          [
+            "Rusty Knife",
+            "1",
+            "4+",
+            "5+",
+            "-",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "The Acolyte Globadiers of the Clans Skryre are tinkerers and artificers, miners and munitions carriers. They are a step above the thrall-rats that toil on the production lines or serve as fodder for weapons testing, and they scheme constantly about attaining the status of Warlock. The masters of the Clans Skryre are well aware of this, and they are little disposed to acquiring new rivals.",
+      "regimentOptions": "Skryre, Infantry, Weapon Team",
+      "notes": "You cannot include more than 1 Skryre Weapon Team in a regiment led by a non-Skryre Hero."
+    },
+    {
+      "faction": "Skaven",
+      "name": "Arch-Warlock",
+      "points": 140,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "5",
+        "save": "4+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/skaven/Arch-Warlock",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SKAVEN",
+          "SKRYRE",
+          "HERO",
+          "INFANTRY",
+          "WIZARD (1)"
+        ],
+        "abilities": [
+          "Overseers of the Enginecovens"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Overseers of the Enginecovens",
+            "timing": "Passive",
+            "effect": "Effect: If a friendly SKRYRE unit wholly within 13\" of this unit uses the ’Covering Fire’ command, no command points are spent.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Shooting Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Warpfire Gauntlet",
+            "10\"",
+            "3",
+            "4+",
+            "2+",
+            "2",
+            "1",
+            "Shoot in Combat"
+          ]
+        ],
+        "melee": [
+          [
+            "Stormcage Halberd",
+            "3",
+            "3+",
+            "4+",
+            "1",
+            "2",
+            ""
+          ],
+          [
+            "Crushing Piston-claw",
+            "2",
+            "4+",
+            "2+",
+            "2",
+            "2",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "At the head of every Skyre clan stands an Arch-Warlock. They are the masters of the various schools of lethal science practised by their clan, and they have personally overseen the creation of all manner of temperamental, but utterly deadly, techno-arcane superweapons. An Arch-Warlock's mind is a thing of whirring brass gears, constantly churning out new schematics of death.",
+      "regimentOptions": "0-1 %000010439Clanrats%, Any %000010703Skryre%",
+      "notes": "This HERO can join an eligible regiment as a Skaven Overclaw."
+    },
+    {
+      "faction": "Skaven",
+      "name": "Bell of Doom",
+      "points": 0,
+      "size": 1,
+      "kind": "",
+      "category": "Manifestation",
+      "profile": {
+        "move": "3D6\"",
+        "health": "7",
+        "save": "6+",
+        "ward": "6+",
+        "banishment": "7",
+        "url": "https://wahapedia.ru/aos4/factions/skaven/Bell-of-Doom",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SKAVEN",
+          "ENDLESS SPELL",
+          "FLY",
+          "MANIFESTATION",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Toll of Doom"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Toll of Doom",
+            "timing": "Passive",
+            "effect": "Effect: Subtract 1 from wound rolls for attacks that target friendly SKAVEN INFANTRY units while they are wholly within 13\" of this MANIFESTATION.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          }
+        ],
+        "melee": [
+          [
+            "Volatile Warp Energy",
+            "2D6",
+            "4+",
+            "4+",
+            "1",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "The Bell of Doom is a thing of ruinous sorcery. The ratmen have long been fascinated with such instruments, viewing them as relics charged with the ruinous will of the Great Horned Rat. Skaven sorcerers possess the means to render this belief a reality; by ringing a small hand-bell of refined warpstone and hissing the thirteen incantations of Kavzar, they can shape the aether into a clanging tool of apocalypse. Each peal from a Bell of Doom shakes the very fabric of creation. The earth splits asunder, mortar shakes loose from walls and proud statues topple. What remains is ruin, fit only for vermin to swarm over."
+    },
+    {
+      "faction": "Skaven",
+      "name": "Brood Terror",
+      "points": 200,
+      "size": 1,
+      "kind": "",
+      "category": "Monster",
+      "profile": {
+        "move": "6\"",
+        "health": "12",
+        "save": "5+",
+        "control": "5",
+        "url": "https://wahapedia.ru/aos4/factions/skaven/Brood-Terror",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "MOULDER",
+          "SKAVEN",
+          "MONSTER"
+        ],
+        "abilities": [
+          "Regenerating Terror",
+          "Warpstone Fumes"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Regenerating Terror",
+            "timing": "End of Any Turn",
+            "effect": "Effect: Heal (D6) this unit.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "End of Turn"
+          },
+          {
+            "name": "Warpstone Fumes",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Effect: Roll a dice. On a 2+, for the rest of the turn, subtract 1 from hit rolls for attacks made by enemy units while they are within 6\" of this unit.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "keywords": "Rampage",
+            "phase": "Combat Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Warpflame Scourger",
+            "15\"",
+            "2D6",
+            "4+",
+            "2+",
+            "1",
+            "D3",
+            "Anti-INFANTRY (+1 Rend), Crit (Auto-wound)"
+          ]
+        ],
+        "melee": [
+          [
+            "Chain-flail",
+            "5",
+            "4+",
+            "2+",
+            "2",
+            "3",
+            "Crit (Mortal)"
+          ],
+          [
+            "Bladed Limbs",
+            "3",
+            "4+",
+            "4+",
+            "1",
+            "2",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Amongst the most hideous aberrations of Skaven fleshcraft, a Brood Terror is created when a Master Moulder is stitched into a monstrous form. These twin-headed titans lurch between bouts of low cunning and bestial rage. Surrounded by clouds of mutagenic fog, they lumber forth with an ungainly but definite purpose, From one mutilated limb hangs a hooked flail that the Terror uses to drag its prey closer, whereupon the victim is bathed in the fires that leap from its warpflame scourger or vivisected by clusters of swift knife-arms.",
+      "regimentOptions": "Moulder, Monster"
+    },
+    {
+      "faction": "Skaven",
+      "name": "Clanrats",
+      "points": 150,
+      "size": 20,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "6\"",
+        "health": "1",
+        "save": "5+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/skaven/Clanrats",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SKAVEN",
+          "VERMINUS",
+          "CHAMPION",
+          "INFANTRY",
+          "MUSICIAN (1/20)",
+          "STANDARD BEARER (1/20)"
+        ],
+        "abilities": [
+          "Seething Swarm"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Seething Swarm",
+            "timing": "End of Any Turn",
+            "effect": "Effect: You can return D3 slain models to this unit.",
+            "kind": "Ability",
+            "type": "Rallying",
+            "phase": "End of Turn"
+          }
+        ],
+        "melee": [
+          [
+            "Rusty Weapon",
+            "2",
+            "4+",
+            "5+",
+            "-",
+            "1",
+            "Crit (Auto-wound)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Clanrats are the unwashed masses of the Clans Verminus. They are the dregs of the ratmen’s society, considered utterly disposable by their masters. No matter how many are spitted on pikes, crushed by bludgeons or riddled with arrows, the tide of mangy fur never seems to slacken. In turn, they fight with whatever rusted spears and blades they can scrounge up, as well as their own claws and teeth when necessary. Clanrats are nimble but undisciplined soldiers and, like most Skaven, are prone to wavering at the slightest threat. Only when sufficiently motivated by fear, hunger or overwhelming advantage can they be trusted to press the advance – but when they do, they can reduce entire armies to piles of gnawed bones.",
+      "regimentOptions": "Verminus, Infantry"
+    },
+    {
+      "faction": "Skaven",
+      "name": "Clawlord",
+      "points": 70,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "5",
+        "save": "4+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/skaven/Clawlord",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SKAVEN",
+          "VERMINUS",
+          "HERO",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "Cornered Rat",
+          "Gnash-gnaw On Their Bones!"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Cornered Rat",
+            "timing": "Passive",
+            "effect": "Effect: While this unit is damaged, add 3 to the Attacks characteristic of its Warpforged Blade.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Gnash-gnaw On Their Bones!",
+            "timing": "Reaction: You declared a Fight ability for this unit",
+            "effect": "Effect: Pick a friendly non-HERO VERMINUS INFANTRY unit that has not used a FIGHT ability this turn and is within this unit’s combat range to be the target. The target can be picked to use a FIGHT ability immediately after the FIGHT ability used by this unit has been resolved. If it is picked to do so, add 1 to hit rolls for the target’s attacks for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase",
+            "reaction": true
+          }
+        ],
+        "melee": [
+          [
+            "Warpforged Blade",
+            "6",
+            "3+",
+            "4+",
+            "1",
+            "2",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Clawlords command from the very back ranks - the most honourable of all positions within Skaven society. After all, why should a leader sully their own blade with violence when there are plenty of minions able to die on their behalf? Clawlords expend the lives of their underlings freely, safe in the knowledge that there are always more where they came from. The wisest amongst them also make sure that they always have an escape route to paw - even if they must cut through enemies and allies alike in the process.",
+      "regimentOptions": "Any %000010707Verminus%",
+      "notes": "This HERO can join an eligible regiment as a Skaven Overclaw."
+    },
+    {
+      "faction": "Skaven",
+      "name": "Clawlord on Gnaw-beast",
+      "points": 90,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "9\"",
+        "health": "7",
+        "save": "4+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/skaven/Clawlord-on-Gnaw-beast",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SKAVEN",
+          "VERMINUS",
+          "CAVALRY",
+          "HERO"
+        ],
+        "abilities": [
+          "Cornered Rat",
+          "Cruel Commander"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Cornered Rat",
+            "timing": "Passive",
+            "effect": "Effect: While this unit is damaged, add 3 to the Attacks characteristic of its Warpforged Halberd.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Cruel Commander",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Pick a friendly non-HERO VERMINUS INFANTRY unit wholly within 13\" of this unit to be the target.\nEffect: Inflict 1 mortal damage on the target. Then, add 5 to the target’s control score until the start of your next turn.",
+            "kind": "Ability",
+            "type": "Control",
+            "phase": "Hero Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Ratling Pistol",
+            "10\"",
+            "D6",
+            "3+",
+            "3+",
+            "1",
+            "1",
+            "Shoot in Combat, Crit (Auto-wound)"
+          ]
+        ],
+        "melee": [
+          [
+            "Warpforged Halberd",
+            "5",
+            "3+",
+            "4+",
+            "1",
+            "2",
+            ""
+          ],
+          [
+            "Gnaw-beast’s Chisel Fangs",
+            "4",
+            "4+",
+            "3+",
+            "1",
+            "D3",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "The title of Clawlord is not awarded through ceremony; it must be seized via cunning and violence. Clawlords of sufficient prestige may acquire a freakish mount known as a Gnaw-beast. These gangly-limbed and whipcord-fast horrors are bred by the Clans Moulder to possess a self-destructively swift metabolism. No matter how voraciously it feeds, the black hunger pains the Gnaw-beast constantly, granting it a frenzy that only fear of its master can curb.",
+      "regimentOptions": "Any %000010707Verminus%",
+      "notes": "This HERO can join an eligible regiment as a Skaven Overclaw."
+    },
+    {
+      "faction": "Skaven",
+      "name": "Deathmaster",
+      "points": 120,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "7\"",
+        "health": "5",
+        "save": "5+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/skaven/Deathmaster",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "ESHIN",
+          "SKAVEN",
+          "HERO",
+          "INFANTRY",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Shadowy Killers",
+          "Running Death"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Shadowy Killers",
+            "timing": "Passive",
+            "effect": "Effect: If the unmodified hit roll for an attack that targets this unit is 1-4, the attack fails and the attack sequence ends.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          },
+          {
+            "name": "Running Death",
+            "timing": "Passive",
+            "effect": "Effect: While friendly ESHIN units are wholly within 13\" of this unit, they can use SHOOT and/or CHARGE abilities even if they used a RUN ability in the same turn.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          }
+        ],
+        "ranged": [
+          [
+            "Eshin Throwing Stars",
+            "10\"",
+            "5",
+            "3+",
+            "4+",
+            "-",
+            "D3",
+            "Crit (Auto-wound), Shoot in Combat"
+          ]
+        ],
+        "melee": [
+          [
+            "Weeping Blade",
+            "5",
+            "3+",
+            "4+",
+            "1",
+            "D3",
+            "Anti-HERO (+1 Rend), Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Deathmasters are singularly adept killers. A significant part of their training centres around defying the self-interested Skaven mindset and honing the ability to set aside their own ambitions for the sake of their mission. Skulking unseen amidst the melee, Deathmasters wait for their target to leave themselves exposed before striking with great acrobatic ferocity, wielding an array of esoteric weapons such as warpstone throwing stars and weeping blades that can kill with the lightest scratch.",
+      "regimentOptions": "0-1 %000010439Clanrats%, Any %000010759Eshin%",
+      "notes": "This HERO can join an eligible regiment as a Skaven Overclaw."
+    },
+    {
+      "faction": "Skaven",
+      "name": "Deathmaster Crixxit",
+      "points": 150,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "7\"",
+        "health": "6",
+        "save": "5+",
+        "control": "2",
+        "ward": "5+",
+        "url": "https://wahapedia.ru/aos4/factions/skaven/Deathmaster-Crixxit",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "ESHIN",
+          "SKAVEN",
+          "HERO",
+          "INFANTRY",
+          "UNIQUE",
+          "WARD (5+)"
+        ],
+        "abilities": [
+          "Master of Assassins",
+          "Diversionary Assault",
+          "Shadowblood Cloak"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Master of Assassins",
+            "timing": "Passive",
+            "effect": "Effect: Double the Damage characteristic of this unit’s melee weapons for attacks that target an enemy HERO.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Diversionary Assault",
+            "timing": "Your Charge Phase",
+            "effect": "Declare: Pick a visible friendly Gutter Runners unit wholly within 13\" of this unit to be the target.\nEffect: Add 2 to charge rolls for the target for the rest of the turn",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Charge Phase"
+          },
+          {
+            "name": "Shadowblood Cloak",
+            "timing": "Any Combat Phase",
+            "effect": "Declare: Pick a visible friendly ESHIN unit that has 2 or more models and that is wholly within 18\" of this unit to be the target.\nEffect: Roll a dice. On a 3+, remove this unit from the battlefield and set it up again wholly within 6\" of the target. This unit can be set up in combat.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "The Blades of Thirteen Cuts",
+            "13",
+            "2+",
+            "4+",
+            "1",
+            "1",
+            "Anti-HERO (+1 Rend), Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "Battletome Supplement: Skaven Eshin",
+      "canReinforce": false,
+      "flavour": "Rumours abound regarding Crixxit’s ability to haunt any shadow, breach any chamber and reach any quivering target. Most of these are spread by Crixxit himself, for when a mark is afraid, they are vulnerable. His superlative skills are further enhanced by his semi-sentient Shadowblood Cloak, a gift earned from Be’lakor for services rendered. A legendary assassin, Crixxit stalks his enemies with seemingly preternatural ability then bloodying his blades before moving on to his next victim.",
+      "regimentOptions": "0-1 %000010439Clanrats%, Any %000010759Eshin%",
+      "notes": "This HERO can join an eligible regiment as a Skaven Overclaw."
+    },
+    {
+      "faction": "Skaven",
+      "name": "Doom-Flayers",
+      "points": 100,
+      "size": 2,
+      "kind": "",
+      "category": "War Machine",
+      "profile": {
+        "move": "2D6+3\"",
+        "health": "4",
+        "save": "4+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/skaven/Doom-Flayers",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SKAVEN",
+          "SKRYRE",
+          "WAR MACHINE"
+        ],
+        "abilities": [
+          "Whirling Doom"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Whirling Doom",
+            "timing": "Any Charge Phase",
+            "effect": "Declare: If this unit charged this phase, pick an enemy unit within 1\" of it to be the target.\nEffect: Roll a D3. On a 2+, inflict an amount of mortal damage on the target equal to the roll.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Charge Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Whirling Blades",
+            "2D6",
+            "3+",
+            "3+",
+            "1",
+            "1",
+            "Anti-INFANTRY (+1 Rend), Charge (+1 Damage)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "The whirling globes of death known as Doom-Flayers were originally designed as mining devices. It speaks to the Skaven mindset that an enterprising Warlock observed the devastation they wrought on rock and immediately began considering military applications. Doom-Flayers now trundle along behind massed formations of Clanrats and Stormvermin, their operators revving the warp-engine impatiently. Eventually, their destructive urges overtake them and they gun the acceleration to churn a great furrow forward through the earth.",
+      "regimentOptions": "Skryre, War Machine",
+      "notes": "You cannot include more than 1 Skryre War Machine in a regiment led by a non-Skryre Hero."
+    },
+    {
+      "faction": "Skaven",
+      "name": "Doomwheel",
+      "points": 100,
+      "size": 1,
+      "kind": "",
+      "category": "War Machine",
+      "profile": {
+        "move": "2D6+7\"",
+        "health": "8",
+        "save": "4+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/skaven/Doomwheel",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SKAVEN",
+          "SKRYRE",
+          "WAR MACHINE"
+        ],
+        "abilities": [
+          "Rolling Doom"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Rolling Doom",
+            "timing": "Your Movement Phase",
+            "effect": "Effect: This unit can move a distance up to its Move characteristic. This unit can pass through other models and the combat ranges of enemy units, but it cannot end that move in combat.\nThen, pick up to 3 enemy units that this unit passed across during that move to be the targets. Roll a D3 for each target. On a 2+, inflict an amount of mortal damage on the target equal to the roll.\nDesigner’s Note: This unit can use this ability even if it is in combat.",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Core, Move",
+            "phase": "Movement Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Warp Bolts",
+            "13\"",
+            "D6",
+            "3+",
+            "3+",
+            "1",
+            "D3",
+            "Shoot in Combat"
+          ]
+        ],
+        "melee": [
+          [
+            "Grinding Wheels",
+            "6",
+            "4+",
+            "3+",
+            "-",
+            "1",
+            "Charge (+1 Damage)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Many uncanny war engines have emerged from the forges of the Clans Skryre, but the Doomwheels are arguably the most bizarre. These contraptions can appear almost amusing to incredulous foes; resembling giant wheels, they roll forwards at an unsteady pace. Yet amusement gives way to terror as the Doomwheel picks up speed, erratic blasts of warp lightning leaping from the ruinous realmstone crystals affixed to prongs on its flanks. Any caught in its path will be either blasted to blackened corpses or simply ground to bloody smears.",
+      "regimentOptions": "Skryre, War Machine",
+      "notes": "You cannot include more than 1 Skryre War Machine in a regiment led by a non-Skryre Hero."
+    },
+    {
+      "faction": "Skaven",
+      "name": "Gnawhole",
+      "points": 0,
+      "size": 1,
+      "kind": "",
+      "category": "Terrain",
+      "profile": {
+        "move": "-",
+        "health": "6",
+        "save": "4+",
+        "control": "0",
+        "url": "https://wahapedia.ru/aos4/factions/skaven/Gnawhole",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SKAVEN",
+          "FACTION TERRAIN"
+        ],
+        "abilities": [
+          "Volatile Ground",
+          "Tunnels Through Reality",
+          "The Endless Vermintide"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Volatile Ground",
+            "timing": "Passive",
+            "effect": "Effect: Models can pass through this terrain feature but cannot be set up on or end moves on any part of this terrain feature.\nEach time an enemy unit ends a move that passed through or across this terrain feature, roll a D3. On a 2+, inflict an amount of mortal damage on that unit equal to the roll.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Tunnels Through Reality",
+            "timing": "Your Movement Phase",
+            "effect": "Declare: Pick a friendly SKAVEN unit that is not in combat and is wholly within 6\" of this terrain feature to be the target.\nEffect: Remove the target from the battlefield and set it up again wholly within 6\" of another friendly Gnawhole and more than 9\" from all enemy units.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Movement Phase"
+          },
+          {
+            "name": "The Endless Vermintide",
+            "timing": "Once Per Turn (Army), End of Your Turn",
+            "effect": "Declare: Pick a friendly non-HERO SKAVEN INFANTRY unit that has been destroyed to be the target.\nEffect: Set up a replacement unit with half the number of models from the target unit (rounding up) wholly within 6\" of a friendly Gnawhole and more than 3\" from all enemy units.",
+            "kind": "Ability",
+            "type": "Rallying",
+            "phase": "End of Turn",
+            "pointsType": "Command",
+            "points": "1"
+          }
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Gnawholes are undeniably a boon when they emerge upon a battlefield. They allow a seemingly endless stream of Skaven reinforcements to be funnelled from the depths of Blight City, and if a pack of ratmen are feeling especially brave, they might elect to plunge into one and hope to emerge from another, outflanking the enemy in the process. The unstable nature of the gnawholes, however, means that delving into them in this way often sees a Skaven accidentally blasted to ashes, unintentionally burrow through a volcano or simply vanish without a trace.",
+      "description": "The following universal terrain abilities apply to this terrain feature (Terrain, 1.2):\nCover"
+    },
+    {
+      "faction": "Skaven",
+      "name": "Grey Seer",
+      "points": 110,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "5",
+        "save": "6+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/skaven/Grey-Seer",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "MASTERCLAN",
+          "SKAVEN",
+          "HERO",
+          "INFANTRY",
+          "WIZARD (1)"
+        ],
+        "abilities": [
+          "Warpstone Shards"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Warpstone Shards",
+            "timing": "Your Hero Phase",
+            "effect": "Effect: The next time you make a casting roll for this unit this phase, roll 3D6 instead of 2D6. This roll cannot be re-rolled or modified.\nIf the casting roll is 13, the spell is successfully cast and cannot be unbound. After the effect of that spell has been resolved, inflict D3 mortal damage on this unit.\nIf the casting roll is not 13, remove 1 dice of your choice from the casting roll and use the remaining 2D6 as the casting roll.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Warpstone Staff",
+            "3",
+            "4+",
+            "4+",
+            "1",
+            "D3",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Most devious of all Skaven are the Grey Seers. These are the agents of the Masterclan who work to manipulate Skaven society from the shadows. With a hissed incantation and flick of their claws, a Seer can summon storms of warp lightning, blast enemies with withering energy or teleport great distances in a blink. Grey Seers also possess a natural affinity for warpstone; their staffs of office are imbued with chunks of the corruptive realmstone, and many will consume shards of the substance to fuel their ruinous spellcraft.",
+      "regimentOptions": "0-1 %000011554Skaven Overclaw%, Any %000001298Skaven%"
+    },
+    {
+      "faction": "Skaven",
+      "name": "Grey Seer on Screaming Bell",
+      "points": 310,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "15",
+        "save": "4+",
+        "control": "5",
+        "ward": "5+",
+        "url": "https://wahapedia.ru/aos4/factions/skaven/Grey-Seer-on-Screaming-Bell",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "MASTERCLAN",
+          "SKAVEN",
+          "HERO",
+          "WAR MACHINE",
+          "WARD (5+)",
+          "WIZARD (2)"
+        ],
+        "abilities": [
+          "Battle Damaged",
+          "Altar of the Horned Rat",
+          "Peal of Doom",
+          "Cracks Call"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of its Crushing Bulk is 4.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Altar of the Horned Rat",
+            "timing": "Passive",
+            "effect": "Effect: Friendly SKAVEN INFANTRY units have WARD (6+) while they are wholly within 13\" of this unit.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          },
+          {
+            "name": "Peal of Doom",
+            "timing": "Your Hero Phase",
+            "effect": "Effect: Roll a dice and apply the corresponding effect:\n$000001418",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Cracks Call",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Pick a visible enemy unit that does not have FLY and is within 13\" of this unit to be the target, then make a casting roll of 2D6.\nEffect: If the casting roll exceeds the target’s Move characteristic, inflict an amount of mortal damage on the target equal to the difference between the casting roll and its Move characteristic.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Spell",
+            "phase": "Hero Phase",
+            "pointsType": "Spell",
+            "points": "6"
+          }
+        ],
+        "melee": [
+          [
+            "Warpstone Staff",
+            "3",
+            "4+",
+            "4+",
+            "1",
+            "D3",
+            ""
+          ],
+          [
+            "Rat Ogor’s Tearing Claws",
+            "5",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            "Companion"
+          ],
+          [
+            "Crushing Bulk",
+            "6",
+            "4+",
+            "2+",
+            "1",
+            "2",
+            "Companion · See battle damage rules"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Of all the strange constructs fashioned by the Skaven, Screaming Bells are perhaps the most diabolical. From a rickety conveyance of wood hangs a great brass bell, studded with warpstone and marked with glowing runes. A Grey Seer, a prophet of the Horned Rat, scrabbles across the bell, hurling commands at their minions below and conjuring storms of magic from their bizarre pulpit. Then the device rings, and all hell breaks loose.",
+      "regimentOptions": "0-1 %000011554Skaven Overclaw%, Any %000001298Skaven%"
+    },
+    {
+      "faction": "Skaven",
+      "name": "Gutter Runners",
+      "points": 150,
+      "size": 10,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "7\"",
+        "health": "1",
+        "save": "6+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/skaven/Gutter-Runners-1",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "ESHIN",
+          "SKAVEN",
+          "CHAMPION",
+          "INFANTRY",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Bomb Rats",
+          "Detonate"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Bomb Rats",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: This unit’s Bomb Rats are tokens. If there are fewer than 2 friendly Bomb Rats next to enemy units, pick an enemy unit in combat with this unit that does not have a friendly Bomb Rat next to it to be the target.\nEffect: Place this unit’s Bomb Rat next to the target.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Detonate",
+            "timing": "End of Any Turn",
+            "effect": "Declare: This unit can use this ability even if it has been destroyed. Pick each enemy unit that has a friendly Bomb Rat token to be a target.\nEffect: Roll a D3 for each enemy unit within a target’s combat range. On a 2+, inflict an amount of mortal damage on that enemy unit equal to the roll. Then, remove the target’s Bomb Rat.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "End of Turn"
+          }
+        ],
+        "ranged": [
+          [
+            "Saboteur Bombs",
+            "10\"",
+            "2",
+            "4+",
+            "2+",
+            "-",
+            "D3",
+            "Anti-INFANTRY (+1 Rend), Shoot in Combat"
+          ]
+        ],
+        "melee": [
+          [
+            "Punch Dagger and Blade",
+            "3",
+            "3+",
+            "4+",
+            "1",
+            "1",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "Battletome Supplement: Skaven Eshin",
+      "canReinforce": true,
+      "flavour": "Gutter Runners are shadowy killers and saboteurs in service to the Clans Eshin. Trained in unique combat arts, they are fearsome close-quarters opponents, wielding lethal poisons and an array of rat-borne explosives to disorient and devastate foes.",
+      "regimentOptions": "Moulder, Infantry",
+      "description": "Each model in this unit is armed with a Punch Dagger and Blade.\n1/10 models in this unit can be armed with Saboteur Bombs in addition to their other weapons\nThe champion cannot be armed with Saboteur Bombs."
+    },
+    {
+      "faction": "Skaven",
+      "name": "Hell Pit Abomination",
+      "points": 200,
+      "size": 1,
+      "kind": "",
+      "category": "Monster",
+      "profile": {
+        "move": "D6+5\"",
+        "health": "14",
+        "save": "5+",
+        "control": "5",
+        "url": "https://wahapedia.ru/aos4/factions/skaven/Hell-Pit-Abomination",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "MOULDER",
+          "SKAVEN",
+          "MONSTER"
+        ],
+        "abilities": [
+          "Battle Damaged",
+          "Regenerating Monstrosity",
+          "Avalanche of Flesh",
+          "Too Horrible To Die"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of its Gnashing Teeth and Flailing Fists is 8.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Regenerating Monstrosity",
+            "timing": "End of Any Turn",
+            "effect": "Effect: Heal (D6) this unit.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "End of Turn"
+          },
+          {
+            "name": "Avalanche of Flesh",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick an enemy INFANTRY unit in combat with this unit to be the target.\nEffect: Roll a dice. On a 3+, roll a dice for each model in the target unit. For each 5+, inflict 1 mortal damage on the target.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Rampage",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Too Horrible To Die",
+            "timing": "Passive",
+            "effect": "Effect: The first time this unit would be destroyed, before removing it from the battlefield, roll a dice and apply the corresponding effect:\n$000001419",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          }
+        ],
+        "melee": [
+          [
+            "Gnashing Teeth and Flailing Fists",
+            "13",
+            "4+",
+            "2+",
+            "2",
+            "2",
+            "Anti-INFANTRY (+1 Rend), Companion · See battle damage rules"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Named for the gruesome subterranean laboratories in which they are crafted, Hell Pit Abominations are the pinnacle of the Master Moulders' sciences. An Abomination is created by melding and mutating the flesh of plentiful hapless subjects as well as employing warpstone and other, more secretive arts. Foes are soon overwhelmed by an avalanche of flailing limbs - many of which sport various murderous 'upgrades'. Yet the insensate bulk of the Abomination remains its greatest weapon, capable of breaking a flank single-handedly.",
+      "regimentOptions": "Moulder, Monster"
+    },
+    {
+      "faction": "Skaven",
+      "name": "Krittok Foulblade",
+      "points": 140,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "6",
+        "save": "4+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/skaven/Krittok-Foulblade",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SKAVEN",
+          "VERMINUS",
+          "HERO",
+          "INFANTRY",
+          "UNIQUE",
+          "WARMASTER"
+        ],
+        "abilities": [
+          "Doomfang",
+          "A Reputation For Cunning",
+          "Foster Competition"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Doomfang",
+            "timing": "Any Combat Phase",
+            "effect": "Effect: This unit has STRIKE-FIRST for the rest of the turn but it cannot use commands this phase.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "A Reputation For Cunning",
+            "timing": "Enemy Hero Phase",
+            "effect": "Effect: You can pick 2 different eligible units to use the ’Always Three Clawsteps Ahead’ ability this phase instead of 1, but at least 1 of those units must have the VERMINUS keyword.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Foster Competition",
+            "timing": "Passive",
+            "effect": "Effect: Add 1 to wound rolls for friendly Stormvermin units while they are wholly within 13\"of this unit.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          }
+        ],
+        "ranged": [
+          [
+            "Warplock Pistol",
+            "10\"",
+            "2",
+            "3+",
+            "3+",
+            "2",
+            "D3",
+            "Crit (Auto-wound)"
+          ]
+        ],
+        "melee": [
+          [
+            "Doomfang",
+            "5",
+            "3+",
+            "3+",
+            "2",
+            "2",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Canny and cruel in equal measure, Krittok Foulblade has a profound instinct for where his minions' deaths can best serve him. He also understands with a rare clarity that even meagre displays of largesse, however falsely intended, can spur a measure of loyalty from his underlings. This same cold and calculating mindset is extended by the Clawlord to his dealings with the daemon-blade Doomfang, for the raging Verminlord trapped within its steel must be bargained with constantly if its powers are to bolster Krittok's own warrior abilities",
+      "regimentOptions": "0-1 %000011554Skaven Overclaw%, Any %000001298Skaven%"
+    },
+    {
+      "faction": "Skaven",
+      "name": "Lord Skreech Verminking",
+      "points": 350,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "10\"",
+        "health": "13",
+        "save": "4+",
+        "control": "5",
+        "ward": "5+",
+        "url": "https://wahapedia.ru/aos4/factions/skaven/Lord-Skreech-Verminking",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "DAEMON",
+          "ESHIN",
+          "MASTERCLAN",
+          "MOULDER",
+          "PESTILENS",
+          "SKAVEN",
+          "SKRYRE",
+          "VERMINUS",
+          "HERO",
+          "MONSTER",
+          "UNIQUE",
+          "WARD (5+)",
+          "WARMASTER",
+          "WIZARD (2)"
+        ],
+        "abilities": [
+          "The Thirteen-headed One",
+          "The Dreaded Thirteenth Spell",
+          "Terrifying Monstrosity"
+        ],
+        "abilityDetails": [
+          {
+            "name": "The Thirteen-headed One",
+            "timing": "Your Hero Phase",
+            "effect": "Effect: Pick 1 of the following effects to apply until the start of your next turn. You cannot pick the same effect more than once per battle.\nMaster of Dire Sorcery: Add 1 to casting rolls for friendly MASTERCLAN WIZARDS while they are wholly within 13\" of this unit.\nCommander of Vermin: Add 1 to charge rolls for friendly VERMINUS units while they are wholly within 13\" of this unit.\nKnower of Warp-tech: Add 1 to hit rolls for shooting attacks made by friendly",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "The Dreaded Thirteenth Spell",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Pick a visible enemy unit within 13\" to be the target, then make a casting roll of 2D6.\nEffect: Roll 13 dice. For each 5+:\n• Inflict 1 mortal damage on the target.\n• You can return 1 slain model to a friendly Clanrats unit wholly within 13\" of this unit.",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Spell",
+            "phase": "Hero Phase",
+            "pointsType": "Spell",
+            "points": "7"
+          },
+          {
+            "name": "Terrifying Monstrosity",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick an enemy INFANTRY unit in combat with this unit to be the target.\nEffect: Roll a dice. On a 3+:\n• The target cannot use commands for the rest of the turn.\n• Subtract an amount equal to the roll from the target’s control score until the start of your next turn.",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Rampage",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Glaive of the Rat King",
+            "7",
+            "3+",
+            "2+",
+            "2",
+            "3",
+            "Crit (2 Hits)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Skreech Verminking is foremost amongst the Great Horned Rat's daemonic brood. His twisted soul contains the collective knowledge of the Skaven: the shadow shifting of Eshin, the warped ingenuity of Skryre, the fury of Verminus, the plague-mastery of Pestilens and the fleshcraft of Moulder. Verminking draws upon these boons, and the fearful obedience he commands in all Skaven, to dominate the battlefield.",
+      "regimentOptions": "0-1 %000011554Skaven Overclaw%, Any %000001298Skaven%"
+    },
+    {
+      "faction": "Skaven",
+      "name": "Master Moulder",
+      "points": 80,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "5",
+        "save": "6+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/skaven/Master-Moulder",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "MOULDER",
+          "SKAVEN",
+          "HERO",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "Lord of Flesh-grafting",
+          "Tyrannical Packmaster"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Lord of Flesh-grafting",
+            "timing": "End of Any Turn",
+            "effect": "Declare: Pick another friendly MOULDER unit wholly within 13\" of this unit to be the target.\nEffect: Heal (3) the target.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "End of Turn"
+          },
+          {
+            "name": "Tyrannical Packmaster",
+            "timing": "Your Charge Phase",
+            "effect": "Declare: Pick another friendly MOULDER unit within this unit’s combat range to be the target.\nEffect: Add 1 to charge rolls for the target for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Charge Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Warpsyringe Pistol",
+            "10\"",
+            "D6",
+            "4+",
+            "2+",
+            "2",
+            "1",
+            "Shoot in Combat"
+          ]
+        ],
+        "melee": [
+          [
+            "Arsenal of Mutation",
+            "4",
+            "3+",
+            "4+",
+            "1",
+            "1",
+            "Crit (2 Hits)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "It takes an especially deranged Skaven to rise to the rank of Master Moulder. They are the overlords of the Clans Moulder, dark luminaries in the arts of flesh-grafting, each devoted to crafting ever more grotesque nightmare-beasts. Master Moulders are experts in stitching muscle and flesh into new forms, and they use warpstone to trigger mutations that twist a mortal corpus beyond recognition. Master Moulders take a warped pride in the monsters they have brought into unholy life and consider the battlefield successes of these creatures to be firmly their own.",
+      "regimentOptions": "0-1 %000010439Clanrats%, Any %000010708Moulder%",
+      "notes": "This HERO can join an eligible regiment as a Skaven Overclaw."
+    },
+    {
+      "faction": "Skaven",
+      "name": "Night Runners",
+      "points": 130,
+      "size": 10,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "7\"",
+        "health": "1",
+        "save": "6+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/skaven/Night-Runners",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "ESHIN",
+          "SKAVEN",
+          "CHAMPION",
+          "INFANTRY",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Grappling Hooks",
+          "Smoke Bombs"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Grappling Hooks",
+            "timing": "Once Per Turn (Army), Your Movement Phase",
+            "effect": "Declare: If this unit was not set up this turn, pick a terrain feature within 3\" of this unit to be the target.\nEffect: Remove this unit from the battlefield and set it up again wholly within 3\" of the target and more than 3\" from all enemy units.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Movement Phase"
+          },
+          {
+            "name": "Smoke Bombs",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: If this unit is in combat or charged this turn, this unit can make a pile-in move. Then, if this unit is in combat, you must pick 1 or more enemy units to be the target(s) of this unit’s attacks.\nEffect: Resolve combat attacks against the target unit(s). Then, if this unit is in combat, roll a dice. On a 3+, this unit can move a distance up to its Move characteristic. It can pass through the combat ranges of enemy units but can only end that move in combat with units it was in combat with at the start of that move. It does not have to end the move in combat.",
+            "kind": "Ability",
+            "type": "Movement",
+            "keywords": "Core, Attack, Fight",
+            "phase": "Combat Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Slings and Poisoned Stars",
+            "10\"",
+            "2",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            "Crit (Auto-wound), Shoot in Combat"
+          ]
+        ],
+        "melee": [
+          [
+            "Poisoned Blades",
+            "2",
+            "4+",
+            "5+",
+            "-",
+            "1",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "Battletome Supplement: Skaven Eshin",
+      "canReinforce": true,
+      "flavour": "Night Runners are the lowliest acolytes of the Clans Eshin, seen as disposable assets by their masters. Although their fate is often to be hurled at the enemy to provide a distraction for their more skilled brethren to perform their subtler missions, Night Runners are still trained and equipped with deadly poisoned weapons and for stealthy assaults.",
+      "regimentOptions": "Eshin, Infantry"
+    },
+    {
+      "faction": "Skaven",
+      "name": "Plague Censer Bearer",
+      "points": 160,
+      "size": 5,
+      "kind": "Legends",
+      "category": "Infantry",
+      "profile": {
+        "move": "6\"",
+        "health": "2",
+        "save": "6+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/skaven/Plague-Censer-Bearer",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "PESTILENS",
+          "SKAVEN",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "Frenzied Assault",
+          "Enshrouding Fumes"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Frenzied Assault",
+            "timing": "Passive",
+            "effect": "Effect: If this unit charged in the same turn, add 1 to the Attacks characteristic of its melee weapons for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Enshrouding Fumes",
+            "timing": "Passive",
+            "effect": "Effect: Subtract 1 from hit rolls for shooting attacks that target this unit.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          }
+        ],
+        "melee": [
+          [
+            "Plague Censer",
+            "4",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            "Crit (Auto-wound)"
+          ]
+        ]
+      },
+      "source": "Legends Warscrolls",
+      "canReinforce": true,
+      "flavour": "Plague Censer Bearers rush forwards in a foaming frenzy. Maddened by disease, they swing their weapons in devastating arcs, crunching armour, flesh and bone. Few can long endure their assault or the choking clouds of plague-smog that accompany it."
+    },
+    {
+      "faction": "Skaven",
+      "name": "Plague Monks",
+      "points": 140,
+      "size": 20,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "6\"",
+        "health": "1",
+        "save": "6+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/skaven/Plague-Monks",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "PESTILENS",
+          "SKAVEN",
+          "CHAMPION",
+          "INFANTRY",
+          "MUSICIAN (1/20)",
+          "STANDARD BEARER (1/20)"
+        ],
+        "abilities": [
+          "Spreaders of Filth and Disease"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Spreaders of Filth and Disease",
+            "timing": "Passive",
+            "effect": "Effect: Each time a model in this unit is slain by a combat attack and that model was in combat with the attacking unit, roll a dice. On a 6+, inflict 1 mortal damage on the attacking unit after the FIGHT ability has been resolved.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Foetid Weapons",
+            "2",
+            "4+",
+            "5+",
+            "-",
+            "1",
+            "Crit (Auto-wound)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Plague Monks form the foetid congregations of the Clans Pestilens. Though inherently cowardly in the manner of all Skaven, on the battlefield, they are seized by a zealous fervour that is both bizarre and extremely unnerving to behold. Clad solely in fly-eaten robes and carrying all manner of strange religious paraphernalia and relics, they surge forwards like a mouldering landslide. Driven on by their rabid mania, they swarm against the ranks of the enemy, lashing out in a furore with blades and withered staves.",
+      "regimentOptions": "Pestilens, Infantry"
+    },
+    {
+      "faction": "Skaven",
+      "name": "Plague Priest",
+      "points": 110,
+      "size": 1,
+      "kind": "Legends",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "5",
+        "save": "5+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/skaven/Plague-Priest",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "PESTILENS",
+          "SKAVEN",
+          "HERO",
+          "INFANTRY",
+          "PRIEST (1)"
+        ],
+        "abilities": [
+          "Feed On Pestilence"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Feed On Pestilence",
+            "timing": "Reaction: You declared a Fight ability for a friendly %000010705Pestilens% unit wholly within 13\" of this unit",
+            "effect": "Effect: Give this unit 1 ritual point.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Combat Phase",
+            "reaction": true
+          }
+        ],
+        "melee": [
+          [
+            "Warpstone-tipped Staff",
+            "3",
+            "4+",
+            "4+",
+            "1",
+            "D3",
+            "Crit (Auto-wound)"
+          ]
+        ]
+      },
+      "source": "Legends Warscrolls",
+      "canReinforce": false,
+      "flavour": "Plague Priests shriek blasphemous prayers that unleash the dark diseases of the Great Corruptor upon their foes. Those not wasted away or withered into ooze are swiftly slain by blows from the priests’ warpstone-capped staves and smog-belching censers.",
+      "regimentOptions": "0-1 Clanrats, Any Pestilens"
+    },
+    {
+      "faction": "Skaven",
+      "name": "Plague Priest on Plague Furnace",
+      "points": 350,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "15",
+        "save": "4+",
+        "control": "5",
+        "ward": "5+",
+        "url": "https://wahapedia.ru/aos4/factions/skaven/Plague-Priest-on-Plague-Furnace",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "PESTILENS",
+          "SKAVEN",
+          "HERO",
+          "PRIEST (1)",
+          "WAR MACHINE",
+          "WARD (5+)"
+        ],
+        "abilities": [
+          "Battle Damaged",
+          "Altar of the Great Corruptor",
+          "Corrupting Influence"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of its Great Plague Censer is 2.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Altar of the Great Corruptor",
+            "timing": "Passive",
+            "effect": "Effect: Friendly PESTILENS units have WARD (6+) while they are wholly within 13\" of this unit.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          },
+          {
+            "name": "Corrupting Influence",
+            "timing": "Passive",
+            "effect": "Effect: Subtract 1 from ward rolls for enemy units while they are within 13\" of this unit.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Great Plague Censer",
+            "4",
+            "4+",
+            "2+",
+            "1",
+            "3",
+            "Crit (Auto-wound) · See battle damage rules"
+          ],
+          [
+            "Warpstone-tipped Staff",
+            "3",
+            "4+",
+            "4+",
+            "1",
+            "D3",
+            "Crit (Auto-wound)"
+          ],
+          [
+            "Foetid Blades",
+            "6",
+            "4+",
+            "5+",
+            "-",
+            "1",
+            "Crit (Auto-wound)"
+          ],
+          [
+            "Crushing Bulk",
+            "6",
+            "4+",
+            "2+",
+            "1",
+            "2",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Plague Furnaces are mobile altars of corruption, rotting pulpits from which priests of the Pestilent Brotherhood can preach the Withered Word. Pushed by toiling packs of Plague Monks, a Plague Furnace is a ponderous construct. Its decay-eaten structure creaks and whines as it rolls forwards on grinding wheels, while thick clouds of toxic smoke emanate from the censer at its heart. This is no ordinary gas; it is laced not only with warpstone but also with the gurgled incantations of the Plague Priest who commands the Furnace.",
+      "regimentOptions": "0-1 %000010439Clanrats%, Any %000010705Pestilens%"
+    },
+    {
+      "faction": "Skaven",
+      "name": "Plagueclaw",
+      "points": 100,
+      "size": 1,
+      "kind": "",
+      "category": "War Machine",
+      "profile": {
+        "move": "3\"",
+        "health": "8",
+        "save": "4+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/skaven/Plagueclaw",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "PESTILENS",
+          "SKAVEN",
+          "WAR MACHINE"
+        ],
+        "abilities": [
+          "Bubonic Barrage"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Bubonic Barrage",
+            "timing": "Passive",
+            "effect": "Effect: Each time this unit uses a SHOOT ability, if all of its attacks targeted the same enemy unit, after that ability has been resolved, roll a dice. If the result is equal to or less than the number of models in that enemy unit that were slain by attacks made by this unit’s Plagueclaw Catapult this phase, that enemy unit has STRIKE-LAST for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Shooting Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Plagueclaw Catapult",
+            "24\"",
+            "2",
+            "3+",
+            "2+",
+            "1",
+            "D6",
+            "Anti-INFANTRY (+1 Rend)"
+          ]
+        ],
+        "melee": [
+          [
+            "Crew’s Teeth and Knives",
+            "D6",
+            "4+",
+            "5+",
+            "-",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Though the Clans Pestilens prefer to spread corruption at close quarters, they possess stockpiles of their own bespoke war machines. Plagueclaw catapults are the most commonly seen of these pestilential artillery pieces. Each consists of a rotting wooden frame onto which a long throwing arm capped by an iron bowl is attached. Run-off slop from the Pestilent Brotherhood's vile experiments is poured into this container: toxic sludge filled with decaying corpses, shards of warpstone and even less palatable ingredients.",
+      "regimentOptions": "Pestilens, War Machine Plaguepack 5 140 Pestilens, Infantry"
+    },
+    {
+      "faction": "Skaven",
+      "name": "Plaguepack",
+      "points": 130,
+      "size": 5,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "6\"",
+        "health": "2",
+        "save": "6+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/skaven/Plaguepack",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "PESTILENS",
+          "SKAVEN",
+          "CHAMPION (1/5)",
+          "INFANTRY",
+          "PRIEST (1)"
+        ],
+        "abilities": [
+          "Enshrouding Fumes",
+          "Plague Rat"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Enshrouding Fumes",
+            "timing": "Passive",
+            "effect": "Effect: Subtract 1 from hit rolls for shooting attacks that target this unit.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          },
+          {
+            "name": "Plague Rat",
+            "timing": "Passive",
+            "effect": "Effect: This unit’s Plague rat is a token. If you make a unmodified chanting roll of 1 for this unit while its Plague rat is on the battlefield, you can remove its Plague rat from the battlefield and then re-roll that chanting roll.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Weapons of Corruption",
+            "2",
+            "4+",
+            "5+",
+            "-",
+            "1",
+            "Crit (Auto-wound)"
+          ],
+          [
+            "Plague Censer",
+            "4",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            "Crit (Auto-wound)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "A Plaguepack is formed of a Plague Priest and their entourage. These fervent ratmen are devoted to the Great Corruptor and his vision of a befouled cosmos. While their master proselytises, the most favoured (or troublesome) of the pack swing a mighty plague censer, breathing deep of its noxious and blinding fumes. Alongside a Plaguepack scuttle rotten rodents, some carrying shards of warpstone crystal - a useful power source for any Plague Priest mid-catechism.",
+      "regimentOptions": "Pestilens, Infantry",
+      "notes": "This unit cannot be reinforced.",
+      "description": "Each model in this unit is armed with Weapons of Corruption.\n• 1/5 models is a Plague Censer Bearer and is armed with a Plague Censer instead of Weapons of Corruption.\n• The champion cannot replace their weapons."
+    },
+    {
+      "faction": "Skaven",
+      "name": "Rat Ogors",
+      "points": 130,
+      "size": 3,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "6\"",
+        "health": "4",
+        "save": "5+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/skaven/Rat-Ogors",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "MOULDER",
+          "SKAVEN",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "Unleashed Warp-fury"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Unleashed Warp-fury",
+            "timing": "Any Combat Phase",
+            "effect": "Effect: Inflict D3 mortal damage on this unit. Then, add 1 to the Attacks characteristic of this unit’s melee weapons for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Warpfire Gun",
+            "10\"",
+            "2D6",
+            "2+",
+            "4+",
+            "2",
+            "1",
+            "Shoot in Combat"
+          ]
+        ],
+        "melee": [
+          [
+            "Claws, Blades and Fangs",
+            "5",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "The power of the Clans Moulder is built on the broad shoulders of the Rat Ogors. These rabid war-mutants are created by grafting nimble Skaven to the muscled bulk of ogorkind through strange cryptosorcery and infusing them with warpstone shards and unguents. These misbegotten warriors are pumped full of all manner of toxic serums designed to magnify both their regenerative properties and their natural frenzy. A mixture of pain and gnawing hunger sees them tear at enemies in a blind fury, ripping off limbs and wolfing down flesh.",
+      "regimentOptions": "Moulder, Infantry",
+      "description": "Each model in this unit is armed with Claws, Blades and Fangs.\n• 1/3 models are armed with a Warpfire Gun in addition to their other weapons."
+    },
+    {
+      "faction": "Skaven",
+      "name": "Ratling Guns",
+      "points": 160,
+      "size": 3,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "6\"",
+        "health": "3",
+        "save": "6+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/skaven/Ratling-Guns",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SKAVEN",
+          "SKRYRE",
+          "INFANTRY",
+          "WEAPON TEAM"
+        ],
+        "abilities": [
+          "Hidden Weapon Team"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Hidden Weapon Team",
+            "timing": "Passive",
+            "effect": "Effect: While this unit is within the combat range of a friendly Clanrats unit that has 5 or more models, and there are no other friendly WEAPON TEAM units within that unit’s combat range, this unit is not visible to enemy units more than 13\" away.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          }
+        ],
+        "melee": [
+          [
+            "Rusty Knives",
+            "2",
+            "4+",
+            "5+",
+            "-",
+            "1",
+            ""
+          ]
+        ],
+        "ranged": [
+          [
+            "Ratling Gun",
+            "15\"",
+            "3D6",
+            "4+",
+            "4+",
+            "1",
+            "1",
+            "Crit (2 Hits)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Ratling Guns are amongst the most commonplace of the weapon teams that emerge from the forges of the Clans Skryre. Powered by complex warp-steam batteries and activated by a hand-crank operated by the weapon's loader, Ratling Guns are notoriously difficult to aim. The sheer volume of bullets they unleash, however, can shred an enemy cohort regardless.",
+      "regimentOptions": "Skryre, Infantry, Weapon Team",
+      "notes": "You cannot include more than 1 Skryre Weapon Team in a regiment led by a non-Skryre Hero."
+    },
+    {
+      "faction": "Skaven",
+      "name": "Ratling Warpblaster",
+      "points": 110,
+      "size": 1,
+      "kind": "",
+      "category": "War Machine",
+      "profile": {
+        "move": "6\"",
+        "health": "7",
+        "save": "4+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/skaven/Ratling-Warpblaster",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SKAVEN",
+          "SKRYRE",
+          "WAR MACHINE"
+        ],
+        "abilities": [
+          "Overwhelming Fire",
+          "More-more Warpstone Bullets!"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Overwhelming Fire",
+            "timing": "Passive",
+            "effect": "Effect: Add 1 to hit rolls for this unit’s shooting attacks that target an enemy unit that has 10 or more models.",
+            "kind": "Ability",
+            "type": "Shooting",
+            "phase": "Shooting Phase"
+          },
+          {
+            "name": "More-more Warpstone Bullets!",
+            "timing": "Once Per Turn (Army), Your Shooting Phase",
+            "effect": "Effect: If this unit is within the combat range of a friendly SKRYRE HERO, this unit’s Hail of Warpstone Bullets has an Attacks characteristic of 6D6+3 instead of 3D6+3 for the rest of the turn.\nHowever, for each unmodified hit roll of 1 for an attack made with this unit’s Hail of Warpstone Bullets, inflict 1 mortal damage on this unit after the SHOOT ability has been resolved.",
+            "kind": "Ability",
+            "type": "Shooting",
+            "phase": "Shooting Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Hail of Warpstone Bullets",
+            "20\"",
+            "3D6+3",
+            "4+",
+            "3+",
+            "1",
+            "1",
+            "Crit (Auto-wound)"
+          ]
+        ],
+        "melee": [
+          [
+            "Thrall-rats’ Claws",
+            "4",
+            "4+",
+            "5+",
+            "-",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Given their vast population and penchant for internecine warfare, Skaven appreciate the benefits of culling massed infantry. The Ratling Warpblasters were developed for expressly this purpose. A complex series of rotary cannons mounted upon a stocky wooden frame, the device is powered by a ludicrously overcharged warpstone accelerator battery. Once wheeled into place, its Warlock gunner will flick the levers that draw power from this reserve. The Warpblaster's barrels begin to revolve before spitting out a torrent of warpstone-infused missiles.",
+      "regimentOptions": "Skryre, War Machine",
+      "notes": "You cannot include more than 1 Skryre War Machine in a regiment led by a non-Skryre Hero."
+    },
+    {
+      "faction": "Skaven",
+      "name": "Scourge of Aqshy Grey Seer on Screaming Bell",
+      "points": 330,
+      "size": 1,
+      "kind": "Scourge of Aqshy",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "15",
+        "save": "4+",
+        "control": "5",
+        "ward": "5+",
+        "url": "https://wahapedia.ru/aos4/factions/skaven/Scourge-of-Aqshy-Grey-Seer-on-Screaming-Bell",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "MASTERCLAN",
+          "SKAVEN",
+          "HERO",
+          "WAR MACHINE",
+          "WARD (5+)",
+          "WIZARD (2)"
+        ],
+        "abilities": [
+          "Battle Damaged",
+          "THE BELL TOLLS",
+          "Cracks Call",
+          "Peal of Doom"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of its Crushing Bulk is 4.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "THE BELL TOLLS",
+            "timing": "Passive",
+            "effect": "Effect: If the current battle round number is odd, add 2\" to the Move characteristic of friendly SKAVEN units while they are wholly within 13\" of this unit. If the current battle round number is even, subtract 1 from hit rolls for attacks made by enemy units that target a friendly SKAVEN unit while it is wholly within 13\" of this unit.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Cracks Call",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Make a casting roll of 2D6.\nEffect: Until the start of your next turn, this unit counts as a friendly Gnawhole for the purposes of the ‘Gnawhole Ambush’, ‘Tunnels Through Reality’ and ‘The Endless Vermintide’ abilities.",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Spell",
+            "phase": "Hero Phase",
+            "pointsType": "Spell",
+            "points": "6"
+          },
+          {
+            "name": "Peal of Doom",
+            "timing": "Once Per Turn (Army), End of Any Turn",
+            "effect": "Declare: Pick up to 3 visible friendly SKAVEN units wholly within 13\" of this unit to be the targets.\nEffect: Heal (D3) each target.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "End of Turn"
+          }
+        ],
+        "melee": [
+          [
+            "Warpstone Staff",
+            "3",
+            "4+",
+            "4+",
+            "1",
+            "D3",
+            ""
+          ],
+          [
+            "Rat Ogor’s Tearing Claws",
+            "5",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            ""
+          ],
+          [
+            "Crushing Bulk",
+            "6",
+            "4+",
+            "2+",
+            "1",
+            "2",
+            "Charge (+1 Damage), Companion · See battle damage rules"
+          ]
+        ]
+      },
+      "source": "Scourge of Aqshy - Skaven",
+      "canReinforce": false,
+      "flavour": "Riding across the Great Parch atop a rickety wheeled altar known as a Screaming Bell, the Grey Seer unleashes dark magics in the name of the Horned Rat. The ruinous peals of the bell invigorate nearby Skaven even as the sonic assault enervates the foe.",
+      "regimentOptions": "0-1 %000011554Skaven Overclaw%, Any %000001298Skaven%",
+      "notes": "This unit is legal for Matched Play for battles fought using the General’s Handbook 2026-27 battlepack."
+    },
+    {
+      "faction": "Skaven",
+      "name": "Scourge of Aqshy Verminlord Corruptor",
+      "points": 290,
+      "size": 1,
+      "kind": "Scourge of Aqshy",
+      "category": "Hero",
+      "profile": {
+        "move": "10\"",
+        "health": "13",
+        "save": "4+",
+        "control": "5",
+        "ward": "5+",
+        "url": "https://wahapedia.ru/aos4/factions/skaven/Scourge-of-Aqshy-Verminlord-Corruptor",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "DAEMON",
+          "PESTILENS",
+          "SKAVEN",
+          "HERO",
+          "MONSTER",
+          "PRIEST (1)",
+          "WARD (5+)"
+        ],
+        "abilities": [
+          "Foetid Features",
+          "Seething Blight"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Foetid Features",
+            "timing": "Once Per Battle (Army), Deployment Phase",
+            "effect": "Effect: Pick 1 of the following effects to apply for the rest of the battle:\nNoisome Halitosis: Add 1 to the Damage characteristic of this unit’s Plague Breath.\nPestilential Seepage: While this unit is damaged, you can re-roll chanting rolls for friendly PESTILENS PRIESTS while they are wholly within 13\" of this unit.\nCurdled Miasma: While they are within 6\" of this unit, enemy units are not visible to other enemy units more than 3\" from them.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Seething Blight",
+            "timing": "Once Per Turn (Army), Your Hero Phase",
+            "effect": "Declare: Spend 1 rage dice. If your opponent’s fury level is lower than yours, they must increase their fury level by 1, to a maximum of 7. Then, pick a visible unit (friendly or enemy) wholly within 13\" of this unit to be the target.\nEffect: For the rest of the battle:\n• Add 1 to the Attacks characteristic of the target’s melee weapons.\n• If an ability would heal or return any slain models to the target unit, that ability does not heal any damage points or return any slain models to it.\n• If the target is replaced and the replacement unit has 1 model,",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Rampage",
+            "phase": "Hero Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Plague Breath",
+            "10\"",
+            "6",
+            "2+",
+            "4+",
+            "2",
+            "1",
+            "Shoot in Combat"
+          ]
+        ],
+        "melee": [
+          [
+            "Plaguereapers",
+            "8",
+            "3+",
+            "2+",
+            "2",
+            "2",
+            "Crit (Auto-wound)"
+          ]
+        ]
+      },
+      "source": "Scourge of Aqshy - Skaven",
+      "canReinforce": false,
+      "flavour": "Venerated as sacred beings by the Clans Pestilens, Verminlord Corruptors are foul avatars of disease, and each vile daemon has its preferred plagues and poxes. The Seething Blight is particularly virulent in Aqshy, causing already irascible victims to enter an unending rage-filled mania.",
+      "regimentOptions": "0-1 %000011554Skaven Overclaw%, Any %000001298Skaven%",
+      "notes": "This unit is legal for Matched Play for battles fought using the General’s Handbook 2026-27 battlepack."
+    },
+    {
+      "faction": "Skaven",
+      "name": "Scourge of Ghyran Brood Terror",
+      "points": 240,
+      "size": 1,
+      "kind": "Scourge of Ghyran",
+      "category": "Monster",
+      "profile": {
+        "move": "6\"",
+        "health": "12",
+        "save": "5+",
+        "control": "5",
+        "ward": "5+",
+        "url": "https://wahapedia.ru/aos4/factions/skaven/Scourge-of-Ghyran-Brood-Terror",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "MOULDER",
+          "SKAVEN",
+          "MONSTER",
+          "WARD (5+)"
+        ],
+        "abilities": [
+          "Lend a Claw",
+          "Regenerating Terror"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Lend a Claw",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick up to 4 other friendly non-SKRYRE MOULDER units wholly within 12\" of this unit to be the targets.\nEffect: Subtract 1 from the Attacks characteristic of this unit’s Loosely Attached Bladed Limbs for the rest of the phase for each target picked. Add 1 to hit rolls for the targets’ attacks for the rest of the phase, including those made with Companion weapons.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Rampage",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Regenerating Terror",
+            "timing": "End of Any Turn",
+            "effect": "Effect: Heal (D6) this unit.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "End of Turn"
+          }
+        ],
+        "ranged": [
+          [
+            "Warpflame Scourger",
+            "15\"",
+            "2D6",
+            "4+",
+            "2+",
+            "1",
+            "D3",
+            "Anti-INFANTRY (+1 Rend), Crit (Auto-wound)"
+          ]
+        ],
+        "melee": [
+          [
+            "Chain-flail",
+            "5",
+            "4+",
+            "2+",
+            "2",
+            "3",
+            "Crit (Mortal)"
+          ],
+          [
+            "Loosely Attached Bladed Limbs",
+            "5",
+            "4+",
+            "4+",
+            "1",
+            "2",
+            ""
+          ]
+        ]
+      },
+      "source": "Scourge of Ghyran - Skaven",
+      "canReinforce": false,
+      "flavour": "Ghyran has suffered terribly from the ravages of Brood Terrors, horrors created when a Master Moulder stitches himself into a hulking war-form fashioned from brass and alchemised meat. From within this two-headed titan the Master directs his minions’ attacks with frantic, jabbing motions of its weapon-limbs, before plunging headfirst into the fray to test his latest flesh-grafts upon the enemy.",
+      "notes": "This unit is legal for Matched Play for battles fought using the General’s Handbook 2025-26 battlepack."
+    },
+    {
+      "faction": "Skaven",
+      "name": "Scourge of Ghyran Grey Seer on Screaming Bell",
+      "points": 330,
+      "size": 1,
+      "kind": "Scourge of Ghyran",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "15",
+        "save": "4+",
+        "control": "5",
+        "ward": "5+",
+        "url": "https://wahapedia.ru/aos4/factions/skaven/Scourge-of-Ghyran-Grey-Seer-on-Screaming-Bell",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "MASTERCLAN",
+          "SKAVEN",
+          "HERO",
+          "WAR MACHINE",
+          "WARD (5+)",
+          "WIZARD (2)"
+        ],
+        "abilities": [
+          "Battle Damaged",
+          "The Bell Tolls",
+          "Gnaw Through Reality",
+          "Echoes of the Vermindoom"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of its Crushing Bulk is 4.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "The Bell Tolls",
+            "timing": "Passive",
+            "effect": "Effect: If the current battle round number is odd, add 2\" to the Move characteristic of friendly SKAVEN units while they are wholly within 13\" of this unit. If the current battle round number is even, subtract 1 from hit rolls for attacks made by enemy units that target a friendly SKAVEN unit while it is wholly within 13\" of this unit.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Gnaw Through Reality",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Make a casting roll of 2D6.\nEffect: Until the start of your next turn, this unit counts as a friendly Gnawhole for the purposes of the ‘Gnawhole Ambush’, ‘Tunnels Through Reality’ and ‘The Endless Vermintide’ abilities.",
+            "kind": "Ability",
+            "type": "Movement",
+            "keywords": "Spell",
+            "phase": "Hero Phase",
+            "pointsType": "Spell",
+            "points": "6"
+          },
+          {
+            "name": "Echoes of the Vermindoom",
+            "timing": "Once Per Turn (Army), End of Any Turn",
+            "effect": "Declare: Pick each friendly SKAVEN unit wholly within 13\" of this unit to be the targets.\nEffect: Heal (D3) each target.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "End of Turn"
+          }
+        ],
+        "melee": [
+          [
+            "Warpstone Staff",
+            "3",
+            "4+",
+            "4+",
+            "1",
+            "D3",
+            ""
+          ],
+          [
+            "Rat Ogor’s Tearing Claws",
+            "5",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            ""
+          ],
+          [
+            "Crushing Bulk",
+            "6",
+            "4+",
+            "2+",
+            "1",
+            "2",
+            "Companion, Charge (+1 Damage) · See battle damage rules"
+          ]
+        ]
+      },
+      "source": "Scourge of Ghyran - Skaven",
+      "canReinforce": false,
+      "flavour": "Rattling through the Ghyranite jungle on ironbound wheels comes the hellish contraption known as a Screaming Bell, a Grey Seer riding atop it and shrieking praises to the Great Horned Rat. Each bone-jarring toll of the bell invigorates nearby Skaven, healing their wounds and hastening their scurrying advance.",
+      "regimentOptions": "0-1 %000011554Skaven Overclaw%, Any SKAVEN, 0-1 %000016281WEAPON TEAM SKRYRE%, 0-1 %000016280WAR MACHINE SKRYRE%",
+      "notes": "This unit is legal for Matched Play for battles fought using the General’s Handbook 2025-26 battlepack."
+    },
+    {
+      "faction": "Skaven",
+      "name": "Skabbik’s Plaguepack",
+      "points": 100,
+      "size": 5,
+      "kind": "Legends",
+      "category": "Infantry",
+      "profile": {
+        "move": "6\"",
+        "health": "2",
+        "save": "6+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/skaven/Skabbik-s-Plaguepack",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "PESTILENS",
+          "SKAVEN",
+          "CHAMPION",
+          "INFANTRY",
+          "PRIEST (1)",
+          "UNIQUE"
+        ],
+        "abilities": [
+          "Enshrouding Fumes",
+          "Skritter"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Enshrouding Fumes",
+            "timing": "Passive",
+            "effect": "Effect: Subtract 1 from hit rolls for shooting attacks that target this unit.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          },
+          {
+            "name": "Skritter",
+            "timing": "Passive",
+            "effect": "Effect: This unit’s Skritter is a token. If you make a chanting roll of 1 for this unit while its Skritter is on the battlefield, you can remove its Skritter from the battlefield and then re-roll that chanting roll.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Plaguepack Weapons",
+            "2",
+            "4+",
+            "5+",
+            "-",
+            "1",
+            "Crit (Auto-wound)"
+          ],
+          [
+            "Plague Censer",
+            "4",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            "Crit (Auto-wound)"
+          ]
+        ]
+      },
+      "source": "Legends Warscrolls",
+      "canReinforce": false,
+      "flavour": "Skabbik Plagueseeker is on a holy quest – holy, at least, to the rancid congregations of the Clans Pestilens. Within the Wyrdhollow, he seeks nothing less than an ingredient to one of the Great Plagues, a mythic disease with the power to change the course of history. Skabbik’s Plaguepack wetly skitter forth to bring pestilence, rot and death to the enemies of the Great Horned Rat. Should the Plague Priest’s noisome acolytes succeed in their task, the Mortal Realms themselves may be entirely reduced to a rancid, rotting mulch.",
+      "description": "The models in this unit are:\n• Skabbik Plagueseeker (champion, armed with Plaguepack Weapons)\n• Poxlix (armed with Plaguepack Weapons)\n• Itchitt (armed with Plaguepack Weapons)\n• Rikkit (armed with Plaguepack Weapons)\n• Rabidius Skench (armed with a Plague Censer)"
+    },
+    {
+      "faction": "Skaven",
+      "name": "Skittershank’s Clawpack",
+      "points": 100,
+      "size": 5,
+      "kind": "Legends",
+      "category": "Infantry",
+      "profile": {
+        "move": "7\"",
+        "health": "2",
+        "save": "6+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/skaven/Skittershank-s-Clawpack",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "ESHIN",
+          "SKAVEN",
+          "INFANTRY",
+          "UNIQUE",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Sneaky Infiltrators",
+          "Shadowy Killers"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Sneaky Infiltrators",
+            "timing": "Passive",
+            "effect": "Effect: While each model in this unit is within 1\" of a terrain feature, this unit cannot be targeted by shooting attacks unless the attacking model is within 9\" of it.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          },
+          {
+            "name": "Shadowy Killers",
+            "timing": "Passive",
+            "effect": "Effect: If the unmodified hit roll for an attack that targets this unit is 1-4, the attack fails and the attack sequence ends.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          }
+        ],
+        "ranged": [
+          [
+            "Poisoned Stars",
+            "10\"",
+            "2",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            "Shoot in Combat, Crit (Auto-wound)"
+          ]
+        ],
+        "melee": [
+          [
+            "Weeping Blade",
+            "5",
+            "3+",
+            "4+",
+            "1",
+            "D3",
+            "Anti-HERO (+1 Rend)"
+          ],
+          [
+            "Poisoned Blades",
+            "2",
+            "4+",
+            "5+",
+            "-",
+            "1",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "Legends Warscrolls",
+      "canReinforce": false,
+      "flavour": "Slynk Skittershank embodies all the devious cruelty of the Eshin clans. He prefers to ambush his foes, slashing them with twin toxin-dripping blades before scampering into the safety of the shadows, where he can watch them succumb to his agonising concoctions. At the fore of the Clawpack is Snyp Padpaw, a grizzled Clan Stryk veteran. At his side, Kreep Kinwhisper uses a cage filled with screeching ratlings to track down prey. Meanwhile, Krowch’t backstabs his foes with his razor-sharp dagger, and Skulck picks off enemies from afar with his trusty sling.",
+      "description": "Each model in this unit is armed with Poisoned Stars. The models in this unit are:\n• Slynk Skittershank (also armed with a Weeping Blade)\n• Snyp Padpaw (also armed with Poisoned Blades)\n• Kreep Kinwhisper (also armed with Poisoned Blades)\n• Krowch’t (also armed with Poisoned Blades)\n• Skulck (also armed with Poisoned Blades)"
+    },
+    {
+      "faction": "Skaven",
+      "name": "Spiteclaw’s Swarm",
+      "points": 100,
+      "size": 5,
+      "kind": "Legends",
+      "category": "Infantry",
+      "profile": {
+        "move": "6\"",
+        "health": "2",
+        "save": "5+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/skaven/Spiteclaw-s-Swarm",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SKAVEN",
+          "VERMINUS",
+          "INFANTRY",
+          "UNIQUE"
+        ],
+        "abilities": [
+          "Seething Swarm"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Seething Swarm",
+            "timing": "End of Any Turn",
+            "effect": "Effect: You can return D3 slain models to this unit.",
+            "kind": "Ability",
+            "type": "Rallying",
+            "phase": "End of Turn"
+          }
+        ],
+        "melee": [
+          [
+            "Wicked Halberd",
+            "6",
+            "3+",
+            "4+",
+            "1",
+            "2",
+            ""
+          ],
+          [
+            "Rusty Weapon",
+            "2",
+            "4+",
+            "5+",
+            "-",
+            "1",
+            "Crit (Auto-wound)"
+          ]
+        ]
+      },
+      "source": "Legends Warscrolls",
+      "canReinforce": false,
+      "flavour": "Skritch Spiteclaw is a particularly cunning Skaven warlord who has assembled an impressive horde of cut-throat vermin to serve his will. Though he prefers that his minions fight and die on his behalf, when cornered, Skritch becomes a whirling dervish of spiked steel and ripping claws. Skritch Spiteclaw entrusts the command and discipline of his verminous ranks to the sadistic taskmaster Krrk the Almost-trusted. Though for now he is content to spend Skaven lives at his master’s command, the foul-spirited Krrk has his own ambitious schemes for power.",
+      "description": "The models in this unit are:\n• Skritch Spiteclaw (armed with a Wicked Halberd)\n• Krrk the Almost-trusted (armed with a Rusty Weapon)\n• The Lurking Skaven (armed with a Rusty Weapon)\n• The Festering Skaven (armed with a Rusty Weapon)\n• The Hungering Skaven (armed with a Rusty Weapon)"
+    },
+    {
+      "faction": "Skaven",
+      "name": "Stormfiends",
+      "points": 230,
+      "size": 3,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "6\"",
+        "health": "6",
+        "save": "4+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/skaven/Stormfiends",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "MOULDER",
+          "SKAVEN",
+          "SKRYRE",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "Grinderfist Tunnellers",
+          "Shock Gauntlets"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Grinderfist Tunnellers",
+            "timing": "Once Per Turn (Army), Any Movement Phase",
+            "effect": "Declare: Pick this unit if it is in the tunnels below and includes any models armed with Grinderfists.\nEffect: Set up this unit anywhere on the battlefield more than 9\" from all enemy units.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Movement Phase"
+          },
+          {
+            "name": "Shock Gauntlets",
+            "timing": "Passive",
+            "effect": "Effect: Each time an attack made with this unit’s Shock Gauntlets scores a critical hit, that attack scores D6 hits on the target unit instead of 1. Make a wound roll for each hit.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Ratling Cannons",
+            "15\"",
+            "3D6",
+            "4+",
+            "3+",
+            "1",
+            "1",
+            ""
+          ],
+          [
+            "Windlaunchers",
+            "15\"",
+            "3",
+            "4+",
+            "3+",
+            "2",
+            "D3",
+            ""
+          ],
+          [
+            "Warpfire Projectors",
+            "10\"",
+            "2D6",
+            "2+",
+            "4+",
+            "2",
+            "1",
+            "Shoot in Combat"
+          ]
+        ],
+        "melee": [
+          [
+            "Doomflayer Gauntlets",
+            "5",
+            "4+",
+            "2+",
+            "2",
+            "D3",
+            "Charge (+1 Damage)"
+          ],
+          [
+            "Grinderfists",
+            "4",
+            "4+",
+            "2+",
+            "2",
+            "2",
+            ""
+          ],
+          [
+            "Shock Gauntlets",
+            "4",
+            "4+",
+            "2+",
+            "1",
+            "2",
+            ""
+          ],
+          [
+            "Clubbing Blows",
+            "3",
+            "4+",
+            "2+",
+            "-",
+            "2",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "The Clans Moulder and Clans Skryre have long enjoyed a profitable, if fraught, alliance. Stormfiends are one of the many horrors engendered by these collaborations. In appearance, they resemble a Rat Ogor granted even greater bulk through potent warpstone serums, and they can wield various deadly Skryre firearms without tearing themselves apart through recoil.",
+      "regimentOptions": "Skryre, Moulder, Infantry",
+      "description": "1/3 models must be armed with 1 of the following options:\n• Warpfire Projectors and Clubbing Blows\n• Windlaunchers and Clubbing Blows\n1/3 models must be armed with 1 of the following options:\n• Ratling Cannons and Clubbing Blows\n• Grinderfists\n1/3 models must be armed with 1 of the following options:\n• Doomflayer Gauntlets\n• Shock Gauntlets"
+    },
+    {
+      "faction": "Skaven",
+      "name": "Stormvermin",
+      "points": 110,
+      "size": 10,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "6\"",
+        "health": "1",
+        "save": "4+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/skaven/Stormvermin",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SKAVEN",
+          "VERMINUS",
+          "CHAMPION",
+          "INFANTRY",
+          "MUSICIAN (1/10)",
+          "STANDARD BEARER (1/10)"
+        ],
+        "abilities": [
+          "Elite Bodyguard"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Elite Bodyguard",
+            "timing": "Passive",
+            "effect": "Effect: Friendly SKAVEN INFANTRY HEROES have WARD (5+) while they are within this unit’s combat range.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          }
+        ],
+        "melee": [
+          [
+            "Stormvermin Weapons",
+            "3",
+            "3+",
+            "4+",
+            "1",
+            "1",
+            "Anti-charge (+1 Rend)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Unlike most Skaven warriors, who tend towards being stooped and rangy, Stormvermin are immediately identifiable by their comparative bulk and general aura of menace. Hand-picked from the most promising spawn of a litter – usually marked by having devoured many of their brood-mates – they are subjected to especially brutal training regimes by their Clawlords. This results in ratmen that are able to fight with a degree of precision and focus uncommon to their kin.",
+      "regimentOptions": "Verminus, Infantry"
+    },
+    {
+      "faction": "Skaven",
+      "name": "Thanquol on Boneripper",
+      "points": 310,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "8\"",
+        "health": "14",
+        "save": "4+",
+        "control": "5",
+        "ward": "5+",
+        "url": "https://wahapedia.ru/aos4/factions/skaven/Thanquol-on-Boneripper",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "MASTERCLAN",
+          "SKAVEN",
+          "HERO",
+          "MONSTER",
+          "UNIQUE",
+          "WARD (5+)",
+          "WARMASTER",
+          "WIZARD (2)"
+        ],
+        "abilities": [
+          "Battle Damaged",
+          "Staff of the Horned Rat",
+          "Terrible Madness",
+          "Boneripper Rampage",
+          "Warp-amulet"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of its Warpfire Braziers is 4.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Staff of the Horned Rat",
+            "timing": "Passive",
+            "effect": "Effect: Add 1 to casting rolls for this unit.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Terrible Madness",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Pick a visible enemy unit within 13\" of this unit to be the target, then make a casting roll of 2D6.\nEffect: The target cannot use commands until the start of your next turn. In addition, roll a number of dice equal to the number of models in the target unit. For each 6, inflict 1 mortal damage on the target.",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Spell",
+            "phase": "Hero Phase",
+            "pointsType": "Spell",
+            "points": "7"
+          },
+          {
+            "name": "Boneripper Rampage",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick an enemy unit in combat with this unit to be the target.\nEffect: Roll a dice. On a 3-5, inflict D3 mortal damage on the target. On a 6, inflict 2D3 mortal damage on the target.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Rampage",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Warp-amulet",
+            "timing": "End of Any Turn",
+            "effect": "Effect: Heal (D3) this unit.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "End of Turn"
+          }
+        ],
+        "melee": [
+          [
+            "Staff of the Horned Rat",
+            "4",
+            "4+",
+            "4+",
+            "1",
+            "D3",
+            ""
+          ],
+          [
+            "Warpfire Braziers",
+            "6",
+            "4+",
+            "2+",
+            "2",
+            "3",
+            "Companion · See battle damage rules"
+          ]
+        ],
+        "ranged": [
+          [
+            "Custom Warpfire Projectors",
+            "10\"",
+            "6",
+            "2+",
+            "3+",
+            "2",
+            "1",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Fuelled by an addiction to warpstone and delusional self-confidence remarkable even for a Skaven, Thanquol is constantly devising new schemes to secure a seat upon the Council of Thirteen. That most of these plans go awry is irrelevant; Thanquol is a master at spinning disasters to his advantage - as well as obliterating the bodies and minds of enemies and naysayers with powerful spellcraft. Thanquol is accompanied at all times by a colossal Rat Ogor that he calls Boneripper.",
+      "regimentOptions": "0-1 %000011554Skaven Overclaw%, Any %000001298Skaven%"
+    },
+    {
+      "faction": "Skaven",
+      "name": "Verminlord Corruptor",
+      "points": 260,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "10\"",
+        "health": "13",
+        "save": "4+",
+        "control": "5",
+        "ward": "5+",
+        "url": "https://wahapedia.ru/aos4/factions/skaven/Verminlord-Corruptor",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "DAEMON",
+          "PESTILENS",
+          "SKAVEN",
+          "HERO",
+          "MONSTER",
+          "PRIEST (1)",
+          "WARD (5+)"
+        ],
+        "abilities": [
+          "Lord of Great Plagues",
+          "Plaguemaster"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Lord of Great Plagues",
+            "timing": "Once Per Turn (Army), Your Hero Phase",
+            "effect": "Effect: If the unmodified chanting roll for a friendly PESTILENS PRIEST this phase was 6, pick 1 of the following effects to apply:\nCrimsonweal Curse: Pick an enemy unit within 13\" of this unit to be the target. For the rest of the battle, each time the target uses a MOVE ability, inflict D3 mortal damage on it after the MOVE ability has been resolved.\nThe Neverplague: For the rest of the battle, you can re-roll chanting rolls for friendly PESTILENS PRIESTS.\nUndulant Scourge: Pick a visible enemy unit wit",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Plaguemaster",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick up to 3 enemy units in combat with this unit to be the targets.\nEffect: Roll a D3 for each target. On a 2+:\n• Inflict an amount of mortal damage on the target equal to the roll.\n• Give this unit 1 ritual point.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Rampage",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Plaguereapers",
+            "8",
+            "3+",
+            "2+",
+            "2",
+            "2",
+            "Crit (Auto-wound)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Avatars of foulness, a Verminlord Corruptor is vile beyond words. These rat-daemons are entities of utmost reverence to the Clans Pestilens, for they embody the Horned Rat's fascination with collapse and decay. Bloated parasites burrow through their matted fur and pestilential slimes drip from the sickle-blades known as Plaguereapers. Buboes throb across their towering frames, and the air around them becomes choked with noxious yellow fog.",
+      "regimentOptions": "0-1 %000011554Skaven Overclaw%, Any %000001298Skaven%"
+    },
+    {
+      "faction": "Skaven",
+      "name": "Verminlord Deceiver",
+      "points": 360,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "10\"",
+        "health": "13",
+        "save": "4+",
+        "control": "5",
+        "ward": "5+",
+        "url": "https://wahapedia.ru/aos4/factions/skaven/Verminlord-Deceiver",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "DAEMON",
+          "ESHIN",
+          "SKAVEN",
+          "HERO",
+          "MONSTER",
+          "WARD (5+)",
+          "WIZARD (1)"
+        ],
+        "abilities": [
+          "Lord of Assassins",
+          "Burst From The Shadows"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Lord of Assassins",
+            "timing": "Reaction: You declared the ‘%000009837Redeploy%’ command for a friendly %000010769Eshin Infantry% unit wholly within 13\" of this unit",
+            "effect": "Effect: If you roll a 1-3 when determining the distance that unit can move, you can use a value of 4 instead.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Movement Phase",
+            "reaction": true
+          },
+          {
+            "name": "Burst From The Shadows",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Effect: If this unit is in combat, roll a dice. On a 4+, you can pick a point on the battlefield within 13\" of this unit and within 1\" of any enemy units. Remove this unit from the battlefield and set it up again within 1\" of that point.\nDesigner’s Note: This ability allows the unit to set up in combat with a new enemy unit.",
+            "kind": "Ability",
+            "type": "Movement",
+            "keywords": "Rampage",
+            "phase": "Combat Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Doomstar",
+            "13\"",
+            "6",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            "Crit (Auto-wound)"
+          ]
+        ],
+        "melee": [
+          [
+            "Warpstiletto",
+            "8",
+            "3+",
+            "2+",
+            "3",
+            "2",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Verminlord Deceivers are the least seen of all their daemonic brood. They are the hidden paw and favoured assassins of the Great Horned Rat, utterly one with shadow. Even the Nightlords of the Clans Eshin may struggle to detect such a daemon's presence, save for red eyes flashing in the darkness and a susurrus of whispers slipping from empty caverns. These are deliberate ploys by the Deceivers, masters of illusory concealment and teleportation magics. If they truly do not wish to be perceived, only the most incisive observer can hope to detect them.",
+      "regimentOptions": "0-1 %000011554Skaven Overclaw%, Any %000001298Skaven%"
+    },
+    {
+      "faction": "Skaven",
+      "name": "Verminlord Warbringer",
+      "points": 260,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "10\"",
+        "health": "13",
+        "save": "4+",
+        "control": "5",
+        "ward": "5+",
+        "url": "https://wahapedia.ru/aos4/factions/skaven/Verminlord-Warbringer",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "DAEMON",
+          "SKAVEN",
+          "VERMINUS",
+          "HERO",
+          "MONSTER",
+          "WARD (5+)",
+          "WIZARD (1)"
+        ],
+        "abilities": [
+          "Killing Blow",
+          "Tyrant of Battle"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Killing Blow",
+            "timing": "Once Per Turn (Army), End of Any Turn",
+            "effect": "Declare: Pick a damaged enemy unit in combat with this unit to be the target.\nEffect: Roll a dice. If the roll is less than the number of damage points the target has, inflict an amount of mortal damage on the target equal to the roll.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Rampage",
+            "phase": "End of Turn"
+          },
+          {
+            "name": "Tyrant of Battle",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick up to 2 friendly VERMINUS INFANTRY units wholly within 13\" of this unit to be the targets.\nEffect: The targets can each use the ‘All-out Attack’ or ‘All-out Defence’ command this phase even if that command has been used by a friendly unit this phase.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Doom Glaive and Spike-fist",
+            "7",
+            "3+",
+            "2+",
+            "2",
+            "3",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Warbringers are the most commonly seen of the Verminlord broods. They embody the Great Horned Rat's desire for carnage, his hunger to sweep away all that stands proud and replace it with shattered ruins through which rodents swarm. Arrogant, belligerent and territorial, Warbringers are often found dominating the Clans Verminus, who share much of their bloodthirsty world view. This stewardship, however, resembles less a protective guardian spirit and more a fell-handed tyrant bidding their screeching minions to fight with ever greater ferocity - or else face their inevitably fatal judgement.",
+      "regimentOptions": "0-1 %000011554Skaven Overclaw%, Any %000001298Skaven%"
+    },
+    {
+      "faction": "Skaven",
+      "name": "Verminlord Warpseer",
+      "points": 300,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "10\"",
+        "health": "13",
+        "save": "4+",
+        "control": "5",
+        "ward": "5+",
+        "url": "https://wahapedia.ru/aos4/factions/skaven/Verminlord-Warpseer",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "DAEMON",
+          "MASTERCLAN",
+          "SKAVEN",
+          "HERO",
+          "MONSTER",
+          "WARD (5+)",
+          "WIZARD (2)"
+        ],
+        "abilities": [
+          "Tectonic Splintering",
+          "Divine The Future",
+          "Hurl Scry-orb",
+          "Arch-Manipulator"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Tectonic Splintering",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Pick a visible enemy unit within 18\" to be the target, then make a casting roll of 2D6.\nEffect: Until the start of your next turn, subtract 1 from the number of dice rolled when making charge rolls for the target, to a minimum of 1.",
+            "kind": "Ability",
+            "type": "Movement",
+            "keywords": "Spell",
+            "phase": "Hero Phase",
+            "pointsType": "Spell",
+            "points": "7"
+          },
+          {
+            "name": "Divine The Future",
+            "timing": "Passive",
+            "effect": "Effect: While this unit is on the battlefield, add 2\" to the distance friendly units can move when using the ‘Always Three Clawsteps Ahead’ ability.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Hurl Scry-orb",
+            "timing": "Once Per Battle, Any Combat Phase",
+            "effect": "Declare: Pick an enemy unit in combat with this unit to be the target.\nEffect: This unit cannot use the ‘Divine the Future’ ability for the rest of the battle. Roll a dice. On a 2+, inflict an amount of mortal damage on the target equal to the roll.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Arch-Manipulator",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick an enemy unit in combat with this unit to be the target.\nEffect: Roll a dice. On a 4+, the target has STRIKE-LAST for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "keywords": "Rampage",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Doom Glaive",
+            "6",
+            "4+",
+            "2+",
+            "2",
+            "3",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "All Verminlords are conniving, as befits the daemonic progeny of the Great Horned Rat. The Warpseers, however, are manipulation given form. Their eldritch abilities go beyond those of even their fellow rat-daemons; they wheeze the stuff of sorcery, tugging at the threads of possibility and ploy with each swift lash of the tail. Engulfed by billowing gales of warp-energy, these Verminlords orchestrate the doom of armies, gleefully sending thousands of minions to their deaths to facilitate their deranged stratagems.",
+      "regimentOptions": "0-1 %000011554Skaven Overclaw%, Any %000001298Skaven%"
+    },
+    {
+      "faction": "Skaven",
+      "name": "Vermintide",
+      "points": 0,
+      "size": 1,
+      "kind": "",
+      "category": "Manifestation",
+      "profile": {
+        "move": "7\"",
+        "health": "13",
+        "save": "6+",
+        "ward": "6+",
+        "banishment": "7",
+        "url": "https://wahapedia.ru/aos4/factions/skaven/Vermintide",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SKAVEN",
+          "ENDLESS SPELL",
+          "MANIFESTATION",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "More-more Rats"
+        ],
+        "abilityDetails": [
+          {
+            "name": "More-more Rats",
+            "timing": "End of Any Turn",
+            "effect": "Effect: Heal (D6) this MANIFESTATION.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "End of Turn"
+          }
+        ],
+        "melee": [
+          [
+            "Chittering Bites",
+            "13",
+            "5+",
+            "5+",
+            "-",
+            "1",
+            "Crit (Auto-wound)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Blight City, the abominable domain of the Skaven, lurks beyond the barriers of conventional reality. Through the depths of that sub-realm swarm billions upon billions of rats, their eyes filled with malice and their teeth unnaturally sharpened by exposure to the corrupting energies of the Great Horned Rat. The Skaven excel in unpicking the logical underpinnings of creation, spreading cracks and fractures across the surface of sanity. In times of need, their sorcerers can open such a crack wide enough to allow a living wave of these rodents to spill into the realms – a grim occurrence known as a Vermintide."
+    },
+    {
+      "faction": "Skaven",
+      "name": "Vizzik Skour, Prophet of the Horned Rat",
+      "points": 340,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "10\"",
+        "health": "15",
+        "save": "5+",
+        "control": "5",
+        "ward": "5+",
+        "url": "https://wahapedia.ru/aos4/factions/skaven/Vizzik-Skour-Prophet-of-the-Horned-Rat",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "DAEMON",
+          "MASTERCLAN",
+          "SKAVEN",
+          "HERO",
+          "MONSTER",
+          "PRIEST (2)",
+          "UNIQUE",
+          "WARD (5+)",
+          "WARMASTER"
+        ],
+        "abilities": [
+          "The Death Frenzy",
+          "Prophet of the Horned Rat",
+          "Gaze of the Gnaw",
+          "Fissures In Reality"
+        ],
+        "abilityDetails": [
+          {
+            "name": "The Death Frenzy",
+            "timing": "Any Hero Phase",
+            "effect": "Declare: Pick a visible enemy unit within 13\"of this unit or a visible friendly SKAVEN INFANTRY unit within 13\" of this unit to be the target, then make a chanting roll of D6.\nEffect: If the target is an enemy unit, subtract 1 from the Attacks characteristic of the target’s melee weapons until the start of your next turn.\nIf the target is a friendly unit, it can use 2 FIGHT abilities this turn. After the first is used, however, the target has STRIKE-LAST for the rest of the turn.\nIf the chanting roll was 12+, you can pick 2 targets instead of 1.",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Prayer",
+            "phase": "Hero Phase",
+            "pointsType": "Prayer",
+            "points": "8"
+          },
+          {
+            "name": "Prophet of the Horned Rat",
+            "timing": "Once Per Battle, Your Hero Phase",
+            "effect": "Effect: You can re-roll chanting rolls for this unit until the start of your next turn.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Gaze of the Gnaw",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: Pick an enemy unit in combat with this unit to be the target.\nEffect: Roll a dice. On a 2+, for the rest of the turn:\n• If this unit is in combat with the target when the target is picked to use a FIGHT ability, all of the target’s attacks must target this unit.\n• Subtract 1 from hit rolls and wound rolls for the target’s combat attacks that target this unit.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "keywords": "Rampage",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Fissures In Reality",
+            "timing": "Any Combat Phase",
+            "effect": "Declare: Pick each enemy unit in combat with this unit to be the targets.\nEffect: Roll a D3 for each target. On a 2+, inflict an amount of mortal damage on the target equal to the roll.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Unholy Gnawstaff",
+            "6",
+            "4+",
+            "2+",
+            "1",
+            "D6",
+            "Crit (Mortal)"
+          ],
+          [
+            "Host of Vermin",
+            "10",
+            "5+",
+            "5+",
+            "-",
+            "1",
+            "Crit (Auto-wound), Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Created in the apocalyptic fires of the Vermindoom, Vizzik Skour is the chief priest of the Horned Rat, Lord of the Gnaw and master of the mind-shattering death frenzy. The force of this daemon's diabolic zeal is enough to crack the land and drive the Skaven swarms into a frothing madness.",
+      "regimentOptions": "0-1 %000011554Skaven Overclaw%, Any %000001298Skaven%"
+    },
+    {
+      "faction": "Skaven",
+      "name": "Warlock Bombardier",
+      "points": 90,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "5",
+        "save": "5+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/skaven/Warlock-Bombardier",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SKAVEN",
+          "SKRYRE",
+          "HERO",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "Explosive Payload",
+          "More-more Doom!"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Explosive Payload",
+            "timing": "Passive",
+            "effect": "Effect: Add 1 to hit rolls for this unit’s shooting attacks that target an enemy unit that has 10 or more models.",
+            "kind": "Ability",
+            "type": "Shooting",
+            "phase": "Shooting Phase"
+          },
+          {
+            "name": "More-more Doom!",
+            "timing": "Reaction: You declared a Shoot ability for this unit, it was not set up this turn and it has not used a Move ability this turn",
+            "effect": "Effect: Roll a dice. On a 2+, set the Damage characteristic of its Doomrocket to D3+3 for the rest of the turn. On a 1, inflict D3 mortal damage on this unit.",
+            "kind": "Ability",
+            "type": "Shooting",
+            "phase": "Shooting Phase",
+            "reaction": true
+          }
+        ],
+        "melee": [
+          [
+            "Firing Pole",
+            "3",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            ""
+          ]
+        ],
+        "ranged": [
+          [
+            "Doomrocket",
+            "18\"",
+            "2",
+            "4+",
+            "3+",
+            "1",
+            "D6",
+            "Anti-INFANTRY (+1 Rend)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Warlock Bombardiers are besotted with indiscriminate carnage. Their obsession with ballistic devastation finds realisation in the creation of Doomrockets. These are amongst the most potent, and temperamental, weapons that a single Skaven can wield, capable of blasting formations to ashes. More is always better, says the ratman mindset, and so Bombardiers gleefully strap additional warheads and power sources to their missiles. This certainly results in a satisfying explosion - though not always one that consumes the intended target...",
+      "regimentOptions": "0-1 %000010439Clanrats%, Any %000010703Skryre%",
+      "notes": "This HERO can join an eligible regiment as a Skaven Overclaw"
+    },
+    {
+      "faction": "Skaven",
+      "name": "Warlock Engineer",
+      "points": 100,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "5",
+        "save": "5+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/skaven/Warlock-Engineer",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SKAVEN",
+          "SKRYRE",
+          "HERO",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "Sniper-master",
+          "More-more Warp Energy!"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Sniper-master",
+            "timing": "Once Per Turn (Army), Your Shooting Phase",
+            "effect": "Declare: Pick a visible enemy HERO to be the target.\nEffect: For the rest of the turn, this unit and friendly Warplock Jezzails units wholly within 13\" of this unit can ignore the effects of the ‘Guarded Hero’ ability when picking the target for their shooting attacks.",
+            "kind": "Ability",
+            "type": "Shooting",
+            "phase": "Shooting Phase"
+          },
+          {
+            "name": "More-more Warp Energy!",
+            "timing": "Reaction: You declared a Shoot ability for this unit, it was not set up this turn and it has not used a Move ability this turn",
+            "effect": "Effect: Roll a dice. On a 2+, set the Damage characteristic of this unit’s Warplock Musket to 3 for the rest of the turn. On a 1, inflict D3 mortal damage on this unit.",
+            "kind": "Ability",
+            "type": "Shooting",
+            "phase": "Shooting Phase",
+            "reaction": true
+          }
+        ],
+        "ranged": [
+          [
+            "Warplock Musket",
+            "24\"",
+            "2",
+            "3+",
+            "3+",
+            "2",
+            "D3",
+            "Crit (Auto-wound)"
+          ]
+        ],
+        "melee": [
+          [
+            "Warpforged Dagger",
+            "3",
+            "4+",
+            "4+",
+            "-",
+            "2",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "The most common class of Warlocks are known simply as Engineers. These are responsible for the construction and operation of the many mass-produced wonder weapons of the Clans Skryre. Less inclined to face their foes head on, many Warlock Engineers carry ranged weapons of their own creation, with warplock muskets being a perennial favourite. Of course, the Engineers cannot help but attempt to push these weapons to their limits, thoroughly convinced of their own genius - until the musket detonates in their claws, that is.",
+      "regimentOptions": "0-1 %000010439Clanrats%, Any %000010703Skryre%",
+      "notes": "This HERO can join an eligible regiment as a Skaven Overclaw"
+    },
+    {
+      "faction": "Skaven",
+      "name": "Warlock Galvaneer",
+      "points": 120,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "5",
+        "save": "5+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/skaven/Warlock-Galvaneer",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SKAVEN",
+          "SKRYRE",
+          "HERO",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "Lightning Master",
+          "More-More Warpvolt Doom!"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Lightning Master",
+            "timing": "Once Per Battle (Army), Your Shooting Phase",
+            "effect": "Declare: Pick a friendly Warpvolt Scourgers unit within this unit’s combat range to be the target.\nEffect: Set the Attacks characteristic of the target’s Warpvolt Scourgers to 10 for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Shooting",
+            "phase": "Shooting Phase"
+          },
+          {
+            "name": "More-More Warpvolt Doom!",
+            "timing": "Any Shooting Phase",
+            "effect": "Declare: Pick an enemy unit that had any damage points allocated to it this turn by attacks made with this unit’s Warpvolt Obliterator to be the target.\nEffect: Roll a D3 for each other enemy unit within the target’s combat range. On a 2+, inflict an amount of mortal damage on that enemy unit equal to the roll.",
+            "kind": "Ability",
+            "type": "Shooting",
+            "phase": "Shooting Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Warpvolt Obliterator",
+            "18\"",
+            "2",
+            "3+",
+            "3+",
+            "2",
+            "D3",
+            "Anti-Cavalry (+1 Rend), Crit (2 Hits)"
+          ]
+        ],
+        "melee": [
+          [
+            "Rusted Blade",
+            "3",
+            "4+",
+            "5+",
+            "-",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "A Warplock Galvaneer is a connoisseur of electrically charged annihilation. These twitchy maniacs are obsessed with channelling the voltaic energies that course through the veins of the Dark Innovator, and they see the battlefield as the perfect arena in which to test their latest creations. Wielding battery-powered warpvolt obliterators, they scamper into the fray, their weapons spitting crackling arcs of warp-corrupted lightning that scorch flesh and turn even heavily armoured foes into jerking, smoking corpses.",
+      "regimentOptions": "0-1 %000010439Clanrats%, Any %000010703Skryre%",
+      "notes": "This HERO can join an eligible regiment as a Skaven Overclaw"
+    },
+    {
+      "faction": "Skaven",
+      "name": "Warp Lightning Cannon",
+      "points": 120,
+      "size": 1,
+      "kind": "",
+      "category": "War Machine",
+      "profile": {
+        "move": "3\"",
+        "health": "8",
+        "save": "4+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/skaven/Warp-Lightning-Cannon",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SKAVEN",
+          "SKRYRE",
+          "WAR MACHINE"
+        ],
+        "abilities": [
+          "More-more Warp Lightning!",
+          "Warp Lightning Blast"
+        ],
+        "abilityDetails": [
+          {
+            "name": "More-more Warp Lightning!",
+            "timing": "Once Per Turn (Army), Your Shooting Phase",
+            "effect": "Effect: If this unit is within the combat range of a friendly SKRYRE HERO, add 6 to the Attacks characteristic of this unit’s Warp Lightning Blast for the rest of the turn.\nHowever, for each unmodified hit roll of 1 for an attack made with this unit’s Warp Lightning Blast, inflict D3 mortal damage on this unit after the SHOOT ability has been resolved.",
+            "kind": "Ability",
+            "type": "Shooting",
+            "phase": "Shooting Phase"
+          },
+          {
+            "name": "Warp Lightning Blast",
+            "timing": "Passive",
+            "effect": "Effect: Each attack made with this weapon in a single phase must target the same enemy unit. Each hit inflicts 1 mortal damage on the target and the attack sequence ends.",
+            "kind": "Ability",
+            "type": "Shooting",
+            "phase": "Shooting Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Warp Lightning Blast",
+            "20\"",
+            "2D6",
+            "4+",
+            "#3",
+            "—",
+            "—",
+            ""
+          ]
+        ],
+        "melee": [
+          [
+            "Crew’s Teeth and Knives",
+            "D6",
+            "4+",
+            "5+",
+            "-",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Warp Lightning Cannons are the most infamous creations of the Clans Skryre. A dense warpstone core is attached to a long metallic barrel, etched with runes that magnify power channelled along it. Said power is focused in the warpstone 'tip' of the cannon before being discharged in a bolt of sizzling energy. The erratic nature of warpstone ensures that even the most skilled Skaven artillerist cannot accurately determine how much power will be exerted when the weapon is fired. Usually, they must simply pick their moment and hope for the best.",
+      "regimentOptions": "Skryre, War Machine",
+      "notes": "You cannot include more than 1 Skryre War Machine in a regiment led by a non-Skryre Hero."
+    },
+    {
+      "faction": "Skaven",
+      "name": "Warp Lightning Vortex",
+      "points": 0,
+      "size": 3,
+      "kind": "",
+      "category": "Manifestation",
+      "profile": {
+        "move": "-",
+        "health": "7",
+        "save": "6+",
+        "ward": "6+",
+        "banishment": "7",
+        "url": "https://wahapedia.ru/aos4/factions/skaven/Warp-Lightning-Vortex",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SKAVEN",
+          "ENDLESS SPELL",
+          "MANIFESTATION",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Multiple Parts",
+          "Warp Vortex",
+          "Warp Lightning Bolts"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Multiple Parts",
+            "timing": "Passive",
+            "effect": "Effect: When a number of damage points equal to this MANIFESTATION’s Health characteristic are allocated to it, this MANIFESTATION is destroyed and all its parts are removed from play.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Warp Vortex",
+            "timing": "Passive",
+            "effect": "Effect: Subtract 2 from run rolls and charge rolls for enemy units while they are within 6\" of this MANIFESTATION. In addition, if an enemy unit passes across this MANIFESTATION and/or the round-cornered triangle formed by drawing a line around all the bases of the MANIFESTATION’s parts, inflict D3 mortal damage on that enemy unit after the MOVE ability has been resolved.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Warp Lightning Bolts",
+            "timing": "Any Hero Phase",
+            "effect": "Declare: If this MANIFESTATION was not set up this turn, pick each enemy unit within 6\" of this MANIFESTATION to be the targets.\nEffect: Roll a dice for each target. On a 4+, inflict D3 mortal damage on the target.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Hero Phase"
+          }
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Warp lightning is often used for the crude but satisfying purpose of destruction, but it possesses more subtle qualities also. By hurling a clawful of warpstone shards onto the earth and rasping the necessary invocations, a Skaven sorcerer can see them grow into sizable prisms, linked by chains of crackling warp lightning. The space within these arcane chains becomes a swirling vortex of corruptive magical energy. Any trapped within this zone find their strength sapped and waning, as if dragged out by the flickering tongues of lightning."
+    },
+    {
+      "faction": "Skaven",
+      "name": "Warp-Grinder",
+      "points": 100,
+      "size": 1,
+      "kind": "",
+      "category": "War Machine",
+      "profile": {
+        "move": "5\"",
+        "health": "8",
+        "save": "4+",
+        "control": "2",
+        "url": "https://wahapedia.ru/aos4/factions/skaven/Warp-Grinder",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SKAVEN",
+          "SKRYRE",
+          "WAR MACHINE"
+        ],
+        "abilities": [
+          "Tunnel Skulkers",
+          "Warp-ambush"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Tunnel Skulkers",
+            "timing": "Once Per Battle (Army), Deployment Phase",
+            "effect": "Declare: Pick this unit and up to 1 friendly non-MONSTER SKAVEN unit if those units have not been deployed.\nEffect: Set up those units in reserve in the tunnels below. They have now been deployed.",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Deploy",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Warp-ambush",
+            "timing": "Your Movement Phase",
+            "effect": "Declare: You can only use this ability if this unit is in the tunnels below.\nEffect: Roll a dice and pick one of the following effects.\n• On a 4+, pick an enemy unit that is more than 6\" from all other enemy units. You can set up this unit on the battlefield in combat with that enemy unit and not in combat with any other enemy units. Then, if another friendly unit was set up in the tunnels below with the ‘Tunnel Skulkers’ ability, you can set up that unit wholly within 6\" of this unit, in combat with that enemy unit, and not in combat with any other enemy units.\n• You can set up this unit anywhere on the battlefield more than 9\" from all enemy units. Then, if another friendly unit was set up in the tunnels below with the ‘Tunnel Skulkers’ ability, you can set up that unit wholly with",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Movement Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Warpstone Drill-fang",
+            "D3",
+            "4+",
+            "2+",
+            "3",
+            "5",
+            ""
+          ],
+          [
+            "Crew’s Teeth and Knives",
+            "D6",
+            "4+",
+            "5+",
+            "-",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "The primary function of a Warp-Grinder is as an arcane reality-borer. Manoeuvred by straining thralls and operated by Warlocks who have taken their obsession with undermining their foes to terrifying extremes, these bulky constructs project powerful - if erratic - blasts of energy to punch through the skin of reality. Using these devices, the Skaven can open gnawholes or tunnel into vulnerable regions of a battlefield to allow screeching warrior swarms to set upon enemies from quarters unforeseen.",
+      "regimentOptions": "Skryre, War Machine",
+      "notes": "You cannot include more than 1 Skryre War Machine in a regiment led by a non-Skryre Hero."
+    },
+    {
+      "faction": "Skaven",
+      "name": "Warpfire Throwers",
+      "points": 120,
+      "size": 3,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "6\"",
+        "health": "3",
+        "save": "6+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/skaven/Warpfire-Throwers",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SKAVEN",
+          "SKRYRE",
+          "INFANTRY",
+          "WEAPON TEAM"
+        ],
+        "abilities": [
+          "Hidden Weapon Team"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Hidden Weapon Team",
+            "timing": "Passive",
+            "effect": "Effect: While this unit is within the combat range of a friendly Clanrats unit that has 5 or more models, and there are no other friendly WEAPON TEAM units within that unit’s combat range, this unit is not visible to enemy units more than 13\" away.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          }
+        ],
+        "ranged": [
+          [
+            "Warpfire Thrower",
+            "10\"",
+            "2D6",
+            "2+",
+            "4+",
+            "2",
+            "1",
+            "Shoot in Combat"
+          ]
+        ],
+        "melee": [
+          [
+            "Rusty Knives",
+            "2",
+            "4+",
+            "5+",
+            "-",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Within the voluminous barrel of a Warpfire Thrower sloshes a particularly incendiary and evil concoction. When the Skaven gunner depresses a trigger, this liquid is fed through crude piping to spew out of a brass nozzle, igniting on contact with the air to produce sheets of blinding green flame. So deadly is this compound that it cannot be doused through conventional means; those whom it strikes can only burn to death in agony as the fire leaps across tightly packed ranks of infantry.",
+      "regimentOptions": "Skryre, Infantry, Weapon Team",
+      "notes": "You cannot include more than 1 Skryre Weapon Team in a regiment led by a non-Skryre Hero."
+    },
+    {
+      "faction": "Skaven",
+      "name": "Warplock Jezzails",
+      "points": 120,
+      "size": 3,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "6\"",
+        "health": "2",
+        "save": "4+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/skaven/Warplock-Jezzails",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SKAVEN",
+          "SKRYRE",
+          "CHAMPION",
+          "INFANTRY"
+        ],
+        "abilities": [
+          "Warpstone Snipers"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Warpstone Snipers",
+            "timing": "Your Shooting Phase",
+            "effect": "Effect: If this unit has not used a MOVE ability this turn and was not set up this turn, add 6\" to the Range characteristic of this unit’s Warplock Jezzails for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Shooting",
+            "phase": "Shooting Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Warplock Jezzail",
+            "18\"",
+            "2",
+            "4+",
+            "3+",
+            "2",
+            "2",
+            "Crit (Auto-wound)"
+          ]
+        ],
+        "melee": [
+          [
+            "Rusty Knives",
+            "2",
+            "4+",
+            "5+",
+            "-",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Long-range warfare is a respected art amongst the Skaven; it is, after all, the method of combat least likely to involve personal danger. Skilled snipers amongst the Clans Skryre take up Warplock Jezzails, from which they can spit death from the rearmost ranks. Two ratmen are needed to carry a Jezzail; the second Skaven makes themselves useful by clutching a pavise shield that props up the heavy rifle and provides a measure of defence against return fire.",
+      "regimentOptions": "Skryre, Infantry"
+    },
+    {
+      "faction": "Skaven",
+      "name": "Warpvolt Scourgers",
+      "points": 170,
+      "size": 3,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "6\"",
+        "health": "3",
+        "save": "6+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/skaven/Warpvolt-Scourgers",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SKAVEN",
+          "SKRYRE",
+          "INFANTRY",
+          "WEAPON TEAM"
+        ],
+        "abilities": [
+          "Hidden Weapon Team"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Hidden Weapon Team",
+            "timing": "Passive",
+            "effect": "Effect: While this unit is within the combat range of a friendly Clanrats unit that has 5 or more models, and there are no other friendly WEAPON TEAM units within that unit’s combat range, this unit is not visible to enemy units more than 13\" away.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          }
+        ],
+        "ranged": [
+          [
+            "Warpvolt Scourger",
+            "15\"",
+            "2D6",
+            "2+",
+            "4+",
+            "1",
+            "1",
+            "Anti-CAVALRY (+1 Rend), Crit (2 Hits)"
+          ]
+        ],
+        "melee": [
+          [
+            "Rusty Knives",
+            "2",
+            "4+",
+            "5+",
+            "-",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "One of the many forms of weapon forged in the hellish foundries of the Warlocks, Warpvolt Scourgers channel the power of warpstone into volatile warp lightning, which travels between twin orb-like conductors before leaping forth to bring voltaic destruction to the enemy. Flesh and soul make perversely fine conductors for warp lightning and foes who are packed in tight are sure to be caught in a Scourger's fury, blasting them to oblivion and leaving them fatally convulsing.",
+      "regimentOptions": "Skryre, Infantry, Weapon Team",
+      "notes": "You cannot include more than 1 Skryre Weapon Team in a regiment led by a non-Skryre Hero."
+    },
+    {
+      "faction": "Skaven",
+      "name": "Zikkit’s Tunnelpack",
+      "points": 110,
+      "size": 4,
+      "kind": "Legends",
+      "category": "Infantry",
+      "profile": {
+        "move": "6\"",
+        "health": "2",
+        "save": "6+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/skaven/Zikkit-s-Tunnelpack",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "CHAOS",
+          "SKAVEN",
+          "SKRYRE",
+          "INFANTRY",
+          "UNIQUE"
+        ],
+        "abilities": [
+          "KA-BOOM!",
+          "Tunneling Team",
+          "Tunnelpack Ambush"
+        ],
+        "abilityDetails": [
+          {
+            "name": "KA-BOOM!",
+            "timing": "Once Per Battle (Army), Any Combat Phase",
+            "effect": "Declare: Pick an enemy unit in combat with this unit to be the target.\nEffect: This unit’s Tik Tik is a token. If this unit’s Tik Tik is on the battlefield, remove it from the battlefield and roll a D3. On a 2+, inflict an amount of mortal damage on the target equal to the roll and the target has STRIKE-LAST for the rest of the turn",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Tunneling Team",
+            "timing": "Deployment Phase",
+            "effect": "Effect: Set up this unit in reserve drilling beneath the surface. It has now been deployed.",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Deploy",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Tunnelpack Ambush",
+            "timing": "Your Movement Phase",
+            "effect": "Declare: Pick this unit if it is drilling beneath the surface.\nEffect: Set up this unit anywhere on the battlefield more than 9\" from all enemy units.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Movement Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Skryre Bombs",
+            "10\"",
+            "2",
+            "4+",
+            "4+",
+            "2",
+            "1",
+            "Shoot in Combat"
+          ]
+        ],
+        "melee": [
+          [
+            "Warp Drill",
+            "3",
+            "3+",
+            "4+",
+            "1",
+            "D3",
+            ""
+          ],
+          [
+            "Tunnelling Gear",
+            "2",
+            "4+",
+            "4+",
+            "1",
+            "D3",
+            "Charge (+1 Damage)"
+          ],
+          [
+            "Mangy Claws",
+            "2",
+            "4+",
+            "5+",
+            "-",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "Legends Warscrolls",
+      "canReinforce": true,
+      "flavour": "Zikkit Rockgnaw is one of the crazed Warlocks of the Clans Skryre and obsessed with undermining his enemies – in the most literal sense. He has developed an eclectic arsenal of apparatus for the purpose of digging beneath a battlefield and appearing when least expected, including rat-mounted bombs and his own portable warp-grinder. Perhaps the most deadly weapon in his Tunnelpack’s possession, though, is the miniaturised Doomwheel controlled, loosely speaking, by his apprentice, Rittak Verm.",
+      "notes": "This unit cannot be reinforced",
+      "description": "The models in Zikkit’s Tunnelpack are Zikkit Rockgnaw, Rittak Verm, Krittatok and Nitch Singe-snout.\n• Zikkit Rockgnaw is armed with a Warp Drill\n• Rittak Verm is armed with Tunnelling Gear\n• Each other model is armed with Skryre Bombs and Mangy Claws."
+    }
+  ]
+}

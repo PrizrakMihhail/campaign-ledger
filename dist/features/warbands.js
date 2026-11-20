@@ -22,7 +22,7 @@ function warbands() {
     <progress class="progress" max="${cap}" value="${Math.min(points, cap)}" aria-label="Roster points reference"></progress>
     ${span('Battle Formation', a.formation)}
     ${lorePoints ? `<p class="meta">Includes ${fmt(lorePoints)} battle pts from Arcane Tome.</p>` : ''}
-    ${a.notes ? `<p class="copy muted">${escape(a.notes)}</p>` : ''}<div class="actions">${button('Edit warband', 'edit-warband')}${!a.archived && !isActive ? button('Make Active', 'make-active-warband', { type: 'primary' }) : ''}${button(a.archived ? 'Restore warband' : 'Archive warband', 'archive-warband', { type: 'link' })}</div></section>`;
+    ${a.notes ? `<p class="copy muted">${escape(a.notes)}</p>` : ''}<div class="actions">${button('Edit warband', 'edit-warband')}${button('Import faction rules', 'import-warband-rules')}${!a.archived && !isActive ? button('Make Active', 'make-active-warband', { type: 'primary' }) : ''}${button(a.archived ? 'Restore warband' : 'Archive warband', 'archive-warband', { type: 'link' })}${button('Remove warband', 'remove-warband', { type: 'danger' })}</div></section>`;
   const sorted = sortedWarbandUnits(a);
   const unitCards = (units, emptyTitle) => units.length ? `<div class="cards">${units.map(unit => unitCard(a, unit)).join('')}</div>` : empty(emptyTitle, '');
   const resource = CampaignStore.data.campaign.resource;
@@ -62,27 +62,147 @@ function unitCard(a, unit) {
     <div class="actions">${status === 'Retired' ? '' : button('Datacard', 'view-unit-datacard', { id: unit.id, title: `View ${unit.name} datacard` })}${button('Edit', 'edit-unit', { id: unit.id })}${button('Battle history', 'unit-history', { id: unit.id, type: 'link' })}</div></article>`;
 }
 
+function removeWarband(warband) {
+  if (!warband) return;
+  confirmDialog(`Remove ${warband.name}?`, 'Permanently removes this warband, its units, traits, lores, quests, ledger, and warband chronicle entries. Battles shared with other warbands and their rewards are kept for those warbands; its other battles are deleted. Export a backup first if you may need to restore it.', 'Remove warband', () => {
+    const state = CampaignStore.data;
+    if (!state.armies.some(item => item.id === warband.id)) return ['Warband already removed.', 'warbands'];
+    state.armies = state.armies.filter(item => item.id !== warband.id);
+    state.entries = state.entries.filter(entry => entry.armyId !== warband.id);
+    state.battles = state.battles.filter(battle => {
+      if (!Ledger.participants(battle).includes(warband.id)) return true;
+      const survivorId = battle.armyId === warband.id ? battle.opponentArmyId : battle.armyId;
+      if (!state.armies.some(item => item.id === survivorId)) return false;
+      if (battle.armyId === warband.id) {
+        battle.result = Ledger.resultFor(battle, survivorId);
+        battle.armyId = survivorId;
+        battle.opponentArmyId = '';
+        battle.delta = battle.oppDelta;
+        battle.resourceDelta = battle.oppResourceDelta;
+        battle.oppDelta = 0;
+        battle.oppResourceDelta = 0;
+        battle.questId = '';
+        battle.questPoints = 0;
+      } else {
+        battle.opponentArmyId = '';
+        battle.oppDelta = 0;
+        battle.oppResourceDelta = 0;
+      }
+      battle.opponent = warband.name;
+      battle.awards = (battle.awards || []).filter(award => award.armyId !== warband.id);
+      return true;
+    });
+    if (state.activeWarbandId === warband.id) state.activeWarbandId = Ledger.latestWarband(state.armies)?.id || '';
+    viewedArmyId = state.activeWarbandId ? '' : state.armies[0]?.id || '';
+    return ['Warband permanently removed.', 'warbands'];
+  });
+}
+
 function warbandForm(existing) {
   const a = existing || {};
   const heroes = Ledger.sortedUnits(a.units ?? []).filter(unit => Ledger.unitType(unit.type) === 'Hero');
   const warlordOptions = [['', heroes.length ? 'No warlord selected' : 'Add a Hero to choose a warlord'], ...heroes.map(unit => [unit.id, Ledger.unitName(unit)])];
   formDialog(existing ? 'Edit warband' : 'New warband', field('Warband name', 'name', a.name, { required: true }) + textPicker('Faction', 'faction', a.faction, { required: true }) +
     textPicker('Battle Formation', 'formation', a.formation) +
+    `<div class="full" id="warband-import-options">${warbandImportFields(a.faction, !existing)}</div>` +
     select('Warlord or general', 'warlordId', warlordOptions, a.warlordId || '') + field('Banner color', 'color', Ledger.validColor(a.color), { type: 'color' }) + area('Warband notes', 'notes', a.notes), v => {
     const values = { name: required(v.name, 'Warband name'), faction: required(v.faction, 'Faction'), formation: v.formation?.trim() ?? '', warlordId: heroes.some(unit => unit.id === v.warlordId) ? v.warlordId : '', warlord: '', notes: v.notes.trim(), color: Ledger.validColor(v.color) };
-    if (existing) Object.assign(existing, values);
+    if (existing) {
+      Object.assign(existing, values);
+      applyWarbandImport(existing, v);
+    }
     else {
       const id = Ledger.id();
-      CampaignStore.data.armies.push({ id, ...values, archived: false, units: [], lores: [], quests: [], ledger: [], battleTraits: [], battleView: [] });
+      const warband = { id, ...values, archived: false, units: [], lores: [], quests: [], ledger: [], battleTraits: [], battleView: [] };
+      applyWarbandImport(warband, v);
+      CampaignStore.data.armies.push(warband);
       CampaignStore.data.activeWarbandId = id;
       viewedArmyId = '';
     }
     return ['Warband saved.', 'warbands'];
   }, { label: existing ? 'Save warband' : 'Create warband' });
   const form = dialog.querySelector('#editor-form');
-  const formations = [...new Set(CampaignStore.data.armies.map(warband => warband.formation).filter(Boolean))].sort((left, right) => left.localeCompare(right));
   mountTextPicker(form, 'faction', BattleCatalogue.factions.map(name => ({ name })));
-  mountTextPicker(form, 'formation', formations.map(name => ({ name })));
+  const formationPicker = mountTextPicker(form, 'formation', []);
+  const factionField = form.elements?.faction;
+  const refreshFormations = () => {
+    const faction = factionField?.value || a.faction;
+    const saved = CampaignStore.data.armies.filter(warband => warband.faction?.toLowerCase() === faction?.toLowerCase()).map(warband => warband.formation).filter(Boolean);
+    formationPicker?.setEntries([...new Set([...BattleCatalogue.formations(faction), ...saved])].sort((left, right) => left.localeCompare(right)).map(name => ({ name })));
+  };
+  factionField?.addEventListener('change', refreshFormations);
+  factionField?.addEventListener('change', () => {
+    const root = form.querySelector('#warband-import-options');
+    if (root) root.innerHTML = warbandImportFields(factionField.value, !existing);
+  });
+  refreshFormations();
+}
+
+function warbandImportFields(faction, includeTraits = true) {
+  const checkbox = (name, label, checked) => `<label class="full"><input type="checkbox" name="${name}"${checked ? ' checked' : ''}> ${label}</label>`;
+  return checkbox('includeFactionRules', 'Add missing faction traits and selected formation abilities', includeTraits) +
+    Ledger.loreKinds.map(kind => select(`${loreLabels[kind].title} to import`, `import-${kind}`, [['', 'None — do not add a lore'], ...BattleCatalogue.lores(faction, kind).map((lore, index) => [String(index), `${lore.name}${lore.scope === 'shared' ? ' (Shared)' : ''}`])], '')).join('') +
+    checkbox('includeManifestationUnits', 'Add linked manifestation units to the roster', true) +
+    '<p class="meta full">Imported items are editable copies. Existing items and customizations are kept; only missing traits, lore entries, and units are added. Shared lores may have army eligibility restrictions; check their Declare text.</p>';
+}
+
+function addManifestationUnits(warband, lore) {
+  warband.units ??= [];
+  for (const item of lore.entries || []) {
+    const link = item.manifestation;
+    if (!link) continue;
+    const record = BattleCatalogue.find(link.faction, link.name);
+    if (!record || warband.units.some(unit => unitWarscroll(unit)?.toLowerCase() === record.name.toLowerCase())) continue;
+    warband.units.push({ id: Ledger.id(), name: record.name, warscroll: record.name, type: 'Manifestation', points: 0, size: record.size || 1,
+      renown: 0, rank: '', path: '', reinforced: false, upgrades: [], status: 'Active', enhancements: '', scars: '', notes: '', battleScars: 0, profileEdits: null, anvil: null });
+  }
+}
+
+function applyWarbandImport(warband, values) {
+  const sameName = (a, b) => a.trim().normalize('NFKD').toLowerCase().replace(/[^a-z0-9]/g, '') === b.trim().normalize('NFKD').toLowerCase().replace(/[^a-z0-9]/g, '');
+  warband.battleTraits ??= [];
+  warband.lores ??= [];
+  if (values.includeFactionRules === 'on') {
+    for (const trait of importedWarbandRules(warband.faction, warband.formation || '').battleTraits) {
+      if (!warband.battleTraits.some(saved => sameName(saved.name, trait.name) || sameName(saved.name.split(' — ').at(-1), trait.name))) warband.battleTraits.push(trait);
+    }
+  }
+  for (const kind of Ledger.loreKinds) {
+    const selection = values[`import-${kind}`];
+    if (selection === undefined || selection === '') continue;
+    const source = BattleCatalogue.lores(warband.faction, kind)[Number(selection)];
+    if (!source) continue;
+    let lore = warband.lores.find(saved => saved.kind === kind && sameName(saved.name, source.name));
+    if (!lore) {
+      lore = { id: Ledger.id(), name: source.name, kind, points: source.points || 0, entries: [] };
+      warband.lores.push(lore);
+    }
+    for (const entry of source.entries) {
+      if (!lore.entries.some(saved => sameName(saved.name, entry.name))) lore.entries.push({ id: Ledger.id(), name: entry.name, value: entry.value || '', declare: entry.declare || '', effect: entry.effect || '' });
+    }
+    if (values.includeManifestationUnits === 'on') addManifestationUnits(warband, source);
+  }
+}
+
+function warbandImportForm(warband) {
+  if (!warband) return;
+  formDialog('Import faction rules', warbandImportFields(warband.faction), values => {
+    applyWarbandImport(warband, values);
+    return ['Missing faction rules imported.', 'warbands'];
+  }, { label: 'Import selected rules', description: `Add rules to ${warband.name} · ${warband.faction}. The current formation is ${warband.formation || 'not selected'}.` });
+}
+
+function importedWarbandRules(faction, formation) {
+  const rules = BattleCatalogue.rules(faction);
+  if (!rules) return { battleTraits: [], lores: [] };
+  const ability = item => ({ id: Ledger.id(), name: item.name, timing: item.timing || '', declare: item.declare || '', effect: item.effect || '' });
+  const selectedFormation = rules.battleFormations?.find(item => item.name.toLowerCase() === formation.toLowerCase());
+  const battleTraits = [...(rules.battleTraits || []), ...(selectedFormation?.abilities || [])].map(ability);
+  const lores = Object.values(rules.lores || {}).flat().map(lore => ({
+    id: Ledger.id(), kind: lore.kind, name: lore.name, points: lore.points || 0,
+    entries: lore.entries.map(entry => ({ id: Ledger.id(), name: entry.name, value: entry.value || '', declare: entry.declare || '', effect: entry.effect || '' })),
+  }));
+  return { battleTraits, lores };
 }
 
 function unitForm(a, existing, { anvilHero = false } = {}) {

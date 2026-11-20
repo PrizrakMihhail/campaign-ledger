@@ -44,24 +44,39 @@ function loreCard(lore) {
 
 function loreForm(a, kind, lore) {
   const { title } = loreLabels[kind];
-  const fields = field('Lore name', 'name', lore?.name, { full: true, required: true }) +
-    field('Battle point cost', 'points', lore?.points ?? 0, { type: 'number', min: 0 });
+  const choices = BattleCatalogue.lores(a.faction, kind);
+  let imported;
+  const fields = importedChoiceFields(choices.map(item => ({ ...item, name: item.name + (item.scope === 'shared' ? ' (Shared)' : '') })), `Available ${title.toLowerCase()}`) + field('Lore name', 'name', lore?.name, { full: true, required: true }) +
+    field('Battle point cost', 'points', lore?.points ?? 0, { type: 'number', min: 0 }) +
+    '<p class="meta full" id="lore-import-preview" aria-live="polite"></p>' + (kind === 'manifestation' ? '<label class="full"><input type="checkbox" name="includeManifestationUnits" checked> Add linked manifestation units to the roster</label>' : '');
   formDialog(`${lore ? 'Edit' : 'Add'} ${title}`, fields, values => {
     const name = required(values.name, 'Lore name');
     const points = whole(values.points, 'Battle point cost', 0);
-    if (lore) Object.assign(lore, { name, points });
-    else a.lores.push({ id: Ledger.id(), kind, name, points, entries: [] });
+    const entries = imported ? imported.entries.filter(entry => !(lore?.entries || []).some(existing => existing.name.toLowerCase() === entry.name.toLowerCase()))
+      .map(entry => ({ id: Ledger.id(), name: entry.name, value: entry.value || '', declare: entry.declare || '', effect: entry.effect || '' })) : [];
+    if (lore) { Object.assign(lore, { name, points }); lore.entries.push(...entries); }
+    else a.lores.push({ id: Ledger.id(), kind, name, points, entries });
+    if (imported && values.includeManifestationUnits === 'on') addManifestationUnits(a, imported);
     return [lore ? 'Lore updated.' : 'Lore added.'];
   }, {
     label: lore ? 'Save changes' : 'Add lore',
     description: 'Enter 0 for a free lore. This cost counts toward the warband’s roster points.',
     remove: lore && button('Delete lore', 'remove-lore', { id: lore.id, type: 'danger' }),
   });
+  const form = dialog.querySelector('#editor-form');
+  mountImportedChoice(form, choices, item => {
+    imported = item;
+    form.elements.name.value = item.name;
+    form.elements.points.value = item.points || 0;
+    form.querySelector('#lore-import-preview').textContent = `Includes: ${item.entries.map(entry => entry.name).join(' · ')}. Existing entries with the same name keep your edits. You can edit or remove each entry after saving.`;
+  });
 }
 
 function loreEntryForm(lore, entry) {
   const labels = loreLabels[lore.kind];
-  const fields = `<div class="lore-entry-fields full">${field('Name', 'name', entry?.name, { required: true })}
+  const available = BattleCatalogue.lores(viewedArmy()?.faction, lore.kind);
+  const choices = available.flatMap(source => source.entries.map(item => ({ ...item, displayName: `${source.name} — ${item.name}` })));
+  const fields = importedChoiceFields(choices.map(item => ({ ...item, name: item.displayName })), `Faction ${labels.entry}`) + `<div class="lore-entry-fields full">${field('Name', 'name', entry?.name, { required: true })}
     ${field(labels.value, 'value', entry?.value)}</div>` +
     area('Declare', 'declare', entry?.declare) + area('Effect', 'effect', entry?.effect, 5);
   formDialog(`${entry ? 'Edit' : 'Add'} ${labels.entry}`, fields, values => {
@@ -75,6 +90,10 @@ function loreEntryForm(lore, entry) {
   }, {
     label: entry ? 'Save changes' : `Add ${labels.entry}`,
     remove: entry && button(`Delete ${labels.entry}`, 'remove-lore-entry', { id: JSON.stringify([lore.id, entry.id]), type: 'danger' }),
+  });
+  const form = dialog.querySelector('#editor-form');
+  mountImportedChoice(form, choices, item => {
+    for (const key of ['name', 'value', 'declare', 'effect']) form.elements[key].value = item[key] || '';
   });
 }
 

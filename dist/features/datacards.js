@@ -9,11 +9,10 @@ function weaponProfiles(title, rows, ranged = false) {
   const head = columns.map(([label, full]) => `<th scope="col" aria-label="${full}">${label}</th>`).join('');
   const body = rows.map(([name, ...values]) => {
     const ability = values[columns.length];
-    const stats = values.slice(0, columns.length).map((value, index) =>
-      `<td role="cell"><span class="dc-weapon-stat-label" aria-hidden="true">${columns[index][1]}</span>${escape(value)}</td>`).join('');
-    return `<tr role="row"><th scope="row">${escape(name)}${ability ? `<small>${escape(ability)}</small>` : ''}</th>${stats}</tr>`;
+    const stats = values.slice(0, columns.length).map(value => `<td>${escape(value)}</td>`).join('');
+    return `<tr><th scope="row">${escape(name)}${ability ? ` <small>· ${escape(ability)}</small>` : ''}</th>${stats}</tr>`;
   }).join('');
-  return `<div class="dc-weapon-table"><table class="dc-weapons" role="table"><caption>${title}</caption><thead role="rowgroup"><tr role="row"><th scope="col">Weapon</th>${head}</tr></thead><tbody role="rowgroup">${body}</tbody></table></div>`;
+  return `<table class="dc-weapons"><caption>${title}</caption><thead><tr><th scope="col">Weapon</th>${head}</tr></thead><tbody>${body}</tbody></table>`;
 }
 
 function printChoice(label, name) {

@@ -106,6 +106,9 @@ const actions = {
   close: requestDialogClose,
   'new-warband': () => warbandForm(),
   'edit-warband': () => warbandForm(viewedArmy()),
+  'remove-warband': () => removeWarband(viewedArmy()),
+  'import-warband-rules': () => warbandImportForm(viewedArmy()),
+  'import-trait-list': () => traitListImportForm(viewedArmy()),
   'make-active-warband': () => {
     const a = viewedArmy();
     if (!a || a.archived) return;

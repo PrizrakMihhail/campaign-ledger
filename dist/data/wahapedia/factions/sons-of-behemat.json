@@ -1,0 +1,1698 @@
+{
+  "edition": "Age of Sigmar 4",
+  "lastUpdate": "2026-10-22 18:12:05",
+  "faction": {
+    "id": "SoB",
+    "name": "Sons of Behemat",
+    "slug": "sons-of-behemat",
+    "url": "https://wahapedia.ru/aos4/factions/sons-of-behemat",
+    "count": 14
+  },
+  "rules": {
+    "battleTraits": [
+      {
+        "name": "TAKE A RUN AT IT",
+        "timing": "Once Per Turn (Army), Your Movement Phase",
+        "declare": "Pick any number of friendly BIG or LITTLE units to be the targets.",
+        "effect": "Roll a dice. If the roll is lower than the number of targets picked, this ability has no effect. Otherwise, pick an effect for each target. The effects must be different unless specified otherwise.\n• Pick an enemy unit in combat with the target and roll a D3. On a 2+, inflict an amount of mortal damage on that enemy unit equal to the roll. You can pick this effect for multiple targets.\n• The target is building momentum for the rest of the turn.\n• If the target is within 3\" of a battlefield edge, remove it from the battlefield and set it up in reserve beyond the horizon.\n• For the rest of the phase, the target can pass through enemy models and terrain features when using MOVE abilities as if it had FLY.",
+        "unitLinks": []
+      },
+      {
+        "name": "ARGY BARGY",
+        "timing": "Once Per Turn (Army), Your Charge Phase",
+        "declare": "Pick any number of friendly BIG or LITTLE units to be the targets.",
+        "effect": "Roll a dice. If the roll is lower than the number of targets picked, this ability has no effect. Otherwise, pick an effect for each target. The effects must be different unless specified otherwise.\n• Pick an enemy unit in combat with the target and roll a D3. On a 2+, inflict an amount of mortal damage on that enemy unit equal to the roll. You can pick this effect for multiple targets.\n• If the target is building momentum, it is no longer building momentum and is getting ready for the rest of the turn instead.\n• For the rest of the turn, each time the target makes a pile-in move, add 3\" to the distance it can move.",
+        "unitLinks": []
+      },
+      {
+        "name": "WRATHFUL RAMPAGE",
+        "timing": "Once Per Turn (Army), Any Combat Phase",
+        "declare": "Pick any number of friendly SONS OF BEHEMAT units to be the targets.",
+        "effect": "Roll a dice. If the roll is lower than the number of targets picked, this ability has no effect. Otherwise, pick an effect for each target. The effects must be different unless specified otherwise.\n• Pick an enemy unit in combat with the target and roll a D3. On a 2+, inflict an amount of mortal damage on that enemy unit equal to the roll. You can pick this effect for multiple targets.\n• If the target is LITTLE and is getting ready, it is no longer getting ready and has STRIKE-FIRST for the rest of the turn instead.\n• If the target is BIG and is getting ready, it is no longer getting ready. Instead, either it has STRIKE-FIRST for the rest of the turn or it is prepping the big one for the rest of the turn.",
+        "unitLinks": []
+      },
+      {
+        "name": "HARING BACK",
+        "timing": "Once Per Turn (Army), End of Your Turn",
+        "declare": "If a friendly unit is in reserve beyond the horizon, you must pick that unit to use this ability.",
+        "effect": "Set up that unit within 1\" of a battlefield edge and more than 9\" from all enemy units. If it is not possible to set it up, it wanders off and is automatically destroyed.",
+        "unitLinks": []
+      },
+      {
+        "name": "THE BIG ONE",
+        "timing": "Once Per Turn (Army), End of Your Turn",
+        "declare": "Pick any number of friendly BIG or LITTLE units to be the targets.",
+        "effect": "Roll a dice. If the roll is lower than the number of targets picked, this ability has no effect. Otherwise, pick an effect for each target. The effects must be different unless specified otherwise.\n• Pick an enemy unit in combat with the target and roll a D3. On a 2+, inflict an amount of mortal damage on that enemy unit equal to the roll. You can pick this effect for multiple targets.\n• If the target is prepping the big one, pick an enemy unit in combat with it and roll any number of dice. If any of the rolls are a 1, the target is no longer prepping the big one. Otherwise, add the results together, then inflict an amount of mortal damage on that enemy unit equal to the total.",
+        "unitLinks": []
+      }
+    ],
+    "armiesOfRenown": [
+      {
+        "id": "king-brodd-s-stomp",
+        "name": "King Brodd’s Stomp",
+        "battleTraits": [
+          {
+            "name": "TIMBERRRRR!",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "Each time a friendly BIG unit or LITTLE unit model is slain, before removing it from play, the players must roll off. The winner picks a point on the battlefield within 3\" of that model. Inflict D3 mortal damage on each unit (friendly and enemy) within 3\" of that point that has a lower Health characteristic than that model.",
+            "unitLinks": []
+          },
+          {
+            "name": "THE WORLD TITAN’S PROPHET",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "While any other friendly BRODD’S STOMP units are within a friendly King Brodd’s combat range:\n• That friendly King Brodd has WARD (5+).\n• Each time you make a successful ward roll for that friendly King Brodd, allocate 1 damage point to another friendly BRODD’S STOMP unit within its combat range after the damage sequence for that friendly King Brodd has been resolved (ward rolls cannot be made for those damage points).",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/sons-of-behemat/King-Brodd"
+            ]
+          },
+          {
+            "name": "WRATH OF BRODD",
+            "timing": "Once Per Battle (Army), Your Charge Phase",
+            "declare": "Pick a friendly BIG unit that has not used a DESTRUCTIVE IMPULSE ability this turn to use this ability.",
+            "effect": "If the unit using this ability charged this turn, roll a dice. On a 3+, that unit can move 3D6\" but must end that move in combat. When it does so, it can pass through terrain features and enemy models as if it had FLY.’",
+            "unitLinks": []
+          },
+          {
+            "name": "DOUBLE STOMP",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "declare": "Pick a friendly BIG unit that has not used a DESTRUCTIVE IMPULSE ability this turn to use this ability.",
+            "effect": "Roll a D6. On a 3+, for the rest of the turn, add the result to the Attacks characteristic of the Almighty Stomp of the unit using this ability.",
+            "unitLinks": []
+          },
+          {
+            "name": "CRAFTY CREEPERS",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "declare": "Pick a friendly BIG unit that has not used a DESTRUCTIVE IMPULSE ability this turn to use this ability. Then, pick an enemy HERO that has an artefact of power and is in combat with that BIG unit to be the target.",
+            "effect": "Roll a dice. On a 3+, the target no longer has that artefact of power.",
+            "unitLinks": []
+          },
+          {
+            "name": "SMASH IT ALL TO BITS",
+            "timing": "Once Per Turn (Army), Any Shooting Phase",
+            "declare": "Pick a friendly BIG unit that has not used a DESTRUCTIVE IMPULSE ability this turn to use this ability, then pick a terrain feature within its combat range. Then, pick a visible enemy unit within 18\" of that BIG unit to be the target.",
+            "effect": "Roll a D3 for each friendly and enemy unit on the terrain feature that was picked. On a 2+, inflict an amount of mortal damage on that unit equal to the roll. After rolling for all those units, roll a dice. On a 3+, inflict an amount of mortal damage on the target equal to the roll.",
+            "unitLinks": []
+          },
+          {
+            "name": "WATCH THIS!",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "declare": "Pick a friendly BIG unit that has not used a DESTRUCTIVE IMPULSE ability this turn to use this ability, then pick an enemy unit in combat with it to be the target.",
+            "effect": "If the target is a HERO, BEAST, MONSTER or WAR MACHINE, roll 6 dice. Otherwise, roll a dice for each model in the target unit. For each roll that is equal to or greater than the target’s Save characteristic, inflict 1 mortal damage on the target.\nThe BIG unit using this DESTRUCTIVE IMPULSE ability has STRIKE‑LAST for the rest of the turn.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "id": "matriarch-s-mob",
+        "name": "Matriarch’s Mob",
+        "battleTraits": [
+          {
+            "name": "I’VE HEARD SHE CAN...",
+            "timing": "Once Per Turn (Army), Your Hero Phase",
+            "declare": "",
+            "effect": "Pick 1 of the following effects:\n... Shoot Fire From Her Eyes!: Inflict D3 mortal damage on each visible enemy unit within 12\" of the friendly Ma Maegran.\n... Turn You Into a Human!: Pick a visible friendly unit wholly within 12\" of the friendly Ma Maegran. Until the start of your next turn, enemy units have a maximum control score of 1 while they are in combat with that unit.\n... Make Ya Big and Strong!: Pick another visible friendly unit wholly within 12\" of the friendly Ma Maegran. Add 1 to the Attacks characteristic of that unit’s weapons for the rest of the turn.\n. . . Whiz the Biggest Bangers!: Add 1 to casting rolls for the friendly Ma Maegran until the start of your next turn.",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/sons-of-behemat/Ma-Maegran-Chooser-Of-The-Mighty"
+            ]
+          },
+          {
+            "name": "OI! GERROFF!",
+            "timing": "Once Per Battle (Army), Any Combat Phase",
+            "declare": "If the friendly Ma Maegran is in combat and damaged, pick up to 3 friendly Mancrusher Gargants on the battlefield that are visible to her to be the targets.",
+            "effect": "Each target has STRIKE-FIRST for the rest of the turn.",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/sons-of-behemat/Ma-Maegran-Chooser-Of-The-Mighty",
+              "https://wahapedia.ru/aos4/factions/sons-of-behemat/Mancrusher-Gargant-1"
+            ]
+          },
+          {
+            "name": "SUMMON THE HERD",
+            "timing": "Once Per Battle (Army), End of Any Turn",
+            "declare": "If the friendly Ma Maegran is on the battlefield, pick each enemy non-FLY non-MONSTER unit that is visible to her to be the targets.",
+            "effect": "Roll a number of dice for each target equal to the current battle round number. For each 4+, allocate 1 mortal damage to the target (ward rolls cannot be made for those damage points).",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/sons-of-behemat/Ma-Maegran-Chooser-Of-The-Mighty"
+            ]
+          },
+          {
+            "name": "DON’T LET NUFFIN’ HAPPEN TO HER!",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "While the friendly Ma Maegran is within the combat range of another friendly LITTLE unit:\n• She has WARD (5+).\n• Each time you make a successful ward roll for her, allocate 1 mortal damage to another friendly LITTLE unit within her combat range after the damage sequence for her has been resolved (ward rolls cannot be made for those damage points).\n• Ignore negative modifiers to hit rolls and wound rolls for that other friendly LITTLE unit’s combat attacks.",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/sons-of-behemat/Ma-Maegran-Chooser-Of-The-Mighty"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "stomper-tribe",
+        "name": "Stomper Tribe",
+        "battleTraits": [
+          {
+            "name": "STOMP! STOMP! STOMP! STOMP!",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "declare": "Pick an enemy unit in combat with a friendly STOMPER TRIBE unit to be the target.",
+            "effect": "Roll a dice. Add 1 to the roll for each friendly STOMPER TRIBE model in combat with the target.\nOn a 5+:\n• The target has STRIKE-LAST for the rest of the turn.\n• Inflict 3 mortal damage on the target.",
+            "unitLinks": []
+          },
+          {
+            "name": "GET IN THERE, YOU RUNTS!",
+            "timing": "Once Per Turn (Army), Any Charge Phase",
+            "declare": "Pick a friendly LITTLE unit that is within a friendly BIG unit’s combat range, visible to it and not in combat to be the target.",
+            "effect": "You can re-roll charge rolls for the target for the rest of the turn, and the target has FLY for the rest of the phase.",
+            "unitLinks": []
+          },
+          {
+            "name": "GRAB THOSE ROCKS AND CHUCK ’EM!",
+            "timing": "Once Per Battle (Army), Any Shooting Phase",
+            "declare": "Pick each friendly LITTLE unit wholly within 18\" of and visible to a friendly BIG unit and not in combat to be the targets.",
+            "effect": "Add 1 to the Attacks characteristic of each target’s ranged weapons for the rest of the turn.",
+            "unitLinks": []
+          },
+          {
+            "name": "GETTIN’ STUCK IN",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "declare": "Pick a friendly STOMPER TRIBE unit in combat to be the target.",
+            "effect": "If the target is LITTLE, pick a model in the target unit. Add 1 to the Damage characteristic of that model’s melee weapons for the rest of the turn.\nIf the target is BIG, add 1 to the Rend characteristic of its melee weapons for the rest of the turn.",
+            "unitLinks": []
+          },
+          {
+            "name": "STOMPIN’ ABOUT",
+            "timing": "Once Per Turn (Army), Your Movement Phase",
+            "declare": "Pick a friendly LITTLE unit wholly within 12\" of and visible to a friendly BIG unit to use this ability.",
+            "effect": "That LITTLE unit can move D6+3\". It can pass through the combat ranges of enemy units but cannot end that move in combat. Then, you can inflict D3 mortal damage on each enemy unit that has a lower Health characteristic than that LITTLE unit and that it passed across during that move.",
+            "unitLinks": []
+          }
+        ]
+      }
+    ],
+    "battleFormations": [
+      {
+        "name": "Conquering Stomp",
+        "abilities": [
+          {
+            "name": "ARROGANT BIG ’UNS",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "In the first battle round, subtract 1 from hit rolls for combat attacks that target friendly BIG and LITTLE units that have not charged in the same turn.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "name": "Eager Louts",
+        "abilities": [
+          {
+            "name": "TEN-LEAGUE STRIDES",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "Each time a friendly BIG or LITTLE unit uses the ‘Redeploy’ command or the ‘Run’ ability, if you roll a 1-2 when determining the distance that unit can move, you can use a value of 3 instead.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "name": "Heirs of the Old Ways",
+        "abilities": [
+          {
+            "name": "BRUTE SPIRITUALITY",
+            "timing": "Once Per Turn (Army), Your Hero Phase",
+            "declare": "Pick a friendly BIG or LITTLE unit to use this ability, then pick an enemy WIZARD or PRIEST within 18\" of it to be the target.",
+            "effect": "Make a rampage roll of D6. If the roll equals or exceeds the target’s Control characteristic:\n• The target has a maximum power level of 1 until the start of your next turn.\n• All MANIFESTATIONS that were summoned by the target are banished and removed from play.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "name": "Looting Leviathans",
+        "abilities": [
+          {
+            "name": "GET TO THE GOODS",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "Each time a friendly BIG or LITTLE unit that charged in the same turn makes a pile-in move, that unit can pass across enemy models in non-MONSTER units.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "name": "Manskittle Mob",
+        "abilities": [
+          {
+            "name": "STRIKE! HUR HUR!",
+            "timing": "Once Per Turn (Army), Your Shooting Phase",
+            "declare": "Pick up to 2 friendly MEGA-GARGANT units within 3\" of any terrain features and pick any friendly GARGANT units within 3\" of any terrain features to be the targets.",
+            "effect": "Double the Attacks characteristic of each target’s ranged weapons for the rest of the turn. If the target has no ranged weapons, pick an enemy unit within 12\" of the target instead and roll a D3. On a 2+, inflict an amount of mortal damage on that enemy unit equal to the roll.",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/sons-of-behemat/Scourge-of-Ghyran-Kraken-eater-Mega-Gargant"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Big Toes",
+        "abilities": [
+          {
+            "name": "LOFTY LOUTS",
+            "timing": "Once Per Battle, Deployment Phase",
+            "declare": "Pick a friendly Mancrusher Gargant unit to be the target.",
+            "effect": "For the rest of the battle, add 1 to hit rolls for combat attacks made by friendly GARGANT units while they are wholly within 12\" of the target and not wholly within 12\" of any friendly MEGA-GARGANT units.",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/sons-of-behemat/Mancrusher-Gargant-1",
+              "https://wahapedia.ru/aos4/factions/sons-of-behemat/Scourge-of-Ghyran-Kraken-eater-Mega-Gargant"
+            ]
+          }
+        ]
+      }
+    ],
+    "lores": {
+      "spell": [
+        {
+          "name": "Lore of Behemat",
+          "kind": "spell",
+          "points": 0,
+          "entries": [
+            {
+              "name": "PIPSQUEAK CURSE",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly SONS OF BEHEMAT WIZARD to cast this spell, pick a visible enemy unit within 18\" of them to be the target, then make a casting roll of 2D6.",
+              "effect": "Subtract 1 from wound rolls for the target’s attacks until the start of your next turn.",
+              "value": "7",
+              "unitLinks": [
+                "https://wahapedia.ru/aos4/factions/sons-of-behemat/Ma-Maegran-Chooser-Of-The-Mighty"
+              ]
+            },
+            {
+              "name": "ENERGY SURGE",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly SONS OF BEHEMAT WIZARD to cast this spell, pick a visible friendly SONS OF BEHEMAT MONSTER unit wholly within 12\" of them to be the target, then make a casting roll of 2D6.",
+              "effect": "If the target is BIG, add 1 to rampage rolls for it until the start of your next turn. If the target is LITTLE, until the start of your next turn, it can use CHARGE abilities even if it used a RUN ability in the same turn.",
+              "value": "6",
+              "unitLinks": [
+                "https://wahapedia.ru/aos4/factions/sons-of-behemat/Ma-Maegran-Chooser-Of-The-Mighty"
+              ]
+            },
+            {
+              "name": "THORNFANG’S WRATH",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly SONS OF BEHEMAT WIZARD to cast this spell, pick a visible friendly SONS OF BEHEMAT MONSTER unit wholly within 12\" of them to be the target, then make a casting roll of 2D6.",
+              "effect": "The target’s melee weapons have Crit (Mortal) for the rest of the turn.",
+              "value": "6",
+              "unitLinks": [
+                "https://wahapedia.ru/aos4/factions/sons-of-behemat/Ma-Maegran-Chooser-Of-The-Mighty"
+              ]
+            }
+          ]
+        }
+      ],
+      "prayer": [
+        {
+          "name": "Prayers of the World Titan",
+          "kind": "prayer",
+          "points": 0,
+          "entries": [
+            {
+              "name": "BEHEMAT’S VENGEANCE",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly SONS OF BEHEMAT PRIEST to chant this prayer, pick a visible friendly SONS OF BEHEMAT MONSTER unit wholly within 18\" of them to be the target, then make a chanting roll of D6.",
+              "effect": "If the chanting roll was 8+, you can pick another eligible unit to be a second target. Add 1 to the Attacks characteristic of each target’s melee weapons for the rest of the turn.",
+              "value": "4",
+              "unitLinks": [
+                "https://wahapedia.ru/aos4/factions/sons-of-behemat/King-Brodd"
+              ]
+            },
+            {
+              "name": "MIGHT OF THE EARTH",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly SONS OF BEHEMAT PRIEST to chant this prayer, pick each friendly SONS OF BEHEMAT unit on the battlefield to be the targets, then make a chanting roll of D6.",
+              "effect": "Heal (D3) each target. If the chanting roll was 8+, Heal (3) each target instead.",
+              "value": "4",
+              "unitLinks": [
+                "https://wahapedia.ru/aos4/factions/sons-of-behemat/King-Brodd"
+              ]
+            },
+            {
+              "name": "WORLD TITAN’S STRIDE",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly SONS OF BEHEMAT PRIEST to chant this prayer, pick a visible friendly SONS OF BEHEMAT MONSTER unit wholly within 18\" of them to be the target, then make a chanting roll of D6.",
+              "effect": "For the rest of the turn, add 3\" to the target’s Move characteristic and models in the target unit can pass across enemy models and terrain features as if it had FLY. In addition, if the chanting roll was 6+, for the rest of the turn, each time the target uses the ‘Normal Move’ or ‘Run’ ability, after that ability has been resolved, inflict D3 mortal damage on each enemy unit the target passed across as part of that move.",
+              "value": "3",
+              "unitLinks": [
+                "https://wahapedia.ru/aos4/factions/sons-of-behemat/King-Brodd"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Brodd’s Bellows",
+          "kind": "prayer",
+          "points": 0,
+          "entries": [
+            {
+              "name": "ROCK BOTTOM",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly SONS OF BEHEMAT PRIEST to chant this prayer, pick a visible friendly SONS OF BEHEMAT unit wholly within 12\" of them to be the target, then make a chanting roll of D6.",
+              "effect": "If the chanting roll was 6+, you can pick another eligible unit to be a second target. Until the start of your next turn:\n• Ignore the effects of the ‘Battle Damaged’ ability on each target.\n• Each target has WARD (6+).",
+              "value": "3",
+              "unitLinks": [
+                "https://wahapedia.ru/aos4/factions/sons-of-behemat/King-Brodd"
+              ]
+            },
+            {
+              "name": "THE TERRIBLE TOES",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly SONS OF BEHEMAT PRIEST to chant this prayer, pick a visible enemy unit within 18\" of them to be the target, then make a chanting roll of D6.",
+              "effect": "Roll a dice for each model in the target unit. If the chanting roll was 8+, add 1 to the roll. For each 6+, inflict 1 mortal damage on the target. Then, if any enemy models are slain by this ability, halve the target’s Move characteristic until the start of your next turn.",
+              "value": "4",
+              "unitLinks": [
+                "https://wahapedia.ru/aos4/factions/sons-of-behemat/King-Brodd"
+              ]
+            },
+            {
+              "name": "VOCAL TECTONICS",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly SONS OF BEHEMAT PRIEST to chant this prayer, pick a visible enemy unit within 12\" of them to be the target, then make a chanting roll of D6.",
+              "effect": "If the chanting roll was 10+, you can pick another eligible unit to be a second target. Until the start of your next turn, each target has STRIKE-LAST.",
+              "value": "5",
+              "unitLinks": [
+                "https://wahapedia.ru/aos4/factions/sons-of-behemat/King-Brodd"
+              ]
+            }
+          ]
+        }
+      ],
+      "manifestation": []
+    }
+  },
+  "entries": [
+    {
+      "faction": "Sons of Behemat",
+      "name": "Ancient Ghyrochs",
+      "points": 0,
+      "size": 2,
+      "kind": "",
+      "category": "Other",
+      "profile": {
+        "move": "8\"",
+        "health": "7",
+        "save": "5+",
+        "control": "1",
+        "url": "https://wahapedia.ru/aos4/factions/sons-of-behemat/Ancient-Ghyrochs",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "SONS OF BEHEMAT",
+          "BEAST",
+          "UNIQUE"
+        ],
+        "abilities": [
+          "Beast",
+          "Wellspring of Life Energy"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Beast",
+            "timing": "Passive",
+            "effect": "Effect: This unit has a maximum control score of 1.",
+            "kind": "Ability",
+            "type": "Control",
+            "phase": "End of Turn"
+          },
+          {
+            "name": "Wellspring of Life Energy",
+            "timing": "End of Any Turn",
+            "effect": "Effect: Heal (3) this unit.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "End of Turn"
+          }
+        ],
+        "melee": [
+          [
+            "Mighty Horns and Hooves",
+            "3",
+            "4+",
+            "2+",
+            "2",
+            "2",
+            "Charge (+1 Damage), Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Long ago, the gargant civilisation - such as it was-tamedal sorts of massie meestauna, Pek of these creatures survive into the modern era, but Ma Maceran still shenherds the carthe brutes known as Ancient Gyrochs. The life magic of Ghyran resonates within their squat bodies: such power makes them difficult to slay and can he drawn upon by the Chooser of the Mighty if necessary.",
+      "notes": "This unit can only be taken in Ma Maegran’s regiment.\nThis unit cannot be reinforced."
+    },
+    {
+      "faction": "Sons of Behemat",
+      "name": "Beast-smasher Mega-Gargant",
+      "points": 380,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "10\"",
+        "health": "25",
+        "save": "4+",
+        "control": "10",
+        "url": "https://wahapedia.ru/aos4/factions/sons-of-behemat/Beast-smasher-Mega-Gargant",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "BIG",
+          "DESTRUCTION",
+          "SONS OF BEHEMAT",
+          "HERO",
+          "MONSTER"
+        ],
+        "abilities": [
+          "Battle Damaged",
+          "Leader of the Pack",
+          "Primal Aura",
+          "Menhir Club"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 15 or more damage points, the Attacks characteristic of its Menhir Club is 11 for Calamitous Sweep and 4 for Crushing Blow.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Leader of the Pack",
+            "timing": "Once Per Turn (Army), Reaction: You declared a %000010870FIGHT ability% for this unit",
+            "effect": "Effect: Pick another visible friendly SONS OF BEHEMAT unit wholly within 12\" of this unit to be the target and make a rampage roll of D6. Add 1 to the roll if the target is LITTLE. On a 3+, the target’s melee weapons have Crit (2 Hits) for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Rampage",
+            "phase": "Combat Phase",
+            "reaction": true
+          },
+          {
+            "name": "Primal Aura",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Effect: Make a rampage roll of D6. Add 1 to the roll for each other friendly BIG or LITTLE unit that is in combat and within this unit’s combat range. On a 3+, subtract 1 from ward rolls for damage points inflicted by abilities used by this unit for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Rampage",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Menhir Club",
+            "timing": "Passive",
+            "effect": "Effect: Each time this unit uses a FIGHT ability, pick either the Calamitous Sweep or Crushing Blow weapon characteristics for all the attacks it makes with its Menhir Club.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Menhir Club: Calamitous Sweep",
+            "16",
+            "3+",
+            "3+",
+            "1",
+            "1",
+            "Crit (Auto-wound) · See battle damage rules"
+          ],
+          [
+            "Menhir Club: Crushing Blow",
+            "6",
+            "4+",
+            "2+",
+            "2",
+            "4",
+            "See battle damage rules"
+          ],
+          [
+            "Almighty Stomp",
+            "3",
+            "4+",
+            "2+",
+            "2",
+            "D3",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Beast-smashers believe themselves to be possessed of all sorts of strange, primal powers - and it is best not to argue with them about this, since their tempers are notoriously foul. Towering brutes who are all but impervious to pain, they seek out the enemy's largest beasts, pulverising them with their menhir clubs. Beast-smashers seem to have quite the innate understanding of just how to take down these monstrous opponents, which often compels other gargants to idolise them and follow them around.",
+      "regimentOptions": "Any %000004815SONS OF BEHEMAT%, 0-1 %000013046Eager Lout%",
+      "notes": "This HERO can join an eligible regiment as an Eager Lout."
+    },
+    {
+      "faction": "Sons of Behemat",
+      "name": "Boss-Stompers",
+      "points": 370,
+      "size": 3,
+      "kind": "",
+      "category": "Monster",
+      "profile": {
+        "move": "8\"",
+        "health": "12",
+        "save": "5+",
+        "control": "5",
+        "url": "https://wahapedia.ru/aos4/factions/sons-of-behemat/Boss-Stompers",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "LITTLE",
+          "SONS OF BEHEMAT",
+          "CHAMPION",
+          "MONSTER"
+        ],
+        "abilities": [
+          "Quit Hogging Da Fun!"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Quit Hogging Da Fun!",
+            "timing": "Once Per Turn (Army), Reaction: You declared a FIGHT ability for this unit in the enemy combat phase",
+            "effect": "Effect: Pick a visible friendly BIG unit that has not used a FIGHT ability this turn and is wholly within 12\" of this unit to be the target. The target can be picked to use a FIGHT ability immediately after the FIGHT ability used by this unit has been resolved.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Rampage",
+            "phase": "Combat Phase",
+            "reaction": true
+          }
+        ],
+        "melee": [
+          [
+            "Stomper’s Clubs",
+            "7",
+            "4+",
+            "2+",
+            "1",
+            "2",
+            ""
+          ],
+          [
+            "’Eadbutt",
+            "1",
+            "4+",
+            "2+",
+            "2",
+            "3",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Boss-stompers are considered to be rather dull and serious sorts by their kin. They see themselves as proper gargant warriors, not like the rest of the oafs they have to stomp around with. Mega-Gargants are respected for their size, but even they are often seen as lacking in the virtues of great fighters. This thoroughly annoys every gargant who interacts with the Boss-stompers- especially since these armoured brutes can back up their boasting.",
+      "notes": "This unit cannot be reinforced."
+    },
+    {
+      "faction": "Sons of Behemat",
+      "name": "Gatebreaker Mega-Gargant",
+      "points": 400,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "10\"",
+        "health": "25",
+        "save": "4+",
+        "control": "10",
+        "url": "https://wahapedia.ru/aos4/factions/sons-of-behemat/Gatebreaker-Mega-Gargant",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "BIG",
+          "DESTRUCTION",
+          "SONS OF BEHEMAT",
+          "HERO",
+          "MONSTER"
+        ],
+        "abilities": [
+          "Battle Damaged",
+          "Fortcrusha Flail",
+          "Rip It Up and Chuck It",
+          "Primal Reckoning"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 15 or more damage points, the Attacks characteristic of its Fortcrusha Flail is 11 for Calamitous Sweep and 4 for Crushing Blow.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Fortcrusha Flail",
+            "timing": "Passive",
+            "effect": "Effect: Each time this unit uses a FIGHT ability, pick either the Calamitous Sweep or Crushing Blow weapon characteristics for all the attacks it makes with its Fortcrusha Flail.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Rip It Up and Chuck It",
+            "timing": "Once Per Turn (Army), Any Shooting Phase",
+            "effect": "Declare: Pick a terrain feature within 3\" of this unit that is not uprooted, then pick a friendly SONS OF BEHEMAT unit within 3\" of that terrain feature to be the target.\nEffect: Make a rampage roll of D6. On a 3+:\n• If the target is another BIG unit, excluding Gatebreaker Mega-Gargants, it is armed with a Hurled Boulder for the rest of the turn (see the weapon profile on this unit’s warscroll. Modifiers to this unit’s ranged weapons or shooting attacks do not apply to the t",
+            "kind": "Ability",
+            "type": "Shooting",
+            "keywords": "Rampage",
+            "phase": "Shooting Phase"
+          },
+          {
+            "name": "Primal Reckoning",
+            "timing": "Once Per Battle (Army), Any Combat Phase",
+            "effect": "Effect: For the rest of the turn, add 1 to the Attacks characteristic of this unit’s Fortcrusha Flail: Crushing Blow for each friendly SONS OF BEHEMAT unit that has been destroyed this battle, to a maximum of 10.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Hurled Boulder",
+            "18\"",
+            "1",
+            "3+",
+            "2+",
+            "2",
+            "4",
+            ""
+          ]
+        ],
+        "melee": [
+          [
+            "Fortcrusha Flail: Calamitous Sweep",
+            "16",
+            "3+",
+            "3+",
+            "1",
+            "1",
+            "Crit (Auto-wound) · See battle damage rules"
+          ],
+          [
+            "Fortcrusha Flail: Crushing Blow",
+            "6",
+            "4+",
+            "2+",
+            "2",
+            "4",
+            "See battle damage rules"
+          ],
+          [
+            "Almighty Stomp",
+            "3",
+            "4+",
+            "2+",
+            "2",
+            "D3",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Cowled and sinister, Gatebreakers are gargant- shaped wrecking balls who take cruel joy in smashing down the civilised races fortresses and cities and then throwing the rubble at any survivors. To them, every structure is a target for their spiteful wrath, with the works of Sigmar and his followers especially hated. Gatebreakers seethe with bitterness over the death of Behemat - even if only subconsciously- and to watch other gargants fall to unworthy pipsqueaks only stokes their vandalising furore even hotter",
+      "regimentOptions": "Any %000004815SONS OF BEHEMAT%, 0-1 %000013046Eager Lout%",
+      "notes": "This HERO can join an eligible regiment as an Eager Lout."
+    },
+    {
+      "faction": "Sons of Behemat",
+      "name": "King Brodd",
+      "points": 430,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "10\"",
+        "health": "28",
+        "save": "4+",
+        "control": "10",
+        "url": "https://wahapedia.ru/aos4/factions/sons-of-behemat/King-Brodd",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "BIG",
+          "DESTRUCTION",
+          "SONS OF BEHEMAT",
+          "HERO",
+          "MONSTER",
+          "PRIEST (1)",
+          "UNIQUE",
+          "WARMASTER"
+        ],
+        "abilities": [
+          "Battle Damaged",
+          "Obelisk of Tor Crania",
+          "Power of Behemat",
+          "Court of Creepers",
+          "Set ’Em Up, Then Knock ’Em Down"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 15 or more damage points, the Attacks characteristic o f this unit’s Obelisk of Tor Crania is 13 for Calamitous Sweep and 4 for Crushing Blow.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Obelisk of Tor Crania",
+            "timing": "Passive",
+            "effect": "Effect: Each time this unit uses a FIGHT ability, pick either the Calamitous Sweep or Crushing Blow weapon characteristics for all the attacks it makes with its Obelisk of Tor Crania.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Power of Behemat",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Pick a visible friendly SONS OF BEHEMAT MONSTER unit wholly within 12\" of this unit to be the target, then make a chanting roll of D6.\nEffect: If the chanting roll was 7+, you can pick another eligible unit to be a second target. Add 1 to the Rend characteristic of each target’s melee weapons for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Prayer",
+            "phase": "Hero Phase",
+            "pointsType": "Prayer",
+            "points": "4"
+          },
+          {
+            "name": "Court of Creepers",
+            "timing": "Any Charge Phase",
+            "effect": "Declare: Pick an enemy HERO or MONSTER in combat with this unit to be the target.\nEffect: Roll a dice. Add 1 to the roll if this unit charged this turn. On a 3+:\n• Add 1 to hit rolls for this unit’s combat attacks that target that enemy unit for the rest of the turn.\n• The target cannot use RAMPAGE abilities for the rest of the turn.\n• The target no longer has any artefacts of power.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Charge Phase"
+          },
+          {
+            "name": "Set ’Em Up, Then Knock ’Em Down",
+            "timing": "Once Per Turn (Army), Any Charge Phase",
+            "effect": "Declare: Pick a visible enemy unit within 18\" of this unit to be the target.\nEffect: If there are 3 or more friendly BIG or LITTLE models in combat with the target, apply the effect below. Otherwise, make a rampage roll of D6. On a 3+, apply the effect below.\nFor the rest of the turn, subtract 1 from hit rolls for the target’s combat attacks while it is in combat with 2 or more friendly BIG or LITTLE models.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "keywords": "Rampage",
+            "phase": "Charge Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Obelisk of Tor Crania: Calamitous Sweep",
+            "20",
+            "3+",
+            "3+",
+            "1",
+            "1",
+            "Crit (Auto-wound) · See battle damage rules"
+          ],
+          [
+            "Obelisk of Tor Crania: Crushing Blow",
+            "6",
+            "4+",
+            "2+",
+            "2",
+            "5",
+            "See battle damage rules"
+          ],
+          [
+            "Almighty Stomp",
+            "3",
+            "4+",
+            "2+",
+            "2",
+            "D3",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "The infamous King Brodd leads his gargant brethren in a crusade against the forces of Sigmar. Drawing upon an ancient, primal power - as well as his own vast strength - he will stop at nothing to see the death of his godbeast forefather avenged. Brodd's authority is respected by gargants across the land, making him one of the few capable of geting the huge louts to act with something approaching coordination.",
+      "regimentOptions": "0-1 %000013046Eager Lout%, Any %000004815SONS OF BEHEMAT%"
+    },
+    {
+      "faction": "Sons of Behemat",
+      "name": "Kragnos, the End of Empires",
+      "points": 580,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "10\"",
+        "health": "18",
+        "save": "4+",
+        "control": "15",
+        "ward": "5+",
+        "url": "https://wahapedia.ru/aos4/factions/sons-of-behemat/Kragnos-the-End-of-Empires",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "SONS OF BEHEMAT",
+          "HERO",
+          "MONSTER",
+          "UNIQUE",
+          "WARD (5+)",
+          "WARMASTER"
+        ],
+        "abilities": [
+          "Rampaging Destruction",
+          "Avatar of Destruction",
+          "The End of Empires",
+          "Battle Damaged",
+          "The Shield Inviolate"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Rampaging Destruction",
+            "timing": "Once Per Turn (Army), Any Charge Phase",
+            "effect": "Effect: If this unit charged this phase, pick 1 of the following effects:\n• Roll a dice for each enemy unit within 1\" of this unit. On a 2+, inflict an amount of mortal damage on that unit equal to the roll.\n• Pick an enemy MONSTER in combat with this unit and roll 2D6. On a 7, this ability has no effect. Otherwise, inflict an amount of mortal damage on that unit equal to the results on the dice used for the 2D6 roll multiplied together. For example, a 2D6 roll of 2 and 6 would inflict 12 mortal damage (2 × 6).",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Rampage",
+            "phase": "Charge Phase"
+          },
+          {
+            "name": "Avatar of Destruction",
+            "timing": "Passive",
+            "effect": "Effect: If this unit would be automatically destroyed, it is not automatically destroyed. Instead, allocate 6 damage points to it (ward rolls cannot be made for those damage points).",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          },
+          {
+            "name": "The End of Empires",
+            "timing": "Your Charge Phase",
+            "effect": "Effect: For the rest of the turn, add 1 to the number of dice rolled when making charge rolls for friendly DESTRUCTION units while they are wholly within 12\" of this unit, to a maximum of 3.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Charge Phase"
+          },
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of The Dread Mace is 4 and this unit has a Control characteristic of 10.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "The Shield Inviolate",
+            "timing": "Reaction: Opponent declared a SPELL ability",
+            "effect": "Effect: If this unit was picked to be the target of that spell, roll a dice. On a 3+, ignore the effect of that spell on this unit. This unit can use this ability more than once per phase but only once per SPELL ability.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Hero Phase",
+            "reaction": true
+          }
+        ],
+        "melee": [
+          [
+            "Hooves of Wrack and Ruin",
+            "6",
+            "3+",
+            "2+",
+            "1",
+            "2",
+            ""
+          ],
+          [
+            "The Dread Mace",
+            "6",
+            "3+",
+            "2+",
+            "3",
+            "4",
+            "See battle damage rules"
+          ],
+          [
+            "Tuskbreaker",
+            "3",
+            "4+",
+            "2+",
+            "2",
+            "D3",
+            "Crit (2 Hits)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "A roaring, trampling god of earthquakes and wanton destruction, Kragnos is known as the End of Empires. This thuggish titan of a bygone age revels in violence and the chance to exert his brutish strength over others. Every sweep of his Dread Mace - charged with the power of the earth - reduces bodies to blood and ruin, even as the pited bronze surface of Tuskbreaker wards off blows both mystical and mundane.",
+      "regimentOptions": "Any %000004815SONS OF BEHEMAT%"
+    },
+    {
+      "faction": "Sons of Behemat",
+      "name": "Kraken-eater Mega-Gargant",
+      "points": 370,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "10\"",
+        "health": "25",
+        "save": "4+",
+        "control": "10",
+        "url": "https://wahapedia.ru/aos4/factions/sons-of-behemat/Kraken-eater-Mega-Gargant",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "BIG",
+          "DESTRUCTION",
+          "SONS OF BEHEMAT",
+          "HERO",
+          "MONSTER"
+        ],
+        "abilities": [
+          "Battle Damaged",
+          "Shipwrecka Warclub",
+          "Get Orf Me Land!",
+          "Greedy Show-Offs"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 15 or more damage points, the Attacks characteristic of its Shipwrecka Warclub is 11 for Calamitous Sweep and 4 for Crushing Blow.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Shipwrecka Warclub",
+            "timing": "Passive",
+            "effect": "Effect: Each time this unit uses a FIGHT ability, pick either the Calamitous Sweep or Crushing Blow weapon characteristics for all the attacks it makes with its Shipwrecka Warclub.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Get Orf Me Land!",
+            "timing": "Once Per Turn (Army), Deployment Phase",
+            "effect": "Declare: Pick an objective or terrain feature on the battlefield to be the target.\nEffect: For the rest of the battle, the target is this unit’s loot hoard. While the unit that used this ability is contesting its loot hoard, add 10 to its control score. While the unit that used this ability is not contesting its loot hoard, add 2 to the Attacks characteristic of its Almighty Stomp.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Greedy Show-Offs",
+            "timing": "Once Per Turn (Army), Your Hero Phase",
+            "effect": "Declare: Pick another visible friendly BIG or LITTLE unit wholly within 12\" of this unit to be the target.\nEffect: If this unit is contesting its loot hoard, apply the effect below. Otherwise, make a rampage roll of D6. On a 3+, apply the effect below.\nAdd 1 to charge rolls for the target for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Movement",
+            "keywords": "Rampage",
+            "phase": "Hero Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Shipwrecka Warclub: Calamitous Sweep",
+            "16",
+            "3+",
+            "3+",
+            "1",
+            "1",
+            "Crit (Auto-wound) · See battle damage rules"
+          ],
+          [
+            "Shipwrecka Warclub: Crushing Blow",
+            "6",
+            "4+",
+            "2+",
+            "2",
+            "4",
+            "See battle damage rules"
+          ],
+          [
+            "Almighty Stomp",
+            "3",
+            "4+",
+            "2+",
+            "2",
+            "D3",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Kraken-eaters are grabbing, greedy coastal raiders who are fiercely territorial. Unfortunately, they consider everything they can see to be their territory and will fight with outraged indignation to take the spoils of war for their hoards. As elder gargants, Kraken-eaters prefer either to let the enemy come to them or to get their mates and lackeys to do the work before taking the plunder for themselves. Their propensity for showing off never fails to stoke the ire of more envious gargants",
+      "regimentOptions": "Any %000004815SONS OF BEHEMAT%, 0-1 %000013046Eager Lout%",
+      "notes": "This HERO can join an eligible regiment as an Eager Lout."
+    },
+    {
+      "faction": "Sons of Behemat",
+      "name": "Ma Maegran, Chooser Of The Mighty",
+      "points": 370,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "8\"",
+        "health": "15",
+        "save": "4+",
+        "control": "10",
+        "url": "https://wahapedia.ru/aos4/factions/sons-of-behemat/Ma-Maegran-Chooser-Of-The-Mighty",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "LITTLE",
+          "SONS OF BEHEMAT",
+          "HERO",
+          "MONSTER",
+          "UNIQUE",
+          "WIZARD (1)"
+        ],
+        "abilities": [
+          "Battle Damaged",
+          "Creepy Cantrips",
+          "The Wandering Witch",
+          "Shepherdess",
+          "Chooser of the Mighty"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of its Spear of Krum Kalda is 3.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Creepy Cantrips",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Pick a visible friendly SONS OF BEHEMAT MONSTER unit wholly within 18\" of this unit to be the target, then make a casting roll of 2D6.\nEffect: Until the start of your next turn, add 1 to rampage rolls for the target and add 1 to hit rolls for the target’s combat attacks.",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Spell",
+            "phase": "Hero Phase",
+            "pointsType": "Spell",
+            "points": "6"
+          },
+          {
+            "name": "The Wandering Witch",
+            "timing": "Passive",
+            "effect": "Effect: While this unit is wholly within 12\" of another friendly SONS OF BEHEMAT MONSTER unit, this unit is not visible to enemy units more than 12\" away from it.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          },
+          {
+            "name": "Shepherdess",
+            "timing": "Once Per Turn (Army), Your Hero Phase",
+            "effect": "Declare: Pick a visible friendly Ancient Ghyrochs unit wholly within 12\" of this unit to be the target.\nEffect: If the target is within this unit’s combat range, pick 1 of the effects below. Otherwise, make a rampage roll of D6. On a 3+, pick 1 of the effects below.\nGore their Guts!: If the target is in combat, add 1 to the Damage characteristic of the target’s Mighty Horns and Hooves for the rest of the turn.\nGhyroch Rush: If the target is not in combat, it can move 3\". It can move into combat.\nReservoirs of Jade Energy: Add 1 to this unit’s casting power level until the start of your next turn.",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Rampage",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Chooser of the Mighty",
+            "timing": "Once Per Battle, Any Movement Phase",
+            "effect": "Declare: Pick another visible friendly LITTLE unit wholly within 12\" of this unit to be mighty.\nEffect: Pick 1 of the following effects:\n• For the rest of the turn, each time you make an unmodified wound roll of 6 for a combat attack made by the mighty unit, inflict 1 mortal damage on the target of the attack after the FIGHT ability has been resolved.\n• Pick a point on the battlefield within 1\" of the mighty unit, then pick a friendly non-UNIQUE BIG unit th",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Movement Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Spear of Krum Kalda",
+            "4",
+            "4+",
+            "2+",
+            "2",
+            "4",
+            "See battle damage rules"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Ma Maegran is an old, strange gargant indeed, Her reputation precedes her, enough that even the great Mega-Gargants show some nervous deference in her presence. Maegran is a seer and a witch who, it is said, has the power to grant the blessing of bigness to a worthy gargant. Yet it is also said that she can strip that same bigness from those who displease her, a fate that does not bear thinking of...",
+      "regimentOptions": "%000025403Ancient Ghyrochs% (required), 0-1 %000013046Eager Lout%, Any %000004815SONS OF BEHEMAT%"
+    },
+    {
+      "faction": "Sons of Behemat",
+      "name": "Mancrusher Gargant",
+      "points": 140,
+      "size": 1,
+      "kind": "",
+      "category": "Monster",
+      "profile": {
+        "move": "8\"",
+        "health": "12",
+        "save": "5+",
+        "control": "5",
+        "url": "https://wahapedia.ru/aos4/factions/sons-of-behemat/Mancrusher-Gargant-1",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "LITTLE",
+          "SONS OF BEHEMAT",
+          "MONSTER"
+        ],
+        "abilities": [
+          "Bet You Can’t...",
+          "Excitable Followers"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Bet You Can’t...",
+            "timing": "Once Per Battle (Army), Deployment Phase",
+            "effect": "Declare: Pick each friendly Mancrusher Gargant on the battlefield to be the targets.\nEffect: Pick 1 of the following effects:\n...Kill the Big Eads: For the rest of the battle, add 1 to the Attacks characteristic of each target’s melee weapons while they are in combat with any enemy HEROES or MONSTERS.\n...Get There Before Me!: Up to 3 of the targets can each use the Normal Move’ ability as if it were your movement phase.\n...Grab That!: Add 5 to each target’s control score for the rest of the battle.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Excitable Followers",
+            "timing": "Any Combat Phase",
+            "effect": "Effect: While this unit is wholly within 12\" of a visible friendly SONS OF BEHEMAT HERO, this unit can use 2 FIGHT abilities this phase. After the first is used, however, this unit has STRIKE-LAST for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Rampage",
+            "phase": "Combat Phase",
+            "pointsType": "Command",
+            "points": "1"
+          }
+        ],
+        "ranged": [
+          [
+            "Throwin’ Rocks",
+            "12\"",
+            "1",
+            "4+",
+            "2+",
+            "1",
+            "D3",
+            ""
+          ]
+        ],
+        "melee": [
+          [
+            "Gigantic Weapon",
+            "5",
+            "4+",
+            "2+",
+            "1",
+            "2",
+            ""
+          ],
+          [
+            "’Eadbutt",
+            "1",
+            "4+",
+            "2+",
+            "2",
+            "3",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "When the earth shakes to the thunder of the Mega-Gargants' footfalls, their lesser brethren muster for war. No longer are they aimless nomads and indulgent drunkards; now they are war-hungry terrors inspired to violence by their towering brethren. Admittedly, Mancrushers are still eager, competitive sorts with a habit of getting in over their heads. Even then, though, they can cause havoc and disaster amongst enemy lines."
+    },
+    {
+      "faction": "Sons of Behemat",
+      "name": "Rock-hurlers",
+      "points": 380,
+      "size": 3,
+      "kind": "",
+      "category": "Monster",
+      "profile": {
+        "move": "8\"",
+        "health": "12",
+        "save": "5+",
+        "control": "5",
+        "url": "https://wahapedia.ru/aos4/factions/sons-of-behemat/Rock-hurlers",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "LITTLE",
+          "SONS OF BEHEMAT",
+          "CHAMPION",
+          "MONSTER"
+        ],
+        "abilities": [
+          "Drop, Toss or Roll"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Drop, Toss or Roll",
+            "timing": "Once Per Turn (Army), Any Shooting Phase",
+            "effect": "Effect: Pick 1 of the following effects to apply for the rest of the turn:\nDrop: This unit’s ranged weapons have Shoot in Combat and this unit can use the Covering Fire command even if it is in combat.\nToss: Add 6\" to the Range characteristic of this unit’s ranged weapons.\nRoll: Add 1 to hit rolls for this unit’s shooting attacks.",
+            "kind": "Ability",
+            "type": "Shooting",
+            "keywords": "Rampage",
+            "phase": "Shooting Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Hurlin’ Rocks",
+            "12\"",
+            "3",
+            "4+",
+            "2+",
+            "1",
+            "D3",
+            ""
+          ]
+        ],
+        "melee": [
+          [
+            "Massive Clubs and Rocks",
+            "4",
+            "4+",
+            "2+",
+            "1",
+            "2",
+            ""
+          ],
+          [
+            "’Eadbutt",
+            "1",
+            "4+",
+            "2+",
+            "2",
+            "3",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "To most gargants, being forced to remain at the back of a fight and chuck boulders at the enemy would be a humiliating lot. However, some find themselves developing quite a talent for it; known as Rock-hurlers, these gargants bond over their love of making tricky shots and satisfying splattering noises. Nevertheless, they are more than happy to wade in close if the mood strikes them.",
+      "notes": "This unit cannot be reinforced."
+    },
+    {
+      "faction": "Sons of Behemat",
+      "name": "Scourge of Aqshy Gatebreaker Mega-Gargant",
+      "points": 490,
+      "size": 1,
+      "kind": "Scourge of Aqshy",
+      "category": "Hero",
+      "profile": {
+        "move": "10\"",
+        "health": "25",
+        "save": "4+",
+        "control": "10",
+        "url": "https://wahapedia.ru/aos4/factions/sons-of-behemat/Scourge-of-Aqshy-Gatebreaker-Mega-Gargant",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "BIG",
+          "DESTRUCTION",
+          "SONS OF BEHEMAT",
+          "HERO",
+          "MONSTER"
+        ],
+        "abilities": [
+          "Fortcrusha Flail",
+          "It’s Goin’ Down",
+          "Battle Damaged",
+          "Off in a Huff"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Fortcrusha Flail",
+            "timing": "Passive",
+            "effect": "Effect: Each time this unit uses a FIGHT ability, pick either the Calamitous Sweep or Crushing Blow weapon characteristics for all the attacks it makes with its Fortcrusha Flail.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "It’s Goin’ Down",
+            "timing": "Once Per Battle (Army), Your Hero Phase",
+            "effect": "Effect: Until the start of your next turn:\n• This unit has a Move characteristic of 4D6\".\n• While this unit is within 1\" of a terrain feature, the Attacks characteristic of its Hurled Boulder is D6 instead of 1.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 15 or more damage points, the Attacks characteristic of its Fortcrusha Flail is 11 for Calamitous Sweep and 4 for Crushing Blow.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Off in a Huff",
+            "timing": "Once Per Turn (Army), Your Movement Phase",
+            "effect": "Effect: You and your opponent must roll off. Each player adds their fury level to their roll. Then, this unit can move a distance up to its Move characteristic. It can move through the combat ranges of enemy units, but it cannot end that move in combat unless you won the roll-off.",
+            "kind": "Ability",
+            "type": "Movement",
+            "keywords": "Core, Move",
+            "phase": "Movement Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Fortcrusha Flail: Calamitous Sweep",
+            "16",
+            "3+",
+            "3+",
+            "1",
+            "1",
+            "Crit (Auto-wound) · See battle damage rules"
+          ],
+          [
+            "Fortcrusha Flail: Crushing Blow",
+            "6",
+            "4+",
+            "2+",
+            "2",
+            "4",
+            "See battle damage rules"
+          ],
+          [
+            "Almighty Stomp",
+            "3",
+            "4+",
+            "2+",
+            "2",
+            "D3",
+            ""
+          ]
+        ],
+        "ranged": [
+          [
+            "Hurled Boulder",
+            "18\"",
+            "1",
+            "3+",
+            "2+",
+            "2",
+            "4",
+            ""
+          ]
+        ]
+      },
+      "source": "Scourge of Aqshy - Sons of Behemat",
+      "canReinforce": false,
+      "flavour": "Already prone to rage-filled outbursts at the sight of any trappings of civilisation, the furious spirit of Aqshy sees the Gatebreakers become even more unrestrainedly destructive. There is no stronghold, no hovel, no intentional pile of stones that will not draw their terrific ire.",
+      "regimentOptions": "0-1 %000013046Eager Lout%, Any %000004815Sons of Behemat%",
+      "notes": "This HERO can join an eligible regiment as an Eager Lout. This unit is legal for Matched Play for battles fought using the General’s Handbook 2026-27 battlepack."
+    },
+    {
+      "faction": "Sons of Behemat",
+      "name": "Scourge of Aqshy Mancrusher Gargant",
+      "points": 120,
+      "size": 1,
+      "kind": "Scourge of Aqshy",
+      "category": "Monster",
+      "profile": {
+        "move": "8\"",
+        "health": "12",
+        "save": "5+",
+        "control": "10",
+        "url": "https://wahapedia.ru/aos4/factions/sons-of-behemat/Scourge-of-Aqshy-Mancrusher-Gargant",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "LITTLE",
+          "SONS OF BEHEMAT",
+          "MONSTER"
+        ],
+        "abilities": [
+          "Statue Tossing"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Statue Tossing",
+            "timing": "Once Per Turn (Army), Your Shooting Phase",
+            "effect": "Effect: For the rest of the turn, the Damage characteristic of this unit’s Throwin’ Rocks is 3 instead of D3.\nThen, you can spend up to 3 rage dice. If you do:\n• For each rage dice spent, add 2 to the Attacks characteristic of this unit’s Throwin’ Rocks for the rest of the turn.\n• If your opponent’s fury level is lower than yours, they must increase their fury level by 1, to a maximum of 7.",
+            "kind": "Ability",
+            "type": "Shooting",
+            "phase": "Shooting Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Throwin’ Rocks",
+            "12\"",
+            "1",
+            "5+",
+            "2+",
+            "2",
+            "D3",
+            ""
+          ]
+        ],
+        "melee": [
+          [
+            "’Eadbutt",
+            "1",
+            "4+",
+            "2+",
+            "2",
+            "4",
+            ""
+          ],
+          [
+            "Mighty Kick",
+            "1",
+            "4+",
+            "2+",
+            "2",
+            "D3",
+            ""
+          ],
+          [
+            "Massive Club",
+            "4",
+            "4+",
+            "2+",
+            "1",
+            "2",
+            ""
+          ]
+        ]
+      },
+      "source": "Scourge of Aqshy - Sons of Behemat",
+      "canReinforce": false,
+      "flavour": "Inspired to violence by their towering Mega-Gargant brethren, the Great Parch echoes to the tread of Mancrusher Gargants stomping into the fray. Hurling rocks and walloping pipsqueaks, they cause utter havoc among the enemy lines.",
+      "regimentOptions": "Monster",
+      "notes": "This unit is legal for Matched Play for battles fought using the General’s Handbook 2026-27 battlepack."
+    },
+    {
+      "faction": "Sons of Behemat",
+      "name": "Scourge of Ghyran Kraken-eater Mega-Gargant",
+      "points": 430,
+      "size": 1,
+      "kind": "Scourge of Ghyran",
+      "category": "Hero",
+      "profile": {
+        "move": "10\"",
+        "health": "35",
+        "save": "4+",
+        "control": "20",
+        "url": "https://wahapedia.ru/aos4/factions/sons-of-behemat/Scourge-of-Ghyran-Kraken-eater-Mega-Gargant",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DESTRUCTION",
+          "MEGA-GARGANT",
+          "SONS OF BEHEMAT",
+          "HERO",
+          "MONSTER"
+        ],
+        "abilities": [
+          "Longshanks",
+          "Emerge From The Deep",
+          "Battle Damaged",
+          "Sons of Behemat",
+          "Lurking Beneath The Waves"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Longshanks",
+            "timing": "Passive",
+            "effect": "Effect: This unit can pass through models in non-MONSTER units and parts of terrain features that are less than 4\" tall.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Emerge From The Deep",
+            "timing": "Your Movement Phase",
+            "effect": "Declare: Pick this unit if it is beneath the waves.\nEffect: Set up this unit anywhere on the battlefield more than 9\" from all enemy units and wholly within 9\" of a battlefield edge.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Movement Phase"
+          },
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 15 or more damage points, the Attacks characteristic of its Shipwrecka Warclub is 3 and this unit has a Control characteristic of 10.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Sons of Behemat",
+            "timing": "Passive",
+            "effect": "Effect: If this unit would be automatically destroyed, it is not automatically destroyed. Instead, allocate 6 damage points to it (ward rolls cannot be made for those damage points).",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          },
+          {
+            "name": "Lurking Beneath The Waves",
+            "timing": "Once Per Battle (Army), Deployment Phase",
+            "effect": "Declare: Pick this unit if it has not been deployed.\nEffect: Set up this unit in reserve beneath the waves. It has now been deployed.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          }
+        ],
+        "ranged": [
+          [
+            "Hurled Debris",
+            "24\"",
+            "3",
+            "4+",
+            "3+",
+            "1",
+            "D3",
+            ""
+          ]
+        ],
+        "melee": [
+          [
+            "Spine-shattering Stomp",
+            "4",
+            "4+",
+            "2+",
+            "2",
+            "D3",
+            "Anti-INFANTRY (+1 Rend)"
+          ],
+          [
+            "Shipwrecka Warclub",
+            "4",
+            "4+",
+            "2+",
+            "2",
+            "5",
+            "See battle damage rules"
+          ],
+          [
+            "Death Grip",
+            "1",
+            "4+",
+            "2+",
+            "2",
+            "D6",
+            "Anti-HERO (+1 Rend)"
+          ]
+        ]
+      },
+      "source": "Scourge of Ghyran - Sons of Behemat",
+      "canReinforce": false,
+      "flavour": "Foul-tempered Kraken-eater Mega-Gargants haunt the Ghyranite coasts, periodically striding forth from the kelpy seas to smash, crush and destroy. Cunning for their usually oafish kind, Kraken-eaters can lurk just beneath the surface of the water for hours, waiting until their land-dwelling prey are at their most vulnerable before falling upon them like a tidal wave.",
+      "regimentOptions": "0-1 %000013046Eager Lout%, Any %000004815SONS OF BEHEMAT%",
+      "notes": "This HERO can join an eligible regiment as an Eager Lout.\nThis unit is legal for Matched Play for battles fought using the General’s Handbook 2025-26 battlepack."
+    },
+    {
+      "faction": "Sons of Behemat",
+      "name": "Warstomper Mega-Gargant",
+      "points": 390,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "10\"",
+        "health": "25",
+        "save": "4+",
+        "control": "10",
+        "url": "https://wahapedia.ru/aos4/factions/sons-of-behemat/Warstomper-Mega-Gargant",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "BIG",
+          "DESTRUCTION",
+          "SONS OF BEHEMAT",
+          "HERO",
+          "MONSTER"
+        ],
+        "abilities": [
+          "Battle Damaged",
+          "Don’t Stomp Those, Stomp Them!",
+          "Almightier Stompin’",
+          "Titanic Boulderclub"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 15 or more damage points, the Attacks characteristic of its Titanic Boulderclub is 11 for Calamitous Sweep and 4 for Crushing Blow.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Don’t Stomp Those, Stomp Them!",
+            "timing": "Once Per Turn (Army), Your Movement Phase",
+            "effect": "Declare: Pick another visible friendly BIG or LITTLE unit wholly within 12\" of this unit and that has not been set up this turn to be the target.\nEffect: The target can move 2D6\". It can pass through and end that move within the combat ranges of enemy units that it was in combat with at the start of the move, but not those of other enemy units. It does not have to end the move in combat.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Movement Phase"
+          },
+          {
+            "name": "Almightier Stompin’",
+            "timing": "Once Per Turn (Army), Your Combat Phase",
+            "effect": "Declare: If this unit charged this turn, pick an enemy unit in combat with it to be the target.\nEffect: Make a rampage roll of D3. For the rest of the turn, add the roll to the Attacks characteristic of this unit’s Almighty Stomp, but all of this unit’s attacks made with that weapon must target the target unit.\nIf any models are slain by those attacks, for the rest of the turn, enemy units have a maximum control score of 1 while they are in combat with this unit.",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Rampage",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Titanic Boulderclub",
+            "timing": "Passive",
+            "effect": "Effect: Each time this unit uses a FIGHT ability, pick either the Calamitous Sweep or Crushing Blow weapon characteristics for all the attacks it makes with its Titanic Boulderclub.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Titanic Boulderclub: Calamitous Sweep",
+            "16",
+            "3+",
+            "3+",
+            "1",
+            "1",
+            "Crit (Auto-wound) · See battle damage rules"
+          ],
+          [
+            "Titanic Boulderclub: Crushing Blow",
+            "6",
+            "4+",
+            "2+",
+            "2",
+            "4",
+            "See battle damage rules"
+          ],
+          [
+            "Almighty Stomp",
+            "3",
+            "4+",
+            "2+",
+            "2",
+            "D3",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "The veteran Warstompers seek out the thrill and clangour of battle wherever they can find it. They love smashing battlelines into disarray, and once they are in the thick of the fight, their rampage is al but impossible to stop. Warstompers take fighting very seriously, and one thing they absolutely cannot stand is any sort of horseplay on the par of more youthful or ebulient gargants. These sorts are given a good cuffing round the ear and shoved meaningfully towards the fray.",
+      "regimentOptions": "Any %000004815SONS OF BEHEMAT%, 0-1 %000013046Eager Lout%",
+      "notes": "This HERO can join an eligible regiment as an Eager Lout."
+    }
+  ]
+}

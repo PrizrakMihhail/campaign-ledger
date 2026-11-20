@@ -26,7 +26,7 @@ const Ledger = (() => {
   const activeQuest = warband => warband?.quests.find(quest => quest.status === 'Active');
   const unitTypes = Object.freeze(['Hero', 'Infantry', 'Cavalry', 'War Machine', 'Monster', 'Terrain', 'Other', 'Manifestation']);
   const unitTypeNames = new Map([...unitTypes.map(type => [type.toLowerCase(), type]), ['artillery', 'War Machine'], ['faction terrain', 'Terrain']]);
-  const profileStats = Object.freeze({ move: 'Move', health: 'Health', save: 'Save', control: 'Control', ward: 'Ward' });
+  const profileStats = Object.freeze({ move: 'Move', health: 'Health', save: 'Save', control: 'Control', ward: 'Ward', banishment: 'Banishment' });
   const weaponFields = ranged => [...(ranged ? ['Range'] : []), 'Attacks', 'Hit', 'Wound', 'Rend', 'Damage', 'Weapon traits'];
   const validColor = value => /^#[a-f\d]{6}$/i.test(value) ? value : '#bd8e58';
   const str = value => typeof value === 'string' ? value : '';
@@ -137,7 +137,7 @@ const Ledger = (() => {
       notes: str(a.notes), color: validColor(a.color), archived: a.archived === true,
       units: records(a.units, normalizeUnit),
       lores: records(a.lores, normalizeLore),
-      battleTraits: records(a.battleTraits, t => ({ name: str(t.name) || 'Unnamed trait', timing: str(t.timing), declare: str(t.declare), effect: str(t.effect) })),
+      battleTraits: records(a.battleTraits, t => ({ name: str(t.name) || 'Unnamed trait', timing: str(t.timing), declare: str(t.declare), effect: str(t.effect), ruleset: str(t.ruleset) })),
       battleView: records(a.battleView, unitBattleStats),
       quests: records(a.quests, q => ({
         title: str(q.title) || 'Unnamed quest', goal: str(q.goal), status: choice(q.status === 'Abandoned' ? 'Forfeited' : q.status, questStatuses, 'Active'),

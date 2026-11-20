@@ -1,0 +1,4509 @@
+{
+  "edition": "Age of Sigmar 4",
+  "lastUpdate": "2026-10-22 18:12:05",
+  "faction": {
+    "id": "SG",
+    "name": "Soulblight Gravelords",
+    "slug": "soulblight-gravelords",
+    "url": "https://wahapedia.ru/aos4/factions/soulblight-gravelords",
+    "count": 56
+  },
+  "rules": {
+    "battleTraits": [
+      {
+        "name": "ANCIENT BURIAL SITES",
+        "timing": "Once Per Battle (Army), Deployment Phase",
+        "declare": "",
+        "effect": "If there is a friendly Cursed Sepulchre on the battlefield, you can set up up to 2 additional Cursed Sepulchres on the battlefield. The first must be set up more than 3\" from all units, objectives and other terrain features. The second must be set up wholly outside enemy territory and more than 3\" from all units, objectives and other terrain features.\nDesigner’s Note: The original Cursed Sepulchre is set up in Step 1 of the deployment phase using the ‘Deploy Faction Terrain’ ability. This ability allows you to set up a second and third such terrain feature and is used in Step 3 of the deployment phase, after armies have been deployed.",
+        "unitLinks": [
+          "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Cursed-Sepulchre"
+        ]
+      },
+      {
+        "name": "THE UNQUIET DEAD",
+        "timing": "Deployment Phase",
+        "declare": "Pick a friendly DEATHRATTLE or DEADWALKERS unit that has not been deployed.",
+        "effect": "Set up that unit in reserve in the grave. It has now been deployed. You cannot set up more friendly units in the grave than there are on the battlefield.",
+        "unitLinks": []
+      },
+      {
+        "name": "THE RISING DEAD",
+        "timing": "Your Movement Phase",
+        "declare": "Pick a friendly unit that is in the grave.",
+        "effect": "Set up that unit wholly within 6\" of a friendly Cursed Sepulchre and more than 9\" from all enemy units, or wholly within 6\" of the edge of the battlefield, wholly within friendly territory and more than 9\" from all enemy units.",
+        "unitLinks": [
+          "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Cursed-Sepulchre"
+        ]
+      },
+      {
+        "name": "DEATHLY INVOCATION",
+        "timing": "Once Per Turn (Army), Any Hero Phase",
+        "declare": "Pick a friendly SOULBLIGHT GRAVELORDS HERO to use this ability, then pick up to 3 friendly DEATHRATTLE or DEADWALKERS units wholly within 12\" of that HERO to be the targets.",
+        "effect": "For each target:\n• If the target is damaged, Heal (3) the target.\n• If the target is not damaged, return a number of slain models to it with a combined Health characteristic of up to 3.",
+        "unitLinks": []
+      },
+      {
+        "name": "ENDLESS LEGIONS",
+        "timing": "Once Per Battle Round (Army), Any Movement Phase",
+        "declare": "Pick a friendly non-UNIQUE DEATHRATTLE or DEADWALKERS unit that started the battle with 2 or more models and that has been destroyed to be the target.",
+        "effect": "Set up a replacement unit with half the number of models from the target unit (rounding up) wholly within 12\" of a friendly SOULBLIGHT GRAVELORDS HERO or wholly within 6\" of a friendly Cursed Sepulchre. It must be set up more than 9\" from all enemy units.\nIf it is your movement phase, you can set up the replacement unit more than 3\" from all enemy units instead of more than 9\", but if you set it up within 9\" of any enemy units, it cannot use CHARGE abilities this turn.",
+        "unitLinks": [
+          "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Cursed-Sepulchre"
+        ]
+      },
+      {
+        "name": "THE HUNGER",
+        "timing": "Once Per Turn (Army), End of Any Turn",
+        "declare": "Pick each friendly VAMPIRE unit that used a FIGHT ability this turn to be the targets.",
+        "effect": "Heal (D3) each target. Heal (2D3) the target instead if it destroyed an enemy unit this turn using a FIGHT ability.",
+        "unitLinks": []
+      }
+    ],
+    "armiesOfRenown": [
+      {
+        "id": "barrow-legion",
+        "name": "Barrow Legion",
+        "battleTraits": [
+          {
+            "name": "THE ROYAL CRYPT",
+            "timing": "Once Per Battle, Deployment Phase",
+            "declare": "This ability must be used instead of the ‘Deploy Faction Terrain Feature’ ability.",
+            "effect": "Set up 3 Cursed Sepulchres wholly within friendly territory, each within ½\" of any of the others and more than 3\" from all objectives and other terrain features. After you have done so, they have been deployed and they are considered to be a single Cursed Sepulchre terrain feature that has a Health characteristic of 24 instead of 8.",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Cursed-Sepulchre"
+            ]
+          },
+          {
+            "name": "GRAVE SENTINELS",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "The melee weapons used by friendly BARROW LEGION units have Anti-charge (+1 Rend) while they are wholly within 9\" of a friendly Cursed Sepulchre.",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Cursed-Sepulchre"
+            ]
+          },
+          {
+            "name": "ALL TO DUST",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "In the third and subsequent battle rounds, while a friendly Cursed Sepulchre is on the battlefield, subtract 1 from save rolls for enemy units.",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Cursed-Sepulchre"
+            ]
+          },
+          {
+            "name": "GIFTS TO THE PETTY KINGDOMS",
+            "timing": "Once Per Battle, Deployment Phase",
+            "declare": "Pick up to 2 friendly non-UNIQUE BARROW LEGION HEROES that do not have an artefact of power to be the targets (you can pick units in reserve).",
+            "effect": "Give each target 1 artefact of power from the ‘Barrow Legion’ Army of Renown rules.\nDesigner’s Note: These artefacts of power are given to the HEROES during the deployment phase, not during army composition.",
+            "unitLinks": []
+          },
+          {
+            "name": "ENDLESS LEGIONS OF BONE",
+            "timing": "Once Per Battle Round (Army), Any Movement Phase",
+            "declare": "Pick a friendly non-UNIQUE BARROW LEGION unit that has been destroyed to be the target.",
+            "effect": "Set up a replacement unit with half the number of models from the target unit (rounding up) wholly within 12\" of a friendly BARROW LEGION HERO or wholly within 6\" of a friendly Cursed Sepulchre. It must be set up more than 9\" from all enemy units.\nIf it is your movement phase, you can set up the replacement unit more than 3\" from all enemy units instead of more than 9\", but if you set it up within 9\" of any enemy units, it cannot use CHARGE abilities this turn.",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Cursed-Sepulchre"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "knights-of-the-crimson-keep",
+        "name": "Knights of the Crimson Keep",
+        "battleTraits": [
+          {
+            "name": "THE CRIMSON KEEP",
+            "timing": "Deployment Phase",
+            "declare": "Pick a friendly CRIMSON KEEP unit that has not been deployed.",
+            "effect": "Set up that unit in reserve in the Crimson Keep. It has now been deployed. You cannot set up more friendly units in the Crimson Keep than there are on the battlefield.",
+            "unitLinks": []
+          },
+          {
+            "name": "CARVE A BLOODY PATH",
+            "timing": "Your Charge Phase",
+            "declare": "Pick a friendly Blood Knights unit that is in combat to use this ability.",
+            "effect": "That unit can use a CHARGE ability even though it is in combat and even if it has already used a CHARGE ability this turn.",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Blood-Knights"
+            ]
+          },
+          {
+            "name": "FROM A QUARTER UNSEEN",
+            "timing": "Once Per Battle (Army), Any Movement Phase",
+            "declare": "You cannot use this ability in the first battle round. Pick each friendly unit that is in the Crimson Keep to be the targets.",
+            "effect": "Set up each target wholly within 9\" of the battlefield edge and more than 9\" from all enemy units. If you set up any units using this ability in the third or a subsequent battle round, do not spend any command points when using the ‘Carve a Bloody Path’ command this turn.",
+            "unitLinks": []
+          },
+          {
+            "name": "BLOOD RAMPAGE",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "declare": "Pick a friendly CRIMSON KEEP MONSTER that is in combat and has not used any RAMPAGE abilities this turn to use this ability, then pick an enemy unit in combat with it to be the target.",
+            "effect": "This unit can make a move of 2D6\". It must end that move in combat with the target unit. Then, roll a dice. If the roll exceeds the target unit’s Health characteristic, 1 model in the target unit is slain.\nAfter this ability has been resolved, this unit cannot use RAMPAGE abilities for the rest of the turn.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "id": "legions-of-nagash",
+        "name": "Legions of Nagash",
+        "battleTraits": [
+          {
+            "name": "ETHEREAL",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "Ignore negative modifiers to save rolls for friendly LEGIONS OF NAGASH NIGHTHAUNT units, excluding Nagash.",
+            "unitLinks": []
+          },
+          {
+            "name": "LEGIONS OF ENDLESS DEAD",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "Subtract 5 from the control scores of enemy units while they are in combat with 2 or more friendly units if any of those friendly units is Nagash or if none of those friendly units share any of the following keywords: SOULBLIGHT GRAVELORDS, FLESH-EATER COURTS, NIGHTHAUNT or OSSIARCH BONEREAPERS.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "id": "scions-of-nulahmia",
+        "name": "Scions of Nulahmia",
+        "battleTraits": [
+          {
+            "name": "THAUMIC REALIGNMENT",
+            "timing": "Once Per Turn (Army), Your Hero Phase",
+            "declare": "You can only use this ability if you have not used any EXQUISITE PLOT abilities this turn. Pick a friendly WIZARD to be the target.",
+            "effect": "For the rest of the turn, add 1 to casting rolls for the target. In addition, at the end of this turn, if the target successfully cast any spells this turn, add 1 to its power level for the rest of the battle.",
+            "unitLinks": []
+          },
+          {
+            "name": "RECRUITMENT DRIVE",
+            "timing": "Once Per Turn (Army), Your Hero Phase",
+            "declare": "You can only use this ability if you have not used any EXQUISITE PLOT abilities this turn. Pick a friendly unit to be the hunter and an enemy unit with 5 or more models to be the target.",
+            "effect": "For the rest of the turn, add 1 to hit rolls for the hunter’s combat attacks that target that enemy unit. In addition, if the target is destroyed this turn by the hunter, add 1 to the Attacks characteristic of the hunter’s melee weapons for the rest of the battle.",
+            "unitLinks": []
+          },
+          {
+            "name": "SEEK WORTHY BLOOD",
+            "timing": "Once Per Turn (Army), Your Hero Phase",
+            "declare": "You can only use this ability if you have not used any EXQUISITE PLOT abilities this turn. Pick a friendly unit to be the target.",
+            "effect": "For the rest of the turn, the target’s weapons have Anti-HERO (+1 Rend). In addition, if the target destroys any enemy HEROES this turn, the target’s weapons have Anti-HERO (+1 Rend) for the rest of the battle.",
+            "unitLinks": []
+          },
+          {
+            "name": "THE QUEEN’S PRIZE",
+            "timing": "Once Per Turn (Army), Your Hero Phase",
+            "declare": "You can only use this ability if you have not used any EXQUISITE PLOT abilities this turn. Pick a friendly unit to be the target.",
+            "effect": "For the rest of the turn, add 5 to the target’s control score.\nIn addition, at the end of this turn, after determining control of objectives, if the target is contesting an objective that you control and that was controlled by your opponent at the start of this turn, add 5 to the target’s control score for the rest of the battle.",
+            "unitLinks": []
+          }
+        ]
+      }
+    ],
+    "battleFormations": [
+      {
+        "name": "Legion of Shyish",
+        "abilities": [
+          {
+            "name": "HORROR UNENDING",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "You can pick 1 additional target when using the ‘Deathly Invocation’ ability.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "name": "Deathstench Drove",
+        "abilities": [
+          {
+            "name": "DRAGGED DOWN AND TORN APART",
+            "timing": "Once Per Turn (Army), End of Any Turn",
+            "declare": "Pick up to 3 friendly DEADWALKERS units in combat to be the targets.",
+            "effect": "For each target:\n• Make a pile-in move.\n• Then, pick an enemy unit in combat with the target and roll a D3. On a 2+, inflict an amount of mortal damage on that enemy unit equal to the roll.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "name": "Bacchanal of Blood",
+        "abilities": [
+          {
+            "name": "ARISTOCRACY OF THE NIGHT",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "Add 1 to casting rolls for friendly VAMPIRE units that are not in combat and add 1 to wound rolls for combat attacks made by friendly VAMPIRE units that charged in the same turn.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "name": "Deathmarch",
+        "abilities": [
+          {
+            "name": "TIDE OF BONES AND BLADES",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "Add 1 to the Rend characteristic of melee weapons used by friendly DEATHRATTLE units that charged in the same turn for attacks that target a unit that has fewer models than the attacking unit.",
+            "unitLinks": []
+          }
+        ]
+      },
+      {
+        "name": "Legions of Ulfenkarn",
+        "abilities": [
+          {
+            "name": "WARDENS OF THE WOLF",
+            "timing": "Passive",
+            "declare": "",
+            "effect": "Each time 1 or more slain models are returned to a friendly SOULBLIGHT GRAVELORDS INFANTRY or BEASTS unit wholly within 12\" of a friendly Belladamma Volga, Radukar the Wolf, Radukar the Beast, Ivya Volga, Lady Annika, Kritza, Torgillius the Chamberlain, Gorslav the Gravekeeper or Watch Captain Halgrim, add 1 to the number of slain models returned to that unit.",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Belladamma-Volga-First-of-the-Vyrkos",
+              "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Radukar-the-Wolf",
+              "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Radukar-the-Beast",
+              "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Ivya-Volga-The-Outcast",
+              "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Lady-Annika-the-Thirsting-Blade",
+              "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Kritza-the-Rat-Prince",
+              "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Torgillius-the-Chamberlain",
+              "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Gorslav-the-Gravekeeper",
+              "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Watch-Captain-Halgrim"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Cryptmasters",
+        "abilities": [
+          {
+            "name": "UNHOLY SITE",
+            "timing": "Once Per Turn (Army), Your Hero Phase",
+            "declare": "Pick a friendly Cursed Sepulchre to be the target.",
+            "effect": "The target has WARD (4+) until the start of your next turn.",
+            "unitLinks": [
+              "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Cursed-Sepulchre"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Skinshifters",
+        "abilities": [
+          {
+            "name": "THE SPEED OF DEATH",
+            "timing": "Once Per Turn (Army), Your Hero Phase",
+            "declare": "Pick a friendly INFANTRY VAMPIRE HERO to be the target.",
+            "effect": "The target can move up to 12\" and has FLY when it does so. It cannot end that move in combat.",
+            "unitLinks": []
+          }
+        ]
+      }
+    ],
+    "lores": {
+      "spell": [
+        {
+          "name": "Lore of Undeath",
+          "kind": "spell",
+          "points": 0,
+          "entries": [
+            {
+              "name": "VILE TRANSFERENCE",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly SOULBLIGHT GRAVELORDS WIZARD to cast this spell, pick a visible enemy unit within 18\" of them to be the target, then make a casting roll of 2D6.",
+              "effect": "Roll a number of dice equal to the number of models in the target unit. For each 6, inflict 1 mortal damage on that unit. If any enemy models were slain by this spell, Heal (D3) the caster.",
+              "value": "7",
+              "unitLinks": []
+            },
+            {
+              "name": "PRISON OF GRIEF",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly SOULBLIGHT GRAVELORDS WIZARD to cast this spell, pick a visible enemy unit within 12\" of them to be the target, then make a casting roll of 2D6.",
+              "effect": "The target has STRIKE-LAST until the start of your next turn.",
+              "value": "7",
+              "unitLinks": []
+            },
+            {
+              "name": "WASTE AWAY",
+              "timing": "Your Hero Phase",
+              "declare": "Pick a friendly SOULBLIGHT GRAVELORDS WIZARD to cast this spell, pick a visible enemy unit within 12\" of them to be the target, then make a casting roll of 2D6.",
+              "effect": "For the rest of the turn, subtract 1 from the Damage characteristic of the target’s melee weapons.",
+              "value": "7",
+              "unitLinks": []
+            }
+          ]
+        }
+      ],
+      "prayer": [],
+      "manifestation": [
+        {
+          "name": "Manifestations of the Grave",
+          "kind": "manifestation",
+          "points": 0,
+          "entries": [
+            {
+              "name": "SUMMON HAND OF NAGASH",
+              "timing": "Your Hero Phase",
+              "declare": "If there is not a friendly Hand of Nagash on the battlefield, pick a friendly SOULBLIGHT GRAVELORDS WIZARD to cast this spell, then make a casting roll of 2D6.",
+              "effect": "Set up a Hand of Nagash wholly within 12\" of and visible to the caster and more than 9\" from all enemy units.",
+              "value": "7",
+              "unitLinks": [
+                "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Hand-of-Nagash"
+              ],
+              "manifestation": {
+                "faction": "Soulblight Gravelords",
+                "name": "Hand of Nagash"
+              }
+            },
+            {
+              "name": "SUMMON SANGUINE SWARM",
+              "timing": "Your Hero Phase",
+              "declare": "If there is not a friendly Sanguine Swarm on the battlefield, pick a friendly SOULBLIGHT GRAVELORDS WIZARD to cast this spell, then make a casting roll of 2D6.",
+              "effect": "Set up a Sanguine Swarm wholly within 12\" of and visible to the caster and more than 9\" from all enemy units. A Sanguine Swarm spell has 2 parts that must be set up within 9\" of each other.",
+              "value": "6",
+              "unitLinks": [
+                "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Sanguine-Swarm"
+              ],
+              "manifestation": {
+                "faction": "Soulblight Gravelords",
+                "name": "Sanguine Swarm"
+              }
+            },
+            {
+              "name": "SUMMON UNHOLY RELIQUARY",
+              "timing": "Your Hero Phase",
+              "declare": "If there is not a friendly Unholy Reliquary on the battlefield, pick a friendly SOULBLIGHT GRAVELORDS WIZARD to cast this spell, then make a casting roll of 2D6.",
+              "effect": "Set up an Unholy Reliquary wholly within 18\" of the caster, visible to them and more than 3\" from all enemy units.",
+              "value": "6",
+              "unitLinks": [
+                "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Unholy-Reliquary"
+              ],
+              "manifestation": {
+                "faction": "Soulblight Gravelords",
+                "name": "Unholy Reliquary"
+              }
+            }
+          ],
+          "scope": "faction"
+        }
+      ]
+    }
+  },
+  "entries": [
+    {
+      "faction": "Soulblight Gravelords",
+      "name": "Askurgan Trueblades",
+      "points": 150,
+      "size": 8,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "6\"",
+        "health": "2",
+        "save": "5+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Askurgan-Trueblades",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "SOULBLIGHT GRAVELORDS",
+          "VAMPIRE",
+          "CHAMPION (1/8)",
+          "INFANTRY",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Gut-wrenching Howl",
+          "Creed of the Askurga Renkai"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Gut-wrenching Howl",
+            "timing": "Any Combat Phase",
+            "effect": "Declare: Pick an enemy unit in combat with this unit’s Curseblood to be the target.\nEffect: Roll a dice. On a 4+, the target has STRIKE-LAST for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Creed of the Askurga Renkai",
+            "timing": "Passive",
+            "effect": "Effect: Subtract 1 from hit rolls for combat attacks made by enemy MONSTERS that target this unit.\nAdd 1 to hit rolls for combat attacks made by this unit that target enemy MONSTERS.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Askurgan Weapons",
+            "2",
+            "3+",
+            "3+",
+            "1",
+            "1",
+            "Anti-MONSTER (+1 Rend), Crit (2 Hits)"
+          ],
+          [
+            "Elongated Claws and Slavering Maw",
+            "5",
+            "4+",
+            "3+",
+            "2",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Rather than deny their thirst, the Askurgan Trueblades harness it by feasting upon the blood of beasts and monsters, using the inherent power of these potent fluids to enhance their already devastating combat skills. Few can stand in the face of an Askurgan Trueblade’s efficient strikes, which come so swiftly and precisely that the foe is often reduced to a ruined corpse before they can even draw a breath.",
+      "description": "Each model in this unit is armed with Askurgan Weapons.\n• 1/8 models is a Curseblood and must replace their Askurgan Weapons with Elongated Claws and Slavering Maw.\n• The champion is an Askurgan Exemplar and cannot replace their weapons."
+    },
+    {
+      "faction": "Soulblight Gravelords",
+      "name": "Barrow Guard",
+      "points": 130,
+      "size": 10,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "4\"",
+        "health": "1",
+        "save": "4+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Barrow-Guard",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "DEATHRATTLE",
+          "SOULBLIGHT GRAVELORDS",
+          "CHAMPION",
+          "INFANTRY",
+          "MUSICIAN (1/5)",
+          "STANDARD BEARER (1/5)",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Guardians of the King"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Guardians of the King",
+            "timing": "Passive",
+            "effect": "Effect: While any friendly SOULBLIGHT GRAVELORDS INFANTRY HEROES are within this unit’s combat range, both this unit and those friendly units have WARD (5+).",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          }
+        ],
+        "melee": [
+          [
+            "Wight Blade",
+            "2",
+            "3+",
+            "3+",
+            "1",
+            "1",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Surrounding a Wight King is a coterie of favoured praetorians, champions and housecarls: the Barrow Guard. These are the elite footsoldiers of the Deathrattle legions, imbued with memories of loyalties pledged and oaths of eternal service. Some favour the traditional sword and shield of a monarch’s bodyguard, while others swing huge two-handed blades to carve foes in twain.",
+      "description": "You can use the models in these units to represent the following units as appropriate, provided they are on the listed base sizes:\nGrave Guard → Barrow Guard (28.5mm)"
+    },
+    {
+      "faction": "Soulblight Gravelords",
+      "name": "Barrow Knights",
+      "points": 190,
+      "size": 5,
+      "kind": "",
+      "category": "Cavalry",
+      "profile": {
+        "move": "10\"",
+        "health": "3",
+        "save": "4+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Barrow-Knights",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "DEATHRATTLE",
+          "SOULBLIGHT GRAVELORDS",
+          "CAVALRY",
+          "CHAMPION",
+          "MUSICIAN (1/5)",
+          "STANDARD BEARER (1/5)",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Knights of the King",
+          "Cursed To Rise Once More"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Knights of the King",
+            "timing": "Passive",
+            "effect": "Effect: While any friendly DEATHRATTLE CAVALRY HEROES are within this unit’s combat range, both this unit and those friendly units have WARD (5+).",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          },
+          {
+            "name": "Cursed To Rise Once More",
+            "timing": "Once Per Turn (Army), End of Any Turn",
+            "effect": "Effect: You can return 1 slain model to this unit.",
+            "kind": "Ability",
+            "type": "Rallying",
+            "phase": "End of Turn"
+          }
+        ],
+        "melee": [
+          [
+            "Barrow Lance",
+            "2",
+            "4+",
+            "3+",
+            "1",
+            "1",
+            "Crit (Mortal), Charge (+1 Damage)"
+          ],
+          [
+            "Skeletal Steed’s Hooves and Teeth",
+            "2",
+            "5+",
+            "3+",
+            "-",
+            "1",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "The finest warriors of a Deathrattle kingdom are granted the rank of Barrow Knight and a prestigious place at the side of their undead monarch. These skeletal cavaliers ride forth to conquer in the name of their liege, and rare are the warriors who can withstand their charge. Even if knocked from the saddle or shattered by cannonfire, these elite riders shall eventually rise again, for the oaths they have sworn will last until the end of time itself.",
+      "description": "You can use the models in these units to represent the following units as appropriate, provided they are on the listed base sizes:\nBlack Knights → Barrow Knights (60 × 35mm)"
+    },
+    {
+      "faction": "Soulblight Gravelords",
+      "name": "Belladamma Volga, First of the Vyrkos",
+      "points": 200,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "8\"",
+        "health": "9",
+        "save": "4+",
+        "control": "5",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Belladamma-Volga-First-of-the-Vyrkos",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "SOULBLIGHT GRAVELORDS",
+          "VAMPIRE",
+          "CAVALRY",
+          "HERO",
+          "UNIQUE",
+          "WARD (6+)",
+          "WIZARD (2)"
+        ],
+        "abilities": [
+          "First of the Vyrkos",
+          "Under a Killing Moon",
+          "Wolfguard"
+        ],
+        "abilityDetails": [
+          {
+            "name": "First of the Vyrkos",
+            "timing": "Passive",
+            "effect": "Effect: Add 3 to the control scores of friendly Radukar the Wolf, Radukar the Beast, Ivya Volga, Lady Annika and Kritza units while they are wholly within 18\" of this unit.",
+            "kind": "Ability",
+            "type": "Control",
+            "phase": "End of Turn"
+          },
+          {
+            "name": "Under a Killing Moon",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Pick up to 3 visible friendly Dire Wolves units wholly within 18\" of this unit to be the targets, then make a casting roll of 2D6.\nEffect: For the rest of the turn:\n• Add 1 to the Rend characteristic of the targets’ melee weapons (including Companion weapons).\n• The targets can ignore the effect of the ‘Beast’ ability.",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Spell",
+            "phase": "Hero Phase",
+            "pointsType": "Spell",
+            "points": "7"
+          },
+          {
+            "name": "Wolfguard",
+            "timing": "Passive",
+            "effect": "Effect: While this unit is within the combat range of a friendly Dire Wolves unit:\n• This unit has WARD (4+).\n• Each time you make a successful ward roll for this unit, allocate 1 damage point to a friendly Dire Wolves unit within this unit’s combat range after the damage sequence for this unit has been resolved (ward rolls cannot be made for those damage points).",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          }
+        ],
+        "melee": [
+          [
+            "Timeworn Scimitar",
+            "4",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            ""
+          ],
+          [
+            "Lupine Fangs and Claws",
+            "6",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "When a bloody moon rises in the sky, Belladamma Volga rides at the head of a Dire Wolf pack to bring death and suffering to mortals. The matriarch of the Vyrkos dynasty has fought alongside many of her brood to overwhelm Sigmarite outposts, though she lingers only for the victory feast. Volga’s secrets are hers to keep, and woe betide any who meddle in her business.",
+      "regimentOptions": "Any %000012922Vyrkos Retainer%, Any %000004657Soulblight Gravelords%"
+    },
+    {
+      "faction": "Soulblight Gravelords",
+      "name": "Blades of the Hollow King",
+      "points": 260,
+      "size": 3,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "6",
+        "save": "4+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Blades-of-the-Hollow-King",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "SOULBLIGHT GRAVELORDS",
+          "VAMPIRE",
+          "HERO",
+          "INFANTRY",
+          "UNIQUE",
+          "WARD (6+)",
+          "WIZARD (1)"
+        ],
+        "abilities": [
+          "Retribution or Salvation",
+          "Aurelias",
+          "Solia, The Tutor"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Retribution or Salvation",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: This unit can cast this spell while its Cado Ezechiar is on the battlefield. Pick a visible unit within 12\" of this unit to be the target, then make a casting roll of 2D6.\nEffect: If the target is an enemy unit, inflict D3 mortal damage on it. If the target is a friendly DEATHRATTLE or DEADWALKERS unit, subtract 1 from wound rolls for combat attacks that target that unit for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Spell",
+            "phase": "Hero Phase",
+            "pointsType": "Spell",
+            "points": "7"
+          },
+          {
+            "name": "Aurelias",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: This unit can use this ability while its Aurelias is on the battlefield.\nEffect: Pick 1 of the following to apply for the rest of the turn:\n• Add 1 to this unit’s power level.\n• Each time a casting roll is made for this unit, you can re-roll 1 of the dice.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Solia, The Tutor",
+            "timing": "Any Combat Phase",
+            "effect": "Declare: This unit can use this ability while its Cado Ezechiar is on the battlefield.\nEffect: Pick 1 of the following to apply for the rest of the turn:\n• This unit has WARD (5+).\n• This unit’s Ezechiarian Greatsword has Crit (Mortal).",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Ezechiarian Greatsword",
+            "5",
+            "3+",
+            "3+",
+            "2",
+            "2",
+            "Crit (Auto-wound)"
+          ],
+          [
+            "Sissendra’s Twin Blades",
+            "8",
+            "3+",
+            "3+",
+            "1",
+            "1",
+            "Crit (Mortal)"
+          ],
+          [
+            "Kennistrix’s Fangs",
+            "2",
+            "4+",
+            "2+",
+            "3",
+            "D3",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Known as the Hollow King, Cado Ezechiar seeks both vengeance and redemption. Once a mortal king, his lands were ravaged by Chaos. Now he hunts the servants of ruin alongside a band of mismatched companions. The vampire Sissendra is a graceful killer who delights in reckless bloodshed, while the death priest Aurelias wields fearsome eldritch power and is accompanied by the twin-headed serpent Kennistrix. Then there is the spirit Solia, bound to one of Ezechiar’s iron rings and sworn to guide her student on his fateful path.",
+      "regimentOptions": "Any %000004657SOULBLIGHT GRAVELORDS%",
+      "notes": "You cannot include this unit and Cado Ezechiar, the Hollow King in the same army.",
+      "description": "• 1 model in this unit is Cado Ezechiar, who is armed with an Ezechiarian Greatsword.\n• 1 model in this unit is Sissendra, who is armed with Sissendra’s Twin Blades.\n• 1 model in this unit is Aurelias, who is armed with Kennistrix’s Fangs."
+    },
+    {
+      "faction": "Soulblight Gravelords",
+      "name": "Blood Knights",
+      "points": 210,
+      "size": 5,
+      "kind": "",
+      "category": "Cavalry",
+      "profile": {
+        "move": "12\"",
+        "health": "3",
+        "save": "3+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Blood-Knights",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "SOULBLIGHT GRAVELORDS",
+          "VAMPIRE",
+          "CAVALRY",
+          "CHAMPION",
+          "STANDARD BEARER (1/5)",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Riders of Ruin",
+          "Trampled to Dust"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Riders of Ruin",
+            "timing": "Passive",
+            "effect": "Effect: When this unit moves, it can pass through models in enemy INFANTRY units and can pass through the combat ranges of enemy INFANTRY units, but it cannot end a move in combat unless specified in the ability used.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Movement Phase"
+          },
+          {
+            "name": "Trampled to Dust",
+            "timing": "Any Charge Phase",
+            "effect": "Declare: Pick an enemy unit that this unit passed across this turn to be the target.\nEffect: Roll a D3. On a 2+, inflict an amount of mortal damage on the target equal to the roll.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Charge Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Nightmare’s Hooves and Teeth",
+            "3",
+            "5+",
+            "3+",
+            "-",
+            "1",
+            "Companion"
+          ],
+          [
+            "Templar Weapon",
+            "3",
+            "3+",
+            "3+",
+            "1",
+            "1",
+            "Anti-INFANTRY (+1 Rend), Charge (+1 Damage)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Resplendent in gleaming armour, vampiric chevaliers charge into battle, crushing their foes beneath the thundering hooves of their skeletal mounts. These are the Blood Knights, the elite warriors of the Soulblight hosts. They claim to follow a code of honour, but in truth, their self-proclaimed chivalry is nothing but a shining veneer that corrodes as soon as the killing starts."
+    },
+    {
+      "faction": "Soulblight Gravelords",
+      "name": "Bloodseeker Palanquin",
+      "points": 220,
+      "size": 1,
+      "kind": "Legends",
+      "category": "Hero",
+      "profile": {
+        "move": "10\"",
+        "health": "12",
+        "save": "4+",
+        "control": "5",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Bloodseeker-Palanquin",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "SOULBLIGHT GRAVELORDS",
+          "VAMPIRE",
+          "FLY",
+          "HERO",
+          "WAR MACHINE",
+          "WARD (6+)",
+          "WIZARD (1)"
+        ],
+        "abilities": [
+          "Wails of the Damned",
+          "A Promising Concoction"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Wails of the Damned",
+            "timing": "Passive",
+            "effect": "Effect: Subtract 3 from the control scores of enemy units while they are within 12\" of this unit.",
+            "kind": "Ability",
+            "type": "Control",
+            "phase": "End of Turn"
+          },
+          {
+            "name": "A Promising Concoction",
+            "timing": "Once Per Battle (Army), Your Combat Phase",
+            "effect": "Declare: Pick up to 3 friendly VAMPIRE units wholly within 12\" of this unit to be the targets.\nEffect: Add 1 to the Attacks characteristic of the targets’ melee weapons for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Sanguinarch’s Stiletto",
+            "5",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            "Crit (2 Hits)"
+          ],
+          [
+            "Spectral Host’s Blades",
+            "10",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "Battletome Supplement: Soulblight Gravelords",
+      "canReinforce": false,
+      "flavour": "From atop macabre conveyances known as Bloodseeker Palanquins, the Sanguinarchs refine the art of blood-blending. In battle, they violently exsanguinate worthy champions, using their ichor in crimson concoctions to invigorate their vampiric kin.",
+      "regimentOptions": "Any %000004657SOULBLIGHT GRAVELORDS%",
+      "notes": "This unit will move to Warhammer Legends on 1 June 2026."
+    },
+    {
+      "faction": "Soulblight Gravelords",
+      "name": "Cado Ezechiar, The Hollow King",
+      "points": 150,
+      "size": 1,
+      "kind": "Legends",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "6",
+        "save": "4+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Cado-Ezechiar-The-Hollow-King",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "SOULBLIGHT GRAVELORDS",
+          "VAMPIRE",
+          "HERO",
+          "INFANTRY",
+          "UNIQUE",
+          "WARD (6+)",
+          "WIZARD (1)"
+        ],
+        "abilities": [
+          "The Court of the Lost",
+          "Retribution or Salvation"
+        ],
+        "abilityDetails": [
+          {
+            "name": "The Court of the Lost",
+            "timing": "Your Hero Phase",
+            "effect": "Effect: Roll a dice. On a 2+, pick 1 of the following effects to apply until the start of your next turn.\n• This unit has a Move characteristic of 12\".\n• Add 1 to casting rolls, unbinding rolls and banishment rolls for this unit.\n• This unit’s melee weapons have Crit (Mortal).",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Retribution or Salvation",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Pick a visible unit within 12\" of this unit to be the target, then make a casting roll of 2D6.\nEffect: If the target is an enemy unit, inflict D3 mortal damage on it.\nIf the target is a friendly DEATHRATTLE or DEADWALKERS unit, subtract 1 from wound rolls for combat attacks that target that unit for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Spell",
+            "phase": "Hero Phase",
+            "pointsType": "Spell",
+            "points": "7"
+          }
+        ],
+        "melee": [
+          [
+            "Ezechiarian Greatsword",
+            "5",
+            "3+",
+            "3+",
+            "2",
+            "2",
+            "Crit (Auto-wound)"
+          ]
+        ]
+      },
+      "source": "Battletome Supplement: Soulblight Gravelords",
+      "canReinforce": false,
+      "flavour": "Known as the Hollow King, Cado Ezechiar seeks both vengeance and redemption. Once a mortal king, his lands were ravaged by Chaos. Now he hunts the servants of ruin while seeking a way to escape the controlling will of Nagash.",
+      "regimentOptions": "Any %000004657SOULBLIGHT GRAVELORDS%",
+      "notes": "This unit will move to Warhammer Legends on 1 June 2026.\nYou cannot include this unit and the Blades of the Hollow King in the same army."
+    },
+    {
+      "faction": "Soulblight Gravelords",
+      "name": "Corpse Cart",
+      "points": 70,
+      "size": 1,
+      "kind": "",
+      "category": "War Machine",
+      "profile": {
+        "move": "4\"",
+        "health": "7",
+        "save": "6+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Corpse-Cart",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEADWALKERS",
+          "DEATH",
+          "SOULBLIGHT GRAVELORDS",
+          "WAR MACHINE",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Locus of Undeath"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Locus of Undeath",
+            "timing": "Passive",
+            "effect": "Effect: Melee weapons used by other friendly DEADWALKERS units have Crit (Auto-wound) while they are wholly within 12\" of this unit.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Corpsemaster’s Weapon",
+            "3",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            ""
+          ],
+          [
+            "Zombies’ Rusty Blades",
+            "2D6",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Across those territories ruled by the Midnight Aristocracy travel macabre conveyances, filled to the brim with decomposing flesh and drawn by groaning cadavers. These are the Corpse Carts, unspeakable devices that function as locus points for deathly magic, imbuing nearby undead with terrible vigour and might."
+    },
+    {
+      "faction": "Soulblight Gravelords",
+      "name": "Coven Throne",
+      "points": 210,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "10\"",
+        "health": "12",
+        "save": "4+",
+        "control": "5",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Coven-Throne",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "SOULBLIGHT GRAVELORDS",
+          "VAMPIRE",
+          "FLY",
+          "HERO",
+          "WAR MACHINE",
+          "WARD (6+)",
+          "WIZARD (1)"
+        ],
+        "abilities": [
+          "Tactical Insight",
+          "Scrying Pool",
+          "A Promising Concoction"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Tactical Insight",
+            "timing": "Passive",
+            "effect": "Effect: Friendly DEATHRATTLE and DEADWALKERS units have WARD (5+) while they are wholly within 6\" of this unit.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          },
+          {
+            "name": "Scrying Pool",
+            "timing": "Passive",
+            "effect": "Effect: If a friendly SOULBLIGHT GRAVELORDS unit wholly within 12\" of this unit uses the ‘Redeploy’ command, you can pick another friendly SOULBLIGHT GRAVELORDS unit wholly within 12\" of this unit that has not used a command this phase to use the ‘Redeploy’ command immediately after the first has been resolved (this is an exception to Commands, 1.2). No command point is spent the second time that command is used.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Movement Phase"
+          },
+          {
+            "name": "A Promising Concoction",
+            "timing": "Once Per Battle (Army), Your Combat Phase",
+            "effect": "Declare: Pick up to 3 friendly VAMPIRE units wholly within 12\" of this unit to be the targets.\nEffect: Add 1 to the Attacks characteristic of the targets’ melee weapons for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Matriarch’s Stiletto",
+            "5",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            "Crit (2 Hits)"
+          ],
+          [
+            "Acolytes’ Poniards",
+            "6",
+            "3+",
+            "3+",
+            "1",
+            "1",
+            ""
+          ],
+          [
+            "Spectral Host’s Blades",
+            "10",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Coven Thrones are a symbol of macabre splendour prized by the most egotistical vampires, those who see the dirt and filth of a churning battlefield as beneath them. Drifting forth upon a surging mass of bound spirits, this necro-crafted palanquin allows its occupants to observe and partake in the slaughter whilst reclining in comfort. Sipping from goblets of freshly drained blood, they pour the rest into an unholy font, reading the bubbling liquid within for signs and portents regarding the battle’s outcome.",
+      "regimentOptions": "Any %000004657SOULBLIGHT GRAVELORDS%"
+    },
+    {
+      "faction": "Soulblight Gravelords",
+      "name": "Cursed Sepulchre",
+      "points": 0,
+      "size": 1,
+      "kind": "",
+      "category": "Terrain",
+      "profile": {
+        "move": "-",
+        "health": "8",
+        "save": "4+",
+        "control": "0",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Cursed-Sepulchre",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "SOULBLIGHT GRAVELORDS",
+          "FACTION TERRAIN",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Locus of Shyish",
+          "Leeching Soil"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Locus of Shyish",
+            "timing": "Passive",
+            "effect": "Effect: Each time a friendly SOULBLIGHT GRAVELORDS WIZARD casts a SUMMON SPELL from the ‘Manifestations of the Grave’ lore, you can measure the range and visibility from this terrain feature instead.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Leeching Soil",
+            "timing": "Passive",
+            "effect": "Effect: Each time a model (friendly or enemy) is slain while it is within 9\" of this terrain feature, Heal (1) this terrain feature.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          }
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Across the realms there are many places drenched in the energies of death – sites of necromantic potential where hundreds or even thousands of souls met their tragic end amidst violence and horror. Such areas are rich pickings for the Soulblight Gravelords. They contain bounteous quantities of desiccated flesh and yellowed bone ready to be transformed into undead soldiery or used to patch up damaged warriors. Better still, practitioners of death magic can siphon the grim energies permeating these locations to restore their unnatural vitality.",
+      "description": "The following universal terrain abilities apply to this terrain feature (Terrain, 1.2):\nCover, Impassable"
+    },
+    {
+      "faction": "Soulblight Gravelords",
+      "name": "Deadwalker Zombies",
+      "points": 120,
+      "size": 20,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "4\"",
+        "health": "1",
+        "save": "6+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Deadwalker-Zombies",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEADWALKERS",
+          "DEATH",
+          "SOULBLIGHT GRAVELORDS",
+          "INFANTRY",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Mindless Ferocity"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Mindless Ferocity",
+            "timing": "Passive",
+            "effect": "Effect: Each time a model in this unit is slain by a combat attack and that model was in combat with the attacking unit, roll a dice. On a 6+, inflict 1 mortal damage on the attacking unit after the FIGHT ability has been resolved.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Crude Weapon or Infectious Bite",
+            "1",
+            "5+",
+            "4+",
+            "-",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Shambling and groaning, flesh sagging off yellowed bones, a single zombie is a disconcerting sight. A horde of them can unnerve even the most steadfast warriors. Individually, a zombie is a clumsy and slow adversary, but in bulk they become a significant threat. Bludgeoning aside enemy defences, they lash out with filthy fingernails and crude improvised weapons, heedless of their losses."
+    },
+    {
+      "faction": "Soulblight Gravelords",
+      "name": "Deathrattle Skeletons",
+      "points": 90,
+      "size": 10,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "4\"",
+        "health": "1",
+        "save": "5+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Deathrattle-Skeletons",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "DEATHRATTLE",
+          "SOULBLIGHT GRAVELORDS",
+          "CHAMPION",
+          "INFANTRY",
+          "STANDARD BEARER (1/10)",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Skeleton Legion"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Skeleton Legion",
+            "timing": "End of Any Turn",
+            "effect": "Effect: You can return D3 slain models to this unit.",
+            "kind": "Ability",
+            "type": "Rallying",
+            "phase": "End of Turn"
+          }
+        ],
+        "melee": [
+          [
+            "Ancient Weapon",
+            "2",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Clattering forwards in formation, their yellowed skulls devoid of expression, the Deathrattle Skeletons go forth to annihilate the living. These undead automatons have no free will and are imbued only with the imperative to slay as swiftly and efficiently as possible. Even if a skeletal warrior is smashed to pieces, the horror continues – with the battlefield steeped in necromantic energies, the Deathrattle Skeleton’s bones will lock together once more as it clambers upright, ready to kill again."
+    },
+    {
+      "faction": "Soulblight Gravelords",
+      "name": "Dire Wolves",
+      "points": 150,
+      "size": 10,
+      "kind": "",
+      "category": "Other",
+      "profile": {
+        "move": "10\"",
+        "health": "2",
+        "save": "5+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Dire-Wolves",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEADWALKERS",
+          "DEATH",
+          "SOULBLIGHT GRAVELORDS",
+          "BEAST",
+          "CHAMPION (1/10)",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Beast",
+          "On The Hunt"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Beast",
+            "timing": "Passive",
+            "effect": "Effect: This unit has a maximum control score of 1.",
+            "kind": "Ability",
+            "type": "Control",
+            "phase": "End of Turn"
+          },
+          {
+            "name": "On The Hunt",
+            "timing": "Passive",
+            "effect": "Effect: This unit can use a RUN ability and still use CHARGE abilities later in the turn.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Charge Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Rotting Fangs and Claws",
+            "2",
+            "4+",
+            "3+",
+            "-",
+            "1",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "It is said that to hear a Dire Wolf’s howl is to be damned. These lupine undead are tireless hunters, and when they finally run their prey to ground, their powerful jaws ensure that the kill comes swiftly indeed."
+    },
+    {
+      "faction": "Soulblight Gravelords",
+      "name": "Fell Bats",
+      "points": 90,
+      "size": 3,
+      "kind": "",
+      "category": "Other",
+      "profile": {
+        "move": "12\"",
+        "health": "3",
+        "save": "6+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Fell-Bats",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEADWALKERS",
+          "DEATH",
+          "SOULBLIGHT GRAVELORDS",
+          "BEAST",
+          "FLY",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Fleet and Fell",
+          "Beast"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Fleet and Fell",
+            "timing": "Passive",
+            "effect": "Effect: This unit can use CHARGE abilities even if it used a RETREAT ability in the same turn. In addition, no mortal damage is inflicted on this unit by RETREAT abilities.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Beast",
+            "timing": "Passive",
+            "effect": "Effect: This unit has a maximum control score of 1.",
+            "kind": "Ability",
+            "type": "Control",
+            "phase": "End of Turn"
+          }
+        ],
+        "melee": [
+          [
+            "Chiropteran Fangs",
+            "3",
+            "4+",
+            "4+",
+            "-",
+            "2",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "Leather-winged monstrosities bloated on blood and necrotic sorcery, Fell Bats haunt the cursed forests and battlefields of the realms. Each is large enough to pluck a rider from the saddle and carry them off into the skies, and their dagger-length canine teeth are so sharp that they can puncture solid metal."
+    },
+    {
+      "faction": "Soulblight Gravelords",
+      "name": "Gorslav the Gravekeeper",
+      "points": 120,
+      "size": 1,
+      "kind": "Legends",
+      "category": "Hero",
+      "profile": {
+        "move": "5\"",
+        "health": "6",
+        "save": "6+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Gorslav-the-Gravekeeper",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEADWALKERS",
+          "DEATH",
+          "SOULBLIGHT GRAVELORDS",
+          "HERO",
+          "INFANTRY",
+          "UNIQUE",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Keeper of the Corpse-gardens",
+          "Arise! Arise!"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Keeper of the Corpse-gardens",
+            "timing": "Passive",
+            "effect": "Effect: While this unit is within the combat range of a friendly Deadwalker Zombies unit:\n• This unit has WARD (4+).\n• Each time you make a successful ward roll for this unit, allocate 1 damage point to a friendly Deadwalker Zombies unit within this unit’s combat range after the damage sequence for this unit has been resolved (ward rolls cannot be made for those damage points).",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          },
+          {
+            "name": "Arise! Arise!",
+            "timing": "Once Per Battle, Reaction: You declared the ‘%000015893Endless Legions%’ ability and picked a friendly %000004739Deadwalkers% unit to be the target",
+            "effect": "Effect: When resolving the effect of the ‘Endless Legions’ ability, set up the replacement unit wholly within 3\" of this unit instead of wholly within 12\" and more than 3\" from all enemy units instead of more than 9\", even if it is not your movement phase. The replacement unit can still use CHARGE abilities this turn.",
+            "kind": "Ability",
+            "type": "Rallying",
+            "phase": "Movement Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Gravekeeper’s Spade",
+            "5",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            ""
+          ]
+        ]
+      },
+      "source": "Battletome Supplement: Soulblight Gravelords",
+      "canReinforce": false,
+      "flavour": "The macabre creature known as Gorslav the Gravekeeper lorded over the many cemeteries and mausoleums of Ulfenkarn. In battle, he leads hordes of shambling Deadwalkers that hurl themselves at the foe, infused with a rabid determination.",
+      "regimentOptions": "Any %000004739DEADWALKERS%",
+      "notes": "This HERO can join an eligible regiment as a Vyrkos Retainer.\nThis unit will move to Warhammer Legends on 1 June 2026."
+    },
+    {
+      "faction": "Soulblight Gravelords",
+      "name": "Hand of Nagash",
+      "points": 0,
+      "size": 1,
+      "kind": "",
+      "category": "Manifestation",
+      "profile": {
+        "move": "8\"",
+        "health": "10",
+        "save": "5+",
+        "ward": "6+",
+        "banishment": "8",
+        "url": "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Hand-of-Nagash",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "SOULBLIGHT GRAVELORDS",
+          "ENDLESS SPELL",
+          "FLY",
+          "MANIFESTATION",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Chill Grasp",
+          "Inescapable Reach"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Chill Grasp",
+            "timing": "Any Combat Phase",
+            "effect": "Declare: Pick an enemy unit in combat with this MANIFESTATION to be the target.\nEffect: Roll a dice. On a 4+, the following effects apply until the start of your next turn:\n• While the target is within 3\" of this MANIFESTATION, the target has a maximum control score of 1 that cannot be modified.\n• While the target is within 3\" of this MANIFESTATION, the target cannot use MOVE abilities.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Inescapable Reach",
+            "timing": "Your Movement Phase",
+            "effect": "Declare: This MANIFESTATION can only use this ability if it has not been set up this turn.\nEffect: Remove this MANIFESTATION from the battlefield and set it up anywhere on the battlefield more than 9\" from all enemy units. Then, roll a D3. On a 2+, this MANIFESTATION can move a number of inches equal to the roll.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Movement Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Grasping Talon",
+            "5",
+            "4+",
+            "2+",
+            "1",
+            "2",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "A grasping, skeletal arm spears its way into reality, reaching for living beings and seizing them between its bony fingers. Even those who manage to avoid its deathly cold grasp are not safe, for the Hand of Nagash is not so easily denied. Leaving the frozen and crushed corpses of its victims behind, it will disappear – only to emerge somewhere else to continue its murderous rampage."
+    },
+    {
+      "faction": "Soulblight Gravelords",
+      "name": "Ivya Volga, The Outcast",
+      "points": 100,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "5",
+        "save": "5+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Ivya-Volga-The-Outcast",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "SOULBLIGHT GRAVELORDS",
+          "VAMPIRE",
+          "HERO",
+          "INFANTRY",
+          "UNIQUE",
+          "WARD (6+)",
+          "WIZARD (1)"
+        ],
+        "abilities": [
+          "Shrieking Swarm",
+          "Total Dominance",
+          "Behemoth’s Bane"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Shrieking Swarm",
+            "timing": "Passive",
+            "effect": "Effect: Subtract 1 from hit rolls for attacks that target this unit.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          },
+          {
+            "name": "Total Dominance",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Make a casting roll of 2D6.\nEffect: For the rest of the turn, subtract 5 from the control scores of enemy MONSTERS while they are within 12\" of this unit.",
+            "kind": "Ability",
+            "type": "Control",
+            "keywords": "Spell",
+            "phase": "Hero Phase",
+            "pointsType": "Spell",
+            "points": "6"
+          },
+          {
+            "name": "Behemoth’s Bane",
+            "timing": "Passive",
+            "effect": "Effect: Subtract 2 from the Attacks characteristic of enemy MONSTERS melee weapons while they are in combat with this unit.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          }
+        ],
+        "ranged": [
+          [
+            "Bat Swarm’s Needling Fangs",
+            "12\"",
+            "2D6",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            "Shoot in Combat, Companion"
+          ]
+        ],
+        "melee": [
+          [
+            "Heirloom Axe",
+            "5",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            "Anti-MONSTER (+1 Rend)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "An outcast amongst a dynasty renowned for the strength of its blood ties, the rebellious Ivya Volga has spent centuries roaming across the deadliest wilds of Shyish and beyond, hacking down its most ferocious denizens with her woodcutter’s axe and drinking from their opened veins. She surrounds herself with a swarm of needle-fanged bats, which will sacrifice themselves without hesitation to protect their mistress.",
+      "regimentOptions": "Any %000004657SOULBLIGHT GRAVELORDS%",
+      "notes": "This HERO can join an eligible regiment as a Vyrkos Retainer."
+    },
+    {
+      "faction": "Soulblight Gravelords",
+      "name": "Kosargi Nightguard",
+      "points": 110,
+      "size": 2,
+      "kind": "Legends",
+      "category": "Infantry",
+      "profile": {
+        "move": "6\"",
+        "health": "4",
+        "save": "5+",
+        "control": "3",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Kosargi-Nightguard",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEADWALKERS",
+          "DEATH",
+          "SOULBLIGHT GRAVELORDS",
+          "INFANTRY",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "A Pact Maintained"
+        ],
+        "abilityDetails": [
+          {
+            "name": "A Pact Maintained",
+            "timing": "Passive",
+            "effect": "Effect: While a friendly Radukar the Wolf or Radukar the Beast is within this unit’s combat range, both that unit and this unit have WARD (5+).",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          }
+        ],
+        "melee": [
+          [
+            "Kosargi Bardiche",
+            "2",
+            "4+",
+            "2+",
+            "2",
+            "3",
+            ""
+          ]
+        ]
+      },
+      "source": "Battletome Supplement: Soulblight Gravelords",
+      "canReinforce": false,
+      "flavour": "The Kosargi ogors served Radukar for centuries, first in life and then in death, raised from the grave with foul necrotic sorcery. In battle, they scatter all foes before them, carving great bloody swathes into the enemy with each swing of their bardiches.",
+      "notes": "This unit cannot be reinforced.\nThis unit will move to Warhammer Legends on 1 June 2026."
+    },
+    {
+      "faction": "Soulblight Gravelords",
+      "name": "Kritza, the Rat Prince",
+      "points": 70,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "5",
+        "save": "5+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Kritza-the-Rat-Prince",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "SOULBLIGHT GRAVELORDS",
+          "VAMPIRE",
+          "HERO",
+          "INFANTRY",
+          "UNIQUE",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Scurrying Retreat",
+          "The Verminous Court"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Scurrying Retreat",
+            "timing": "Any Combat Phase",
+            "effect": "Effect: If this unit is in combat, roll a dice. On a 3+, this unit can immediately use the ‘Retreat’ ability as if it were your movement phase without any mortal damage being inflicted on it.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "The Verminous Court",
+            "timing": "Any Combat Phase",
+            "effect": "Declare: Pick an enemy unit in combat with this unit to be the target, then pick an artefact of power that the target has.\nEffect: Roll a dice. On a 3+, the target no longer has that artefact of power.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Gnawblade",
+            "5",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            "Crit (2 Hits)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "The repellent Kritza is a vampire that has feasted upon so many rodents that he has adopted many of the traits of these hardy and cunning creatures. Hiding his sewer stench behind a thick cloud of equally nauseating perfume, this gaunt and unsettling creature preys upon mortals without restraint. Whenever he feels outmatched, he will simply transform into a swarm of vermin and slip away through cracks in the walls.",
+      "regimentOptions": "Any %000004657SOULBLIGHT GRAVELORDS%",
+      "notes": "This HERO can join an eligible regiment as a Vyrkos Retainer."
+    },
+    {
+      "faction": "Soulblight Gravelords",
+      "name": "Lady Annika, the Thirsting Blade",
+      "points": 100,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "5",
+        "save": "5+",
+        "control": "2",
+        "ward": "4+",
+        "url": "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Lady-Annika-the-Thirsting-Blade",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "SOULBLIGHT GRAVELORDS",
+          "VAMPIRE",
+          "HERO",
+          "INFANTRY",
+          "UNIQUE",
+          "WARD (4+)"
+        ],
+        "abilities": [
+          "Supernatural Speed",
+          "Starving Nightmare",
+          "Kiss of the Blade Proboscian"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Supernatural Speed",
+            "timing": "Deployment Phase",
+            "effect": "Declare: Pick this unit if it has not been deployed.\nEffect: Set up this unit in reserve lying in wait. It has now been deployed.",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Deploy",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Starving Nightmare",
+            "timing": "Your Movement Phase",
+            "effect": "Declare: Pick this unit if it is lying in wait.\nEffect: Set up this unit wholly within enemy territory and more than 9\" from all enemy units.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Movement Phase"
+          },
+          {
+            "name": "Kiss of the Blade Proboscian",
+            "timing": "End of Any Turn",
+            "effect": "Declare: Pick an enemy unit that was allocated any damage points inflicted by this unit’s combat attacks this turn to be the target.\nEffect: Roll a dice. On a 2+, subtract 1 from save rolls for the target for the rest of the battle.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "End of Turn"
+          }
+        ],
+        "melee": [
+          [
+            "The Blade Proboscian",
+            "7",
+            "3+",
+            "4+",
+            "1",
+            "2",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Annika fights as though suffused by some arcane swiftness, for she is faster and more agile than any of her Vyrkos kin. She wields the Blade Proboscian, slicing open the veins of her prey and letting the enchanted weapon drain their blood dry in moments. Yet for every foe exsanguinated in this manner, Annika gains only fleeting succour. Whether caused by her consumption of exotic substances or simply a side-effect of the Soulblight curse, her unique, haemovoric mania can never be satisfied.",
+      "regimentOptions": "Any %000004657SOULBLIGHT GRAVELORDS%",
+      "notes": "This HERO can join an eligible regiment as a Vyrkos Retainer."
+    },
+    {
+      "faction": "Soulblight Gravelords",
+      "name": "Lauka Vai, Mother of Nightmares",
+      "points": 200,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "10\"",
+        "health": "11",
+        "save": "4+",
+        "control": "5",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Lauka-Vai-Mother-of-Nightmares",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "SOULBLIGHT GRAVELORDS",
+          "VAMPIRE",
+          "FLY",
+          "HERO",
+          "MONSTER",
+          "UNIQUE",
+          "WARD (6+)",
+          "WIZARD (1)"
+        ],
+        "abilities": [
+          "Nightmare’s Miasma",
+          "The Queen’s Dictat",
+          "Impaling Talons"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Nightmare’s Miasma",
+            "timing": "Passive",
+            "effect": "Effect: Subtract 1 from the Rend characteristic of melee weapons used by enemy units while they are in combat with this unit.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          },
+          {
+            "name": "The Queen’s Dictat",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Pick a visible friendly non-UNIQUE SOULBLIGHT GRAVELORDS MONSTER wholly within 12\" of this unit to be the target, then make a casting roll of 2D6.\nEffect: Pick 1 of the target’s melee weapons. If the target has any Companion melee weapons, you must pick 1 of those. Add D3 to the Attacks characteristic of that weapon for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Spell",
+            "phase": "Hero Phase",
+            "pointsType": "Spell",
+            "points": "6"
+          },
+          {
+            "name": "Impaling Talons",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: If this unit charged this turn, pick an enemy unit in combat with it to be the target.\nEffect: Roll a dice. If the roll is equal to or less than the target’s Health characteristic, inflict an amount of mortal damage on the target equal to the roll.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Rampage",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Gore-drenched Talons",
+            "3",
+            "3+",
+            "2+",
+            "3",
+            "3",
+            ""
+          ],
+          [
+            "Askurga Rapier",
+            "5",
+            "3+",
+            "3+",
+            "2",
+            "2",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Not for nothing is Lauka Vai known as the Mother of Nightmares, for she is the matron of the bestial and maligned Avengorii dynasty. Though she refuses to give in to the vile urges that thunder in her cursed blood, Vai is swift to respond to threats or insults with overwhelming violence. Foes are ripped to shreds by her talons and her dancing rapier, their gory remains tossed to the menagerie of twisted horrors that serves as her court.",
+      "regimentOptions": "Any %000004657SOULBLIGHT GRAVELORDS%, 0-1 %000013868Deathrattle Overseer%"
+    },
+    {
+      "faction": "Soulblight Gravelords",
+      "name": "Mannfred von Carstein, Mortarch of Night",
+      "points": 410,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "12\"",
+        "health": "14",
+        "save": "3+",
+        "control": "5",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Mannfred-von-Carstein-Mortarch-of-Night",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "SOULBLIGHT GRAVELORDS",
+          "VAMPIRE",
+          "FLY",
+          "HERO",
+          "MONSTER",
+          "UNIQUE",
+          "WARD (6+)",
+          "WARMASTER",
+          "WIZARD (2)"
+        ],
+        "abilities": [
+          "Battle Damaged",
+          "Wind of Death",
+          "The Mortarch of Night",
+          "The Sword of Unholy Power",
+          "Ashigaroth’s Hunger"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of Ashigaroth’s Claws is 3.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Wind of Death",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Pick a point on the battlefield within 18\" of the caster, pick up to 3 enemy units within 6\" of that point and visible to the caster to be the targets, then make a casting roll of 2D6.\nEffect: Roll a D3 for each target. On a 2+, inflict an amount of mortal damage on the target equal to the roll.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Spell",
+            "phase": "Hero Phase",
+            "pointsType": "Spell",
+            "points": "7"
+          },
+          {
+            "name": "The Mortarch of Night",
+            "timing": "Reaction: You declared the ‘%000009837Redeploy%’ command for a SOULBLIGHT GRAVELORDS unit wholly within 12\" of this unit",
+            "effect": "Effect: The unit using the ‘Redeploy’ command can move into combat when using that ability.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Movement Phase",
+            "reaction": true
+          },
+          {
+            "name": "The Sword of Unholy Power",
+            "timing": "Passive",
+            "effect": "Effect: If this unit has slain any enemy models this turn, for the rest of the turn, add 1 to the Attacks characteristic of melee weapons used by friendly DEATHRATTLE and DEADWALKERS units while they are wholly within 12\" of this unit.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Ashigaroth’s Hunger",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Effect: If this unit charged this turn, roll a dice. On a 3+, this unit has STRIKE-FIRST for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Rampage",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Gheistvor, the Sword of Unholy Power",
+            "6",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            ""
+          ],
+          [
+            "Ashigaroth’s Claws",
+            "5",
+            "4+",
+            "2+",
+            "3",
+            "3",
+            "Companion · See battle damage rules"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "A cunning military mastermind and a skilled wielder of the darkest magic, Mannfred von Carstein is feared and reviled across the Mortal Realms. In his wake lie the corpses of untold thousands, slaughtered because they stood in the path of his vaulting ambition. The Mortarch of Night rides into battle atop the dread abyssal Ashigaroth, carving a bloody path through his terrified prey with lightning slashes of Gheistvor, the Sword of Unholy Power. Any foes able to fend off this deadly assault are subjected to a soul-withering storm of amethyst sorcery that seals their demise.",
+      "regimentOptions": "0-1 %000015819Necromancer%, 0-1 %000013868Deathrattle Overseer%, Any %000004657Soulblight Gravelords%"
+    },
+    {
+      "faction": "Soulblight Gravelords",
+      "name": "Mortis Engine",
+      "points": 210,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "10\"",
+        "health": "12",
+        "save": "4+",
+        "control": "5",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Mortis-Engine",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "SOULBLIGHT GRAVELORDS",
+          "FLY",
+          "HERO",
+          "WAR MACHINE",
+          "WARD (6+)",
+          "WIZARD (1)"
+        ],
+        "abilities": [
+          "The Reliquary",
+          "Nexus of Death Energy",
+          "Wave of Power"
+        ],
+        "abilityDetails": [
+          {
+            "name": "The Reliquary",
+            "timing": "Passive",
+            "effect": "Effect: When this unit is set up for the first time, place a stored energy dice beside it with the ‘1’ facing up. Each time a friendly SOULBLIGHT GRAVELORDS WIZARD successfully casts a spell while it is within 12\" of this unit, increase the value of the stored energy dice beside this unit by 1 (to a maximum of 6).",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Nexus of Death Energy",
+            "timing": "Passive",
+            "effect": "Effect: When a friendly DEATHRATTLE or DEADWALKERS unit wholly within 12\" of this unit is picked to be the target of the ‘Deathly Invocation’ ability, add D3 to the number of damage points that can be healed or the combined Health characteristic of models that can be returned.",
+            "kind": "Ability",
+            "type": "Rallying",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Wave of Power",
+            "timing": "Once Per Turn (Army), Your Shooting Phase",
+            "effect": "Declare: Pick up to 3 enemy units within 10\" of this unit to be the targets.\nEffect: Roll a dice for each target. On a 3+, inflict an amount of mortal damage on the target equal to the value of this unit’s stored energy dice. Then, change the value of the stored energy dice back to 1.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Shooting Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Corpsemaster’s Staff",
+            "3",
+            "4+",
+            "3+",
+            "1",
+            "D3",
+            ""
+          ],
+          [
+            "Spectral Host’s Blades",
+            "10",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "When a truly formidable Necromancer is destroyed, their acolytes will reverently collect their remains and inter them within rune-marked caskets and reliquaries. These are then mounted atop the arcane constructs known as Mortis Engines, each guided into battle by a Corpsemaster learned in the ways of the amethyst arts. This dreadful reliquary acts as a wellspring of necromantic power, sending forth waves of life-stealing magic and bolstering the Shyishan energies that animate lesser undead.",
+      "regimentOptions": "Any %000004657SOULBLIGHT GRAVELORDS%"
+    },
+    {
+      "faction": "Soulblight Gravelords",
+      "name": "Nagash, Supreme Lord of the Undead",
+      "points": 750,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "10\"",
+        "health": "18",
+        "save": "3+",
+        "control": "10",
+        "ward": "5+",
+        "url": "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Nagash-Supreme-Lord-of-the-Undead",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "SOULBLIGHT GRAVELORDS",
+          "FLY",
+          "HERO",
+          "MONSTER",
+          "UNIQUE",
+          "WARD (5+)",
+          "WARMASTER",
+          "WIZARD (9)"
+        ],
+        "abilities": [
+          "Battle Damaged",
+          "The Staff of Power",
+          "Hand of Dust",
+          "Invocation of Nagash",
+          "Supreme Lord of the Undead"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, subtract 3 from its power level.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "The Staff of Power",
+            "timing": "Passive",
+            "effect": "Effect: Add 2 to casting rolls for this unit while it has not miscast any spells this turn. If this unit miscasts a spell, ignore the restriction that would stop this unit from casting any more spells this turn.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Hand of Dust",
+            "timing": "Once Per Turn (Army), End of Any Turn",
+            "effect": "Declare: Pick a visible enemy HERO or MONSTER in combat with this unit to be the target.\nEffect: Hide a dice in one of your hands or under one of two appropriate containers. Your opponent must pick one of your hands or containers. If they pick the one hiding the dice, this ability has no effect. If they pick the empty one, the target is automatically destroyed.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Rampage",
+            "phase": "End of Turn"
+          },
+          {
+            "name": "Invocation of Nagash",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: This unit can cast this spell more than once per phase. Pick a visible unit wholly within 18\" of this unit that has not been picked to be the target of this spell this turn to be the target, then make a casting roll of 2D6.\nEffect: If the target is an enemy unit, inflict D3 mortal damage on it. If the target is a friendly DEATH unit, pick 1 of the following effects:\n• Return a number of slain models to the target unit with a combined Health characteristic of up to 3.\n• The target has WARD (",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Spell",
+            "phase": "Hero Phase",
+            "pointsType": "Spell",
+            "points": "7"
+          },
+          {
+            "name": "Supreme Lord of the Undead",
+            "timing": "Once Per Battle, Your Hero Phase",
+            "effect": "Declare: Pick a friendly non-HERO NON-UNIQUE DEATH unit that has been destroyed to be the target.\nEffect: Set up a replacement unit identical to the target wholly within 12\" of this unit and more than 9\" from all enemy units.",
+            "kind": "Ability",
+            "type": "Rallying",
+            "phase": "Hero Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Zefet-nebtar, the Mortis Blade",
+            "4",
+            "3+",
+            "3+",
+            "2",
+            "3",
+            ""
+          ],
+          [
+            "Alakanash, the Staff of Power",
+            "4",
+            "3+",
+            "3+",
+            "2",
+            "D6",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "All living beings dread the name of Nagash, the God of Undeath. Cruel and tyrannical, the overlord of Shyish intends to conquer the Mortal Realms and transform them into a lifeless Necrotopia, in which not a speck of dust moves unless it is by his will.",
+      "regimentOptions": "0-1 %000015819Necromancer%, 0-1 %000013868Deathrattle Overseer%, Any %000004657Soulblight Gravelords%"
+    },
+    {
+      "faction": "Soulblight Gravelords",
+      "name": "Necromancer",
+      "points": 110,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "5\"",
+        "health": "5",
+        "save": "6+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Necromancer",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "SOULBLIGHT GRAVELORDS",
+          "HERO",
+          "INFANTRY",
+          "WARD (6+)",
+          "WIZARD (1)"
+        ],
+        "abilities": [
+          "Undead Minions",
+          "Vanhel’s Danse Macabre"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Undead Minions",
+            "timing": "Passive",
+            "effect": "Effect: While this unit is within the combat range of a friendly DEATHRATTLE or DEADWALKERS unit:\n• This unit has WARD (4+).\n• Each time you make a successful ward roll for this unit, allocate 1 damage point to a friendly DEATHRATTLE or DEADWALKERS unit within this unit’s combat range after the damage sequence for this unit has been resolved (ward rolls cannot be made for those damage points).",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          },
+          {
+            "name": "Vanhel’s Danse Macabre",
+            "timing": "Once Per Turn (Army), Your Combat Phase",
+            "effect": "Declare: Pick a friendly DEATHRATTLE or DEADWALKERS unit wholly within 12\" of this unit to be the target.\nEffect: The target can use 2 FIGHT abilities this phase. After the first is used, the target has STRIKE-LAST for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase",
+            "pointsType": "Command",
+            "points": "1"
+          }
+        ],
+        "melee": [
+          [
+            "Mortis Staff",
+            "3",
+            "4+",
+            "4+",
+            "1",
+            "2",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "At first glance, one might number a Necromancer amongst the dead. Their faces are sallow and their limbs wizened, but a vestige of life still glints in their eyes – though it is all but smothered by morbid arcana. Even as they are corrupted by these energies, a Necromancer wields them to bolster the legions of Nagash and place enervating curses on the foe, sapping them of vitality with the hunger of the Shyish Nadir.",
+      "regimentOptions": "Any %000004657SOULBLIGHT GRAVELORDS%, 0-1 %000013868Deathrattle Overseer%",
+      "notes": "This Hero can join the regiment of Mannfred von Carstein, Mortarch of Night, Nagash, Supreme Lord of the Undead, or Neferata, Mortarch of Blood."
+    },
+    {
+      "faction": "Soulblight Gravelords",
+      "name": "Neferata, Mortarch of Blood",
+      "points": 450,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "12\"",
+        "health": "14",
+        "save": "3+",
+        "control": "5",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Neferata-Mortarch-of-Blood",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "SOULBLIGHT GRAVELORDS",
+          "VAMPIRE",
+          "FLY",
+          "HERO",
+          "MONSTER",
+          "UNIQUE",
+          "WARD (6+)",
+          "WARMASTER",
+          "WIZARD (2)"
+        ],
+        "abilities": [
+          "Battle Damaged",
+          "The Adevore",
+          "Dark Mist",
+          "The Mortarch of Blood",
+          "Twilight’s Allure"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of Nagadron’s Claws is 3.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "The Adevore",
+            "timing": "Once Per Turn (Army), End of Any Turn",
+            "effect": "Declare: Pick an enemy HERO that was allocated any damage points inflicted by this unit’s Akmet-har this turn to be the target.\nEffect: Roll a dice. On a 5+, the target is automatically destroyed.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Rampage",
+            "phase": "End of Turn"
+          },
+          {
+            "name": "Dark Mist",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Pick a visible friendly non-MONSTER SOULBLIGHT GRAVELORDS unit wholly within 12\" of this unit to be the target, then make a casting roll of 2D6.\nEffect: Ignore modifiers to save rolls for the target (positive and negative) until the start of your next turn.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "keywords": "Spell",
+            "phase": "Hero Phase",
+            "pointsType": "Spell",
+            "points": "7"
+          },
+          {
+            "name": "The Mortarch of Blood",
+            "timing": "Deployment Phase",
+            "effect": "Declare: Pick up to 3 friendly DEATHRATTLE INFANTRY or DEADWALKERS INFANTRY units to be the targets.\nEffect: Each target can use the ‘Normal Move’ ability as if it were your movement phase.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Twilight’s Allure",
+            "timing": "Passive",
+            "effect": "Effect: Subtract 1 from hit rolls for combat attacks that target friendly SOULBLIGHT GRAVELORDS units while they are wholly within 6\" of this unit.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          }
+        ],
+        "melee": [
+          [
+            "Akmet-har, the Dagger of Jet",
+            "5",
+            "3+",
+            "3+",
+            "2",
+            "1",
+            "Anti-HERO (+1 Rend)"
+          ],
+          [
+            "Aken-seth, the Staff of Pain",
+            "3",
+            "2+",
+            "3+",
+            "2",
+            "2",
+            ""
+          ],
+          [
+            "Nagadron’s Claws",
+            "5",
+            "4+",
+            "2+",
+            "3",
+            "3",
+            "Companion · See battle damage rules"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Ancient beyond mortal comprehension, Queen Neferata is the progenitor of the Soulblight dynasties. Though she is a being who adores luxury and the intricate schemes of her royal court, Neferata has overseen more war and bloodshed than any of her rivals. Borne into battle atop the dread abyssal Nagadron, she traps her foes in a deadly web of mists and sorcery. As they stagger in confusion, she artfully dispatches them with the dagger Akmet-har and the staff Aken-seth – ritual weapons from another age, imbued with terrible enchantments.",
+      "regimentOptions": "0-1 %000015819Necromancer%, 0-1 %000013868Deathrattle Overseer%, Any %000004657Soulblight Gravelords%"
+    },
+    {
+      "faction": "Soulblight Gravelords",
+      "name": "Prince Vhordrai",
+      "points": 450,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "12\"",
+        "health": "18",
+        "save": "3+",
+        "control": "5",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Prince-Vhordrai",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "SOULBLIGHT GRAVELORDS",
+          "VAMPIRE",
+          "FLY",
+          "HERO",
+          "MONSTER",
+          "UNIQUE",
+          "WARD (6+)",
+          "WIZARD (1)"
+        ],
+        "abilities": [
+          "Battle Damaged",
+          "Saint of Slaughter",
+          "Trail of Crimson",
+          "Quickblood"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of Shordemaire’s Claws is 5.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Saint of Slaughter",
+            "timing": "End of Any Turn",
+            "effect": "Declare: Pick a friendly non-MONSTER VAMPIRE unit that destroyed a unit this turn using a FIGHT ability and is wholly within 12\" of this unit to be the target.\nEffect: Pick 1 of the following effects to apply for the rest of the battle:\n• Add 2\" to the target’s Move characteristic.\n• Add 1 to the Attacks characteristic of the target’s melee weapons.\n• Add 1 to the Damage characteristic of the target’s melee weapons.\nMore than 1 effect can apply to a unit at the same time; however, each effect can only be applied to a unit once.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "End of Turn"
+          },
+          {
+            "name": "Trail of Crimson",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: This unit can make a pile-in move (even if it is not in combat). Then, if this unit is in combat, pick an enemy unit in combat with it to be the target.\nEffect: Roll a dice. On a 4+, inflict an amount of mortal damage on the target equal to the roll.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Rampage",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Quickblood",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Make a casting roll of 2D6.\nEffect: This unit has STRIKE-FIRST until the start of your next turn.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Spell",
+            "phase": "Hero Phase",
+            "pointsType": "Spell",
+            "points": "7"
+          }
+        ],
+        "ranged": [
+          [
+            "Shordemaire’s Miasma",
+            "10\"",
+            "D6",
+            "3+",
+            "3+",
+            "2",
+            "2",
+            "Shoot in Combat, Companion"
+          ]
+        ],
+        "melee": [
+          [
+            "The Bloodlance",
+            "6",
+            "3+",
+            "3+",
+            "2",
+            "2",
+            "Charge (+1 Damage)"
+          ],
+          [
+            "Shordemaire’s Claws",
+            "7",
+            "4+",
+            "2+",
+            "1",
+            "2",
+            "Companion · See battle damage rules"
+          ],
+          [
+            "Shordemaire’s Maw",
+            "3",
+            "4+",
+            "2+",
+            "2",
+            "3",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "The most feared vampire cavalier in existence is the legendary Prince Vhordrai, castellan – and prisoner – of the Crimson Keep. When released from his cursed fortress to wage war against the living, Vhordrai rides forth atop the undead Draconith known as Shordemaire. This ancient beast spews gouts of pestilential breath that melt flesh and armour, before swooping in low so that its master can drive his Bloodlance through the ribs of any foes still standing.",
+      "regimentOptions": "Any %000004657SOULBLIGHT GRAVELORDS%, 0-1 %000013868Deathrattle Overseer%"
+    },
+    {
+      "faction": "Soulblight Gravelords",
+      "name": "Radukar the Beast",
+      "points": 250,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "8\"",
+        "health": "12",
+        "save": "4+",
+        "control": "5",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Radukar-the-Beast",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "SOULBLIGHT GRAVELORDS",
+          "VAMPIRE",
+          "HERO",
+          "MONSTER",
+          "UNIQUE",
+          "WARD (6+)",
+          "WIZARD (1)"
+        ],
+        "abilities": [
+          "The Beast Will Out",
+          "Call to the Hunt",
+          "Armour of the Night"
+        ],
+        "abilityDetails": [
+          {
+            "name": "The Beast Will Out",
+            "timing": "Once Per Turn (Army), End of Any Turn",
+            "effect": "Effect: If this unit is not in combat, it can move D6\". It can move into combat.",
+            "kind": "Ability",
+            "type": "Movement",
+            "keywords": "Rampage",
+            "phase": "End of Turn"
+          },
+          {
+            "name": "Call to the Hunt",
+            "timing": "Passive",
+            "effect": "Effect: If this unit charged this turn, for the rest of the turn, add 1 to wound rolls for combat attacks made by friendly DEATHRATTLE and DEADWALKERS units while they are wholly within 12\" of this unit.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Armour of the Night",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Make a casting roll of 2D6.\nEffect: Subtract 1 from hit rolls and wound rolls for attacks that target this unit for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "keywords": "Spell",
+            "phase": "Hero Phase",
+            "pointsType": "Spell",
+            "points": "6"
+          }
+        ],
+        "melee": [
+          [
+            "Blood-slick Claws",
+            "6",
+            "3+",
+            "3+",
+            "2",
+            "3",
+            "Crit (Mortal)"
+          ],
+          [
+            "Vyrkos Blood-born’s Piercing Blades",
+            "6",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "The vampire Radukar became ever more monstrous as the full power of his curse manifested. He transformed into a terrifying berserker-beast, the injuries that threatened to end him eclipsed by raw strength. This altered Radukar is a towering creature with dagger-length claws, capable of moving with a swiftness that seems impossible for his size.",
+      "regimentOptions": "0-1 %000012922Vyrkos Retainer%, Any %000004657SOULBLIGHT GRAVELORDS%",
+      "notes": "You cannot include this unit and Radukar the Wolf in the same army."
+    },
+    {
+      "faction": "Soulblight Gravelords",
+      "name": "Radukar the Wolf",
+      "points": 130,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "7",
+        "save": "4+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Radukar-the-Wolf",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "SOULBLIGHT GRAVELORDS",
+          "VAMPIRE",
+          "HERO",
+          "INFANTRY",
+          "UNIQUE",
+          "WARD (6+)",
+          "WIZARD (1)"
+        ],
+        "abilities": [
+          "Master of the Pack",
+          "Call to the Hunt"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Master of the Pack",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Make a casting roll of 2D6.\nEffect: Until the start of your next turn, you can re-roll charge rolls for friendly SOULBLIGHT GRAVELORDS INFANTRY units while they are wholly within 12\" of this unit.",
+            "kind": "Ability",
+            "type": "Movement",
+            "keywords": "Spell",
+            "phase": "Hero Phase",
+            "pointsType": "Spell",
+            "points": "6"
+          },
+          {
+            "name": "Call to the Hunt",
+            "timing": "Passive",
+            "effect": "Effect: If this unit charged this turn, for the rest of the turn, add 1 to wound rolls for combat attacks made by friendly DEATHRATTLE and DEADWALKERS units while they are wholly within 12\" of this unit.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Vyrkos Barrow-blade",
+            "5",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Broad-shouldered and swollen with the animalistic powers of the Vyrkos bloodline, Radukar the Wolf overwhelms his prey with sheer ferocity, swinging a blade seized from the tomb of the vampiric emperor Morkan. Not for him the role of martial strategist positioned behind a mass of rotting footsoldiers: Radukar delights in the rush and crunch of battle, ripping and tearing at the enemy in a wild frenzy, laughing with the pure thrill of slaughter.",
+      "regimentOptions": "0-1 %000012922Vyrkos Retainer%, Any %000004657SOULBLIGHT GRAVELORDS%",
+      "notes": "You cannot include this unit and Radukar the Beast in the same army."
+    },
+    {
+      "faction": "Soulblight Gravelords",
+      "name": "Revenant Draconith",
+      "points": 170,
+      "size": 1,
+      "kind": "",
+      "category": "Monster",
+      "profile": {
+        "move": "12\"",
+        "health": "16",
+        "save": "5+",
+        "control": "5",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Revenant-Draconith",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "SOULBLIGHT GRAVELORDS",
+          "FLY",
+          "MONSTER",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Battle Damaged",
+          "Death on Tattered Wings",
+          "Loathsome Descent",
+          "Red Ruin"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of its Draconic Claws is 5.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Death on Tattered Wings",
+            "timing": "Deployment Phase",
+            "effect": "Declare: Pick this unit if it has not been deployed.\nEffect: Set up this unit in reserve high above the battlefield. It has now been deployed.",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Deploy",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Loathsome Descent",
+            "timing": "Your Movement Phase",
+            "effect": "Declare: Pick this unit if it is high above the battlefield.\nEffect: Set up this unit anywhere on the battlefield more than 9\" from all enemy units.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Movement Phase"
+          },
+          {
+            "name": "Red Ruin",
+            "timing": "Once Per Turn (Army), End of Any Turn",
+            "effect": "Declare: Pick an enemy unit in combat with this unit to be the target.\nEffect: Roll a D3. On a 2+, resolve the following effects:\n• Inflict an amount of mortal damage on the target equal to the roll.\n• Heal (X) this unit where X is an amount equal to the roll.\n• This unit can be removed from the battlefield and set up in reserve high above the battlefield.",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Rampage",
+            "phase": "End of Turn"
+          }
+        ],
+        "ranged": [
+          [
+            "Pestilential Miasma",
+            "10\"",
+            "5",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            "Shoot in Combat, Companion"
+          ]
+        ],
+        "melee": [
+          [
+            "Draconic Maw",
+            "3",
+            "4+",
+            "2+",
+            "2",
+            "3",
+            "Companion"
+          ],
+          [
+            "Draconic Claws",
+            "7",
+            "4+",
+            "2+",
+            "1",
+            "2",
+            "Companion · See battle damage rules"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Creatures both tragic and horrifying, the Revenant Draconith are titans from another age, raised from death by the foulest necromantic rituals. They still possess the strength of Dracothion’s true spawn, but all nobility has been scoured from them. They now exist only to kill, and at this there are few beings in existence more proficient. Descending from the skies like the image of death itself, they fall upon their prey spewing gouts of flesh-melting gas and shredding mortal flesh with claws and teeth.",
+      "description": "You can use the models in these units to represent the following units as appropriate, provided they are on the listed base sizes:\nZombie Dragon → Revenant Draconith (160mm)"
+    },
+    {
+      "faction": "Soulblight Gravelords",
+      "name": "Sanguine Swarm",
+      "points": 0,
+      "size": 2,
+      "kind": "",
+      "category": "Manifestation",
+      "profile": {
+        "move": "12\"",
+        "health": "6",
+        "save": "6+",
+        "ward": "6+",
+        "banishment": "7",
+        "url": "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Sanguine-Swarm",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "SOULBLIGHT GRAVELORDS",
+          "ENDLESS SPELL",
+          "FLY",
+          "MANIFESTATION",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Multiple Parts",
+          "Leeching Bites"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Multiple Parts",
+            "timing": "Passive",
+            "effect": "Effect: When a number of damage points equal to this MANIFESTATION’s Health characteristic are allocated to it, this MANIFESTATION is destroyed and both its parts are removed from play.\nEach time this MANIFESTATION moves, both its parts must end within 9\" of each other.\nEach part of this MANIFESTATION is armed with Leeching Bites.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Leeching Bites",
+            "timing": "Passive",
+            "effect": "Effect: Each time an attack made by this MANIFESTATION scores a critical hit, Heal (1) this MANIFESTATION.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          }
+        ],
+        "melee": [
+          [
+            "Leeching Bites",
+            "10",
+            "5+",
+            "5+",
+            "-",
+            "1",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Sanguine Swarms appear as twin clusters of red-eyed chiropterans, their leathery wings flapping as they descend upon their prey. In truth, these are not beasts but arcane conjurations, though that does not make their leeching bites any less deadly. The spell feeds upon the blood of those it assails, growing ever more potent and increasingly difficult to dispel."
+    },
+    {
+      "faction": "Soulblight Gravelords",
+      "name": "Scourge of Aqshy Revenant Draconith",
+      "points": 290,
+      "size": 1,
+      "kind": "Scourge of Aqshy",
+      "category": "Monster",
+      "profile": {
+        "move": "12\"",
+        "health": "16",
+        "save": "5+",
+        "control": "5",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Scourge-of-Aqshy-Revenant-Draconith",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "SOULBLIGHT GRAVELORDS",
+          "FLY",
+          "MONSTER",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Battle Damaged",
+          "Brimming with Rancour",
+          "Volatile Animus"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of its Draconic Claws is 5.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Brimming with Rancour",
+            "timing": "Once Per Turn (Army), Enemy Hero Phase",
+            "effect": "Declare: Pick a visible enemy unit to be the target.\nEffect: For the rest of the turn, the target cannot end moves made as part of a non-CHARGE MOVE ability within X\" of this unit, where X is equal to your current fury level.",
+            "kind": "Ability",
+            "type": "Movement",
+            "keywords": "Rampage",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Volatile Animus",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Effect: Spend 1 rage dice. If your opponent’s fury level is lower than yours, they must increase their fury level by 1, to a maximum of 7. Then, pick 1 of the following effects:\nRetaliatory Posture: For the rest of the turn:\n• Ignore positive modifiers to hit rolls and wound rolls for attacks made by enemy units while they are in combat with this unit.\n• Add 1 to save rolls for this unit.\n• Add 1 to hit rolls for this unit’s attacks, including attacks made with Companion weapons, that target an enemy unit that used a FIGHT ability this phase.\nUnrelentin",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Combat Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Pestilential Miasma",
+            "10\"",
+            "5",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            "Shoot in Combat, Companion"
+          ]
+        ],
+        "melee": [
+          [
+            "Draconic Maw",
+            "3",
+            "4+",
+            "2+",
+            "2",
+            "3",
+            "Companion"
+          ],
+          [
+            "Draconic Claws",
+            "7",
+            "4+",
+            "2+",
+            "1",
+            "2",
+            "Companion · See battle damage rules"
+          ]
+        ]
+      },
+      "source": "Scourge of Aqshy - Soulblight Gravelords",
+      "canReinforce": false,
+      "flavour": "Rotted heirs of the godbeast Dracothion, Revenant Draconith are the decaying corpses of great drakes animated by necromancy. With a deep-seated animosity for all living things, they swoop down through the Aqshian skies to disgorge their flesh-melting breath over the enemy, lashing out with raking talons in a hate-filled frenzy.",
+      "notes": "This unit is legal for Matched Play for battles fought using the General’s Handbook 2026-27 battlepack.",
+      "description": "You can use the models in these units to represent the following units as appropriate, provided they are on the listed base sizes:\nZombie Dragon → Revenant Draconith (160mm)"
+    },
+    {
+      "faction": "Soulblight Gravelords",
+      "name": "Scourge of Aqshy Vengorian Lord",
+      "points": 310,
+      "size": 1,
+      "kind": "Scourge of Aqshy",
+      "category": "Hero",
+      "profile": {
+        "move": "10\"",
+        "health": "11",
+        "save": "4+",
+        "control": "5",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Scourge-of-Aqshy-Vengorian-Lord",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "SOULBLIGHT GRAVELORDS",
+          "VAMPIRE",
+          "FLY",
+          "HERO",
+          "MONSTER",
+          "WARD (6+)",
+          "WIZARD (1)"
+        ],
+        "abilities": [
+          "Nightmare’s Miasma",
+          "Indignant Outburst",
+          "Frenzied Surge"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Nightmare’s Miasma",
+            "timing": "Passive",
+            "effect": "Effect: Subtract 1 from the Rend characteristic of melee weapons used by enemy units while they are in combat with this unit.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          },
+          {
+            "name": "Indignant Outburst",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Effect: If this unit is in combat, gain 1 rage dice.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Frenzied Surge",
+            "timing": "Once Per Turn (Army), Any Charge Phase",
+            "effect": "Declare: You can pick another visible friendly non-HERO SOULBLIGHT GRAVELORDS INFANTRY or MONSTER unit wholly within 12\" of this unit to be the target.\nEffect: This unit can move up to X\", where X is your fury level. It must end that move in combat.\nThen, the target can move up to X\", where X is your fury level. It can move through enemy models and the",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Charge Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Nightmare Sabre",
+            "4",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            ""
+          ],
+          [
+            "Gore-drenched Talons",
+            "3",
+            "3+",
+            "2+",
+            "3",
+            "3",
+            ""
+          ]
+        ]
+      },
+      "source": "Scourge of Aqshy - Soulblight Gravelords",
+      "canReinforce": false,
+      "flavour": "Such is the self-hatred felt by the Vengorian Lords that they cannot bear even to see their own reflections. Their forms twisted through exposure to unbound magics, these vampires traverse the Great Parch, feasting messily on the living.",
+      "regimentOptions": "0-1 %000013868Deathrattle Overseer%, Any %000004657Soulblight Gravelords%",
+      "notes": "This unit is legal for Matched Play for battles fought using the General’s Handbook 2026-27 battlepack."
+    },
+    {
+      "faction": "Soulblight Gravelords",
+      "name": "Scourge of Ghyran Corpse Cart",
+      "points": 80,
+      "size": 1,
+      "kind": "Scourge of Ghyran",
+      "category": "War Machine",
+      "profile": {
+        "move": "4\"",
+        "health": "7",
+        "save": "6+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Scourge-of-Ghyran-Corpse-Cart",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEADWALKERS",
+          "DEATH",
+          "SOULBLIGHT GRAVELORDS",
+          "WAR MACHINE",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Unholy Lodestone",
+          "Necromantic Goad"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Unholy Lodestone",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Pick a friendly Deadwalker Zombies unit within this unit’s combat range to be the target.\nEffect: Until the start of your next turn, while the target is wholly within 12\" of this unit, its ‘Mindless Ferocity’ ability inflicts mortal damage on rolls of 5+ instead of 6+.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Necromantic Goad",
+            "timing": "Once Per Turn (Army), End of Any Turn",
+            "effect": "Declare: Pick a friendly Deadwalker Zombies unit that is wholly within 12\" of this unit and not in combat to be the target.\nEffect: The target can move up to 3\". It can move into combat.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "End of Turn"
+          }
+        ],
+        "melee": [
+          [
+            "Corpsemaster’s Tools and Zombies’ Bites",
+            "D6+6",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            "Crit (Auto-wound)"
+          ]
+        ]
+      },
+      "source": "Scourge of Ghyran - Soulblight Gravelords",
+      "canReinforce": false,
+      "flavour": "Trundling wagons piled with corpses dredged up from the Ghyranite swamps, Corpse Carts act as lodestones for deathly magic. They are driven by Corpsemasters skilled in the arts of necromancy, gaunt figures whose cursed goads drive the risen dead onwards with uncanny focus, driving them into the enemy in a mass of rotten, grasping limbs.",
+      "notes": "This unit is legal for Matched Play for battles fought using the General’s Handbook 2025-26 battlepack."
+    },
+    {
+      "faction": "Soulblight Gravelords",
+      "name": "Scourge of Ghyran Sekhar, Fang of Nulahmia",
+      "points": 190,
+      "size": 1,
+      "kind": "Scourge of Ghyran",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "6",
+        "save": "3+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Scourge-of-Ghyran-Sekhar-Fang-of-Nulahmia",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "SOULBLIGHT GRAVELORDS",
+          "VAMPIRE",
+          "HERO",
+          "INFANTRY",
+          "UNIQUE",
+          "WARD (6+)",
+          "WIZARD (2)"
+        ],
+        "abilities": [
+          "Allow Me to Remind You...",
+          "Lest You Forget...",
+          "Irresistible Demand"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Allow Me to Remind You...",
+            "timing": "Once Per Turn, Reaction: Opponent declared a command for a %000010532visible% enemy unit within 18\" of this unit",
+            "effect": "Effect: Roll a dice. On a 5+, that command has no effect, it still counts as having been used and the command points spent to use it are still lost.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn",
+            "points": "7",
+            "reaction": true
+          },
+          {
+            "name": "Lest You Forget...",
+            "timing": "Once Per Battle Round, Reaction: Opponent declared a SPELL or CHARGE ability for a %000010532visible% enemy unit within 18\" of this unit",
+            "effect": "Effect: Pick 1 dice from the charge roll or casting roll for that ability. Your opponent must re-roll that dice.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Start of Turn",
+            "reaction": true
+          },
+          {
+            "name": "Irresistible Demand",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Pick a visible enemy HERO within 18\" of this unit to be the target. Then, make a casting roll of 2D6.\nEffect: Inflict D3 mortal damage on each other enemy unit within 3\" of the target.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Spell",
+            "phase": "Hero Phase",
+            "pointsType": "Spell",
+            "points": "6"
+          }
+        ],
+        "melee": [
+          [
+            "Ouboroth’s Godhusk Fangs",
+            "3",
+            "4+",
+            "3+",
+            "2",
+            "D3",
+            "Companion"
+          ],
+          [
+            "Nulahmian Warglaive",
+            "5",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            "Crit (2 Hits)"
+          ]
+        ]
+      },
+      "source": "Scourge of Ghyran - Soulblight Gravelords",
+      "canReinforce": false,
+      "flavour": "The ruthless vampire Sekhar is one of Mortarch Neferata’s most formidable agents. Dispatched to the endless green of Ghyran on a mission to advance the cause of Nulahmia, she seeks to dominate her foes through sheer, hypnotic force of will. Those who defy her are spitted on the end of her glaive or fed to the coiling god-serpent Ouboroth.",
+      "regimentOptions": "Any %000004657SOULBLIGHT GRAVELORDS%",
+      "notes": "This unit is legal for Matched Play for battles fought using the General’s Handbook 2025-26 battlepack."
+    },
+    {
+      "faction": "Soulblight Gravelords",
+      "name": "Sekhar, Fang of Nulahmia",
+      "points": 160,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "6",
+        "save": "3+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Sekhar-Fang-of-Nulahmia",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "SOULBLIGHT GRAVELORDS",
+          "VAMPIRE",
+          "HERO",
+          "INFANTRY",
+          "UNIQUE",
+          "WARD (6+)",
+          "WIZARD (2)"
+        ],
+        "abilities": [
+          "The Time-Swallowers Maw",
+          "Serpentine Agility",
+          "Death’s Construction"
+        ],
+        "abilityDetails": [
+          {
+            "name": "The Time-Swallowers Maw",
+            "timing": "Once Per Battle, Any Combat Phase",
+            "effect": "Declare: Pick each enemy unit in combat with this unit to be the targets.\nEffect: This unit cannot use the ‘Serpentine Agility’ ability for the rest of the battle. Roll 2D6 for each target. If the roll exceeds the target’s Move characteristic, inflict an amount of mortal damage on the target equal to the difference between the roll and its Move characteristic.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Serpentine Agility",
+            "timing": "Passive",
+            "effect": "Effect: If the unmodified hit roll for an attack that targets this unit is 1-4, the attack fails and the attack sequence ends.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          },
+          {
+            "name": "Death’s Construction",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Pick a visible enemy unit within 12\" of this unit to be the target, then make a casting roll of 2D6.\nEffect: Until the start of your next turn, while they are wholly within 6\" of this unit, friendly SOULBLIGHT GRAVELORDS units cannot be picked to be the target of abilities used by the target other than FIGHT abilities.",
+            "kind": "Ability",
+            "type": "Special",
+            "keywords": "Spell",
+            "phase": "Hero Phase",
+            "pointsType": "Spell",
+            "points": "7"
+          }
+        ],
+        "melee": [
+          [
+            "Nulahmian Warglaive",
+            "5",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            "Crit (2 Hits)"
+          ],
+          [
+            "Ouboroth’s Godhusk Fangs",
+            "3",
+            "4+",
+            "3+",
+            "2",
+            "D3",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Sekhar is one of the most lethally skilled agents of the Mortarch Neferata and the most prominent member of the elite order known as the Fangs of Nulahmia. She is a master manipulator and spy whose honeyed whispers have seen more kingdoms crumble to dust than she can recall. Sekhar travels the realms at the behest of her mistress, advancing the cause of the Nulahmian elite and ensuring – through subterfuge, trickery or outright slaughter – that Neferata’s enemies are bled white.",
+      "regimentOptions": "Any %000004657SOULBLIGHT GRAVELORDS%"
+    },
+    {
+      "faction": "Soulblight Gravelords",
+      "name": "Terrorgheist",
+      "points": 220,
+      "size": 1,
+      "kind": "Legends",
+      "category": "Monster",
+      "profile": {
+        "move": "12\"",
+        "health": "14",
+        "save": "4+",
+        "control": "5",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Terrorgheist",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "SOULBLIGHT GRAVELORDS",
+          "FLY",
+          "MONSTER",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Battle Damaged",
+          "Gaping Maw",
+          "Sonic Assault"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of its Skeletal Talons is 4.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "Gaping Maw",
+            "timing": "Passive",
+            "effect": "Effect: Each time an attack made with this unit’s Fanged Maw scores a critical hit, that attack inflicts 6 mortal damage on the target unit and the attack sequence ends.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Sonic Assault",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: If this unit charged this turn, pick an enemy unit in combat with it to be the target.\nEffect: Roll a dice for each model in the target unit.\nIf 3 or more of the dice have the same value, for the rest of the turn, this unit has STRIKE-FIRST.\nIf 6 or more of the dice have the same value, for the rest of the turn, this unit has STRIKE-FIRST and the target cannot use commands.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Rampage",
+            "phase": "Combat Phase"
+          }
+        ],
+        "ranged": [
+          [
+            "Death Shriek",
+            "10\"",
+            "1",
+            "4+",
+            "2+",
+            "2",
+            "D6",
+            "Shoot in Combat, Companion"
+          ]
+        ],
+        "melee": [
+          [
+            "Fanged Maw",
+            "3",
+            "4+",
+            "2+",
+            "2",
+            "D6",
+            "Companion"
+          ],
+          [
+            "Skeletal Talons",
+            "6",
+            "4+",
+            "2+",
+            "1",
+            "2",
+            "Companion · See battle damage rules"
+          ]
+        ]
+      },
+      "source": "Battletome Supplement: Soulblight Gravelords",
+      "canReinforce": false,
+      "flavour": "The Terrorgheist is a bloodthirsty undead beast whose piercing cry scythes through the enemy as it plunges into the fray. Survivors are left reeling and defenceless against the eternally starving beast as it attempts to devour them, and such is the size of its maw that human-sized prey is often swallowed whole.",
+      "notes": "This unit will move to Warhammer Legends on 1 June 2026."
+    },
+    {
+      "faction": "Soulblight Gravelords",
+      "name": "The Crimson Court",
+      "points": 210,
+      "size": 4,
+      "kind": "Legends",
+      "category": "Infantry",
+      "profile": {
+        "move": "6\"",
+        "health": "3",
+        "save": "3+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/soulblight-gravelords/The-Crimson-Court",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "SOULBLIGHT GRAVELORDS",
+          "VAMPIRE",
+          "CHAMPION",
+          "INFANTRY",
+          "UNIQUE",
+          "WARD (6+)",
+          "WIZARD (1)"
+        ],
+        "abilities": [
+          "Come Then, Amuse Us"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Come Then, Amuse Us",
+            "timing": "Any Combat Phase",
+            "effect": "Effect: If this unit is in combat with any enemy HEROES, roll a D3 and then pick a number of effects from the list below equal to the roll:\n• Add 1 to save rolls for this unit for the rest of the turn.\n• Add 1 to the Attacks characteristic of this unit’s melee weapons for the rest of the turn.\n• Add 1 to the Rend characteristic of this unit’s melee weapons for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Courtly Weapon",
+            "3",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            "Anti-HERO (+1 Rend)"
+          ]
+        ]
+      },
+      "source": "Legends Warscrolls",
+      "canReinforce": false,
+      "flavour": "Prince Duvalle claims descent from the Von Carstein lineage, and few are foolish enough to gainsay him to his face. He is adept at conjuring magical glamours and illusions, rendering his prey disoriented and vulnerable before striking. Duvalle’s Crimson Court are a clique of vampires obsessed with the hunt. Having slaked their thirsts the realms over, they now set their sights on the living mountain of Beastgrave and the warriors who battle within.",
+      "notes": "This unit cannot be reinforced.",
+      "description": "Each model in this unit is armed with a Courtly Weapon. The models in this unit are:\n• Prince Duvalle (champion)\n• Gorath the Enforcer\n• Vellas von Faine\n• Ennias Curse-born"
+    },
+    {
+      "faction": "Soulblight Gravelords",
+      "name": "The Exiled Dead",
+      "points": 140,
+      "size": 7,
+      "kind": "Legends",
+      "category": "Infantry",
+      "profile": {
+        "move": "4\"",
+        "health": "2",
+        "save": "6+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/soulblight-gravelords/The-Exiled-Dead",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEADWALKERS",
+          "DEATH",
+          "SOULBLIGHT GRAVELORDS",
+          "CHAMPION",
+          "INFANTRY",
+          "UNIQUE",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Deintalos the Exile",
+          "Unfeeling Fortitude"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Deintalos the Exile",
+            "timing": "Passive",
+            "effect": "Effect: While this unit’s Deintalos the Exile is on the battlefield, it has WIZARD (1). While this unit’s Prentice Marcov is on the battlefield, add 1 to casting rolls for this unit.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Unfeeling Fortitude",
+            "timing": "Your Hero Phase",
+            "effect": "Effect: Roll a dice. On a 3+, this unit has WARD (5+) until the start of your next turn.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Hero Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Arco-electric Weapons",
+            "3",
+            "4+",
+            "5+",
+            "-",
+            "1",
+            "Crit (2 Hits)"
+          ]
+        ]
+      },
+      "source": "Legends Warscrolls",
+      "canReinforce": false,
+      "flavour": "The vampire Deintalos dwells in the darkness of Harrowdeep, snaring those who walk its labyrinthine passages. His experiments with the Force Dynamic – the arco-electric force he believes animates all things – led to his self-imposed exile from Shyish, where his brand of necromancy is taboo. In Harrowdeep, Deintalos found an ideal place to hide his grisly experiments. Aided by his mortal apprentice in necromancy, Marcov, Deintalos animates cadavers with arcane machinery and using the Force Dynamic. These Arcwalkers, as Deintalos dubs them, act in eerie unison as they tear apart their foes.",
+      "notes": "This unit cannot be reinforced.",
+      "description": "Each model in this unit is armed with Arco-electric Weapons. The models in this unit are:\n• Deintalos the Exile (champion)\n• Prentice Marcov\n• Regulus Unbound\n• Coyl Unbound\n• Bault Unbound\n• Vlash Unbound\n• Ione Unbound"
+    },
+    {
+      "faction": "Soulblight Gravelords",
+      "name": "The Sepulchral Guard",
+      "points": 110,
+      "size": 7,
+      "kind": "Legends",
+      "category": "Infantry",
+      "profile": {
+        "move": "4\"",
+        "health": "2",
+        "save": "5+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/soulblight-gravelords/The-Sepulchral-Guard",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "DEATHRATTLE",
+          "SOULBLIGHT GRAVELORDS",
+          "CHAMPION",
+          "INFANTRY",
+          "UNIQUE",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Restless Dead"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Restless Dead",
+            "timing": "End of Any Turn",
+            "effect": "Effect: You can return D3 slain models to this unit.",
+            "kind": "Ability",
+            "type": "Rallying",
+            "phase": "End of Turn"
+          }
+        ],
+        "melee": [
+          [
+            "Ancient Weapon",
+            "2",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            "Crit (2 Hits)"
+          ]
+        ]
+      },
+      "source": "Legends Warscrolls",
+      "canReinforce": false,
+      "flavour": "The Sepulchral Guard haunt the Mirrored City of Shadespire, cursed by Nagash to fully appreciate their horror. Led by the Sepulchral Warden, the former Lord-Marshal of the city, they fall upon and slay interlopers with an unsettling swiftness.",
+      "notes": "This unit cannot be reinforced.",
+      "description": "Each model in this unit is armed with an Ancient Weapon. The models in this unit are:\n• The Sepulchral Warden (champion)\n• The Champion\n• The Harvester\n• The Prince of Dust\n• The Inevitable Petitioner\n• The Zealous Petitioner\n• The Rising Petitioner"
+    },
+    {
+      "faction": "Soulblight Gravelords",
+      "name": "The Sons of Velmorn",
+      "points": 130,
+      "size": 5,
+      "kind": "Legends",
+      "category": "Infantry",
+      "profile": {
+        "move": "4\"",
+        "health": "2",
+        "save": "3+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/soulblight-gravelords/The-Sons-of-Velmorn",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "DEATHRATTLE",
+          "SOULBLIGHT GRAVELORDS",
+          "CHAMPION",
+          "INFANTRY",
+          "UNIQUE",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Rise Again"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Rise Again",
+            "timing": "Any Combat Phase",
+            "effect": "Effect: If this unit’s King Morlak Velmorn is on the battlefield, roll a dice for each slain model from this unit. On a 4+, you can return 1 slain model to this unit.",
+            "kind": "Ability",
+            "type": "Rallying",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Royal Weapons",
+            "3",
+            "4+",
+            "3+",
+            "1",
+            "1",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "Legends Warscrolls",
+      "canReinforce": false,
+      "flavour": "When the Ghurish city of Sentarion was swallowed by the Gnarlwood, King Velmorn sought to defeat the monstrous trees using the Tyrant’s Crown. Yet the sorcerous relic cursed him to a hateful unlife, though his will remains formidable. When Velmorn placed the Tyrant’s Crown upon his head, his loyal sons were slain by a surge of death magic and resurrected as wights. Filled with bitterness, they are nevertheless bound to serve their father for all eternity.",
+      "notes": "This unit cannot be reinforced.",
+      "description": "Each model in this unit is armed with Royal Weapons. The models in this unit are:\n• King Morlak Velmorn (champion)\n• Sir Jedran Falseborn\n• Helmar the Hewer\n• Marshal Faulk Velmorn\n• Thain, Fourth-and-last"
+    },
+    {
+      "faction": "Soulblight Gravelords",
+      "name": "Torgillius the Chamberlain",
+      "points": 180,
+      "size": 1,
+      "kind": "Legends",
+      "category": "Hero",
+      "profile": {
+        "move": "5\"",
+        "health": "5",
+        "save": "6+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Torgillius-the-Chamberlain",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "SOULBLIGHT GRAVELORDS",
+          "HERO",
+          "INFANTRY",
+          "UNIQUE",
+          "WARD (6+)",
+          "WIZARD (1)"
+        ],
+        "abilities": [
+          "Trusted Lieutenant",
+          "Failing Fortitude"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Trusted Lieutenant",
+            "timing": "Passive",
+            "effect": "Effect: This unit can use the ‘Deathly Invocation’ ability even if a different friendly unit has already used it this turn, but units that have already been picked to be targets of that ability this turn cannot be picked to be targets.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Failing Fortitude",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Pick a visible enemy unit within 18\" of this unit to be the target, then make a casting roll of 2D6.\nEffect: Until the start of your next turn, subtract 1 from wound rolls for the target’s attacks.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "keywords": "Spell",
+            "phase": "Hero Phase",
+            "pointsType": "Spell",
+            "points": "6"
+          }
+        ],
+        "ranged": [
+          [
+            "Necrotising Bolts",
+            "18\"",
+            "6",
+            "4+",
+            "4+",
+            "1",
+            "D3",
+            "Shoot in Combat"
+          ]
+        ],
+        "melee": [
+          [
+            "Familiars’ Fangs and Claws",
+            "4",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "Battletome Supplement: Soulblight Gravelords",
+      "canReinforce": false,
+      "flavour": "This dark magician earned himself a place in Radukar’s court thanks to his mastery of grave-sand and its uses. When called into battle, Torgillius can unleash devastating sorcery that leaves any survivors drained of all strength.",
+      "regimentOptions": "Any %000004657SOULBLIGHT GRAVELORDS%",
+      "notes": "This HERO can join an eligible regiment as a Vyrkos Retainer.\nThis unit will move to Warhammer Legends on 1 June 2026."
+    },
+    {
+      "faction": "Soulblight Gravelords",
+      "name": "Unholy Reliquary",
+      "points": 0,
+      "size": 1,
+      "kind": "",
+      "category": "Manifestation",
+      "profile": {
+        "move": "-",
+        "health": "8",
+        "save": "5+",
+        "ward": "6+",
+        "banishment": "7",
+        "url": "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Unholy-Reliquary",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "SOULBLIGHT GRAVELORDS",
+          "ENDLESS SPELL",
+          "MANIFESTATION",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Draw on Power"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Draw on Power",
+            "timing": "Any Combat Phase",
+            "effect": "Declare: Pick a friendly SOULBLIGHT GRAVELORDS HERO wholly within 12\" of this MANIFESTATION to be the target.\nEffect: Pick 1 of the following:\n• Heal (D3) the target.\n• Add 1 to the Attacks characteristic of the target’s melee weapons for the rest of the turn. Then, this Manifestation is banished and removed from play.",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Combat Phase"
+          }
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "The corpse of an elder vampire lies within this cursed casket, still smouldering with hatred and hunger. These remains act as a conduit of potent necromantic energies. Soulblight lords often take such a relic into battle with them, drawing upon its profane power in order to heal their wounds or to infuse their undead soldiers with a sudden burst of killing might."
+    },
+    {
+      "faction": "Soulblight Gravelords",
+      "name": "Vampire Lord",
+      "points": 140,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "6\"",
+        "health": "5",
+        "save": "3+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Vampire-Lord",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "SOULBLIGHT GRAVELORDS",
+          "VAMPIRE",
+          "HERO",
+          "INFANTRY",
+          "WARD (6+)",
+          "WIZARD (1)"
+        ],
+        "abilities": [
+          "Sanguine Blur"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Sanguine Blur",
+            "timing": "Once Per Turn (Army), Your Hero Phase",
+            "effect": "Effect: Roll a dice. On a 3+, remove this unit from the battlefield and set it up again on the battlefield more than 9\" from all enemy non-HERO units and more than 3\" from all enemy HEROES.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Hero Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Dynastic War-relic",
+            "5",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            "Anti-HERO (+1 Rend), Crit (2 Hits)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "The eldest vampires are granted fearsome powers by the Soulblight curse: unnatural speed, potent arcane power, and strength enough to dismember foes with their bare hands. Peerless duellists and cunning strategists all, they affect an aura of nobility even as their innermost impulses urge them to glut themselves on warm, fresh blood. They sate this hunger in the thick of battle, slicing throats with ornate rapiers or smashing open ribcages with flanged maces to devour the crimson rain that sprays forth.",
+      "regimentOptions": "Any %000004657SOULBLIGHT GRAVELORDS%"
+    },
+    {
+      "faction": "Soulblight Gravelords",
+      "name": "Vampire Lord on Nightmare Steed",
+      "points": 170,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "12\"",
+        "health": "7",
+        "save": "3+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Vampire-Lord-on-Nightmare-Steed",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "SOULBLIGHT GRAVELORDS",
+          "VAMPIRE",
+          "CAVALRY",
+          "HERO",
+          "WARD (6+)",
+          "WIZARD (1)"
+        ],
+        "abilities": [
+          "’For Glory! For Blood!’",
+          "Strike At The Heart"
+        ],
+        "abilityDetails": [
+          {
+            "name": "’For Glory! For Blood!’",
+            "timing": "Reaction: You declared a CHARGE ability for this unit",
+            "effect": "Effect: You can re-roll the charge roll for that CHARGE ability. Then, before the charge move is made, you can pick a friendly Blood Knights unit that is not in combat, is wholly within 12\" of this unit and has not used a CHARGE ability this turn to be the target. If this unit charges, then, immediately after the CHARGE ability used by this unit has been resolved, the target can immediately use the ‘Charge’ ability even if it is not your charge phase. In addition, you can re-roll charge rolls for the target this phase.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Charge Phase",
+            "reaction": true
+          },
+          {
+            "name": "Strike At The Heart",
+            "timing": "Any Combat Phase",
+            "effect": "Declare: Pick a friendly Blood Knights unit that charged this turn and is wholly within 12\" of this unit to be the target.\nEffect: Add 1 to the Rend characteristic of that unit’s Templar Weapons for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Dynastic Cavalier Weapon",
+            "5",
+            "3+",
+            "3+",
+            "2",
+            "2",
+            "Charge (+1 Damage)"
+          ],
+          [
+            "Nightmare’s Hooves and Teeth",
+            "3",
+            "5+",
+            "3+",
+            "-",
+            "1",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "When mounted upon an undead steed known as a nightmare, a Vampire Lord carves a gory path through the enemy with each thundering charge. The beast’s ironshod hooves cave in chests and grind foes into the mud, while the undead cavalier astride it lays about themself with a blade or axe, opening throats with every blow.",
+      "regimentOptions": "Any %000004657SOULBLIGHT GRAVELORDS%"
+    },
+    {
+      "faction": "Soulblight Gravelords",
+      "name": "Vampire Lord on Zombie Dragon",
+      "points": 400,
+      "size": 1,
+      "kind": "Legends",
+      "category": "Hero",
+      "profile": {
+        "move": "12\"",
+        "health": "16",
+        "save": "3+",
+        "control": "5",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Vampire-Lord-on-Zombie-Dragon",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "SOULBLIGHT GRAVELORDS",
+          "VAMPIRE",
+          "FLY",
+          "HERO",
+          "MONSTER",
+          "WARD (6+)",
+          "WIZARD (1)"
+        ],
+        "abilities": [
+          "Battle Damaged",
+          "That Which Should Not Be",
+          "Bloodthirsty Dominance"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Battle Damaged",
+            "timing": "Passive",
+            "effect": "Effect: While this unit has 10 or more damage points, the Attacks characteristic of its Draconic Claws is 5.",
+            "kind": "Ability",
+            "type": "Damage",
+            "phase": "Start of Turn"
+          },
+          {
+            "name": "That Which Should Not Be",
+            "timing": "Passive",
+            "effect": "Effect: If this unit charged this turn, for the rest of the turn, subtract 5 from the control scores of enemy units while they are in combat with this unit.",
+            "kind": "Ability",
+            "type": "Control",
+            "phase": "End of Turn"
+          },
+          {
+            "name": "Bloodthirsty Dominance",
+            "timing": "Once Per Turn (Army), End of Any Turn",
+            "effect": "Declare: If this unit charged this turn, pick an enemy unit in combat with it to be the target.\nEffect: Roll a number of dice equal to the target’s Health characteristic. For each 6, inflict 1 mortal damage on the target.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Rampage",
+            "phase": "End of Turn"
+          }
+        ],
+        "ranged": [
+          [
+            "Pestilential Breath",
+            "10\"",
+            "D6",
+            "2+",
+            "4+",
+            "1",
+            "2",
+            "Shoot in Combat, Companion"
+          ]
+        ],
+        "melee": [
+          [
+            "Dynastic Weapon",
+            "4",
+            "3+",
+            "3+",
+            "2",
+            "2",
+            "Charge (+1 Damage)"
+          ],
+          [
+            "Draconic Maw",
+            "3",
+            "4+",
+            "2+",
+            "2",
+            "3",
+            "Companion"
+          ],
+          [
+            "Draconic Claws",
+            "7",
+            "4+",
+            "2+",
+            "1",
+            "2",
+            "Companion · See battle damage rules"
+          ]
+        ]
+      },
+      "source": "Battletome Supplement: Soulblight Gravelords",
+      "canReinforce": false,
+      "flavour": "The proudest and most martial of vampires take to battle astride terrifying undead drakes. Armed with such a potent mount, they are capable of turning the tide of battle alone, striking down their rivals and supping their blood from enchanted goblets.",
+      "regimentOptions": "Any %000004657SOULBLIGHT GRAVELORDS%",
+      "notes": "This unit will move to Warhammer Legends on 1 June 2026."
+    },
+    {
+      "faction": "Soulblight Gravelords",
+      "name": "Vargheists",
+      "points": 120,
+      "size": 3,
+      "kind": "",
+      "category": "Infantry",
+      "profile": {
+        "move": "12\"",
+        "health": "4",
+        "save": "5+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Vargheists",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "SOULBLIGHT GRAVELORDS",
+          "VAMPIRE",
+          "CHAMPION",
+          "FLY",
+          "INFANTRY",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Death’s Descent"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Death’s Descent",
+            "timing": "Once Per Turn (Army), Your Movement Phase",
+            "effect": "Effect: If this unit is not in combat, remove it from the battlefield and set it up again on the battlefield more than 9\" from all enemy units.",
+            "kind": "Ability",
+            "type": "Movement",
+            "keywords": "Core",
+            "phase": "Movement Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Murderous Fangs and Talons",
+            "3",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            "Crit (2 Hits)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": true,
+      "flavour": "A vampire becomes a Vargheist when they are deprived of the chance to feed, often as a punishment for transgressing against their own kind. They retain an instinctive deference towards the elders of their bloodline, but in battle, they become uncontrollable as soon as the scent of hot gore is in the air. They plummet from on high with bone-breaking force, smashing their prey to the ground and ripping them open with fangs and claws."
+    },
+    {
+      "faction": "Soulblight Gravelords",
+      "name": "Vargskyr",
+      "points": 140,
+      "size": 1,
+      "kind": "Legends",
+      "category": "Other",
+      "profile": {
+        "move": "8\"",
+        "health": "8",
+        "save": "5+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Vargskyr",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "SOULBLIGHT GRAVELORDS",
+          "VAMPIRE",
+          "BEAST",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Beast",
+          "Bounding Haste"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Beast",
+            "timing": "Passive",
+            "effect": "Effect: This unit has a maximum control score of 1.",
+            "kind": "Ability",
+            "type": "Control",
+            "phase": "End of Turn"
+          },
+          {
+            "name": "Bounding Haste",
+            "timing": "Passive",
+            "effect": "Effect: Add 1 to the number of dice rolled when making charge rolls for this unit, to a maximum of 3. In addition, when this unit uses a CHARGE ability, it can pass through terrain features and enemy models as if it had FLY.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Charge Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Lacerating Fangs",
+            "2",
+            "4+",
+            "2+",
+            "2",
+            "3",
+            "Companion"
+          ],
+          [
+            "Raking Talons",
+            "4",
+            "4+",
+            "2+",
+            "1",
+            "2",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "Battletome Supplement: Soulblight Gravelords",
+      "canReinforce": false,
+      "flavour": "Unable to control the feral aspect of the curse that surges through their blood, Vargskyr are towering, distended creatures. On the hunt, they stalk their prey before descending upon them in a frenzy of slashing claws and razor-sharp fangs.",
+      "notes": "This unit will move to Warhammer Legends on 1 June 2026."
+    },
+    {
+      "faction": "Soulblight Gravelords",
+      "name": "Vengorian Lord",
+      "points": 200,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "10\"",
+        "health": "11",
+        "save": "4+",
+        "control": "5",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Vengorian-Lord",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "SOULBLIGHT GRAVELORDS",
+          "VAMPIRE",
+          "FLY",
+          "HERO",
+          "MONSTER",
+          "WARD (6+)",
+          "WIZARD (1)"
+        ],
+        "abilities": [
+          "Nightmare’s Miasma",
+          "Festering Feast",
+          "Scything Talons"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Nightmare’s Miasma",
+            "timing": "Passive",
+            "effect": "Effect: Subtract 1 from the Rend characteristic of melee weapons used by enemy units while they are in combat with this unit.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          },
+          {
+            "name": "Festering Feast",
+            "timing": "Once Per Turn (Army), End of Any Turn",
+            "effect": "Effect: If any damage points were allocated to enemy units by this unit’s attacks this turn, Heal (D3) this unit and each other friendly SOULBLIGHT GRAVELORDS MONSTER unit wholly within 12\" of this unit.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "End of Turn"
+          },
+          {
+            "name": "Scything Talons",
+            "timing": "Once Per Turn (Army), Any Combat Phase",
+            "effect": "Declare: If this unit charged this turn, pick an enemy unit in combat with it to be the target.\nEffect: Roll a dice. On a 3+, roll a dice for each model in the target unit. For each 5+, inflict 1 mortal damage on the target.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "keywords": "Rampage",
+            "phase": "Combat Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Nightmare Sabre",
+            "4",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            ""
+          ],
+          [
+            "Gore-drenched Talons",
+            "3",
+            "3+",
+            "2+",
+            "3",
+            "3",
+            ""
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Twisted by the power of unbound arcana, Vengorian Lords embody the nightmarish true nature of the Soulblight vampires. Unable to bear the sight of their own reflection, they wield magics of rust and corrosion, revelling in their own self-loathing. Those who rouse a Vengorian’s dark appetite are torn to pieces in a frenzied fit of hunger, their blood gulped down and their bones left crushed and scattered across the ground.",
+      "regimentOptions": "Any %000004657SOULBLIGHT GRAVELORDS%, 0-1 %000013868Deathrattle Overseer%"
+    },
+    {
+      "faction": "Soulblight Gravelords",
+      "name": "Vyrkos Blood-born",
+      "points": 150,
+      "size": 3,
+      "kind": "Legends",
+      "category": "Infantry",
+      "profile": {
+        "move": "8\"",
+        "health": "3",
+        "save": "6+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Vyrkos-Blood-born",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "SOULBLIGHT GRAVELORDS",
+          "VAMPIRE",
+          "INFANTRY",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Cling to the Shadows",
+          "Shadowfast"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Cling to the Shadows",
+            "timing": "Passive",
+            "effect": "Effect: While each model in this unit is within 1\" of any terrain features, this unit cannot be targeted by shooting attacks unless the attacking model is within 9\" of it.",
+            "kind": "Ability",
+            "type": "Defensive",
+            "phase": "Defensive reaction"
+          },
+          {
+            "name": "Shadowfast",
+            "timing": "Once Per Turn (Army), End of Enemy Turn",
+            "effect": "Effect: This unit can use a MOVE ability as if it were your movement phase.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "End of Turn"
+          }
+        ],
+        "melee": [
+          [
+            "Piercing Blade",
+            "3",
+            "3+",
+            "3+",
+            "1",
+            "2",
+            "Crit (2 Hits)"
+          ]
+        ]
+      },
+      "source": "Battletome Supplement: Soulblight Gravelords",
+      "canReinforce": false,
+      "flavour": "In the gloom-shrouded streets of Ulfenkarn, the Vyrkos Blood-born are never far away, stalking the shadows in search of prey. Once these vampiric ends catch the scent of blood, they attack with savage ferocity and lightning speed.",
+      "notes": "This unit cannot be reinforced.\nThis unit will move to Warhammer Legends on 1 June 2026."
+    },
+    {
+      "faction": "Soulblight Gravelords",
+      "name": "Watch Captain Halgrim",
+      "points": 110,
+      "size": 1,
+      "kind": "Legends",
+      "category": "Hero",
+      "profile": {
+        "move": "4\"",
+        "health": "5",
+        "save": "4+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Watch-Captain-Halgrim",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "DEATHRATTLE",
+          "SOULBLIGHT GRAVELORDS",
+          "HERO",
+          "INFANTRY",
+          "UNIQUE",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Disciplined Advance",
+          "Echoes of the Watch"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Disciplined Advance",
+            "timing": "Passive",
+            "effect": "Effect: Each time you make a run roll for a friendly Deathrattle Skeletons unit wholly within 12\" of this unit, you can change that roll to a 4.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Movement Phase"
+          },
+          {
+            "name": "Echoes of the Watch",
+            "timing": "Reaction: You declared a %000010870FIGHT ability% for this unit",
+            "effect": "Effect: Pick a friendly Deathrattle Skeletons unit that has not used a FIGHT ability this turn and is within this unit’s combat range to be the target. The target can be picked to use a FIGHT ability immediately after the FIGHT ability used by this unit has been resolved.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase",
+            "reaction": true
+          }
+        ],
+        "melee": [
+          [
+            "Cursed Halberd and Sabre",
+            "4",
+            "4+",
+            "3+",
+            "2",
+            "2",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "Battletome Supplement: Soulblight Gravelords",
+      "canReinforce": false,
+      "flavour": "During the purge of the city, the traitorous Watch Captain Oleksandr Halgrim was swift to swear himself and his warriors to the Wolf’s cause. In death, he commanded the vast legions of skeleton warriors known as the Ulfenwatch.",
+      "regimentOptions": "Any %000003942DEATHRATTLE%",
+      "notes": "This HERO can join an eligible regiment as a Vyrkos Retainer.\nThis unit will move to Warhammer Legends on 1 June 2026."
+    },
+    {
+      "faction": "Soulblight Gravelords",
+      "name": "Wight King",
+      "points": 80,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "4\"",
+        "health": "5",
+        "save": "3+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Wight-King",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "DEATHRATTLE",
+          "SOULBLIGHT GRAVELORDS",
+          "HERO",
+          "INFANTRY",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "King of Shambling Bones",
+          "Ancient Strategies"
+        ],
+        "abilityDetails": [
+          {
+            "name": "King of Shambling Bones",
+            "timing": "Once Per Turn (Army), Your Hero Phase",
+            "effect": "Declare: Pick a friendly DEATHRATTLE unit within this unit’s combat range to be the target.\nEffect: Roll a dice. On a 3+, the target’s melee weapons have Crit (2 Hits) for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Ancient Strategies",
+            "timing": "Reaction: You declared a %000010870FIGHT ability% for this unit",
+            "effect": "Effect: Pick a friendly non-HERO DEATHRATTLE INFANTRY unit that has not used a FIGHT ability this turn and is within this unit’s combat range to be the target. The target can be picked to use a FIGHT ability immediately after the FIGHT ability used by this unit has been resolved. If it is picked to do so, add 1 to hit rolls for the target’s attacks for the rest of the turn.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase",
+            "reaction": true
+          }
+        ],
+        "melee": [
+          [
+            "Baleful Tomb Blade",
+            "5",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            "Crit (Mortal)"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Wight Kings are deathless tyrants, ruling over barrow empires populated entirely by skeletal thralls. They exist only to dominate others, having long ago sacrificed emotion and passion on the altar of their obsessive lust for triumph. In battle, few can withstand their relentless assault. Those foolish enough to challenge their supremacy are soon hacked to pieces by the monarch’s cursed blade, a weapon capable of snuffing out a soul with a single scratch.",
+      "regimentOptions": "Any %000004657SOULBLIGHT GRAVELORDS%",
+      "notes": "This HERO can join an eligible regiment as a Deathrattle Overseer."
+    },
+    {
+      "faction": "Soulblight Gravelords",
+      "name": "Wight King on Skeleton Steed",
+      "points": 180,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "10\"",
+        "health": "8",
+        "save": "3+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Wight-King-on-Skeleton-Steed",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "DEATHRATTLE",
+          "SOULBLIGHT GRAVELORDS",
+          "CAVALRY",
+          "HERO",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Ancient Barrow Curse",
+          "Immortal Conqueror"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Ancient Barrow Curse",
+            "timing": "Passive",
+            "effect": "Effect: If an attack made with this unit’s King’s Relic Weapon scores a critical hit, the target unit becomes cursed for the rest of the battle. Subtract 1 from save rolls for cursed units even if this unit has been destroyed.\nDesigner’s Note: Multiple enemy units can become cursed by this ability but the same enemy unit cannot become cursed more than once.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase"
+          },
+          {
+            "name": "Immortal Conqueror",
+            "timing": "Your Hero Phase",
+            "effect": "Declare: Pick an objective or terrain feature within enemy territory.\nEffect: For the rest of the turn, add 1 to hit rolls for attacks made by friendly DEATHRATTLE units while they are wholly within 6\" of that objective or terrain feature.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Hero Phase"
+          }
+        ],
+        "melee": [
+          [
+            "King’s Relic Weapon",
+            "5",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            "Charge (+1 Damage), Crit (Mortal)"
+          ],
+          [
+            "Skeletal Steed’s Hooves and Teeth",
+            "2",
+            "5+",
+            "3+",
+            "-",
+            "1",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Most powerful of all the Deathrattle tyrants are the Wight Kings, those undead sovereigns whose domains encompass dozens – sometimes hundreds – of barrow kingdoms. The embodiment of endless conquest, they possess the willpower to defy all save Nagash and the military might to bring entire continents into their iron grasp.",
+      "regimentOptions": "0-1 %000013868Deathrattle Overseer%, Any %000004657SOULBLIGHT GRAVELORDS%",
+      "notes": "This HERO can join an eligible regiment as a Deathrattle Overseer."
+    },
+    {
+      "faction": "Soulblight Gravelords",
+      "name": "Wight Lord on Skeletal Steed",
+      "points": 110,
+      "size": 1,
+      "kind": "",
+      "category": "Hero",
+      "profile": {
+        "move": "10\"",
+        "health": "7",
+        "save": "3+",
+        "control": "2",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Wight-Lord-on-Skeletal-Steed",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEATH",
+          "DEATHRATTLE",
+          "SOULBLIGHT GRAVELORDS",
+          "CAVALRY",
+          "HERO",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Lord of Trampling Bones",
+          "Royal Companions"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Lord of Trampling Bones",
+            "timing": "Passive",
+            "effect": "Effect: Add 1 to charge rolls for friendly DEATHRATTLE CAVALRY units while they are wholly within 12\" of this unit.",
+            "kind": "Ability",
+            "type": "Movement",
+            "phase": "Charge Phase"
+          },
+          {
+            "name": "Royal Companions",
+            "timing": "Reaction: You declared a %000010870Fight ability% for this unit",
+            "effect": "Effect: Pick a friendly non-HERO DEATHRATTLE CAVALRY unit that has not used a FIGHT ability this turn and is within this unit’s combat range to be the target. The target can be picked to use a FIGHT ability immediately after the FIGHT ability used by this unit has been resolved.",
+            "kind": "Ability",
+            "type": "Offensive",
+            "phase": "Combat Phase",
+            "reaction": true
+          }
+        ],
+        "melee": [
+          [
+            "Lord’s Tomb Blade",
+            "4",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            "Charge (+1 Damage), Crit (Mortal)"
+          ],
+          [
+            "Skeletal Steed’s Hooves and Teeth",
+            "2",
+            "5+",
+            "3+",
+            "-",
+            "1",
+            "Companion"
+          ]
+        ]
+      },
+      "source": "",
+      "canReinforce": false,
+      "flavour": "Wight Lords often ride to war atop fleshless steeds, taking command of the household cavalry and overseeing the annihilation of their liege’s foes first-hand. These undead champions observe the battle with passionless focus, waiting for the moment that an opening presents itself. Then they ride forth to exploit that weakness, plunging deep into the enemy’s line at the tip of an armoured wedge.",
+      "regimentOptions": "Any %000003942DEATHRATTLE%",
+      "notes": "This HERO can join an eligible regiment as a Deathrattle Overseer."
+    },
+    {
+      "faction": "Soulblight Gravelords",
+      "name": "Zondara’s Gravebreakers",
+      "points": 120,
+      "size": 5,
+      "kind": "Legends",
+      "category": "Infantry",
+      "profile": {
+        "move": "4\"",
+        "health": "2",
+        "save": "6+",
+        "control": "1",
+        "ward": "6+",
+        "url": "https://wahapedia.ru/aos4/factions/soulblight-gravelords/Zondara-s-Gravebreakers",
+        "retrieved": "2026-10-22",
+        "keywords": [
+          "DEADWALKERS",
+          "DEATH",
+          "SOULBLIGHT GRAVELORDS",
+          "CHAMPION",
+          "INFANTRY",
+          "UNIQUE",
+          "WARD (6+)"
+        ],
+        "abilities": [
+          "Zondara Rivenheart",
+          "Wrest From the Realms"
+        ],
+        "abilityDetails": [
+          {
+            "name": "Zondara Rivenheart",
+            "timing": "Passive",
+            "effect": "Effect: While this unit’s Zondara Rivenheart is on the battlefield, it has WIZARD (1).",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          },
+          {
+            "name": "Wrest From the Realms",
+            "timing": "Your Hero Phase",
+            "effect": "Effect: If this unit is in a Soulblight Gravelords army, pick a terrain feature within 3\" of this unit, then roll a dice and apply the corresponding effect. You cannot pick the same terrain feature more than once per battle.\n1 Cruel Hope: No effect.\n2-4 Cursed Flesh: You can return D3 slain models to this unit.\n5-6 Borrowed Power: Pick a friendly SOULBLIGHT GRAVELORDS HERO wholly within 12\" of this unit that does not have an artefact of power. You can pick an artefact of power from the Soulblight Gravelords faction rules that no other friendly HERO has and give it to that HERO",
+            "kind": "Ability",
+            "type": "Special",
+            "phase": "Hero Phase"
+          }
+        ],
+        "melee": [
+          [
+            "Rending Claws",
+            "4",
+            "4+",
+            "3+",
+            "1",
+            "2",
+            ""
+          ],
+          [
+            "Graverobber’s Tools",
+            "3",
+            "4+",
+            "4+",
+            "-",
+            "1",
+            ""
+          ]
+        ]
+      },
+      "source": "Legends Warscrolls",
+      "canReinforce": false,
+      "flavour": "Once a wise Ghurish wizard, Zondara Rivenheart delved into necromantic lore in an attempt to save her beloved Ferlain from a bestial curse. She now blends beast-magic with the energies of death, ransacking crypts, keeps and dungeons in search of a cure. Zondara’s shambling gravediggers are imbued with Ghurish magic, granting them a strength and ferocity beyond that of most animated corpses. They are led by the cursed beast Ferlain, Rivenheart’s illfated former lover, reduced to a frenzied brute who messily dismembers those who threaten his mistress.",
+      "notes": "This unit cannot be reinforced.",
+      "description": "The models in this unit are:\n• Zondara Rivenheart (champion, armed with Graverobber’s Tools)\n• Pikk (armed with Graverobber’s Tools)\n• Cracktomb (armed with Graverobber’s Tools)\n• Toyle (armed with Graverobber’s Tools)\n• Lost Ferlain (armed with Rending Claws)"
+    }
+  ]
+}
