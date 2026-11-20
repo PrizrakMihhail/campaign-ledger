@@ -247,6 +247,7 @@ document.addEventListener('submit', event => {
 });
 
 main.addEventListener('keydown', navigateBattleViewTabs);
+bindBattleViewSwipe(main);
 main.addEventListener('input', event => {
   const input = event.target;
   if (input.name === 'query') updateFilters(event);

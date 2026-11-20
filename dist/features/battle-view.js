@@ -4,11 +4,43 @@ const battleViewTabs = { traits: 'Faction Traits', units: 'Units', arcana: 'Arca
 const battleViewIcons = { traits: 'shield', units: 'battle', arcana: 'spell' };
 let battleViewTab = 'units';
 
-function selectBattleViewTab(tab) {
+function selectBattleViewTab(tab, { focus = true } = {}) {
   if (!Object.hasOwn(battleViewTabs, tab) || currentPage() !== 'battle-view') return;
   battleViewTab = tab;
   render();
-  document.querySelector(`#battle-tab-${tab}`).focus({ preventScroll: true });
+  if (focus) document.querySelector(`#battle-tab-${tab}`).focus({ preventScroll: true });
+}
+
+function bindBattleViewSwipe(container) {
+  let start;
+  const passive = { passive: true };
+  container.addEventListener('touchstart', event => {
+    start = undefined;
+    if (event.touches.length !== 1 || !event.target.closest('#battle-tab-panel') ||
+        event.target.closest('button, input, label, select, textarea, a')) return;
+    const touch = event.touches[0];
+    start = { id: touch.identifier, x: touch.clientX, y: touch.clientY };
+  }, passive);
+  container.addEventListener('touchcancel', () => { start = undefined; }, passive);
+  container.addEventListener('touchend', event => {
+    const origin = start;
+    start = undefined;
+    if (!origin || event.touches.length) return;
+    const touch = [...event.changedTouches].find(item => item.identifier === origin.id);
+    if (!touch) return;
+    const dx = touch.clientX - origin.x;
+    const dy = touch.clientY - origin.y;
+    if (Math.abs(dx) < 55 || Math.abs(dx) < 1.5 * Math.abs(dy)) return;
+    const tabs = Object.keys(battleViewTabs);
+    const next = tabs[tabs.indexOf(battleViewTab) + (dx < 0 ? 1 : -1)];
+    if (!next) return;
+    selectBattleViewTab(next, { focus: false });
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    document.querySelector('#battle-tab-panel')?.animate([
+      { transform: `translateX(${dx < 0 ? 28 : -28}px)`, opacity: .72 },
+      { transform: 'translateX(0)', opacity: 1 },
+    ], { duration: 180, easing: 'ease-out' });
+  }, passive);
 }
 
 function navigateBattleViewTabs(event) {

@@ -238,6 +238,8 @@ body:has(dialog[open]) { overflow: hidden; }
 
 @media (max-width: 1000px) {
   .battle-view-shell #battle-tab-panel .dc-cards { grid-template-columns: minmax(0, 1fr); }
+  .battle-view-shell #battle-tab-panel { touch-action: pan-y pinch-zoom; }
+  .battle-view-shell .content { overflow-x: clip; }
   .shell { display: block; }
   .sidebar { height: auto; z-index: 4; padding: 8px clamp(12px, 3vw, 22px); border-right: 0; border-bottom: 1px solid var(--line); }
   .battle-view-shell .sidebar { position: relative; }
