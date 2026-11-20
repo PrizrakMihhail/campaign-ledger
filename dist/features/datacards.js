@@ -48,11 +48,12 @@ function datacard(profile, unit, renown, entry, { printControls = false, warlord
   const size = unit ? Ledger.unitSize(unit, entry?.size) : entry?.size;
   const metrics = cardFacts([['Points', points === undefined ? '' : fmt(points)], ['Models', size ? fmt(size) : ''], ['Renown', unit ? fmt(renown) : '']]);
   const metainfo = unit ? cardFacts([['Warscroll', unit.warscroll || (profile?.name !== name ? profile?.name : '')], ['Rank', unit.rank], ['Path', unit.path]]) : '';
-  const details = unit ? [['Enhancements and abilities', unit.enhancements], ['Scars and injuries', unit.scars], ['Unit notes', unit.notes]]
+  const scarred = unit?.status === 'Scarred' || unit?.battleScars?.length > 0;
+  const details = unit ? [['Enhancements and abilities', unit.enhancements], ['Battle Scars', unit.battleScars?.join(', ')], ['Scars and injuries', unit.scars], ['Unit notes', unit.notes]]
     .filter(([, value]) => value?.trim()).map(([label, value]) => `<section class="dc-detail"><h3>${label}</h3><p>${escape(value)}</p></section>`).join('') : '';
   return `<article class="datacard">
     <header class="dc-title"><div><p class="dc-label">${[category, entry?.kind, unit?.reinforced ? 'Reinforced' : ''].filter(Boolean).map(escape).join(' · ')}</p><h2>${escape(name)}</h2></div>
-    ${warlord || unit?.status === 'Scarred' ? `<div class="dc-badges">${warlord ? '<span class="dc-status dc-warlord">Warlord</span>' : ''}${unit?.status === 'Scarred' ? '<span class="dc-status">Scarred</span>' : ''}</div>` : ''}</header>
+    ${warlord || scarred ? `<div class="dc-badges">${warlord ? '<span class="dc-status dc-warlord">Warlord</span>' : ''}${scarred ? '<span class="dc-status">Scarred</span>' : ''}</div>` : ''}</header>
     ${printControls ? printChoice('Print card', name) : ''}
     ${metrics ? `<dl class="dc-metrics">${metrics}</dl>` : ''}
     ${profileContent(profile, printControls)}
@@ -62,7 +63,7 @@ function datacard(profile, unit, renown, entry, { printControls = false, warlord
 }
 
 function hasWarbandDatacards(warband) {
-  return Boolean(warband && (warband.units.some(unit => unit.status !== 'Retired') || warband.lores?.some(lore => lore.entries.length)));
+  return Boolean(warband && (warband.units.some(Ledger.battleReady) || warband.lores?.some(lore => lore.entries.length)));
 }
 
 function loreDatacard(lore, entry, printControls) {
@@ -78,8 +79,8 @@ function loreDatacard(lore, entry, printControls) {
 
 function warbandCardList(warband, battles, { unit, printControls = false } = {}) {
   const warlordId = Ledger.warlord(warband)?.id;
-  const units = unit ? [unit] : Ledger.sortedUnits(warband.units, warlordId);
-  const cards = units.filter(unit => unit.status !== 'Retired').map(unit => {
+  const units = unit ? [unit] : Ledger.sortedUnits(warband.units.filter(Ledger.battleReady), warlordId);
+  const cards = units.map(unit => {
     const entry = unitCatalogueEntry(warband, unit);
     return datacard(unitProfile(warband, unit, entry), unit, unitRenown(warband, unit, battles), entry, { printControls, warlord: unit.id === warlordId });
   });
@@ -97,7 +98,7 @@ function viewWarbandDatacards(warband, unit) {
   if (unit?.status === 'Retired') return;
   viewDialog(unit ? `${unit.name} datacard` : `${warband.name} datacards`,
     `<style>${datacardStyles}</style>${warbandCardList(warband, CampaignStore.data.battles, { unit })}`,
-    button('Export warband HTML', 'export-datacards', { glyph: 'download' }), !unit);
+    hasWarbandDatacards(warband) ? button('Export warband HTML', 'export-datacards', { glyph: 'download' }) : '', !unit);
 }
 
 function warbandDatacards(campaign, warband, battles) {

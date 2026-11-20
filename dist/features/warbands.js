@@ -42,7 +42,7 @@ function unitCard(a, unit) {
   const summary = [type, unit.warscroll === type ? '' : unit.warscroll, `${fmt(Ledger.unitPoints(unit))} pts`].filter(Boolean).join(' · ');
   return `<article class="card unit-card"><div class="unit-card-header"><h3>${escape(Ledger.unitName(unit))}</h3><div class="unit-card-badges">${Ledger.warlord(a)?.id === unit.id ? badge('Warlord') : ''}${unit.anvil ? badge('Anvil hero', 'anvil-hero') : ''}${unit.reinforced ? badge('Reinforced') : ''}${badge(unit.status)}</div></div><p class="meta">${escape(summary)}</p>
     <p class="facts meta">${size ? `<span><strong>${fmt(size)}</strong> ${size === 1 ? 'model' : 'models'}</span>` : ''}<span><strong>${fmt(renown)}</strong> Renown</span>${unit.rank ? `<span>${escape(unit.rank)}</span>` : ''}${unit.path ? `<span>${escape(unit.path)}</span>` : ''}</p>
-    ${span('Enhancements', unit.enhancements)}${span('Scars', unit.scars)}${unit.notes ? `<p class="meta copy">${escape(unit.notes)}</p>` : ''}
+    ${span('Enhancements', unit.enhancements)}${span('Battle Scars', unit.battleScars?.join(', '))}${span('Scars', unit.scars)}${unit.notes ? `<p class="meta copy">${escape(unit.notes)}</p>` : ''}
     ${profile ? `<p class="meta">${Object.entries(Ledger.profileStats).filter(([key]) => profile[key]).map(([key, label]) => `${escape(profile[key])} ${label}`).join(' · ')}</p>` : ''}
     <div class="actions">${unit.status === 'Retired' ? '' : button('Datacard', 'view-unit-datacard', { id: unit.id, title: `View ${unit.name} datacard` })}${button('Edit', 'edit-unit', { id: unit.id })}${button('Renown history', 'unit-history', { id: unit.id, type: 'link' })}</div></article>`;
 }
@@ -90,6 +90,9 @@ function unitForm(a, existing, { anvilHero = false } = {}) {
     field('Base model count', 'size', u.size ?? entry?.size ?? '', { type: 'number', min: 1 }) + field('Base Renown', 'renown', u.renown ?? 0, { type: 'number', min: 0 }) +
     `<div class="full reinforcement"><label><input type="checkbox" name="reinforced" value="on"${u.reinforced ? ' checked' : ''}> Reinforced</label><p class="meta" id="unit-totals" aria-live="polite"></p></div>` +
     select('Status', 'status', Ledger.unitStatuses, u.status || 'Active') + field('Rank', 'rank', u.rank) + field('Path', 'path', u.path) +
+    `<fieldset class="full reinforcement"><legend>Battle Scars</legend><div class="actions">
+      ${Ledger.battleScarTypes.map(type => `<label><input type="checkbox" name="battle-scar-${type}"${u.battleScars?.includes(type) ? ' checked' : ''}> ${type}</label>`).join('')}
+    </div></fieldset>` +
     (usesAnvil ? anvilFields(u.anvil) : '') + unitUpgradeFields() + profileEditorFields(!initialProfile) + area('Enhancement notes', 'enhancements', u.enhancements) + area('Scars and injuries', 'scars', u.scars) + area('Unit notes', 'notes', u.notes), (v, form) => {
     const { type, status, rank, path, enhancements, scars, notes } = v;
     const reinforced = v.reinforced === 'on';
@@ -97,7 +100,8 @@ function unitForm(a, existing, { anvilHero = false } = {}) {
     if (reinforced && size === null) throw new Error('Enter the base model count for a reinforced unit.');
     const warscroll = form.elements.warscroll.value.trim();
     const values = { type: usesAnvil ? 'Hero' : Ledger.unitType(type), status, rank, path, enhancements, scars, notes, name: required(v.name.trim() || warscroll, 'Unit name or warscroll'), warscroll, points: whole(v.points, pointsLabel, 0),
-      size, reinforced, renown: whole(v.renown, 'Base Renown', 0), profileEdits: profileEditor.changes(), anvil: anvilEditor?.read() ?? null, upgrades: upgradeEditor.read(true) };
+      size, reinforced, battleScars: Ledger.battleScarTypes.filter(type => v[`battle-scar-${type}`] === 'on'),
+      renown: whole(v.renown, 'Base Renown', 0), profileEdits: profileEditor.changes(), anvil: anvilEditor?.read() ?? null, upgrades: upgradeEditor.read(true) };
     if (existing) Object.assign(existing, values);
     else a.units.push({ id: Ledger.id(), ...values });
     if (!Ledger.warlord(a)) a.warlordId = '';

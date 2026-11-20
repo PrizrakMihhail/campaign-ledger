@@ -10,6 +10,7 @@ const Ledger = (() => {
   }));
   const resultOptions = ['Victory', 'Defeat', 'Draw', 'Other'];
   const unitStatuses = ['Active', 'Scarred', 'In Reserves', 'Retired'];
+  const battleScarTypes = ['Serious', 'Severe', 'Critical'];
   const battleReady = unit => unit.status !== 'In Reserves' && unit.status !== 'Retired';
   const questStatuses = ['Active', 'Completed', 'Abandoned'];
   const unitTypes = Object.freeze(['Hero', 'Infantry', 'Cavalry', 'War Machine', 'Monster', 'Terrain', 'Other']);
@@ -83,6 +84,7 @@ const Ledger = (() => {
         type: str(upgrade.type), name: str(upgrade.name), cost: Math.max(0, integer(upgrade.cost)), description: str(upgrade.description),
       })),
       status: choice(unit.status === 'In Reserve' ? 'In Reserves' : unit.status, unitStatuses, 'Active'), enhancements: str(unit.enhancements), scars: str(unit.scars), notes: str(unit.notes),
+      battleScars: battleScarTypes.filter(type => Array.isArray(unit.battleScars) && unit.battleScars.includes(type)),
       profileEdits: normalizeProfileEdits(unit.profileEdits), anvil,
     };
   }
@@ -279,6 +281,6 @@ const Ledger = (() => {
     return battle.result;
   }
 
-  return { packs, resultOptions, unitStatuses, battleReady, questStatuses, unitTypes, unitType, unitName, warlord, sortedUnits, profileStats, weaponFields, normalizeProfileEdits, profileDefaults, profileAbilityEdits, profileChanges, validColor, integer, id, date, dateOrder,
+  return { packs, resultOptions, unitStatuses, battleReady, battleScarTypes, questStatuses, unitTypes, unitType, unitName, warlord, sortedUnits, profileStats, weaponFields, normalizeProfileEdits, profileDefaults, profileAbilityEdits, profileChanges, validColor, integer, id, date, dateOrder,
     blank, normalize, normalizeAnvil, destinySpent, sample, unitPoints, unitUpgradePoints, unitSize, loreKinds, lorePoints, points, participants, signed, balance, transactions, unitHistory, battleRenown, record, resultFor };
 })();
